@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\DataStore.Base\DataStore.Base.csproj" />
+    <ProjectReference Include="..\..\DataAccess\DataStore.Factory\DataStore.Factory.csproj" />
+    <ProjectReference Include="..\..\DataAccess\DataStore.Interface\DataStore.Interface.csproj" />
+    <ProjectReference Include="..\..\DataAccess\DataStore.SQLServer\DataStore.SQLServer.csproj" />
+    <ProjectReference Include="..\DataProvider.Interface\RMDataProvider.Interface.csproj" />
+    <ProjectReference Include="..\RMDataProvider.Model\RMDataProvider.Model.csproj" />
+    <ProjectReference Include="..\RMMDataFactory\RMDataFactory.csproj" />
+    <ProjectReference Include="..\RMUtil\RMUtil.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="RMDB.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RMDB.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="RMDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RMDB.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+
+
+   <ItemGroup>
+    <Reference Include="Org.Sdmx.Resources.SdmxMl.Schemas.V20">
+      <HintPath>..\..\lib\Org.Sdmx.Resources.SdmxMl.Schemas.V20.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Sdmx.Resources.SdmxMl.Schemas.V21">
+      <HintPath>..\..\lib\Org.Sdmx.Resources.SdmxMl.Schemas.V21.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

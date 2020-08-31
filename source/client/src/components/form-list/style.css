@@ -1,0 +1,5 @@
+.form-list__collapse-panel__header__text > .ant-collapse-header {
+    color: rgba(0, 0, 0, 0.5) !important;
+    font-style: italic;
+    font-size: small;
+}

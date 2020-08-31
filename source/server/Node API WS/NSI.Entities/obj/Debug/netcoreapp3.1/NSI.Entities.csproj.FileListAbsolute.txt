@@ -1,0 +1,9 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\bin\Debug\netcoreapp3.1\NSI.Entities.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\bin\Debug\netcoreapp3.1\NSI.Entities.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\bin\Debug\netcoreapp3.1\NSI.Entities.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.csprojAssemblyReference.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\NSI.Entities\obj\Debug\netcoreapp3.1\NSI.Entities.pdb

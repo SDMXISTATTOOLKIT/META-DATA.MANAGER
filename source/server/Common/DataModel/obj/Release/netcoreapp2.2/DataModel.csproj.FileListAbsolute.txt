@@ -1,0 +1,14 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\DataModel.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\DataModel.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\DataModel.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\ArtefactDataModel.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\Configuration.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\ArtefactDataModel.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\bin\Release\netcoreapp2.2\Configuration.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.csprojAssemblyReference.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.csproj.CopyComplete
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\DataModel\obj\Release\netcoreapp2.2\DataModel.pdb

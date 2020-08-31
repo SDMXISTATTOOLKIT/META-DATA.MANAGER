@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.RMController.GetReportByDataflowURN(System.String,System.String,System.String)">
+            <summary>
+            Search a specific Report by parameters.
+            </summary>
+            <param name="dataflowURN">Dataflow URN</param>
+            <param name="identifierValue">URN of the Target Identifier</param>
+            <param name="targetType">Target tyoe, values [Metadataflow, Dataflow]</param>
+            <returns></returns>
+        </member>
+        <member name="M:API.RMController.GetReport(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="metadatasetURN"></param>
+            <param name="identifierValue"></param>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.RMController.buildReportListResponse(RMDataProvider.Model.MetadataSetType,System.Collections.Generic.List{RMDataProvider.Model.ReportType},System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mDataset"></param>
+            <param name="reportIds"></param>
+            <param name="identifierValue"></param>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.RMController.GetMetadataSet(System.Int32)">
+            <summary>
+            Search a specific MetadataSet by Id.
+            </summary>
+            <param name="idMetadataSet">MetadataSet id</param>
+            <returns>MetadataSet found</returns>
+        </member>
+        <member name="M:API.RMController.UpdateMetadataset(System.String)">
+            <summary>
+            Update data for a specific MetadataSet.
+            </summary>
+            <param name="metadata">MetadataSet data</param>
+            <returns>MetadataSet updated</returns>
+        </member>
+        <member name="M:API.RMController.UpdateReport(System.Int32,System.String)">
+            <summary>
+            Update data for a specific Report of a MetadataSet.
+            </summary>
+            <param name="idMetadataSet">MetadataSet Id</param>
+            <param name="metadata">Report data</param>
+            <returns>Report updated</returns>
+        </member>
+        <member name="M:API.RMController.createMetadataset(System.String)">
+            <summary>
+            Create a new MetadataSet.
+            </summary>
+            <param name="metadata">MetadataSet data</param>
+            <returns>MetadataSet created</returns>
+        </member>
+        <member name="M:API.RMController.UpsertReport(RMDataProvider.Model.MetadataSetType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="metadataSet"></param>
+            <param name="idMetadataSet"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:API.Security.IUserService.Authenticate(API.Security.Authenticate,DataModel.User)" -->
+        <!-- Badly formed XML comment ignored for member "M:API.Security.IUserService.LoginSuperUser(DataModel.User)" -->
+        <!-- Badly formed XML comment ignored for member "M:API.Security.IUserService.CheckSuperUser" -->
+        <!-- Badly formed XML comment ignored for member "M:API.Security.IUserService.LogoutSuperUser" -->
+        <member name="M:API.Security.UserService.GetUserClaims(DataModel.User)">
+            <summary>
+            Create and assign a Claim from the UserData
+            </summary>
+            <param name="user"></param>
+            <returns>List of all claim</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetCategoryScheme(System.String,System.String,System.String,Org.Sdmxsource.Sdmx.Api.Constants.StructureReferenceDetailEnumType)">
+            <summary>
+            Get Category Scheme (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="refDetail">reference detail.</param>
+            <returns>CategoryScheme</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetConceptScheme(System.String,System.String,System.String)">
+            <summary>
+            Get Concept Scheme (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <returns>ConceptScheme</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetCodelist(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Get Codelist (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="numPage">number of page, 1 if null</param>
+            <param name="pageSize">page size, unlimited if null or -1</param>
+            <returns>Codelist</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetDataflow(System.String,System.String,System.String)">
+            <summary>
+            Get Dataflow (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <returns>Dataflow</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetDsd(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Get Dsd (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="filterCustom">true in case of custom filter</param>
+            <returns>Dsd</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetCategorisation(System.String,System.String,System.String,Org.Sdmxsource.Sdmx.Api.Constants.StructureReferenceDetailEnumType)">
+            <summary>
+            Get Categorisation (if all params are null return all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="refDetail">reference detail.</param>
+            <returns>Categorisation</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetCube(System.Nullable{System.Int32})">
+            <summary>
+            Get Cube (if id null retrun all)
+            </summary>
+            <param name="id">Id.</param>
+            <returns>Cube</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetDCS">
+            <summary>
+            Get Dcs
+            </summary>
+            <returns>Dcs</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetFileMapping(System.Nullable{System.Int32})">
+            <summary>
+            Get FileMapping
+            </summary>
+            <returns>FileMapping</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetDDBDataflow(System.Nullable{System.Int32})">
+            <summary>
+            Get Dataflow (if id null retrun all)
+            </summary>
+            <param name="id">Id.</param>
+            <returns>Dataflow</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetMAEntity(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Get Entity (if id null retrun all)
+            </summary>
+            <param name="type">Entity type.</param>
+            <param name="id">id.</param>
+            <returns>Entity</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetDfHeader(System.String,System.String,System.String)">
+            <summary>
+            Returns the header for the given dataflow
+            </summary>
+            <param name="id">The id of the dataflow.</param>
+            <param name="agency">The agency of the dataflow.</param>
+            <param name="version">The version of the dataflow.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CreateCube">
+            <summary>
+              Creates a cube querying SDMX WS and adding corrispondent codes for each attribute or dimension.
+              Adds annotation of type AssociatedCube to the corrispondent DSD.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CreateFileMapping">
+            <summary>
+            Create file mapping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CreateDDBDataflow(API.DTO.DFParam)">
+            <summary>
+            Creates a DDBDataflow: it controls DDBDataflow and SDMX dataflow are not inconsistent and then creates corrispondent artefact in MSDB e DDB.
+            Optionally creates dataflow's categorisations and header.
+            If the dataflow has fewer columns than the original cube a new DSD is also created.
+            </summary>
+            <param name="df">Object with:
+            ddbDF: Dataflow to be created in DDB.
+            msdbDF: SDMX-JSON containing dataflow to be created in MSDB.
+            msdbCat: SDMX-JSON containing categorisations to be created in MSDB.
+            msdbDF: HeaderTemplate to be created in MSDB.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CreateArtefacts">
+            <summary>
+            Create Artefacts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.UpdateArtefacts">
+            <summary>
+            Update Artefacts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.SetInProduction(System.Int32,System.Boolean)">
+            <summary>
+            Set in production a dataflow
+            </summary>
+            <param name="dfId">Dataflow id.</param>
+            <param name="createTranscoding">true for create transcoding</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.RemoveFromProduction(System.Int32)">
+            <summary>
+            Remove dataflow from production 
+            </summary>
+            <param name="dfId">Dataflow id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CreateHeaderTemplate">
+            <summary>
+            Create Header Template
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DeleteCube(System.Int32)">
+            <summary>
+            Deletes the specified cube and the AssociatedCube annotation from its DSD
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DeleteFileMapping(System.Int32)">
+            <summary>
+            Remove file mapping
+            </summary>
+            <param name="id">file mapping id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DeleteDDBDataflow(System.Int32)">
+            <summary>
+            Deletes a DDB Dataflow: corrispondent dataflow in MSDB is also deleted.
+            </summary>
+            <param name="id">The id of the DDBDataflow.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DeleteArtefact(Org.Sdmxsource.Sdmx.Api.Constants.SdmxStructureEnumType,System.String,System.String,System.String)">
+            <summary>
+            Deletes an SDMX artefact from the MSDB. 
+            If the artefact is a DSD, the method deletes it only if it has no AssociatedCube annotations.
+            </summary>
+            <param name="artType">The type of the artefact to delete.</param>
+            <param name="id">The id of the artefact to delete.</param>
+            <param name="agencyID">The agency of the artefact to delete.</param>
+            <param name="version">The version of the artefact to delete.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DeleteMAEntity(System.String,System.Int32)">
+            <summary>
+            Deletes an entity (call MA API)
+            </summary>
+            <param name="type">The type of the entity to delete.</param>
+            <param name="id">The id of the entity to delete.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.UploadFileOnServer(System.Nullable{System.Int32},Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Uploads a file on the file-system.
+            </summary>
+            <param name="file">The file to be uploaded.</param>
+            <param name="cubeId">The id of the cube to whom the file refers.</param>
+            <returns>The path of the uploaded file in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetCSVHeader(System.Char,System.Boolean,System.String)">
+            <summary>
+            Returns the header of a CSV file. If the file is not a CSV file or is empty an exception is thrown. 
+            If the file has no header, an array of string "Col 1, …, Col N" is returned.
+            </summary>
+            <param name="separator">CSV separator used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="filePath">Path of the CSV file.</param>
+            <returns>A list with the name of the columns to be shown in Mapping.</returns>
+        </member>
+    </members>
+</doc>

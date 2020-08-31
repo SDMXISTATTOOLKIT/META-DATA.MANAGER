@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "AuthCore.Utils/1.0.0": {
+        "dependencies": {
+          "AuthCore.Model": "1.0.0"
+        },
+        "runtime": {
+          "AuthCore.Utils.dll": {}
+        }
+      },
+      "AuthCore.Model/1.0.0": {
+        "runtime": {
+          "AuthCore.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AuthCore.Utils/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AuthCore.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,8 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\bin\Debug\netcoreapp2.2\Configuration.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\bin\Debug\netcoreapp2.2\Configuration.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\bin\Debug\netcoreapp2.2\Configuration.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\obj\Debug\netcoreapp2.2\Configuration.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\obj\Debug\netcoreapp2.2\Configuration.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\obj\Debug\netcoreapp2.2\Configuration.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\obj\Debug\netcoreapp2.2\Configuration.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\ClassLibrary1\obj\Debug\netcoreapp2.2\Configuration.pdb

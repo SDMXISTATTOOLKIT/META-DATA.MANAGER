@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./mystyle.css" />
+    <script src="./vendor/mustache.min.js"></script>
+    <script src="util.js"></script>
+    <script src="common.js"></script>
+    <script id="template" type="text/html">
+        <div class="accordion" id="medatasetAccordion">
+            {{#data.metadataSets}}
+            <div class="vista-generale">
+                <article>
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{id}}" aria-expanded="false" aria-controls="collapse{{id}}">
+                        Metadataset {{id}}
+                    </button>
+                    <div id="collapse{{id}}" class="collapse" aria-labelledby="heading{{id}}" data-parent="#medatasetAccordion">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Id Metadataflow: </span>{{MetadataflowId}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Agenzia Metadataflow: </span>{{MetadataflowAgency}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Versione Metadataflow: </span>{{MetadataflowVersion}}</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Id MSD: </span>{{MSDId}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Agenzia MSD: </span>{{MSDAgency}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Versione MSD: </span>{{MSDVersion}}</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Inizio reporting: </span>{{reportingBegin}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Fine reporting: </span>{{reportingEnd}}</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Valido da: </span>{{validFrom}}</div>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <div><span class="field-label">Valido fino: </span>{{validTo}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {{/data.metadataSets}}
+        </div>
+    </script>
+    <script type="text/javascript">
+
+        const params = window.location.search;
+        const urlParams = new URLSearchParams(params);
+        let configs = null;
+        let clientConfigs = null;
+        let nodeIdToUse = null;
+        let baseUrl = null;
+
+        try {
+            //const lang = urlParams.get('lang');
+            //if (lang == null || lang.trim().length == 0)
+            //    throw "Parameter lang not specified!";
+            loadJSON('metadataapi.json',
+                function (response) {
+                    configs = JSON.parse(response);
+                    this.baseUrl = configs.baseUrl;
+
+                    const nodeId = urlParams.get('nodeId');
+                    try {
+                        loadJSON('../config.json',
+                            function (response) {
+                                this.clientConfigs = JSON.parse(response);
+                                const nodeUrl = this.clientConfigs.fetchBaseUrl + "/appConfig";
+                                loadJSON(nodeUrl,
+                                    function (response) {
+                                        nodeConfigs = JSON.parse(response);
+                                        const nodes = nodeConfigs.nodes;
+                                        if (nodes != null) {
+                                            for (const nodeIndex in nodes) {
+                                                const node = nodes[nodeIndex];
+                                                if (this.nodeIdToUse == null) {
+                                                    this.nodeIdToUse = node.general.id;
+                                                }
+                                                if (nodeId != null && nodeId.trim().length > 0 && node.general.id === nodeId) {
+                                                    this.nodeIdToUse = nodeId;
+                                                    if (node.endpoint.metadataBaseURL != null) {
+                                                        this.baseUrl = node.endpoint.metadataBaseURL.trim();
+                                                    }
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                );
+                            }
+                        );
+                    } catch (e) {
+                        alert(e);
+                    }
+                }
+            );
+        } catch (e) {
+            alert(e);
+        }
+
+        function loadMustache() {
+            try {
+                let report = null;
+                const lang = urlParams.get('lang');
+                loadJSON(this.baseUrl + '/api/getMetadata',
+                    function (response) {
+                        report = JSON.parse(response);
+                        for (const metIndex in report.data.metadataSets) {
+                            let currMet = report.data.metadataSets[metIndex];
+                            for (const annIndex in currMet.annotations) {
+                                let currAnn = currMet.annotations[annIndex];
+                                if (currAnn.id == "MetadataflowId") {
+                                    currMet.MetadataflowId = currAnn.text;
+                                }
+                                else if (currAnn.id == "MetadataflowAgency") {
+                                    currMet.MetadataflowAgency = currAnn.text;
+                                }
+                                else if (currAnn.id == "MetadataflowVersion") {
+                                    currMet.MetadataflowVersion = currAnn.text;
+                                }
+                                else if (currAnn.id == "MSDId") {
+                                    currMet.MSDId = currAnn.text;
+                                }
+                                else if (currAnn.id == "MSDAgency") {
+                                    currMet.MSDAgency = currAnn.text;
+                                }
+                                else if (currAnn.id == "MSDVersion") {
+                                    currMet.MSDVersion = currAnn.text;
+                                }
+                            }
+                        }
+                        const template = document.getElementById('template').innerHTML;
+                        const output = Mustache.render(template, report, {
+                            "language": lang
+                        });
+                        document.getElementById('target').innerHTML = output;
+                    }
+                );
+            } catch (e) {
+                alert(e);
+            }
+        }
+    </script>
+</head>
+<body onload="loadMustache()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-panel-inner">
+                    <div class="panel-pane pane-views-panes pane-dkan-datasets-panel-pane-1">
+                        <h2 class="pane-title">
+                            Elenco Metadataset
+                        </h2>
+                        <p id="target">
+                           
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

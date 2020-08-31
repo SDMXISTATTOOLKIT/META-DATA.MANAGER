@@ -1,0 +1,11 @@
+.item-schemes-compare-report__infinite-scroll-table .ant-col-6 {
+    width: 100%;
+}
+
+.item-schemes-compare-report__infinite-scroll-table .infinite-scroll-table__grid__row div.infinite-scroll-table__grid__cell:nth-child(2) {
+    border-right: 2px solid #999999;
+}
+
+.item-schemes-compare-report__infinite-scroll-table .infinite-scroll-table__header__cells-container div.infinite-scroll-table__header__cell:nth-child(2) {
+    border-right: 2px solid #999999;
+}

@@ -1,0 +1,230 @@
+{
+  "UserInterface": {
+    "DefaultTableRows": 8,
+    "MaxTableRows": 1000,
+    "DefaultSidebarCollapsed": true,
+    "DefaultLanguage": "en",
+    "Languages": [
+      {
+        "Code": "en",
+        "Flag": "gb"
+      },
+      {
+        "Code": "it",
+        "Flag": "it"
+      }
+    ],
+    "AnonymousPages": [
+      "/meta-manager/codelists",
+      "/meta-manager/concept-schemes",
+      "/meta-manager/category-schemes",
+      "/meta-manager/dataflows",
+      "/meta-manager/data-structure-definitions",
+      "/configurations/app",
+      "/configurations/nodes",
+      "/meta-manager/agency-schemes",
+      "/meta-manager/content-constraints"
+    ],
+    "MinTreeNodesForPagination": 1000,
+    "TreePageSize": 100,
+    "MaxTreeNodes": 100000,
+    "MaxTreeNodesForPagination": 10000,
+    "MaxNodeForExpandAll": 1000
+  },
+  "Agencies": [
+    {
+      "Id": "OECD",
+      "Name": {
+        "en": "Organisation for Economic Co-operation and Development",
+        "it": "OECD"
+      }
+    },
+    {
+      "Id": "ESTAT",
+      "Name": {
+        "en": "Eurostat",
+        "it": "ESTAT"
+      }
+    },
+    {
+      "Id": "ECB",
+      "Name": {
+        "en": "European Central Bank",
+        "it": "ECB"
+      }
+    },
+    {
+      "Id": "WB",
+      "Name": {
+        "en": "World Bank",
+        "it": "WB"
+      }
+    },
+    {
+      "Id": "BIS",
+      "Name": {
+        "en": "Bank for International Settlements",
+        "it": "BIS"
+      }
+    },
+    {
+      "Id": "IMF",
+      "Name": {
+        "en": "International Monetary Fund",
+        "it": "IMF"
+      }
+    },
+    {
+      "Id": "UNSD",
+      "Name": {
+        "en": "United Nation Statistical Division",
+        "it": "UNSD"
+      }
+    },
+    {
+      "Id": "UNICEF",
+      "Name": {
+        "en": "United Nations Children's Fund",
+        "it": "UNICEF"
+      }
+    },
+    {
+      "Id": "ILO",
+      "Name": {
+        "en": "International Labour Organization",
+        "it": "ILO"
+      }
+    },
+    {
+      "Id": "FAO",
+      "Name": {
+        "en": "Food and Agriculture Organisation",
+        "it": "FAO"
+      }
+    },
+    {
+      "Id": "IAEG-SDGs",
+      "Name": {
+        "en": "Inter-Agency and Expert Group on SDGs",
+        "it": "IAEG-SDGs"
+      }
+    },
+    {
+      "Id": "IT1",
+      "Name": {
+        "en": "Istat",
+        "it": "IT1"
+      }
+    },
+    {
+      "Id": "BE2",
+      "Name": {
+        "en": "National Bank of Belgium",
+        "it": "BE2"
+      }
+    },
+    {
+      "Id": "TN1",
+      "Name": {
+        "en": "INS Tunisia",
+        "it": "TN1"
+      }
+    },
+    {
+      "Id": "AU1",
+      "Name": {
+        "en": "Australian Bureau of Statistics",
+        "it": "AU1"
+      }
+    },
+    {
+      "Id": "AE1",
+      "Name": {
+        "en": "Federal Competitiveness and Statistics Authority of United Arab Emirates",
+        "it": "AE1"
+      }
+    },
+    {
+      "Id": "LU1",
+      "Name": {
+        "en": "STATEC - National Institute of Statistics and Economic Studies of the Grand Duchy of Luxembourg",
+        "it": "LU1"
+      }
+    },
+    {
+      "Id": "SPC",
+      "Name": {
+        "en": "Pacific Community (SPC)",
+        "it": "SPC"
+      }
+    },
+    {
+      "Id": "ITH1",
+      "Name": {
+        "en": "Provincial Statistics Institute (ASTAT)",
+        "it": "ITH1"
+      }
+    },
+    {
+      "Id": "INE1",
+      "Name": {
+        "en": "National Institute of Statistics (Chile)",
+        "it": "INE1"
+      }
+    },
+    {
+      "Id": "SE1",
+      "Name": {
+        "en": "Statistics Estonia",
+        "it": "SE1"
+      }
+    },
+    {
+      "Id": "UKDS",
+      "Name": {
+        "en": "UK Data Service",
+        "it": "UKDS"
+      }
+    },
+    {
+      "Id": "NZ1",
+      "Name": {
+        "en": "Stats NZ",
+        "it": "NZ1"
+      }
+    }
+  ],
+  "DataManagement": {
+    "CubeCodePrefix": "BL_",
+    "DataLanguages": [
+      {
+        "Code": "en",
+        "Flag": "gb"
+      },
+      {
+        "Code": "it",
+        "Flag": "it"
+      }
+    ],
+    "MaxDescriptionLength": 4000
+  },
+  "DefaultHeaderSubmitStructure": {
+    "ID": "ID_SUBMIT",
+    "test": false,
+    "prepared": "2018-11-08T15:07:14Z",
+    "sender": "ISTAT",
+    "receiver": "ISTAT"
+  },
+  "SuperUserCredentials": [
+    {
+      "username": "superadmin",
+      "password": "5a0R0QlUWY2hfW5NDUGcHxxo/g2GHHhLJi6gmBmh/UhC9aujb9wpGi6zuqaMGDgv",
+      "confirmPassword": null
+    }
+  ],
+  "EndpointSetting": {
+    "NsiTimeOut": 120,
+    "DmTimeOut": 120,
+    "MaTimeOut": 120
+  }
+}

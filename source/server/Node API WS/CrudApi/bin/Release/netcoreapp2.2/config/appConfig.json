@@ -1,0 +1,187 @@
+{
+  "UserInterface": {
+    "DefaultTableRows": 8,
+    "MaxTableRows": 1000,
+    "DefaultSidebarCollapsed": true,
+    "DefaultLanguage": "it",
+    "Languages": [
+      {
+        "Code": "en",
+        "Flag": "gb"
+      },
+      {
+        "Code": "it",
+        "Flag": "it"
+      }
+    ],
+    "AnonymousPages": [
+      "/meta-manager/codelists",
+      "/meta-manager/concept-schemes",
+      "/meta-manager/category-schemes",
+      "/meta-manager/dataflows",
+      "/meta-manager/data-structure-definitions",
+      "/configurations/app",
+      "/configurations/nodes"
+    ],
+    "MinTreeNodesForPagination": 100,
+    "TreePageSize": 10,
+    "MaxTreeNodes": 100000,
+    "MaxTreeNodesForPagination": 10000
+  },
+  "Agencies": [
+    {
+      "Id": "IT1",
+      "Name": {
+        "en": "Italy",
+        "it": "Italia"
+      }
+    },
+    {
+      "Id": "SDMX",
+      "Name": {
+        "en": "SDMX",
+        "it": "SDMX"
+      }
+    },
+    {
+      "Id": "ESTAT",
+      "Name": {
+        "en": "ESTAT",
+        "it": "ESTAT"
+      }
+    },
+    {
+      "Id": "IMF",
+      "Name": {
+        "en": "IMF",
+        "it": "IMF"
+      }
+    },
+    {
+      "Id": "WB",
+      "Name": {
+        "en": "WB",
+        "it": "WB"
+      }
+    },
+    {
+      "Id": "FAO",
+      "Name": {
+        "en": "FAO",
+        "it": "FAO"
+      }
+    },
+    {
+      "Id": "INEC",
+      "Name": {
+        "en": "INEC",
+        "it": "INEC"
+      }
+    },
+    {
+      "Id": "UN",
+      "Name": {
+        "en": "UN",
+        "it": "UN"
+      }
+    },
+    {
+      "Id": "BIS",
+      "Name": {
+        "en": "BIS",
+        "it": "BIS"
+      }
+    },
+    {
+      "Id": "OECD",
+      "Name": {
+        "en": "OECD",
+        "it": "OECD"
+      }
+    },
+    {
+      "Id": "MA",
+      "Name": {
+        "en": "MA",
+        "it": "MA"
+      }
+    },
+    {
+      "Id": "EC1",
+      "Name": {
+        "en": "EC1",
+        "it": "EC1"
+      }
+    },
+    {
+      "Id": "RS1",
+      "Name": {
+        "en": "RS1",
+        "it": "RS1"
+      }
+    },
+    {
+      "Id": "MK1",
+      "Name": {
+        "en": "MK1",
+        "it": "MK1"
+      }
+    },
+    {
+      "Id": "UNSD",
+      "Name": {
+        "en": "UNSD",
+        "it": "UNSD"
+      }
+    },
+    {
+      "Id": "IAEG",
+      "Name": {
+        "en": "IAEG",
+        "it": "IAEG"
+      }
+    },
+    {
+      "Id": "UIS",
+      "Name": {
+        "en": "UIS",
+        "it": "UIS"
+      }
+    },
+    {
+      "Id": "TN1",
+      "Name": {
+        "en": "TN1",
+        "it": "TN1"
+      }
+    }
+  ],
+  "DataManagement": {
+    "CubeCodePrefix": "BL_",
+    "DataLanguages": [
+      {
+        "Code": "en",
+        "Flag": "gb"
+      },
+      {
+        "Code": "it",
+        "Flag": "it"
+      }
+    ],
+    "MaxDescriptionLength": 4000
+  },
+  "DefaultHeaderSubmitStructure": {
+    "ID": "ID_SUBMIT",
+    "test": false,
+    "prepared": "2018-11-08T15:07:14Z",
+    "sender": "ISTAT",
+    "receiver": "ISTAT"
+  },
+  "SuperUserCredentials": [
+    {
+      "username": "superadmin",
+      "password": "5a0R0QlUWY2hfW5NDUGcHxxo/g2GHHhLJi6gmBmh/UhC9aujb9wpGi6zuqaMGDgv",
+      "confirmPassword": null
+    }
+  ]
+}

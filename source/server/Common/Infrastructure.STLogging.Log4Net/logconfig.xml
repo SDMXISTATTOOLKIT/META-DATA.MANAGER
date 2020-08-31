@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net debug="true">
+
+  <appender name="DailyFile" type="log4net.Appender.RollingFileAppender">
+    <param name="Threshold" value="ALL" />
+    <param name="File" value=".\logs\DMApiLog2.txt" />
+    <param name="RollingStyle" value="Date" />
+    <param name="AppendToFile" value="true" />
+    <!-- Log giornaliero-->
+    <param name="DatePattern" value="'.'yyyyMMdd.'txt'" />
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd/MM/yyyy HH:mm:ss.fff} - %m - %-5p %n %X{details} %n %l %n" />
+    </layout>
+  </appender>
+
+  <!--<appender name="errorEmailAppender" class="org.apache.log4j.net.SMTPAppender">
+    <param name="SMTPHost" value="server.dominio" />
+    <param name="SMTPUsername" value="nome@dominio" />
+    <param name="SMTPPassword" value="" />
+    <param name="From" value="nome@dominio" />
+    <param name="To" value="aia_monitor@ivass.it" />
+    <param name="Subject" value="Errore " />
+    <param name="BufferSize" value="1" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%t] %d{HH:mm:ss,SSS} %-5p %l - %m%n" />
+    </layout>
+  </appender>-->
+
+  <logger name="BaseServicesLogger">
+    <!-- 
+    Livello minimo da loggare. Valori possibili: 
+      ALL
+      DEBUG
+      INFO
+      WARN
+      ERROR
+      FATAL
+      OFF 
+    -->
+    <level value="DEBUG" />
+    <!--<appender-ref ref="db" />-->
+    <appender-ref ref="DailyFile" />
+  </logger>
+  <root>
+    <level value="DEBUG" />
+  </root>
+
+</log4net>

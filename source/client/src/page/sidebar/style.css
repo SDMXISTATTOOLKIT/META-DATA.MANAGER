@@ -1,0 +1,140 @@
+.sidebar {
+    border-right: rgb(229, 229, 229) 1px solid !important;
+}
+
+.sidebar .sidebar__menu, .sidebar .sidebar__menu--collapsed {
+    background: #ffffff;
+}
+
+.sidebar__menu__item > ul .ant-menu-item-selected {
+    background: #bbbbbb !important;
+}
+
+.sidebar__menu__item > ul {
+    background: #f0f2f5 !important;
+    box-shadow: none !important;
+    border-left: rgb(229, 229, 229) 1px solid !important;
+    border-top: rgb(229, 229, 229) 1px solid !important;
+    border-bottom: rgb(229, 229, 229) 1px solid !important;
+}
+
+.sidebar__menu--collapsed {
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar__menu--collapsed .sidebar__menu__item__label {
+    display: none;
+}
+
+.sidebar__menu__sub__item {
+    height: 32px !important;
+    line-height: 32px !important;
+    margin-bottom: 4px !important;
+}
+
+.sidebar__menu__item__icon,
+.sidebar__menu__sub__item__icon {
+    height: 16px;
+    margin-right: 16px;
+}
+
+.sidebar__menu__item__icon {
+    margin-bottom: 3px;
+}
+
+.sidebar__menu--collapsed .sidebar__menu__item__icon {
+    margin-right: 0;
+}
+
+.sidebar__menu__item__icon__container,
+.sidebar__menu__sub__item__icon__container {
+    width: 36px;
+    text-align: center;
+    display: inline-block;
+}
+
+.sidebar__menu .ant-menu-item-divider,
+.sidebar__menu__item .ant-menu-item-divider {
+    height: 1px;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0;
+    line-height: 0;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar .ant-menu-submenu-title {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: rgb(242, 242, 242) 1px solid !important;
+    height: 48px !important;
+    line-height: 48px !important;
+}
+
+.sidebar .ant-menu-submenu-selected > .ant-menu-submenu-title {
+    border-left: 6px solid #e31c18 !important;
+}
+
+.sidebar .ant-menu:not(.sidebar__menu--collapsed) .ant-menu-submenu-selected > .ant-menu-submenu-title > div {
+    transform: translateX(-6px)
+}
+
+.sidebar .ant-menu .ant-menu-submenu-selected > .ant-menu-submenu-title > div {
+    transform: translateX(-3px)
+}
+
+.sidebar__menu__sub__item.ant-menu-item-selected {
+    border-left: 3px solid #e31c18 !important;
+}
+
+.sidebar__menu__sub__item.ant-menu-item-selected a {
+    transform: translateX(-3px)
+}
+
+.sidebar__menu__item:not(.ant-menu-submenu-active) span.sidebar__menu__item__label,
+.sidebar__menu__sub__item:not(.ant-menu-item-active) a {
+    color: #244c5a !important;
+}
+
+.sidebar__menu__item.ant-menu-submenu-active span.sidebar__menu__item__label,
+.sidebar__menu__sub__item.ant-menu-item-active a {
+    color: #e31c18 !important;
+}
+
+.sidebar__menu__item.ant-menu-submenu-active,
+.sidebar__menu__sub__item.ant-menu-item-active {
+    background: #d9d9d9 !important;
+}
+
+.sidebar__menu--collapsed .ant-menu-submenu-title {
+    cursor: default !important;
+}
+
+.sidebar__menu__item i.ant-menu-submenu-arrow:before,
+.sidebar__menu__item i.ant-menu-submenu-arrow:after {
+    background: #e31c18 !important;
+}
+
+.sidebar__menu__item.ant-menu-submenu-popup {
+    max-height: 100vh !important;
+    overflow: auto !important;
+}
+
+.sidebar__menu__item.ant-menu-submenu-popup:not(.ant-menu-submenu-hidden) {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1) !important;
+    border: rgb(229, 229, 229) 1px solid !important;
+}
+
+.sidebar__menu__item .ant-menu-sub.ant-menu-vertical {
+    box-shadow: none !important;
+    animation-duration: 0s !important;
+}
+
+.sidebar .ant-menu-inline .ant-menu-submenu-title {
+    font-size: 16px !important;
+}
+
+.sidebar > div > div {
+    border-bottom: rgb(242, 242, 242) 1px solid !important;
+}

@@ -1,0 +1,91 @@
+import QueryForm from "../../../../../components/query-form"
+import {connect} from 'react-redux';
+import {
+  addDataflowBuilderWizardQueryFilterFormBlock,
+  addDataflowBuilderWizardQueryFilterFormCondition,
+  changeDataflowBuilderWizardFilterForm,
+  changeDataflowBuilderWizardQueryCubeColumnsForm,
+  changeDataflowBuilderWizardQueryFilterMode,
+  changeDataflowBuilderWizardQueryTreeFilter,
+  changeDataflowBuilderWizardQueryTreeFilterColumnMode,
+  changeDataflowBuilderWizardQueryTreeFilterColumnValues,
+  deleteDataflowBuilderWizardQueryFilterFormBlock,
+  deleteDataflowBuilderWizardQueryFilterFormCondition,
+  hideDataflowBuilderWizardQueryCubeColumnsFormCubeTree,
+  hideDataflowBuilderWizardQueryFilterModal,
+  hideDataflowBuilderWizardQueryPreviewRowsModal,
+  readDataflowBuilderWizardQueryCubeColumnsFormCategorisedCubes,
+  readDataflowBuilderWizardQueryCubeColumnsFormCube,
+  readDataflowBuilderWizardQueryCubeColumnsFormCubeFirstRow,
+  readDataflowBuilderWizardQueryCubeColumnsFormDdbDataflow,
+  readDataflowBuilderWizardQueryFilterFormColumnValues,
+  readDataflowBuilderWizardQueryPreviewRows,
+  readDataflowBuilderWizardQueryTreeFilterColumnCodelistCount,
+  readDataflowBuilderWizardQueryTreeFilterColumnCodelistTree,
+  readDataflowBuilderWizardQueryTreeFilterColumnFilteredValues,
+  resetDataflowBuilderWizardQueryFilter,
+  setDataflowBuilderWizardQueryCubeColumnsFormCube,
+  showDataflowBuilderWizardQueryCubeColumnsFormCubeTree,
+  showDataflowBuilderWizardQueryFilterModal,
+  showDataflowBuilderWizardQueryPreviewRowsModal,
+  submitDataflowBuilderWizardQueryFilterModal,
+  unsetDataflowBuilderWizardQueryCubeColumnsFormCube
+} from "./actions";
+
+const mapStateToProps = (state) => ({
+  appLanguage: state.app.language,
+  dataLanguages: state.config.dataManagement.dataLanguages,
+  categorisedCubes: state.scenes.dataManager.dataflowBuilder.components.wizard.components.query.components.columnsForm.categorisedCubes,
+  ddbDataflowId: state.scenes.dataManager.dataflowBuilder.shared.ddbDataflowId,
+  ddbDataflow: state.scenes.dataManager.dataflowBuilder.shared.ddbDataflow,
+  isCubeTreeVisible: state.scenes.dataManager.dataflowBuilder.components.wizard.components.query.components.columnsForm.isCubeTreeVisible,
+  cubeId: state.scenes.dataManager.dataflowBuilder.shared.cubeId,
+  cube: state.scenes.dataManager.dataflowBuilder.shared.cube,
+  cubeFirstRow: state.scenes.dataManager.dataflowBuilder.shared.cubeFirstRow,
+  isRowsModalVisible: state.scenes.dataManager.dataflowBuilder.components.wizard.components.query.components.preview.isRowsModalVisible,
+  filter: state.scenes.dataManager.dataflowBuilder.shared.filter,
+  filterTemp: state.scenes.dataManager.dataflowBuilder.shared.filterTemp,
+  treeFilter: state.scenes.dataManager.dataflowBuilder.shared.treeFilter,
+  treeFilterTemp: state.scenes.dataManager.dataflowBuilder.shared.treeFilterTemp,
+  filterMode: state.scenes.dataManager.dataflowBuilder.shared.filterMode,
+  rows: state.scenes.dataManager.dataflowBuilder.components.wizard.components.query.components.preview.rows,
+  isFilterModalVisible: state.scenes.dataManager.dataflowBuilder.shared.isFilterModalVisible,
+  dsd: state.scenes.dataManager.dataflowBuilder.shared.dsdForLayoutAnnotations,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchDdbDataflow: ddbDataflowId => dispatch(readDataflowBuilderWizardQueryCubeColumnsFormDdbDataflow(ddbDataflowId)),
+  fetchCube: cubeId => dispatch(readDataflowBuilderWizardQueryCubeColumnsFormCube(cubeId)),
+  fetchCategorisedCubes: () => dispatch(readDataflowBuilderWizardQueryCubeColumnsFormCategorisedCubes()),
+  fetchCubeFirstRow: ({cubeId, cubeColumns}) => dispatch(readDataflowBuilderWizardQueryCubeColumnsFormCubeFirstRow(cubeId, cubeColumns)),
+  fetchColumnValues: (tableName, columnName, columnCodelistCode) => dispatch(readDataflowBuilderWizardQueryFilterFormColumnValues(tableName, columnName, columnCodelistCode)),
+  onCubeTreeShow: () => dispatch(showDataflowBuilderWizardQueryCubeColumnsFormCubeTree()),
+  onCubeTreeHide: () => dispatch(hideDataflowBuilderWizardQueryCubeColumnsFormCubeTree()),
+  onCubeSet: cubeId => dispatch(setDataflowBuilderWizardQueryCubeColumnsFormCube(cubeId)),
+  onCubeUnset: () => dispatch(unsetDataflowBuilderWizardQueryCubeColumnsFormCube()),
+  onColumnsChange: fields => dispatch(changeDataflowBuilderWizardQueryCubeColumnsForm(fields)),
+  onBlockAdd: () => dispatch(addDataflowBuilderWizardQueryFilterFormBlock()),
+  onBlockDelete: blockIndex => dispatch(deleteDataflowBuilderWizardQueryFilterFormBlock(blockIndex)),
+  onConditionAdd: blockIndex => dispatch(addDataflowBuilderWizardQueryFilterFormCondition(blockIndex)),
+  onConditionDelete: (blockIndex, conditionIndex) => dispatch(deleteDataflowBuilderWizardQueryFilterFormCondition(blockIndex, conditionIndex)),
+  onFilterChange: fields => dispatch(changeDataflowBuilderWizardFilterForm(fields)),
+  fetchRows: (cubeId, cubeColumns, filterStr, pageNum, pageSize, sortCols, sortByDesc) =>
+    dispatch(readDataflowBuilderWizardQueryPreviewRows(cubeId, cubeColumns, filterStr, pageNum, pageSize, sortCols, sortByDesc)),
+  onRowsModalShow: () => dispatch(showDataflowBuilderWizardQueryPreviewRowsModal()),
+  onRowsModalHide: () => dispatch(hideDataflowBuilderWizardQueryPreviewRowsModal()),
+  fetchColumnCodelistCount: ({codelistTriplet, language}) => dispatch(readDataflowBuilderWizardQueryTreeFilterColumnCodelistCount(codelistTriplet, language)),
+  fetchColumnCodelistTree: ({codelistTriplet, language, itemsOrderAnnotationType}) => dispatch(readDataflowBuilderWizardQueryTreeFilterColumnCodelistTree(codelistTriplet, language, itemsOrderAnnotationType)),
+  onFilterReset: () => dispatch(resetDataflowBuilderWizardQueryFilter()),
+  onFilterModeChange: filterMode => dispatch(changeDataflowBuilderWizardQueryFilterMode(filterMode)),
+  onFilterModalShow: () => dispatch(showDataflowBuilderWizardQueryFilterModal()),
+  onFilterModalHide: () => dispatch(hideDataflowBuilderWizardQueryFilterModal()),
+  onFilterModalSubmit: treeFilter => dispatch(submitDataflowBuilderWizardQueryFilterModal(treeFilter)),
+  onTreeFilterChange: treeFilter => dispatch(changeDataflowBuilderWizardQueryTreeFilter(treeFilter)),
+  fetchColumnFilteredValues: (cubeId, colNames, filter) => dispatch(readDataflowBuilderWizardQueryTreeFilterColumnFilteredValues(cubeId, colNames, filter)),
+  onColumnModeChange: (colName, mode) => dispatch(changeDataflowBuilderWizardQueryTreeFilterColumnMode(colName, mode)),
+  onColumnValuesChange: (colName, values) => dispatch(changeDataflowBuilderWizardQueryTreeFilterColumnValues(colName, values))
+});
+
+const DataflowBuilderWizardQuery = connect(mapStateToProps, mapDispatchToProps)(QueryForm);
+
+export default DataflowBuilderWizardQuery;

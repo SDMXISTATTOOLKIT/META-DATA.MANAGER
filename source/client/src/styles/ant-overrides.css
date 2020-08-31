@@ -1,0 +1,154 @@
+body, .ant-calendar-picker-container {
+    font-family: "Fira Sans Condensed", sans-serif !important;
+}
+
+.ant-form-item:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+.ant-tree-node-selected {
+    font-weight: bold !important;
+}
+
+.ant-tree-title {
+    padding-right: 8px !important;
+}
+
+.ant-steps-item-title,
+.ant-steps-item-description {
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-steps-icon > button {
+    display: block !important;
+}
+
+.ant-table-placeholder {
+    height: 100% !important;
+}
+
+.ant-empty {
+    height: 100% !important;
+}
+
+.ant-empty-image {
+    height: calc(50% - 22px) !important;
+}
+
+.ant-empty-description {
+    color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.ant-steps-item-description {
+    margin-top: 8px !important;
+}
+
+.ant-input-disabled, .ant-select-disabled, .ant-select-disabled .ant-select-selection__choice {
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.ant-select-disabled .ant-select-selection__choice {
+    background: #fafafa !important;
+}
+
+.ant-alert {
+    margin-bottom: 16px !important;
+}
+
+.ant-table-body {
+    overflow-x: auto !important;
+}
+
+.ant-table-row {
+    white-space: nowrap !important;
+}
+
+.ant-table-column-has-filters > span { /* TODO: migliorare */
+    white-space: nowrap !important;
+}
+
+.ant-table-pagination { /* TODO: migliorare */
+    margin-bottom: 0 !important;
+}
+
+.ant-pagination-options-size-changer {
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-right: 0 !important;
+}
+
+.ant-table-row:nth-child(even) { /* TODO: migliorare */
+    background: #f5f5f5 !important;
+}
+
+.ant-table-row-selected, .ant-table-row-selected td {
+    background: none !important;
+}
+
+.ant-table-filter-dropdown-link:not(:first-child) { /* TODO: migliorare */
+    padding-left: 8px;
+}
+
+.ant-table-filter-dropdown-link.clear {
+    float: right;
+}
+
+.ant-tooltip-arrow {
+    border-right-color: #C0C0C0 !important;
+}
+
+.ant-tooltip-inner {
+    background-color: #C0C0C0 !important;
+}
+
+.ant-form-item-label label {
+    white-space: normal !important;
+    margin-right: 8px !important;
+    display: inline-block !important;
+    text-align: right !important;
+    line-height: 15px !important;
+    vertical-align: middle !important;
+    padding-bottom: 3px !important;
+}
+
+.ant-form-item-label label:after {
+    margin-right: 0 !important;
+}
+
+.ant-form-item-label label.ant-form-item-required:before {
+    position: absolute !important;
+    left: -7px !important;
+}
+
+.ant-btn-primary.ant-btn-circle.ant-btn-sm {
+    stroke-width: 42;
+}
+
+.infinite-scroll-table .ant-btn-primary.ant-btn-circle.ant-btn-sm {
+    padding-top: 2px;
+}
+
+.custom-tree__tree-container .ant-btn-primary.ant-btn-circle.ant-btn-sm {
+    padding-top: 3px;
+}
+
+.ant-btn-primary.ant-btn-circle.ant-btn-sm[disabled] {
+    stroke: #cccccc;
+}
+
+.ant-btn-primary.ant-btn-circle.ant-btn-sm:not([disabled]) {
+    stroke: white;
+}
+
+.ant-btn-primary.ant-btn-circle.ant-btn-sm.button-color-white {
+    stroke: #888888;
+}
+
+.ant-menu-inline-collapsed > .ant-menu-submenu > div.ant-menu-submenu-title {
+    padding: 0 !important;
+}
+
+.ant-form-item-children-icon {
+    display: none;
+}

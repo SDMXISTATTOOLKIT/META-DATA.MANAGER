@@ -1,0 +1,158 @@
+/* GLOBAL STYLE */
+/* -------------------------------------------------------------------------- */
+
+html, body {
+    width: 100%; height: 100%; margin: 0; padding: 0;
+    overflow: auto;
+}
+
+body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
+
+a {
+    outline: none; text-decoration: none; color: #2E6E9E;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FIXES FOR IE 7 */
+/* -------------------------------------------------------------------------- */
+
+p { margin: 1em 0; }
+
+/* GENERIC STYLES */
+/* -------------------------------------------------------------------------- */
+
+.help-message {
+    margin: 1em 0; font-size: 11px; text-align: justify;
+}
+
+.error-message {
+    color: #CC0000; text-align: justify;
+}
+
+.localhost {
+	background-color: red; font-weight: bold;
+}
+
+.private {
+	background-color: yellow; font-weight: bold;
+}
+
+
+.external {
+	background-color:  green; font-weight: bold;
+}
+
+.main-label {
+    font-weight: bold; margin: 0.5em 0;
+}
+
+div#count
+{
+	font-size: 11px;text-align:right;
+}
+div#count-label {
+    display:inline;
+}
+div#count-number {
+    font-weight: bold; display:inline;
+}
+
+.page-links {
+    text-align: right; white-space: nowrap; overflow: hidden;
+}
+
+.page-links-label {
+    font-weight: bold;
+}
+
+.page-links a {
+    font-weight: bold; color: #2E6E9E;
+}
+
+.op-links {
+    text-align: right; white-space: nowrap; overflow: hidden;
+    font-size: 11px; font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.df-links {
+    text-align: left; white-space: nowrap; overflow: hidden;
+    font-size: 11px; font-weight: bold;
+    margin-bottom: 5px;
+}
+
+img.tooltip { cursor: pointer; }
+
+/* MAIN DECORATOR */
+/* -------------------------------------------------------------------------- */
+
+div#page-content {
+    width: 1000px; height: 100%; margin: 0 auto;
+}
+
+div#page-header {
+    height: 89px; background-color: #FFFF00;
+}
+
+div#page-header-left {
+    float: left; width: 358px; height: 87px;
+    background: #3399CC url("../images/logo.png") no-repeat scroll left top;
+}
+
+div#page-header-right {
+    float:right; width: 642px; height: 87px;
+    background: #3399CC url("../images/bgTopRight.png") no-repeat scroll right top;
+}
+
+div#page-toolbar {
+    height: 20px; line-height: 20px; background-color: #043F81;
+}
+
+div#page-toolbar-left {
+    float: left;
+}
+
+div#page-toolbar-right {
+    float: right;
+}
+
+div#page-body {
+}
+
+div#page-footer {    border:1px solid #3399CC; border-top: none; padding: 2px 1px; font-size: 10px;     background-color: #043F81; color: white; height:20px; } 
+
+/*div#page-footer {
+    overflow: hidden; border:1px solid #3399CC; border-top: none; padding: 2px 1px; font-size: 10px;
+    background-color: #043F81; color: white;
+}*/
+
+div#page-footer-copyright {
+    float: left;
+}
+
+div#page-footer-version {
+    float: right;
+}
+
+
+/* PAGE BODY */
+/* -------------------------------------------------------------------------- */
+
+div#pb-workarea-pages {
+    height: 100%;
+}
+
+table.results-table {
+    width: 100%; border: 1px solid #3399CC; border-collapse: collapse;
+}
+
+table.results-table td {
+    border: 1px solid #3399CC;
+}
+
+table.results-table tbody th {
+	text-align: justify; border: 1px solid #3399CC;
+}

@@ -1,0 +1,50 @@
+.file-mapping__wizard__cube-selector .ant-tree {
+    height: 406px;
+}
+
+.file-mapping__wizard__cube-components .ant-table-content {
+    overflow: auto;
+    height: 386px;
+}
+
+.file-mapping__wizard__csv-header .ant-table-content {
+    height: 338px;
+    overflow: auto;
+}
+
+.file-mapping__wizard__component-mapper .ant-table-content {
+    height: 385px;
+    overflow: auto;
+}
+
+.file-mapping__wizard__component-mapper .ant-card-body {
+    height: 467px !important;
+}
+
+.file-mapping__wizard .ant-steps-item-description {
+    max-width: 200px !important;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+}
+
+.file-mapping__wizard__components-modal .ant-table-content {
+    max-height: 320px;
+    overflow: auto;
+}
+
+.file-mapping__wizard__cube-components .ant-table-selection-column,
+.file-mapping__wizard__component-mapper .ant-table-selection-column,
+.file-mapping__wizard__csv-header .ant-table-selection-column,
+.td-icon {
+    min-width: initial !important;
+    width: 16px !important;
+}
+
+.file-mapping__wizard__csv-header .ant-table-selection-column {
+    display: none !important;
+}
+
+.file-mapping__wizard__cube-components .ant-table-selection-column {
+    display: none !important;
+}

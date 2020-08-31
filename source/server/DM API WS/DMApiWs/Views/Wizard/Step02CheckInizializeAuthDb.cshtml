@@ -1,0 +1,31 @@
+﻿@model DM_API_WS.Wizard.Model.ConfigData
+<h1>DM API Wizard</h1>
+
+@using (Html.BeginForm("InizializeAuthDb", "Wizard", FormMethod.Post))
+{
+    //this is for create form tag
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <table>
+        <tr>
+            <td>@Model.StepMessage</td>
+            <td>
+                <input type="submit" value="Inizialize" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+<br />
+<br />
+<a href="~/Wizard/Start">Back to Login</a>
+<br />
+<a href="~/Wizard/Home">Back to Home</a>

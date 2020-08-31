@@ -1,0 +1,5 @@
+.delayed-zoomable-textarea__input-group .ant-select-selection {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,81 @@
+﻿{
+  "help": "§WS_URL§",
+  "success": "true",
+  "result": {
+    "license_title": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_NAME§",
+    "id": "§DCAT_AP_IT_DATASET_IDENTIFIER-DCAT_AP_IT_DATASET_CREATOR_AGENT_IDENTIFIER-DCAT_AP_IT_DATASET_VERSIONINFO§",
+    "private": "false",
+    "metadata_created": "§DCAT_AP_IT_DATASET_ISSUED§",
+    "metadata_modified": "§DCAT_AP_IT_DATASET_MODIFIED§",
+    "author": "§DCAT_AP_IT_DATASET_CREATOR_AGENT_NAME§",
+    "state": "active",
+    "resources": [
+      {
+        "id": "§DCAT_AP_IT_DISTRIBUTION_TITLE[i]§",
+        "package_id": "§DCAT_AP_IT_DATASET_IDENTIFIER§",
+        "size": "§DCAT_AP_IT_DISTRIBUTION_SIZE[i]§",
+        "last_modified": "§DCAT_AP_IT_DISTRIBUTION_LAST_MODIFIED[i]§",
+        "format": "§DCAT_AP_IT_DISTRIBUTION_FORMAT[i]§",
+        "mimetype": "§DCAT_AP_IT_DISTRIBUTION_FORMAT[i]§",
+        "name": "§DCAT_AP_IT_DISTRIBUTION_TITLE§[i]",
+        "created": "§DCAT_AP_IT_DISTRIBUTION_LAST_MODIFIED[i]§",
+        "url": "§DCAT_AP_IT_DISTRIBUTION_DOWNLOAD_URL[i]§",
+        "position": "§[i]§"
+      }
+    ],
+    "tags": [
+      {
+        "display_name": "§DCAT_AP_IT_DATASET_KEYWORD[i]§",
+        "name": "§DCAT_AP_IT_DATASET_KEYWORD[i]§",
+        "state": "active",
+        "id": "§DCAT_AP_IT_DATASET_KEYWORD[i]§"
+      }
+    ],
+    "groups": [
+      {
+        "id": "§DCAT_AP_IT_DATASET_THEME[i]§",
+        "package_count": "§[i]§",
+        "isOrganization": "false"
+      }
+    ],
+    "organization": {
+      "is_organization": "true",
+      "id": "§DCAT_AP_IT_DATASET_CREATOR_AGENT_IDENTIFIER§",
+      "name": "§DCAT_AP_IT_DATASET_CREATOR_AGENT_NAME§"
+    },
+    "name": "§DCAT_AP_IT_DATASET_TITLE§",
+    "isopen": "true",
+    "url": "§DCAT_AP_IT_DATASET_LANDING_PAGE§",
+    "ckan_url": "§DCAT_AP_IT_DATASET_LANDING_PAGE§",
+    "license_url": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_TYPE§",
+    "license": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_NAME§",
+    "notes_rendered": "§DCAT_AP_IT_DATASET_DESCRIPTION§",
+    "notes": "§DCAT_AP_IT_DATASET_DESCRIPTION§",
+    "title": "§DCAT_AP_IT_DATASET_TITLE§",
+    "num_tags": "§NUM_TAGS§",
+    "num_resources": "§NUM_RESOURCES§",
+    "extras": [
+      {
+        "value": "§DCAT_AP_IT_DATASET_IDENTIFIER§",
+        "key": "identifier"
+      },
+      {
+        "value": "§DCAT_AP_IT_DATASET_ISSUED§",
+        "key": "issued"
+      },
+      {
+        "value": "§DCAT_AP_IT_DATASET_MODIFIED§",
+        "key": "modified"
+      },
+      {
+        "value": "§DCAT_AP_IT_STANDARD_IDENTIFIER§",
+        "key": "DCAT_AP_IT_STANDARD_IDENTIFIER"
+      },
+      {
+        "value": "§DCAT_AP_IT_DATASET_PUBLISHER_AGENT_NAME§",
+        "key": "DCAT_AP_IT_DATASET_PUBLISHER_AGENT_NAME"
+      }
+    ],
+    "language": "§LANGUAGE§"
+  }
+}

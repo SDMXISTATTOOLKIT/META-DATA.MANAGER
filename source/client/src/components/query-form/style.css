@@ -1,0 +1,8 @@
+.query__cube-columns-form__tree .ant-card-body {
+    max-height: 513px;
+    overflow: auto;
+}
+
+.query__tree-filter .custom-tree__tree-container {
+    height: 392px
+}

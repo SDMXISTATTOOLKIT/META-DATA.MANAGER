@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DDB_NEW" targetNamespace="http://tempuri.org/DDB_NEW.xsd" xmlns:mstns="http://tempuri.org/DDB_NEW.xsd" xmlns="http://tempuri.org/DDB_NEW.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsPropertyName="DDB_NEWConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DDB_NEWConnectionString ()" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DDB_NEW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DDB_NEW" msprop:Generator_UserDSName="DDB_NEW">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CatAtt" msprop:Generator_TableClassName="CatAttDataTable" msprop:Generator_TableVarName="tableCatAtt" msprop:Generator_TablePropName="CatAtt" msprop:Generator_RowDeletingName="CatAttRowDeleting" msprop:Generator_RowChangingName="CatAttRowChanging" msprop:Generator_RowEvHandlerName="CatAttRowChangeEventHandler" msprop:Generator_RowDeletedName="CatAttRowDeleted" msprop:Generator_UserTableName="CatAtt" msprop:Generator_RowChangedName="CatAttRowChanged" msprop:Generator_RowEvArgName="CatAttRowChangeEvent" msprop:Generator_RowClassName="CatAttRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDAtt" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDAtt" msprop:Generator_ColumnPropNameInRow="IDAtt" msprop:Generator_ColumnPropNameInTable="IDAttColumn" msprop:Generator_UserColumnName="IDAtt" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodelistCode" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="CodelistCode" msprop:Generator_ColumnVarNameInTable="columnCodelistCode" msprop:Generator_ColumnPropNameInTable="CodelistCodeColumn" msprop:Generator_UserColumnName="CodelistCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MemberTable" msprop:Generator_ColumnVarNameInTable="columnMemberTable" msprop:Generator_ColumnPropNameInRow="MemberTable" msprop:Generator_ColumnPropNameInTable="MemberTableColumn" msprop:Generator_UserColumnName="MemberTable">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColName" msprop:Generator_ColumnVarNameInTable="columnColName" msprop:Generator_ColumnPropNameInRow="ColName" msprop:Generator_ColumnPropNameInTable="ColNameColumn" msprop:Generator_UserColumnName="ColName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsMandatory" msprop:Generator_ColumnVarNameInTable="columnIsMandatory" msprop:Generator_ColumnPropNameInRow="IsMandatory" msprop:Generator_ColumnPropNameInTable="IsMandatoryColumn" msprop:Generator_UserColumnName="IsMandatory" type="xs:boolean" />
+              <xs:element name="IsTid" msprop:Generator_ColumnVarNameInTable="columnIsTid" msprop:Generator_ColumnPropNameInRow="IsTid" msprop:Generator_ColumnPropNameInTable="IsTidColumn" msprop:Generator_UserColumnName="IsTid" type="xs:boolean" />
+              <xs:element name="AttachmentLevel" msprop:Generator_ColumnVarNameInTable="columnAttachmentLevel" msprop:Generator_ColumnPropNameInRow="AttachmentLevel" msprop:Generator_ColumnPropNameInTable="AttachmentLevelColumn" msprop:Generator_UserColumnName="AttachmentLevel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DB_VERSION" msprop:Generator_TableClassName="DB_VERSIONDataTable" msprop:Generator_TableVarName="tableDB_VERSION" msprop:Generator_TablePropName="DB_VERSION" msprop:Generator_RowDeletingName="DB_VERSIONRowDeleting" msprop:Generator_RowChangingName="DB_VERSIONRowChanging" msprop:Generator_RowEvHandlerName="DB_VERSIONRowChangeEventHandler" msprop:Generator_RowDeletedName="DB_VERSIONRowDeleted" msprop:Generator_UserTableName="DB_VERSION" msprop:Generator_RowChangedName="DB_VERSIONRowChanged" msprop:Generator_RowEvArgName="DB_VERSIONRowChangeEvent" msprop:Generator_RowClassName="DB_VERSIONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAJOR" msprop:Generator_ColumnVarNameInTable="columnMAJOR" msprop:Generator_ColumnPropNameInRow="MAJOR" msprop:Generator_ColumnPropNameInTable="MAJORColumn" msprop:Generator_UserColumnName="MAJOR" type="xs:long" />
+              <xs:element name="MINOR" msprop:Generator_ColumnVarNameInTable="columnMINOR" msprop:Generator_ColumnPropNameInRow="MINOR" msprop:Generator_ColumnPropNameInTable="MINORColumn" msprop:Generator_UserColumnName="MINOR" type="xs:long" />
+              <xs:element name="UPGRADE_STAMP" msprop:Generator_ColumnVarNameInTable="columnUPGRADE_STAMP" msprop:Generator_ColumnPropNameInRow="UPGRADE_STAMP" msprop:Generator_ColumnPropNameInTable="UPGRADE_STAMPColumn" msprop:Generator_UserColumnName="UPGRADE_STAMP" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatAttDim" msprop:Generator_TableClassName="CatAttDimDataTable" msprop:Generator_TableVarName="tableCatAttDim" msprop:Generator_TablePropName="CatAttDim" msprop:Generator_RowDeletingName="CatAttDimRowDeleting" msprop:Generator_RowChangingName="CatAttDimRowChanging" msprop:Generator_RowEvHandlerName="CatAttDimRowChangeEventHandler" msprop:Generator_RowDeletedName="CatAttDimRowDeleted" msprop:Generator_UserTableName="CatAttDim" msprop:Generator_RowChangedName="CatAttDimRowChanged" msprop:Generator_RowEvArgName="CatAttDimRowChangeEvent" msprop:Generator_RowClassName="CatAttDimRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDAtt" msprop:Generator_ColumnVarNameInTable="columnIDAtt" msprop:Generator_ColumnPropNameInRow="IDAtt" msprop:Generator_ColumnPropNameInTable="IDAttColumn" msprop:Generator_UserColumnName="IDAtt" type="xs:int" />
+              <xs:element name="IDDim" msprop:Generator_ColumnVarNameInTable="columnIDDim" msprop:Generator_ColumnPropNameInRow="IDDim" msprop:Generator_ColumnPropNameInTable="IDDimColumn" msprop:Generator_UserColumnName="IDDim" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatCube" msprop:Generator_TableClassName="CatCubeDataTable" msprop:Generator_TableVarName="tableCatCube" msprop:Generator_TablePropName="CatCube" msprop:Generator_RowDeletingName="CatCubeRowDeleting" msprop:Generator_RowChangingName="CatCubeRowChanging" msprop:Generator_RowEvHandlerName="CatCubeRowChangeEventHandler" msprop:Generator_RowDeletedName="CatCubeRowDeleted" msprop:Generator_UserTableName="CatCube" msprop:Generator_RowChangedName="CatCubeRowChanged" msprop:Generator_RowEvArgName="CatCubeRowChangeEvent" msprop:Generator_RowClassName="CatCubeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDCube" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDCat" msprop:Generator_ColumnVarNameInTable="columnIDCat" msprop:Generator_ColumnPropNameInRow="IDCat" msprop:Generator_ColumnPropNameInTable="IDCatColumn" msprop:Generator_UserColumnName="IDCat" type="xs:int" minOccurs="0" />
+              <xs:element name="DSDCode" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="DSDCode" msprop:Generator_ColumnVarNameInTable="columnDSDCode" msprop:Generator_ColumnPropNameInTable="DSDCodeColumn" msprop:Generator_UserColumnName="DSDCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastUpdated" msprop:Generator_ColumnVarNameInTable="columnLastUpdated" msprop:Generator_ColumnPropNameInRow="LastUpdated" msprop:Generator_ColumnPropNameInTable="LastUpdatedColumn" msprop:Generator_UserColumnName="LastUpdated" type="xs:dateTime" />
+              <xs:element name="HasEmbargoedData" msprop:Generator_ColumnVarNameInTable="columnHasEmbargoedData" msprop:Generator_ColumnPropNameInRow="HasEmbargoedData" msprop:Generator_ColumnPropNameInTable="HasEmbargoedDataColumn" msprop:Generator_UserColumnName="HasEmbargoedData" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatDataFlow" msprop:Generator_TableClassName="CatDataFlowDataTable" msprop:Generator_TableVarName="tableCatDataFlow" msprop:Generator_TablePropName="CatDataFlow" msprop:Generator_RowDeletingName="CatDataFlowRowDeleting" msprop:Generator_RowChangingName="CatDataFlowRowChanging" msprop:Generator_RowEvHandlerName="CatDataFlowRowChangeEventHandler" msprop:Generator_RowDeletedName="CatDataFlowRowDeleted" msprop:Generator_UserTableName="CatDataFlow" msprop:Generator_RowChangedName="CatDataFlowRowChanged" msprop:Generator_RowEvArgName="CatDataFlowRowChangeEvent" msprop:Generator_RowClassName="CatDataFlowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDDataFlow" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDDataFlow" msprop:Generator_ColumnPropNameInRow="IDDataFlow" msprop:Generator_ColumnPropNameInTable="IDDataFlowColumn" msprop:Generator_UserColumnName="IDDataFlow" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Agency" msprop:Generator_ColumnVarNameInTable="columnAgency" msprop:Generator_ColumnPropNameInRow="Agency" msprop:Generator_ColumnPropNameInTable="AgencyColumn" msprop:Generator_UserColumnName="Agency">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" msprop:Generator_UserColumnName="Version" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Filter" msprop:Generator_ColumnPropNameInRow="Filter" msprop:Generator_ColumnVarNameInTable="columnFilter" msprop:Generator_ColumnPropNameInTable="FilterColumn" msprop:Generator_UserColumnName="Filter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastUpdated" msprop:Generator_ColumnVarNameInTable="columnLastUpdated" msprop:Generator_ColumnPropNameInRow="LastUpdated" msprop:Generator_ColumnPropNameInTable="LastUpdatedColumn" msprop:Generator_UserColumnName="LastUpdated" type="xs:dateTime" />
+              <xs:element name="HasTranscoding" msprop:Generator_ColumnVarNameInTable="columnHasTranscoding" msprop:Generator_ColumnPropNameInRow="HasTranscoding" msprop:Generator_ColumnPropNameInTable="HasTranscodingColumn" msprop:Generator_UserColumnName="HasTranscoding" type="xs:boolean" />
+              <xs:element name="HasContentConstraints" msprop:Generator_ColumnVarNameInTable="columnHasContentConstraints" msprop:Generator_ColumnPropNameInRow="HasContentConstraints" msprop:Generator_ColumnPropNameInTable="HasContentConstraintsColumn" msprop:Generator_UserColumnName="HasContentConstraints" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatDataFlowColumns" msprop:Generator_TableClassName="CatDataFlowColumnsDataTable" msprop:Generator_TableVarName="tableCatDataFlowColumns" msprop:Generator_TablePropName="CatDataFlowColumns" msprop:Generator_RowDeletingName="CatDataFlowColumnsRowDeleting" msprop:Generator_RowChangingName="CatDataFlowColumnsRowChanging" msprop:Generator_RowEvHandlerName="CatDataFlowColumnsRowChangeEventHandler" msprop:Generator_RowDeletedName="CatDataFlowColumnsRowDeleted" msprop:Generator_UserTableName="CatDataFlowColumns" msprop:Generator_RowChangedName="CatDataFlowColumnsRowChanged" msprop:Generator_RowEvArgName="CatDataFlowColumnsRowChangeEvent" msprop:Generator_RowClassName="CatDataFlowColumnsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDDataFlow" msprop:Generator_ColumnVarNameInTable="columnIDDataFlow" msprop:Generator_ColumnPropNameInRow="IDDataFlow" msprop:Generator_ColumnPropNameInTable="IDDataFlowColumn" msprop:Generator_UserColumnName="IDDataFlow" type="xs:int" />
+              <xs:element name="ColumnName" msprop:Generator_ColumnVarNameInTable="columnColumnName" msprop:Generator_ColumnPropNameInRow="ColumnName" msprop:Generator_ColumnPropNameInTable="ColumnNameColumn" msprop:Generator_UserColumnName="ColumnName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColumnOrder" msprop:Generator_ColumnVarNameInTable="columnColumnOrder" msprop:Generator_ColumnPropNameInRow="ColumnOrder" msprop:Generator_ColumnPropNameInTable="ColumnOrderColumn" msprop:Generator_UserColumnName="ColumnOrder" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatDim" msprop:Generator_TableClassName="CatDimDataTable" msprop:Generator_TableVarName="tableCatDim" msprop:Generator_TablePropName="CatDim" msprop:Generator_RowDeletingName="CatDimRowDeleting" msprop:Generator_RowChangingName="CatDimRowChanging" msprop:Generator_RowEvHandlerName="CatDimRowChangeEventHandler" msprop:Generator_RowDeletedName="CatDimRowDeleted" msprop:Generator_UserTableName="CatDim" msprop:Generator_RowChangedName="CatDimRowChanged" msprop:Generator_RowEvArgName="CatDimRowChangeEvent" msprop:Generator_RowClassName="CatDimRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDDim" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDDim" msprop:Generator_ColumnPropNameInRow="IDDim" msprop:Generator_ColumnPropNameInTable="IDDimColumn" msprop:Generator_UserColumnName="IDDim" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodelistCode" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="CodelistCode" msprop:Generator_ColumnVarNameInTable="columnCodelistCode" msprop:Generator_ColumnPropNameInTable="CodelistCodeColumn" msprop:Generator_UserColumnName="CodelistCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MemberTable" msprop:Generator_ColumnVarNameInTable="columnMemberTable" msprop:Generator_ColumnPropNameInRow="MemberTable" msprop:Generator_ColumnPropNameInTable="MemberTableColumn" msprop:Generator_UserColumnName="MemberTable">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColName" msprop:Generator_ColumnVarNameInTable="columnColName" msprop:Generator_ColumnPropNameInRow="ColName" msprop:Generator_ColumnPropNameInTable="ColNameColumn" msprop:Generator_UserColumnName="ColName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsTimeSeriesDim" msprop:Generator_ColumnVarNameInTable="columnIsTimeSeriesDim" msprop:Generator_ColumnPropNameInRow="IsTimeSeriesDim" msprop:Generator_ColumnPropNameInTable="IsTimeSeriesDimColumn" msprop:Generator_UserColumnName="IsTimeSeriesDim" type="xs:boolean" />
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatMeas" msprop:Generator_TableClassName="CatMeasDataTable" msprop:Generator_TableVarName="tableCatMeas" msprop:Generator_TablePropName="CatMeas" msprop:Generator_RowDeletingName="CatMeasRowDeleting" msprop:Generator_RowChangingName="CatMeasRowChanging" msprop:Generator_RowEvHandlerName="CatMeasRowChangeEventHandler" msprop:Generator_RowDeletedName="CatMeasRowDeleted" msprop:Generator_UserTableName="CatMeas" msprop:Generator_RowChangedName="CatMeasRowChanged" msprop:Generator_RowEvArgName="CatMeasRowChangeEvent" msprop:Generator_RowClassName="CatMeasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMeas" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDMeas" msprop:Generator_ColumnPropNameInRow="IDMeas" msprop:Generator_ColumnPropNameInTable="IDMeasColumn" msprop:Generator_UserColumnName="IDMeas" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ColName" msprop:Generator_ColumnVarNameInTable="columnColName" msprop:Generator_ColumnPropNameInRow="ColName" msprop:Generator_ColumnPropNameInTable="ColNameColumn" msprop:Generator_UserColumnName="ColName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsAlphanumeric" msprop:Generator_ColumnVarNameInTable="columnIsAlphanumeric" msprop:Generator_ColumnPropNameInRow="IsAlphanumeric" msprop:Generator_ColumnPropNameInTable="IsAlphanumericColumn" msprop:Generator_UserColumnName="IsAlphanumeric" type="xs:boolean" />
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComponentMapping" msprop:Generator_TableClassName="ComponentMappingDataTable" msprop:Generator_TableVarName="tableComponentMapping" msprop:Generator_TablePropName="ComponentMapping" msprop:Generator_RowDeletingName="ComponentMappingRowDeleting" msprop:Generator_RowChangingName="ComponentMappingRowChanging" msprop:Generator_RowEvHandlerName="ComponentMappingRowChangeEventHandler" msprop:Generator_RowDeletedName="ComponentMappingRowDeleted" msprop:Generator_UserTableName="ComponentMapping" msprop:Generator_RowChangedName="ComponentMappingRowChanged" msprop:Generator_RowEvArgName="ComponentMappingRowChangeEvent" msprop:Generator_RowClassName="ComponentMappingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDComponent" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDComponent" msprop:Generator_ColumnPropNameInRow="IDComponent" msprop:Generator_ColumnPropNameInTable="IDComponentColumn" msprop:Generator_UserColumnName="IDComponent" type="xs:int" />
+              <xs:element name="IDMapping" msprop:Generator_ColumnVarNameInTable="columnIDMapping" msprop:Generator_ColumnPropNameInRow="IDMapping" msprop:Generator_ColumnPropNameInTable="IDMappingColumn" msprop:Generator_UserColumnName="IDMapping" type="xs:int" />
+              <xs:element name="ColumnName" msprop:Generator_ColumnVarNameInTable="columnColumnName" msprop:Generator_ColumnPropNameInRow="ColumnName" msprop:Generator_ColumnPropNameInTable="ColumnNameColumn" msprop:Generator_UserColumnName="ColumnName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CubeComponentCode" msprop:Generator_ColumnVarNameInTable="columnCubeComponentCode" msprop:Generator_ColumnPropNameInRow="CubeComponentCode" msprop:Generator_ColumnPropNameInTable="CubeComponentCodeColumn" msprop:Generator_UserColumnName="CubeComponentCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CubeComponentType" msprop:Generator_ColumnVarNameInTable="columnCubeComponentType" msprop:Generator_ColumnPropNameInRow="CubeComponentType" msprop:Generator_ColumnPropNameInTable="CubeComponentTypeColumn" msprop:Generator_UserColumnName="CubeComponentType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Loading" msprop:Generator_TableClassName="LoadingDataTable" msprop:Generator_TableVarName="tableLoading" msprop:Generator_TablePropName="Loading" msprop:Generator_RowDeletingName="LoadingRowDeleting" msprop:Generator_RowChangingName="LoadingRowChanging" msprop:Generator_RowEvHandlerName="LoadingRowChangeEventHandler" msprop:Generator_RowDeletedName="LoadingRowDeleted" msprop:Generator_UserTableName="Loading" msprop:Generator_RowChangedName="LoadingRowChanged" msprop:Generator_RowEvArgName="LoadingRowChangeEvent" msprop:Generator_RowClassName="LoadingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDLoad" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDLoad" msprop:Generator_ColumnPropNameInRow="IDLoad" msprop:Generator_ColumnPropNameInTable="IDLoadColumn" msprop:Generator_UserColumnName="IDLoad" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="RecordCount" msprop:Generator_ColumnVarNameInTable="columnRecordCount" msprop:Generator_ColumnPropNameInRow="RecordCount" msprop:Generator_ColumnPropNameInTable="RecordCountColumn" msprop:Generator_UserColumnName="RecordCount" type="xs:int" />
+              <xs:element name="Filename" msprop:Generator_ColumnVarNameInTable="columnFilename" msprop:Generator_ColumnPropNameInRow="Filename" msprop:Generator_ColumnPropNameInTable="FilenameColumn" msprop:Generator_UserColumnName="Filename">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TmpTableName" msprop:Generator_ColumnVarNameInTable="columnTmpTableName" msprop:Generator_ColumnPropNameInRow="TmpTableName" msprop:Generator_ColumnPropNameInTable="TmpTableNameColumn" msprop:Generator_UserColumnName="TmpTableName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="localised_CatCategory" msprop:Generator_TableClassName="localised_CatCategoryDataTable" msprop:Generator_TableVarName="tablelocalised_CatCategory" msprop:Generator_TablePropName="localised_CatCategory" msprop:Generator_RowDeletingName="localised_CatCategoryRowDeleting" msprop:Generator_RowChangingName="localised_CatCategoryRowChanging" msprop:Generator_RowEvHandlerName="localised_CatCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="localised_CatCategoryRowDeleted" msprop:Generator_UserTableName="localised_CatCategory" msprop:Generator_RowChangedName="localised_CatCategoryRowChanged" msprop:Generator_RowEvArgName="localised_CatCategoryRowChangeEvent" msprop:Generator_RowClassName="localised_CatCategoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMember" msprop:Generator_ColumnVarNameInTable="columnIDMember" msprop:Generator_ColumnPropNameInRow="IDMember" msprop:Generator_ColumnPropNameInTable="IDMemberColumn" msprop:Generator_UserColumnName="IDMember" type="xs:int" />
+              <xs:element name="TwoLetterISO" msprop:Generator_ColumnVarNameInTable="columnTwoLetterISO" msprop:Generator_ColumnPropNameInRow="TwoLetterISO" msprop:Generator_ColumnPropNameInTable="TwoLetterISOColumn" msprop:Generator_UserColumnName="TwoLetterISO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valore" msprop:Generator_ColumnVarNameInTable="columnValore" msprop:Generator_ColumnPropNameInRow="Valore" msprop:Generator_ColumnPropNameInTable="ValoreColumn" msprop:Generator_UserColumnName="Valore">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="localised_CatCube" msprop:Generator_TableClassName="localised_CatCubeDataTable" msprop:Generator_TableVarName="tablelocalised_CatCube" msprop:Generator_TablePropName="localised_CatCube" msprop:Generator_RowDeletingName="localised_CatCubeRowDeleting" msprop:Generator_RowChangingName="localised_CatCubeRowChanging" msprop:Generator_RowEvHandlerName="localised_CatCubeRowChangeEventHandler" msprop:Generator_RowDeletedName="localised_CatCubeRowDeleted" msprop:Generator_UserTableName="localised_CatCube" msprop:Generator_RowChangedName="localised_CatCubeRowChanged" msprop:Generator_RowEvArgName="localised_CatCubeRowChangeEvent" msprop:Generator_RowClassName="localised_CatCubeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMember" msprop:Generator_ColumnVarNameInTable="columnIDMember" msprop:Generator_ColumnPropNameInRow="IDMember" msprop:Generator_ColumnPropNameInTable="IDMemberColumn" msprop:Generator_UserColumnName="IDMember" type="xs:int" />
+              <xs:element name="TwoLetterISO" msprop:Generator_ColumnVarNameInTable="columnTwoLetterISO" msprop:Generator_ColumnPropNameInRow="TwoLetterISO" msprop:Generator_ColumnPropNameInTable="TwoLetterISOColumn" msprop:Generator_UserColumnName="TwoLetterISO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valore" msprop:Generator_ColumnVarNameInTable="columnValore" msprop:Generator_ColumnPropNameInRow="Valore" msprop:Generator_ColumnPropNameInTable="ValoreColumn" msprop:Generator_UserColumnName="Valore">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="localised_CatDataFlow" msprop:Generator_TableClassName="localised_CatDataFlowDataTable" msprop:Generator_TableVarName="tablelocalised_CatDataFlow" msprop:Generator_TablePropName="localised_CatDataFlow" msprop:Generator_RowDeletingName="localised_CatDataFlowRowDeleting" msprop:Generator_RowChangingName="localised_CatDataFlowRowChanging" msprop:Generator_RowEvHandlerName="localised_CatDataFlowRowChangeEventHandler" msprop:Generator_RowDeletedName="localised_CatDataFlowRowDeleted" msprop:Generator_UserTableName="localised_CatDataFlow" msprop:Generator_RowChangedName="localised_CatDataFlowRowChanged" msprop:Generator_RowEvArgName="localised_CatDataFlowRowChangeEvent" msprop:Generator_RowClassName="localised_CatDataFlowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMember" msprop:Generator_ColumnVarNameInTable="columnIDMember" msprop:Generator_ColumnPropNameInRow="IDMember" msprop:Generator_ColumnPropNameInTable="IDMemberColumn" msprop:Generator_UserColumnName="IDMember" type="xs:int" />
+              <xs:element name="TwoLetterISO" msprop:Generator_ColumnVarNameInTable="columnTwoLetterISO" msprop:Generator_ColumnPropNameInRow="TwoLetterISO" msprop:Generator_ColumnPropNameInTable="TwoLetterISOColumn" msprop:Generator_UserColumnName="TwoLetterISO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valore" msprop:Generator_ColumnVarNameInTable="columnValore" msprop:Generator_ColumnPropNameInRow="Valore" msprop:Generator_ColumnPropNameInTable="ValoreColumn" msprop:Generator_UserColumnName="Valore">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Mapping" msprop:Generator_TableClassName="MappingDataTable" msprop:Generator_TableVarName="tableMapping" msprop:Generator_TablePropName="Mapping" msprop:Generator_RowDeletingName="MappingRowDeleting" msprop:Generator_RowChangingName="MappingRowChanging" msprop:Generator_RowEvHandlerName="MappingRowChangeEventHandler" msprop:Generator_RowDeletedName="MappingRowDeleted" msprop:Generator_UserTableName="Mapping" msprop:Generator_RowChangedName="MappingRowChanged" msprop:Generator_RowEvArgName="MappingRowChangeEvent" msprop:Generator_RowClassName="MappingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMapping" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDMapping" msprop:Generator_ColumnPropNameInRow="IDMapping" msprop:Generator_ColumnPropNameInTable="IDMappingColumn" msprop:Generator_UserColumnName="IDMapping" type="xs:int" />
+              <xs:element name="IDCube" msprop:Generator_ColumnVarNameInTable="columnIDCube" msprop:Generator_ColumnPropNameInRow="IDCube" msprop:Generator_ColumnPropNameInTable="IDCubeColumn" msprop:Generator_UserColumnName="IDCube" type="xs:int" />
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tid" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Tid" msprop:Generator_ColumnVarNameInTable="columnTid" msprop:Generator_ColumnPropNameInTable="TidColumn" msprop:Generator_UserColumnName="Tid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CSVSeparator" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="CSVSeparator" msprop:Generator_ColumnVarNameInTable="columnCSVSeparator" msprop:Generator_ColumnPropNameInTable="CSVSeparatorColumn" msprop:Generator_UserColumnName="CSVSeparator" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CSVDelimiter" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="CSVDelimiter" msprop:Generator_ColumnVarNameInTable="columnCSVDelimiter" msprop:Generator_ColumnPropNameInTable="CSVDelimiterColumn" msprop:Generator_UserColumnName="CSVDelimiter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HasHeader" msprop:Generator_ColumnVarNameInTable="columnHasHeader" msprop:Generator_ColumnPropNameInRow="HasHeader" msprop:Generator_ColumnPropNameInTable="HasHeaderColumn" msprop:Generator_UserColumnName="HasHeader" type="xs:boolean" minOccurs="0" />
+              <xs:element name="HasSpecialTimePeriod" msprop:Generator_ColumnVarNameInTable="columnHasSpecialTimePeriod" msprop:Generator_ColumnPropNameInRow="HasSpecialTimePeriod" msprop:Generator_ColumnPropNameInTable="HasSpecialTimePeriodColumn" msprop:Generator_UserColumnName="HasSpecialTimePeriod" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AttDimStruct" msprop:Generator_TableClassName="AttDimStructDataTable" msprop:Generator_TableVarName="tableAttDimStruct" msprop:Generator_TablePropName="AttDimStruct" msprop:Generator_RowDeletingName="AttDimStructRowDeleting" msprop:Generator_RowChangingName="AttDimStructRowChanging" msprop:Generator_RowEvHandlerName="AttDimStructRowChangeEventHandler" msprop:Generator_RowDeletedName="AttDimStructRowDeleted" msprop:Generator_UserTableName="AttDimStruct" msprop:Generator_RowChangedName="AttDimStructRowChanged" msprop:Generator_RowEvArgName="AttDimStructRowChangeEvent" msprop:Generator_RowClassName="AttDimStructRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMember" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDMember" msprop:Generator_ColumnPropNameInRow="IDMember" msprop:Generator_ColumnPropNameInTable="IDMemberColumn" msprop:Generator_UserColumnName="IDMember" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ordering" msprop:Generator_ColumnVarNameInTable="columnOrdering" msprop:Generator_ColumnPropNameInRow="Ordering" msprop:Generator_ColumnPropNameInTable="OrderingColumn" msprop:Generator_UserColumnName="Ordering" type="xs:int" minOccurs="0" />
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AttDimStructNotCoded" msprop:Generator_TableClassName="AttDimStructNotCodedDataTable" msprop:Generator_TableVarName="tableAttDimStructNotCoded" msprop:Generator_TablePropName="AttDimStructNotCoded" msprop:Generator_RowDeletingName="AttDimStructNotCodedRowDeleting" msprop:Generator_RowChangingName="AttDimStructNotCodedRowChanging" msprop:Generator_RowEvHandlerName="AttDimStructNotCodedRowChangeEventHandler" msprop:Generator_RowDeletedName="AttDimStructNotCodedRowDeleted" msprop:Generator_UserTableName="AttDimStructNotCoded" msprop:Generator_RowChangedName="AttDimStructNotCodedRowChanged" msprop:Generator_RowEvArgName="AttDimStructNotCodedRowChangeEvent" msprop:Generator_RowClassName="AttDimStructNotCodedRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDMember" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDMember" msprop:Generator_ColumnPropNameInRow="IDMember" msprop:Generator_ColumnPropNameInTable="IDMemberColumn" msprop:Generator_UserColumnName="IDMember" type="xs:int" />
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ordering" msprop:Generator_ColumnVarNameInTable="columnOrdering" msprop:Generator_ColumnPropNameInRow="Ordering" msprop:Generator_ColumnPropNameInTable="OrderingColumn" msprop:Generator_UserColumnName="Ordering" type="xs:int" minOccurs="0" />
+              <xs:element name="TimeStmp" msprop:Generator_ColumnVarNameInTable="columnTimeStmp" msprop:Generator_ColumnPropNameInRow="TimeStmp" msprop:Generator_ColumnPropNameInTable="TimeStmpColumn" msprop:Generator_UserColumnName="TimeStmp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Text" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnPropNameInTable="TextColumn" msprop:Generator_UserColumnName="Text">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CatCategory" msprop:Generator_TableClassName="CatCategoryDataTable" msprop:Generator_TableVarName="tableCatCategory" msprop:Generator_TablePropName="CatCategory" msprop:Generator_RowDeletingName="CatCategoryRowDeleting" msprop:Generator_RowChangingName="CatCategoryRowChanging" msprop:Generator_RowEvHandlerName="CatCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="CatCategoryRowDeleted" msprop:Generator_UserTableName="CatCategory" msprop:Generator_RowChangedName="CatCategoryRowChanged" msprop:Generator_RowEvArgName="CatCategoryRowChangeEvent" msprop:Generator_RowClassName="CatCategoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDCat" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnIDCat" msprop:Generator_ColumnPropNameInRow="IDCat" msprop:Generator_ColumnPropNameInTable="IDCatColumn" msprop:Generator_UserColumnName="IDCat" type="xs:int" />
+              <xs:element name="CatCode" msprop:Generator_ColumnVarNameInTable="columnCatCode" msprop:Generator_ColumnPropNameInRow="CatCode" msprop:Generator_ColumnPropNameInTable="CatCodeColumn" msprop:Generator_UserColumnName="CatCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDParent" msprop:Generator_ColumnVarNameInTable="columnIDParent" msprop:Generator_ColumnPropNameInRow="IDParent" msprop:Generator_ColumnPropNameInTable="IDParentColumn" msprop:Generator_UserColumnName="IDParent" type="xs:int" minOccurs="0" />
+              <xs:element name="Ord" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Ord" msprop:Generator_ColumnVarNameInTable="columnOrd" msprop:Generator_ColumnPropNameInTable="OrdColumn" msprop:Generator_UserColumnName="Ord" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatAtt" />
+      <xs:field xpath="mstns:IDAtt" />
+    </xs:unique>
+    <xs:unique name="DB_VERSION_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DB_VERSION" />
+      <xs:field xpath="mstns:MAJOR" />
+      <xs:field xpath="mstns:MINOR" />
+    </xs:unique>
+    <xs:unique name="CatAttDim_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatAttDim" />
+      <xs:field xpath="mstns:IDAtt" />
+      <xs:field xpath="mstns:IDDim" />
+    </xs:unique>
+    <xs:unique name="CatCube_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatCube" />
+      <xs:field xpath="mstns:IDCube" />
+    </xs:unique>
+    <xs:unique name="CatDataFlow_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatDataFlow" />
+      <xs:field xpath="mstns:IDDataFlow" />
+    </xs:unique>
+    <xs:unique name="CatDataFlowColumns_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatDataFlowColumns" />
+      <xs:field xpath="mstns:IDDataFlow" />
+      <xs:field xpath="mstns:ColumnName" />
+    </xs:unique>
+    <xs:unique name="CatDim_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatDim" />
+      <xs:field xpath="mstns:IDDim" />
+    </xs:unique>
+    <xs:unique name="CatMeas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatMeas" />
+      <xs:field xpath="mstns:IDMeas" />
+    </xs:unique>
+    <xs:unique name="ComponentMapping_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ComponentMapping" />
+      <xs:field xpath="mstns:IDComponent" />
+    </xs:unique>
+    <xs:unique name="Loading_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Loading" />
+      <xs:field xpath="mstns:IDLoad" />
+    </xs:unique>
+    <xs:unique name="localised_CatCategory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:localised_CatCategory" />
+      <xs:field xpath="mstns:IDMember" />
+      <xs:field xpath="mstns:TwoLetterISO" />
+    </xs:unique>
+    <xs:unique name="localised_CatCube_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:localised_CatCube" />
+      <xs:field xpath="mstns:IDMember" />
+      <xs:field xpath="mstns:TwoLetterISO" />
+    </xs:unique>
+    <xs:unique name="localised_CatDataFlow_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:localised_CatDataFlow" />
+      <xs:field xpath="mstns:IDMember" />
+      <xs:field xpath="mstns:TwoLetterISO" />
+    </xs:unique>
+    <xs:unique name="Mapping_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Mapping" />
+      <xs:field xpath="mstns:IDMapping" />
+    </xs:unique>
+    <xs:unique name="AttDimStruct_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AttDimStruct" />
+      <xs:field xpath="mstns:IDMember" />
+    </xs:unique>
+    <xs:unique name="AttDimStructNotCoded_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AttDimStructNotCoded" />
+      <xs:field xpath="mstns:IDMember" />
+    </xs:unique>
+    <xs:unique name="CatCategory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CatCategory" />
+      <xs:field xpath="mstns:IDCat" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="CatCube_CatAtt_FK1" msdata:parent="CatCube" msdata:child="CatAtt" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="CatAtt" msprop:Generator_ChildPropName="GetCatAttRows" msprop:Generator_UserRelationName="CatCube_CatAtt_FK1" msprop:Generator_RelationVarName="relationCatCube_CatAtt_FK1" msprop:Generator_UserParentTable="CatCube" msprop:Generator_ParentPropName="CatCubeRow" />
+      <msdata:Relationship name="CatAtt_CatAttDim_FK1" msdata:parent="CatAtt" msdata:child="CatAttDim" msdata:parentkey="IDAtt" msdata:childkey="IDAtt" msprop:Generator_UserChildTable="CatAttDim" msprop:Generator_ChildPropName="GetCatAttDimRows" msprop:Generator_UserRelationName="CatAtt_CatAttDim_FK1" msprop:Generator_ParentPropName="CatAttRow" msprop:Generator_RelationVarName="relationCatAtt_CatAttDim_FK1" msprop:Generator_UserParentTable="CatAtt" />
+      <msdata:Relationship name="CatDim_CatAttDim_FK1" msdata:parent="CatDim" msdata:child="CatAttDim" msdata:parentkey="IDDim" msdata:childkey="IDDim" msprop:Generator_UserChildTable="CatAttDim" msprop:Generator_ChildPropName="GetCatAttDimRows" msprop:Generator_UserRelationName="CatDim_CatAttDim_FK1" msprop:Generator_RelationVarName="relationCatDim_CatAttDim_FK1" msprop:Generator_UserParentTable="CatDim" msprop:Generator_ParentPropName="CatDimRow" />
+      <msdata:Relationship name="CatCube_CatDataFlow_FK1" msdata:parent="CatCube" msdata:child="CatDataFlow" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="CatDataFlow" msprop:Generator_ChildPropName="GetCatDataFlowRows" msprop:Generator_UserRelationName="CatCube_CatDataFlow_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_CatDataFlow_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="CatDataFlow_CatDataFlowColumns_FK1" msdata:parent="CatDataFlow" msdata:child="CatDataFlowColumns" msdata:parentkey="IDDataFlow" msdata:childkey="IDDataFlow" msprop:Generator_UserChildTable="CatDataFlowColumns" msprop:Generator_ChildPropName="GetCatDataFlowColumnsRows" msprop:Generator_UserRelationName="CatDataFlow_CatDataFlowColumns_FK1" msprop:Generator_ParentPropName="CatDataFlowRow" msprop:Generator_RelationVarName="relationCatDataFlow_CatDataFlowColumns_FK1" msprop:Generator_UserParentTable="CatDataFlow" />
+      <msdata:Relationship name="CatCube_CatDim_FK1" msdata:parent="CatCube" msdata:child="CatDim" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="CatDim" msprop:Generator_ChildPropName="GetCatDimRows" msprop:Generator_UserRelationName="CatCube_CatDim_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_CatDim_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="CatCube_CatMeas_FK1" msdata:parent="CatCube" msdata:child="CatMeas" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="CatMeas" msprop:Generator_ChildPropName="GetCatMeasRows" msprop:Generator_UserRelationName="CatCube_CatMeas_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_CatMeas_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="Mapping_ComponentMapping_FK1" msdata:parent="Mapping" msdata:child="ComponentMapping" msdata:parentkey="IDMapping" msdata:childkey="IDMapping" msprop:Generator_UserChildTable="ComponentMapping" msprop:Generator_ChildPropName="GetComponentMappingRows" msprop:Generator_UserRelationName="Mapping_ComponentMapping_FK1" msprop:Generator_RelationVarName="relationMapping_ComponentMapping_FK1" msprop:Generator_UserParentTable="Mapping" msprop:Generator_ParentPropName="MappingRow" />
+      <msdata:Relationship name="CatCube_Loading_FK1" msdata:parent="CatCube" msdata:child="Loading" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="Loading" msprop:Generator_ChildPropName="GetLoadingRows" msprop:Generator_UserRelationName="CatCube_Loading_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_Loading_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="CatCube_localised_CatCube_FK1" msdata:parent="CatCube" msdata:child="localised_CatCube" msdata:parentkey="IDCube" msdata:childkey="IDMember" msprop:Generator_UserChildTable="localised_CatCube" msprop:Generator_ChildPropName="Getlocalised_CatCubeRows" msprop:Generator_UserRelationName="CatCube_localised_CatCube_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_localised_CatCube_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="CatDataFlow_localised_CatDataFlow_FK1" msdata:parent="CatDataFlow" msdata:child="localised_CatDataFlow" msdata:parentkey="IDDataFlow" msdata:childkey="IDMember" msprop:Generator_UserChildTable="localised_CatDataFlow" msprop:Generator_ChildPropName="Getlocalised_CatDataFlowRows" msprop:Generator_UserRelationName="CatDataFlow_localised_CatDataFlow_FK1" msprop:Generator_ParentPropName="CatDataFlowRow" msprop:Generator_RelationVarName="relationCatDataFlow_localised_CatDataFlow_FK1" msprop:Generator_UserParentTable="CatDataFlow" />
+      <msdata:Relationship name="CatCube_Mapping_FK1" msdata:parent="CatCube" msdata:child="Mapping" msdata:parentkey="IDCube" msdata:childkey="IDCube" msprop:Generator_UserChildTable="Mapping" msprop:Generator_ChildPropName="GetMappingRows" msprop:Generator_UserRelationName="CatCube_Mapping_FK1" msprop:Generator_ParentPropName="CatCubeRow" msprop:Generator_RelationVarName="relationCatCube_Mapping_FK1" msprop:Generator_UserParentTable="CatCube" />
+      <msdata:Relationship name="CatCategory_localised_CatCategory_FK1" msdata:parent="CatCategory" msdata:child="localised_CatCategory" msdata:parentkey="IDCat" msdata:childkey="IDMember" msprop:Generator_UserChildTable="localised_CatCategory" msprop:Generator_ChildPropName="Getlocalised_CatCategoryRows" msprop:Generator_UserRelationName="CatCategory_localised_CatCategory_FK1" msprop:Generator_ParentPropName="CatCategoryRow" msprop:Generator_RelationVarName="relationCatCategory_localised_CatCategory_FK1" msprop:Generator_UserParentTable="CatCategory" />
+      <msdata:Relationship name="CatCategory_CatCube_FK1" msdata:parent="CatCategory" msdata:child="CatCube" msdata:parentkey="IDCat" msdata:childkey="IDCat" msprop:Generator_UserChildTable="CatCube" msprop:Generator_ChildPropName="GetCatCubeRows" msprop:Generator_UserRelationName="CatCategory_CatCube_FK1" msprop:Generator_ParentPropName="CatCategoryRow" msprop:Generator_RelationVarName="relationCatCategory_CatCube_FK1" msprop:Generator_UserParentTable="CatCategory" />
+      <msdata:Relationship name="CatCategory_CatCategory_FK1" msdata:parent="CatCategory" msdata:child="CatCategory" msdata:parentkey="IDCat" msdata:childkey="IDParent" msprop:Generator_UserChildTable="CatCategory" msprop:Generator_ChildPropName="GetCatCategoryRows" msprop:Generator_UserRelationName="CatCategory_CatCategory_FK1" msprop:Generator_RelationVarName="relationCatCategory_CatCategory_FK1" msprop:Generator_UserParentTable="CatCategory" msprop:Generator_ParentPropName="CatCategoryRowParent" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

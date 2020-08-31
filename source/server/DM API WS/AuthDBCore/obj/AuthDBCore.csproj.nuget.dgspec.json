@@ -1,0 +1,533 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthDBCore\\AuthDBCore.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\Configuration.csproj",
+        "projectName": "Configuration",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\Configuration.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\Infrastructure.STLogging.Factory.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\Infrastructure.STLogging.Factory.csproj",
+        "projectName": "Infrastructure.STLogging.Factory",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\Infrastructure.STLogging.Factory.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj"
+              },
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\Infrastructure.STLogging.Log4Net.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\Infrastructure.STLogging.Log4Net.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NETCore.Targets": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj",
+        "projectName": "Infrastructure.STLogging.Interface",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\Infrastructure.STLogging.Log4Net.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\Infrastructure.STLogging.Log4Net.csproj",
+        "projectName": "Infrastructure.STLogging.Log4Net",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\Infrastructure.STLogging.Log4Net.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Log4Net\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\ClassLibrary1\\Configuration.csproj"
+              },
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.NETCore.Targets": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj",
+        "projectName": "AuthCore.Model",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\AuthCore.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\AuthCore.Utils.csproj",
+        "projectName": "AuthCore.Utils",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\AuthCore.Utils.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthDBCore\\AuthDBCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthDBCore\\AuthDBCore.csproj",
+        "projectName": "AuthDBCore",
+        "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthDBCore\\AuthDBCore.csproj",
+        "packagesPath": "C:\\Users\\f.pitto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthDBCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\f.pitto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\Infrastructure.STLogging.Factory.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Factory\\Infrastructure.STLogging.Factory.csproj"
+              },
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\Common\\Infrastructure.STLogging.Interface\\Infrastructure.STLogging.Interface.csproj"
+              },
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Model\\AuthCore.Model.csproj"
+              },
+              "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\AuthCore.Utils.csproj": {
+                "projectPath": "C:\\Users\\f.pitto\\Source\\repos\\sistan-hub\\DM API WS\\AuthCore.Utils\\AuthCore.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

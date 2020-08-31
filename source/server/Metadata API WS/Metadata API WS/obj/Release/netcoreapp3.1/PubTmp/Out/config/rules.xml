@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<r:rules xmlns:r="http://ec.europa.eu/eurostat/sri/authorisation/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ec.europa.eu/eurostat/sri/authorisation/1.0 rules.xsd">
+  
+  <r:rest path="/api/MetadataApi/(TestXMLRole|TestXMLRole2)(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+      <r:permission id="CanReadData"/>
+      <r:permission id="CanWriteData"/>
+      <r:functionality id="BuilderLightReadXml"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/(TestXMLRole3|TestXMLRole4)(/.*)?" method="GET" allowAnonymous="true" priority="5">
+    <r:andGroup>
+      <r:permission id="CanReadData"/>
+      <r:permission id="CanWriteData"/>
+      <r:functionality id="BuilderLightReadXml"/>
+    </r:andGroup>
+  </r:rest>
+  <!--START Access for all user logged-->
+  <r:rest path="/api/MetadataApi/Utils/AuthDBConfigurated" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="Any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/Utils/CheckAuthDB" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="Any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/User/(/.*)?" method="ANY" allowAnonymous="false" priority="12">
+    <r:andGroup>
+      <r:functionality id="Any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/Builder(/.*)?" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/Mapping(/.*)?" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/Loader(/.*)?" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/Utils(/.*)?" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/DFBuilder(/.*)?" method="ANY" allowAnonymous="false">
+    <r:andGroup>
+      <r:functionality id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/UserConfig/(/.*)?" method="ANY" allowAnonymous="false" priority="11">
+    <r:andGroup>
+      <r:functionality id="Admin"/>
+    </r:andGroup>
+  </r:rest>
+  <!--END Access for all user logged-->
+  <!--START Access for all-->
+  <r:rest path="/api/MetadataApi/Ping" method="GET" allowAnonymous="true">
+    <r:or>
+      <r:permission id="Any"/>
+    </r:or>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/RM(/.*)?" method="ANY" allowAnonymous="true">
+    <r:andGroup>
+      <r:permission id="any"/>
+    </r:andGroup>
+  </r:rest>
+  <r:rest path="/api/MetadataApi/User/LoginUser" method="POST" allowAnonymous="true" priority="10">
+    <r:or>
+      <r:permission id="Any"/>
+    </r:or>
+  </r:rest>
+  <!--END Access for all-->
+</r:rules>

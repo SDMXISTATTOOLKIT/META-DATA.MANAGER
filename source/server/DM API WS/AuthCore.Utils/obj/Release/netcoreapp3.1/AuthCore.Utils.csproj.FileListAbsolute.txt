@@ -1,0 +1,12 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\bin\Release\netcoreapp3.1\AuthCore.Utils.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\bin\Release\netcoreapp3.1\AuthCore.Utils.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\bin\Release\netcoreapp3.1\AuthCore.Utils.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\bin\Release\netcoreapp3.1\AuthCore.Model.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\bin\Release\netcoreapp3.1\AuthCore.Model.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.csprojAssemblyReference.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.csproj.CopyComplete
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\DM API WS\AuthCore.Utils\obj\Release\netcoreapp3.1\AuthCore.Utils.pdb

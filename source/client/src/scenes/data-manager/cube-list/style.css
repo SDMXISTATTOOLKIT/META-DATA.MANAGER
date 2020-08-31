@@ -1,0 +1,5 @@
+.draggable-check-list-drag-over .ant-tree li.drag-over > span[draggable] {
+    background: none !important;
+    color: black !important;
+    border-bottom-color: red !important;
+}

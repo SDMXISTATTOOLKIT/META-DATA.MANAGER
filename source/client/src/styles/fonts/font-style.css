@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(./fira-sans/FiraSans-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed";
+    font-style: normal;
+    font-weight: 400;
+    src: local('Fira Sans Condensed Regular'), local('FiraSansCondensed-Regular'), url(./fira-sans-condensed/FiraSansCondensed-Regular.woff) format("woff");
+}

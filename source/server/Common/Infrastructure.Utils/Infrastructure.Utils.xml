@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Infrastructure.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:Utility.DirectoryUtils">
+            <summary>
+            Classe di utilità per la gestione e creazione di path temporanei.
+            </summary>
+        </member>
+        <member name="P:Utility.DirectoryUtils.BaseTempPath">
+            <summary>
+            Restituisce il path base temporaneo.
+            </summary>
+        </member>
+        <member name="M:Utility.DirectoryUtils.CreateTempPath">
+            <summary>
+            Crea un path temporaneo unico.
+            </summary>
+            <returns>Percorso del path creato.</returns>
+        </member>
+        <member name="M:Utility.DirectoryUtils.IsImage(System.String)">
+            <summary>
+            Indica se l'indirizzo rappresenta un'immagine.
+            </summary>
+            <param name="tipo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.DirectoryUtils.FindPath(System.String,System.String)">
+            <summary>
+            Cerca il path relativo relPath a partire dal path di base basePath risalendolo a ritroso finché non lo trova o finché non c'è più niente da cercare.
+            </summary>
+            <param name="basePath"></param>
+            <param name="relPath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Utility.EmailUtils.EMAIL_SMTP_HOST_SERVER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Utility.EmailUtils.EMAIL_DEFAULT_SENDER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Utility.EmailUtils.SendEmail(System.String,System.String,System.String,System.String)">
+            <summary>
+            Invia un'email.
+            </summary>
+            <param name="subject"></param>
+            <param name="toAddress"></param>
+            <param name="body"></param>
+        </member>
+        <member name="M:Utility.EmailUtils.SendEmail(System.String,System.String[],System.String,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="subject"></param>
+            <param name="toAddresses"></param>
+            <param name="body"></param>
+            <param name="sender"></param>
+        </member>
+        <member name="T:Utility.ILogger">
+            <summary>
+            Standard Interface for Logging
+            </summary>
+        </member>
+        <member name="M:Utility.ImageTools.GetDimensions(System.String)">
+            <summary>
+            Gets the dimensions of an image.
+            </summary>
+            <param name="path">The path of the image to get the dimensions of.</param>
+            <returns>The dimensions of the specified image.</returns>
+            <exception cref="T:System.ArgumentException">The image was of an unrecognised format.</exception>
+        </member>
+        <member name="M:Utility.ImageTools.GetDimensions_(System.String)">
+            <summary>
+            Gets the dimensions of an image.
+            </summary>
+            <param name="path">The path of the image to get the dimensions of.</param>
+            <returns>The dimensions of the specified image.</returns>
+            <exception cref="T:System.ArgumentException">The image was of an unrecognised format.</exception>
+        </member>
+        <member name="M:Utility.ImageTools.checkBas64(System.String)">
+            <summary>
+            Verifica si està en base64 y eventualmente lo convierte
+            </summary>
+        </member>
+        <member name="M:Utility.ImageTools.GetDimensions(System.IO.BinaryReader)">
+            <summary>
+            Gets the dimensions of an image.
+            </summary>
+            <param name="path">The path of the image to get the dimensions of.</param>
+            <returns>The dimensions of the specified image.</returns>
+            <exception cref="T:System.ArgumentException">The image was of an unrecognised format.</exception>    
+        </member>
+        <member name="M:Utility.RegExUtils.GetRegEx(System.String,System.Boolean)">
+            <summary>
+            Creates and return a Regular Expresion 8with IgnoreCase option). 
+            A cache of compiled expresions is mantained for fast processing. Highly mutating expressions should not be cached
+            </summary>
+            <param name="expr"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetFirstMatch(System.String,System.String,System.Boolean)">
+            <summary>
+            gets the first match (groups) instance in a soruce text.
+            </summary>
+            <param name="srcText"></param>
+            <param name="exprArr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetMatches(System.String,System.String,System.Boolean)">
+            <summary>
+            gets all matches (groups) instances in a soruce text.
+            </summary>
+            <param name="srcText"></param>
+            <param name="exprArr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetMatchSeries(System.String,System.String[],System.Boolean)">
+            <summary>
+            For each expression gets the first match (groups) instance in a soruce text.
+            Is each expression is applied after the last match
+            we get a null in the array when a macth fails
+            </summary>
+            <param name="srcText"></param>
+            <param name="exprArr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetAllMatchSeries(System.String,System.String[],System.Boolean)">
+            <summary>
+            For each expression gets All match (groups) instance in a soruce text.
+            Is each expression is applied after the last match
+            we get a null in the array when a macth fails
+            </summary>
+            <param name="srcText"></param>
+            <param name="exprArr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetMatchFragment(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Returns a fragment of text  until a stop word (a number of times)
+            </summary>
+        </member>
+        <member name="M:Utility.RegExUtils.Replace(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Replaces the matches with a given string (optionaly a max num of times).
+            </summary>
+            <param name="srcText"></param>
+            <param name="regExpr"></param>
+            <param name="replace"></param>
+            <param name="times"></param>
+            <param name="cache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetMatchFragment(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns a fragment of text between the given expresions (excluding the matching texts)
+            </summary>
+            <param name="srcText">If null or not matchig and !strict is considered the begining of the string</param>
+            <param name="exprArr">If null or not matchig and !strict is considered the end of the string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetMatchFragment(System.String,System.String,System.String,System.Boolean,System.Int32@,System.Int32@,System.Boolean)">
+            <summary>
+            Returns a fragment of text between the given expresions (excluding the matching texts)
+            </summary>
+            <param name="srcText">If null or not matchig and !strict is considered the begining of the string</param>
+            <param name="exprArr">If null or not matchig and !strict is considered the end of the string</param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetAllMatchFragments(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns all fragments of text between the given expresions
+            </summary>
+            <param name="srcText"></param>
+            <param name="stratExpr"></param>
+            <param name="endExpr"></param>
+            <param name="strict"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetUrlByTemplate(System.String,System.String,System.String[],System.Boolean)">
+            <summary>
+            Gets an URL from a given template URL and a serie of regular expressions
+            For each expression gets the first match (groups) instance in a soruce text to substitute in the template URL
+            Is each expression is applied after the last match
+            The template has the place holders for matching groups:  {e0g0}, {e0g1},  {e0g2} ,..., {eXgY}
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.GetUrlByTemplate(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets an URL from a given template URL and a serie of regular expressions
+            For each expression gets the first match (groups) instance in a soruce text to substitute in the template URL
+            Is each expression is applied after the last match
+            The template has the place holders for matching groups:  {g0}, {g1},  {g2} ,..., {gY}
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.RegExUtils.ReplaceAny(System.String,System.String,System.String)">
+            <summary>
+            Substituye todos los caracteres en src con los respectivos en dest
+            </summary>
+            <param name="txt"></param>
+            <param name="src"></param>
+            <param name="dest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.getCodePartFromTriplet(System.String,System.String)">
+            <summary>
+            Parsa un codice nella forma id+agency+version restituendo la parte richiesta.
+            </summary>
+            <param name="code">Il codice da parsare.</param>
+            <param name="part">La parte del codice voluta.</param>
+        </member>
+        <member name="M:Utility.SdmxUtils.checkCodeFormat(System.String)">
+            <summary>
+            Controlla il formato di un codice di un'entità SDMX.
+            </summary>
+            <param name="code">Codice da verificare.</param>
+            <returns>True se il formato è corretto, altrimenti solleva un'eccezione.</returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.checkFileFormat(Microsoft.AspNetCore.Http.IFormFile,System.Boolean)">
+            <summary>
+            Verifica la correttezza del formato del file passato come parametro.
+            </summary>
+            <param name="file">Il file da verificare.</param>
+            <param name="onlyCsv">Indica se il file può essere solo CSV.</param>
+        </member>
+        <member name="M:Utility.SdmxUtils.getDataStructureFromXml(System.String,System.String)">
+            <summary>
+            Converte un xml contenente dsd in un array di IDataStructureObject
+            </summary>
+            <param name="dsd">la dsd in xml</param>
+            <param name="agencyId">l'agencyId della dsd</param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.getCategorySchemeFromJson(System.String,System.String)">
+            <summary>
+            Converte un json contenente categoryScheme in un array di ICategorySchemeObject
+            </summary>
+            <param name="catSch">il categoryScheme in json</param>
+            <param name="agencyId">l'agencyId del CategoryScheme</param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.PopolateSdmxObject(NSI.Entities.ArtefactIdentity,Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects,Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects)">
+            <summary>
+            Popolate targetSdmxObjects with artifactType, if it's in sourceSdmxObjects
+            </summary>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.RemoveItemSdmxObject(Org.Sdmxsource.Sdmx.Api.Model.Objects.Base.IMaintainableObject,Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects)">
+            <summary>
+            Remove IMaintainableObject from sdmxObjects
+            </summary>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.PaginatedCodeList(Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects,System.Int32,System.Int32)">
+            <summary>
+            Take and ISdmxObjects and return only items in page
+            </summary>
+            <param name=""></param>
+            <returns>paginated items</returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.SdmxObjectsPaginated(Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects,System.Int32)">
+            <summary>
+            Take ISdmxObjects and return a new List of SdmxObjects paginated for CodeList, CategoryScheme and ConceptScheme
+            </summary>
+            <param name="sdmxObject">Object to be paginated</param>
+            <param name="pageSize">Max number of items for sdmxObject</param>
+            <returns>paginated items</returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.SdmxObjectsPaginatedCodeList(System.Collections.Generic.ISet{Org.Sdmxsource.Sdmx.Api.Model.Objects.Codelist.ICodelistObject},System.Int32)">
+            <summary>
+            Take ISdmxObjects and return a new List of SdmxObjects paginated by CodeList
+            </summary>
+            <param name=""></param>
+            <returns>paginated items</returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.SdmxObjectsPaginatedConceptScheme(System.Collections.Generic.ISet{Org.Sdmxsource.Sdmx.Api.Model.Objects.ConceptScheme.IConceptSchemeObject},System.Int32)">
+            <summary>
+            Take ISdmxObjects and return a new List of SdmxObjects paginated by ConceptScheme
+            </summary>
+            <param name=""></param>
+            <returns>paginated items</returns>
+        </member>
+        <member name="M:Utility.SdmxUtils.SdmxObjectsPaginatedCategoryScheme(System.Collections.Generic.ISet{Org.Sdmxsource.Sdmx.Api.Model.Objects.CategoryScheme.ICategorySchemeObject},System.Int32)">
+            <summary>
+            Take ISdmxObjects and return a new List of SdmxObjects paginated by CategoryScheme
+            </summary>
+            <param name=""></param>
+            <returns>paginated items</returns>
+        </member>
+        <member name="T:Utility.Serialization">
+            <summary>
+            Classi helper di serializzaizone
+            </summary>
+        </member>
+        <member name="T:Utility.SimpleLogger">
+            <summary>
+            Predefined Logger (Console + File). Log file in [BaseDirectory]/Logs/
+            
+            AppSettings Key:  CLIENT_UID - optinal
+            
+            </summary>
+        </member>
+        <member name="T:Utility.Utils">
+            <summary>
+            General Utilities 
+            </summary>
+        </member>
+        <member name="M:Utility.Utils.EncodeMD5String(System.String)">
+            <summary>
+            Retorna una cadena de bytes en hex
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Utils.ConvertToTimestamp(System.DateTime)">
+            <summary>
+            Conviente un datetime en UTM en timestamp unix (segundos desde 1/1/1970 00:00:00)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Utils.ClearDirectory(System.String)">
+            <summary>
+            Borra de manera silente todos los file de una carpeta
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:Utility.Utils.ReplaceAny(System.String,System.String,System.String)">
+            <summary>
+            Substituye todos los caracteres en src con los respectivos en dest
+            </summary>
+            <param name="txt"></param>
+            <param name="src"></param>
+            <param name="dest"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Utility.WebConfigReader.confProvider">
+            <summary>
+            Here we should set the current app settings 
+            </summary>
+        </member>
+        <member name="T:Infrastructure.Utils.CustomTaskScheduler">
+            <summary>
+            TaskScheduler that uses the task parallel library, complete with all the new wonderful task cancellation features
+            This one adds the ability to set ApartmentState, ThreadPriority, MaximumConcurrency and does some logging
+            </summary>
+        </member>
+        <member name="M:Infrastructure.Utils.CustomTaskScheduler.#ctor(System.Int32)">
+            <summary>
+            An MTA, BelowNormal TaskScheduler with the appropriate number of threads
+            </summary>
+        </member>
+        <member name="M:Infrastructure.Utils.LoggerUtils.logMethodStarts(Infrastructure.STLogging.Interface.ISTLogger,System.String)">
+            <summary>
+            Logs a message when the execution of a method starts
+            </summary>
+            <param name="methodName">The name of the method.</param>
+        </member>
+        <member name="M:Infrastructure.Utils.LoggerUtils.logMethodStarts(Infrastructure.STLogging.Interface.ISTLogger,System.String,Infrastructure.STLogging.Interface.LogLevelEnum)">
+            <summary>
+            Logs a message when the execution of a method starts
+            </summary>
+            <param name="methodName">The name of the method.</param>
+            <param name="LogLevelEnum">The level of log.</param>
+        </member>
+        <member name="M:Infrastructure.Utils.LoggerUtils.logMethodEndsSuccess(Infrastructure.STLogging.Interface.ISTLogger,System.String)">
+            <summary>
+            Logs a message when the execution of a method ends.
+            </summary>
+            <param name="methodName">The name of the method.</param>
+        </member>
+        <member name="M:Infrastructure.Utils.LoggerUtils.logMethodEndsSuccess(Infrastructure.STLogging.Interface.ISTLogger,System.String,Infrastructure.STLogging.Interface.LogLevelEnum)">
+            <summary>
+            Logs a message when the execution of a method ends.
+            </summary>
+            <param name="methodName">The name of the method.</param>
+            <param name="LogLevelEnum">The level of log.</param>
+        </member>
+    </members>
+</doc>

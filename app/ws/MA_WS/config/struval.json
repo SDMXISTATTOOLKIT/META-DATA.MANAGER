@@ -1,0 +1,12 @@
+{
+  "struval": {
+    "url": "http://localhost:8080/ConverterWSTomcat/StruvalWebService",
+    "defaultMaxErrors": 100,
+    "version":  "7.8",
+    "csvConfig": {
+      "csv.delimiter": ",",
+      "csv.headerrow": "USE_COLUMN_HEADERS",
+      "csv.level": "1" 
+    }
+  }
+}

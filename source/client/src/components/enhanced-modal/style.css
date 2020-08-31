@@ -1,0 +1,7 @@
+.ui-draggable > .ant-modal-header {
+    cursor: move;
+}
+
+.ui-draggable > .ant-modal-footer {
+    cursor: move;
+}

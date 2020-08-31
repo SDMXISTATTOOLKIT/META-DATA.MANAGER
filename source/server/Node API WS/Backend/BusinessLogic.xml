@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BusinessLogic</name>
+    </assembly>
+    <members>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.ConfigureProxy(DataModel.NodeConfig)">
+            <summary>
+            Return HttpClientHandler for proxy is Enable or Null in case of Disabled
+            </summary>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetDfHeader(System.String,System.String,System.String)">
+            <summary>
+            Returns the header for the given dataflow
+            </summary>
+            <param name="id">The id of the dataflow.</param>
+            <param name="agency">The agency of the dataflow.</param>
+            <param name="version">The version of the dataflow.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetDsdNoCustom">
+            <summary>
+            Returns all DSDs having no annotations of type CustomDSD (used for DM - Builder)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.CreateCube(System.String)">
+            <summary>
+            Creates a cube querying SDMX WS and adding corrispondent codes for each attribute or dimension.
+            Adds annotation of type AssociatedCube to the corrispondent DSD.
+            </summary>
+            <param name="cube"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.CreateDDBDataflow(DDB.Entities.DDBDataflowWithCols,System.String,System.String,MA.Entities.HeaderTemplate)">
+            <summary>
+            Creates a DDBDataflow: it controls DDBDataflow and SDMX dataflow are not inconsistent and then creates corrispondent artefact in MSDB e DDB.
+            Optionally creates dataflow's categorisations and header.
+            If the dataflow has fewer columns than the original cube a new DSD is also created.
+            </summary>
+            <param name="ddbDF">Dataflow to be created in DDB.</param>
+            <param name="msdbDF">SDMX-JSON containing dataflow to be created in MSDB.</param>
+            <param name="msdbCat">SDMX-JSON containing categorisations to be created in MSDB.</param>
+            <param name="msdbDF">HeaderTemplate to be created in MSDB.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.CreateDDBDataflow(DDB.Entities.DDBDataflowWithCols,Org.Sdmxsource.Sdmx.Api.Model.Objects.DataStructure.IDataflowObject,Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects,MA.Entities.HeaderTemplate)">
+            <summary>
+            Creates a DDBDataflow: it controls DDBDataflow and SDMX dataflow are not inconsistent and then creates corrispondent artefact in MSDB e DDB.
+            Optionally creates dataflow's categorisations and header.
+            If the dataflow has fewer columns than the original cube a new DSD is also created.
+            </summary>
+            <param name="ddbDF">Dataflow to be created in DDB.</param>
+            <param name="dF">Dataflow to be created in MSDB.</param>
+            <param name="msdbCat">Categorisations to be created in MSDB.</param>
+            <param name="msdbDF">HeaderTemplate to be created in MSDB.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.DeleteCube(System.Int32)">
+            <summary>
+            Deletes the specified cube and the AssociatedCube annotation from its DSD
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.DeleteArtefact(Org.Sdmxsource.Sdmx.Api.Constants.SdmxStructureEnumType,System.String,System.String,System.String)">
+            <summary>
+            Deletes an SDMX artefact from the MSDB. 
+            If the artefact is a DSD, the method deletes it only if it has no AssociatedCube annotations.
+            </summary>
+            <param name="artefactType">The type of the artefact to delete.</param>
+            <param name="id">The id of the artefact to delete.</param>
+            <param name="agencyID">The agency of the artefact to delete.</param>
+            <param name="version">The version of the artefact to delete.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.DeleteDDBDataflow(System.Int32)">
+            <summary>
+            Deletes a DDB Dataflow: corrispondent dataflow in MSDB is also deleted.
+            </summary>
+            <param name="id">The id of the DDBDataflow.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.UploadFileOnNodeApi(Microsoft.AspNetCore.Http.IFormFile,System.Collections.Generic.List{System.String})" -->
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.SynchronizeAuthDB" -->
+        <member name="M:BusinessLogic.Controller.BusinessLogic.UpdateDDBDataflow(DDB.Entities.DDBDataflowWithCols,System.String,System.String,MA.Entities.HeaderTemplate)">
+            <summary>
+            Updates a DDBDataflow: it controls DDBDataflow and SDMX dataflow are not inconsistent and DDB dataflow is not in production.
+            If not, it deletes and then creates again the DDB Dataflow.
+            </summary>
+            <param name="ddbDF">Dataflow to be updated in DDB.</param>
+            <param name="msdbDF">SDMX-JSON containing dataflow to be re-created in MSDB.</param>
+            <param name="msdbCat">SDMX-JSON containing categorisations to be re-created in MSDB.</param>
+            <param name="msdbDF">HeaderTemplate to be re-created in MSDB.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetSdmxJsonFromSdmxObjects(Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects)">
+            <summary>
+            Metodo di utilità che restiuisce l'SDMX-JSON generato a partire da un insieme di SdmxObjects
+            </summary>
+            <param name="sdmxObjects"></param>
+            <returns>Stringa contenente l'SDMX-JSON generato.</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetSdmxMlFromSdmxObjects(Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects)">
+            <summary>
+            Metodo di utilità che restiuisce l'SDMXML generato a partire da un insieme di SdmxObjects
+            </summary>
+            <param name="sdmxObjects"></param>
+            <returns>Stringa contenente l'SDMXML generato.</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetSdmxObjectsFromSdmxJson(System.String)">
+            <summary>
+            Metodo di utilità che parsa un SDMX-JSON e restituisce un insieme di SdmxObjects in esso contenuti
+            </summary>
+            <param name="json"></param>
+            <returns>l'insieme di SdmxObjects contenuti nel file json</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetSdmxObjectsFromSdmxML(System.String)">
+            <summary>
+            Metodo di utilità che parsa un SDMX-JSON e restituisce un insieme di SdmxObjects in esso contenuti
+            </summary>
+            <param name="json"></param>
+            <returns>l'insieme di SdmxObjects contenuti nel file json</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetDfMandCodes(DDB.Entities.CubeWithDetails,DDB.Entities.DDBDataflowWithCols)">
+            <summary>
+            Get codes of mandatory attributes and dimensions of the cube associated to the dataflow columns.
+            </summary>
+            <param name="cube">Cube associated to the dataflow.</param>
+            <param name="df">The DDB Dataflow.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetDfWithNewDsd(DDB.Entities.DDBDataflowWithCols@,Org.Sdmxsource.Sdmx.Api.Model.Objects.DataStructure.IDataflowObject)">
+            <summary>
+            Gets a new SDMXObjects with the dataflow to be created and a custom DSD (with annotation CustomDSD) 
+            to be created if the DDB dataflow has fewer mandatory columns than the original DSD
+            </summary>
+            <param name="df">The DDB Dataflow.</param>
+            <param name="msdbDf">The MSDB Dataflow.</param>
+            /// <returns>The ISdmxObjects to be created: the df and, eventually, the dsd</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetDfWithCustomDsd(DDB.Entities.DDBDataflowWithCols,Org.Sdmxsource.Sdmx.Api.Model.Objects.DataStructure.IDataflowObject)">
+            <summary>
+            Gets a new SDMXObjects with the dataflow to be deleted and its custom DSD if exists 
+            </summary>
+            <param name="df">The DDB Dataflow</param>
+            <param name="msdbDf">The MSDB Dataflow.</param>
+            /// <returns>The ISdmxObjects to be deleted: the df and, eventually, the dsd</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.AddAssdociatedCubeAnnotationToDsd(System.String)">
+            <summary>
+            Add AssociatedCube annotation to Dsd.
+            </summary>
+            <param name="c">JSON serialization of the cube.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.DeleteAssociatedCubeAnnotationFromDsd(System.String)">
+            <summary>
+            Deletes AssociatedCube annotation from the DSD associated to the cube.
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.GetAssociatedCubeAnnotationId(DDB.Entities.CubeWithDetails)">
+            <summary>
+            Returns annotation id for the dsd of the cube
+            </summary>
+            <param name="c">The cube</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.LoginUser(System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.CreateUser(DataModel.User)" -->
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.EditUser(DataModel.User)" -->
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.BusinessLogic.DeleteUser(DataModel.User)" -->
+        <member name="M:BusinessLogic.Controller.BusinessLogic.PingEndPoint">
+            <summary>
+            Try to connect to all Endpoint configurated in Node
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.CheckImportedFileXmlSdmxObjects(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Check all uploaded SdmxObjects in a file and return a list of objects that can be imported or not
+            </summary>
+            <param name="file">File upload on server</param>
+            <returns>List of SdmxObject</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.ImportFileXmlSdmxObjects(NSI.Entities.ImportedItemXmlDTO)">
+            <summary>
+            Imports the list of all the passed items and that are present in the uploaded file
+            </summary>
+            <param name="file">List of item to import</param>
+            <returns>Status of items imported</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.CheckImportedFileCsvItem(Microsoft.AspNetCore.Http.IFormFile,NSI.Entities.ImportedItemCsvDTO)">
+            <summary>
+            Check imported file csv
+            </summary>
+            <param name="file">File upload on server</param>
+            <returns>Top 5 element to be imported</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.ImportFileCsvItem(NSI.Entities.ImportedItemCsvDTO)">
+            <summary>
+            Imports the list of all the passed items and that are present in the uploaded file
+            </summary>
+            <param name="file">List of item to import</param>
+            <returns>Status of items imported</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.readCsvItem(System.String,NSI.Entities.ImportedItemCsvDTO,System.Int32)">
+            <summary>
+            Popolate item from csv
+            </summary>
+            <param name="top">Max element to popolate from csv</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.IsAuthDBConfigurated">
+            <summary>
+            Check if AuthDb is inizialited and configurated
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.BusinessLogic.checkConfigurationNSIandMA">
+            <summary>
+            Check if SDMX and MA WS are configurated with the name DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.SetInProduction(System.Int32,System.Boolean)">
+            <summary>
+            Sets a DDB Dataflow in Production generating a connection (if needed), a dataset, a mapping set, transcodings (if requested) and setting production flag to true
+            </summary>
+            <param name="dfId">The dataflow to set in production</param>
+            <param name="createTranscoding">Whether to generate transcoding or not.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.RemoveFromProduction(System.Int32)">
+            <summary>
+            Removes a DDB Dataflow from Production setting production flag to false and deleting its transcodings (if exist), 
+            its mapping set, its dataset and its connection (if it is not used by other dataflows)
+            </summary>
+            <param name="dfId">The dataflow to remove from production</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.SetProductionFlag(Org.Sdmxsource.Sdmx.Api.Model.Mutable.DataStructure.IDataflowMutableObject,System.Boolean)">
+            <summary>
+            Sets SDMX Dataflow Production flag to true/false, setting NonProductionDataflow Annotation to false/true
+            </summary>
+            <param name="dfM">The MSDB Dataflow</param>
+            <param name="annotationValue">The value (true or false) of NonProductionDataflow annotation.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.GetMappingsFromMappingSet(System.Int32)">
+            <summary>
+            Temp Method to get all mappings in mapping set 
+            NB. !!!!!!!!!!!!!!! Il metodo per restituire i mapping nel MA WS non è uniforme con gli altri 
+            e restituisce un oggetto Entities anziché direttamente un array di mapping
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateTranscodings(DDB.Entities.CubeWithDetails,DDB.Entities.DDBDataflowWithCols,MA.Entities.GenericMapping[])">
+            <summary>
+            Creates the transcodings from the DDB Dataflow
+            </summary>
+            <param name="cube">The cube to whom the DDB Dataflow refers.</param>
+            <param name="df">The DDB Dataflow.</param>
+            <param name="mapps">Array of DDB Dataflow's mappings</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateTimeTranscoding(System.String,MA.Entities.GenericMapping)">
+            <summary>
+            Creates Time Transcoding from the DDB Dataflow
+            </summary>
+            <param name="df">The frequency value.</param>
+            <param name="m">The mapping fot Time Dimension.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateTranscodingRules(DDB.Entities.DDBDataflowWithCols,MA.Entities.GenericMapping[])">
+            <summary>
+            Creates the transcoding rules for the DDB Dataflow.
+            </summary>
+            <param name="df">The DDB Dataflow.</param>
+            <param name="mapps">Array of DDB Dataflow's mappings</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateDDBConnection">
+            <summary>
+            Creates the connection to the DDB getting its connection string from DmApi
+            </summary>
+            <returns>The id of the entity created.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.DataflowProduction.CreateDataset(DDB.Entities.DDBDataflowWithCols,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:BusinessLogic.Controller.DataflowProduction.CreateMappingSet(DDB.Entities.DDBDataflowWithCols,System.Int32)" -->
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateDatasetColumns(DDB.Entities.DDBDataflowWithCols,System.Int32)">
+            <summary>
+            Creates the dataset columns from the DDB Dataflow.
+            </summary>
+            <param name="df">The DDB Dataflow.</param>
+            <param name="dsId">The dataset's id.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.CreateMappings(DDB.Entities.DDBDataflowWithCols,DDB.Entities.CubeWithDetails,System.Int32)">
+            <summary>
+            Creates the mappings for the mapping set.
+            </summary>
+            <param name="df">The DDB Dataflow.</param>
+            <param name="cube">The cube associated to the DDB Dataflow.</param>
+            <param name="dsId">The mapping set id.</param>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.FindMAEntity(System.String,System.String)">
+            <summary>
+            Finds the id of a MAEntity given its type and name.
+            </summary>
+            <param name="type">Type pf the entity.</param>
+            <param name="name">Name of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.GetCubeCodeFromColumnName(DDB.Entities.CubeWithDetails,System.String)">
+            <summary>
+            Returns the code of the cube corrispondent to a given column of the dataset.
+            </summary>
+            <param name="cube">The cube.</param>
+            <param name="colName">The name of the column.</param>
+            <returns>The code of the component.</returns>
+        </member>
+        <member name="M:BusinessLogic.Controller.DataflowProduction.GetDsdFromCube(DDB.Entities.CubeWithDetails)">
+            <summary>
+            Returns MutableObject for DSD associated to the DDB Dataflow
+            </summary>
+            <param name="cube">Cube associated to the DDB Dataflow DDB Dataflow</param>
+            <returns>The ISdmxObjects to be deleted: the df and, eventually, the dsd</returns>
+        </member>
+    </members>
+</doc>

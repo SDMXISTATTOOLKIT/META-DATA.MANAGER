@@ -1,0 +1,9 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\bin\Release\netcoreapp3.1\DataStore.Interface.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\bin\Release\netcoreapp3.1\DataStore.Interface.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\bin\Release\netcoreapp3.1\DataStore.Interface.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.csprojAssemblyReference.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\DataAccess\DataStore.Interface\obj\Release\netcoreapp3.1\DataStore.Interface.pdb

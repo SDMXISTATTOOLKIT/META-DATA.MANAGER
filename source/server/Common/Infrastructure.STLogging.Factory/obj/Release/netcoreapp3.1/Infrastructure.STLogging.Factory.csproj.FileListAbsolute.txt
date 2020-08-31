@@ -1,0 +1,16 @@
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.deps.json
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Configuration.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Interface.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Log4Net.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Interface.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Infrastructure.STLogging.Log4Net.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\bin\Release\netcoreapp3.1\Configuration.pdb
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.csprojAssemblyReference.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.AssemblyInfoInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.AssemblyInfo.cs
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.csproj.CoreCompileInputs.cache
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.csproj.CopyComplete
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.dll
+C:\Users\f.pitto\Source\repos\sistan-hub\Common\Infrastructure.STLogging.Factory\obj\Release\netcoreapp3.1\Infrastructure.STLogging.Factory.pdb

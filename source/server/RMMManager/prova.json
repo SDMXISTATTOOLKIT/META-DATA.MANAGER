@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "schema": "https://raw.githubusercontent.com/sdmx-twg/sdmx-json/develop/metadata-message/tools/schemas/1.0/sdmx-json-metadata-schema.json",
+    "id": 1564590889131,
+    "prepared": "31/07/2019 18:34:49",
+    "sender": {
+
+    },
+    "receivers": [
+
+    ],
+    "links": [
+
+    ]
+  },
+  "data": {
+    "metadataSets": [
+      {
+        "structureRef": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=ESTAT:ESMS_MSD(3.0)",
+        "id": "20",
+        "names": {
+          "en": "DS_TEST_EN_10",
+          "it": "DS_TEST_IT_10"
+        },
+        "annotations": [
+          {
+            "id": "MetadataSetId",
+            "texts": {
+              "en": "20"
+            },
+            "text": "20"
+          },
+          {
+            "id": "MetadataflowId",
+            "texts": {
+              "en": "ESMS_METADATAFLOW"
+            },
+            "text": "ESMS_METADATAFLOW"
+          },
+          {
+            "id": "MetadataflowAgency",
+            "texts": {
+              "en": "ESTAT"
+            },
+            "text": "ESTAT"
+          },
+          {
+            "id": "MetadataflowVersion",
+            "texts": {
+              "en": "1.0"
+            },
+            "text": "1.0"
+          },
+          {
+            "id": "MSDId",
+            "texts": {
+              "en": "ESMS_MSD"
+            },
+            "text": "ESMS_MSD"
+          },
+          {
+            "id": "MSDAgency",
+            "texts": {
+              "en": "ESTAT"
+            },
+            "text": "ESTAT"
+          },
+          {
+            "id": "MSDVersion",
+            "texts": {
+              "en": "3.0"
+            },
+            "text": "3.0"
+          },
+          {
+            "id": "TEST_10",
+            "title": null,
+            "type": "test10",
+            "texts": {
+              "en": "tset_en_10",
+              "it": "tset_it_10"
+            },
+            "text": "tset_en_10"
+          },
+          {
+            "id": "TEST_10",
+            "type": "test10",
+            "texts": {
+              "en": "tset_en_10",
+              "it": "tset_it_10"
+            },
+            "text": "tset_en_10"
+          },
+          {
+            "id": "categorisation_[CAT_ESMS_METADATAFLOW_66468]",
+            "texts": {
+              "en": "CAT_ESMS_METADATAFLOW_66468+ESTAT+1.0+urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=ESTAT:ESMS_METADATAFLOW(1.0)+urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IT1:TEST(1.0).B.B1"
+            },
+            "text": "CAT_ESMS_METADATAFLOW_66468+ESTAT+1.0+urn:sdmx:org.sdmx.infomodel.metadatastructure.Metadataflow=ESTAT:ESMS_METADATAFLOW(1.0)+urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=IT1:TEST(1.0).B.B1"
+          }
+        ],
+        "reports": [
+          {
+            "target": {
+              "id": "FULL_ESMS",
+              "referenceValues": [
+                {
+                  "id": "DATAFLOW",
+                  "object": "urn:sdmx:org.sdmx.infomodel.metadatastructure.IdentifiableObjectTarget=ESTAT:ESMS_MSD(3.0).FULL_ESMS.DATAFLOW"
+                }
+              ]
+            },
+            "annotations": [
+              {
+                "id": 2,
+                "title": "MetadataSetId",
+                "texts": {
+                  "en": "20"
+                }
+              }
+            ],
+            "attributeSet": {
+              "reportedAttributes": [
+                {
+                  "id": "ESMS_REPORT_FULL",
+                  "attributeSet": {
+                    "reportedAttributes": [
+                      {
+                        "id": "CONTACT",
+                        "attributeSet": {
+                          "reportedAttributes": [
+                            {
+                              "id": "CONTACT_ORGANISATION",
+                              "value": [
+                                {
+                                  "en": "MY_ORGANISATION"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "CONTACT_NAME",
+                              "value": [
+                                {
+                                  "en": "donato"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "CONTACT_FUNCT",
+                              "value": [
+                                {
+                                  "en": "developer"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "annotations": [
+                    {
+                      "id": "test_report",
+                      "type": "test_report"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "errors": {
+
+  }
+}

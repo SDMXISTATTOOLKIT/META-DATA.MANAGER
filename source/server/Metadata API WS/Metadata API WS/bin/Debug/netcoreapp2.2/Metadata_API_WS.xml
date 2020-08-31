@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Metadata_API_WS</name>
+    </assembly>
+    <members>
+        <member name="T:Metadata_API_WS.Controllers.MetadataApiController">
+            <summary>
+            Controller for the Metadata Api
+            </summary>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.PingEndPoint">
+            <summary>
+            Pings the endpoint
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.PackageSearch(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Searches for the package
+            </summary>
+            <param name="lang">Language[it,en]</param>
+            <param name="metadataSetId">DCAT_AP-IT MetadataSet Id</param>
+            <param name="q">Theme filter</param>
+            <param name="sort">Sort criteria</param>
+            <param name="start">Start row</param>
+            <param name="rows">Total rows</param>
+            <returns></returns>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.PackageShow(System.String,System.String,System.String)">
+            <summary>
+            Shows the package
+            </summary>
+            <param name="lang">Language [it,en]</param>
+            <param name="metadataSetId">DCAT_AP-IT MetadataSet Id</param>
+            <param name="id">Dataset Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.GroupList(System.String,System.String)">
+            <summary>
+            Gets Group list like standard CKAN.
+            </summary>
+            <param name="lang">Language [it,en]</param>
+            <param name="metadataSetId">DCAT_AP-IT MetadataSet Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Metadata_API_WS.Controllers.MetadataApiController.GetMetadata(System.String,System.String,System.Boolean)">
+            <summary>
+            Gets metadata
+            </summary>
+            <param name="metadataSetId"></param>
+            <param name="reportId"></param>
+            <param name="exported"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Metadata_API_WS.ErrorHandlingMiddleware">
+            <summary>
+            Class for errors management
+            </summary>
+        </member>
+        <member name="M:Metadata_API_WS.ErrorHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            The constructor.
+            </summary>
+            <param name="next">Request delegate.</param>
+        </member>
+        <member name="M:Metadata_API_WS.ErrorHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke method.
+            </summary>
+            <param name="context">Http context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Metadata_API_WS.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:Metadata_API_WS.Program.Main(System.String[])">
+            <summary>
+            Main method
+            </summary>
+            <param name="args">arguments</param>
+        </member>
+        <member name="M:Metadata_API_WS.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creates the web host builder
+            </summary>
+            <param name="args">arguments</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

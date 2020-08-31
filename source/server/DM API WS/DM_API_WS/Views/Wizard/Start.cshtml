@@ -1,0 +1,58 @@
+﻿@model DM_API_WS.Wizard.Model.ConfigData
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>DM API Wizard</h1>
+
+@using (Html.BeginForm("Step01Login", "Wizard", FormMethod.Post))
+{
+    //this is for create form tag
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.Username)</td>
+            <td>@Html.TextBoxFor(a => a.Username)</td>
+            <td>@Html.ValidationMessageFor(a => a.Username)</td>
+            <td><span style="color: red"></span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.Password)</td>
+            <td>@Html.PasswordFor(a => a.Password)</td>
+            <td>@Html.ValidationMessageFor(a => a.Password)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><span>MA WS url</span></td>
+            <td>@Html.TextBoxFor(a => a.MA, new { placeholder = "https://www.MaWS.ext:44375/", @class = "form-input", style = "width:500px;" })</td>
+            <td>@Html.ValidationMessageFor(a => a.MA)</td>
+            <td><span style="color: red"></span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+@if (@ViewBag.ErrorLogin != null)
+{
+    <div style="border:1px solid red">
+        @ViewBag.ErrorLogin
+    </div>
+}
+<br />
+<br />
+<br />
+<a href="~/Wizard/Home">Back to Home</a>

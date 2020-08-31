@@ -1,0 +1,3 @@
+.ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_se, .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_sw {
+    transform: translate3d(0, calc(100% - .5px), 0) !important;
+}
