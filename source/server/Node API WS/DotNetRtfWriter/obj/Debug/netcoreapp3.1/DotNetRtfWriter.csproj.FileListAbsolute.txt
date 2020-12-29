@@ -1,8 +1,0 @@
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netcoreapp3.1\DotNetRtfWriter.deps.json
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netcoreapp3.1\DotNetRtfWriter.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netcoreapp3.1\DotNetRtfWriter.pdb
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netcoreapp3.1\DotNetRtfWriter.AssemblyInfoInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netcoreapp3.1\DotNetRtfWriter.AssemblyInfo.cs
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netcoreapp3.1\DotNetRtfWriter.csproj.CoreCompileInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netcoreapp3.1\DotNetRtfWriter.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netcoreapp3.1\DotNetRtfWriter.pdb

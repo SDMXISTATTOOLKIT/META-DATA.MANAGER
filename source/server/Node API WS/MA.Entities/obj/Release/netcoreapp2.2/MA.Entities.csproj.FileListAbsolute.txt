@@ -1,9 +1,0 @@
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\bin\Release\netcoreapp2.2\MA.Entities.deps.json
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\bin\Release\netcoreapp2.2\MA.Entities.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\bin\Release\netcoreapp2.2\MA.Entities.pdb
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.csproj.CoreCompileInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.AssemblyInfoInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.AssemblyInfo.cs
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.pdb
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\MA.Entities\obj\Release\netcoreapp2.2\MA.Entities.csprojAssemblyReference.cache

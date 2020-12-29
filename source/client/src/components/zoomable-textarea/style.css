@@ -1,9 +1,0 @@
-.zoomable-textarea__input-group .ant-select-selection {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.zoomable-textarea__input-group textarea {
-    overflow-y: hidden !important
-}

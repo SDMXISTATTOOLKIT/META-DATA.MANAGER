@@ -1,9 +1,0 @@
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\bin\Release\netcoreapp2.2\ArtefactDataModel.deps.json
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\bin\Release\netcoreapp2.2\ArtefactDataModel.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\bin\Release\netcoreapp2.2\ArtefactDataModel.pdb
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.csprojAssemblyReference.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.csproj.CoreCompileInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.AssemblyInfoInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.AssemblyInfo.cs
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Common\ArtefactDataModel\obj\Release\netcoreapp2.2\ArtefactDataModel.pdb

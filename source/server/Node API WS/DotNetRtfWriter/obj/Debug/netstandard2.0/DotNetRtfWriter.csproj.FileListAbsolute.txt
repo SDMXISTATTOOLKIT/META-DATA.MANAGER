@@ -1,9 +1,0 @@
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netstandard2.0\DotNetRtfWriter.deps.json
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netstandard2.0\DotNetRtfWriter.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\bin\Debug\netstandard2.0\DotNetRtfWriter.pdb
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.csprojAssemblyReference.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.AssemblyInfoInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.AssemblyInfo.cs
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.csproj.CoreCompileInputs.cache
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.dll
-C:\Users\f.pitto\Source\repos\sistan-hub\Node API WS\DotNetRtfWriter\obj\Debug\netstandard2.0\DotNetRtfWriter.pdb

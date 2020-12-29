@@ -1,8 +1,0 @@
-.spinner-text-transition-enter {
-    opacity: 0.01;
-}
-
-.spinner-text-transition-enter.spinner-text-transition-enter-active {
-    opacity: 1;
-    transition: opacity .3s ease-in;
-}
