@@ -58,9 +58,32 @@
             const metadataSetId = urlParams.get('metadataSetId');
             if (metadataSetId == null || metadataSetId.trim().length == 0)
                 throw "Parameter metadataSetId not specified!";
+            let baseUrlMDA = urlParams.get('BaseUrlMDA');
+            let baseUrlMDM = urlParams.get('BaseUrlMDM');
+
             loadJSON('metadataapi.json',
                 function (response) {
                     configs = JSON.parse(response);
+
+                    if (baseUrlMDA) {
+                        if (baseUrlMDA.endsWith("/")) {
+                            baseUrlMDA = baseUrlMDA.substring(0, baseUrlMDA.length - 1);
+                        }
+                        loadJSON(baseUrlMDA + '/Ping',
+                            function (response) {
+                                if (response && response === "true") {
+                                    configs.baseUrl = baseUrlMDA;
+                                }
+                            }
+                        );
+                    }
+                    if (baseUrlMDM) {
+                        if (baseUrlMDM.endsWith("/")) {
+                            baseUrlMDM = baseUrlMDM.substring(0, baseUrlMDM.length - 1);
+                        }
+                        configs.baseUrlClient = baseUrlMDM;
+                    }
+
                     this.baseUrl = configs.baseUrl;
 
                     const nodeId = urlParams.get('nodeId');
@@ -147,7 +170,7 @@
         }
     </script>
 </head>
-<body onload="loadMustache('Salute')">
+<body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 radix-layouts-sidebar panel-panel">

@@ -532,10 +532,30 @@
                 const metadataSetId = urlParams.get('metadataSetId');
                 if (metadataSetId == null || metadataSetId.trim().length == 0)
                     throw "Parameter metadataSetId not specified!";
+                let baseUrlMDA = urlParams.get('BaseUrlMDA');
+                let baseUrlMDM = urlParams.get('BaseUrlMDM');
 
                 loadJSON('metadataapi.json',
                     function (response) {
-                        const configs = JSON.parse(response);
+                        let configs = JSON.parse(response);
+                        if (baseUrlMDA) {
+                            if (baseUrlMDA.endsWith("/")) {
+                                baseUrlMDA = baseUrlMDA.substring(0, baseUrlMDA.length - 1);
+                            }
+                            loadJSON(baseUrlMDA + '/Ping',
+                                function (response) {
+                                    if (response && response === "true") {
+                                        configs.baseUrl = baseUrlMDA;
+                                    }
+                                }
+                            );
+                        }
+                        if (baseUrlMDM) {
+                            if (baseUrlMDM.endsWith("/")) {
+                                baseUrlMDM = baseUrlMDM.substring(0, baseUrlMDM.length - 1);
+                            }
+                            configs.baseUrlClient = baseUrlMDM;
+                        }
                         loadDatasetData(configs, lang, null);
                     }
                 );

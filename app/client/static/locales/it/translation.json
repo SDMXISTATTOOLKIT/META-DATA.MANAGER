@@ -134,6 +134,12 @@
     },
     "mergeItemSchemes": {
       "label": "Unisci Item Schemes"
+    },
+    "attributeFile": {
+      "label": "Importa file di attributi"
+    },
+    "updateDataBrowserCache": {
+      "label": "Aggiorna cache Data Browser"
     }
   },
   "data": {
@@ -433,6 +439,20 @@
       },
       "isAttributeWithChildrenPresentational": {
         "label": "Considera tutti gli attributi con figli come \"presentational\" "
+      },
+      "virtualDFNode": {
+        "label": "Nodo"
+      },
+      "virtualDFDataflow": {
+        "label": "Dataflow"
+      },
+      "dataflowType": {
+        "label": "Tipo di dataflow",
+        "values": {
+          "normal": "Normale",
+          "virtual": "Virtuale",
+          "onlyFile": "Solo file"
+        }
       }
     },
     "item": {
@@ -544,6 +564,12 @@
             "dimension": "Dimensione",
             "attribute": "Attributo"
           }
+        },
+        "notDisplayed": {
+          "label": "Not displayed"
+        },
+        "notDisplayedItems": {
+          "label": "Codici"
         }
       },
       "attribute": {
@@ -572,6 +598,33 @@
         "type": {
           "label": "Tipo",
           "shortLabel": "Tipo"
+        },
+        "default": {
+          "label": "Default"
+        },
+        "defaultItems": {
+          "label": "Codici"
+        }
+      },
+      "timDimension": {
+        "defaultTimeStart": {
+          "label": "From"
+        },
+        "defaultTimeEnd": {
+          "label": "To"
+        },
+        "defaultLastNObservations": {
+          "label": "LastNObservations"
+        },
+        "mode": {
+          "label": "Modalità",
+          "values": {
+            "range": "Intervallo",
+            "lastNPeriods": "LastNPeriods"
+          }
+        },
+        "defaultLastNPeriods": {
+          "label": "LastNPeriods"
         }
       }
     },
@@ -744,9 +797,6 @@
         "activeDirectoryEndpoint": {
           "label": "Endpoint Active Directory"
         },
-        "dataExplorerBaseUrl": {
-          "label": "Url del Data Explorer"
-        },
         "nsiReadOnlyUsername": {
           "label": "Username SDMX WS remoto"
         },
@@ -876,13 +926,13 @@
           "label": "Codes order"
         },
         "layoutRow": {
-          "label": "Layout row"
+          "label": "Table layout row"
         },
         "layoutColumn": {
-          "label": "Layout column"
+          "label": "Table layout column"
         },
         "layoutRowSection": {
-          "label": "Layout row section"
+          "label": "Table layout row section"
         },
         "notDisplayed": {
           "label": "Not displayed"
@@ -957,10 +1007,90 @@
           "label": "Dataflow source"
         },
         "layoutFilter": {
-          "label": "Layout filter"
+          "label": "Table layout filter"
         },
         "categorisationsOrderAnnotation": {
           "label": "Categorisations order"
+        },
+        "virtualDataflowNode": {
+          "label": "Virtual Dataflow Node"
+        },
+        "lastUpdate": {
+          "label": "Last update"
+        },
+        "dataflowCatalogType": {
+          "label": "Tipo di dataflow nel catalogo"
+        },
+        "layoutChartPrimaryDim": {
+          "label": "Chart layout primary dimension"
+        },
+        "layoutChartSecondaryDim": {
+          "label": "Chart layout secondary dimension"
+        },
+        "layoutChartFilter": {
+          "label": "Chart layout filter"
+        },
+        "layoutHidden": {
+          "label": "Nascosto"
+        }
+      },
+      "dataBrowser": {
+        "nodeId": {
+          "label": "ID del Nodo"
+        },
+        "username": {
+          "label": "Username"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "cards": {
+          "httpAuthentication": {
+            "label": "Autenticazione HTTP"
+          },
+          "proxy": {
+            "label": "Proxy"
+          },
+          "authentication": {
+            "label": "Autenticazione",
+            "tooltip": "Utente abilitato a gestire la cache per il nodo specificato"
+          }
+        },
+        "httpAuthenticationEnable": {
+          "label": "Abilita"
+        },
+        "httpAuthenticationUsername": {
+          "label": "Username"
+        },
+        "httpAuthenticationPassword": {
+          "label": "Password"
+        },
+        "proxyEnable": {
+          "label": "Abilita"
+        },
+        "proxyUsername": {
+          "label": "Username"
+        },
+        "proxyPassword": {
+          "label": "Password"
+        },
+        "httpAuthenticationDomain": {
+          "label": "Dominio"
+        },
+        "proxyUrl": {
+          "label": "URL"
+        },
+        "proxyPort": {
+          "label": "Porta"
+        },
+        "publicUrl": {
+          "label": "URL pubblico"
+        },
+        "enableCacheInvalidation": {
+          "label": "Consenti aggiornamento della cache"
+        },
+        "apiUrl": {
+          "label": "URL dell'API"
         }
       }
     }
@@ -998,25 +1128,6 @@
         "createComponent": "Crea componente"
       }
     },
-    "tableViewer": {
-      "pager": {
-        "itemsPerPage": "/ pagina",
-        "prevPage": "Precedente",
-        "nextPage": "Successiva",
-        "range": "da {{from}} a {{to}} di {{total}} righe",
-        "itemsPerPageAll": "Tutte le righe",
-        "rangeAll": "Tutte le {{rowNum}} righe"
-      },
-      "filter": {
-        "confirm": "Applica",
-        "reset": "Reimposta",
-        "placeholder": "Filtra..."
-      },
-      "search": {
-        "placeholder": "Cerca..."
-      },
-      "selectedRowsInfo": "{{size}} elementi selezionati"
-    },
     "tree": {
       "searchInput": {
         "placeholder": "Cerca..."
@@ -1036,7 +1147,8 @@
         },
         "detailShow": {
           "title": "Mostra dettagli"
-        }
+        },
+        "tidTooltip": "Il Tid, Table-Identifier è un identificativo unico che consente di inserire nello stesso cubo più copie dello stesso data point per tabelle (dataflow) diverse"
       },
       "modals": {
         "uncheckableDim": {
@@ -1123,14 +1235,17 @@
             "general": {
               "title": "Generale"
             },
-            "layoutAnnotationNotDisplayed": {
-              "title": "Not Displayed"
-            },
             "layoutAnnotationDefaultTableLayout": {
-              "title": "Layout"
+              "title": "Table layout"
             },
             "layoutAnnotations": {
               "title": "Layout"
+            },
+            "layoutAnnotationDefaultChartLayout": {
+              "title": "Chart layout"
+            },
+            "layoutAnnotationDefaultMapLayout": {
+              "title": "Map layout"
             }
           },
           "buttons": {
@@ -1203,6 +1318,30 @@
         },
         "codesEditTable": {
           "title": "Modifica codici Default per {{componentId}}"
+        },
+        "timeDimensionEdit": {
+          "title": "Modifica Default",
+          "modeChangeConfirm": {
+            "title": "Sei sicuro?",
+            "content": "Perderai tutte le annotazioni della modalità corrente"
+          }
+        }
+      },
+      "layoutAnnotationDefaultChartLayout": {
+        "cards": {
+          "filter": {
+            "title": "Filtri"
+          },
+          "placeholder": "Trascina qui le dimensioni",
+          "primaryDim": {
+            "title": "Dimensione primaria"
+          },
+          "secondaryDim": {
+            "title": "Dimensione secondaria"
+          }
+        },
+        "flagSaveAnnotation": {
+          "title": "Includi queste annotazioni nell'artefatto"
         }
       }
     },
@@ -1488,7 +1627,8 @@
         "artefactDetail": {
           "title": "Dettagli artefatto"
         }
-      }
+      },
+      "noDifferencesAlert": "Gli item schemes sono identici"
     },
     "formList": {
       "removeAlert": {
@@ -1727,8 +1867,8 @@
     "default": {
       "dsdComponentsTable": {
         "columns": {
-          "codes": {
-            "title": "Codici"
+          "preview": {
+            "title": "Anteprima"
           }
         },
         "actions": {
@@ -1749,6 +1889,9 @@
           }
         }
       }
+    },
+    "dsdCompareReport": {
+      "noDifferencesAlert": "Le DSD sono identiche"
     }
   },
   "scenes": {
@@ -1783,14 +1926,30 @@
           "messages": {
             "cubeDelete": {
               "success": "Il cubo è stato cancellato"
+            },
+            "categoryDelete": {
+              "success": "Categoria cancellata correttamente"
+            },
+            "categoryMove": {
+              "success": "Categoria spostata correttamente"
             }
           },
           "createButton": {
-            "title": "Crea cubo"
+            "title": "Crea",
+            "items": {
+              "createCube": "Crea cubo",
+              "createCategory": "Crea categoria"
+            }
           },
           "deleteButton": {
-            "title": "Elimina cubo",
-            "confirm": "Sei sicuro di eliminare il cubo?"
+            "cube": {
+              "title": "Elimina cubo",
+              "confirm": "Sei sicuro di eliminare il cubo?"
+            },
+            "category": {
+              "title": "Elimina categoria",
+              "confirm": "Sei sicuro di eliminare la categoria?"
+            }
           },
           "refreshButton": {
             "title": "Aggiorna albero"
@@ -1803,6 +1962,10 @@
             "forbiddenNode": {
               "title": "Permesso negato",
               "content": "Non puoi visualizzare i dettagli di questo cubo"
+            },
+            "forbiddenDragNDrop": {
+              "title": "Spostamento non possibile",
+              "content": "E' possibile soltanto spostare categorie in altre categorie"
             }
           }
         },
@@ -1818,6 +1981,27 @@
           },
           "measureModal": {
             "title": "Dettagli misura"
+          }
+        },
+        "categoryForm": {
+          "messages": {
+            "create": {
+              "success": "Categoria creata correttamente"
+            },
+            "edit": {
+              "success": "Categoria modificata correttamente"
+            }
+          },
+          "parentSelector": {
+            "select": {
+              "title": "Scegli padre"
+            },
+            "reset": {
+              "title": "Rimuovi padre"
+            }
+          },
+          "parentModal": {
+            "title": "Scegli categoria padre"
           }
         }
       },
@@ -1963,9 +2147,6 @@
             },
             "tid": {
               "label": "TID"
-            },
-            "attributesFile": {
-              "label": "File di attributi"
             }
           },
           "submitButton": {
@@ -2049,6 +2230,9 @@
           "ignoreConcurrentUpload": {
             "title": "Possibile operazione concorrente sullo stesso cubo",
             "content": "Vuoi forzare comunque il tentativo di esecuzione dell'operazione?"
+          },
+          "submit": {
+            "title": "Sei sicuro?"
           }
         }
       },
@@ -2072,7 +2256,7 @@
         },
         "modals": {
           "cubeDownload": {
-            "title": "Scarica Cubo",
+            "title": "Scarica cubo",
             "buttons": {
               "download": {
                 "title": "Scarica"
@@ -2187,7 +2371,7 @@
                   }
                 },
                 "cubeNoDataModal": {
-                  "content": "Nessun dato presente nel Cubo"
+                  "content": "Nessun dato presente nel cubo"
                 },
                 "cubeOnlyEmbargoedDataModal": {
                   "content": "Il cubo contiene solo dati embargati: rimuovere l'embargo prima di procedere"
@@ -2302,7 +2486,7 @@
             "preview": "Anteprima",
             "edit": "Visualizza/Modifica",
             "download": "Scarica",
-            "dataExplorerPreview": "Anteprima sul Data Explorer",
+            "dataBrowserPreview": "Anteprima sul Data Browser",
             "info": "Informazioni addizionali",
             "productionModal": {
               "title": "Pubblicazione del Dataflow",
@@ -2423,10 +2607,22 @@
                 },
                 "removePublish": {
                   "success": "Dataflow rimosso correttamente dalla pubblicazione"
+                },
+                "forceCacheUpdate": {
+                  "success": "Aggiornamento della cache forzato correttamente"
                 }
               },
               "transcodingContentConstraintList": {
                 "title": "Seleziona Content Constraint"
+              },
+              "forceCacheUpdate": {
+                "label": "Cache del Data Browser",
+                "forceCacheUpdateButton": {
+                  "confirm": {
+                    "title": "Si sicuro di forzare l'aggiornamento della cache?"
+                  },
+                  "title": "Forza aggiornamento cache"
+                }
               }
             },
             "production": {
@@ -2603,6 +2799,74 @@
             }
           }
         }
+      },
+      "attributeFile": {
+        "cubeTreeModal": {
+          "title": "Cubi",
+          "tree": {
+            "refreshButton": {
+              "title": "Aggiorna l'albero"
+            }
+          }
+        },
+        "fields": {
+          "cube": {
+            "label": "Cubo",
+            "selectIcon": {
+              "title": "Seleziona un cubo"
+            },
+            "resetIcon": {
+              "title": "Deseleziona il cubo"
+            }
+          },
+          "tid": {
+            "label": "TID"
+          }
+        },
+        "confirms": {
+          "ignoreConcurrentUpload": {
+            "title": "Possibile operazione concorrente sullo stesso cubo",
+            "content": "Vuoi forzare comunque il tentativo di esecuzione dell'operazione?"
+          },
+          "submit": {
+            "title": "Sei sicuro?"
+          }
+        },
+        "submitButton": {
+          "label": "Importa"
+        },
+        "refreshProdDf": {
+          "label": "Rigenera CC + Transcoding"
+        },
+        "checkFiltAttributes": {
+          "label": "checkFiltAttributes"
+        },
+        "rowList": {
+          "title": "Dataset"
+        },
+        "messages": {
+          "fileUpload": {
+            "start": "Caricamento del file CSV",
+            "success": "File CSV caricato correttamente"
+          },
+          "submit": {
+            "start": "Importazione degli attributi",
+            "success": "Attributi importati correttamente"
+          }
+        }
+      },
+      "updateDataBrowserCache": {
+        "modal": {
+          "title": "Sei sicuro?",
+          "content": "Verrà aggiornata la cache dell'intero catalogo del nodo nel Data Browser"
+        }
+      },
+      "updateDatabrowserCache": {
+        "messages": {
+          "updateDatabrowserCache": {
+            "success": "Cache del Data Browser aggiornata correttamente"
+          }
+        }
       }
     },
     "configuration": {
@@ -2705,6 +2969,9 @@
           },
           "annotations": {
             "title": "Annotazioni"
+          },
+          "dataBrowser": {
+            "title": "Data Browser"
           }
         },
         "noNameNodeCard": {
@@ -3333,6 +3600,22 @@
             "viewMode": {
               "title": "Visualizza Dataflow - [{{triplet.id}}]"
             }
+          },
+          "virtualDFDataflowSelector": {
+            "select": {
+              "title": "Seleziona Dataflow"
+            },
+            "reset": {
+              "title": "Rimuovi Dataflow"
+            },
+            "list": {
+              "alert": {
+                "someDataflowsAreDisabledForUnallowedAgency": "Alcuni dataflow sono disabilitati perché non si ha il permesso sull'agenzia"
+              }
+            },
+            "modal": {
+              "title": "Seleziona un Dataflow"
+            }
           }
         },
         "messages": {
@@ -3348,6 +3631,11 @@
         },
         "contentConstraintList": {
           "title": "Content Constraints"
+        },
+        "errors": {
+          "cannotCloneVirtualDF": {
+            "title": "Non è possibile clonare un DF virtuale"
+          }
         }
       },
       "categorySchemesDataflowsTree": {
@@ -3707,7 +3995,7 @@
       "CHECKAUTHDB_UNKNOW_ERROR": "Errore sconosciuto durante la verifica della correttezza dell'AUTHDB.",
       "DATAFLOW_DOWNLOAD_NOTINPRODUCTION": "Il dataflow non è in produzione e quindi non può essere scaricato",
       "DATAFLOW_DOWNLOAD_NOTFOUND": "Dataflow non trovato.",
-      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow non trovato. Potrebbe non esistere il web service per il download del dataflow.",
+      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow non trovato. Potrebbe non contenere nessun dato o non esistere il web service per il download del dataflow.",
       "DF_WITH_ASSOCIATED_DDB_DF": "Il dataflow non può essere eliminato perché ha un dataflow associato nel DDB.",
       "DDBRESET_ERROR": "Errore durante il reset del DDB.",
       "DEL_CONT_CONSTRAINTS": "Errore durante l'eliminazione dei content constraints per il dataflow.",
@@ -3760,8 +4048,9 @@
       "ATTS_UNRES_CONFLICT": "Import interrotto! Conflitto non risolvibile a livello di attributi.",
       "FILE_IMPORT_WRONG_CODED_OBS_VALUE": "Observation value codificata con riferimento errato.",
       "IMPORT_DATA_CHECKING_CODED_OBS_VALUE": "Errore durante l'individuazione di riferimenti scorretti alla misura codificata.",
-      "MASID_NOTPRESENT": "MA WS non presente: necessario per l'inizializzazione",
-      "AGENCY_ALREADY_IN_CONFIG": "L'agenzia è già presente in configurazione."
+      "MASID_NOTPRESENT": "MA WS non presente: necessario per l'inizializzazione.",
+      "AGENCY_ALREADY_IN_CONFIG": "L'agenzia è già presente in configurazione.",
+      "ATTR_FILE_WRONG_FORMAT": "File di attributi con colonne sconosciute."
     },
     "some": "Si sono verificati degli errori",
     "notSupportedBySdmxSource": "Non supportato dalla libreria SdmxSource: i dati verranno scartati",
@@ -3787,12 +4076,29 @@
       }
     },
     "defaultCategorySchemeSelector": {
-      "title": "Seleziona il Category Scheme di lavoro",
       "messages": {
-        "submit": {
-          "start": "Importando il Category Scheme di lavoro",
-          "success": "Category Scheme di lavoro importato correttamente"
+        "selectSubmit": {
+          "success": "Schema di Categorie di lavoro selezionato correttamente"
+        },
+        "createSubmit": {
+          "success": "Schema di Categorie di lavoro creato correttamente"
         }
+      },
+      "alert": {
+        "title": "Schema di Categorie di lavoro non presente",
+        "selectButton": {
+          "title": "Seleziona esistente"
+        },
+        "createButton": {
+          "title": "Crea nuovo"
+        }
+      },
+      "selectModal": {
+        "title": "Seleziona Schema di Categorie di lavoro"
+      },
+      "createModal": {
+        "title": "Crea Schema di Categorie di lavoro",
+        "infoMessage": "Specificare i campi per creare la prima categoria del nuovo Schema di Categorie di lavoro"
       }
     },
     "emptyNodesModal": {
@@ -4300,6 +4606,12 @@
       },
       "groupDetail": {
         "title": "Dettagli gruppo"
+      },
+      "notDisplayedCodesSelector": {
+        "title": "Seleziona codici Not Displayed"
+      },
+      "defaultCodesSelector": {
+        "title": "Seleziona codici Default"
       }
     },
     "conceptSchemeDetail": {
@@ -4325,6 +4637,27 @@
       "tabs": {
         "derived": {
           "title": "Schema di Concetti derivato"
+        }
+      }
+    },
+    "dsdDetailModal": {
+      "dsdDetail": {
+        "componentForm": {
+          "annotationsCodesSelector": {
+            "detail": {
+              "title": "Modifica codici"
+            },
+            "select": {
+              "title": "Aggiungi codici"
+            },
+            "reset": {
+              "title": "Rimuovi tutti i codici"
+            }
+          },
+          "timeDimensionModeChangeConfirm": {
+            "title": "Sei sicuro?",
+            "content": "Perderai tutte le annotazioni della modalità corrente"
+          }
         }
       }
     }

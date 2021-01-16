@@ -1,9 +1,9 @@
 {
-  "baseUrl": "https://localhost:44375",
-  "baseUrlClient": "http://localhost:65315",
-  "getMetadata": "/api/getMetadata",
-  "pingMetadataApi": "/Ping",
-  "metadataInfoPage":"/static/referenceMetadata/GenericMetadataTemplate.html",
-  "summaryTitle":"Metadata",
-  "summarySubTitle":"Reference metadata"
+	"baseUrl": "http://vmsdmxdev/ISTAT_TOOLKIT/METADATAAPI",
+	"baseUrlClient": "http://vmsdmxdev/ISTAT_TOOLKIT/MDM_Client",
+	"getMetadata": "/api/getMetadata",
+	"pingMetadataApi": "/Ping",
+	"metadataInfoPage": "/static/referenceMetadata/GenericMetadataTemplate.html",
+	"summaryTitle": "Metadata",
+	"summarySubTitle": "Reference metadata"
 }

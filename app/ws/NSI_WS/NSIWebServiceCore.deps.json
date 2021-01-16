@@ -22,27 +22,27 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "NSIWebServiceCore/7.12.1": {
+      "NSIWebServiceCore/7.13.2": {
         "dependencies": {
           "DryIoc.Microsoft.DependencyInjection": "3.0.3",
-          "Estat.Sri.DataRetriever": "6.7.19",
-          "Estat.Sri.Sdmx.MappingStore.Store": "1.26.1",
-          "Estat.Sri.StructureRetriever": "4.7.20",
-          "Estat.Sri.Ws.AuthModule": "7.12.1",
-          "Estat.Sri.Ws.CorsModule": "7.12.1",
-          "Estat.Sri.Ws.Dependency": "7.12.1",
-          "Estat.Sri.Ws.PolicyModule": "7.12.1",
-          "Estat.Sri.Ws.Rest": "7.12.1",
+          "Estat.Sri.DataRetriever": "6.7.23",
+          "Estat.Sri.Sdmx.MappingStore.Store": "1.26.5",
+          "Estat.Sri.StructureRetriever": "4.7.24",
+          "Estat.Sri.Ws.AuthModule": "7.13.2",
+          "Estat.Sri.Ws.CorsModule": "7.13.2",
+          "Estat.Sri.Ws.Dependency": "7.13.2",
+          "Estat.Sri.Ws.PolicyModule": "7.13.2",
+          "Estat.Sri.Ws.Rest": "7.13.2",
           "MicroKnights.Log4NetAdoNetAppender": "1.0.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.1",
           "Microsoft.AspNetCore.ResponseCaching": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
           "MySql.Data": "8.0.17",
-          "NsiWsSoap": "7.12.1",
+          "NsiWsSoap": "7.13.2",
           "Oracle.ManagedDataAccess.Core": "2.19.31",
-          "StaticWsdlLoader": "7.12.1",
+          "StaticWsdlLoader": "7.13.2",
           "System.Configuration.ConfigurationManager": "4.7.0",
-          "Estat.Sri.Utils": "1.26.1",
+          "Estat.Sri.Utils": "1.26.5",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -401,12 +401,12 @@
           "lib/netstandard2.0/DryIoc.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "Estat.SdmxSource.Extension/1.18.15": {
+      "Estat.SdmxSource.Extension/1.18.18": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxDataParser": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureParser": "1.25.3",
-          "Estat.SdmxSource.StructureMutableParser": "1.25.3",
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxDataParser": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureParser": "1.25.6",
+          "Estat.SdmxSource.StructureMutableParser": "1.25.6",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
@@ -414,305 +414,306 @@
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.Extension.dll": {
-            "assemblyVersion": "1.18.15.0",
-            "fileVersion": "1.18.15.0"
+            "assemblyVersion": "1.18.18.0",
+            "fileVersion": "1.18.18.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.Extension.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxAPI/1.25.3": {
+      "Estat.SdmxSource.SdmxAPI/1.25.6": {
         "dependencies": {
           "log4net": "2.0.8"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxAPI.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxAPI.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxDataParser/1.25.3": {
+      "Estat.SdmxSource.SdmxDataParser/1.25.6": {
         "dependencies": {
           "CsvHelper": "2.16.3",
-          "Estat.SdmxSource.SdmxEdiParser": "1.25.3",
-          "Estat.SdmxSource.SdmxMlConstants": "1.25.3",
-          "Estat.SdmxSource.SdmxParseBase": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.3"
+          "Estat.SdmxSource.SdmxEdiParser": "1.25.6",
+          "Estat.SdmxSource.SdmxMlConstants": "1.25.6",
+          "Estat.SdmxSource.SdmxParseBase": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxDataParser.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxDataParser.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxEdiParser/1.25.3": {
+      "Estat.SdmxSource.SdmxEdiParser/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxObjects": "1.25.3",
-          "Estat.SdmxSource.SdmxParseBase": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxObjects": "1.25.6",
+          "Estat.SdmxSource.SdmxParseBase": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxEdiParser.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxEdiParser.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxMlConstants/1.25.3": {
+      "Estat.SdmxSource.SdmxMlConstants/1.25.6": {
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxMlConstants.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxMlConstants.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxObjects/1.25.3": {
+      "Estat.SdmxSource.SdmxObjects/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxSourceUtil": "1.25.3",
-          "Org.Sdmx.Resources.SdmxMl.Schemas.V10": "1.25.3",
-          "Org.Sdmx.Resources.SdmxMl.Schemas.V20": "1.25.3",
-          "Org.Sdmx.Resources.SdmxMl.Schemas.V21": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxSourceUtil": "1.25.6",
+          "Org.Sdmx.Resources.SdmxMl.Schemas.V10": "1.25.6",
+          "Org.Sdmx.Resources.SdmxMl.Schemas.V20": "1.25.6",
+          "Org.Sdmx.Resources.SdmxMl.Schemas.V21": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxObjects.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxObjects.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxParseBase/1.25.3": {
+      "Estat.SdmxSource.SdmxParseBase/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxMlConstants": "1.25.3",
-          "Estat.SdmxSource.SdmxObjects": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxMlConstants": "1.25.6",
+          "Estat.SdmxSource.SdmxObjects": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxParseBase.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxParseBase.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxQueryBuilder/1.25.3": {
+      "Estat.SdmxSource.SdmxQueryBuilder/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxSourceUtil": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureParser": "1.25.3",
-          "Org.Sdmx.Resources.SdmxMl.Schemas.V20": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxSourceUtil": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureParser": "1.25.6",
+          "Org.Sdmx.Resources.SdmxMl.Schemas.V20": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxQueryBuilder.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxQueryBuilder.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxSourceUtil/1.25.3": {
+      "Estat.SdmxSource.SdmxSourceUtil/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxSourceUtil.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxSourceUtil.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxStructureParser/1.25.3": {
+      "Estat.SdmxSource.SdmxStructureParser/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxEdiParser": "1.25.3",
-          "Estat.SdmxSource.SdmxObjects": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxEdiParser": "1.25.6",
+          "Estat.SdmxSource.SdmxObjects": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxStructureParser.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxStructureParser.dll": {}
         }
       },
-      "Estat.SdmxSource.SdmxStructureRetrieval/1.25.3": {
+      "Estat.SdmxSource.SdmxStructureRetrieval/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxObjects": "1.25.3",
-          "Estat.SdmxSource.SdmxSourceUtil": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxObjects": "1.25.6",
+          "Estat.SdmxSource.SdmxSourceUtil": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxStructureRetrieval.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.SdmxStructureRetrieval.dll": {}
         }
       },
-      "Estat.SdmxSource.StructureMutableParser/1.25.3": {
+      "Estat.SdmxSource.StructureMutableParser/1.25.6": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxMlConstants": "1.25.3",
-          "Estat.SdmxSource.SdmxParseBase": "1.25.3",
-          "Estat.SdmxSource.SdmxSourceUtil": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureParser": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.3"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxMlConstants": "1.25.6",
+          "Estat.SdmxSource.SdmxParseBase": "1.25.6",
+          "Estat.SdmxSource.SdmxSourceUtil": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureParser": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.SdmxSource.StructureMutableParser.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.SdmxSource.StructureMutableParser.dll": {}
         }
       },
-      "Estat.Sri.DataRetriever/6.7.19": {
+      "Estat.Sri.DataRetriever/6.7.23": {
         "dependencies": {
           "DryIoc.dll": "4.0.5",
-          "Estat.SdmxSource.Extension": "1.18.15",
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.Sri.Mapping.Api": "1.26.1",
-          "Estat.Sri.TabularWriters": "1.25.3",
-          "Estat.Sri.Utils": "1.26.1"
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.Sri.Mapping.Api": "1.26.5",
+          "Estat.Sri.TabularWriters": "1.25.6",
+          "Estat.Sri.Utils": "1.26.5"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.DataRetriever.dll": {
-            "assemblyVersion": "6.7.19.0",
-            "fileVersion": "6.7.19.0"
+            "assemblyVersion": "6.7.23.0",
+            "fileVersion": "6.7.23.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.DataRetriever.dll": {}
         }
       },
-      "Estat.Sri.Mapping.Api/1.26.1": {
+      "Estat.Sri.Mapping.Api/1.26.5": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxSourceUtil": "1.25.3",
-          "Estat.Sri.Utils": "1.26.1",
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxSourceUtil": "1.25.6",
+          "Estat.Sri.Utils": "1.26.5",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "11.0.2",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.Mapping.Api.dll": {
-            "assemblyVersion": "1.26.1.0",
-            "fileVersion": "1.26.1.0"
+            "assemblyVersion": "1.26.5.0",
+            "fileVersion": "1.26.5.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.Mapping.Api.dll": {}
         }
       },
-      "Estat.Sri.Sdmx.MappingStore.Retrieve/1.26.1": {
+      "Estat.Sri.Sdmx.MappingStore.Retrieve/1.26.5": {
         "dependencies": {
           "DryIoc.dll": "4.0.5",
-          "Estat.SdmxSource.Extension": "1.18.15",
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.SdmxSource.SdmxObjects": "1.25.3",
-          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.3",
-          "Estat.Sri.Mapping.Api": "1.26.1",
-          "Estat.Sri.Utils": "1.26.1"
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.SdmxSource.SdmxObjects": "1.25.6",
+          "Estat.SdmxSource.SdmxStructureRetrieval": "1.25.6",
+          "Estat.Sri.Mapping.Api": "1.26.5",
+          "Estat.Sri.Utils": "1.26.5"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.Sdmx.MappingStore.Retrieve.dll": {
-            "assemblyVersion": "1.26.1.0",
-            "fileVersion": "1.26.1.0"
+            "assemblyVersion": "1.26.5.0",
+            "fileVersion": "1.26.5.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.Sdmx.MappingStore.Retrieve.dll": {}
         }
       },
-      "Estat.Sri.Sdmx.MappingStore.Store/1.26.1": {
+      "Estat.Sri.Sdmx.MappingStore.Store/1.26.5": {
         "dependencies": {
-          "Estat.SdmxSource.SdmxAPI": "1.25.3",
-          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.1"
+          "Estat.SdmxSource.SdmxAPI": "1.25.6",
+          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.5"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.Sdmx.MappingStore.Store.dll": {
-            "assemblyVersion": "1.26.1.0",
-            "fileVersion": "1.26.1.0"
+            "assemblyVersion": "1.26.5.0",
+            "fileVersion": "1.26.5.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.Sdmx.MappingStore.Store.dll": {}
         }
       },
-      "Estat.Sri.Security/1.26.1": {
+      "Estat.Sri.Security/1.26.5": {
         "dependencies": {
-          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.1"
+          "Estat.Sri.Utils": "1.26.5"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.Security.dll": {
-            "assemblyVersion": "1.26.1.0",
-            "fileVersion": "1.26.1.0"
+            "assemblyVersion": "1.26.5.0",
+            "fileVersion": "1.26.5.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.Security.dll": {}
         }
       },
-      "Estat.Sri.StructureRetriever/4.7.20": {
+      "Estat.Sri.StructureRetriever/4.7.24": {
         "dependencies": {
-          "Estat.SdmxSource.Extension": "1.18.15",
-          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.1"
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.5"
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.StructureRetriever.dll": {
-            "assemblyVersion": "4.7.20.0",
-            "fileVersion": "4.7.20.0"
+            "assemblyVersion": "4.7.24.0",
+            "fileVersion": "4.7.24.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.StructureRetriever.dll": {}
         }
       },
-      "Estat.Sri.TabularWriters/1.25.3": {
+      "Estat.Sri.TabularWriters/1.25.6": {
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.TabularWriters.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Estat.Sri.TabularWriters.dll": {}
         }
       },
-      "Estat.Sri.Utils/1.26.1": {
+      "Estat.Sri.Utils/1.26.5": {
         "dependencies": {
           "Dapper": "1.50.5",
           "Microsoft.CSharp": "4.5.0",
@@ -722,8 +723,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Estat.Sri.Utils.dll": {
-            "assemblyVersion": "1.26.1.0",
-            "fileVersion": "1.26.1.0"
+            "assemblyVersion": "1.26.5.0",
+            "fileVersion": "1.26.5.0"
           }
         },
         "compile": {
@@ -1404,42 +1405,42 @@
           "lib/netstandard2.0/Oracle.ManagedDataAccess.dll": {}
         }
       },
-      "Org.Sdmx.Resources.SdmxMl.Schemas.V10/1.25.3": {
+      "Org.Sdmx.Resources.SdmxMl.Schemas.V10/1.25.6": {
         "dependencies": {
-          "XObjects": "1.25.3"
+          "XObjects": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Org.Sdmx.Resources.SdmxMl.Schemas.V10.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Org.Sdmx.Resources.SdmxMl.Schemas.V10.dll": {}
         }
       },
-      "Org.Sdmx.Resources.SdmxMl.Schemas.V20/1.25.3": {
+      "Org.Sdmx.Resources.SdmxMl.Schemas.V20/1.25.6": {
         "dependencies": {
-          "XObjects": "1.25.3"
+          "XObjects": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Org.Sdmx.Resources.SdmxMl.Schemas.V20.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Org.Sdmx.Resources.SdmxMl.Schemas.V20.dll": {}
         }
       },
-      "Org.Sdmx.Resources.SdmxMl.Schemas.V21/1.25.3": {
+      "Org.Sdmx.Resources.SdmxMl.Schemas.V21/1.25.6": {
         "dependencies": {
-          "XObjects": "1.25.3"
+          "XObjects": "1.25.6"
         },
         "runtime": {
           "lib/netstandard2.0/Org.Sdmx.Resources.SdmxMl.Schemas.V21.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
@@ -2691,24 +2692,24 @@
           "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "XObjects/1.25.3": {
+      "XObjects/1.25.6": {
         "dependencies": {
           "System.CodeDom": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/XObjects.dll": {
-            "assemblyVersion": "1.25.3.0",
-            "fileVersion": "1.25.3.0"
+            "assemblyVersion": "1.25.6.0",
+            "fileVersion": "1.25.6.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/XObjects.dll": {}
         }
       },
-      "Estat.Sri.Ws.AuthModule/7.12.1": {
+      "Estat.Sri.Ws.AuthModule/7.13.2": {
         "dependencies": {
-          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.1",
-          "Estat.Sri.Security": "1.26.1",
+          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.5",
+          "Estat.Sri.Security": "1.26.5",
           "Microsoft.AspNetCore.WebUtilities": "2.2.0",
           "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
@@ -2722,12 +2723,12 @@
           "Estat.Nsi.AuthModule.dll": {}
         }
       },
-      "Estat.Sri.Ws.Controllers/7.12.1": {
+      "Estat.Sri.Ws.Controllers/7.13.2": {
         "dependencies": {
           "DryIoc.dll": "4.0.5",
-          "Estat.Sri.DataRetriever": "6.7.19",
-          "Estat.Sri.Mapping.Api": "1.26.1",
-          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.1",
+          "Estat.Sri.DataRetriever": "6.7.23",
+          "Estat.Sri.Mapping.Api": "1.26.5",
+          "Estat.Sri.Sdmx.MappingStore.Retrieve": "1.26.5",
           "Microsoft.Net.Http.Headers": "2.2.0",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
@@ -2738,7 +2739,7 @@
           "Estat.Sri.Ws.Controllers.dll": {}
         }
       },
-      "Estat.Sri.Ws.CorsModule/7.12.1": {
+      "Estat.Sri.Ws.CorsModule/7.13.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration.Binder": "2.2.0",
@@ -2751,17 +2752,17 @@
           "Estat.Sri.Ws.CorsModule.dll": {}
         }
       },
-      "Estat.Sri.Ws.Dependency/7.12.1": {
+      "Estat.Sri.Ws.Dependency/7.13.2": {
         "dependencies": {
-          "Estat.Sri.Mapping.Api": "1.26.1",
-          "Estat.Sri.Ws.AuthModule": "7.12.1",
-          "Estat.Sri.Ws.Controllers": "7.12.1",
-          "Estat.Sri.Ws.LoggingOptions": "7.12.1",
-          "Estat.Sri.Ws.LoginService": "7.12.1",
-          "Estat.Sri.Ws.Rest": "7.12.1",
-          "NsiWsSoap": "7.12.1",
-          "StaticWsdlLoader": "7.12.1",
-          "SubmitStructure": "7.12.1"
+          "Estat.Sri.Mapping.Api": "1.26.5",
+          "Estat.Sri.Ws.AuthModule": "7.13.2",
+          "Estat.Sri.Ws.Controllers": "7.13.2",
+          "Estat.Sri.Ws.LoggingOptions": "7.13.2",
+          "Estat.Sri.Ws.LoginService": "7.13.2",
+          "Estat.Sri.Ws.Rest": "7.13.2",
+          "NsiWsSoap": "7.13.2",
+          "StaticWsdlLoader": "7.13.2",
+          "SubmitStructure": "7.13.2"
         },
         "runtime": {
           "Estat.Sri.Ws.Dependency.dll": {}
@@ -2770,7 +2771,7 @@
           "Estat.Sri.Ws.Dependency.dll": {}
         }
       },
-      "Estat.Sri.Ws.LoggingOptions/7.12.1": {
+      "Estat.Sri.Ws.LoggingOptions/7.13.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "log4net": "2.0.8"
@@ -2782,9 +2783,9 @@
           "Estat.Sri.Ws.LoggingOptions.dll": {}
         }
       },
-      "Estat.Sri.Ws.LoginService/7.12.1": {
+      "Estat.Sri.Ws.LoginService/7.13.2": {
         "dependencies": {
-          "Estat.Sri.Ws.Controllers": "7.12.1",
+          "Estat.Sri.Ws.Controllers": "7.13.2",
           "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
           "System.Configuration.ConfigurationManager": "4.7.0"
         },
@@ -2795,7 +2796,7 @@
           "Estat.Sri.Ws.LoginService.dll": {}
         }
       },
-      "Estat.Sri.Ws.PolicyModule/7.12.1": {
+      "Estat.Sri.Ws.PolicyModule/7.13.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.1.1",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -2809,11 +2810,11 @@
           "Estat.Sri.Ws.PolicyModule.dll": {}
         }
       },
-      "Estat.Sri.Ws.Rest/7.12.1": {
+      "Estat.Sri.Ws.Rest/7.13.2": {
         "dependencies": {
-          "Estat.SdmxSource.Extension": "1.18.15",
-          "Estat.SdmxSource.SdmxQueryBuilder": "1.25.3",
-          "Estat.Sri.Ws.Controllers": "7.12.1"
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.SdmxSource.SdmxQueryBuilder": "1.25.6",
+          "Estat.Sri.Ws.Controllers": "7.13.2"
         },
         "runtime": {
           "Estat.Sri.Ws.Rest.dll": {}
@@ -2822,11 +2823,11 @@
           "Estat.Sri.Ws.Rest.dll": {}
         }
       },
-      "NsiWsSoap/7.12.1": {
+      "NsiWsSoap/7.13.2": {
         "dependencies": {
-          "Estat.SdmxSource.Extension": "1.18.15",
-          "Estat.Sri.Ws.Controllers": "7.12.1",
-          "SubmitStructure": "7.12.1"
+          "Estat.SdmxSource.Extension": "1.18.18",
+          "Estat.Sri.Ws.Controllers": "7.13.2",
+          "SubmitStructure": "7.13.2"
         },
         "runtime": {
           "NsiWsSoap.dll": {}
@@ -2835,9 +2836,9 @@
           "NsiWsSoap.dll": {}
         }
       },
-      "StaticWsdlLoader/7.12.1": {
+      "StaticWsdlLoader/7.13.2": {
         "dependencies": {
-          "Estat.Sri.Ws.Controllers": "7.12.1",
+          "Estat.Sri.Ws.Controllers": "7.13.2",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.1.1"
         },
         "runtime": {
@@ -2847,9 +2848,9 @@
           "StaticWsdlLoader.dll": {}
         }
       },
-      "SubmitStructure/7.12.1": {
+      "SubmitStructure/7.13.2": {
         "dependencies": {
-          "Estat.SdmxSource.Extension": "1.18.15"
+          "Estat.SdmxSource.Extension": "1.18.18"
         },
         "runtime": {
           "SubmitStructure.dll": {}
@@ -4499,7 +4500,7 @@
     }
   },
   "libraries": {
-    "NSIWebServiceCore/7.12.1": {
+    "NSIWebServiceCore/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -4539,145 +4540,145 @@
       "path": "dryioc.microsoft.dependencyinjection/3.0.3",
       "hashPath": "dryioc.microsoft.dependencyinjection.3.0.3.nupkg.sha512"
     },
-    "Estat.SdmxSource.Extension/1.18.15": {
+    "Estat.SdmxSource.Extension/1.18.18": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Nj0751ylp+CbW1KYKKqpH1e9UIQJMR+l7UcOdyxwBrdt8cqCOgG7pPEhMwqfPctxuqfSoObt/ydNAwsKcOn0CQ==",
-      "path": "estat.sdmxsource.extension/1.18.15",
-      "hashPath": "estat.sdmxsource.extension.1.18.15.nupkg.sha512"
+      "sha512": "sha512-as7CGGiMU7H5kRE3xL/psKpk6udCYROtumA2uS3Wl2kgNPeEcaA1SIqXrRO/Cw8++r+MnH18u1Ze621xY3TccA==",
+      "path": "estat.sdmxsource.extension/1.18.18",
+      "hashPath": "estat.sdmxsource.extension.1.18.18.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxAPI/1.25.3": {
+    "Estat.SdmxSource.SdmxAPI/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tVKhSIQv1ch69bIdneYKHrAbfBBnBajcaA0vWwZTakKBA10EnXbALt7FUKB7mV5dwETXrRt5jnYhhg1h958GEw==",
-      "path": "estat.sdmxsource.sdmxapi/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxapi.1.25.3.nupkg.sha512"
+      "sha512": "sha512-6yumEcbBW5qHLSY2ctUTbXKIKz5xNMzZ4fuBm2XY7KH3RabmnWtNCqGhkxsLTYd5CZmXendD8+hvNhDJPotqYw==",
+      "path": "estat.sdmxsource.sdmxapi/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxapi.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxDataParser/1.25.3": {
+    "Estat.SdmxSource.SdmxDataParser/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0rEJOU7VG98u0YJZ0mNurt/WoFJCHRz6L3u35724dtSbKOdgub7vSY16wHpX7wvfNz0vAfyKinJnwqjzsgrjmQ==",
-      "path": "estat.sdmxsource.sdmxdataparser/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxdataparser.1.25.3.nupkg.sha512"
+      "sha512": "sha512-Vc1rR2HQXmS9NPCU39th9QiUMafpbCdjQmDGa2qn/CyJY5QM3PXRDPGT2CxJ4NWl7wo5X6C7bNSnhgD3gWgo0Q==",
+      "path": "estat.sdmxsource.sdmxdataparser/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxdataparser.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxEdiParser/1.25.3": {
+    "Estat.SdmxSource.SdmxEdiParser/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2D7wvkpTmViTKsoY3z72yEbzSz6HR0LWvPWiJIqmxjjQYYuHCMjBe4F9L7tJAv5Xi7cDF2cNQufrLAnGadqgwg==",
-      "path": "estat.sdmxsource.sdmxediparser/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxediparser.1.25.3.nupkg.sha512"
+      "sha512": "sha512-lMyGsOQuG6Z/EN7yoJktOP8k4Z3IVmQyXjTk81evayOhkaT2rYDn0m31+ZSI99pYJyyg0BCuYIArNs861fUe0Q==",
+      "path": "estat.sdmxsource.sdmxediparser/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxediparser.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxMlConstants/1.25.3": {
+    "Estat.SdmxSource.SdmxMlConstants/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/YYiG+9utBUUMfQFiU5LWZ9wCG1pbg+iiFCxngadvyxG9cq7AwXN5batOfh9N6tcxmY5S6T5omHWNcM9QmAChg==",
-      "path": "estat.sdmxsource.sdmxmlconstants/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxmlconstants.1.25.3.nupkg.sha512"
+      "sha512": "sha512-W41xpCtNFe4fHeF038CxwgLbF7Oy3cNT2EZbUnoVZZXM6fzKmXYlsr5AxrVM0jVNWfYnwZk2tMKWW8yZAi52ZA==",
+      "path": "estat.sdmxsource.sdmxmlconstants/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxmlconstants.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxObjects/1.25.3": {
+    "Estat.SdmxSource.SdmxObjects/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eT1GLiPtr/pI23k97ts8zimrd8V965dqxNbwTp1eVl8KUX1ahnbnZfVQE5eDc4meynGTcvigIqqm1eTZ4tR5wQ==",
-      "path": "estat.sdmxsource.sdmxobjects/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxobjects.1.25.3.nupkg.sha512"
+      "sha512": "sha512-SVFuoz6X2U62hS0hnKh6n6SgXLVYO6nUENsZnXTiSEJkrwU/cqV60l7qoSMaJN8Agvhh12lhv0KmTC4SzCu9ZQ==",
+      "path": "estat.sdmxsource.sdmxobjects/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxobjects.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxParseBase/1.25.3": {
+    "Estat.SdmxSource.SdmxParseBase/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+rpZiSqlrRExLL431WXT/4bxIWokINkEN46jCDBiV0EzxYMoAbK2rH1rBTEAZBPaFNW7oEkC97U/CbIrsnqvJg==",
-      "path": "estat.sdmxsource.sdmxparsebase/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxparsebase.1.25.3.nupkg.sha512"
+      "sha512": "sha512-kbLmyW3h70PWM8RVIs/HQsquHhhwbsWj4al/XOlOLPPvipsyKJdj/VuDdPJn4PUw3q7ePJE2BSq4pcgBOMMkIQ==",
+      "path": "estat.sdmxsource.sdmxparsebase/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxparsebase.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxQueryBuilder/1.25.3": {
+    "Estat.SdmxSource.SdmxQueryBuilder/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dBbZKUaEY78u9FLGbaT6P30WRklGRmg+qmi8by9PI3tDYS/txCW43nx/t5OnD/CpW2Z95a/0GX+GZEtYVJ77GA==",
-      "path": "estat.sdmxsource.sdmxquerybuilder/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxquerybuilder.1.25.3.nupkg.sha512"
+      "sha512": "sha512-bavqggnKrKupe6YcGtddaG8TcxiFDxOUCg1UYhQR5tlBeCZGPIafQJiu1ij4dTpCvvPhQ5bf+tQ7n0NfKyoomA==",
+      "path": "estat.sdmxsource.sdmxquerybuilder/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxquerybuilder.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxSourceUtil/1.25.3": {
+    "Estat.SdmxSource.SdmxSourceUtil/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Xb3FBeQ9WFVXAusgZ2zSQ6PmaaVTVpfL1edLGoUkM9oPkjA0zgK07uRkmyyQk/SlhmxWtV4rlJIgjUVLMc/4Xg==",
-      "path": "estat.sdmxsource.sdmxsourceutil/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxsourceutil.1.25.3.nupkg.sha512"
+      "sha512": "sha512-jU5DknINoj3W44dhy//7biRwBmlbxOjasfHYV8zpRQHvwKxNRpFxGF+PhvVJ/S9pv19osjVa6uq0AtaSqP3tkw==",
+      "path": "estat.sdmxsource.sdmxsourceutil/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxsourceutil.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxStructureParser/1.25.3": {
+    "Estat.SdmxSource.SdmxStructureParser/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1sVVZscillY4Ro076+Yx1THQVIuWJoFEiICn8vV5x7lzXkaahz69/Y+1VLOdHQQG5OSFTDN9w+OKWeY3TgW81w==",
-      "path": "estat.sdmxsource.sdmxstructureparser/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxstructureparser.1.25.3.nupkg.sha512"
+      "sha512": "sha512-YAopLIrpwngxRcfiwd/S69XY6g2IkSi0DgFFSeVc1v5kHOesak179yWWNKlCYkG3rGHVbJlqMM+tA6afALKA+A==",
+      "path": "estat.sdmxsource.sdmxstructureparser/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxstructureparser.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.SdmxStructureRetrieval/1.25.3": {
+    "Estat.SdmxSource.SdmxStructureRetrieval/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3QazrvZvmtk8zw2gpXM80qYhBN+N/MKj8unv5qDPzW/F/0xrZrc53vPCIEG/w3C+0IXmFG2bpFwuUUULYUDshA==",
-      "path": "estat.sdmxsource.sdmxstructureretrieval/1.25.3",
-      "hashPath": "estat.sdmxsource.sdmxstructureretrieval.1.25.3.nupkg.sha512"
+      "sha512": "sha512-Kk4GJwd1f5jCiE600A9/yu+nJJk2jzqP+o6O1+JS75blE+3d1xFa81/8m5zHRHovNEFukqff0DuDojGYZNHflg==",
+      "path": "estat.sdmxsource.sdmxstructureretrieval/1.25.6",
+      "hashPath": "estat.sdmxsource.sdmxstructureretrieval.1.25.6.nupkg.sha512"
     },
-    "Estat.SdmxSource.StructureMutableParser/1.25.3": {
+    "Estat.SdmxSource.StructureMutableParser/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xHM0+vG0NMqk/ES51LcsLGJJI5F4PmAX+Q7JEqFJKoBVL7868Mij4q2r3HpJed50e/dMd/N7+IRwgnb9RRJR1Q==",
-      "path": "estat.sdmxsource.structuremutableparser/1.25.3",
-      "hashPath": "estat.sdmxsource.structuremutableparser.1.25.3.nupkg.sha512"
+      "sha512": "sha512-G7EJaVZ2Xw2VEuwrn4mgfIxV8U67eG+ro4jh9fTk6rlR8PAZfCaBRUX/E21Xbz4TUemUb9aeSWJIOZ22/xS+Rg==",
+      "path": "estat.sdmxsource.structuremutableparser/1.25.6",
+      "hashPath": "estat.sdmxsource.structuremutableparser.1.25.6.nupkg.sha512"
     },
-    "Estat.Sri.DataRetriever/6.7.19": {
+    "Estat.Sri.DataRetriever/6.7.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rGgTJTr1N9FSEN0tv2HHR7KynRWlW+bOzcmPlU7w4ZN9VSNsE3vFuJY/FYcvUy3KrVaG0Pu0+34k4kwYwv2/PA==",
-      "path": "estat.sri.dataretriever/6.7.19",
-      "hashPath": "estat.sri.dataretriever.6.7.19.nupkg.sha512"
+      "sha512": "sha512-+v5bGhpejPx9LKkKnhQNC3fVyTxusy3HXNzF04q25N0V7Z+gTZPbCOGL5GGIJijKV2eTbvlyYd+qzcR6LtV3AQ==",
+      "path": "estat.sri.dataretriever/6.7.23",
+      "hashPath": "estat.sri.dataretriever.6.7.23.nupkg.sha512"
     },
-    "Estat.Sri.Mapping.Api/1.26.1": {
+    "Estat.Sri.Mapping.Api/1.26.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-40k3OPAcuhNXsHxy2P6k5im8D/OjWjT654qCe6VFj4HO9C6ZEtNHgGz/pbMDVQPmTyfLNwN2SO5Ie+Plb0EqVQ==",
-      "path": "estat.sri.mapping.api/1.26.1",
-      "hashPath": "estat.sri.mapping.api.1.26.1.nupkg.sha512"
+      "sha512": "sha512-NbzQwtuPhXNrw/uG5/6UWzjl1lRRo3WaoFIJgzfLIZiOPYSPNSPHGMjTj9TwHWYne3XPLvPHpCa4J5IPauPc6w==",
+      "path": "estat.sri.mapping.api/1.26.5",
+      "hashPath": "estat.sri.mapping.api.1.26.5.nupkg.sha512"
     },
-    "Estat.Sri.Sdmx.MappingStore.Retrieve/1.26.1": {
+    "Estat.Sri.Sdmx.MappingStore.Retrieve/1.26.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-D739VzvdJlGZcQ4Yr3HpPx3hkb8KC1it5gMRu1PbCoqOqqtoxWR6MXByfMVhcuw5Qd4+MNy1ZcOaEPlHj7MU6A==",
-      "path": "estat.sri.sdmx.mappingstore.retrieve/1.26.1",
-      "hashPath": "estat.sri.sdmx.mappingstore.retrieve.1.26.1.nupkg.sha512"
+      "sha512": "sha512-TgS4BnaTQV7cCfaONXMlHra94P96Pn1FGxMKG5whu1fzh0r9S40M4dxy1XCNdoQy2PS4gTzZ6zzv2ZfukgmM3w==",
+      "path": "estat.sri.sdmx.mappingstore.retrieve/1.26.5",
+      "hashPath": "estat.sri.sdmx.mappingstore.retrieve.1.26.5.nupkg.sha512"
     },
-    "Estat.Sri.Sdmx.MappingStore.Store/1.26.1": {
+    "Estat.Sri.Sdmx.MappingStore.Store/1.26.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4/Xds3YSruMr9WpDDWIunIHPT/tKLaRQkK7hCGp6XrjJmuhSIzKqp0FdU35hwPtQWn9vlSwyBbXycrQM1LwElQ==",
-      "path": "estat.sri.sdmx.mappingstore.store/1.26.1",
-      "hashPath": "estat.sri.sdmx.mappingstore.store.1.26.1.nupkg.sha512"
+      "sha512": "sha512-kuBzzPlb2OSnDA15VWGrbc/ag11hK7aBkjQNyGjH+wY4pknU+tDfODl3xvcrUVinDP0Zd9Pxo2AR1+WMGCokmg==",
+      "path": "estat.sri.sdmx.mappingstore.store/1.26.5",
+      "hashPath": "estat.sri.sdmx.mappingstore.store.1.26.5.nupkg.sha512"
     },
-    "Estat.Sri.Security/1.26.1": {
+    "Estat.Sri.Security/1.26.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KZGk1DVHqiAqHoi4ilzC4kZCmcCPDIgdHzcVMGlN1/53s0dkzDK8HHsWwElcol7SFkiRCZzuEKdNQ+kSN+4kzw==",
-      "path": "estat.sri.security/1.26.1",
-      "hashPath": "estat.sri.security.1.26.1.nupkg.sha512"
+      "sha512": "sha512-YfSmwirCj9WGeTN+IrvlAQpc/ysggMN6TTT5R6ApqxQFmaQvTYrygoyJQYHqiY8qXPQ8KTJVmtDi0yqNH7nLTA==",
+      "path": "estat.sri.security/1.26.5",
+      "hashPath": "estat.sri.security.1.26.5.nupkg.sha512"
     },
-    "Estat.Sri.StructureRetriever/4.7.20": {
+    "Estat.Sri.StructureRetriever/4.7.24": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ouZhLP+piy5k4nPG6ZGNKJd22QkHizcfHnqA6qBjXBYgPqqooBCSvWyU4jhysPlLqLNmlo4/7o+nNfklfJA6xg==",
-      "path": "estat.sri.structureretriever/4.7.20",
-      "hashPath": "estat.sri.structureretriever.4.7.20.nupkg.sha512"
+      "sha512": "sha512-YYrBYEQmw6xPb+P1NiPZ+MEsUCmkUtoitl/sMlinWK8OYn6j4UvheR5Wcwh9I9OHKluGfACrXrtBVATHuEizUw==",
+      "path": "estat.sri.structureretriever/4.7.24",
+      "hashPath": "estat.sri.structureretriever.4.7.24.nupkg.sha512"
     },
-    "Estat.Sri.TabularWriters/1.25.3": {
+    "Estat.Sri.TabularWriters/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yf4dYuX+Q6G945cP1gwzzBi8mnztb0Ly2clS+ZhzS9hkFnILjUK2QW/q9zwip6mWgotgU/W3K4IzxCx4xQUlyg==",
-      "path": "estat.sri.tabularwriters/1.25.3",
-      "hashPath": "estat.sri.tabularwriters.1.25.3.nupkg.sha512"
+      "sha512": "sha512-YjPXfD6AQGj+UiSup5uGShhuadl3sOgu6eT7r1xfWxecS192Kw9/vY1cAMUx3ap9i8aKfYL2xrMKmj+/6yTQfg==",
+      "path": "estat.sri.tabularwriters/1.25.6",
+      "hashPath": "estat.sri.tabularwriters.1.25.6.nupkg.sha512"
     },
-    "Estat.Sri.Utils/1.26.1": {
+    "Estat.Sri.Utils/1.26.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ate9/OOgIRCWV/TCXbytbCVQKdIgOWgRIYwqMeCjepCsiAFRit7X71KyF813UQAlp2cjAXR6rdoqvvbyKexdKw==",
-      "path": "estat.sri.utils/1.26.1",
-      "hashPath": "estat.sri.utils.1.26.1.nupkg.sha512"
+      "sha512": "sha512-3vpKugM3aTDeHzDXaA6DLOXCQuB5e5VtAI1EubL/UrFk9N0k7zOwLYF17Q69qpfEndM7faqa5QPlImRvOdQlbw==",
+      "path": "estat.sri.utils/1.26.5",
+      "hashPath": "estat.sri.utils.1.26.5.nupkg.sha512"
     },
     "Google.Protobuf/3.6.1": {
       "type": "package",
@@ -5106,26 +5107,26 @@
       "path": "oracle.manageddataaccess.core/2.19.31",
       "hashPath": "oracle.manageddataaccess.core.2.19.31.nupkg.sha512"
     },
-    "Org.Sdmx.Resources.SdmxMl.Schemas.V10/1.25.3": {
+    "Org.Sdmx.Resources.SdmxMl.Schemas.V10/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/SuuamYs2lVoxkHtjyWqQhC9z4PUIvvKxslqQJ1C01RFZTAjJ9gQ72ezgUf5tuxPYmS7e1+KuqEPOnME5cwsFA==",
-      "path": "org.sdmx.resources.sdmxml.schemas.v10/1.25.3",
-      "hashPath": "org.sdmx.resources.sdmxml.schemas.v10.1.25.3.nupkg.sha512"
+      "sha512": "sha512-HWxwo3aOlh1yGLSLNn+re6jYeCwM60yD0EWsH3JTcYiwdkDhTFDqAvk5vlGjwxN34USrF+LiyEjlBe0o+yk72w==",
+      "path": "org.sdmx.resources.sdmxml.schemas.v10/1.25.6",
+      "hashPath": "org.sdmx.resources.sdmxml.schemas.v10.1.25.6.nupkg.sha512"
     },
-    "Org.Sdmx.Resources.SdmxMl.Schemas.V20/1.25.3": {
+    "Org.Sdmx.Resources.SdmxMl.Schemas.V20/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wJqZYKmoIuPQwyTX1cBPFhhOou4O4wKHfrTZGoaZcIGqjfScibbjHDVZKZfFJwK7PgUptIcnga0EonEgkdTCkg==",
-      "path": "org.sdmx.resources.sdmxml.schemas.v20/1.25.3",
-      "hashPath": "org.sdmx.resources.sdmxml.schemas.v20.1.25.3.nupkg.sha512"
+      "sha512": "sha512-vfu/JQPMcHe9FYOdpr2ZkydUo/v3YAM2ej/oPuy7pOEda6/N8rMVt/Ez8qkGwAj2Mx0YuGOEyV/E8oGYVQcdiQ==",
+      "path": "org.sdmx.resources.sdmxml.schemas.v20/1.25.6",
+      "hashPath": "org.sdmx.resources.sdmxml.schemas.v20.1.25.6.nupkg.sha512"
     },
-    "Org.Sdmx.Resources.SdmxMl.Schemas.V21/1.25.3": {
+    "Org.Sdmx.Resources.SdmxMl.Schemas.V21/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-j7hfdww7dDfVAKo9JSUbO9EpS5bTH01uZHHEglwzr6ZCrCpTNeHFsoUpAV2Ml9Hw4j9RXs8e64shMdTVeMfEhg==",
-      "path": "org.sdmx.resources.sdmxml.schemas.v21/1.25.3",
-      "hashPath": "org.sdmx.resources.sdmxml.schemas.v21.1.25.3.nupkg.sha512"
+      "sha512": "sha512-sT/CheronCBbHJD9ozDCC3C4iho4ldJ8WZQPkwaGACRo+dRFr6e5rkDVhb8YntJLj3dGZBizTx1xNWKVxvdh0Q==",
+      "path": "org.sdmx.resources.sdmxml.schemas.v21/1.25.6",
+      "hashPath": "org.sdmx.resources.sdmxml.schemas.v21.1.25.6.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -5974,64 +5975,64 @@
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
-    "XObjects/1.25.3": {
+    "XObjects/1.25.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QSOsroxsP7pu11XXr5eMT8G9MkYdO5nVME4C03WNwAcDJNN/I57mFxY06TQOGSlX1LtCP+nvYmAEfP/02CG+UQ==",
-      "path": "xobjects/1.25.3",
-      "hashPath": "xobjects.1.25.3.nupkg.sha512"
+      "sha512": "sha512-viCiujXYskTwJ7ae752vOORypBbOiK+F32/QEIFsCMPSrzsQFsAPIOv2SBmjgt6ny/ZKnZB0UeOSgyxPASdQvQ==",
+      "path": "xobjects/1.25.6",
+      "hashPath": "xobjects.1.25.6.nupkg.sha512"
     },
-    "Estat.Sri.Ws.AuthModule/7.12.1": {
+    "Estat.Sri.Ws.AuthModule/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.Controllers/7.12.1": {
+    "Estat.Sri.Ws.Controllers/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.CorsModule/7.12.1": {
+    "Estat.Sri.Ws.CorsModule/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.Dependency/7.12.1": {
+    "Estat.Sri.Ws.Dependency/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.LoggingOptions/7.12.1": {
+    "Estat.Sri.Ws.LoggingOptions/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.LoginService/7.12.1": {
+    "Estat.Sri.Ws.LoginService/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.PolicyModule/7.12.1": {
+    "Estat.Sri.Ws.PolicyModule/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Estat.Sri.Ws.Rest/7.12.1": {
+    "Estat.Sri.Ws.Rest/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "NsiWsSoap/7.12.1": {
+    "NsiWsSoap/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "StaticWsdlLoader/7.12.1": {
+    "StaticWsdlLoader/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SubmitStructure/7.12.1": {
+    "SubmitStructure/7.13.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

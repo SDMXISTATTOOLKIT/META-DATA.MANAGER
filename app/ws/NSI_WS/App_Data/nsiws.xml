@@ -8,6 +8,12 @@
         <r:permission id="CanReadData"/>
     </r:and>
   </r:rest>
+  <!-- Experimental feature, POST key in body. key=..... -->
+  <r:rest path="/rest/data/[^/]+/body/?(/.*)?" method="POST" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
   <!-- available constraints aka actual constraints aka cube-->
   <r:rest path="/rest/availableconstraint/[^/]+(/.*)?" method="GET" allowAnonymous="true">
     <r:and>

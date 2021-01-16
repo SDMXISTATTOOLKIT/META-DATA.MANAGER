@@ -28,6 +28,8 @@ INSERT INTO [AUTH_FUNCTIONALITY] VALUES
 ('compare-dsds', NULL),
 ('upgrade-dsd', NULL),
 ('synchronize-codelists', NULL),
+('attribute-file', NULL),
+('update-databrowser-cache', NULL),
 ('ddb-reset', NULL),
 ('remove-temp-tables', NULL),
 ('utilities', NULL),
@@ -61,7 +63,7 @@ FROM(	SELECT FUNCT_ID
 		FROM [AUTH_FUNCTIONALITY]
 		WHERE FUNCT_NAME = 'data-manager')q
 WHERE FUNCT_NAME IN 
-('builder', 'file-mapping','loader','dataflow-builder','cube-list','manage-series','upgrade-dsd','synchronize-codelists','ddb-reset','remove-temp-tables')
+('builder', 'file-mapping','loader','dataflow-builder','cube-list','manage-series','upgrade-dsd','synchronize-codelists','attribute-file','update-databrowser-cache','ddb-reset','remove-temp-tables')
 
 UPDATE [AUTH_FUNCTIONALITY]
 SET PARENT_FUNCT_ID = q.FUNCT_ID

@@ -113,7 +113,7 @@
                 <tr>
                     <td class="Cl-Level2">{{id}}</td>
                     <td class="Cl-Content">
-                        <a class="DocCommon" target="_blank" href="{{>getMetadataUrl}}?lang={{>language}}&nodeId={{>nodeId}}&metadataSetId={{>metadataSetId}}&reportId={{id}}">
+                        <a class="DocCommon" target="_blank" href="{{>getMetadataUrl}}?lang={{>language}}&BaseUrlMDA={{>baseUrlMDA}}&BaseUrlMDM={{>baseUrlMDM}}&nodeId={{>nodeId}}&metadataSetId={{>metadataSetId}}&reportId={{id}}">
                             {{#target.referenceValues}}
                             {{object}}
                             {{/target.referenceValues}}
@@ -204,7 +204,9 @@
                     "language": lang,
                     "languagetemplate": "{{" + lang + "}}",
                     "nodeId": this.nodeIdToUse,
-                    "metadataSetId": metadataSetId
+                    "metadataSetId": metadataSetId,
+                    "baseUrlMDA": configs.baseUrl,
+                    "baseUrlMDM": configs.baseUrlClient
                 });
                 const outputMod = replaceAttributeIdWithLabel(output, lang, this.nodeIdToUse, configs.baseUrl);
                 document.getElementById('target').innerHTML = outputMod;
@@ -285,10 +287,29 @@
                 const metadataSetId = urlParams.get('metadataSetId');
                 if (metadataSetId == null || metadataSetId.trim().length == 0)
                     throw "Parameter metadataSetId not specified!";
+                let baseUrlMDA = urlParams.get('BaseUrlMDA');
+                let baseUrlMDM = urlParams.get('BaseUrlMDM');
 
                 loadJSON('metadataapi.json',
                     function (response) {
                         const configs = JSON.parse(response);
+                        if (baseUrlMDA) {
+                            if (baseUrlMDA.endsWith("/")) {
+                                baseUrlMDA = baseUrlMDA.substring(0, baseUrlMDA.length-1);
+                            }
+                            loadJSON(baseUrlMDA + '/Ping',
+                                function (response) {
+                                    if (response && response === "true") {
+                                        configs.baseUrl = baseUrlMDA;
+                                    }
+                                });
+                        }
+                        if (baseUrlMDM) {
+                            if (baseUrlMDM.endsWith("/")) {
+                                baseUrlMDM = baseUrlMDM.substring(0, baseUrlMDM.length - 1);
+                            }
+                            configs.baseUrlClient = baseUrlMDM;
+                        }
                         loadDatasetData(configs, lang, null);
                     }
                 );
