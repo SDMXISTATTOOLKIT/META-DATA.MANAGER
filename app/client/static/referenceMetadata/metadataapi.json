@@ -1,9 +1,0 @@
-{
-	"baseUrl": "http://vmsdmxdev/ISTAT_TOOLKIT/METADATAAPI",
-	"baseUrlClient": "http://vmsdmxdev/ISTAT_TOOLKIT/MDM_Client",
-	"getMetadata": "/api/getMetadata",
-	"pingMetadataApi": "/Ping",
-	"metadataInfoPage": "/static/referenceMetadata/GenericMetadataTemplate.html",
-	"summaryTitle": "Metadata",
-	"summarySubTitle": "Reference metadata"
-}
