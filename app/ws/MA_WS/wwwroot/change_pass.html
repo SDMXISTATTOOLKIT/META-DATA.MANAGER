@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Change password</title>
+    <link href="style/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="script/auth.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/util.js" charset="utf-8"></script>
+    <script>
+        function changeUserPass(evt) {
+            evt.preventDefault();
+            console.log("Submit" + evt);
+
+            var pass1 = document.getElementById("userPassword").value;
+            var pass2 = document.getElementById("userPassword2").value;
+            var newPassInfo = document.getElementById("changePassInfo");
+            if (pass1 !== pass2) {
+                setError(newPassInfo, "Passwords do no match");
+                return false;
+            }
+            else {
+                setSuccess(newPassInfo, "Passwords match");
+            }
+
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("pass").value;
+            sri.authws.changePass(user, pass, user, pass1,
+                function (e3) {
+                    if (this.status === 204) {
+                        setSuccess(newPassInfo, "password changes succesfully");
+                    }
+					else if (this.status === 401) {
+                        setError(newPassInfo, "Invalid username/password");
+					}
+                    else {
+                        setError(newPassInfo, "could not change password: " + this.statusText);
+						const contentType = this.getResponseHeader("Content-Type");
+						if (contentType && contentType.startsWith('application/json')) {
+							const resp = JSON.parse(this.response);
+							if (resp.errorMessage) {
+								setError(newPassInfo, resp.errorMessage);
+							}
+						}
+                    }
+                    console.log("XHR onload" + e3);
+                });
+            return false;
+        };
+        window.onload = function (e1) {
+            console.log("Document On load" + e1);
+            document.getElementById("changeUserPass").addEventListener("submit", changeUserPass);};
+    </script>
+</head>
+
+<body>
+    <form id="changeUserPass" method="post" target="_parent">
+        <table>
+            <tr>
+                <td>
+                    <label for="username">Enter username </label>
+                </td>
+                <td>
+                    <input id="username" type="text" value="admin" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pass">Enter password:</label>
+                </td>
+                <td>
+                    <input id="pass" type="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="userPassword">Type new password : </label>
+                </td>
+                <td>
+                    <input id="userPassword" type="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="userPassword">Re-Type new password : </label>
+                </td>
+
+                <td>
+                    <input id="userPassword2" type="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Change password" />
+                </td>
+                <td>
+                    <div id="changePassInfo" ></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

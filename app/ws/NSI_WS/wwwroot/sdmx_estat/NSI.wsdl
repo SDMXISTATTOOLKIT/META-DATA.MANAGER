@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ec.europa.eu/eurostat/sri/service/2.0/extended" xmlns:sdmx="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended">
+
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended">
+			
+			<xsd:import namespace="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message" schemaLocation="sdmx_estat/SDMXMessage.xsd" />
+			
+			
+			<!-- GetCompactData Req/Resp definition -->
+			<xsd:element name="GetCompactData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:QueryMessage" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetCompactDataResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:CompactData" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- GetGenericData Req/Resp definition -->
+			<xsd:element name="GetGenericData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:QueryMessage" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetGenericDataResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:GenericData" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- GetUtilityData Req/Resp definition -->
+			<xsd:element name="GetUtilityData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:QueryMessage" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetUtilityDataResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:UtilityData" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<!-- GetCrossSectionalData Req/Resp definition -->
+			<xsd:element name="GetCrossSectionalData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:QueryMessage" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetCrossSectionalDataResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:CrossSectionalData" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="QueryStructure">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:RegistryInterface" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="QueryStructureResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="sdmx:RegistryInterface" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+
+	</wsdl:types>
+
+	<!-- Message definitions -->
+	<wsdl:message name="GetCompactDataRequest">
+		<wsdl:part element="impl:GetCompactData" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetCompactDataResponse">
+		<wsdl:part element="impl:GetCompactDataResponse" name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="GetGenericDataRequest">
+		<wsdl:part element="impl:GetGenericData" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetGenericDataResponse">
+		<wsdl:part element="impl:GetGenericDataResponse" name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="GetUtilityDataRequest">
+		<wsdl:part element="impl:GetUtilityData" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetUtilityDataResponse">
+		<wsdl:part element="impl:GetUtilityDataResponse" name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="GetCrossSectionalDataRequest">
+		<wsdl:part element="impl:GetCrossSectionalData" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GetCrossSectionalDataResponse">
+		<wsdl:part element="impl:GetCrossSectionalDataResponse" name="parameters" />
+	</wsdl:message>
+
+	<wsdl:message name="QueryStructureRequest">
+		<wsdl:part name="parameters" element="impl:QueryStructure" />
+	</wsdl:message>
+	<wsdl:message name="QueryStructureResponse">
+		<wsdl:part name="parameters" element="impl:QueryStructureResponse" />
+	</wsdl:message>
+	<!-- Port Type -->
+	<wsdl:portType name="NSIEstatV20Service">
+		<wsdl:operation name="GetCompactData">
+			<wsdl:input message="impl:GetCompactDataRequest" name="GetCompactDataRequest" />
+			<wsdl:output message="impl:GetCompactDataResponse" name="GetCompactDataResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetGenericData">
+			<wsdl:input message="impl:GetGenericDataRequest" name="GetGenericDataRequest" />
+			<wsdl:output message="impl:GetGenericDataResponse" name="GetGenericDataResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetUtilityData">
+			<wsdl:input message="impl:GetUtilityDataRequest" name="GetUtilityDataRequest" />
+			<wsdl:output message="impl:GetUtilityDataResponse" name="GetUtilityDataResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="GetCrossSectionalData">
+			<wsdl:input message="impl:GetCrossSectionalDataRequest" name="GetCrossSectionalDataRequest" />
+			<wsdl:output message="impl:GetCrossSectionalDataResponse" name="GetCrossSectionalDataResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="QueryStructure">
+			<wsdl:input message="impl:QueryStructureRequest" name="QueryStructureRequest" />
+			<wsdl:output message="impl:QueryStructureResponse" name="QueryStructureResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+
+	<!-- Binding -->
+	<wsdl:binding name="NSIEstatServiceSoapBinding" type="impl:NSIEstatV20Service">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetCompactData">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="GetCompactDataRequest">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetCompactDataResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetGenericData">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="GetGenericDataRequest">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetGenericDataResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetUtilityData">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="GetUtilityDataRequest">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetUtilityDataResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetCrossSectionalData">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="GetCrossSectionalDataRequest">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetCrossSectionalDataResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="QueryStructure">
+			<wsdlsoap:operation soapAction="" />
+			<wsdl:input name="QueryStructureRequest">
+				<wsdlsoap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="QueryStructureResponse">
+				<wsdlsoap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- Service definition -->
+	<wsdl:service name="NSIEstatV20Service">
+		<wsdl:port binding="impl:NSIEstatServiceSoapBinding" name="NSIEstatV20Service">
+			<wsdlsoap:address location="NSIEstatV20Service" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

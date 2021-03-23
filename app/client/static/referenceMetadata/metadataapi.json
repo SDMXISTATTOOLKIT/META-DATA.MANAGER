@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://localhost:44375",
+  "getMetadata": "/api/getMetadata",
+  "pingMetadataApi": "/Ping",
+  "metadataInfoPage":"/static/referenceMetadata/GenericMetadataTemplate.html",
+  "summaryTitle":"Metadata",
+  "summarySubTitle":"Reference metadata"
+}

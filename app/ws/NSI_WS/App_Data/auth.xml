@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security>
+  <users>
+    <user id="mauser" password="123" defaultStoreId="MappingStoreServer">
+      <storeIdRef id="MappingStoreServer" />
+      <ruleRef id="AdminRole"/>
+    </user>
+  </users>
+  <storeIds>
+    <storeId id="MappingStoreServer" />
+  </storeIds>
+  <accessRules>
+    <rule id="CanReadStructuralMetadata"/>
+    <rule id="CanReadData"/>
+    <rule id="CanIgnoreProductionFlag"/>
+    <rule id="CanPerformInternalMappingConfig"/>
+    <rule id="CanImportStructures"/>
+    <rule id="CanUpdateStructuralMetadata"/>
+    <rule id="CanDeleteStructuralMetadata"/>
+    <rule id="CanImportData"/>
+    <rule id="CanUpdateData"/>
+    <rule id="CanDeleteData"/>
+    <rule id="CanModifyStoreSettings"/>
+    <rule id="WsUserRole"/>
+    <rule id="DomainUserRole"/>
+    <rule id="StructureImporterRole"/>
+    <rule id="DataImporterRole"/>
+    <rule id="StructureImporterRole_U"/>
+    <rule id="DataImporterRole_U"/>
+    <rule id="StructureImporterRole_UD"/>
+    <rule id="DataImporterRole_UD"/>
+    <rule id="AdminRole"/>
+  </accessRules>
+  <impliedRules>
+    <ruleRef id="WsUserRole">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanReadData" />
+    </ruleRef>
+    <ruleRef id="DomainUserRole">
+      <impliedRuleRef id="WsUserRole" />
+      <impliedRuleRef id="CanIgnoreProductionFlag" />
+      <impliedRuleRef id="CanPerformInternalMappingConfig" />
+    </ruleRef>
+    <ruleRef id="StructureImporterRole">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanImportStructures" />
+      <impliedRuleRef id="CanUpdateStructuralMetadata" />
+      <impliedRuleRef id="CanDeleteStructuralMetadata" />
+    </ruleRef>
+    <ruleRef id="DataImporterRole">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanReadData" />
+      <impliedRuleRef id="CanImportData" />
+      <impliedRuleRef id="CanUpdateData" />
+      <impliedRuleRef id="CanDeleteData" />
+    </ruleRef>
+    <ruleRef id="StructureImporterRole_U">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanImportStructures" />
+      <impliedRuleRef id="CanUpdateStructuralMetadata" />
+    </ruleRef>
+    <ruleRef id="DataImporterRole_U">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanReadData" />
+      <impliedRuleRef id="CanImportData" />
+      <impliedRuleRef id="CanUpdateData" />
+    </ruleRef>
+    <ruleRef id="StructureImporterRole_UD">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanImportStructures" />
+      <impliedRuleRef id="CanUpdateStructuralMetadata" />
+      <impliedRuleRef id="CanDeleteStructuralMetadata" />
+    </ruleRef>
+    <ruleRef id="DataImporterRole_UD">
+      <impliedRuleRef id="CanReadStructuralMetadata" />
+      <impliedRuleRef id="CanReadData" />
+      <impliedRuleRef id="CanImportData" />
+      <impliedRuleRef id="CanUpdateData" />
+      <impliedRuleRef id="CanDeleteData" />
+    </ruleRef>
+    <ruleRef id="AdminRole">
+      <impliedRuleRef id="WsUserRole" />
+      <impliedRuleRef id="DomainUserRole" />
+      <impliedRuleRef id="StructureImporterRole" />
+      <impliedRuleRef id="DataImporterRole" />
+      <impliedRuleRef id="CanModifyStoreSettings" />
+      <impliedRuleRef id="CanUpdateStructuralMetadata" />
+      <impliedRuleRef id="CanUpdateData" />
+      <impliedRuleRef id="CanDeleteStructuralMetadata" />
+      <impliedRuleRef id="CanDeleteData" />
+    </ruleRef>
+  </impliedRules>
+</security>

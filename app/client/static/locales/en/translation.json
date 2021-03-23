@@ -1,0 +1,4058 @@
+{
+  "menu": {
+    "metaManager": {
+      "label": "Meta Manager"
+    },
+    "codelists": {
+      "label": "Codelists"
+    },
+    "conceptSchemes": {
+      "label": "Concept Schemes"
+    },
+    "categorySchemes": {
+      "label": "Category Schemes"
+    },
+    "dataStructureDefinitions": {
+      "label": "Data Structure Definitions"
+    },
+    "dataflows": {
+      "label": "Dataflows"
+    },
+    "categorisations": {
+      "label": "Categorizations"
+    },
+    "hierarchicalCodelists": {
+      "label": "Hierarchical Codelists"
+    },
+    "agencySchemes": {
+      "label": "Agency Schemes"
+    },
+    "dataProviderSchemes": {
+      "label": "Data Provider Schemes"
+    },
+    "dataConsumerSchemes": {
+      "label": "Data Consumer Schemes"
+    },
+    "organizationUnitSchemes": {
+      "label": "Organization Unit Schemes"
+    },
+    "contentConstraints": {
+      "label": "Content Constraints"
+    },
+    "structureSets": {
+      "label": "Structure Sets"
+    },
+    "provisionAgreements": {
+      "label": "Provision Agreements"
+    },
+    "registrations": {
+      "label": "Registrations"
+    },
+    "dataManager": {
+      "label": "Data Manager"
+    },
+    "builder": {
+      "label": "Builder"
+    },
+    "fileMapping": {
+      "label": "File Mapping"
+    },
+    "loader": {
+      "label": "Loader"
+    },
+    "dataflowBuilder": {
+      "label": "Dataflow Builder"
+    },
+    "manageSeries": {
+      "label": "Manage Series"
+    },
+    "compareDSDs": {
+      "label": "Compare DSDs"
+    },
+    "upgradeDSD": {
+      "label": "Upgrade DSD"
+    },
+    "synchronizeCodelists": {
+      "label": "Synchronize Codelists"
+    },
+    "ddbReset": {
+      "label": "DDB Reset"
+    },
+    "utilities": {
+      "label": "Utilities"
+    },
+    "importStructures": {
+      "label": "Import Structures"
+    },
+    "compareItemSchemes": {
+      "label": "Compare Item Schemes"
+    },
+    "artefactBrowser": {
+      "label": "Artefact Browser"
+    },
+    "referenceMetadata": {
+      "label": "Metadata"
+    },
+    "metadataSet": {
+      "label": "Reference Metadata"
+    },
+    "manageUsers": {
+      "label": "Manage Users"
+    },
+    "setPermissions": {
+      "label": "Set Permissions"
+    },
+    "configuration": {
+      "label": "Configuration"
+    },
+    "applicationConfiguration": {
+      "label": "Application"
+    },
+    "nodesConfiguration": {
+      "label": "Nodes"
+    },
+    "cubeList": {
+      "label": "Cube list"
+    },
+    "DCAT-AP_IT": {
+      "label": "DCAT-AP_IT"
+    },
+    "categorySchemesAndDataflows": {
+      "label": "Category Schemes and Dataflows"
+    },
+    "userManagement": {
+      "label": "User Management"
+    },
+    "msds": {
+      "label": "Metadata Structure Definitions"
+    },
+    "metadataflows": {
+      "label": "Metadataflows"
+    },
+    "removeTempTables": {
+      "label": "Remove temporary tables"
+    },
+    "mergeItemSchemes": {
+      "label": "Merge Item Schemes"
+    }
+  },
+  "data": {
+    "attribute": {
+      "id": {
+        "label": "ID"
+      },
+      "assignmentStatus": {
+        "label": "Assignment Status"
+      },
+      "attachmentLevel": {
+        "label": "Attachment Level"
+      },
+      "concept": {
+        "label": "Concept"
+      },
+      "codelist": {
+        "label": "Codelist"
+      },
+      "group": {
+        "label": "Group"
+      }
+    },
+    "cube": {
+      "id": {
+        "label": "ID"
+      },
+      "name": {
+        "label": "Name"
+      },
+      "dsd": {
+        "label": "DSD"
+      },
+      "components": {
+        "label": "Components"
+      },
+      "saveButton": {
+        "label": "Save"
+      },
+      "observedValueCanBeAlphanumeric": "Observed val can be alphanumeric",
+      "lastUpdate": {
+        "label": "Last update"
+      },
+      "view": {
+        "label": "View"
+      },
+      "hasEmbargoedData": {
+        "shortLabel": "Embargo"
+      }
+    },
+    "fileMapping": {
+      "name": {
+        "label": "Name"
+      },
+      "components": {
+        "label": "Components"
+      },
+      "cube": {
+        "id": {
+          "label": "Cube ID"
+        },
+        "name": {
+          "label": "Cube name"
+        }
+      },
+      "description": {
+        "label": "Description"
+      },
+      "tid": {
+        "label": "TID"
+      }
+    },
+    "csv": {
+      "file": {
+        "label": "File"
+      },
+      "separator": {
+        "label": "Separator"
+      },
+      "hasHeader": {
+        "label": "Has header"
+      },
+      "uploadButton": {
+        "label": "Upload file"
+      },
+      "tableShowButton": {
+        "label": "Show Dataset"
+      },
+      "delimiter": {
+        "label": "Delimiter"
+      },
+      "hasDotStatFormat": {
+        "label": ".STAT Format"
+      }
+    },
+    "xml": {
+      "file": {
+        "label": "File"
+      },
+      "uploadButton": {
+        "label": "Upload XML"
+      },
+      "tableShowButton": {
+        "label": "Show dataset"
+      }
+    },
+    "dimension": {
+      "id": {
+        "label": "ID"
+      }
+    },
+    "dataflow": {
+      "cubeID": {
+        "shortLabel": "Orig. Cube"
+      },
+      "header": {
+        "test": {
+          "label": "Test flag"
+        },
+        "name": {
+          "label": "Transmission name"
+        },
+        "sender": {
+          "label": "Sender"
+        },
+        "receiver": {
+          "label": "Receiver"
+        },
+        "dataSetAgencyId": {
+          "label": "Dataset Agency ID"
+        },
+        "source": {
+          "label": "Source"
+        },
+        "organisationId": {
+          "label": "Organization ID"
+        },
+        "organisationName": {
+          "label": "Organization name"
+        },
+        "contactName": {
+          "label": "Name"
+        },
+        "contactEmail": {
+          "label": "Email"
+        },
+        "contactDepartment": {
+          "label": "Department"
+        },
+        "contactRole": {
+          "label": "Role"
+        }
+      },
+      "hasTranscoding": {
+        "values": {
+          "true": "Yes",
+          "false": "No"
+        },
+        "shortLabel": "Transc."
+      },
+      "viewName": {
+        "shortLabel": "View name"
+      },
+      "isProduction": {
+        "values": {
+          "true": "In Production",
+          "false": "Not in Production"
+        },
+        "shortLabel": "Prod."
+      },
+      "hasContentConstraint": {
+        "shortLabel": "C.C."
+      },
+      "hasContentConstraints": {
+        "values": {
+          "true": "Has Content Constraints",
+          "false": "Has Content Constraints"
+        }
+      },
+      "hasEmbargoedData": {
+        "values": {
+          "true": "Has embargoed data",
+          "false": "Has embargoed data"
+        }
+      }
+    },
+    "artefact": {
+      "id": {
+        "label": "ID",
+        "shortLabel": "ID"
+      },
+      "version": {
+        "label": "Version",
+        "shortLabel": "Vers."
+      },
+      "isFinal": {
+        "label": "Finalized",
+        "values": {
+          "final": "Final",
+          "notFinal": "Not final"
+        },
+        "shortLabel": "Final"
+      },
+      "uri": {
+        "label": "URI"
+      },
+      "urn": {
+        "label": "URN"
+      },
+      "validFrom": {
+        "label": "Valid from"
+      },
+      "validTo": {
+        "label": "Valid to"
+      },
+      "name": {
+        "label": "Name",
+        "shortLabel": "Name"
+      },
+      "agencyID": {
+        "label": "Agency",
+        "shortLabel": "Ag."
+      },
+      "type": {
+        "shortLabel": "Type"
+      },
+      "dsd": {
+        "label": "DSD"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "isPublished": {
+        "shortLabel": "State",
+        "values": {
+          "published": "Exposed",
+          "notPublished": "Not exposed",
+          "draft": "Draft"
+        }
+      },
+      "downloadFormat": {
+        "structure": {
+          "label": "SDMX v. 2.1"
+        },
+        "structure20": {
+          "label": "SDMX v. 2.0"
+        },
+        "csv": {
+          "label": "CSV"
+        },
+        "rtf": {
+          "label": "RTF"
+        },
+        "rdf": {
+          "label": "RDF"
+        },
+        "generic": {
+          "label": "SDMX generic v. 2.1"
+        },
+        "generic20": {
+          "label": "SDMX generic v. 2.0"
+        },
+        "csvCustom": {
+          "label": "Custom CSV"
+        },
+        "json": {
+          "label": "JSON"
+        },
+        "compact": {
+          "label": "SDMX compact v. 2.1"
+        },
+        "structureSpecific": {
+          "label": "SDMX structure specific v. 2.1"
+        },
+        "sdmxCsv": {
+          "label": "SDMX-CSV"
+        },
+        "sdmxJson": {
+          "label": "SDMX-JSON"
+        }
+      },
+      "msd": {
+        "label": "MSD"
+      },
+      "relationship": {
+        "shortLabel": "Relationship",
+        "children": {
+          "label": "Children"
+        },
+        "parent": {
+          "label": "Parent"
+        }
+      },
+      "mergeConflict": {
+        "shortLabel": "Conflict",
+        "values": {
+          "withMergeConflict": "Merged with conflict",
+          "withoutMergeConflict": "Merged without conflict"
+        }
+      },
+      "isAttributeWithChildrenPresentational": {
+        "label": "Treat all attributes with children as \"presentational\" "
+      }
+    },
+    "item": {
+      "id": {
+        "label": "ID",
+        "shortLabel": "ID"
+      },
+      "name": {
+        "label": "Name",
+        "shortLabel": "Name"
+      },
+      "parent": {
+        "label": "Parent",
+        "shortLabel": "Par."
+      },
+      "order": {
+        "label": "Order",
+        "shortLabel": "Ord."
+      },
+      "description": {
+        "label": "Description",
+        "shortLabel": "Desc."
+      },
+      "oecdFullName": {
+        "label": "FullName",
+        "shortLabel": "FullName"
+      },
+      "oecdIsDefault": {
+        "shortLabel": "IsDefault",
+        "values": {
+          "true": "IsDefault",
+          "false": "Not IsDefault"
+        }
+      }
+    },
+    "commons": {
+      "language": {
+        "label": "Language"
+      }
+    },
+    "user": {
+      "username": {
+        "label": "Username"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "confirmPassword": {
+        "label": "Confirm password"
+      },
+      "editPassword": {
+        "label": "Edit password"
+      }
+    },
+    "annotation": {
+      "id": {
+        "label": "ID"
+      },
+      "title": {
+        "label": "Title"
+      },
+      "type": {
+        "label": "Type"
+      },
+      "text": {
+        "label": "Text"
+      }
+    },
+    "measure": {
+      "id": {
+        "label": "ID"
+      },
+      "concept": {
+        "label": "Concept"
+      },
+      "codelist": {
+        "label": "Codelist"
+      }
+    },
+    "dsd": {
+      "component": {
+        "id": {
+          "shortLabel": "ID",
+          "label": "ID"
+        },
+        "concept": {
+          "shortLabel": "Concept",
+          "label": "Concept"
+        },
+        "codelist": {
+          "label": "Codelist"
+        },
+        "order": {
+          "label": "Order",
+          "shortLabel": "Ord."
+        },
+        "conceptScheme": {
+          "label": "Concept Scheme"
+        },
+        "representation": {
+          "shortLabel": "Coded repr."
+        },
+        "type": {
+          "shortLabel": "Type",
+          "values": {
+            "dimension": "Dimension",
+            "attribute": "Attribute"
+          }
+        }
+      },
+      "attribute": {
+        "assignmentStatus": {
+          "shortLabel": "Ass. Status",
+          "label": "Assignment Status"
+        },
+        "attachmentLevel": {
+          "shortLabel": "Attach. Level",
+          "label": "Attachment Level"
+        },
+        "dimensions": {
+          "label": "Dimensions"
+        },
+        "group": {
+          "label": "Group"
+        }
+      },
+      "group": {
+        "dimensions": {
+          "shortLabel": "Dimensions",
+          "label": "Dimensions"
+        }
+      },
+      "dimension": {
+        "type": {
+          "label": "Dimension",
+          "shortLabel": "Dimension"
+        }
+      }
+    },
+    "appConfig": {
+      "userInterfaceForm": {
+        "minTreeNodesForPagination": {
+          "label": "Minimum nodes number to enable tree pagination"
+        },
+        "treePageSize": {
+          "label": "Tree page size"
+        },
+        "defaultSidebarCollapsed": {
+          "label": "Default sidebar collapsed"
+        },
+        "languages": {
+          "label": "Languages",
+          "buttons": {
+            "add": {
+              "label": "Add language"
+            },
+            "remove": {
+              "label": "Remove language"
+            }
+          }
+        },
+        "defaultLanguage": {
+          "label": "Default language ID"
+        },
+        "anonymousPages": {
+          "label": "Anonymous pages"
+        },
+        "maxTreeNodes": {
+          "label": "Maximum tree nodes for allowing tree visualization"
+        },
+        "maxTreeNodesForPagination": {
+          "label": "Maximum showable tree nodes using 'Show more' in tree"
+        },
+        "maxNodeForExpandAll": {
+          "label": "Maximum tree nodes for allowing tree total expansion"
+        }
+      },
+      "dataManagementForm": {
+        "dataLanguages": {
+          "label": "Data languages",
+          "buttons": {
+            "add": {
+              "label": "Add language"
+            },
+            "remove": {
+              "label": "Remove language"
+            }
+          }
+        },
+        "cubeCodePrefix": {
+          "label": "Cube code prefix"
+        },
+        "maxDescriptionLength": {
+          "label": "Maximum length of multi-line fields"
+        }
+      },
+      "defaultHeaderSubmitStructureForm": {
+        "id": {
+          "label": "ID"
+        },
+        "test": {
+          "label": "Test"
+        },
+        "prepared": {
+          "label": "Prepared"
+        },
+        "sender": {
+          "label": "Sender"
+        },
+        "receiver": {
+          "label": "Receiver"
+        }
+      },
+      "agencies": {
+        "agencies": {
+          "label": "Agencies",
+          "buttons": {
+            "add": {
+              "label": "Add agency"
+            },
+            "remove": {
+              "label": "Remove agency"
+            }
+          }
+        }
+      },
+      "superUserCredentials": {
+        "superUserCredentials": {
+          "username": {
+            "label": "Username"
+          },
+          "password": {
+            "label": "Set new password"
+          },
+          "confirmPassword": {
+            "label": "Confirm new password"
+          },
+          "label": "Superuser credentials",
+          "buttons": {
+            "add": {
+              "label": "Add superuser"
+            },
+            "remove": {
+              "label": "Remove superuser"
+            }
+          }
+        }
+      },
+      "endpointSettingsForm": {
+        "nsiTimeOut": {
+          "label": "NSI WS timeout"
+        },
+        "dmTimeOut": {
+          "label": "DM timeout"
+        },
+        "maTimeOut": {
+          "label": "MA timeout"
+        }
+      }
+    },
+    "nodesConfig": {
+      "agencies": {
+        "label": "Agencies"
+      },
+      "endpoint": {
+        "nsiEndpoint": {
+          "label": "SDMX WS Endpoint",
+          "placeholder": "https://localhost/NSI_WS/SdmxRegistryService"
+        },
+        "initialWsdl": {
+          "label": "Initial WSDL"
+        },
+        "pingArtefact": {
+          "label": "Ping Artefact",
+          "options": {
+            "categoryScheme": {
+              "label": "Category Scheme"
+            },
+            "codelist": {
+              "label": "Codelist"
+            },
+            "conceptScheme": {
+              "label": "Concept Scheme"
+            }
+          }
+        },
+        "nsiEndpointType": {
+          "label": "SDMX WS Endpoint type",
+          "options": {
+            "soap": {
+              "label": "SOAP"
+            },
+            "rest": {
+              "label": "REST"
+            }
+          }
+        },
+        "maEndpoint": {
+          "label": "MA Endpoint",
+          "placeholder": "https://localhost/MA_WS"
+        },
+        "dmEndpoint": {
+          "label": "DM Endpoint",
+          "placeholder": "https://localhost/DM_API_WS/api/DMApi"
+        },
+        "ldapEndpoint": {
+          "label": "LDAP Endpoint"
+        },
+        "activeDirectoryEndpoint": {
+          "label": "Active Directory Endpoint"
+        },
+        "dataExplorerBaseUrl": {
+          "label": "Data Explorer base url"
+        },
+        "nsiReadOnlyPassword": {
+          "label": "Remote SDMX WS password"
+        },
+        "nsiReadOnlyUsername": {
+          "label": "Remote SDMX WS username"
+        },
+        "metadataBaseURL": {
+          "label": "Metadata API base url",
+          "placeholder": "https://localhost/METADATA_API"
+        },
+        "supportAllCompleteStubs": {
+          "label": "AllCompleteStubs support"
+        }
+      },
+      "general": {
+        "id": {
+          "label": "ID"
+        },
+        "name": {
+          "label": "Name"
+        },
+        "invisible": {
+          "label": "Hidden"
+        },
+        "defaultItemsViewMode": {
+          "label": "Default items view mode",
+          "options": {
+            "table": {
+              "label": "Table"
+            },
+            "tree": {
+              "label": "Tree"
+            }
+          }
+        }
+      },
+      "node": {
+        "proxy": {
+          "enabled": {
+            "label": "Enabled"
+          },
+          "address": {
+            "label": "Address"
+          },
+          "port": {
+            "label": "Port"
+          },
+          "username": {
+            "label": "Username"
+          },
+          "password": {
+            "label": "Password"
+          }
+        }
+      },
+      "search": {
+        "excludeCodelists": {
+          "label": "Excluded Codelists"
+        },
+        "excludeConceptSchemes": {
+          "label": "Excluded Concept Schemes"
+        }
+      },
+      "annotationTabs": {
+        "annotationTabs": {
+          "annotationTab": {
+            "annotations": {
+              "annotation": {
+                "name": {
+                  "label": "Name"
+                },
+                "isVisible": {
+                  "label": "Visible"
+                },
+                "label": {
+                  "label": "Label"
+                }
+              },
+              "label": "Annotation"
+            },
+            "name": {
+              "label": "Name"
+            },
+            "isVisible": {
+              "label": "Visible"
+            },
+            "label": {
+              "label": "Label"
+            }
+          },
+          "label": "Annotation Tabs"
+        },
+        "isTextCollapsed": {
+          "label": "Collapse multiline text"
+        }
+      },
+      "dcatApIt": {
+        "msd": {
+          "label": "MSD",
+          "select": {
+            "title": "Select MSD"
+          },
+          "reset": {
+            "title": "Deselect MSD"
+          }
+        }
+      },
+      "annotations": {
+        "cards": {
+          "order": {
+            "label": "Order annotations"
+          },
+          "oecd": {
+            "label": "OECD annotations"
+          }
+        },
+        "conceptSchemesOrderAnnotation": {
+          "label": "Annotation for Concepts order"
+        },
+        "categorySchemesOrderAnnotation": {
+          "label": "Annotation for Categories order"
+        },
+        "codelistsOrderAnnotation": {
+          "label": "Annotation for Codes order"
+        },
+        "layoutRow": {
+          "label": "Annotation for a component of DSDs or dataflows that has to be showed in row"
+        },
+        "layoutColumn": {
+          "label": "Annotation for a component of DSDs or dataflows that has to be showed in column"
+        },
+        "layoutRowSection": {
+          "label": "Annotation for a component of DSDs or dataflows that has to be showed in row section"
+        },
+        "notDisplayed": {
+          "label": "Annotation for a component of DSDs or dataflows that has not to be displayed"
+        },
+        "fullName": {
+          "label": "Annotation for the full name of an item"
+        },
+        "associatedCube": {
+          "label": "Annotation for DSDs with an associated cube"
+        },
+        "changed": {
+          "label": "Annotation for final codelists modified by the user"
+        },
+        "customDSD": {
+          "label": "Annotation for DSDs created automatically through the Dataflow Builder module"
+        },
+        "dDBDataflow": {
+          "label": "Annotation for dataflows created in the DDB through the Dataflow Builder module"
+        },
+        "haveMetadata": {
+          "label": "Annotation for dataflows with an associated report"
+        },
+        "metadataset": {
+          "label": "Annotation for metadataflows with an associated Metadata Set"
+        },
+        "default": {
+          "label": "Annotation for item set as default"
+        },
+        "restrictedForPublication": {
+          "label": "Annotation for report attribute restricted for publication"
+        },
+        "attachedFilePath": {
+          "label": "Annotation for report attribute attachment path"
+        },
+        "dcatIsMultilingual": {
+          "label": "Annotation for multilingual report attribute"
+        },
+        "customIsPresentational": {
+          "label": "Annotation for MSD to treat all report attributes with children as \"presentational\" "
+        }
+      }
+    }
+  },
+  "components": {
+    "dsdDetail": {
+      "tabs": {
+        "general": {
+          "title": "General"
+        },
+        "primaryMeasure": {
+          "title": "Primary measure"
+        },
+        "dimensions": {
+          "title": "Dimensions"
+        },
+        "groups": {
+          "title": "Groups"
+        },
+        "attributes": {
+          "title": "Attributes"
+        },
+        "categorisations": {
+          "title": "Categorisations"
+        }
+      },
+      "componentList": {
+        "actions": {
+          "detail": "View/Edit",
+          "delete": "Delete",
+          "detailReadOnly": "View"
+        }
+      },
+      "buttons": {
+        "createComponent": "Create component"
+      }
+    },
+    "tableViewer": {
+      "pager": {
+        "itemsPerPage": "/ page",
+        "prevPage": "Previous",
+        "nextPage": "Next",
+        "range": "from {{from}} to {{to}} of {{total}} rows",
+        "itemsPerPageAll": "All rows",
+        "rangeAll": "All {{numRow}} rows"
+      },
+      "filter": {
+        "confirm": "Apply",
+        "reset": "Reset",
+        "placeholder": "Filter..."
+      },
+      "search": {
+        "placeholder": "Search..."
+      },
+      "selectedRowsInfo": "{{size}} rows selected"
+    },
+    "tree": {
+      "searchInput": {
+        "placeholder": "Search..."
+      },
+      "actions": {
+        "collapseAll": "Collapse all",
+        "expandAll": "Expand all"
+      },
+      "showMore": "Show more {{pageSize}} of {{remaining}}... ",
+      "count": "Nodes count: {{count}}",
+      "count_plural": "Nodes count: {{count}}"
+    },
+    "cubeComponentList": {
+      "item": {
+        "codelistShowIcon": {
+          "title": "Show Codelist details"
+        },
+        "detailShow": {
+          "title": "Show details"
+        }
+      }
+    },
+    "fileMappingTable": {
+      "actions": {
+        "detail": {
+          "title": "Show detail"
+        },
+        "delete": {
+          "title": "Delete mapping"
+        },
+        "deleteAll": {
+          "title": "Delete all selected mappings"
+        }
+      }
+    },
+    "embargoInput": {
+      "fields": {
+        "enabled": "Embargo",
+        "autoReleaseEnabled": "Auto release data",
+        "autoReleaseDate": "Release date",
+        "autoReleaseTime": "Release time"
+      },
+      "placeholder": "Insert time",
+      "clearIcon": {
+        "title": "Clear time"
+      }
+    },
+    "whereConditionsForm": {
+      "addBlockButton": "Add block",
+      "block": {
+        "addConditionButton": "Add condition",
+        "removeButton": "Remove block"
+      }
+    },
+    "empty": {
+      "text": "No data to display"
+    },
+    "itemsImportForm": {
+      "title": "Import Items from CSV",
+      "columnsCard": {
+        "title": "CSV columns",
+        "hasDescriptionCol": {
+          "label": "Description"
+        },
+        "hasParentCol": {
+          "label": "ParentCode"
+        },
+        "hasOrderCol": {
+          "label": "Order"
+        },
+        "hasIDCol": {
+          "label": "ID"
+        },
+        "hasNameCol": {
+          "label": "Name"
+        },
+        "hasOecdFullNameCol": {
+          "label": "FullName"
+        },
+        "hasOecdIsDefaultCol": {
+          "label": "IsDefault"
+        }
+      },
+      "importButton": {
+        "label": "Import Items"
+      },
+      "showAllCsvRows": {
+        "label": "Full preview"
+      },
+      "allCSVRowsModal": {
+        "title": "Full preview"
+      }
+    },
+    "annotationsForm": {
+      "cards": {
+        "annotations": {
+          "title": "Annotations",
+          "tabs": {
+            "general": {
+              "title": "General"
+            },
+            "oecdNotDisplayed": {
+              "title": "Not Displayed"
+            },
+            "oecdLayout": {
+              "title": "Layout"
+            }
+          },
+          "buttons": {
+            "remove": {
+              "title": "Delete"
+            },
+            "add": {
+              "title": "Add annotation"
+            }
+          }
+        }
+      },
+      "alerts": {
+        "illegalAnnotationType": {
+          "title": "Cannot edit annotation type",
+          "content": "Type is reserved"
+        }
+      },
+      "oecdNotDisplayed": {
+        "editButton": {
+          "title": "Edit"
+        },
+        "editTable": {
+          "title": "Edit Not Displayed"
+        }
+      },
+      "oecdLayout": {
+        "flagSaveAnnotation": {
+          "title": "Include these annotations in artefact"
+        },
+        "cards": {
+          "rowSection": {
+            "title": "Row sections"
+          },
+          "column": {
+            "title": "Columns"
+          },
+          "row": {
+            "title": "Rows"
+          },
+          "placeholder": "Drag here the dimensions"
+        }
+      }
+    },
+    "itemForm": {
+      "selector": {
+        "buttons": {
+          "select": {
+            "title": "Select item"
+          },
+          "reset": {
+            "title": "Deselect item"
+          }
+        }
+      }
+    },
+    "artefactDownloadForm": {
+      "format": {
+        "label": "Export format"
+      },
+      "references": {
+        "label": "Include referenced artefacts"
+      },
+      "compression": {
+        "label": "Compressed file"
+      },
+      "query": {
+        "label": "Query"
+      },
+      "dimension": {
+        "label": "Observation level dimension",
+        "noDimension": {
+          "label": "None"
+        }
+      }
+    },
+    "artefactCloneForm": {
+      "cards": {
+        "source": {
+          "title": "Source"
+        },
+        "destination": {
+          "title": "Destination"
+        }
+      },
+      "artefactType": {
+        "label": "Type"
+      }
+    },
+    "enhancedModal": {
+      "resetter": {
+        "title": "Reset pop-up"
+      }
+    },
+    "itemList": {
+      "buttons": {
+        "viewModeRadio": {
+          "table": {
+            "title": "Table"
+          },
+          "tree": {
+            "title": "Tree"
+          }
+        },
+        "upload": {
+          "title": "Upload CSV file"
+        },
+        "create": {
+          "title": "Create item"
+        },
+        "setDefaultOrder": {
+          "title": "Set the current order as default",
+          "label": "Set as Default Order"
+        }
+      },
+      "actions": {
+        "edit": {
+          "title": "View/Edit"
+        },
+        "view": {
+          "title": "View"
+        },
+        "add": {
+          "title": "Add child"
+        },
+        "delete": {
+          "title": "Delete"
+        },
+        "cut": {
+          "title": "Cut"
+        },
+        "fileSystemTree": {
+          "title": "Folder Mode"
+        },
+        "pasteAsChild": {
+          "title": "Paste as child"
+        },
+        "pasteAsBrother": {
+          "title": "Paste as brother"
+        },
+        "unsetDefault": {
+          "title": "Remove Default"
+        },
+        "setDefault": {
+          "title": "Set as Default"
+        }
+      },
+      "modals": {
+        "confirms": {
+          "delete": {
+            "title": "All children must be deleted first"
+          }
+        },
+        "warning": {
+          "delete": {
+            "title": "Are you sure you want to delete this Item?"
+          }
+        },
+        "treeViewModeUnavailable": {
+          "title": "Tree mode cannot be displayed",
+          "content": "The codelist has too many items"
+        },
+        "maxTreeSizeReached": {
+          "title": "You have reached the maximum number of nodes",
+          "content": "Switch to",
+          "exploreLink": "Folder mode"
+        },
+        "parentList": {
+          "title": "Items list"
+        }
+      },
+      "label": {
+        "autoSave": "Auto save"
+      }
+    },
+    "artefactList": {
+      "modals": {
+        "confirms": {
+          "delete": {
+            "title": "Are you sure you want to delete this Artefact?"
+          },
+          "multiDelete": {
+            "title": "Are you sure you want to delete this Artefact?",
+            "title_plural": "Are you sure you want to delete these Artefacts?"
+          }
+        },
+        "parentsAndChildren": {
+          "title": "Linked artefact"
+        }
+      },
+      "showContentConstraints": {
+        "title": "Show Content Constraints"
+      },
+      "buttons": {
+        "import": {
+          "title": "Import"
+        },
+        "create": {
+          "title": "New"
+        }
+      }
+    },
+    "inputListForm": {
+      "buttons": {
+        "add": {
+          "title": "Add item"
+        },
+        "remove": {
+          "title": "Remove item"
+        }
+      },
+      "collapse": {
+        "collapse": {
+          "label": "Collapse"
+        },
+        "expand": {
+          "label": "Show {{count}} element",
+          "label_plural": "Show {{count}} elements"
+        }
+      }
+    },
+    "fileSystemTree": {
+      "breadcrumb": {
+        "rootItem": {
+          "label": "Root"
+        }
+      },
+      "placeholder": {
+        "unknownItem": "The path corresponds to an unexistent item"
+      }
+    },
+    "exportArtefactForm": {
+      "cards": {
+        "source": {
+          "title": "Source"
+        },
+        "destination": {
+          "title": "Target"
+        }
+      },
+      "artefactType": {
+        "label": "Type"
+      },
+      "destinationEndpoint": {
+        "label": "Node"
+      },
+      "username": {
+        "label": "Username"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "withReferences": {
+        "label": "Include referenced artefacts"
+      }
+    },
+    "multilanguageZoomableTextarea": {
+      "modal": {
+        "close": "Close",
+        "reset": "Delete all"
+      }
+    },
+    "oecdAnnotationList": {
+      "title": "OECD Annotations"
+    },
+    "customAnnotationList": {
+      "title": "Annotations"
+    },
+    "dsdsCompareReport": {
+      "componentsDetailCompareTable": {
+        "codelist": {
+          "label": "Codelist"
+        },
+        "concept": {
+          "label": "Concept"
+        }
+      },
+      "tabs": {
+        "dimensions": {
+          "title": "Dimensions ({{count}} diff.)",
+          "title_plural": "Dimensions ({{count}} diff.)"
+        },
+        "dimensionsDetail": {
+          "title": "Dimensions detail ({{count}} diff.)",
+          "title_plural": "Dimensions detail ({{count}} diff.)"
+        },
+        "attributes": {
+          "title": "Attributes ({{count}} diff.)",
+          "title_plural": "Attributes ({{count}} diff.)"
+        },
+        "attributesDetail": {
+          "title": "Attributes detail ({{count}} diff.)",
+          "title_plural": "Attributes detail ({{count}} diff.)"
+        },
+        "measures": {
+          "title": "Measures ({{count}} diff.)",
+          "title_plural": "Measures ({{count}} diff.)"
+        },
+        "groups": {
+          "title": "Groups ({{count}} diff.)",
+          "title_plural": "Groups ({{count}} diff.)"
+        },
+        "groupsDetail": {
+          "title": "Groups detail ({{count}} diff.)",
+          "title_plural": "Groups detail ({{count}} diff.)"
+        }
+      },
+      "modals": {
+        "codelistCompare": {
+          "title": "Codelists differences"
+        }
+      }
+    },
+    "itemSchemesCompareReport": {
+      "showItem": {
+        "label": "Show items"
+      },
+      "alerts": {
+        "tooMuchDiff": {
+          "message": "Only the first 1000 differences are shown"
+        }
+      },
+      "selector": {
+        "artefactDetail": {
+          "title": "Artefact detail"
+        }
+      }
+    },
+    "formList": {
+      "removeAlert": {
+        "title": "Are you sure?"
+      },
+      "collapse": {
+        "collapse": {
+          "label": "Collapse"
+        },
+        "expand": {
+          "label": "Show {{count}} element",
+          "label_plural": "Show {{count}} elements"
+        }
+      },
+      "buttons": {
+        "remove": {
+          "title": "Remove item"
+        },
+        "add": {
+          "title": "Add item"
+        }
+      }
+    },
+    "filterForm": {
+      "alerts": {
+        "noValues": {
+          "title": "The column does not contain any value"
+        }
+      }
+    },
+    "treeFilter": {
+      "warnings": {
+        "codelistTooBig": {
+          "title": "Unable to set filter on this column: referenced codelist is too big"
+        }
+      },
+      "levelNode": "All nodes at level {{level}}",
+      "noValuesPlaceholder": "No value satisfying current filters",
+      "errors": {
+        "maxLength": {
+          "title": "Unable to set filter",
+          "content": "Maximum query length reached"
+        }
+      },
+      "confirms": {
+        "filterChange": {
+          "title": "Are you sure?",
+          "content": "You will lost all filters related to next columns"
+        }
+      },
+      "filterModeRadio": {
+        "in": {
+          "title": "IN"
+        },
+        "notIn": {
+          "title": "NOT IN"
+        }
+      },
+      "checkUncheckAllChilds": {
+        "title": "Select/unselect all the children"
+      },
+      "disabledCheckbox": {
+        "title": "This value does not satisfy current filters"
+      },
+      "noValuesInColumnPlaceholder": "The column does not contain any value"
+    },
+    "reportStructureTree": {
+      "tree": {
+        "actions": {
+          "addAttribute": {
+            "title": "Create attribute"
+          },
+          "removeAttribute": {
+            "title": "Delete attribute"
+          }
+        }
+      },
+      "selector": {
+        "select": {
+          "title": "Select code"
+        },
+        "reset": {
+          "title": "Deselect code"
+        }
+      },
+      "modals": {
+        "warning": {
+          "attributeNotPresent": {
+            "title": "Missing attribute in MSD",
+            "content": "The attribute {{attributeId}} of the Report is not present in the MSD. Saving the report again this attribute will be lost"
+          }
+        }
+      },
+      "attachment": {
+        "label": "Attachment"
+      },
+      "attachmentUploaded": {
+        "label": "Uploaded"
+      },
+      "isPublic": {
+        "label": "Is publishable"
+      },
+      "isPresentational": {
+        "placeholder": "This attribute can't be valorized (\"Presentational\")"
+      },
+      "value": {
+        "label": "Value"
+      },
+      "valueFormat": {
+        "help": "Value format"
+      },
+      "isMultilang": {
+        "title": "Multilanguage attribute"
+      },
+      "htmlEditorModeSwitch": {
+        "label": "XHTML editor"
+      }
+    },
+    "artefactOwnershipModal": {
+      "title": "Ownership management"
+    },
+    "contentConstraintFilterTab": {
+      "buttons": {
+        "resetFilters": {
+          "title": "Reset"
+        }
+      }
+    },
+    "fileInput": {
+      "modals": {
+        "warning": {
+          "fileTooBig": {
+            "title": "The file is too large",
+            "zipIt": {
+              "content": "Files larger than 2 GB cannot be uploaded, compress it in a \"zip\" file."
+            },
+            "content": "Files larger than 2 GB cannot be uploaded."
+          }
+        }
+      }
+    },
+    "infiniteScrollTable": {
+      "search": {
+        "placeholder": "Search..."
+      },
+      "footer": {
+        "rowInfos": "from {{rowNumStart}} to {{rowNumEnd}} of {{rowCount}} rows"
+      }
+    },
+    "infiniteScroll": {
+      "header": {
+        "selectedRowCount": "{{selectedRowCount}} selected rows "
+      },
+      "placeholder": {
+        "resizing": "Resizing table...",
+        "updating": "Updating table rows..."
+      }
+    }
+  },
+  "scenes": {
+    "dataManager": {
+      "builder": {
+        "dsdListShowButton": {
+          "label": "Show Dsd list"
+        },
+        "cubeForm": {
+          "messages": {
+            "submit": {
+              "start": "Creating Cube",
+              "success": "Cube created successfully"
+            }
+          },
+          "dsdControl": {
+            "detailIcon": {
+              "title": "Show DSD detail"
+            },
+            "selectIcon": {
+              "title": "Select DSD"
+            },
+            "resetIcon": {
+              "title": "Deselect DSD"
+            },
+            "dsdList": {
+              "title": "DSD list"
+            }
+          }
+        },
+        "cubeTree": {
+          "messages": {
+            "cubeDelete": {
+              "success": "Cube deleted successfully"
+            }
+          },
+          "createButton": {
+            "title": "Create Cube"
+          },
+          "deleteButton": {
+            "title": "Delete Cube",
+            "confirm": "Are you sure you want to delete this Cube?"
+          },
+          "refreshButton": {
+            "title": "Refresh tree"
+          },
+          "modals": {
+            "forbiddenCategory": {
+              "title": "Permession denied",
+              "content": "You are not allowed to create a cube in this category"
+            },
+            "forbiddenNode": {
+              "title": "Permission denied",
+              "content": "You are not allowed to view details of this cube"
+            }
+          }
+        },
+        "dsdList": {
+          "title": "DSD list"
+        },
+        "componensControl": {
+          "attributeModal": {
+            "title": "Attribute detail"
+          },
+          "dimensionModal": {
+            "title": "Dimension detail"
+          },
+          "measureModal": {
+            "title": "Measure detail"
+          }
+        }
+      },
+      "fileMapping": {
+        "list": {
+          "fileMappingModal": {
+            "title": "File Mapping detail"
+          },
+          "messages": {
+            "fileMappingDelete": {
+              "success": "Mapping deleted successfully"
+            },
+            "fileMappingDeleteAll": {
+              "success": "All selected mapping deleted successfully"
+            }
+          },
+          "deleteButton": {
+            "confirm": "Are you sure you want to delete this mapping?"
+          },
+          "deleteAllButton": {
+            "confirm": "Are you sure you want to delete selected mappings?"
+          }
+        },
+        "wizardShowButton": {
+          "label": "Create"
+        },
+        "wizard": {
+          "title": "New File Mapping",
+          "saveButton": {
+            "label": "Save"
+          },
+          "csvRowList": {
+            "title": "Dataset"
+          },
+          "cards": {
+            "csvHeader": {
+              "title": "CSV header",
+              "csvComponentList": {
+                "detail": {
+                  "title": "Show column values"
+                },
+                "dotStatColumnDetail": {
+                  "title": "Preview not available for virtual column"
+                }
+              }
+            },
+            "cubeComponents": {
+              "title": "Cube components"
+            }
+          },
+          "colValueList": {
+            "title": "Column values"
+          },
+          "csvForm": {
+            "messages": {
+              "submit": {
+                "start": "Uploading CSV file",
+                "success": "CSV file uploaded successfully"
+              }
+            },
+            "buttons": {
+              "csvRowListShow": "Preview"
+            }
+          },
+          "messages": {
+            "fileMappingCreate": {
+              "start": "Creating File Mapping",
+              "success": "File Mapping created successfully"
+            }
+          },
+          "componentMapper": {
+            "componentAddButton": {
+              "title": "Add selected component"
+            },
+            "componentAddAllButton": {
+              "title": "Add all components automatically"
+            },
+            "componentRemoveButton": {
+              "title": "Remove selected component"
+            },
+            "componentRemoveAllButton": {
+              "title": "Remove all components"
+            }
+          },
+          "steps": {
+            "cubeSelection": {
+              "title": "Cube selection",
+              "description": {
+                "cubeComponents": "Cube components"
+              }
+            },
+            "csvUpload": {
+              "title": "CSV upload"
+            },
+            "componentsMapping": {
+              "title": "Components mapping",
+              "description": {
+                "mappedComponents": "{{count}} mapped",
+                "mappedComponents_plural": "{{count}} mapped",
+                "components": "Mapped components"
+              }
+            },
+            "nameForm": {
+              "title": "Name"
+            }
+          },
+          "nextStepButton": {
+            "label": "Next"
+          },
+          "prevStepButton": {
+            "label": "Previous"
+          },
+          "cubeSelector": {
+            "refreshButton": {
+              "title": "Refresh tree"
+            }
+          }
+        }
+      },
+      "loader": {
+        "csvForm": {
+          "messages": {
+            "fileUpload": {
+              "start": "Uploading file",
+              "success": "File uploaded successfully"
+            },
+            "submit": {
+              "start": "Importing data",
+              "success": "Data imported successfully"
+            }
+          },
+          "fields": {
+            "mapping": {
+              "label": "Mapping"
+            },
+            "importType": {
+              "label": "Import type",
+              "option": {
+                "SeriesAndData": "Series and Data",
+                "Series": "Series",
+                "Data": "Data"
+              }
+            },
+            "tid": {
+              "label": "TID"
+            },
+            "attributesFile": {
+              "label": "Attributes file"
+            }
+          },
+          "submitButton": {
+            "label": "Import data"
+          },
+          "mappingControl": {
+            "selectedMapping": {
+              "title": "Selected mapping detail"
+            },
+            "mappingList": {
+              "title": "Mapping list"
+            },
+            "detailMapping": {
+              "title": "Mapping detail"
+            },
+            "detailIcon": {
+              "title": "Show detail"
+            },
+            "selectIcon": {
+              "title": "Select mapping"
+            },
+            "resetIcon": {
+              "title": "Deselect mapping"
+            }
+          },
+          "rowList": {
+            "title": "Dataset"
+          },
+          "refreshProdDf": {
+            "label": "Refresh CC + Transc."
+          }
+        },
+        "xmlForm": {
+          "fields": {
+            "cube": {
+              "label": "Cube",
+              "selectIcon": {
+                "title": "Select Cube"
+              },
+              "resetIcon": {
+                "title": "Deselect Cube"
+              }
+            },
+            "importType": {
+              "label": "Import type",
+              "option": {
+                "SeriesAndData": "Series and Data",
+                "Series": "Series",
+                "Data": "Data"
+              }
+            },
+            "tid": {
+              "label": "TID"
+            }
+          },
+          "submitButton": {
+            "label": "import data"
+          },
+          "rowList": {
+            "title": "Dataset"
+          },
+          "messages": {
+            "fileUpload": {
+              "start": "Uploading XML file",
+              "success": "XML uploaded successfully"
+            }
+          },
+          "cubeTreeModal": {
+            "title": "Cubes",
+            "tree": {
+              "refreshButton": {
+                "title": "Refresh tree"
+              }
+            }
+          }
+        },
+        "confirms": {
+          "ignoreConcurrentUpload": {
+            "title": "Possible concurrent update in the same cube",
+            "content": "Do you want to force anyway the attempt to execute this operation?"
+          }
+        }
+      },
+      "cubeList": {
+        "currentDataViewModal": {
+          "title": "Cube's data"
+        },
+        "actions": {
+          "detail": {
+            "title": "Show Cube's data"
+          },
+          "download": {
+            "title": "Download"
+          },
+          "removeEmbargo": {
+            "title": "Remove embargo"
+          }
+        },
+        "modals": {
+          "cubeDownload": {
+            "title": "Cube Download",
+            "buttons": {
+              "download": {
+                "title": "Download"
+              }
+            },
+            "cards": {
+              "columns": {
+                "title": "Cube columns"
+              },
+              "whereConditions": {
+                "title": "'Where' conditions"
+              }
+            },
+            "csvForm": {
+              "title": "Download CSV",
+              "buttons": {
+                "cancel": {
+                  "title": "Cancel"
+                },
+                "download": {
+                  "title": "Download"
+                }
+              }
+            }
+          },
+          "confirms": {
+            "removeEmbargo": {
+              "title": "Are you sure you want to remove the Embargo?"
+            },
+            "emptyCube": {
+              "title": "Are you sure you want to empty this cube?"
+            },
+            "delete": {
+              "title": "Are you sure you want to delete this cube?"
+            }
+          }
+        },
+        "messages": {
+          "removeEmbargo": {
+            "success": "Embargo removed successfully"
+          },
+          "ownership": {
+            "success": "Ownership saved successfully"
+          },
+          "emptyCube": {
+            "success": "Cube emptied successfully"
+          },
+          "delete": {
+            "success": "Cube deleted successfully"
+          }
+        }
+      },
+      "dataflowBuilder": {
+        "wizard": {
+          "query": {
+            "whereConditions": {
+              "title": "'Where' conditions",
+              "buttons": {
+                "filterModeRadio": {
+                  "plain": {
+                    "title": "Simple mode"
+                  },
+                  "tree": {
+                    "title": "Advanced mode"
+                  }
+                },
+                "editFilter": {
+                  "title": "Filters"
+                },
+                "resetFilter": {
+                  "title": "Reset"
+                },
+                "preview": {
+                  "title": "Preview"
+                },
+                "showQuery": {
+                  "title": "Query"
+                }
+              },
+              "filterModal": {
+                "title": "Filters"
+              },
+              "confirms": {
+                "filterModeChange": {
+                  "title": "Are you sure?",
+                  "content": "You will lost current filters"
+                }
+              },
+              "filterQueryModal": {
+                "title": "Preview"
+              }
+            },
+            "columnsForm": {
+              "title": "Cube columns",
+              "cubeTreeModal": {
+                "title": "Select Cube",
+                "tree": {
+                  "refreshButton": {
+                    "title": "Refresh tree"
+                  }
+                },
+                "cubeNoDataModal": {
+                  "content": "No data in Cube"
+                },
+                "cubeOnlyEmbargoedDataModal": {
+                  "content": "The cube contains only embargoed data: remove the embargo and then continue"
+                }
+              },
+              "fields": {
+                "cube": {
+                  "selectIcon": {
+                    "title": "Select Cube"
+                  },
+                  "resetIcon": {
+                    "title": "Deselect Cube"
+                  }
+                }
+              }
+            },
+            "preview": {
+              "rowsModal": {
+                "title": "Preview"
+              }
+            }
+          },
+          "steps": {
+            "query": {
+              "title": "Query"
+            },
+            "categorisation": {
+              "title": "Categorisation"
+            },
+            "dataflow": {
+              "title": "Dataflow"
+            },
+            "header": {
+              "title": "Header"
+            }
+          },
+          "prevStepButton": {
+            "label": "Previous"
+          },
+          "nextStepButton": {
+            "label": "Next"
+          },
+          "saveButton": {
+            "label": "Save"
+          },
+          "messages": {
+            "edit": {
+              "start": "Editing Dataflow",
+              "success": "Dataflow updated successfully"
+            },
+            "create": {
+              "start": "Creating Dataflow",
+              "success": "Dataflow created successfully"
+            }
+          },
+          "categoryTree": {
+            "refreshButton": {
+              "title": "Refresh tree"
+            }
+          },
+          "headerForm": {
+            "isVisibleCheckbox": {
+              "label": "Dataflow with header"
+            }
+          },
+          "editMode": {
+            "title": "View/Edit Dataflow - [{{triplet.id}}]"
+          },
+          "createMode": {
+            "title": "Create Dataflow"
+          },
+          "inProductionAlert": {
+            "message": "The Dataflow cannot be update because is in production"
+          },
+          "invalidReceiverModal": {
+            "title": "Cannot save",
+            "content": "Organisation ID is mandatory if the Receiver is specified"
+          }
+        },
+        "wizardShowButton": "Create",
+        "categorisations": {
+          "title": "Categorisations",
+          "refreshButton": {
+            "title": "Refresh tree"
+          }
+        },
+        "categorisationsShowButton": "Show Categorisations",
+        "dataflowTable": {
+          "messages": {
+            "delete": {
+              "success": "Dataflow has been removed"
+            }
+          }
+        },
+        "list": {
+          "actions": {
+            "delete": {
+              "confirm": "Are you sure you want to delete this Dataflow?",
+              "title": "Delete",
+              "haveMetadata": {
+                "title": "You cannot delete a dataflow with associated metadata."
+              }
+            },
+            "preview": "Show preview",
+            "edit": "View/Edit",
+            "download": "Download",
+            "dataExplorerPreview": "Show Data Explorer preview",
+            "info": "Additional infos",
+            "productionModal": {
+              "title": "Dataflow publishing",
+              "buttons": {
+                "close": {
+                  "title": "Close"
+                },
+                "transcodingRadio": {
+                  "auto": {
+                    "title": "auto"
+                  },
+                  "fromContentConstraint": {
+                    "title": "from Content Constraint"
+                  }
+                },
+                "transcodingCCSelector": {
+                  "select": {
+                    "title": "Select Content Constraint"
+                  },
+                  "reset": {
+                    "title": "Unselect Content Constraint"
+                  }
+                }
+              },
+              "mappingSet": {
+                "label": "Mapping Set",
+                "createButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to create the Mapping Set?",
+                    "cancelButton": {
+                      "title": "Cancel"
+                    },
+                    "okButton": {
+                      "title": "OK"
+                    },
+                    "defaultValue": {
+                      "label": "Default value"
+                    }
+                  },
+                  "title": "Create"
+                },
+                "deleteButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to delete the Mapping Set?"
+                  },
+                  "title": "Delete"
+                }
+              },
+              "transcoding": {
+                "label": "Transcoding",
+                "selectButton": {
+                  "title": "Sel. Content Constraint"
+                },
+                "createButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to create the transcoding?"
+                  },
+                  "title": "Create"
+                },
+                "deleteButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to delete the transcoding?"
+                  },
+                  "title": "Delete"
+                }
+              },
+              "contentConstraint": {
+                "label": "Content Constraint",
+                "createButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to create the Content Constraint?"
+                  },
+                  "title": "Create"
+                },
+                "deleteButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to delete the Content Constraint?"
+                  },
+                  "title": "Delete"
+                }
+              },
+              "production": {
+                "label": "Production",
+                "publishButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to publish the Dataflow?"
+                  },
+                  "title": "Publish"
+                },
+                "removeButton": {
+                  "confirm": {
+                    "title": "Are you sure you want to delete the Dataflow from publishing?"
+                  },
+                  "title": "Remove"
+                }
+              },
+              "messages": {
+                "createMappingSet": {
+                  "success": "Mapping Set created successfully"
+                },
+                "deleteMappingSet": {
+                  "success": "Mapping Set deleted successfully"
+                },
+                "createTranscoding": {
+                  "success": "Transcoding created successfully"
+                },
+                "deleteTranscoding": {
+                  "success": "Transcoding deleted successfully"
+                },
+                "createContentConstraints": {
+                  "success": "Content Constraint created successfully"
+                },
+                "deleteContentConstraints": {
+                  "success": "Content Constraint deleted successfully"
+                },
+                "publish": {
+                  "success": "Dataflow published successfully"
+                },
+                "removePublish": {
+                  "success": "Dataflow removed successfully from publishing"
+                }
+              },
+              "transcodingContentConstraintList": {
+                "title": "Select Content Constraint"
+              }
+            },
+            "production": {
+              "title": "Publishing"
+            }
+          },
+          "previewModal": {
+            "title": "Dataflow preview"
+          }
+        },
+        "modals": {
+          "info": {
+            "title": "Additional infos"
+          }
+        },
+        "dataflowDownload": {
+          "modals": {
+            "download": {
+              "title": "Artefact download"
+            },
+            "preview": {
+              "title": "Download preview"
+            },
+            "query": {
+              "title": "Select query",
+              "cards": {
+                "columns": {
+                  "title": "Dataflow columns"
+                },
+                "filter": {
+                  "title": "'Where' conditions"
+                }
+              }
+            }
+          }
+        }
+      },
+      "syncCodelist": {
+        "messages": {
+          "sync": {
+            "success": "Codelists synchronized successfully"
+          }
+        },
+        "title": "Codelists to synchronize",
+        "buttons": {
+          "sync": {
+            "title": "Synchronize {{count}} Codelist",
+            "title_plural": "Synchronize {{count}} Codelists"
+          },
+          "syncEmpty": {
+            "title": "Synchronize"
+          }
+        },
+        "itemsToSync": {
+          "label": "To sync."
+        }
+      },
+      "removeTempTables": {
+        "submit": {
+          "success": "Temporary tables deleted successfully"
+        },
+        "modal": {
+          "title": "Are you sure?",
+          "content": "All temporary tables in DB will be deleted"
+        }
+      },
+      "upgradeDsd": {
+        "modals": {
+          "dataflowList": {
+            "title": "Dataflow list"
+          },
+          "compareDsdsReport": {
+            "title": "Dsds compare report",
+            "incompatibleDsds": {
+              "title": "These Dsds don't respect the minimum requirements for upgrading"
+            }
+          },
+          "upgradeDsdReport": {
+            "title": "DSD upgrade report",
+            "updated": {
+              "title": "Upgraded Dataflows"
+            },
+            "notUpdated": {
+              "title": "Not upgraded Dataflows"
+            },
+            "deleted": {
+              "title": "Deleted Dataflows"
+            },
+            "notChanged": {
+              "title": "Not changed Dataflows"
+            }
+          },
+          "upgradedDsdList": {
+            "title": "Upgraded DSD list",
+            "buttons": {
+              "import": {
+                "title": "Import DSD from file"
+              }
+            }
+          },
+          "cannotUpgradeDsd": {
+            "title": "These Dsds don't respect the minimum requirements for upgrading"
+          },
+          "confirms": {
+            "upgrade": {
+              "title": "Are you sure you want to update this DSD?"
+            }
+          },
+          "importDsdFromFile": {
+            "title": "Import DSD",
+            "dsd": {
+              "label": "DSD"
+            },
+            "compareDsds": {
+              "title": "Compare"
+            },
+            "importDsdInMsdb": {
+              "title": "Import in MSDB"
+            }
+          },
+          "importDsdReport": {
+            "title": "Imported Artefacts",
+            "nothingImported": {
+              "placeholder": "No artefact has been imported"
+            }
+          }
+        }
+      },
+      "ddbReset": {
+        "submit": {
+          "success": "DDB successfully reset"
+        },
+        "modal": {
+          "title": "Are you sure?",
+          "content": "This action deletes ALL data created in DDB and is IRREVERSIBLE"
+        }
+      }
+    },
+    "configuration": {
+      "appConfig": {
+        "messages": {
+          "submit": {
+            "success": "Application Configuration saved successfully"
+          }
+        },
+        "tabs": {
+          "userInterface": {
+            "title": "User Interface"
+          },
+          "agencies": {
+            "title": "Agencies"
+          },
+          "dataManagement": {
+            "title": "Data Management"
+          },
+          "defaultHeaderSubmitStructure": {
+            "title": "Default header submit structure"
+          },
+          "superUserCredentials": {
+            "title": "Superuser credentials"
+          },
+          "endpointSettings": {
+            "title": "Endpoint settings"
+          }
+        },
+        "languageForm": {
+          "code": "ID",
+          "flag": "Country code"
+        },
+        "agencyForm": {
+          "id": "ID",
+          "name": "Name"
+        }
+      },
+      "nodesConfig": {
+        "messages": {
+          "nodeSubmit": {
+            "success": "Node configuration saved successfully"
+          },
+          "nodeDelete": {
+            "success": "Node deleted successfully"
+          },
+          "nodeSort": {
+            "success": "Nodes sorted successfully"
+          }
+        },
+        "buttons": {
+          "addNode": {
+            "title": "Add Node"
+          },
+          "removeNode": {
+            "title": "Delete Node"
+          }
+        },
+        "newNodeCard": {
+          "title": "New Node"
+        },
+        "modals": {
+          "deleteConfirm": {
+            "title": "Are you sure you want to delete this Node?"
+          },
+          "metadataSetList": {
+            "title": "MetadataSet list"
+          }
+        },
+        "nodeCredentialsModal": {
+          "title": "Node Administration Credentials",
+          "cancel": {
+            "title": "Cancel"
+          },
+          "submit": {
+            "title": "Save configuration"
+          }
+        },
+        "tabs": {
+          "general": {
+            "title": "General"
+          },
+          "agencies": {
+            "title": "Agencies"
+          },
+          "endpoint": {
+            "title": "Endpoint"
+          },
+          "proxy": {
+            "title": "Proxy"
+          },
+          "search": {
+            "title": "Search"
+          },
+          "dcatApIt": {
+            "title": "DCAT-AP_IT"
+          },
+          "customAnnotations": {
+            "title": "Custom annotations"
+          },
+          "annotations": {
+            "title": "Annotations"
+          }
+        },
+        "noNameNodeCard": {
+          "title": "Unnamed Node"
+        },
+        "agencies": {
+          "agencies": {
+            "addButton": {
+              "title": "Add Agency"
+            },
+            "removeButton": {
+              "title": "Remove Agency"
+            }
+          }
+        },
+        "search": {
+          "excludeCodelists": {
+            "addButton": {
+              "title": "Add Codelist"
+            },
+            "removeButton": {
+              "title": "Remove Codelist"
+            }
+          },
+          "excludeConceptSchemes": {
+            "addButton": {
+              "title": "Add Concept Scheme"
+            },
+            "removeButton": {
+              "title": "Delete Concept Scheme"
+            }
+          }
+        },
+        "annotationTabs": {
+          "annotationTabs": {
+            "annotationTab": {
+              "annotations": {
+                "addButton": {
+                  "title": "Add Annotation"
+                },
+                "removeButton": {
+                  "title": "Remove Annotation"
+                }
+              }
+            },
+            "addButton": {
+              "title": "Add Annotation Tab"
+            },
+            "removeButton": {
+              "title": "Remove Annotation Tab"
+            }
+          }
+        },
+        "existsIdWarning": {
+          "title": "ID already used"
+        },
+        "duplicateAnnotationNameWarning": {
+          "title": "Annotation type '{{name}}' is already in use"
+        },
+        "agencyForm": {
+          "id": "ID",
+          "name": "Name"
+        }
+      }
+    },
+    "utilities": {
+      "importStructures": {
+        "messages": {
+          "fileUpload": {
+            "success": "File uploaded successfully"
+          }
+        },
+        "table": {
+          "import": {
+            "submit": {
+              "title": "Imports"
+            }
+          }
+        },
+        "resetButton": {
+          "label": "Flush"
+        },
+        "reportModal": {
+          "title": "Imported Artefacts",
+          "status": {
+            "success": "Success",
+            "warning": "Warning",
+            "error": "Error"
+          }
+        }
+      },
+      "compareItemSchemes": {
+        "artefactSelectorCard": {
+          "selector": {
+            "detail": {
+              "title": "Show detail"
+            },
+            "select": {
+              "title": "Select Item Scheme"
+            },
+            "reset": {
+              "title": "Deselect Item Scheme"
+            }
+          }
+        },
+        "buttons": {
+          "compare": {
+            "title": "Compare"
+          },
+          "generateReport": {
+            "title": "Generate Report"
+          }
+        },
+        "modals": {
+          "artefactList": {
+            "title": "Item Scheme list"
+          },
+          "itemSchemeCompareReport": {
+            "title": "Item Scheme difference"
+          }
+        },
+        "selectArtefactType": {
+          "label": "Select Item Scheme type:"
+        }
+      },
+      "mergeItemSchemes": {
+        "messages": {
+          "create": {
+            "success": "Item Schemes merged successfully"
+          }
+        },
+        "artefactSelectorCard": {
+          "selector": {
+            "detail": {
+              "title": "Show detail"
+            },
+            "select": {
+              "title": "Select Item Scheme"
+            },
+            "reset": {
+              "title": "Deselect Item Scheme"
+            }
+          }
+        },
+        "selectArtefactType": {
+          "label": "Select Item Scheme type:"
+        },
+        "buttons": {
+          "merge": {
+            "title": "Merge Item Schemes"
+          }
+        },
+        "modals": {
+          "artefactList": {
+            "title": "Item Scheme list"
+          },
+          "mergePreview": {
+            "title": "Merge preview",
+            "mergedWithConflicts": {
+              "message": "Some items are present in both the item schemes, in these cases the left one had priority."
+            }
+          },
+          "mergedItemScheme": {
+            "title": "New Item Scheme"
+          },
+          "xmlPreview": {
+            "title": "CSV Preview"
+          },
+          "csvPreview": {
+            "title": "XML Preview"
+          }
+        }
+      },
+      "compareDsds": {
+        "sourceDsdSelector": {
+          "modal": {
+            "title": "Select first DSD"
+          },
+          "selectButton": {
+            "title": "Select"
+          },
+          "resetButton": {
+            "title": "Reset"
+          },
+          "detailButton": {
+            "title": "Detail"
+          }
+        },
+        "compareButton": {
+          "title": "Compare"
+        },
+        "targetDsdSelector": {
+          "selectButton": {
+            "title": "Select"
+          },
+          "resetButton": {
+            "title": "Reset"
+          }
+        },
+        "generateReport": {
+          "title": "Generate Report"
+        }
+      }
+    },
+    "referenceMetadata": {
+      "dcat": {
+        "nodesConfigLink": {
+          "label": "Node configuration"
+        },
+        "messages": {
+          "report": {
+            "delete": {
+              "success": "Report deleted successfully"
+            },
+            "update": {
+              "success": "Report updated successfully"
+            },
+            "create": {
+              "success": "Report created successfully"
+            },
+            "stateUpdate": {
+              "success": "Report state updated successfully"
+            }
+          },
+          "dataflow": {
+            "update": {
+              "success": "Dataflow updated successfully"
+            }
+          }
+        },
+        "modals": {
+          "reportList": {
+            "title": "Report List"
+          },
+          "metadataSetDetail": {
+            "title": "Metadata Set Detail"
+          }
+        },
+        "noDcatMsd": {
+          "title": "No selected MSD for DCAT module",
+          "content": "To select one MSD, access the"
+        },
+        "metadataSetList": {
+          "columns": {
+            "mdfId": {
+              "shortLabel": "Metadataflow ID"
+            },
+            "mdfAgency": {
+              "shortLabel": "Metadataflow agency"
+            },
+            "mdfVersion": {
+              "shortLabel": "Metadataflow version"
+            }
+          },
+          "actions": {
+            "showReportList": {
+              "title": "Report List"
+            },
+            "navigateCategoryHtmlPage": {
+              "title": "Open information page"
+            },
+            "copyCategoryHtmlPageUrl": {
+              "title": "Copy information page link",
+              "message": "Information page link copied"
+            },
+            "copyCkanUrl": {
+              "title": "Copy Metadata API request link",
+              "message": "Metadata API request link copied"
+            },
+            "delete": {
+              "title": "Delete Metadata Set"
+            },
+            "create": {
+              "title": "Create Metadata Set"
+            }
+          }
+        }
+      },
+      "metadataSet": {
+        "metadataSetDetail": {
+          "id": {
+            "label": "ID",
+            "alreadyUsed": {
+              "help": "ID already used"
+            }
+          }
+        },
+        "metadataSetTree": {
+          "errors": {
+            "notValidCategory": {
+              "title": "To categorise a MetadataSet you need to drag it into a category"
+            },
+            "canDragOnlyMetadataSet": {
+              "title": "You can drag only MetadataSet"
+            },
+            "permissionDenied": {
+              "title": "You don't have permission to categorize this MetadataSet"
+            }
+          },
+          "actions": {
+            "deleteCategorisation": {
+              "title": "Delete Categorisation"
+            },
+            "addMetadataSet": {
+              "title": "Create Metadata Set"
+            },
+            "clone": {
+              "title": "Clone Metadata Set"
+            },
+            "navigateHtmlPage": {
+              "title": "Open information page"
+            },
+            "delete": {
+              "title": "Delete Metadata Set"
+            }
+          },
+          "modals": {
+            "confirms": {
+              "delete": {
+                "title": "Are you sure to delete this MetadataSet?"
+              }
+            }
+          }
+        },
+        "modals": {
+          "metadataSetClone": {
+            "title": "Clone MetadataSet"
+          }
+        },
+        "messages": {
+          "metadataSet": {
+            "update": {
+              "success": "Metadata Set updated successfully"
+            },
+            "create": {
+              "success": "Metadata Set created successfully"
+            },
+            "delete": {
+              "success": "Metadata Set deleted successfully"
+            },
+            "clone": {
+              "success": "Metadata Set cloned successfully"
+            }
+          },
+          "categorisation": {
+            "update": {
+              "success": "Categorisation updated successfully"
+            },
+            "remove": {
+              "success": "Categorisation deleted successfully"
+            },
+            "create": {
+              "success": "Categorisation created successfully"
+            }
+          },
+          "report": {
+            "delete": {
+              "success": "Report deleted successfully"
+            },
+            "update": {
+              "success": "Report updated successfully"
+            },
+            "create": {
+              "success": "Report created successfully"
+            },
+            "stateUpdate": {
+              "success": "Report state updated successfully"
+            }
+          }
+        }
+      },
+      "commons": {
+        "reportDetails": {
+          "steps": {
+            "first": {
+              "label": "Target selection"
+            },
+            "second": {
+              "label": "Attributes creation"
+            }
+          },
+          "target": {
+            "id": {
+              "label": "Target"
+            }
+          },
+          "selector": {
+            "select": {
+              "title": "Select artefact"
+            },
+            "reset": {
+              "title": "Deselect artefact"
+            },
+            "detail": {
+              "title": "View/Edit artefact"
+            }
+          },
+          "modals": {
+            "codeList": {
+              "title": "Code list"
+            },
+            "dataflowDetail": {
+              "title": "Dataflow Detail"
+            },
+            "artefactList": {
+              "title": "Artefact List"
+            }
+          },
+          "report": {
+            "id": {
+              "label": "ID",
+              "alreadyUsed": {
+                "help": "ID already used"
+              }
+            }
+          },
+          "alerts": {
+            "missingDataflowAttribute": {
+              "label": "Attention: it's not possible to automatically fill some required fields, to do that you have to edit the details of the dataflow associated with the report."
+            },
+            "isReadOnly": {
+              "label": "The report cannot be modified because is exposed via API."
+            }
+          }
+        },
+        "reportList": {
+          "title": "Report list",
+          "modals": {
+            "report": {
+              "title": "Report details"
+            },
+            "confirms": {
+              "delete": {
+                "title": "Are you sure you want to delete this report?"
+              },
+              "publish": {
+                "title": "Are you sure you want to expose this report via API?"
+              },
+              "unpublish": {
+                "title": "Are you sure you want to remove this report from API?"
+              }
+            },
+            "warning": {
+              "emptyAttribute": {
+                "title": "Attributes not compiled",
+                "content": "The following attributes must be filled in or the report otherwise the report will not be available via API",
+                "saveDraft": {
+                  "title": "Save as draft"
+                }
+              }
+            }
+          },
+          "columns": {
+            "structure": {
+              "title": "Structure"
+            },
+            "targetIdentifier": {
+              "title": "Target Identifier"
+            },
+            "id": {
+              "title": "ID"
+            }
+          },
+          "actions": {
+            "copyHtmlUrl": {
+              "title": "Copy information page link",
+              "message": "Information page link copied"
+            },
+            "copyCkanUrl": {
+              "title": "Copy Metadata API request link",
+              "message": "Metadata API request link copied"
+            },
+            "publish": {
+              "title": "Expose via API"
+            },
+            "unpublish": {
+              "title": "Remove from API"
+            },
+            "create": {
+              "title": "Create Report"
+            },
+            "navigateHtmlPage": {
+              "title": "Open information page"
+            }
+          }
+        },
+        "messages": {
+          "attachmentUpload": {
+            "success": "Attachment uploaded successfully"
+          }
+        },
+        "modals": {
+          "htmlPage": {
+            "title": "Information"
+          }
+        },
+        "metadataSetDetail": {
+          "id": {
+            "label": "ID",
+            "alreadyUsed": {
+              "help": "ID already used"
+            }
+          },
+          "name": {
+            "label": "Name"
+          },
+          "metadataflow": {
+            "label": "Metadataflow",
+            "selector": {
+              "select": {
+                "title": "Select Metadataflow"
+              },
+              "reset": {
+                "title": "Deselect Metadataflow"
+              }
+            }
+          },
+          "msd": {
+            "label": "MSD"
+          },
+          "reportingBegin": {
+            "label": "Reporting begin"
+          },
+          "reportingEnd": {
+            "label": "Reporting end"
+          },
+          "validFrom": {
+            "label": "Valid from"
+          },
+          "validTo": {
+            "label": "Valid to"
+          },
+          "publicationYear": {
+            "label": "Publication year"
+          },
+          "publicationPeriod": {
+            "label": "Publication period"
+          },
+          "modals": {
+            "metadataflowsList": {
+              "title": "Metadataflow list"
+            }
+          }
+        }
+      }
+    },
+    "metaManager": {
+      "commons": {
+        "detail": {
+          "tabs": {
+            "constraintItems": {
+              "title": "Constraint items",
+              "select": {
+                "title": "Artefact type"
+              },
+              "selector": {
+                "title": "Artefact",
+                "select": {
+                  "title": "Select artefact"
+                },
+                "reset": {
+                  "title": "Deselect artefact"
+                }
+              }
+            },
+            "releaseCalendar": {
+              "title": "Release calendar",
+              "periodicity": {
+                "title": "Periodicity"
+              },
+              "measureUnit": {
+                "days": {
+                  "label": "Days"
+                },
+                "weeks": {
+                  "label": "Weeks"
+                },
+                "months": {
+                  "label": "Months"
+                },
+                "years": {
+                  "label": "Years"
+                }
+              },
+              "offset": {
+                "title": "Offset"
+              },
+              "tolerance": {
+                "title": "Tolerant"
+              }
+            }
+          },
+          "modals": {
+            "artefactList": {
+              "title": "Artefact list"
+            }
+          }
+        },
+        "messages": {
+          "delete": {
+            "success": "Artefact deleted successfully"
+          },
+          "multiDelete": {
+            "success": "Artefacts deleted successfully"
+          }
+        },
+        "modals": {
+          "download": {
+            "title": "Download artefact"
+          }
+        }
+      },
+      "dataflows": {
+        "detail": {
+          "title": {
+            "editMode": {
+              "title": "Edit Dataflow - [{{triplet.id}}]"
+            },
+            "createMode": {
+              "title": "New Dataflow"
+            },
+            "viewMode": {
+              "title": "View Dataflow - [{{triplet.id}}]"
+            }
+          }
+        },
+        "messages": {
+          "create": {
+            "success": "Dataflow created successfully"
+          },
+          "update": {
+            "success": "Dataflow updated successfully"
+          },
+          "ownership": {
+            "success": "Dataflow owners updated successfully"
+          }
+        },
+        "contentConstraintList": {
+          "title": "Content Constraints"
+        }
+      },
+      "categorySchemesDataflowsTree": {
+        "tree": {
+          "refreshButton": {
+            "title": "Update tree"
+          },
+          "actions": {
+            "deleteCategorisation": {
+              "title": "Delete Categorisation"
+            }
+          }
+        },
+        "errors": {
+          "notValidCategory": {
+            "title": "To categorise a Dataflow you need to drag it into a category"
+          },
+          "canDragOnlyDataflow": {
+            "title": "You can drag only Dataflow"
+          }
+        }
+      },
+      "categorySchemesAndDataflows": {
+        "messages": {
+          "categorisation": {
+            "create": {
+              "success": "Categorisation created successfully"
+            },
+            "update": {
+              "success": "Categorisation updated successfully"
+            },
+            "delete": {
+              "success": "Categorisation deleted successfully"
+            }
+          }
+        }
+      },
+      "agencySchemes": {
+        "messages": {
+          "create": {
+            "success": "Agency Scheme created successfully"
+          },
+          "update": {
+            "success": "Agency Scheme updated successfully"
+          }
+        },
+        "detail": {
+          "title": {
+            "editMode": {
+              "title": "Edit AgencyScheme - [{{triplet.id}}]"
+            },
+            "viewMode": {
+              "title": "View AgencyScheme - [{{triplet.id}}]"
+            },
+            "createMode": {
+              "title": "Create AgencyScheme - [{{triplet.id}}]"
+            }
+          },
+          "alerts": {
+            "illegalFinal": {
+              "title": "Cannot finalize an Agency Scheme"
+            }
+          }
+        }
+      },
+      "metadataflows": {
+        "messages": {
+          "create": {
+            "success": "Metadataflow created successfully"
+          },
+          "update": {
+            "success": "Metadataflow updated successfully"
+          },
+          "ownership": {
+            "success": "Metadataflow owners updated successfully"
+          }
+        },
+        "detail": {
+          "title": {
+            "editMode": {
+              "title": "Edit Metadataflow - [{{triplet.id}}]"
+            },
+            "viewMode": {
+              "title": "View Metadataflow - [{{triplet.id}}]"
+            },
+            "createMode": {
+              "title": "Create Metadataflow"
+            }
+          }
+        }
+      },
+      "contentConstraints": {
+        "messages": {
+          "create": {
+            "success": "Content Constraint created successfully"
+          },
+          "update": {
+            "success": "Content Constraint updated successfully"
+          }
+        },
+        "detail": {
+          "title": {
+            "editMode": {
+              "title": "Edit Content Constraint - [{{triplet.id}}]"
+            },
+            "viewMode": {
+              "title": "View Content Constraint - [{{triplet.id}}]"
+            },
+            "createMode": {
+              "title": "Create Content Constraint"
+            }
+          }
+        }
+      },
+      "msds": {
+        "messages": {
+          "update": {
+            "success": "MSD updated successfully"
+          }
+        },
+        "detail": {
+          "title": {
+            "editMode": {
+              "title": "Edit MSD - [{{triplet.id}}]"
+            },
+            "viewMode": {
+              "title": "View MSD - [{{triplet.id}}]"
+            }
+          }
+        }
+      }
+    },
+    "manageUsers": {
+      "setPermissions": {
+        "tabs": {
+          "agencies": {
+            "title": "Agencies"
+          },
+          "cubes": {
+            "title": "Cubes"
+          },
+          "functionalities": {
+            "title": "Functionality"
+          },
+          "rules": {
+            "title": "Rules"
+          }
+        },
+        "messages": {
+          "permissionsSubmit": {
+            "success": "User Permissions updated successfully"
+          }
+        },
+        "modals": {
+          "setPermissions": {
+            "title": "Set permissions - [{{username}}]"
+          }
+        }
+      },
+      "userManagement": {
+        "messages": {
+          "createUserSubmit": {
+            "success": "User created successfully"
+          },
+          "editUserSubmit": {
+            "success": "User updated successfully"
+          },
+          "deleteUser": {
+            "success": "User deleted successfully"
+          },
+          "editCurrentUserSubmit": {
+            "success": "Current user updated successfully, a new login is needed"
+          }
+        },
+        "buttons": {
+          "createUser": {
+            "title": "Create User"
+          }
+        },
+        "modals": {
+          "createUser": {
+            "title": "Create User"
+          },
+          "editUser": {
+            "title": "Edit User - [{{username}}]"
+          }
+        },
+        "confirms": {
+          "deleteUser": {
+            "title": "Are you sure?"
+          }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "An error occurred",
+    "statusCodes": {
+      "401": "Invalid credentials",
+      "403": "Forbidden operation"
+    },
+    "notImplemented": "Not implemented",
+    "generic": "Unexpected error",
+    "unknown": "Error: {{code}}",
+    "businessLogic": {
+      "CUBE_NOT_FOUND": "No cubes with the specified id.",
+      "CUBE_WITHOUT_LABEL": "The cube has no associated labels.",
+      "CUBE_DUPLICATED_CODE": "The id inserted for hte cube already exists.",
+      "CUBE_CATEGORY_NOT_DEFINED": "The cube's category is not defined.",
+      "CUBE_CATCUBE_INSERT_ERROR": "Cube creation - error while inserting a row in CatCube table.",
+      "CUBE_NO_LABELS": "The cube mush have a name.",
+      "CUBE_LABELS_CREATION": "Error while creating labels for the cube.",
+      "CUBE_NO_DIM": "It is not possible creating a cube without dimensions.",
+      "CUBE_DIM_DUPLICATED_CODE": "Cube's dimension with duplicated code.",
+      "CUBE_DIM_CREATE": "Error while creating cube's dimensions.",
+      "CUBE_TIME_DIM_ERR": "Error in cube's time dimension.",
+      "CUBE_ATT_DUPLICATED_CODE": "Cube's attribute with duplicated code.",
+      "CUBE_ATT_CREATE": "Error while creating cube's attributes.",
+      "CUBE_NO_MEAS": "It is not possible creating a cube without measures.",
+      "CUBE_MEAS_DUPLICATED_CODE": "Cube's measure with duplicated code.",
+      "CUBE_FACT_TABLE_CREATE": "Error while creating FactS table.",
+      "CUBE_FILT_TABLE_CREATE": "Error while creating FiltS table.",
+      "CUBE_VIEW_DATA_CREATE": "Error while creating ViewCurrentData view.",
+      "CUBE_VIEW_ALL_SERIES_CREATE": "Error while creating ViewAllSeries view.",
+      "CUBE_VIEW_DATAFACT_CREATE": "Error while creating View  DataFact view.",
+      "CUBE_WITH_ASSOCIATED_DATAFLOWS": "Forbidden: there is at least one dataflow associated to the cube.",
+      "CUBE_DELETE_ERROR": "Error while deleting the cube.",
+      "CUBE_CREATE_ERROR": "Error while creating the cube.",
+      "CUBE_RETRIEVING_ERROR": "Error while retrieving cube's information.",
+      "CUBE_RETRIEVING_AV_ERROR": "Error while retrieving information abot available cubes.",
+      "DEF_CAT_SCHEME_EMPTY": "Default category scheme cannot be empty. Select one from Category Schemes available in MSDB.",
+      "DEF_CAT_SCHEME_ALREADY_EXISTS": "Default category scheme already set.",
+      "DEF_CAT_SCHEME_IMPORT_ERROR": "Error while importing default category scheme.",
+      "DCS_RETRIEVING_ERROR": "Error while retrieving information about the default category scheme.",
+      "MAPPINGS_RETRIEVING_ERROR": "Error while retrieving inofmation about availbale mappings.",
+      "MAPPING_NOT_EXISTENT": "The selected mapping does not exist.",
+      "MAPPING_EMPTY": "A mapping cannot be empty.",
+      "MAPPING_CREATE_ERROR": "Error while creating the mapping.",
+      "MAPPING_CREATE_DUPLICATED_NAME": "Name inserted for the mapping already used.",
+      "MAPPING_CHECK_NOT_MAPPED_COMPONENT": "There is at least a not-mapped mandatory element in the cube.",
+      "UPLOAD_CSV_FILE_NULL_OR_EMPTY": "File not existent or empty.",
+      "FILE_FORMAT_UNSUPPORTED": "File format not supported.",
+      "CSV_HEADER_RETRIEVING_ERROR": "Incorrect CSV file header.",
+      "CSV_PRELOAD": "CSV file in incorrect format.",
+      "SDMX_TO_CSV_FILE_CONVERTING": "Error while converting SDMX-ML file to CSV.",
+      "LOADING_TEMP_TABLE_NOT_EXISTENT": "Import data - temp table not existent. Load the file again.",
+      "LOADING_CSV_NOT_MATCHING_MAPPING": "CSV file does not corrispond to the selected mapping.",
+      "FILE_IMPORT_ELAPSED_TIME": "Time",
+      "FILE_IMPORT_NUM_ROWS": "Number of imported rows",
+      "FILE_IMPORT_NUM_SERIES": "Number of imported series",
+      "FILE_IMPORT_FILE_NAME": "Name of the imported file",
+      "FILE_IMPORT_DUPL_ROW": "Warning! The row has been discarded because it is duplicated and has the same values for measures.",
+      "FILE_IMPORT_DUPL_ROW_CONFL": "Duplicated row witch conflict con measures.",
+      "FILE_IMPORT_WRONG_CROSS_REF": "Column with unknown code.",
+      "FILE_IMPORT_WRONG_ATTRIBUTE": "Conflict on attributes.",
+      "FILE_IMPORT_NO_ASSOCIATED_SERIES": "The series associated to the row does not exist.",
+      "IMPORT_DATA_IMPORT_TID": "Error while importing Tid value.",
+      "IMPORT_DATA_IMPORT_NOT_CODED_ATTS": "Error while importing not coded attributes.",
+      "IMPORT_DATA_IMPORT_NOT_CODED_DIMS": "Error while importing not coded dimensions.",
+      "IMPORT_DATA_CHECKING_DUPL_ROWS": "Error while checking duplicated rows.",
+      "IMPORT_DATA_CHECKING_WRONG_ATTRIBUTES": "Error while checking errors on attributes.",
+      "IMPORT_DATA_CHECKING_WRONG_CROSS_REF": "Error while checking wrong references to codes of attributes or dimensions.",
+      "IMPORT_DATA_MAX_NUM_WRONG_ROWS": "Maximum number of records with errors reached.",
+      "IMPORT_DATA_CHECKING_NO_SERIES_ROWS": "Error while checking rows with no associated series.",
+      "IMPORT_DATA_CHECKING_TID_UNIQUENESS": "Tid must be unique.",
+      "IMPORT_DATA_LOADING_SERIES": "Error while importing series.",
+      "IMPORT_DATA_LOADING_DATA": "Error while importing data.",
+      "IMPORT_DATA_CREATING_SERIES_VIEW": "Error while creating views for series.",
+      "IMPORT_DATA_CREATING_TEMP_TABLE_VIEW": "Error while creating the view for temp table.",
+      "GET_TABLE_PREVIEW": "Error while getting preview for the table.",
+      "GET_TABLE_COLUMN_PREVIEW": "Error while getting preview for the column.",
+      "UPLOAD_FILE_ON_SERVER": "Error while uploading file on server.",
+      "CUBE_DUPL_COMP_CODES": "Cube with components having duplicated codes.",
+      "DF_RETRIEVING_DFS_ERROR": "Error while retrieving information about available dataflows.",
+      "DF_RETRIEVING_ERROR": "Error while retrieving information on the dataflow.",
+      "DF_NOT_FOUND": "No dataflow with the given id found.",
+      "DF_WITHOUT_LABEL": "The dataflow has no associated labels.",
+      "DF_DUPLICATED_CODE": "Id, Agency and Version of the dataflow already existent.",
+      "DF_CATDF_INSERT_ERROR": "Dataflow Creation - error while inserting a row in Catdataflow table.",
+      "DF_NO_LABELS": "The dataflow must have at least one name.",
+      "DF_LABELS_CREATION": "Error while creating labels for the dataflow.",
+      "DF_NO_COLS": "The dataflow must have at least one column.",
+      "DF_COL_CREATE": "Error while creating dataflow's columns.",
+      "DF_DELETE_ERROR": "Error while deleting the dataflow.",
+      "DF_UNK_COLS": "Dataflow columns must be chosen among those of the associated cube.",
+      "MAND_ATTR_NULL": "Mandatory attribute has NULL values.",
+      "DF_FILTER_MISS_COND": "A filter with condition '=' is needed on column",
+      "DF_FILTER": "Filter on the dataflow defined incorrectly.",
+      "NSI_WS_GET_ARTEFACT": "Error while retrieving the artefact from the SDMX WS.",
+      "NSI_WS_DF_UNCORRECT": "SDMX WS: incorrect dataflow.",
+      "SDMXML_PRELOAD": "Error while uploading SDMX-ML file.",
+      "DF_CREATE_ERROR": "Error while creating the dataflow.",
+      "GET_CONNECTION_STRING": "Error while retrieving connection strings.",
+      "DSD_WITH_ASSOCIATED_CUBES_OR_DF": "DSD cannot be deleted because there are associated cubes or dataflows.",
+      "COL_NOT_IN_CUBE": "The column does not exist in the corrispondent cube.",
+      "ERR_TRANSCODING": "Transcoding cannot be executed: the dataflow may not have any frequence Dimension or its value are incorrect.",
+      "DF_TRANSC_FLAG": "Error while setting HasTranscoding flag for the dataflow.",
+      "CONFIG_GET_ERROR": "Error while retrieving config files.",
+      "CONFIG_SET_ERROR": "Error while updating config files.",
+      "CONFIG_NODE_NOT_FOUND": "Node not found while reading configuratuion.",
+      "DF_PROD_SET": "Error while putting dataflow in production.",
+      "DF_PROD_SET_TRANSC": "Error while creating transcoding.",
+      "DF_UPDATE_IN_PROD": "Dataflows in production cannot be modified.",
+      "DF_UPDATE_ERROR": "Unable to update the dataflow.",
+      "DF_VIEW_DATA_CREATE": "Error while creating views for the dataflow.",
+      "DF_PROD_REM": "Error while removing the dataflow from production.",
+      "NODE_Sdmx21_CONNECTION_ERROR": "Unable to establish a connection with the SDMX WS.",
+      "NODE_DmApi_CONNECTION_ERROR": "Unable to establish a connection with the DM API WS.",
+      "NODE_MaApi_CONNECTION_ERROR": "Unable to establish a connection with the MA API WS.",
+      "NODE_DmApi_NOT_FOUND": "Unable to execute the requested operation: DM API not configured.",
+      "CONFIG_NODE_SESSION_NOT_FOUND": "The session of the current user is expired. A new login is needed.",
+      "IMPORTXML_FILENOTFOUND": "File to be imported not found.",
+      "IMPORTXML_FINAL_ARTEFACT_ERROR": "It is impossible to import a final artefact.",
+      "FILE_UPLOAD_FORMAT": "File format not supported.",
+      "DMAPI_NOTCONFIGURATED": "The endpoint for DM API has not been set.",
+      "MAAPI_NOTCONFIGURATED": "The endpoint for MA API has not been set.",
+      "NSIAPI_MAAPI_DIFFERENT_DB": "SDMX WS and MA API reference different MSDBs.",
+      "MASID_INVALID": "The current MA SID is in conflict with the one previously used and memorized on the AuthDB.",
+      "IMPORTCSVITEM_FILE_READERROR": "Unable to read the first line of the uploaded file.",
+      "IMPORTCSVITEM_FILE_DATAERROR": "Incorrect Text Delimiter or Separator",
+      "IMPORTCSVITEM_FILE_IDERROR": "There are lines with missing id.",
+      "IMPORTCSVITEM_FILE_NAMEERROR": "There are lines with missing name.",
+      "USER_NOT_PRESENT": "The user does not exist or the inserted mail is unknown.",
+      "ARTEFACTS_EMPTY": "Insufficient permissions: you cannot performed the operations on any of the given artefacts.",
+      "SEARCH_METADATASET_ERROR": "MetadataSet not found.",
+      "GET_METADATASET_ERROR": "Error while getting MetadataSet.",
+      "SEARCH_REPORT_ERROR": "Error while searching the Report.",
+      "GET_MSD_FOR_REPORT": "Error while getting data from the MSD.",
+      "GET_REPORT_ERROR": "Error while getting Report data.",
+      "UPDATE_METADATASET_ERROR": "Error while updating MetadataSet.",
+      "UPDATE_REPORT_ERROR": "Error  while updating the Report.",
+      "CREATE_METADATASET_ERROR": "Error  while inserting the MetadataSet.",
+      "UPSERT_REPORT_ERROR": "Error  while updating the Report.",
+      "DELETE_METADATASET_ERROR": "Error while deleting the MetadataSet.",
+      "DELETE_REPORT_ERROR": "Error while deleting the Report.",
+      "SUPERUSER_PASSWORD_NOTMATCH": "Passwords for the superuser do not match.",
+      "NODE_ID_NOT_FOUND": "The node to be deleted does not exist.",
+      "INVALID_AUTHDB_CONFIGURATION": "Conflict betwwen the configuration and the one saved in the AuthDB.",
+      "DDB_CONFIG_ERROR": "Error in DDB configuration.",
+      "CHECKAUTHDB_UNKNOW_ERROR": "Error while checking AUTHDB correctness.",
+      "DATAFLOW_DOWNLOAD_NOTINPRODUCTION": "The dataflow is in production and cannot be downloaded.",
+      "DATAFLOW_DOWNLOAD_NOTFOUND": "Dataflow not found.",
+      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow not found. The web service for dataflow download may not exist.",
+      "DF_WITH_ASSOCIATED_DDB_DF": "The dataflow cannot be deleted beacause it has an associated dataflow in the DDB.",
+      "DDBRESET_ERROR": "Error while resetting DDB.",
+      "DEL_CONT_CONSTRAINTS": "Error while deleting content constraints for the dataflow.",
+      "ERR_GEN_CONT_CONSTRAINTS": "Content constraints generation not supported or generated an error.",
+      "DF_CC_FLAG": "Error while setting HasContentConstraints flag for the dataflow.",
+      "DF_TRANSC_REM": "Error while deleting transcoding for the dataflow.",
+      "WSDL_NOT_FOUND": "Wsdl for the SDMX WS not found.",
+      "DF_MS_SET": "Error while creating mapping set for the dataflow.",
+      "DF_MS_REM": "Error while removing mapping set for the dataflow.",
+      "FINAL_ARTEFACTS_EXIST": "Error while creating the artefact: ID + AGENCY + VERSION already in use.",
+      "ITEM_DUPLICATE": "Item with existing ID.",
+      "CANT_DELETE_ITEM_WITH_CHILDREN": "You cannot delete an item with children.",
+      "CATEGORYSCHEME_WITH_CATEGORIZATION": "It is impossible to delete a category scheme with associated categorisations.",
+      "DATAFLOW_DOWNLOAD_MISSING_MAPPINGSET": "It is impossible to download the dataflow: no associated mapping set found.",
+      "DF_WITH_ASSOCIATED_METADATA": "You cannot delete a dataflow with associated metadata.",
+      "SWITCHING_FACT_TABLES": "Error while switching between FactS table e FactS_TEMP table.",
+      "DISEMBARGO_CUBE": "Error while disembargoing the cube.",
+      "DUPL_ROWS_UNRES_CONFLICT": "Import blocked! Duplicated rows with unresolvable conflicts on measures.",
+      "UPGRADECUBE_ERROR": "Error while updating the cube to a new versione of its DSD.",
+      "IMPORTCSVITEM_FILE_HEADER_IDERROR": "Impossible to find Id column in header.",
+      "IMPORTCSVITEM_FILE_HEADER_NAMEERROR": "Impossible to find Name column in header.",
+      "COMPAREITEMS_DIFFERENT_TYPE": "Impossible to compare artifacts of different type.",
+      "COMPAREITEMS_SOURCETOOMANY": "In the file for itemscheme 1 there are more than one artefact.",
+      "COMPAREITEMS_TARGETTOOMANY": "In the file for itemscheme 2 there are more than one artefact.",
+      "DELETE_METADATASET_WITH_REPORT": "The metadataset cannot be deleted because there are associated reports.",
+      "METADATAFLOW_WITH_ASSOCIATED_METADATASET": "The metadataflow cannot be deleted because it has an associated metadataset.",
+      "NODE_FORBIDDEN": "The user has not rights to perform the requested action.",
+      "NODE_UNAUTHORIZED": "User authentication failed.",
+      "EMPTY_CUBE": "Error while emptying the cube.",
+      "LOAD_GEN_COMPLEX_REPORT": "Error while generating complex report for the loading operation.",
+      "GENERATEREPORTDSD_TARGETNOTFOUND": "Target DSD for the compare not found.",
+      "GENERATEREPORTDSD_SOURCENOTFOUND": "Source DSD for the compare not found.",
+      "NOTFOUNDTARTEFACT": "No artefact found.",
+      "DERIVED_CODELIST_REMOVE_ITEM": "You cannot remove an item with children.",
+      "DCS_CATEGORYNOTFOUND": "Category not found.",
+      "DCS_UPDATE_PARENTNOTFOUND": "Parent category not found.",
+      "DCS_DELETE_CATWITHCHILDREN": "Cannot delete a category with children.",
+      "DCS_DELETE_CATWITHCUBES": "Cannot delete a category with assigned cubes.",
+      "DCS_DELETE_ERROR": "Error while deleting category.",
+      "LOADING_CONCURRENT_UPLOAD_SAME_CUBE": "Possible concurrent update in the same cube. Please try again later.",
+      "DRAFT_REPORT_PUBLICATION": "Report in draft status, publication is not possible!",
+      "DCS_UPDATE_CATEGORYNOTFOUND": "Category to update not found.",
+      "DCS_UPDATE_ERROR": "Error while updating the Default Category Scheme.",
+      "DCS_INSERT_DUPLICATECODE": "Category code already present.",
+      "DCS_INSERT_PARENTNOTFOUND": "Parent category not found.",
+      "DCS_INSERT_ERROR": "Error while inserting the new category.",
+      "DSD_WITH_NON_FINAL_ARTEFACTS": "DSD containing not final referenced artefacts."
+    },
+    "some": "Some errors occurred",
+    "notSupportedBySdmxSource": "Not supported by the SdmxSource library: data will be discarded",
+    "titleForWarning": "Warning"
+  },
+  "middlewares": {
+    "defaultCategorySchemeSelector": {
+      "title": "Select Default Category Scheme",
+      "messages": {
+        "submit": {
+          "start": "Importing Default Category Scheme",
+          "success": "Default Category Scheme imported successfully"
+        }
+      }
+    },
+    "feedback": {
+      "infoList": {
+        "title": "Import report"
+      },
+      "warningList": {
+        "title": "Errors",
+        "row": "Row",
+        "column": "Column",
+        "code": "Code"
+      },
+      "buttons": {
+        "warningListDownload": "Download report",
+        "wrongLinesDownload": "Download rows with errors"
+      }
+    },
+    "emptyNodesModal": {
+      "title": "No configured Node",
+      "content": {
+        "text": "To create a new Node, access the ",
+        "nodesConfigLink": "Node configuration"
+      }
+    },
+    "authentication": {
+      "messages": {
+        "clear": "Session expired. Login again"
+      },
+      "superUserLoginModal": {
+        "title": "Super User Login",
+        "buttons": {
+          "cancel": {
+            "title": "Go to homepage"
+          },
+          "login": {
+            "title": "Login"
+          }
+        }
+      }
+    }
+  },
+  "page": {
+    "header": {
+      "userDropdown": {
+        "label": {
+          "anonymous": "login"
+        },
+        "buttons": {
+          "logout": "Logout",
+          "login": "Login",
+          "recoverPassword": "Recover password"
+        },
+        "fields": {
+          "username": {
+            "placeholder": "Username"
+          },
+          "password": {
+            "placeholder": "Password"
+          }
+        },
+        "recoverPassword": {
+          "title": "Recover password",
+          "buttons": {
+            "cancel": "Cancel",
+            "submit": "Send email"
+          },
+          "messages": {
+            "success": "An email for recover the password has been sent"
+          }
+        }
+      },
+      "helpButton": {
+        "image": {
+          "alt": "Help image"
+        }
+      },
+      "superUserLogoutButton": {
+        "title": "Logout Super User"
+      }
+    }
+  },
+  "commons": {
+    "buttons": {
+      "save": {
+        "title": "Save"
+      },
+      "close": {
+        "title": "Close"
+      },
+      "cancel": {
+        "title": "Cancel"
+      },
+      "download": {
+        "title": "Download"
+      },
+      "edit": {
+        "title": "Edit"
+      },
+      "set": {
+        "title": "Select"
+      },
+      "preview": {
+        "title": "Preview"
+      },
+      "unset": {
+        "title": "Deselect"
+      },
+      "goBack": {
+        "title": "Back"
+      },
+      "goForward": {
+        "title": "Forward"
+      },
+      "goHome": {
+        "label": "Go to homepage"
+      },
+      "detail": {
+        "title": "Show detail"
+      },
+      "selectAll": {
+        "title": "Select all"
+      },
+      "deselectAll": {
+        "title": "Deselect all"
+      },
+      "create": {
+        "title": "Create"
+      },
+      "upload": {
+        "title": "Upload"
+      },
+      "confirm": {
+        "title": "Confirm"
+      }
+    },
+    "actions": {
+      "select": {
+        "title": "Select"
+      },
+      "detail": {
+        "title": "View/Edit"
+      },
+      "detailReadOnly": {
+        "title": "View"
+      },
+      "delete": {
+        "title": "Delete"
+      },
+      "download": {
+        "title": "Download"
+      },
+      "customAnnotations": {
+        "title": "Annotations"
+      },
+      "oecdAnnotations": {
+        "title": "OECD Annotations"
+      },
+      "dataflowList": {
+        "title": "Dataflow list"
+      },
+      "upgradeDsd": {
+        "title": "Upgrade Dsd"
+      },
+      "compareDsds": {
+        "title": "Compare Dsds"
+      },
+      "manageOwners": {
+        "title": "Manage owners"
+      },
+      "parentsAndChildren": {
+        "title": "Linked artefact"
+      },
+      "emptyCube": {
+        "title": "Empty cube"
+      },
+      "clone": {
+        "title": "Clone"
+      },
+      "export": {
+        "title": "Export in other WS"
+      }
+    },
+    "helps": {
+      "passwordsNotEqual": {
+        "label": "Passwords do not match"
+      },
+      "invalidDateRange": {
+        "label": "Must be after start date"
+      }
+    },
+    "alerts": {
+      "fieldTooLong": {
+        "title": "Field too long",
+        "content": "You must specify {{maxLen}} chars maximum"
+      }
+    },
+    "artefact": {
+      "modals": {
+        "unsavedChange": {
+          "discard": {
+            "title": "Unsaved changes will be lost"
+          },
+          "different": {
+            "title": "The operation will ignore unsaved changes"
+          },
+          "autoSave": {
+            "title": "The operation will save pending changes"
+          }
+        },
+        "clone": {
+          "title": "Clone artefact",
+          "buttons": {
+            "submit": {
+              "title": "Clone"
+            }
+          }
+        },
+        "export": {
+          "title": "Export artefact",
+          "buttons": {
+            "submit": {
+              "title": "Export"
+            }
+          }
+        },
+        "exportReport": {
+          "title": "Export report"
+        }
+      },
+      "messages": {
+        "nodeRestored": {
+          "title": "The cut node has been restored"
+        },
+        "itemsImport": {
+          "fileUpload": {
+            "success": "CSV file uploaded successfully"
+          },
+          "fileImport": {
+            "success": "Items imported successfully"
+          }
+        },
+        "clone": {
+          "success": "Artefact cloned successfully"
+        }
+      },
+      "alerts": {
+        "hasNotAgencyPermission": "The Artefact is not editable because there is no permission for the Agency"
+      },
+      "buttons": {
+        "download": {
+          "title": "Download artefact"
+        },
+        "export": {
+          "title": "Export in other WS"
+        },
+        "clone": {
+          "title": "Clone artefact"
+        }
+      },
+      "tabs": {
+        "general": {
+          "title": "General",
+          "dsd": {
+            "selector": {
+              "detail": {
+                "title": "DSD detail"
+              },
+              "select": {
+                "title": "Select DSD"
+              },
+              "reset": {
+                "title": "Deselect DSD"
+              }
+            },
+            "modals": {
+              "dsdList": {
+                "title": "DSD list"
+              }
+            }
+          },
+          "msd": {
+            "selector": {
+              "select": {
+                "title": "Select MSD"
+              },
+              "reset": {
+                "title": "Deselect MSD"
+              }
+            },
+            "modals": {
+              "msdList": {
+                "title": "MSD list"
+              }
+            }
+          }
+        },
+        "items": {
+          "title": "Items",
+          "item": {
+            "detail": {
+              "title": {
+                "editMode": {
+                  "title": "Edit Item - [{{id}}]"
+                },
+                "createMode": {
+                  "title": "New Item"
+                },
+                "viewMode": {
+                  "title": "View Item - [{{id}}]"
+                }
+              },
+              "modals": {
+                "parentList": {
+                  "title": "Items list"
+                }
+              }
+            }
+          },
+          "modals": {
+            "errors": {
+              "duplicateItem": "ID already used"
+            }
+          }
+        },
+        "categorisations": {
+          "title": "Categorisations"
+        }
+      }
+    }
+  },
+  "sdmxTypes": {
+    "codelist": "Codelist",
+    "categoryScheme": "Category Scheme",
+    "conceptScheme": "Concept Scheme",
+    "dataflow": "Dataflow",
+    "dsd": "DSD",
+    "metadataflow": "Metadataflow",
+    "agencyScheme": "Agency Scheme",
+    "contentConstraint": "Content Constraint"
+  },
+  "sdmxDimensionTypes": {
+    "normal": "Normal",
+    "frequency": "Frequency",
+    "time": "Time",
+    "measure": "Measure"
+  },
+  "sdmxAttributeAttachmentLevel": {
+    "series": "DimensionGroup",
+    "observation": "Observation",
+    "group": "Group",
+    "dataset": "Dataset"
+  },
+  "validators": {
+    "version": {
+      "exceddsMaxLength": "Must contain less than {{maxLength}} characters",
+      "notContainsDot": "Must contain at least one dot",
+      "endsWithDot": "Must end with a number",
+      "exceddsMaxDepth": "Must be like x.y or x.y.z",
+      "componentIsInvalid": "Must contain valid numbers (es. 1.0.2)"
+    }
+  },
+  "reduxComponents": {
+    "derivedItemsScheme": {
+      "buttons": {
+        "addItems": {
+          "title": "Add items"
+        },
+        "removeItems": {
+          "title": "Remove items"
+        },
+        "emptyList": {
+          "title": "Clear list"
+        },
+        "create": {
+          "title": "Create derived item scheme"
+        },
+        "deriveSubmit": {
+          "title": "Create"
+        }
+      },
+      "modals": {
+        "warning": {
+          "delete": {
+            "title": "You cannot remove an item with children"
+          },
+          "parentMissing": {
+            "title": "Unable to create the derived item scheme, not all parent items have been included"
+          }
+        },
+        "derive": {
+          "title": "Create derived item scheme"
+        }
+      },
+      "preservesHierarchy": {
+        "label": "Add items preserving hierarchy"
+      },
+      "autoImport": {
+        "label": "Automatically import",
+        "parents": {
+          "label": "Parents"
+        },
+        "children": {
+          "label": "Children"
+        },
+        "descendants": {
+          "label": "Descendants"
+        }
+      }
+    },
+    "categorySchemeDetail": {
+      "messages": {
+        "create": {
+          "success": "Category Scheme created successfully"
+        },
+        "update": {
+          "success": "Category Scheme updated successfully"
+        }
+      },
+      "title": {
+        "editMode": {
+          "title": "Edit Category Scheme - [{{triplet.id}}]"
+        },
+        "createMode": {
+          "title": "New Category Scheme"
+        },
+        "viewMode": {
+          "title": "View Category Scheme - [{{triplet.id}}]"
+        }
+      },
+      "tabs": {
+        "derived": {
+          "title": "Derived Category Scheme"
+        }
+      }
+    },
+    "codelistDetail": {
+      "messages": {
+        "create": {
+          "success": "Codelist created successfully"
+        },
+        "update": {
+          "success": "Codelist updated successfully"
+        }
+      },
+      "title": {
+        "editMode": {
+          "title": "Edit Codelist - [{{triplet.id}}]"
+        },
+        "createMode": {
+          "title": "New Codelist"
+        },
+        "viewMode": {
+          "title": "View Codelist - [{{triplet.id}}]"
+        }
+      },
+      "tabs": {
+        "derived": {
+          "title": "Derived Codelist"
+        }
+      }
+    },
+    "dsdDetail": {
+      "messages": {
+        "create": {
+          "success": "DSD created successfully"
+        },
+        "update": {
+          "success": "DSD updated successfully"
+        }
+      },
+      "title": {
+        "viewMode": {
+          "title": "View DSD - [{{triplet.id}}]"
+        },
+        "editMode": {
+          "title": "Edit DSD - [{{triplet.id}}]"
+        },
+        "createMode": {
+          "title": "Create DSD"
+        }
+      },
+      "modals": {
+        "warnings": {
+          "submitIncomplete": {
+            "title": "Cannot save DSD",
+            "content": "You have to create the primary measure and at least one dimension having type 'Normal'"
+          }
+        }
+      },
+      "component": {
+        "deleteConfirmModal": {
+          "title": "Are you sure to delete this component?"
+        },
+        "deleteWarningModal": {
+          "title": "Cannot delete this component",
+          "content": "Used by {{component}}"
+        },
+        "createWarningModal": {
+          "title": "Cannot create this component",
+          "content": "ID in use"
+        }
+      },
+      "codelistsSelector": {
+        "title": "Select Codelist"
+      },
+      "conceptSchemesSelector": {
+        "title": "Select Concept Scheme"
+      },
+      "conceptSchemeSelector": {
+        "title": "Select Concept"
+      },
+      "attributeDetail": {
+        "title": "Attribute detail"
+      },
+      "dimensionDetail": {
+        "title": "Dimension detail"
+      },
+      "groupDetail": {
+        "title": "Group detail"
+      }
+    },
+    "conceptSchemeDetail": {
+      "messages": {
+        "create": {
+          "success": "Concept Scheme created successfully"
+        },
+        "update": {
+          "success": "Concept Scheme updated successfully"
+        }
+      },
+      "title": {
+        "editMode": {
+          "title": "Edit Concept Scheme - [{{triplet.id}}]"
+        },
+        "createMode": {
+          "title": "New Concept Scheme"
+        },
+        "viewMode": {
+          "title": "View Concept Scheme - [{{triplet.id}}]"
+        }
+      },
+      "tabs": {
+        "derived": {
+          "title": "Derived Concept Scheme"
+        }
+      }
+    }
+  },
+  "languages": {
+    "it": "Italiano",
+    "en": "English"
+  }
+}
