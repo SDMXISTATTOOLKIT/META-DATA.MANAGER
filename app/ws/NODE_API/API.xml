@@ -124,6 +124,12 @@
             Sets all owners for a specific entity id on the AuthDB
             </summary>
         </member>
+        <member name="M:API.ConfigController.IsAgencyAssignToAnyUser(System.String,System.String)">
+            <summary>
+            Returns is agency assign to any user
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:API.ConfigController.GetConfig(System.String)">
             <summary>
             Gets Config Data
@@ -131,6 +137,12 @@
             <param name="type">config type (app, nodes, referenceMetadata)</param>
         </member>
         <member name="M:API.ConfigController.SetConfig(System.String)">
+            <summary>
+            Sets a new configuration
+            </summary>
+            <param name="type">config type (app, nodes, referenceMetadata)</param>
+        </member>
+        <member name="M:API.ConfigController.AddAgencyToConfig(System.String,DataModel.Agency)">
             <summary>
             Sets a new configuration
             </summary>
@@ -287,12 +299,50 @@
             Whether there is at least one conflict
             </summary>
         </member>
+        <member name="T:API.FileResultFilter">
+            <summary>
+            FileResultFilter
+            </summary>
+        </member>
+        <member name="M:API.MetadatasetController.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor MetadatasetController
+            </summary>
+        </member>
+        <member name="M:API.MetadatasetController.MetadatasetUpload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            API to upload metadataset sdmxml file
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.MetadatasetController.MetadatasetImport(NodeAPI.Dtos.MetadatasetDTO)">
+            <summary>
+            API to convert uploaded file in RMDataProvider.Model.MetadataSetType
+            </summary>
+            <param name="metadataset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.MetadatasetController.MetadatasetConvert(RMDataProvider.Model.MetadataSetType)">
+            <summary>
+            API to convert uploaded file in RMDataProvider.Model.MetadataSetType
+            </summary>
+            <param name="metadataset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.MetadatasetController.MetadatasetExport(System.String)">
+            <summary>
+            API to convert uploaded file in RMDataProvider.Model.MetadataSetType
+            </summary>
+            <param name="metadataset"></param>
+            <returns></returns>
+        </member>
         <member name="T:API.RMController">
             <summary>
             RM API
             </summary>
         </member>
-        <member name="M:API.RMController.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:API.RMController.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Options.IOptionsSnapshot{DataModel.CacheConfig})">
             <summary>
             Constructor
             </summary>
@@ -549,6 +599,15 @@
             <param name="version">Artefact version.</param>
             <returns></returns>
         </member>
+        <member name="M:CrudApi.Controllers.NodeController.GetHierarchicalCodelist(System.String,System.String,System.String)">
+            <summary>
+            Gets a Hierarchical Codelist (if all params are null returns all)
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <returns></returns>
+        </member>
         <member name="M:CrudApi.Controllers.NodeController.GetDataConsumerScheme(System.String,System.String,System.String)">
             <summary>
             Gets a Data Consumer Scheme (if all params are null returns all)
@@ -633,14 +692,12 @@
             <param name="version">The version of the dataflow.</param>
             <returns></returns>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.DownloadDDBDataflow(System.Int32,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String)">
+        <member name="M:CrudApi.Controllers.NodeController.DownloadDDBDataflow(DDB.Entities.DDBDataflow,System.String,System.String,System.String,System.Boolean,System.String)">
             <summary>
             Download DataFlow in production
             </summary>
-            <param name="id">Id.</param>
+            <param name="ddbDataflow">The dataflow..</param>
             <param name="format">format (genericdata, genericdata20, jsondata, structurespecificdata, csv, rdf, compactdata20, edidata, crosssectionaldata, customcsv)</param>
-            <param name="selCols">column to show in a customcsv</param>
-            <param name="filter">filter to apply in a customcsv</param>
             <param name="observation">observation</param>
             <param name="zipped">return zipped file</param>
             <param name="separator">set separator for csv</param>
@@ -733,6 +790,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:CrudApi.Controllers.NodeController.UpdateHierarchicalCodelist(NSI.Entities.HierarchicalCodelistRegistry)">
+            <summary>
+            Update the main property of MSD
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CrudApi.Controllers.NodeController.CreateCube">
             <summary>
             Creates a cube querying SDMX WS and adding corrispondent codes for each attribute or dimension.
@@ -767,7 +830,7 @@
         </member>
         <member name="M:CrudApi.Controllers.NodeController.UpdateArtefacts">
             <summary>
-            Updates Artefacts
+            Updates Artefacts 
             </summary>
             <returns></returns>
         </member>
@@ -850,7 +913,7 @@
             <param name="category">The Category to be inserted.</param>
             <returns>The category id in case of success, otherwise an exception is thrown.</returns>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.UpdateDCS(DDB.Entities.Category)">
+        <member name="M:CrudApi.Controllers.NodeController.UpdateDCS(System.Collections.Generic.List{DDB.Entities.Category})">
             <summary>
             Update category in the Default Category Scheme.
             </summary>
@@ -960,7 +1023,7 @@
             <param name="delimiter">CSV delimiter used in the file.</param>
             <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.ImportCSVData(System.Char,System.Boolean,System.String,System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Char},System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+        <member name="M:CrudApi.Controllers.NodeController.ImportCSVData(System.Char,System.Boolean,System.String,System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Char},System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Imports data in a cube from a CSV file.
             </summary>
@@ -976,6 +1039,22 @@
             <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
             <param name="embargo">Whether the data have to be embargoed or not.</param>
             <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.ImportAttributeFile(System.Char,System.Boolean,System.Int32,System.String,System.String,System.Nullable{System.Char},System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Imports data in a cube from an attribute file.
+            </summary>
+            <param name="separator">CSV separator used in the file.</param>
+            <param name="delimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="cubeId">Id of the cube where data are imported.</param>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+            <param name="tid">Table Identifier.</param>
+            <param name="refreshProdDf">Whether regenerating content constraints and transcodings for dataflows built on the specific cube.</param>
+            <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
+            <param name="deleteMode">Whether delete mode is active or not</param>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.DisembargoCube(System.Int32)">
             <summary>
@@ -1015,7 +1094,7 @@
             <param name="optionsTable">Contains option for paging, filter, sort</param>
             <param name="filePath">Path of the CSV file.</param>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.ImportSDMXMLData(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:CrudApi.Controllers.NodeController.ImportSDMXMLData(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Imports data from a SDMXML file.
             </summary>
@@ -1029,6 +1108,7 @@
             <param name="refreshProdDf">Whether regenerating content constraints and transcodings for dataflows built on the specific cube.</param>
             <param name="embargo">Whether the data have to be embargoed or not.</param>
             <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.GetDataflowColumnPreview(DDB.Entities.DDBDataflowWithCols,System.String,System.Int32,System.Int32)">
             <summary>
@@ -1047,28 +1127,19 @@
             <param name="agencyId">agency</param>
             <param name="version">version</param>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.GetDDBDataflowPreview(System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:CrudApi.Controllers.NodeController.GetDDBDataflowPreview(DDB.Entities.DDBDataflow,System.Boolean)">
             <summary>
             Gets a data preview fior a DDB dataflow
             </summary>
-            <param name="selCols">List of columns of the dataset to be show</param>
-            <param name="idCube">cube id</param>
-            <param name="filter">filter data</param>
-            <param name="numPage">number of page</param>
-            <param name="pageSize">number of data per page (-1 to unlimited)</param>
-            <param name="sortCols">column to sort</param>
-            <param name="sortByDesc">sort by asc or desc</param>
+            <param name="ddbDataflow">List of columns of the dataset to be show</param>
             <param name="partialIgnoreCheckFilter">whether to check filter coerence for dataflow columns with a unique value or not</param>
-            <param name="idDataflow">The id of the dataflow (-1 for get all cube)</param>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.GetDDBDataflowCsv(System.String,System.Int32,System.String,System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})">
+        <member name="M:CrudApi.Controllers.NodeController.GetDDBDataflowCsv(DDB.Entities.DDBDataflow,System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})">
             <summary>
             Downloads a DDB dataflow in CSV format (zipped or not)
             </summary>
-            <param name="selCols">List of column data to be show</param>
-            <param name="idCube">cube id</param>
-            <param name="filter">filter data</param>
-            <param name="zip">true for getting zipped data</param>
+            <param name="ddbDataflow">The dataflow.</param>
+            <param name="zip">true for getting zipped data.</param>
             <param name="separator">CSV separator used in the file.</param>
             <param name="delimiter">CSV delimiter used in the file.</param>
         </member>
@@ -1170,28 +1241,28 @@
         </member>
         <member name="M:CrudApi.Controllers.NodeController.CompareCodelist(System.String,System.String,System.String,System.String,System.String,System.String)">
             <summary>
-            Generate report with the difference beetween two DSD read from database
+            Generate report with the difference beetween the two codelist
             </summary>
-            <param name="sourceId">The id of the original dsd</param>
-            <param name="sourceAgencyId">The agencyid of the original dsd</param>
-            <param name="sourceVersion">The version of the original dsd</param>
-            <param name="targetId">The id of the new dsd</param>
-            <param name="targetAgencyId">The agencyid of the new dsd</param>
-            <param name="targetVersion">The version of the new dsd</param>
+            <param name="sourceId">The id of the first codelist</param>
+            <param name="sourceAgencyId">The agencyid of the first codelist</param>
+            <param name="sourceVersion">The version of the first codelist</param>
+            <param name="targetId">The id of the second codelist</param>
+            <param name="targetAgencyId">The agencyid of the second codelist</param>
+            <param name="targetVersion">The version of the second codelist</param>
             <returns></returns>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.CompareCodelist(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
             <summary>
-            Generate report with the difference beetween two DSD read from xml (or database)
+            Generate report with the difference beetween the two codelist
             </summary>
-            <param name="sourceId">The id of the original dsd</param>
-            <param name="sourceAgencyId">The agencyid of the original dsd</param>
-            <param name="sourceVersion">The version of the original dsd</param>
-            <param name="targetId">The id of the new dsd</param>
-            <param name="targetAgencyId">The agencyid of the new dsd</param>
-            <param name="targetVersion">The version of the new dsd</param>
-            <param name="sourceFile">The source xml file in crypted value, "NULL" for read from database</param>
-            <param name="targetFile">The target xml file in crypted value, "NULL" for read from database</param>
+            <param name="sourceId">The id of the first codelist</param>
+            <param name="sourceAgencyId">The agencyid of the first codelist</param>
+            <param name="sourceVersion">The version of the first codelist</param>
+            <param name="targetId">The id of the second codelist</param>
+            <param name="targetAgencyId">The agencyid of the second codelist</param>
+            <param name="targetVersion">The version of the second codelist</param>
+            <param name="sourceFile">The source xml file (crypted), "NULL" for read from database</param>
+            <param name="targetFile">The target xml file (crypted), "NULL" for read from database</param>
             <returns></returns>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.CompareItems(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.String,System.String)">
@@ -1299,18 +1370,41 @@
             <param name="artefactIdentity">Artefact to duplicate</param>
             <returns></returns>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.CloneCodelist(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:CrudApi.Controllers.NodeController.CloneCodelist(System.String,System.String,System.String,System.String,System.String,System.String)">
             <summary>
             Clone Codelist
             </summary>
             <param name="id">Artefact id.</param>
             <param name="agencyID">Artefact agency.</param>
             <param name="version">Artefact version.</param>
-            <param name="itemCode">Artefact item code</param>
             <param name="newId">Id of artefact cloned</param>
             <param name="newAgencyID">AgencyId of artefact cloned</param>
             <param name="newVersion">Version of artefact cloned</param>
             <returns>Codelist</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CloneHcl(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Clone a hierarchical codelist
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="newId">Id of artefact cloned</param>
+            <param name="newAgencyID">AgencyId of artefact cloned</param>
+            <param name="newVersion">Version of artefact cloned</param>
+            <returns>a hcl</returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.CloneMsd(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Clone a msd
+            </summary>
+            <param name="id">Artefact id.</param>
+            <param name="agencyID">Artefact agency.</param>
+            <param name="version">Artefact version.</param>
+            <param name="newId">Id of artefact cloned</param>
+            <param name="newAgencyID">AgencyId of artefact cloned</param>
+            <param name="newVersion">Version of artefact cloned</param>
+            <returns>a msd</returns>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.RemoveTempTable">
             <summary>
@@ -1336,12 +1430,12 @@
             <param name="idCube">The cube id.</param>
             <returns>Column of Cube</returns>
         </member>
-        <member name="M:CrudApi.Controllers.NodeController.GetSeriesForCube(System.Int32,DataModel.OptionsTable)">
+        <member name="M:CrudApi.Controllers.NodeController.GetSeriesForCube(System.Int32,DDB.Entities.DDBDataflow)">
             <summary>
             Gets all columns of cube 
             </summary>
             <param name="idCube">The cube id.</param>
-            <param name="optionsTable">The filter</param>
+            <param name="ddbDataflow">The ddb dataflow</param>
             <returns>All series of cube</returns>
         </member>
         <member name="M:CrudApi.Controllers.NodeController.DeleteSeries(System.Int32,System.Collections.Generic.List{System.Int32})">
@@ -1617,6 +1711,27 @@
             <param name="version">Artefact version.</param>
             <param name="sourceLang">Copy from language.</param>
             <param name="targetLangs">Past to languages.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DataBrowserClearCache">
+            <summary>
+            Creates Artefacts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DataBrowserClearItemCache(System.String,System.String,System.String)">
+            <summary>
+            Clears a dataflow from the cache
+            </summary>
+            <param name="id">The dataflow's id</param>
+            <param name="agencyID">The dataflow's agency</param>
+            <param name="version">The dataflow's version</param>
+            <returns></returns>
+        </member>
+        <member name="M:CrudApi.Controllers.NodeController.DataBrowserGenerateCatalogCache">
+            <summary>
+            Generetes catalog cache.
+            </summary>
             <returns></returns>
         </member>
     </members>

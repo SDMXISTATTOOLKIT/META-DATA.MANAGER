@@ -54,14 +54,14 @@ go
 /* 	"MA_SID" : Sid da utilizzare per il MA WS                                    			  */  
 create table "AUTH_DB_CONNECTION" ( 
 	"MSDB_CONN" bigint not null,
-	"DDB_CONN" bigint not null,
-	"RMDB_CONN" bigint not null,
+	"DDB_CONN" bigint null,
+	"RMDB_CONN" bigint null,
 	"MA_SID" nvarchar(100) not null)  
 
 go
 
 alter table "AUTH_DB_CONNECTION"
-	add constraint "AUTH_DB_CONNECTION_PK" primary key ("MSDB_CONN", "DDB_CONN", "RMDB_CONN")   
+	add constraint "AUTH_DB_CONNECTION_PK" primary key ("MSDB_CONN")   
 
 
 go
@@ -220,21 +220,6 @@ alter table "AUTH_USER_DATA"
 go
 
 /* Add foreign key constraints to table "AUTH_DB_CONNECTION".                                 */
-alter table "AUTH_DB_CONNECTION"
-	add constraint "AUTH_CONNECTION_STRING_AUTH_DB_CONNECTION_FK1" foreign key (
-		"DDB_CONN")
-	 references "AUTH_CONNECTION_STRING" (
-		"CONNECTION_ID") on update no action on delete no action  
-
-go
-
-alter table "AUTH_DB_CONNECTION"
-	add constraint "AUTH_CONNECTION_STRING_AUTH_DB_CONNECTION_FK2" foreign key (
-		"RMDB_CONN")
-	 references "AUTH_CONNECTION_STRING" (
-		"CONNECTION_ID") on update no action on delete no action  
-
-go
 
 alter table "AUTH_DB_CONNECTION"
 	add constraint "AUTH_CONNECTION_STRING_AUTH_DB_CONNECTION_FK3" foreign key (

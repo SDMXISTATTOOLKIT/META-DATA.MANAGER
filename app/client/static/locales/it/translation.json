@@ -90,12 +90,6 @@
     "artefactBrowser": {
       "label": "Browser Artefatti"
     },
-    "referenceMetadata": {
-      "label": "Metadati"
-    },
-    "metadataSet": {
-      "label": "Metadati Referenziali"
-    },
     "manageUsers": {
       "label": "Gestione Utenti"
     },
@@ -114,26 +108,23 @@
     "cubeList": {
       "label": "Liste di cubi"
     },
-    "DCAT-AP_IT": {
-      "label": "DCAT-AP_IT"
-    },
     "categorySchemesAndDataflows": {
       "label": "Schemi di Categorie e Dataflows"
     },
     "userManagement": {
       "label": "Gestione Utente"
     },
-    "msds": {
-      "label": "Metadata Structure Definitions"
-    },
-    "metadataflows": {
-      "label": "Metadataflows"
-    },
     "removeTempTables": {
       "label": "Rimuovi tabelle temporanee"
     },
     "mergeItemSchemes": {
       "label": "Unisci Item Schemes"
+    },
+    "attributeFile": {
+      "label": "Importa file di attributi"
+    },
+    "updateDataBrowserCache": {
+      "label": "Aggiorna cache Data Browser"
     }
   },
   "data": {
@@ -176,9 +167,6 @@
       "observedValueCanBeAlphanumeric": "Il val. osservato può essere alfanumerico",
       "lastUpdate": {
         "label": "Ultima modifica"
-      },
-      "view": {
-        "label": "Vista"
       },
       "hasEmbargoedData": {
         "shortLabel": "Embargo"
@@ -366,14 +354,6 @@
       "description": {
         "label": "Descrizione"
       },
-      "isPublished": {
-        "shortLabel": "Stato",
-        "values": {
-          "published": "Esposto",
-          "notPublished": "Non esposto",
-          "draft": "Bozza"
-        }
-      },
       "downloadFormat": {
         "structure": {
           "label": "SDMX v. 2.1"
@@ -436,6 +416,20 @@
       },
       "isAttributeWithChildrenPresentational": {
         "label": "Considera tutti gli attributi con figli come \"presentational\" "
+      },
+      "virtualDFNode": {
+        "label": "Nodo"
+      },
+      "virtualDFDataflow": {
+        "label": "Dataflow"
+      },
+      "dataflowType": {
+        "label": "Tipo di dataflow",
+        "values": {
+          "normal": "Normale",
+          "virtual": "Virtuale",
+          "onlyFile": "Solo file"
+        }
       }
     },
     "item": {
@@ -459,11 +453,11 @@
         "label": "Descrizione",
         "shortLabel": "Descr."
       },
-      "oecdFullName": {
+      "layoutAnnotationFullName": {
         "label": "FullName",
         "shortLabel": "FullName"
       },
-      "oecdIsDefault": {
+      "layoutAnnotationIsDefault": {
         "shortLabel": "IsDefault",
         "values": {
           "true": "Default",
@@ -547,6 +541,12 @@
             "dimension": "Dimensione",
             "attribute": "Attributo"
           }
+        },
+        "notDisplayed": {
+          "label": "Not displayed"
+        },
+        "notDisplayedItems": {
+          "label": "Codici"
         }
       },
       "attribute": {
@@ -575,6 +575,41 @@
         "type": {
           "label": "Tipo",
           "shortLabel": "Tipo"
+        },
+        "default": {
+          "label": "Default"
+        },
+        "defaultItems": {
+          "label": "Codici"
+        }
+      },
+      "timDimension": {
+        "defaultTimeStart": {
+          "label": "From",
+          "selector": {
+            "selectTitle": "Seleziona un valore",
+            "resetTitle": "Deseleziona il valore"
+          }
+        },
+        "defaultTimeEnd": {
+          "label": "To",
+          "selector": {
+            "selectTitle": "Seleziona un valore",
+            "resetTitle": "Deseleziona il valore"
+          }
+        },
+        "defaultLastNObservations": {
+          "label": "LastNObservations"
+        },
+        "mode": {
+          "label": "Modalità",
+          "values": {
+            "range": "Intervallo",
+            "lastNPeriods": "LastNPeriods"
+          }
+        },
+        "defaultLastNPeriods": {
+          "label": "LastNPeriods"
         }
       }
     },
@@ -641,9 +676,6 @@
         },
         "test": {
           "label": "Test"
-        },
-        "prepared": {
-          "label": "Prepared"
         },
         "sender": {
           "label": "Sender"
@@ -747,21 +779,17 @@
         "activeDirectoryEndpoint": {
           "label": "Endpoint Active Directory"
         },
-        "dataExplorerBaseUrl": {
-          "label": "Url del Data Explorer"
-        },
         "nsiReadOnlyUsername": {
           "label": "Username SDMX WS remoto"
         },
         "nsiReadOnlyPassword": {
           "label": "Password SDMX WS remoto"
         },
-        "metadataBaseURL": {
-          "label": "Base url Metadata API",
-          "placeholder": "https://localhost/METADATA_API"
-        },
         "supportAllCompleteStubs": {
           "label": "Supporto AllCompleteStubs"
+        },
+        "supportPostFilters": {
+          "label": "Supporta filtri in POST"
         }
       },
       "general": {
@@ -849,82 +877,190 @@
           "label": "Collassa il testo multiriga"
         }
       },
-      "dcatApIt": {
-        "msd": {
-          "label": "MSD",
-          "select": {
-            "title": "Seleziona MSD"
-          },
-          "reset": {
-            "title": "Deseleziona MSD"
-          }
-        }
-      },
       "annotations": {
         "cards": {
           "order": {
             "label": "Annotazioni di ordinamento"
           },
-          "oecd": {
-            "label": "Annotazioni OECD"
+          "layout": {
+            "label": "Annotazioni di layout"
           }
         },
         "conceptSchemesOrderAnnotation": {
-          "label": "Annotazione per l'ordinamento dei Concetti"
+          "label": "Concepts order"
         },
         "categorySchemesOrderAnnotation": {
-          "label": "Annotazione per l'ordinamento delle Categorie"
+          "label": "Categories order"
         },
         "codelistsOrderAnnotation": {
-          "label": "Annotazione per l'ordinamento dei Codici"
+          "label": "Codes order"
         },
         "layoutRow": {
-          "label": "Annotazione per le componenti di una DSD o di un dataflow che devono essere mostrate in riga"
+          "label": "Table layout row"
         },
         "layoutColumn": {
-          "label": "Annotazione per le componenti di una DSD o di un dataflow che devono essere mostrate in colonna"
+          "label": "Table layout column"
         },
         "layoutRowSection": {
-          "label": "Annotazione per le componenti di una DSD o di un dataflow che devono essere mostrate in una sezione di riga"
+          "label": "Table layout row section"
         },
         "notDisplayed": {
-          "label": "Annotazione per le componenti di una DSD o di un dataflow che non devono essere visibili"
+          "label": "Not displayed"
         },
         "fullName": {
-          "label": "Annotazione per il nome completo di un item"
+          "label": "Full name"
         },
         "associatedCube": {
-          "label": "Annotazione per DSD con un cubo associato"
+          "label": "Associated cube"
         },
         "changed": {
-          "label": "Annotazione per codelist final modificate dall'utente"
+          "label": "Changed"
         },
         "customDSD": {
-          "label": "Annotazione per DSD create automaticamente tramite il modulo Dataflow Builder"
+          "label": "Custom DSD"
         },
         "dDBDataflow": {
-          "label": "Annotazione per dataflow creati nel DDB tramite il modulo Dataflow Builder"
+          "label": "DDB dataflow"
         },
         "haveMetadata": {
-          "label": "Annotazione per dataflow con un report associato"
+          "label": "Have metadata"
         },
         "metadataset": {
-          "label": "Annotazione per metadataflow con una Metadata Set associato"
+          "label": "Metadataset"
         },
         "default": {
-          "label": "Annotazione per un item impostato come default"
+          "label": "Default"
         },
         "restrictedForPublication": {
-          "label": "Annotazione per gli attributi di report da non rendere pubblici"
+          "label": "Restricted for publication"
         },
         "attachedFilePath": {
-          "label": "Annotazione per il path dell'allegato di un attributo di report"
+          "label": "Attached file path"
         },
         "dcatIsMultilingual": {
-          "label": "Annotazione per gli attributi multilingua"
+          "label": "DCAT is multilingual"
         },
         "customIsPresentational": {
-          "label": "Annotazione per MSD per considerare tutti gli attributi di report con figli come \"presentational\" "
+          "label": "Custom is presentational"
+        },
+        "layoutDataflowKeywords": {
+          "label": "Keywords"
+        },
+        "layoutCriteriaSelection": {
+          "label": "Criteria selection"
+        },
+        "layoutAttachedDataFiles": {
+          "label": "Attached data files"
+        },
+        "layoutDefaultPresentation": {
+          "label": "Default view"
+        },
+        "layoutDecimalSeparator": {
+          "label": "Decimal separator"
+        },
+        "layoutNumberOfDecimals": {
+          "label": "Number of decimals"
+        },
+        "layoutReferenceMetadata": {
+          "label": "Metadata URL"
+        },
+        "layoutEmptyCellPlaceholder": {
+          "label": "Empty cell placeholder"
+        },
+        "layoutDataflowNotes": {
+          "label": "Dataflow notes"
+        },
+        "layoutTerritorialDimensionIds": {
+          "label": "Geo ID"
+        },
+        "layoutDataflowSource": {
+          "label": "Dataflow source"
+        },
+        "layoutFilter": {
+          "label": "Table layout filter"
+        },
+        "categorisationsOrderAnnotation": {
+          "label": "Categorisations order"
+        },
+        "virtualDataflowNode": {
+          "label": "Virtual Dataflow Node"
+        },
+        "lastUpdate": {
+          "label": "Last update"
+        },
+        "dataflowCatalogType": {
+          "label": "Tipo di dataflow nel catalogo"
+        },
+        "layoutChartPrimaryDim": {
+          "label": "Chart layout primary dimension"
+        },
+        "layoutChartSecondaryDim": {
+          "label": "Chart layout secondary dimension"
+        },
+        "layoutChartFilter": {
+          "label": "Chart layout filter"
+        },
+        "layoutHidden": {
+          "label": "Nascosto"
+        }
+      },
+      "dataBrowser": {
+        "nodeId": {
+          "label": "ID del Nodo"
+        },
+        "username": {
+          "label": "Username"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "cards": {
+          "httpAuthentication": {
+            "label": "Autenticazione HTTP"
+          },
+          "proxy": {
+            "label": "Proxy"
+          },
+          "authentication": {
+            "label": "Autenticazione",
+            "tooltip": "Utente abilitato a gestire la cache per il nodo specificato"
+          }
+        },
+        "httpAuthenticationEnable": {
+          "label": "Abilita"
+        },
+        "httpAuthenticationUsername": {
+          "label": "Username"
+        },
+        "httpAuthenticationPassword": {
+          "label": "Password"
+        },
+        "proxyEnable": {
+          "label": "Abilita"
+        },
+        "proxyUsername": {
+          "label": "Username"
+        },
+        "proxyPassword": {
+          "label": "Password"
+        },
+        "httpAuthenticationDomain": {
+          "label": "Dominio"
+        },
+        "proxyUrl": {
+          "label": "URL"
+        },
+        "proxyPort": {
+          "label": "Porta"
+        },
+        "publicUrl": {
+          "label": "URL pubblico"
+        },
+        "enableCacheInvalidation": {
+          "label": "Consenti aggiornamento della cache"
+        },
+        "apiUrl": {
+          "label": "URL dell'API"
         }
       }
     }
@@ -962,25 +1098,6 @@
         "createComponent": "Crea componente"
       }
     },
-    "tableViewer": {
-      "pager": {
-        "itemsPerPage": "/ pagina",
-        "prevPage": "Precedente",
-        "nextPage": "Successiva",
-        "range": "da {{from}} a {{to}} di {{total}} righe",
-        "itemsPerPageAll": "Tutte le righe",
-        "rangeAll": "Tutte le {{rowNum}} righe"
-      },
-      "filter": {
-        "confirm": "Applica",
-        "reset": "Reimposta",
-        "placeholder": "Filtra..."
-      },
-      "search": {
-        "placeholder": "Cerca..."
-      },
-      "selectedRowsInfo": "{{size}} elementi selezionati"
-    },
     "tree": {
       "searchInput": {
         "placeholder": "Cerca..."
@@ -1000,6 +1117,12 @@
         },
         "detailShow": {
           "title": "Mostra dettagli"
+        },
+        "tidTooltip": "Il Tid, Table-Identifier è un identificativo unico che consente di inserire nello stesso cubo più copie dello stesso data point per tabelle (dataflow) diverse"
+      },
+      "modals": {
+        "uncheckableDim": {
+          "title": "Non è possibile deselezionare la dimensione perché appartiene ad almeno un gruppo"
         }
       }
     },
@@ -1032,7 +1155,22 @@
       "addBlockButton": "Aggiungi blocco",
       "block": {
         "addConditionButton": "Aggiungi condizione",
-        "removeButton": "Rimuovi blocco"
+        "removeButton": "Rimuovi blocco",
+        "condition": {
+          "selectValueButton": {
+            "title": "Seleziona un valore"
+          },
+          "selectValueModal": {
+            "title": "Seleziona un valore",
+            "tooManyCodesAlert": {
+              "title": "La stringa cercata produce troppi risultati",
+              "content": "Provare a effettuare una ricerca più specifica"
+            }
+          },
+          "resetValueButton": {
+            "title": "Deseleziona il valore"
+          }
+        }
       }
     },
     "empty": {
@@ -1057,10 +1195,10 @@
         "hasNameCol": {
           "label": "Name"
         },
-        "hasOecdFullNameCol": {
+        "hasLayoutAnnotationFullNameCol": {
           "label": "FullName"
         },
-        "hasOecdIsDefaultCol": {
+        "hasLayoutAnnotationIsDefaultCol": {
           "label": "IsDefault"
         }
       },
@@ -1082,11 +1220,17 @@
             "general": {
               "title": "Generale"
             },
-            "oecdNotDisplayed": {
-              "title": "Not Displayed"
+            "layoutAnnotationDefaultTableLayout": {
+              "title": "Table layout"
             },
-            "oecdLayout": {
+            "layoutAnnotations": {
               "title": "Layout"
+            },
+            "layoutAnnotationDefaultChartLayout": {
+              "title": "Chart layout"
+            },
+            "layoutAnnotationDefaultMapLayout": {
+              "title": "Map layout"
             }
           },
           "buttons": {
@@ -1105,15 +1249,18 @@
           "content": "Questo tipo è riservato"
         }
       },
-      "oecdNotDisplayed": {
+      "layoutAnnotationNotDisplayed": {
         "editButton": {
           "title": "Modifica"
         },
         "editTable": {
           "title": "Modifica Not Displayed"
+        },
+        "codesEditTable": {
+          "title": "Modifica codici Not Displayed per {{componentId}}"
         }
       },
-      "oecdLayout": {
+      "layoutAnnotationDefaultTableLayout": {
         "flagSaveAnnotation": {
           "title": "Includi queste annotazioni nell'artefatto"
         },
@@ -1127,7 +1274,59 @@
           "row": {
             "title": "Righe"
           },
-          "placeholder": "Trascina qui le dimensioni"
+          "placeholder": "Trascina qui le dimensioni",
+          "filter": {
+            "title": "Filtri"
+          }
+        },
+        "modeRadio": {
+          "dataBrowser": {
+            "title": "Data Browser"
+          },
+          "dataExplorer": {
+            "title": "Data Explorer"
+          }
+        },
+        "confirms": {
+          "modeChange": {
+            "title": "Sei sicuro?",
+            "content": "Il layout verrà ripristinato"
+          }
+        }
+      },
+      "layoutAnnotationDefault": {
+        "editButton": {
+          "title": "Modifica"
+        },
+        "editTable": {
+          "title": "Modifica dimensioni Default"
+        },
+        "codesEditTable": {
+          "title": "Modifica codici Default per {{componentId}}"
+        },
+        "timeDimensionEdit": {
+          "title": "Modifica Default",
+          "modeChangeConfirm": {
+            "title": "Sei sicuro?",
+            "content": "Perderai tutte le annotazioni della modalità corrente"
+          }
+        }
+      },
+      "layoutAnnotationDefaultChartLayout": {
+        "cards": {
+          "filter": {
+            "title": "Filtri"
+          },
+          "placeholder": "Trascina qui le dimensioni",
+          "primaryDim": {
+            "title": "Dimensione primaria"
+          },
+          "secondaryDim": {
+            "title": "Dimensione secondaria"
+          }
+        },
+        "flagSaveAnnotation": {
+          "title": "Includi queste annotazioni nell'artefatto"
         }
       }
     },
@@ -1160,6 +1359,9 @@
         "label": "Dimensione a livello di Observation",
         "noDimension": {
           "label": "Nessuna"
+        },
+        "allDimension": {
+          "label": "ALL_DIMENSION"
         }
       }
     },
@@ -1232,12 +1434,15 @@
         },
         "setDefault": {
           "title": "Imposta come default"
+        },
+        "addAgencyToConfig": {
+          "title": "Aggiungi alla configurazione"
         }
       },
       "modals": {
         "confirms": {
           "delete": {
-            "title": "Sei sicuro di eliminare questo Item?"
+            "title": "Sei sicuro di eliminare l'item {{id}}?"
           }
         },
         "warning": {
@@ -1266,7 +1471,7 @@
       "modals": {
         "confirms": {
           "delete": {
-            "title": "Sei sicuro di eliminare questo Artefatto?"
+            "title": "Sei sicuro di eliminare l'artefatto {{triplet}}?"
           },
           "multiDelete": {
             "title": "Sei sicuro di eliminare questo Artefatto?",
@@ -1274,7 +1479,7 @@
           }
         },
         "parentsAndChildren": {
-          "title": "Artefatti collegati"
+          "title": "Artefatti collegati - [{{triplet}}]"
         }
       },
       "showContentConstraints": {
@@ -1349,11 +1554,8 @@
         "reset": "Cancella tutto"
       }
     },
-    "oecdAnnotationList": {
-      "title": "Annotazioni OECD"
-    },
-    "customAnnotationList": {
-      "title": "Annotazioni"
+    "layoutAnnotationList": {
+      "title": "Annotazioni di layout"
     },
     "dsdsCompareReport": {
       "componentsDetailCompareTable": {
@@ -1413,7 +1615,8 @@
         "artefactDetail": {
           "title": "Dettagli artefatto"
         }
-      }
+      },
+      "noDifferencesAlert": "Gli item schemes sono identici"
     },
     "formList": {
       "removeAlert": {
@@ -1437,17 +1640,13 @@
         }
       }
     },
-    "filterForm": {
-      "alerts": {
-        "noValues": {
-          "title": "La colonna non contiene valori"
-        }
-      }
-    },
     "treeFilter": {
       "warnings": {
         "codelistTooBig": {
           "title": "Impossibile impostare dei filtri su questa colonna: la codelist associata è troppo grande"
+        },
+        "incompleteTimePeriod": {
+          "title": "E' necessario compilare entrambi i campi affinché il filtro sul TIME_PERIOD abbia effetto"
         }
       },
       "levelNode": "Tutti i nodi di livello {{level}}",
@@ -1478,58 +1677,30 @@
       "disabledCheckbox": {
         "title": "Il valore non soddisfa i filtri"
       },
-      "noValuesInColumnPlaceholder": "La colonna non contiene valori"
-    },
-    "reportStructureTree": {
-      "tree": {
-        "actions": {
-          "addAttribute": {
-            "title": "Crea attributo"
+      "noValuesInColumnPlaceholder": "La colonna non contiene valori",
+      "timePeriod": {
+        "selector": {
+          "selectButton": {
+            "title": "Seleziona un valore"
           },
-          "removeAttribute": {
-            "title": "Elimina attributo"
+          "resetButton": {
+            "title": "Rimuovi il valore"
           }
-        }
-      },
-      "selector": {
-        "select": {
-          "title": "Seleziona codice"
         },
-        "reset": {
-          "title": "Deseleziona codice"
+        "from": {
+          "title": "Da"
+        },
+        "to": {
+          "title": "A"
+        },
+        "valuesModal": {
+          "title": "Seleziona un valore"
         }
       },
-      "modals": {
-        "warning": {
-          "attributeNotPresent": {
-            "title": "Attributo non presente nella MSD",
-            "content": "L'attributo {{attributeId}} del Report non è presente nella MSD. Salvando nuovamente il report questo attributo verrà perso"
-          }
+      "timeDimension": {
+        "valuesModal": {
+          "title": "Seleziona un valore"
         }
-      },
-      "attachment": {
-        "label": "Allegato"
-      },
-      "attachmentUploaded": {
-        "label": "Caricato"
-      },
-      "isPublic": {
-        "label": "Pubblicabile"
-      },
-      "isPresentational": {
-        "placeholder": "Questo attributo non può essere valorizzato (\"Presentational\")"
-      },
-      "value": {
-        "label": "Valore"
-      },
-      "valueFormat": {
-        "help": "Formato del valore"
-      },
-      "isMultilang": {
-        "title": "Attributo multilingua"
-      },
-      "htmlEditorModeSwitch": {
-        "label": "Editor XHTML"
       }
     },
     "artefactOwnershipModal": {
@@ -1571,6 +1742,115 @@
         "resizing": "Ridimensiono la tabella...",
         "updating": "Aggiorno le righe della tabella..."
       }
+    },
+    "layoutAnnotationsForm": {
+      "tabs": {
+        "notDisplayedItems": {
+          "title": "Not displayed items"
+        },
+        "defaultItems": {
+          "title": "Default items"
+        },
+        "defaultTableLayout": {
+          "title": "Default table layout"
+        },
+        "defaultChartLayout": {
+          "title": "Default chart layout"
+        },
+        "defaultMapLayout": {
+          "title": "Default map layout"
+        },
+        "generalParameters": {
+          "title": "General parameters"
+        }
+      },
+      "generalParameters": {
+        "attachedDataFileForm": {
+          "url": "URL",
+          "format": "Formato"
+        },
+        "attachedDataFiles": {
+          "modal": {
+            "addButton": {
+              "title": "Aggiungi"
+            },
+            "removeButton": {
+              "title": "Rimuovi"
+            }
+          }
+        },
+        "flagSaveAnnotation": {
+          "title": "Includi queste annotazioni nell'artefatto"
+        }
+      },
+      "alerts": {
+        "titleTooLong": "E' stata superata la lunghezza massima per un'annotazione"
+      }
+    },
+    "urlInput": {
+      "placeholder": {
+        "title": "Inserisci un URL valido"
+      }
+    },
+    "notDisplayed": {
+      "dsdComponentsTable": {
+        "columns": {
+          "codes": {
+            "title": "Codici"
+          }
+        },
+        "actions": {
+          "detail": {
+            "title": "Modifica codici Not displayed"
+          },
+          "detailNoCodelist": {
+            "title": "Nessuna codelist associata"
+          },
+          "delete": {
+            "title": "Sei sicuro di eliminare la componente {{id}}?"
+          }
+        },
+        "confirms": {
+          "delete": {
+            "title": "Sei sicuro?",
+            "content": "Perderai anche la selezione dei codici not displayed associati"
+          }
+        }
+      }
+    },
+    "default": {
+      "dsdComponentsTable": {
+        "columns": {
+          "preview": {
+            "title": "Anteprima"
+          }
+        },
+        "actions": {
+          "detail": {
+            "title": "Modifica codici Default"
+          },
+          "detailNoCodelist": {
+            "title": "Nessuna codelist associata"
+          },
+          "delete": {
+            "title": "Sei sicuro di eliminare la componente {{id}}?"
+          }
+        },
+        "confirms": {
+          "delete": {
+            "title": "Sei sicuro?",
+            "content": "Perderai anche la selezione dei codici default associati"
+          }
+        }
+      }
+    },
+    "dsdCompareReport": {
+      "noDifferencesAlert": "Le DSD sono identiche"
+    },
+    "htmlEditor": {
+      "zoomIn": {
+        "title": "Zoom"
+      }
     }
   },
   "scenes": {
@@ -1605,14 +1885,30 @@
           "messages": {
             "cubeDelete": {
               "success": "Il cubo è stato cancellato"
+            },
+            "categoryDelete": {
+              "success": "Categoria cancellata correttamente"
+            },
+            "categoryMove": {
+              "success": "Categoria spostata correttamente"
             }
           },
           "createButton": {
-            "title": "Crea cubo"
+            "title": "Crea",
+            "items": {
+              "createCube": "Crea cubo",
+              "createCategory": "Crea categoria"
+            }
           },
           "deleteButton": {
-            "title": "Elimina cubo",
-            "confirm": "Sei sicuro di eliminare il cubo?"
+            "cube": {
+              "title": "Elimina cubo",
+              "confirm": "Sei sicuro di eliminare il cubo {{id}}?"
+            },
+            "category": {
+              "title": "Elimina categoria",
+              "confirm": "Sei sicuro di eliminare la categoria {{id}}?"
+            }
           },
           "refreshButton": {
             "title": "Aggiorna albero"
@@ -1625,6 +1921,10 @@
             "forbiddenNode": {
               "title": "Permesso negato",
               "content": "Non puoi visualizzare i dettagli di questo cubo"
+            },
+            "forbiddenDragNDrop": {
+              "title": "Spostamento non possibile",
+              "content": "E' possibile soltanto spostare categorie in altre categorie"
             }
           }
         },
@@ -1640,6 +1940,27 @@
           },
           "measureModal": {
             "title": "Dettagli misura"
+          }
+        },
+        "categoryForm": {
+          "messages": {
+            "create": {
+              "success": "Categoria creata correttamente"
+            },
+            "edit": {
+              "success": "Categoria modificata correttamente"
+            }
+          },
+          "parentSelector": {
+            "select": {
+              "title": "Scegli padre"
+            },
+            "reset": {
+              "title": "Rimuovi padre"
+            }
+          },
+          "parentModal": {
+            "title": "Scegli categoria padre"
           }
         }
       },
@@ -1657,7 +1978,7 @@
             }
           },
           "deleteButton": {
-            "confirm": "Sei sicuro di cancellare il mapping?"
+            "confirm": "Sei sicuro di cancellare il mapping {{id}}?"
           },
           "deleteAllButton": {
             "confirm": "Sei sicuro di cancellare i mapping selezionati?"
@@ -1785,9 +2106,6 @@
             },
             "tid": {
               "label": "TID"
-            },
-            "attributesFile": {
-              "label": "File di attributi"
             }
           },
           "submitButton": {
@@ -1818,6 +2136,9 @@
           },
           "refreshProdDf": {
             "label": "Rigenera CC + Transcoding"
+          },
+          "checkFiltAttributes": {
+            "label": "checkFiltAttributes"
           }
         },
         "xmlForm": {
@@ -1868,12 +2189,15 @@
           "ignoreConcurrentUpload": {
             "title": "Possibile operazione concorrente sullo stesso cubo",
             "content": "Vuoi forzare comunque il tentativo di esecuzione dell'operazione?"
+          },
+          "submit": {
+            "title": "Sei sicuro?"
           }
         }
       },
       "cubeList": {
         "currentDataViewModal": {
-          "title": "Dati del cubo"
+          "title": "Dati del cubo - [{{id}}]"
         },
         "actions": {
           "detail": {
@@ -1884,11 +2208,14 @@
           },
           "removeEmbargo": {
             "title": "Rimuovi embargo"
+          },
+          "info": {
+            "title": "Informazioni addizionali"
           }
         },
         "modals": {
           "cubeDownload": {
-            "title": "Scarica Cubo",
+            "title": "Scarica cubo",
             "buttons": {
               "download": {
                 "title": "Scarica"
@@ -1916,13 +2243,25 @@
           },
           "confirms": {
             "removeEmbargo": {
-              "title": "Sei sicuro di voler rimuovere l'Embargo?"
+              "title": "Sei sicuro di voler rimuovere l'Embargo dal cubo {{id}}?"
             },
             "emptyCube": {
-              "title": "Sei sicuro di voler svuotare il cubo?"
+              "title": "Sei sicuro di voler svuotare il cubo {{id}}?"
             },
             "delete": {
-              "title": "Sei sicuro di voler eliminare il cubo?"
+              "title": "Sei sicuro di voler eliminare il cubo {{id}}?"
+            }
+          },
+          "info": {
+            "title": "Informazioni addizionali - [{{id}}]",
+            "view": {
+              "title": "View"
+            },
+            "fact": {
+              "title": "Fact"
+            },
+            "filter": {
+              "title": "Filter"
             }
           }
         },
@@ -1991,7 +2330,7 @@
                   }
                 },
                 "cubeNoDataModal": {
-                  "content": "Nessun dato presente nel Cubo"
+                  "content": "Nessun dato presente nel cubo"
                 },
                 "cubeOnlyEmbargoedDataModal": {
                   "content": "Il cubo contiene solo dati embargati: rimuovere l'embargo prima di procedere"
@@ -2026,6 +2365,9 @@
             },
             "header": {
               "title": "Header"
+            },
+            "layoutAnnotations": {
+              "title": "Annotazioni layout"
             }
           },
           "prevStepButton": {
@@ -2069,6 +2411,11 @@
           "invalidReceiverModal": {
             "title": "Impossibile salvare",
             "content": "Organisation ID è obbligatorio se il Receiver viene specificato"
+          },
+          "layoutAnnotations": {
+            "layoutAnnotationsForm": {
+              "title": "Annotazioni layout"
+            }
           }
         },
         "wizardShowButton": "Nuovo",
@@ -2089,7 +2436,7 @@
         "list": {
           "actions": {
             "delete": {
-              "confirm": "Sei sicuro di eliminare il Dataflow?",
+              "confirm": "Sei sicuro di eliminare il dataflow {{triplet}}?",
               "title": "Elimina",
               "haveMetadata": {
                 "title": "Non si può eliminare un dataflow con dei metadata associati."
@@ -2098,10 +2445,10 @@
             "preview": "Anteprima",
             "edit": "Visualizza/Modifica",
             "download": "Scarica",
-            "dataExplorerPreview": "Anteprima sul Data Explorer",
+            "dataBrowserPreview": "Anteprima sul Data Browser",
             "info": "Informazioni addizionali",
             "productionModal": {
-              "title": "Pubblicazione del Dataflow",
+              "title": "Pubblicazione del Dataflow - [{{id}}]",
               "buttons": {
                 "close": {
                   "title": "Chiudi"
@@ -2127,7 +2474,7 @@
                 "label": "Mapping Set",
                 "createButton": {
                   "confirm": {
-                    "title": "Sei sicuro di creare il Mapping Set?",
+                    "title": "Sei sicuro di creare il Mapping Set di {{id}}?",
                     "cancelButton": {
                       "title": "Cancel"
                     },
@@ -2142,7 +2489,7 @@
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Sei sicuro di cancellare il Mapping Set?"
+                    "title": "Sei sicuro di cancellare il Mapping Set di {{id}}?"
                   },
                   "title": "Cancella"
                 }
@@ -2154,13 +2501,13 @@
                 },
                 "createButton": {
                   "confirm": {
-                    "title": "Sei sicuro di creare il transcoding?"
+                    "title": "Sei sicuro di creare il transcoding di {{id}}?"
                   },
                   "title": "Crea"
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Sei sicuro di cancellare il transcoding?"
+                    "title": "Sei sicuro di cancellare il transcoding di {{id}}?"
                   },
                   "title": "Cancella"
                 }
@@ -2169,13 +2516,13 @@
                 "label": "Content Constraint",
                 "createButton": {
                   "confirm": {
-                    "title": "Sei sicuro di creare il Content Constraint?"
+                    "title": "Sei sicuro di creare il Content Constraint di {{id}}?"
                   },
                   "title": "Crea"
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Sei sicuro di cancellare il Content Constraint?"
+                    "title": "Sei sicuro di cancellare il Content Constraint di {{id}}?"
                   },
                   "title": "Cancella"
                 }
@@ -2184,13 +2531,13 @@
                 "label": "Produzione",
                 "publishButton": {
                   "confirm": {
-                    "title": "Sei sicuro di pubblicare il Dataflow?"
+                    "title": "Sei sicuro di pubblicare il Dataflow {{id}}?"
                   },
                   "title": "Pubblica"
                 },
                 "removeButton": {
                   "confirm": {
-                    "title": "Sei sicuro di rimuovere il Dataflow dalla Pubblicazione?"
+                    "title": "Sei sicuro di rimuovere il Dataflow {{id}} dalla Pubblicazione?"
                   },
                   "title": "Rimuovi"
                 }
@@ -2219,10 +2566,22 @@
                 },
                 "removePublish": {
                   "success": "Dataflow rimosso correttamente dalla pubblicazione"
+                },
+                "forceCacheUpdate": {
+                  "success": "Aggiornamento della cache forzato correttamente"
                 }
               },
               "transcodingContentConstraintList": {
                 "title": "Seleziona Content Constraint"
+              },
+              "forceCacheUpdate": {
+                "label": "Cache del Data Browser",
+                "forceCacheUpdateButton": {
+                  "confirm": {
+                    "title": "Si sicuro di forzare l'aggiornamento della cache di {{id}}?"
+                  },
+                  "title": "Forza aggiornamento cache"
+                }
               }
             },
             "production": {
@@ -2230,18 +2589,18 @@
             }
           },
           "previewModal": {
-            "title": "Anteprima Dataflow"
+            "title": "Anteprima Dataflow - [{{id}}]"
           }
         },
         "modals": {
           "info": {
-            "title": "Informazioni addizionali"
+            "title": "Informazioni addizionali - [{{id}}]"
           }
         },
         "dataflowDownload": {
           "modals": {
             "download": {
-              "title": "Scarica artefatto"
+              "title": "Scarica artefatto - [{{id}}]"
             },
             "preview": {
               "title": "Anteprima download"
@@ -2292,7 +2651,7 @@
       "upgradeDsd": {
         "modals": {
           "dataflowList": {
-            "title": "Lista dataflow"
+            "title": "Lista dataflow - [{{triplet}}]"
           },
           "compareDsdsReport": {
             "title": "Report confronto Dsd",
@@ -2316,7 +2675,7 @@
             }
           },
           "upgradedDsdList": {
-            "title": "Lista DSD aggiornate",
+            "title": "Lista DSD aggiornate - [{{triplet}}]",
             "buttons": {
               "import": {
                 "title": "Importa DSD da file"
@@ -2328,7 +2687,7 @@
           },
           "confirms": {
             "upgrade": {
-              "title": "Sei sicuro di voler aggiornare questa DSD?"
+              "title": "Sei sicuro di voler aggiornare la DSD {{triplet}}?"
             }
           },
           "importDsdFromFile": {
@@ -2358,6 +2717,114 @@
         "modal": {
           "title": "Sei sicuro?",
           "content": "Questa operazione cancella TUTTI i dati creati ed è IRREVERSIBILE"
+        }
+      },
+      "manageSeries": {
+        "cubeSelector": {
+          "selectIcon": {
+            "title": "Seleziona un cubo"
+          },
+          "resetIcon": {
+            "title": "Deseleziona il cubo"
+          },
+          "modal": {
+            "title": "Seleziona un cubo"
+          }
+        },
+        "cubesTree": {
+          "refreshIcon": {
+            "title": "Aggiorna l'albero"
+          }
+        },
+        "showFiltersButton": {
+          "title": "Filtri"
+        },
+        "deleteSeriesButton": {
+          "title": "Elimina series",
+          "disabledTooltip": "Seleziona le serie da eliminare"
+        },
+        "messages": {
+          "delete": {
+            "success": "Serie eliminate con successo"
+          }
+        },
+        "showSeriesButton": {
+          "title": "Mostra serie"
+        },
+        "modals": {
+          "confirms": {
+            "deleteSeries": {
+              "title": "Sei sicuro di voler cancellare le serie selezionate?"
+            }
+          }
+        }
+      },
+      "attributeFile": {
+        "cubeTreeModal": {
+          "title": "Cubi",
+          "tree": {
+            "refreshButton": {
+              "title": "Aggiorna l'albero"
+            }
+          }
+        },
+        "fields": {
+          "cube": {
+            "label": "Cubo",
+            "selectIcon": {
+              "title": "Seleziona un cubo"
+            },
+            "resetIcon": {
+              "title": "Deseleziona il cubo"
+            }
+          },
+          "tid": {
+            "label": "TID"
+          }
+        },
+        "confirms": {
+          "ignoreConcurrentUpload": {
+            "title": "Possibile operazione concorrente sullo stesso cubo",
+            "content": "Vuoi forzare comunque il tentativo di esecuzione dell'operazione?"
+          },
+          "submit": {
+            "title": "Sei sicuro?"
+          }
+        },
+        "submitButton": {
+          "label": "Importa"
+        },
+        "refreshProdDf": {
+          "label": "Rigenera CC + Transcoding"
+        },
+        "checkFiltAttributes": {
+          "label": "checkFiltAttributes"
+        },
+        "rowList": {
+          "title": "Dataset"
+        },
+        "messages": {
+          "fileUpload": {
+            "start": "Caricamento del file CSV",
+            "success": "File CSV caricato correttamente"
+          },
+          "submit": {
+            "start": "Importazione degli attributi",
+            "success": "Attributi importati correttamente"
+          }
+        }
+      },
+      "updateDataBrowserCache": {
+        "modal": {
+          "title": "Sei sicuro?",
+          "content": "Verrà aggiornata la cache dell'intero catalogo del nodo nel Data Browser"
+        }
+      },
+      "updateDatabrowserCache": {
+        "messages": {
+          "updateDatabrowserCache": {
+            "success": "Cache del Data Browser aggiornata correttamente"
+          }
         }
       }
     },
@@ -2422,10 +2889,8 @@
         },
         "modals": {
           "deleteConfirm": {
-            "title": "Sei sicuro di eliminare il Nodo?"
-          },
-          "metadataSetList": {
-            "title": "Lista Metadata Set"
+            "title": "Sei sicuro di eliminare il nodo {{id}}?",
+            "title_newNode": "Sei sicuro di eliminare il nuovo nodo?"
           }
         },
         "nodeCredentialsModal": {
@@ -2453,14 +2918,14 @@
           "search": {
             "title": "Ricerca"
           },
-          "dcatApIt": {
-            "title": "DCAT-AP_IT"
-          },
           "customAnnotations": {
             "title": "Annotazioni Custom"
           },
           "annotations": {
             "title": "Annotazioni"
+          },
+          "dataBrowser": {
+            "title": "Data Browser"
           }
         },
         "noNameNodeCard": {
@@ -2473,6 +2938,10 @@
             },
             "removeButton": {
               "title": "Rimuovi Agenzia"
+            },
+            "agencyAssignedToAnyUserModal": {
+              "title": "Non è possibile rimuovere l'agenzia",
+              "content": "Questa agenzia è assegnata a un utente"
             }
           }
         },
@@ -2580,6 +3049,12 @@
           },
           "itemSchemeCompareReport": {
             "title": "Differenze Item Scheme"
+          },
+          "xmlPreview": {
+            "title": "Anteprima XML"
+          },
+          "csvPreview": {
+            "title": "Anteprima CSV"
           }
         },
         "selectArtefactType": {
@@ -2665,348 +3140,6 @@
         }
       }
     },
-    "referenceMetadata": {
-      "dcat": {
-        "nodesConfigLink": {
-          "label": "Configurazione dei Nodi"
-        },
-        "messages": {
-          "report": {
-            "delete": {
-              "success": "Report cancellato con successo"
-            },
-            "update": {
-              "success": "Report aggiornato con successo"
-            },
-            "create": {
-              "success": "Report creato con successo"
-            },
-            "stateUpdate": {
-              "success": "Stato del report aggiornato con successo"
-            }
-          },
-          "dataflow": {
-            "update": {
-              "success": "Dataflow aggiornato con successo"
-            }
-          }
-        },
-        "modals": {
-          "reportList": {
-            "title": "Lista report"
-          },
-          "metadataSetDetail": {
-            "title": "Dettagli Metadata Set"
-          }
-        },
-        "noDcatMsd": {
-          "title": "Nessuna MSD selezionata per il modulo DCAT",
-          "content": "Per selezionare una MSD accedere alla"
-        },
-        "metadataSetList": {
-          "columns": {
-            "mdfId": {
-              "shortLabel": "Metadataflow ID"
-            },
-            "mdfAgency": {
-              "shortLabel": "Metadataflow agency"
-            },
-            "mdfVersion": {
-              "shortLabel": "Metadataflow version"
-            }
-          },
-          "actions": {
-            "showReportList": {
-              "title": "Lista dei report"
-            },
-            "navigateCategoryHtmlPage": {
-              "title": "Apri pagina informazioni"
-            },
-            "copyCategoryHtmlPageUrl": {
-              "title": "Copia link pagina informazioni",
-              "message": "Link pagina informazioni copiato"
-            },
-            "copyCkanUrl": {
-              "title": "Copia link richiesta Metadata API",
-              "message": "Link richiesta Metadata API copiato"
-            },
-            "delete": {
-              "title": "Elimina Metadata Set"
-            },
-            "create": {
-              "title": "Crea Metadata Set"
-            }
-          }
-        }
-      },
-      "metadataSet": {
-        "metadataSetDetail": {
-          "id": {
-            "label": "ID",
-            "alreadyUsed": {
-              "help": "ID già utilizzato"
-            }
-          }
-        },
-        "metadataSetTree": {
-          "errors": {
-            "notValidCategory": {
-              "title": "Per categorizzare un Metadata Set è necessario spostarlo all'interno di una categoria"
-            },
-            "canDragOnlyMetadataSet": {
-              "title": "Puoi spostare solo MetadataSet"
-            },
-            "permissionDenied": {
-              "title": "Non hai i permessi per categorizzare questo Metadata Set"
-            }
-          },
-          "actions": {
-            "deleteCategorisation": {
-              "title": "Rimuovi categorizzazione"
-            },
-            "addMetadataSet": {
-              "title": "Crea Metadata Set"
-            },
-            "clone": {
-              "title": "Clona Metadata Set"
-            },
-            "navigateHtmlPage": {
-              "title": "Apri pagina informazioni"
-            },
-            "delete": {
-              "title": "Elimina Metadata Set"
-            }
-          },
-          "modals": {
-            "confirms": {
-              "delete": {
-                "title": "Sei sicuro di voler eliminare questo Metadata Set?"
-              }
-            }
-          }
-        },
-        "modals": {
-          "metadataSetClone": {
-            "title": "Clona Metadata Set"
-          }
-        },
-        "messages": {
-          "metadataSet": {
-            "update": {
-              "success": "Metadata Set aggiornato con successo"
-            },
-            "create": {
-              "success": "Metadata Set creato con successo"
-            },
-            "delete": {
-              "success": "Metadata Set eliminato con successo"
-            },
-            "clone": {
-              "success": "Metadata Set clonato con successo"
-            }
-          },
-          "categorisation": {
-            "update": {
-              "success": "Categorizzazione aggiornata con successo"
-            },
-            "remove": {
-              "success": "Categorizzazione eliminata con successo"
-            },
-            "create": {
-              "success": "Categorizzazione creata con successo"
-            }
-          },
-          "report": {
-            "delete": {
-              "success": "Report eliminato con successo"
-            },
-            "update": {
-              "success": "Report aggiornato con successo"
-            },
-            "create": {
-              "success": "Report creato con successo"
-            },
-            "stateUpdate": {
-              "success": "Stato del report aggiornato con successo"
-            }
-          }
-        }
-      },
-      "commons": {
-        "reportDetails": {
-          "steps": {
-            "first": {
-              "label": "Selezione Target"
-            },
-            "second": {
-              "label": "Creazione attributi"
-            }
-          },
-          "target": {
-            "id": {
-              "label": "Target"
-            }
-          },
-          "selector": {
-            "select": {
-              "title": "Selezona artefatto"
-            },
-            "reset": {
-              "title": "Deseleziona artefatto"
-            },
-            "detail": {
-              "title": "Visualizza/Modifica artefatto"
-            }
-          },
-          "modals": {
-            "codeList": {
-              "title": "Lista codici"
-            },
-            "dataflowDetail": {
-              "title": "Dettaglio Dataflow"
-            },
-            "artefactList": {
-              "title": "Lista artefatti"
-            }
-          },
-          "report": {
-            "id": {
-              "label": "ID",
-              "alreadyUsed": {
-                "help": "ID già utilizzato"
-              }
-            }
-          },
-          "alerts": {
-            "missingDataflowAttribute": {
-              "label": "Attenzione: non è possibile compilare automaticamente alcuni campi obbligatori, per farlo è necessario modificare i dettagli del dataflow associato al report."
-            },
-            "isReadOnly": {
-              "label": "Il report non può essere modificato perché è esposto via API."
-            }
-          }
-        },
-        "reportList": {
-          "title": "Lista report",
-          "modals": {
-            "report": {
-              "title": "Dettagli report"
-            },
-            "confirms": {
-              "delete": {
-                "title": "Sei sicuro di voler eliminare questo report?"
-              },
-              "publish": {
-                "title": "Sei sicuro di voler esporre questo report via API?"
-              },
-              "unpublish": {
-                "title": "Sei sicuro di voler rimuovere questo report dalle API?"
-              }
-            },
-            "warning": {
-              "emptyAttribute": {
-                "title": "Attributi non compilati",
-                "content": "I seguenti attributi devono essere compilati altrimenti il report non sarà esponibile via API",
-                "saveDraft": {
-                  "title": "Salva come bozza"
-                }
-              }
-            }
-          },
-          "columns": {
-            "structure": {
-              "title": "Structure"
-            },
-            "targetIdentifier": {
-              "title": "Target Identifier"
-            },
-            "id": {
-              "title": "ID"
-            }
-          },
-          "actions": {
-            "copyHtmlUrl": {
-              "title": "Copia link pagina informazioni",
-              "message": "Link pagina informazioni copiato"
-            },
-            "copyCkanUrl": {
-              "title": "Copia link richiesta Metadata API",
-              "message": "Link richiesta Metadata API copiato"
-            },
-            "publish": {
-              "title": "Esponi via API"
-            },
-            "unpublish": {
-              "title": "Rimuovi dalle API"
-            },
-            "create": {
-              "title": "Crea Report"
-            },
-            "navigateHtmlPage": {
-              "title": "Apri pagina informazioni"
-            }
-          }
-        },
-        "messages": {
-          "attachmentUpload": {
-            "success": "Allegato caricato correttamente"
-          }
-        },
-        "modals": {
-          "htmlPage": {
-            "title": "Informazioni"
-          }
-        },
-        "metadataSetDetail": {
-          "id": {
-            "label": "ID",
-            "alreadyUsed": {
-              "help": "ID già utilizzato"
-            }
-          },
-          "name": {
-            "label": "Nome"
-          },
-          "metadataflow": {
-            "label": "Metadataflow",
-            "selector": {
-              "select": {
-                "title": "Seleziona Metadataflow"
-              },
-              "reset": {
-                "title": "Deseleziona Metadataflow"
-              }
-            }
-          },
-          "msd": {
-            "label": "MSD"
-          },
-          "reportingBegin": {
-            "label": "Inizio reporting"
-          },
-          "reportingEnd": {
-            "label": "Fine reporting"
-          },
-          "validFrom": {
-            "label": "Valido da"
-          },
-          "validTo": {
-            "label": "Valido fino"
-          },
-          "publicationYear": {
-            "label": "Anno di pubblicazione"
-          },
-          "publicationPeriod": {
-            "label": "Periodo di pubblicazione"
-          },
-          "modals": {
-            "metadataflowsList": {
-              "title": "Lista di Metadataflow"
-            }
-          }
-        }
-      }
-    },
     "metaManager": {
       "commons": {
         "detail": {
@@ -3069,7 +3202,8 @@
         },
         "modals": {
           "download": {
-            "title": "Scarica artefatto"
+            "titleMulti": "Scarica artefatti",
+            "title": "Scarica artefatto - [{{triplet}}]"
           }
         }
       },
@@ -3084,6 +3218,22 @@
             },
             "viewMode": {
               "title": "Visualizza Dataflow - [{{triplet.id}}]"
+            }
+          },
+          "virtualDFDataflowSelector": {
+            "select": {
+              "title": "Seleziona Dataflow"
+            },
+            "reset": {
+              "title": "Rimuovi Dataflow"
+            },
+            "list": {
+              "alert": {
+                "someDataflowsAreDisabledForUnallowedAgency": "Alcuni dataflow sono disabilitati perché non si ha il permesso sull'agenzia"
+              }
+            },
+            "modal": {
+              "title": "Seleziona un Dataflow"
             }
           }
         },
@@ -3100,6 +3250,11 @@
         },
         "contentConstraintList": {
           "title": "Content Constraints"
+        },
+        "errors": {
+          "cannotCloneVirtualDF": {
+            "title": "Non è possibile clonare un DF virtuale"
+          }
         }
       },
       "categorySchemesDataflowsTree": {
@@ -3119,15 +3274,18 @@
           },
           "canDragOnlyDataflow": {
             "title": "Puoi spostare solo Dataflow"
+          },
+          "notAllowedAgency": {
+            "title": "Per effettuare l'operazione è neecessario avere il permesso sull'agenzia {{agencyId}}"
+          },
+          "duplicateCategorisation": {
+            "title": "Il dataflow ha già questa categorizzazione"
           }
         }
       },
       "categorySchemesAndDataflows": {
         "messages": {
           "categorisation": {
-            "create": {
-              "success": "Categorizzazione creata con successo"
-            },
             "update": {
               "success": "Categorizzazione aggiornata con successo"
             },
@@ -3144,6 +3302,9 @@
           },
           "update": {
             "success": "Schema di Agenzie aggiornato correttamente"
+          },
+          "addAgencyToConfig": {
+            "success": "Agenzia aggiunta correttamente alla configurazione"
           }
         },
         "detail": {
@@ -3161,32 +3322,6 @@
           "alerts": {
             "illegalFinal": {
               "title": "Impossibile finalizzare uno Schema di Agenzie"
-            }
-          }
-        }
-      },
-      "metadataflows": {
-        "messages": {
-          "create": {
-            "success": "Metdataflow creato con successo"
-          },
-          "update": {
-            "success": "Metdataflow modificato con successo"
-          },
-          "ownership": {
-            "success": "Owners del Metadataflow aggiornati con successo"
-          }
-        },
-        "detail": {
-          "title": {
-            "editMode": {
-              "title": "Modifica Metadataflow - [{{triplet.id}}]"
-            },
-            "viewMode": {
-              "title": "Visualizza Metadataflow - [{{triplet.id}}]"
-            },
-            "createMode": {
-              "title": "Crea Metadataflow"
             }
           }
         }
@@ -3214,19 +3349,19 @@
           }
         }
       },
-      "msds": {
+      "hierarchicalCodelists": {
         "messages": {
           "update": {
-            "success": "MSD aggiornata correttamente"
+            "success": "Codelist Gerarchica aggiornata con successo"
           }
         },
         "detail": {
           "title": {
             "editMode": {
-              "title": "Modifica MSD - [{{triplet.id}}]"
+              "title": "Modifica Codelist Gerarchica - [{{triplet.id}}]"
             },
             "viewMode": {
-              "title": "Visualizza MSD - [{{triplet.id}}]"
+              "title": "Visualizza Codelist Gerarchica - [{{triplet.id}}]"
             }
           }
         }
@@ -3289,7 +3424,7 @@
         },
         "confirms": {
           "deleteUser": {
-            "title": "Sei sicuro?"
+            "title": "Sei sicuro di eliminare l'utente {{id}}?"
           }
         }
       }
@@ -3299,7 +3434,9 @@
     "title": "Si è verificato un errore",
     "statusCodes": {
       "401": "Credenziali errate",
-      "403": "Operazione non autorizzata"
+      "403": "Operazione non autorizzata",
+      "ECONNABORTED": "Il server ha impiegato troppo tempo e la connessione è stata interrotta. Forse il server non è al momento disponibile. Riprovare più tardi.",
+      "CUSTOM_STATUS_CODE_FILE_SUBMIT": "Si è verificato un errore nell'upload del file. Può essere a causa della modifica del file dopo averlo già selezionato o eventuali malfunzionamenti nel file system. Provare a ri-selezionarlo ed effettuare nuovamente l'upload."
     },
     "notImplemented": "Non implementato",
     "generic": "Errore inatteso",
@@ -3442,7 +3579,7 @@
       "CHECKAUTHDB_UNKNOW_ERROR": "Errore sconosciuto durante la verifica della correttezza dell'AUTHDB.",
       "DATAFLOW_DOWNLOAD_NOTINPRODUCTION": "Il dataflow non è in produzione e quindi non può essere scaricato",
       "DATAFLOW_DOWNLOAD_NOTFOUND": "Dataflow non trovato.",
-      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow non trovato. Potrebbe non esistere il web service per il download del dataflow.",
+      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow non trovato. Potrebbe non contenere nessun dato o non esistere il web service per il download del dataflow.",
       "DF_WITH_ASSOCIATED_DDB_DF": "Il dataflow non può essere eliminato perché ha un dataflow associato nel DDB.",
       "DDBRESET_ERROR": "Errore durante il reset del DDB.",
       "DEL_CONT_CONSTRAINTS": "Errore durante l'eliminazione dei content constraints per il dataflow.",
@@ -3489,7 +3626,19 @@
       "DCS_INSERT_DUPLICATECODE": "Codice di categoria già presente.",
       "DCS_INSERT_PARENTNOTFOUND": "Categoria padre non trovata.",
       "DCS_INSERT_ERROR": "Errore durante l'inserimento della categoria.",
-      "DSD_WITH_NON_FINAL_ARTEFACTS": "La dsd contiene artefatti referenziati non final."
+      "DSD_WITH_NON_FINAL_ARTEFACTS": "La dsd contiene artefatti referenziati non final.",
+      "CUBE_ATTDSLEV_TABLE_CREATE": "Errore durante la creazione della tabella AttDsLev.",
+      "IMPORT_DS_LEV_ATTRIBUTES": "Attributo con attachment level Dataset con valori multipli o errore durante la sua importazione.",
+      "ATTS_UNRES_CONFLICT": "Import interrotto! Conflitto non risolvibile a livello di attributi.",
+      "FILE_IMPORT_WRONG_CODED_OBS_VALUE": "Observation value codificata con riferimento errato.",
+      "IMPORT_DATA_CHECKING_CODED_OBS_VALUE": "Errore durante l'individuazione di riferimenti scorretti alla misura codificata.",
+      "MASID_NOTPRESENT": "MA WS non presente: necessario per l'inizializzazione.",
+      "AGENCY_ALREADY_IN_CONFIG": "L'agenzia è già presente in configurazione.",
+      "ATTR_FILE_WRONG_FORMAT": "File di attributi con colonne sconosciute.",
+      "LOC_CODES_REMOVE": "Errore durante la rimozione dei local codes.",
+      "FILE_IMPORT_WRONG_TIMEPERIOD_ATTACH": "Attributi a livello di serie o gruppo legati al Time Period non supportati.",
+      "URL_MAX_SIZE": "Dimensione massima dell'url superata. Ridurre la selezione dei filtri o abilitare l'utilizzo della richiesta in POST se supportata.",
+      "DATABROWSER_NOT_FOUND": "Impossibile raggiungere il Data Browser."
     },
     "some": "Si sono verificati degli errori",
     "notSupportedBySdmxSource": "Non supportato dalla libreria SdmxSource: i dati verranno scartati",
@@ -3509,15 +3658,36 @@
       "buttons": {
         "warningListDownload": "Scarica report",
         "wrongLinesDownload": "Scarica righe con errori"
+      },
+      "alerts": {
+        "onlyFirstErrorForRow": "Viene mostrato per ogni riga solo il primo riferimento errato incontrato"
       }
     },
     "defaultCategorySchemeSelector": {
-      "title": "Seleziona il Category Scheme di lavoro",
       "messages": {
-        "submit": {
-          "start": "Importando il Category Scheme di lavoro",
-          "success": "Category Scheme di lavoro importato correttamente"
+        "selectSubmit": {
+          "success": "Schema di Categorie di lavoro selezionato correttamente"
+        },
+        "createSubmit": {
+          "success": "Schema di Categorie di lavoro creato correttamente"
         }
+      },
+      "alert": {
+        "title": "Schema di Categorie di lavoro non presente",
+        "selectButton": {
+          "title": "Seleziona esistente"
+        },
+        "createButton": {
+          "title": "Crea nuovo"
+        },
+        "backToHome": "Non adesso"
+      },
+      "selectModal": {
+        "title": "Seleziona Schema di Categorie di lavoro"
+      },
+      "createModal": {
+        "title": "Crea Schema di Categorie di lavoro",
+        "infoMessage": "Specificare i campi per creare la prima categoria del nuovo Schema di Categorie di lavoro"
       }
     },
     "emptyNodesModal": {
@@ -3631,11 +3801,11 @@
       "create": {
         "title": "Crea"
       },
-      "upload": {
-        "title": "Carica"
-      },
       "confirm": {
         "title": "Conferma"
+      },
+      "delete": {
+        "title": "Elimina"
       }
     },
     "actions": {
@@ -3657,8 +3827,8 @@
       "customAnnotations": {
         "title": "Annotazioni"
       },
-      "oecdAnnotations": {
-        "title": "Annotazioni OECD"
+      "layoutAnnotations": {
+        "title": "Annotazioni di layout"
       },
       "dataflowList": {
         "title": "Dataflow associati"
@@ -3697,6 +3867,10 @@
       "fieldTooLong": {
         "title": "Campo troppo lungo",
         "content": "Specificare al massimo {{maxLen}} caratteri"
+      },
+      "invalidForm": {
+        "title": "Il form non è stato compilato correttamente",
+        "content": "Controlla l'inserimento di tutti i campi obbligatori ed eventuali errori contenuti nel form"
       }
     },
     "artefact": {
@@ -3782,21 +3956,6 @@
                 "title": "Lista DSD"
               }
             }
-          },
-          "msd": {
-            "selector": {
-              "select": {
-                "title": "Seleziona MSD"
-              },
-              "reset": {
-                "title": "Deseleziona MSD"
-              }
-            },
-            "modals": {
-              "msdList": {
-                "title": "Lista MSD"
-              }
-            }
           }
         },
         "items": {
@@ -3841,7 +4000,9 @@
     "dsd": "DSD",
     "metadataflow": "Metadataflow",
     "agencyScheme": "Schema di Agenzie",
-    "contentConstraint": "Content Constraint"
+    "contentConstraint": "Content Constraint",
+    "hierarchicalCodelist": "Lista di codici gerarchica",
+    "metadataStructure": "Metadata Structure"
   },
   "sdmxDimensionTypes": {
     "normal": "Normale",
@@ -3862,6 +4023,9 @@
       "endsWithDot": "Deve terminare con un numero",
       "exceddsMaxDepth": "Deve essere nel formato x.y oppure x.y.z",
       "componentIsInvalid": "Deve contenere numeri validi (es. 1.0.2)"
+    },
+    "id": {
+      "containsUnallowedChars": "Può contenere solo caratteri alfanumerici o i simboli - e _"
     }
   },
   "reduxComponents": {
@@ -3994,14 +4158,14 @@
       },
       "component": {
         "deleteConfirmModal": {
-          "title": "Sei sicuro di cancellare la componente?"
+          "title": "Sei sicuro di cancellare la componente {{id}}?"
         },
         "deleteWarningModal": {
-          "title": "Non è possibile cancellare la componente",
+          "title": "Non è possibile cancellare la componente {{id}}",
           "content": "Utilizzata da {{component}}"
         },
         "createWarningModal": {
-          "title": "Non è possibile creare la componente",
+          "title": "Non è possibile creare la componente {id}}",
           "content": "ID già utilizzato"
         }
       },
@@ -4022,6 +4186,12 @@
       },
       "groupDetail": {
         "title": "Dettagli gruppo"
+      },
+      "notDisplayedCodesSelector": {
+        "title": "Seleziona codici Not Displayed"
+      },
+      "defaultCodesSelector": {
+        "title": "Seleziona codici Default"
       }
     },
     "conceptSchemeDetail": {
@@ -4049,10 +4219,46 @@
           "title": "Schema di Concetti derivato"
         }
       }
+    },
+    "dsdDetailModal": {
+      "dsdDetail": {
+        "componentForm": {
+          "annotationsCodesSelector": {
+            "detail": {
+              "title": "Modifica codici"
+            },
+            "select": {
+              "title": "Aggiungi codici"
+            },
+            "reset": {
+              "title": "Rimuovi tutti i codici"
+            }
+          },
+          "timeDimensionModeChangeConfirm": {
+            "title": "Sei sicuro?",
+            "content": "Perderai tutte le annotazioni della modalità corrente"
+          }
+        }
+      }
     }
   },
   "languages": {
     "it": "Italiano",
     "en": "English"
+  },
+  "layoutAnnotations": {
+    "defaultPresentation": {
+      "table": "Table",
+      "graph": "Graph",
+      "map": "Map"
+    },
+    "criteriaSelection": {
+      "allFull": "ALL_FULL",
+      "allPartial": "ALL_PARTIAL",
+      "stepByStepDynamic": "STEP_BY_STEP_DYNAMIC",
+      "stepByStepFull": "STEP_BY_STEP_FULL",
+      "stepByStepPartial": "STEP_BY_STEP_PARTIAL"
+    },
+    "empty": "Non specificato"
   }
 }

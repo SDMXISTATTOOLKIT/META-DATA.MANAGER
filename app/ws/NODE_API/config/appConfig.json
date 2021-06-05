@@ -25,137 +25,172 @@
       "/meta-manager/agency-schemes",
       "/meta-manager/content-constraints"
     ],
-    "MinTreeNodesForPagination": 100,
-    "TreePageSize": 10,
+    "MinTreeNodesForPagination": 1000,
+    "TreePageSize": 100,
     "MaxTreeNodes": 100000,
     "MaxTreeNodesForPagination": 10000,
     "MaxNodeForExpandAll": 1000
   },
   "Agencies": [
     {
-      "Id": "IT1",
+      "Id": "OECD",
       "Name": {
-        "en": "Italy",
-        "it": "Italia"
-      }
-    },
-    {
-      "Id": "SDMX",
-      "Name": {
-        "en": "SDMX",
-        "it": "SDMX"
+        "en": "Organisation for Economic Co-operation and Development",
+        "it": "OECD"
       }
     },
     {
       "Id": "ESTAT",
       "Name": {
-        "en": "ESTAT",
+        "en": "Eurostat",
         "it": "ESTAT"
       }
     },
     {
-      "Id": "IMF",
+      "Id": "ECB",
       "Name": {
-        "en": "IMF",
-        "it": "IMF"
+        "en": "European Central Bank",
+        "it": "ECB"
       }
     },
     {
       "Id": "WB",
       "Name": {
-        "en": "WB",
+        "en": "World Bank",
         "it": "WB"
-      }
-    },
-    {
-      "Id": "FAO",
-      "Name": {
-        "en": "FAO",
-        "it": "FAO"
-      }
-    },
-    {
-      "Id": "INEC",
-      "Name": {
-        "en": "INEC",
-        "it": "INEC"
-      }
-    },
-    {
-      "Id": "UN",
-      "Name": {
-        "en": "UN",
-        "it": "UN"
       }
     },
     {
       "Id": "BIS",
       "Name": {
-        "en": "BIS",
+        "en": "Bank for International Settlements",
         "it": "BIS"
       }
     },
     {
-      "Id": "OECD",
+      "Id": "IMF",
       "Name": {
-        "en": "OECD",
-        "it": "OECD"
-      }
-    },
-    {
-      "Id": "MA",
-      "Name": {
-        "en": "MA",
-        "it": "MA"
-      }
-    },
-    {
-      "Id": "EC1",
-      "Name": {
-        "en": "EC1",
-        "it": "EC1"
-      }
-    },
-    {
-      "Id": "RS1",
-      "Name": {
-        "en": "RS1",
-        "it": "RS1"
-      }
-    },
-    {
-      "Id": "MK1",
-      "Name": {
-        "en": "MK1",
-        "it": "MK1"
+        "en": "International Monetary Fund",
+        "it": "IMF"
       }
     },
     {
       "Id": "UNSD",
       "Name": {
-        "en": "UNSD",
+        "en": "United Nation Statistical Division",
         "it": "UNSD"
       }
     },
     {
-      "Id": "IAEG",
+      "Id": "UNICEF",
       "Name": {
-        "en": "IAEG",
-        "it": "IAEG"
+        "en": "United Nations Children's Fund",
+        "it": "UNICEF"
       }
     },
     {
-      "Id": "UIS",
+      "Id": "ILO",
       "Name": {
-        "en": "UIS",
-        "it": "UIS"
+        "en": "International Labour Organization",
+        "it": "ILO"
+      }
+    },
+    {
+      "Id": "FAO",
+      "Name": {
+        "en": "Food and Agriculture Organisation",
+        "it": "FAO"
+      }
+    },
+    {
+      "Id": "IAEG-SDGs",
+      "Name": {
+        "en": "Inter-Agency and Expert Group on SDGs",
+        "it": "IAEG-SDGs"
+      }
+    },
+    {
+      "Id": "IT1",
+      "Name": {
+        "en": "Istat",
+        "it": "IT1"
+      }
+    },
+    {
+      "Id": "BE2",
+      "Name": {
+        "en": "National Bank of Belgium",
+        "it": "BE2"
       }
     },
     {
       "Id": "TN1",
       "Name": {
-        "en": "TN1",
+        "en": "INS Tunisia",
         "it": "TN1"
+      }
+    },
+    {
+      "Id": "AU1",
+      "Name": {
+        "en": "Australian Bureau of Statistics",
+        "it": "AU1"
+      }
+    },
+    {
+      "Id": "AE1",
+      "Name": {
+        "en": "Federal Competitiveness and Statistics Authority of United Arab Emirates",
+        "it": "AE1"
+      }
+    },
+    {
+      "Id": "LU1",
+      "Name": {
+        "en": "STATEC - National Institute of Statistics and Economic Studies of the Grand Duchy of Luxembourg",
+        "it": "LU1"
+      }
+    },
+    {
+      "Id": "SPC",
+      "Name": {
+        "en": "Pacific Community (SPC)",
+        "it": "SPC"
+      }
+    },
+    {
+      "Id": "ITH1",
+      "Name": {
+        "en": "Provincial Statistics Institute (ASTAT)",
+        "it": "ITH1"
+      }
+    },
+    {
+      "Id": "INE1",
+      "Name": {
+        "en": "National Institute of Statistics (Chile)",
+        "it": "INE1"
+      }
+    },
+    {
+      "Id": "SE1",
+      "Name": {
+        "en": "Statistics Estonia",
+        "it": "SE1"
+      }
+    },
+    {
+      "Id": "UKDS",
+      "Name": {
+        "en": "UK Data Service",
+        "it": "UKDS"
+      }
+    },
+    {
+      "Id": "NZ1",
+      "Name": {
+        "en": "Stats NZ",
+        "it": "NZ1"
       }
     }
   ],

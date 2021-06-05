@@ -28,6 +28,8 @@ INSERT INTO [AUTH_FUNCTIONALITY] VALUES
 ('compare-dsds', NULL),
 ('upgrade-dsd', NULL),
 ('synchronize-codelists', NULL),
+('attribute-file', NULL),
+('update-databrowser-cache', NULL),
 ('ddb-reset', NULL),
 ('remove-temp-tables', NULL),
 ('utilities', NULL),
@@ -61,7 +63,7 @@ FROM(	SELECT FUNCT_ID
 		FROM [AUTH_FUNCTIONALITY]
 		WHERE FUNCT_NAME = 'data-manager')q
 WHERE FUNCT_NAME IN 
-('builder', 'file-mapping','loader','dataflow-builder','cube-list','manage-series','upgrade-dsd','synchronize-codelists','ddb-reset','remove-temp-tables')
+('builder', 'file-mapping','loader','dataflow-builder','cube-list','manage-series','upgrade-dsd','synchronize-codelists','attribute-file','update-databrowser-cache','ddb-reset','remove-temp-tables')
 
 UPDATE [AUTH_FUNCTIONALITY]
 SET PARENT_FUNCT_ID = q.FUNCT_ID
@@ -98,20 +100,27 @@ WHERE FUNCT_NAME IN ('app', 'nodes')
 --	ALGORITHM = 'SHA-512'
 --WHERE USERNAME = 'admin'
 
-INSERT INTO AUTH_USER_FUNCTIONALITY
+INSERT INTO [AUTH_USER_FUNCTIONALITY]
 SELECT u.ID, f.FUNCT_ID
 FROM SRI_USER u, AUTH_FUNCTIONALITY f
 WHERE USERNAME = 'admin'
 
-INSERT INTO AUTH_USER_DATA
+INSERT INTO [AUTH_USER_DATA]
 SELECT u.ID, 'admin@gmail.com'
 FROM SRI_USER u
 WHERE USERNAME = 'admin'
 
-INSERT INTO AUTH_AGENCY VALUES ('INIT_AGENCY')
+INSERT INTO [AUTH_AGENCY] VALUES ('INIT_AGENCY')
 
-INSERT INTO AUTH_USER_AGENCY
+INSERT INTO [AUTH_USER_AGENCY]
 SELECT u.ID, a.AG_ID
 FROM SRI_USER u, AUTH_AGENCY a
 WHERE USERNAME = 'admin' AND ID_MSDB = 'INIT_AGENCY'
+
+--special permissions CanManageWorkingAnnotation
+IF (NOT EXISTS (SELECT * FROM ACCESS_RULE
+                WHERE RULE_NAME = 'CanManageWorkingAnnotation'))
+BEGIN
+    INSERT INTO [ACCESS_RULE] (RULE_NAME) VALUES ('CanManageWorkingAnnotation')
+END
 

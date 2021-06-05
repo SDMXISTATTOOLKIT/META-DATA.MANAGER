@@ -291,7 +291,7 @@ create table "Mapping" (
 go
 
 alter table "Mapping"
-	add constraint "PK_Mapping" primary key nonclustered ("IDMapping")   
+	add constraint "PK_FileMapping" primary key nonclustered ("IDMapping")   
 
 
 go
@@ -380,20 +380,20 @@ go
 
 create index "IDX_CODE" on "DimTIME_PERIOD" ("Code") 
 
-/* Create new table "DB_VERSION".                                                         */
-/* "DB_VERSION" : Tabella per il versionamento del DB                                     */
+/* Create new table "DDB_VERSION".                                                         */
+/* "DDB_VERSION" : Tabella per il versionamento del DB                                     */
 /* 	"MAJOR" : Campo principale della versione (es. 1 in 1.0)                              */
 /* 	"MINOR" : Campo secondario della versione (es. 0 in 1.0)                              */
 /* 	"UPGRADE_STAMP" : Data dell'ultimo aggiornamento					                  */
-CREATE TABLE DB_VERSION(
+CREATE TABLE DDB_VERSION(
 	MAJOR bigint NOT NULL,
 	MINOR bigint NOT NULL,
 	UPGRADE_STAMP datetime NOT NULL)
 
 GO 
 
-alter table "DB_VERSION"
-	add CONSTRAINT PK_DB_VERSION PRIMARY KEY CLUSTERED ([MAJOR] ASC, [MINOR] ASC)
+alter table "DDB_VERSION"
+	add CONSTRAINT PK_DDB_VERSION PRIMARY KEY CLUSTERED ([MAJOR] ASC, [MINOR] ASC)
 
 GO
 
@@ -414,10 +414,10 @@ alter table "UploadOps"
 go
 
 /*Initializing version */
-IF ((SELECT COUNT(*) FROM DB_VERSION) <= 0)
+IF ((SELECT COUNT(*) FROM DDB_VERSION) <= 0)
 BEGIN
 
-	INSERT INTO DB_VERSION (MAJOR, MINOR, UPGRADE_STAMP) VALUES (1, 2, getdate())
+	INSERT INTO DDB_VERSION (MAJOR, MINOR, UPGRADE_STAMP) VALUES (1, 2, getdate())
 
 END
 

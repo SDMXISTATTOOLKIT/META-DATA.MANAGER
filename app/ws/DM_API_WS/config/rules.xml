@@ -16,7 +16,11 @@
       <r:permission id="Any"/>
     </r:or>
   </r:rest>
-  
+  <r:rest path="/api/DMApi/Utils/IsAgencyAssignToAnyUser(/.*)?" method="GET" allowAnonymous="true" priority="4">
+    <r:or>
+      <r:permission id="Any"/>
+    </r:or>
+  </r:rest>
   <!--
   <r:rest path="/api/DMApi/RM(/.*)?" method="ANY" allowAnonymous="true">
     <r:andGroup>

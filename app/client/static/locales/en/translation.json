@@ -90,12 +90,6 @@
     "artefactBrowser": {
       "label": "Artefact Browser"
     },
-    "referenceMetadata": {
-      "label": "Metadata"
-    },
-    "metadataSet": {
-      "label": "Reference Metadata"
-    },
     "manageUsers": {
       "label": "Manage Users"
     },
@@ -114,26 +108,23 @@
     "cubeList": {
       "label": "Cube list"
     },
-    "DCAT-AP_IT": {
-      "label": "DCAT-AP_IT"
-    },
     "categorySchemesAndDataflows": {
       "label": "Category Schemes and Dataflows"
     },
     "userManagement": {
       "label": "User Management"
     },
-    "msds": {
-      "label": "Metadata Structure Definitions"
-    },
-    "metadataflows": {
-      "label": "Metadataflows"
-    },
     "removeTempTables": {
       "label": "Remove temporary tables"
     },
     "mergeItemSchemes": {
       "label": "Merge Item Schemes"
+    },
+    "attributeFile": {
+      "label": "Attribute File"
+    },
+    "updateDataBrowserCache": {
+      "label": "Update Data Browser cache"
     }
   },
   "data": {
@@ -176,9 +167,6 @@
       "observedValueCanBeAlphanumeric": "Observed val can be alphanumeric",
       "lastUpdate": {
         "label": "Last update"
-      },
-      "view": {
-        "label": "View"
       },
       "hasEmbargoedData": {
         "shortLabel": "Embargo"
@@ -247,7 +235,7 @@
     },
     "dataflow": {
       "cubeID": {
-        "shortLabel": "Orig. Cube"
+        "shortLabel": "Orig. cube"
       },
       "header": {
         "test": {
@@ -316,7 +304,7 @@
       "hasEmbargoedData": {
         "values": {
           "true": "Has embargoed data",
-          "false": "Has embargoed data"
+          "false": "Doesn't have embargoed data"
         }
       }
     },
@@ -365,14 +353,6 @@
       },
       "description": {
         "label": "Description"
-      },
-      "isPublished": {
-        "shortLabel": "State",
-        "values": {
-          "published": "Exposed",
-          "notPublished": "Not exposed",
-          "draft": "Draft"
-        }
       },
       "downloadFormat": {
         "structure": {
@@ -436,6 +416,20 @@
       },
       "isAttributeWithChildrenPresentational": {
         "label": "Treat all attributes with children as \"presentational\" "
+      },
+      "virtualDFNode": {
+        "label": "Node"
+      },
+      "virtualDFDataflow": {
+        "label": "Dataflow"
+      },
+      "dataflowType": {
+        "label": "Dataflow type",
+        "values": {
+          "normal": "Normal",
+          "virtual": "Virtual",
+          "onlyFile": "Only file"
+        }
       }
     },
     "item": {
@@ -459,11 +453,11 @@
         "label": "Description",
         "shortLabel": "Desc."
       },
-      "oecdFullName": {
+      "layoutAnnotationFullName": {
         "label": "FullName",
         "shortLabel": "FullName"
       },
-      "oecdIsDefault": {
+      "layoutAnnotationIsDefault": {
         "shortLabel": "IsDefault",
         "values": {
           "true": "IsDefault",
@@ -547,6 +541,12 @@
             "dimension": "Dimension",
             "attribute": "Attribute"
           }
+        },
+        "notDisplayed": {
+          "label": "Not displayed"
+        },
+        "notDisplayedItems": {
+          "label": "Codes"
         }
       },
       "attribute": {
@@ -575,6 +575,41 @@
         "type": {
           "label": "Dimension",
           "shortLabel": "Dimension"
+        },
+        "default": {
+          "label": "Default"
+        },
+        "defaultItems": {
+          "label": "Codes"
+        }
+      },
+      "timDimension": {
+        "defaultTimeStart": {
+          "label": "From",
+          "selector": {
+            "selectTitle": "Select value",
+            "resetTitle": "Deselect value"
+          }
+        },
+        "defaultTimeEnd": {
+          "label": "To",
+          "selector": {
+            "selectTitle": "Select value",
+            "resetTitle": "Deselect value"
+          }
+        },
+        "defaultLastNObservations": {
+          "label": "LastNObservations"
+        },
+        "mode": {
+          "label": "Mode",
+          "values": {
+            "range": "Range",
+            "lastNPeriods": "LastNPeriods"
+          }
+        },
+        "defaultLastNPeriods": {
+          "label": "LastNPeriods"
         }
       }
     },
@@ -641,9 +676,6 @@
         },
         "test": {
           "label": "Test"
-        },
-        "prepared": {
-          "label": "Prepared"
         },
         "sender": {
           "label": "Sender"
@@ -750,21 +782,17 @@
         "activeDirectoryEndpoint": {
           "label": "Active Directory Endpoint"
         },
-        "dataExplorerBaseUrl": {
-          "label": "Data Explorer base url"
-        },
         "nsiReadOnlyPassword": {
           "label": "Remote SDMX WS password"
         },
         "nsiReadOnlyUsername": {
           "label": "Remote SDMX WS username"
         },
-        "metadataBaseURL": {
-          "label": "Metadata API base url",
-          "placeholder": "https://localhost/METADATA_API"
-        },
         "supportAllCompleteStubs": {
           "label": "AllCompleteStubs support"
+        },
+        "supportPostFilters": {
+          "label": "Post filters support"
         }
       },
       "general": {
@@ -849,82 +877,190 @@
           "label": "Collapse multiline text"
         }
       },
-      "dcatApIt": {
-        "msd": {
-          "label": "MSD",
-          "select": {
-            "title": "Select MSD"
-          },
-          "reset": {
-            "title": "Deselect MSD"
-          }
-        }
-      },
       "annotations": {
         "cards": {
           "order": {
             "label": "Order annotations"
           },
-          "oecd": {
-            "label": "OECD annotations"
+          "layout": {
+            "label": "Layout annotations"
           }
         },
         "conceptSchemesOrderAnnotation": {
-          "label": "Annotation for Concepts order"
+          "label": "Concepts order"
         },
         "categorySchemesOrderAnnotation": {
-          "label": "Annotation for Categories order"
+          "label": "Categories order"
         },
         "codelistsOrderAnnotation": {
-          "label": "Annotation for Codes order"
+          "label": "Codes order"
         },
         "layoutRow": {
-          "label": "Annotation for a component of DSDs or dataflows that has to be showed in row"
+          "label": "Table layout row"
         },
         "layoutColumn": {
-          "label": "Annotation for a component of DSDs or dataflows that has to be showed in column"
+          "label": "Table layout column"
         },
         "layoutRowSection": {
-          "label": "Annotation for a component of DSDs or dataflows that has to be showed in row section"
+          "label": "Table layout row section"
         },
         "notDisplayed": {
-          "label": "Annotation for a component of DSDs or dataflows that has not to be displayed"
+          "label": "Not displayed"
         },
         "fullName": {
-          "label": "Annotation for the full name of an item"
+          "label": "Full name"
         },
         "associatedCube": {
-          "label": "Annotation for DSDs with an associated cube"
+          "label": "Associated cube"
         },
         "changed": {
-          "label": "Annotation for final codelists modified by the user"
+          "label": "Changed"
         },
         "customDSD": {
-          "label": "Annotation for DSDs created automatically through the Dataflow Builder module"
+          "label": "Custom DSD"
         },
         "dDBDataflow": {
-          "label": "Annotation for dataflows created in the DDB through the Dataflow Builder module"
+          "label": "DDB dataflow"
         },
         "haveMetadata": {
-          "label": "Annotation for dataflows with an associated report"
+          "label": "Have metadata"
         },
         "metadataset": {
-          "label": "Annotation for metadataflows with an associated Metadata Set"
+          "label": "Metadataset"
         },
         "default": {
-          "label": "Annotation for item set as default"
+          "label": "Default"
         },
         "restrictedForPublication": {
-          "label": "Annotation for report attribute restricted for publication"
+          "label": "Restricted for publication"
         },
         "attachedFilePath": {
-          "label": "Annotation for report attribute attachment path"
+          "label": "Attached file path"
         },
         "dcatIsMultilingual": {
-          "label": "Annotation for multilingual report attribute"
+          "label": "DCAT is multilingual"
         },
         "customIsPresentational": {
-          "label": "Annotation for MSD to treat all report attributes with children as \"presentational\" "
+          "label": "Custom is presentational"
+        },
+        "layoutDataflowKeywords": {
+          "label": "Keywords"
+        },
+        "layoutCriteriaSelection": {
+          "label": "Criteria selection"
+        },
+        "layoutAttachedDataFiles": {
+          "label": "Attached data files"
+        },
+        "layoutDefaultPresentation": {
+          "label": "Default view"
+        },
+        "layoutDecimalSeparator": {
+          "label": "Decimal separator"
+        },
+        "layoutNumberOfDecimals": {
+          "label": "Number of decimals"
+        },
+        "layoutReferenceMetadata": {
+          "label": "Metadata URL"
+        },
+        "layoutEmptyCellPlaceholder": {
+          "label": "Empty cell placeholder"
+        },
+        "layoutDataflowNotes": {
+          "label": "Dataflow notes"
+        },
+        "layoutTerritorialDimensionIds": {
+          "label": "Geo ID"
+        },
+        "layoutDataflowSource": {
+          "label": "Dataflow source"
+        },
+        "layoutFilter": {
+          "label": "Table layout filter"
+        },
+        "categorisationsOrderAnnotation": {
+          "label": "Categorisations order"
+        },
+        "virtualDataflowNode": {
+          "label": "Virtual Dataflow Node"
+        },
+        "lastUpdate": {
+          "label": "Last update"
+        },
+        "dataflowCatalogType": {
+          "label": "Dataflow catalog type"
+        },
+        "layoutChartPrimaryDim": {
+          "label": "Chart layout primary dimension"
+        },
+        "layoutChartSecondaryDim": {
+          "label": "Chart layout secondary dimension"
+        },
+        "layoutChartFilter": {
+          "label": "Chart layout filter"
+        },
+        "layoutHidden": {
+          "label": "Hidden"
+        }
+      },
+      "dataBrowser": {
+        "nodeId": {
+          "label": "Node ID"
+        },
+        "username": {
+          "label": "Username"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "cards": {
+          "httpAuthentication": {
+            "label": "HTTP Authentication"
+          },
+          "proxy": {
+            "label": "Proxy"
+          },
+          "authentication": {
+            "label": "Authentication",
+            "tooltip": "User allowed to manage cache for the specified node"
+          }
+        },
+        "httpAuthenticationEnable": {
+          "label": "Enable"
+        },
+        "httpAuthenticationUsername": {
+          "label": "Username"
+        },
+        "httpAuthenticationPassword": {
+          "label": "Password"
+        },
+        "proxyEnable": {
+          "label": "Enable"
+        },
+        "proxyUsername": {
+          "label": "Username"
+        },
+        "proxyPassword": {
+          "label": "Password"
+        },
+        "httpAuthenticationDomain": {
+          "label": "Domain"
+        },
+        "proxyUrl": {
+          "label": "URL"
+        },
+        "proxyPort": {
+          "label": "Port"
+        },
+        "publicUrl": {
+          "label": "Public URL"
+        },
+        "enableCacheInvalidation": {
+          "label": "Allow cache refresh"
+        },
+        "apiUrl": {
+          "label": "API URL"
         }
       }
     }
@@ -962,25 +1098,6 @@
         "createComponent": "Create component"
       }
     },
-    "tableViewer": {
-      "pager": {
-        "itemsPerPage": "/ page",
-        "prevPage": "Previous",
-        "nextPage": "Next",
-        "range": "from {{from}} to {{to}} of {{total}} rows",
-        "itemsPerPageAll": "All rows",
-        "rangeAll": "All {{numRow}} rows"
-      },
-      "filter": {
-        "confirm": "Apply",
-        "reset": "Reset",
-        "placeholder": "Filter..."
-      },
-      "search": {
-        "placeholder": "Search..."
-      },
-      "selectedRowsInfo": "{{size}} rows selected"
-    },
     "tree": {
       "searchInput": {
         "placeholder": "Search..."
@@ -1000,6 +1117,12 @@
         },
         "detailShow": {
           "title": "Show details"
+        },
+        "tidTooltip": "The TID, Table-Identifier, is a unique identifier that let you insert multiple copies of the same data point in the same cube for different tables (dataflows)"
+      },
+      "modals": {
+        "uncheckableDim": {
+          "title": "The dimension cannot be deselected because it belongs to at least one group"
         }
       }
     },
@@ -1032,7 +1155,22 @@
       "addBlockButton": "Add block",
       "block": {
         "addConditionButton": "Add condition",
-        "removeButton": "Remove block"
+        "removeButton": "Remove block",
+        "condition": {
+          "selectValueButton": {
+            "title": "Select value"
+          },
+          "selectValueModal": {
+            "title": "Select value",
+            "tooManyCodesAlert": {
+              "title": "Search text produces too much results",
+              "content": "Try a more specific search"
+            }
+          },
+          "resetValueButton": {
+            "title": "Unselect value"
+          }
+        }
       }
     },
     "empty": {
@@ -1057,10 +1195,10 @@
         "hasNameCol": {
           "label": "Name"
         },
-        "hasOecdFullNameCol": {
+        "hasLayoutAnnotationFullNameCol": {
           "label": "FullName"
         },
-        "hasOecdIsDefaultCol": {
+        "hasLayoutAnnotationIsDefaultCol": {
           "label": "IsDefault"
         }
       },
@@ -1082,11 +1220,17 @@
             "general": {
               "title": "General"
             },
-            "oecdNotDisplayed": {
-              "title": "Not Displayed"
+            "layoutAnnotationDefaultTableLayout": {
+              "title": "Table layout"
             },
-            "oecdLayout": {
+            "layoutAnnotations": {
               "title": "Layout"
+            },
+            "layoutAnnotationDefaultChartLayout": {
+              "title": "Chart layout"
+            },
+            "layoutAnnotationDefaultMapLayout": {
+              "title": "Map layout"
             }
           },
           "buttons": {
@@ -1105,15 +1249,18 @@
           "content": "Type is reserved"
         }
       },
-      "oecdNotDisplayed": {
+      "layoutAnnotationNotDisplayed": {
         "editButton": {
           "title": "Edit"
         },
         "editTable": {
           "title": "Edit Not Displayed"
+        },
+        "codesEditTable": {
+          "title": "Edit Not Displayed codes for {{componentId}}"
         }
       },
-      "oecdLayout": {
+      "layoutAnnotationDefaultTableLayout": {
         "flagSaveAnnotation": {
           "title": "Include these annotations in artefact"
         },
@@ -1127,7 +1274,59 @@
           "row": {
             "title": "Rows"
           },
-          "placeholder": "Drag here the dimensions"
+          "placeholder": "Drag here the dimensions",
+          "filter": {
+            "title": "Filters"
+          }
+        },
+        "modeRadio": {
+          "dataBrowser": {
+            "title": "Data Browser"
+          },
+          "dataExplorer": {
+            "title": "Data Explorer"
+          }
+        },
+        "confirms": {
+          "modeChange": {
+            "title": "Are you sure?",
+            "content": "Layout will be reset"
+          }
+        }
+      },
+      "layoutAnnotationDefault": {
+        "editButton": {
+          "title": "Edit"
+        },
+        "editTable": {
+          "title": "Edit Default dimensions"
+        },
+        "codesEditTable": {
+          "title": "Edit Default codes for {{componentId}}"
+        },
+        "timeDimensionEdit": {
+          "title": "Edit Default",
+          "modeChangeConfirm": {
+            "title": "Are you sure?",
+            "content": "You will lose all annotations in the current mode"
+          }
+        }
+      },
+      "layoutAnnotationDefaultChartLayout": {
+        "cards": {
+          "filter": {
+            "title": "Filters"
+          },
+          "placeholder": "Drag here the dimensions",
+          "primaryDim": {
+            "title": "Primary dimension"
+          },
+          "secondaryDim": {
+            "title": "Secondary dimension"
+          }
+        },
+        "flagSaveAnnotation": {
+          "title": "Include these annotations in artefact"
         }
       }
     },
@@ -1160,6 +1359,9 @@
         "label": "Observation level dimension",
         "noDimension": {
           "label": "None"
+        },
+        "allDimension": {
+          "label": "ALL_DIMENSION"
         }
       }
     },
@@ -1232,17 +1434,20 @@
         },
         "setDefault": {
           "title": "Set as Default"
+        },
+        "addAgencyToConfig": {
+          "title": "Add to config"
         }
       },
       "modals": {
         "confirms": {
           "delete": {
-            "title": "All children must be deleted first"
+            "title": "Are you sure you want to delete item {{id}}?"
           }
         },
         "warning": {
           "delete": {
-            "title": "Are you sure you want to delete this Item?"
+            "title": "All children must be deleted first"
           }
         },
         "treeViewModeUnavailable": {
@@ -1266,7 +1471,7 @@
       "modals": {
         "confirms": {
           "delete": {
-            "title": "Are you sure you want to delete this Artefact?"
+            "title": "Are you sure you want to delete artefact {{triplet}}?"
           },
           "multiDelete": {
             "title": "Are you sure you want to delete this Artefact?",
@@ -1274,7 +1479,7 @@
           }
         },
         "parentsAndChildren": {
-          "title": "Linked artefact"
+          "title": "Linked artefacts - [{{triplet}}]"
         }
       },
       "showContentConstraints": {
@@ -1349,11 +1554,8 @@
         "reset": "Delete all"
       }
     },
-    "oecdAnnotationList": {
-      "title": "OECD Annotations"
-    },
-    "customAnnotationList": {
-      "title": "Annotations"
+    "layoutAnnotationList": {
+      "title": "Layout annotations"
     },
     "dsdsCompareReport": {
       "componentsDetailCompareTable": {
@@ -1413,7 +1615,8 @@
         "artefactDetail": {
           "title": "Artefact detail"
         }
-      }
+      },
+      "noDifferencesAlert": "The item schemes are identical"
     },
     "formList": {
       "removeAlert": {
@@ -1437,17 +1640,13 @@
         }
       }
     },
-    "filterForm": {
-      "alerts": {
-        "noValues": {
-          "title": "The column does not contain any value"
-        }
-      }
-    },
     "treeFilter": {
       "warnings": {
         "codelistTooBig": {
           "title": "Unable to set filter on this column: referenced codelist is too big"
+        },
+        "incompleteTimePeriod": {
+          "title": "Select both values, otherwise the TIME_PERIOD filter will not take effect"
         }
       },
       "levelNode": "All nodes at level {{level}}",
@@ -1478,58 +1677,30 @@
       "disabledCheckbox": {
         "title": "This value does not satisfy current filters"
       },
-      "noValuesInColumnPlaceholder": "The column does not contain any value"
-    },
-    "reportStructureTree": {
-      "tree": {
-        "actions": {
-          "addAttribute": {
-            "title": "Create attribute"
+      "noValuesInColumnPlaceholder": "The column does not contain any value",
+      "timePeriod": {
+        "selector": {
+          "selectButton": {
+            "title": "Select a value"
           },
-          "removeAttribute": {
-            "title": "Delete attribute"
+          "resetButton": {
+            "title": "Remove the value"
           }
-        }
-      },
-      "selector": {
-        "select": {
-          "title": "Select code"
         },
-        "reset": {
-          "title": "Deselect code"
+        "from": {
+          "title": "From"
+        },
+        "to": {
+          "title": "To"
+        },
+        "valuesModal": {
+          "title": "Select a value"
         }
       },
-      "modals": {
-        "warning": {
-          "attributeNotPresent": {
-            "title": "Missing attribute in MSD",
-            "content": "The attribute {{attributeId}} of the Report is not present in the MSD. Saving the report again this attribute will be lost"
-          }
+      "timeDimension": {
+        "valuesModal": {
+          "title": "Select a value"
         }
-      },
-      "attachment": {
-        "label": "Attachment"
-      },
-      "attachmentUploaded": {
-        "label": "Uploaded"
-      },
-      "isPublic": {
-        "label": "Is publishable"
-      },
-      "isPresentational": {
-        "placeholder": "This attribute can't be valorized (\"Presentational\")"
-      },
-      "value": {
-        "label": "Value"
-      },
-      "valueFormat": {
-        "help": "Value format"
-      },
-      "isMultilang": {
-        "title": "Multilanguage attribute"
-      },
-      "htmlEditorModeSwitch": {
-        "label": "XHTML editor"
       }
     },
     "artefactOwnershipModal": {
@@ -1571,6 +1742,115 @@
         "resizing": "Resizing table...",
         "updating": "Updating table rows..."
       }
+    },
+    "layoutAnnotationsForm": {
+      "tabs": {
+        "notDisplayedItems": {
+          "title": "Not displayed items"
+        },
+        "defaultItems": {
+          "title": "Default items"
+        },
+        "defaultTableLayout": {
+          "title": "Default table layout"
+        },
+        "defaultChartLayout": {
+          "title": "Default chart layout"
+        },
+        "defaultMapLayout": {
+          "title": "Default map layout"
+        },
+        "generalParameters": {
+          "title": "General parameters"
+        }
+      },
+      "generalParameters": {
+        "attachedDataFileForm": {
+          "url": "URL",
+          "format": "Format"
+        },
+        "attachedDataFiles": {
+          "modal": {
+            "addButton": {
+              "title": "Add"
+            },
+            "removeButton": {
+              "title": "Remove"
+            }
+          }
+        },
+        "flagSaveAnnotation": {
+          "title": "Include these annotations in artefact"
+        }
+      },
+      "alerts": {
+        "titleTooLong": "Maximum annotation length exceeded"
+      }
+    },
+    "urlInput": {
+      "placeholder": {
+        "title": "Insert a valid URL"
+      }
+    },
+    "notDisplayed": {
+      "dsdComponentsTable": {
+        "columns": {
+          "codes": {
+            "title": "Codes"
+          }
+        },
+        "actions": {
+          "detail": {
+            "title": "Edit Not displayed codes"
+          },
+          "detailNoCodelist": {
+            "title": "No associated codelist"
+          },
+          "delete": {
+            "title": "Are you sure to delete component {{id}}?"
+          }
+        },
+        "confirms": {
+          "delete": {
+            "title": "Are you sure?",
+            "content": "You will lose the selection on related codes"
+          }
+        }
+      }
+    },
+    "default": {
+      "dsdComponentsTable": {
+        "columns": {
+          "preview": {
+            "title": "Preview"
+          }
+        },
+        "actions": {
+          "detail": {
+            "title": "Edit default codes"
+          },
+          "detailNoCodelist": {
+            "title": "No associated codelist"
+          },
+          "delete": {
+            "title": "Are you sure to delete component {{id}}?"
+          }
+        },
+        "confirms": {
+          "delete": {
+            "title": "Are you sure?",
+            "content": "You will lose the selection on related codes"
+          }
+        }
+      }
+    },
+    "dsdCompareReport": {
+      "noDifferencesAlert": "DSDs are identical"
+    },
+    "htmlEditor": {
+      "zoomIn": {
+        "title": "Zoom"
+      }
     }
   },
   "scenes": {
@@ -1582,7 +1862,7 @@
         "cubeForm": {
           "messages": {
             "submit": {
-              "start": "Creating Cube",
+              "start": "Creating cube",
               "success": "Cube created successfully"
             }
           },
@@ -1605,14 +1885,30 @@
           "messages": {
             "cubeDelete": {
               "success": "Cube deleted successfully"
+            },
+            "categoryDelete": {
+              "success": "Category deleted successfully"
+            },
+            "categoryMove": {
+              "success": "Category moved successfully"
             }
           },
           "createButton": {
-            "title": "Create Cube"
+            "title": "Create",
+            "items": {
+              "createCube": "Create cube",
+              "createCategory": "Create category"
+            }
           },
           "deleteButton": {
-            "title": "Delete Cube",
-            "confirm": "Are you sure you want to delete this Cube?"
+            "cube": {
+              "title": "Delete cube",
+              "confirm": "Are you sure to delete cube {{id}}?"
+            },
+            "category": {
+              "title": "Delete category",
+              "confirm": "Are you sure to delete category {{id}}?"
+            }
           },
           "refreshButton": {
             "title": "Refresh tree"
@@ -1625,6 +1921,10 @@
             "forbiddenNode": {
               "title": "Permission denied",
               "content": "You are not allowed to view details of this cube"
+            },
+            "forbiddenDragNDrop": {
+              "title": "Unallowed drag",
+              "content": "Can only drag category into other categories"
             }
           }
         },
@@ -1640,6 +1940,27 @@
           },
           "measureModal": {
             "title": "Measure detail"
+          }
+        },
+        "categoryForm": {
+          "messages": {
+            "create": {
+              "success": "Category created successfully"
+            },
+            "edit": {
+              "success": "Category edited successfully"
+            }
+          },
+          "parentSelector": {
+            "select": {
+              "title": "Select parent"
+            },
+            "reset": {
+              "title": "Remove parent"
+            }
+          },
+          "parentModal": {
+            "title": "Select parent category"
           }
         }
       },
@@ -1657,7 +1978,7 @@
             }
           },
           "deleteButton": {
-            "confirm": "Are you sure you want to delete this mapping?"
+            "confirm": "Are you sure you want to delete mapping {{id}}?"
           },
           "deleteAllButton": {
             "confirm": "Are you sure you want to delete selected mappings?"
@@ -1785,9 +2106,6 @@
             },
             "tid": {
               "label": "TID"
-            },
-            "attributesFile": {
-              "label": "Attributes file"
             }
           },
           "submitButton": {
@@ -1818,6 +2136,9 @@
           },
           "refreshProdDf": {
             "label": "Refresh CC + Transc."
+          },
+          "checkFiltAttributes": {
+            "label": "checkFiltAttributes"
           }
         },
         "xmlForm": {
@@ -1825,10 +2146,10 @@
             "cube": {
               "label": "Cube",
               "selectIcon": {
-                "title": "Select Cube"
+                "title": "Select cube"
               },
               "resetIcon": {
-                "title": "Deselect Cube"
+                "title": "Deselect cube"
               }
             },
             "importType": {
@@ -1868,22 +2189,28 @@
           "ignoreConcurrentUpload": {
             "title": "Possible concurrent update in the same cube",
             "content": "Do you want to force anyway the attempt to execute this operation?"
+          },
+          "submit": {
+            "title": "Are you sure?"
           }
         }
       },
       "cubeList": {
         "currentDataViewModal": {
-          "title": "Cube's data"
+          "title": "Cube's data - [{{id}}]"
         },
         "actions": {
           "detail": {
-            "title": "Show Cube's data"
+            "title": "Show cube's data"
           },
           "download": {
             "title": "Download"
           },
           "removeEmbargo": {
             "title": "Remove embargo"
+          },
+          "info": {
+            "title": "Additional infos"
           }
         },
         "modals": {
@@ -1916,13 +2243,25 @@
           },
           "confirms": {
             "removeEmbargo": {
-              "title": "Are you sure you want to remove the Embargo?"
+              "title": "Are you sure you want to remove the Embargo from cube {{id}}?"
             },
             "emptyCube": {
-              "title": "Are you sure you want to empty this cube?"
+              "title": "Are you sure you want to empty cube {{id}}?"
             },
             "delete": {
-              "title": "Are you sure you want to delete this cube?"
+              "title": "Are you sure you want to delete cube {{id}}?"
+            }
+          },
+          "info": {
+            "title": "Additional infos - [{{id}}]",
+            "view": {
+              "title": "View"
+            },
+            "fact": {
+              "title": "Fact"
+            },
+            "filter": {
+              "title": "Filter"
             }
           }
         },
@@ -1984,14 +2323,14 @@
             "columnsForm": {
               "title": "Cube columns",
               "cubeTreeModal": {
-                "title": "Select Cube",
+                "title": "Select cube",
                 "tree": {
                   "refreshButton": {
                     "title": "Refresh tree"
                   }
                 },
                 "cubeNoDataModal": {
-                  "content": "No data in Cube"
+                  "content": "No data in cube"
                 },
                 "cubeOnlyEmbargoedDataModal": {
                   "content": "The cube contains only embargoed data: remove the embargo and then continue"
@@ -2000,10 +2339,10 @@
               "fields": {
                 "cube": {
                   "selectIcon": {
-                    "title": "Select Cube"
+                    "title": "Select cube"
                   },
                   "resetIcon": {
-                    "title": "Deselect Cube"
+                    "title": "Deselect cube"
                   }
                 }
               }
@@ -2026,6 +2365,9 @@
             },
             "header": {
               "title": "Header"
+            },
+            "layoutAnnotations": {
+              "title": "Layout annotations"
             }
           },
           "prevStepButton": {
@@ -2064,11 +2406,16 @@
             "title": "Create Dataflow"
           },
           "inProductionAlert": {
-            "message": "The Dataflow cannot be update because is in production"
+            "message": "A production dataflow cannot be updated"
           },
           "invalidReceiverModal": {
             "title": "Cannot save",
             "content": "Organisation ID is mandatory if the Receiver is specified"
+          },
+          "layoutAnnotations": {
+            "layoutAnnotationsForm": {
+              "title": "Layout annotations"
+            }
           }
         },
         "wizardShowButton": "Create",
@@ -2089,7 +2436,7 @@
         "list": {
           "actions": {
             "delete": {
-              "confirm": "Are you sure you want to delete this Dataflow?",
+              "confirm": "Are you sure you want to delete dataflow {{triplet}}?",
               "title": "Delete",
               "haveMetadata": {
                 "title": "You cannot delete a dataflow with associated metadata."
@@ -2098,10 +2445,10 @@
             "preview": "Show preview",
             "edit": "View/Edit",
             "download": "Download",
-            "dataExplorerPreview": "Show Data Explorer preview",
+            "dataBrowserPreview": "Show Data Browser preview",
             "info": "Additional infos",
             "productionModal": {
-              "title": "Dataflow publishing",
+              "title": "Dataflow publishing - [{{id}}]",
               "buttons": {
                 "close": {
                   "title": "Close"
@@ -2127,7 +2474,7 @@
                 "label": "Mapping Set",
                 "createButton": {
                   "confirm": {
-                    "title": "Are you sure you want to create the Mapping Set?",
+                    "title": "Are you sure you want to create the Mapping Set for {{id}}?",
                     "cancelButton": {
                       "title": "Cancel"
                     },
@@ -2142,7 +2489,7 @@
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Are you sure you want to delete the Mapping Set?"
+                    "title": "Are you sure you want to delete the Mapping Set for {{id}}?"
                   },
                   "title": "Delete"
                 }
@@ -2154,13 +2501,13 @@
                 },
                 "createButton": {
                   "confirm": {
-                    "title": "Are you sure you want to create the transcoding?"
+                    "title": "Are you sure you want to create the transcoding for {{id}}?"
                   },
                   "title": "Create"
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Are you sure you want to delete the transcoding?"
+                    "title": "Are you sure you want to delete the transcoding for {{id}}?"
                   },
                   "title": "Delete"
                 }
@@ -2169,13 +2516,13 @@
                 "label": "Content Constraint",
                 "createButton": {
                   "confirm": {
-                    "title": "Are you sure you want to create the Content Constraint?"
+                    "title": "Are you sure you want to create the Content Constraint for {{id}}?"
                   },
                   "title": "Create"
                 },
                 "deleteButton": {
                   "confirm": {
-                    "title": "Are you sure you want to delete the Content Constraint?"
+                    "title": "Are you sure you want to delete the Content Constraint for {{id}}?"
                   },
                   "title": "Delete"
                 }
@@ -2184,13 +2531,13 @@
                 "label": "Production",
                 "publishButton": {
                   "confirm": {
-                    "title": "Are you sure you want to publish the Dataflow?"
+                    "title": "Are you sure you want to publish the Dataflow {{id}}?"
                   },
                   "title": "Publish"
                 },
                 "removeButton": {
                   "confirm": {
-                    "title": "Are you sure you want to delete the Dataflow from publishing?"
+                    "title": "Are you sure you want to delete the Dataflow {{id}} from publishing?"
                   },
                   "title": "Remove"
                 }
@@ -2219,10 +2566,22 @@
                 },
                 "removePublish": {
                   "success": "Dataflow removed successfully from publishing"
+                },
+                "forceCacheUpdate": {
+                  "success": "Cache update forced successfully"
                 }
               },
               "transcodingContentConstraintList": {
                 "title": "Select Content Constraint"
+              },
+              "forceCacheUpdate": {
+                "label": "Data Browser cache",
+                "forceCacheUpdateButton": {
+                  "confirm": {
+                    "title": "Are you sure to force cache update for {{id}}?"
+                  },
+                  "title": "Force cache update"
+                }
               }
             },
             "production": {
@@ -2230,18 +2589,18 @@
             }
           },
           "previewModal": {
-            "title": "Dataflow preview"
+            "title": "Dataflow preview - [{{id}}]"
           }
         },
         "modals": {
           "info": {
-            "title": "Additional infos"
+            "title": "Additional infos - [{{id}}]"
           }
         },
         "dataflowDownload": {
           "modals": {
             "download": {
-              "title": "Artefact download"
+              "title": "Download artefact - [{{id}}]"
             },
             "preview": {
               "title": "Download preview"
@@ -2292,7 +2651,7 @@
       "upgradeDsd": {
         "modals": {
           "dataflowList": {
-            "title": "Dataflow list"
+            "title": "Dataflow list - [{{triplet}}]"
           },
           "compareDsdsReport": {
             "title": "Dsds compare report",
@@ -2316,7 +2675,7 @@
             }
           },
           "upgradedDsdList": {
-            "title": "Upgraded DSD list",
+            "title": "Upgraded DSD list - [{{triplet}}]",
             "buttons": {
               "import": {
                 "title": "Import DSD from file"
@@ -2328,7 +2687,7 @@
           },
           "confirms": {
             "upgrade": {
-              "title": "Are you sure you want to update this DSD?"
+              "title": "Are you sure you want to update DSD {{triplet}}?"
             }
           },
           "importDsdFromFile": {
@@ -2358,6 +2717,114 @@
         "modal": {
           "title": "Are you sure?",
           "content": "This action deletes ALL data created in DDB and is IRREVERSIBLE"
+        }
+      },
+      "manageSeries": {
+        "cubeSelector": {
+          "selectIcon": {
+            "title": "Select cube"
+          },
+          "resetIcon": {
+            "title": "Deselect cube"
+          },
+          "modal": {
+            "title": "Select cube"
+          }
+        },
+        "cubesTree": {
+          "refreshIcon": {
+            "title": "Refresh tree"
+          }
+        },
+        "showFiltersButton": {
+          "title": "Filters"
+        },
+        "deleteSeriesButton": {
+          "title": "Delete series",
+          "disabledTooltip": "Select series to delete"
+        },
+        "messages": {
+          "delete": {
+            "success": "Series deleted successfully"
+          }
+        },
+        "showSeriesButton": {
+          "title": "Show series"
+        },
+        "modals": {
+          "confirms": {
+            "deleteSeries": {
+              "title": "Are you sure to delete selected series?"
+            }
+          }
+        }
+      },
+      "attributeFile": {
+        "cubeTreeModal": {
+          "title": "Cubes",
+          "tree": {
+            "refreshButton": {
+              "title": "Refresh tree"
+            }
+          }
+        },
+        "fields": {
+          "cube": {
+            "label": "Cube",
+            "selectIcon": {
+              "title": "Select cube"
+            },
+            "resetIcon": {
+              "title": "Deselect cube"
+            }
+          },
+          "tid": {
+            "label": "TID"
+          }
+        },
+        "confirms": {
+          "ignoreConcurrentUpload": {
+            "title": "Possible concurrent update in the same cube",
+            "content": "Do you want to force anyway the attempt to execute this operation?"
+          },
+          "submit": {
+            "title": "Are you sure?"
+          }
+        },
+        "submitButton": {
+          "label": "Import"
+        },
+        "refreshProdDf": {
+          "label": "Refresh CC + Transc."
+        },
+        "checkFiltAttributes": {
+          "label": "checkFiltAttributes"
+        },
+        "rowList": {
+          "title": "Dataset"
+        },
+        "messages": {
+          "fileUpload": {
+            "start": "Uploading file",
+            "success": "File uploaded successfully"
+          },
+          "submit": {
+            "start": "Importing attributes",
+            "success": "Attributes imported successfully"
+          }
+        }
+      },
+      "updateDataBrowserCache": {
+        "modal": {
+          "title": "Are you sure?",
+          "content": "This will update the node catalog cache in Data Browser"
+        }
+      },
+      "updateDatabrowserCache": {
+        "messages": {
+          "updateDatabrowserCache": {
+            "success": "Data Browser cache updated successfully"
+          }
         }
       }
     },
@@ -2422,10 +2889,8 @@
         },
         "modals": {
           "deleteConfirm": {
-            "title": "Are you sure you want to delete this Node?"
-          },
-          "metadataSetList": {
-            "title": "MetadataSet list"
+            "title": "Are you sure you want to delete node {{id}}?",
+            "title_newNode": "Are you sure you want to delete the new node?"
           }
         },
         "nodeCredentialsModal": {
@@ -2453,14 +2918,14 @@
           "search": {
             "title": "Search"
           },
-          "dcatApIt": {
-            "title": "DCAT-AP_IT"
-          },
           "customAnnotations": {
             "title": "Custom annotations"
           },
           "annotations": {
             "title": "Annotations"
+          },
+          "dataBrowser": {
+            "title": "Data Browser"
           }
         },
         "noNameNodeCard": {
@@ -2473,6 +2938,10 @@
             },
             "removeButton": {
               "title": "Remove Agency"
+            },
+            "agencyAssignedToAnyUserModal": {
+              "title": "Cannot remove the agency",
+              "content": "This agency is assigned to an user"
             }
           }
         },
@@ -2580,6 +3049,12 @@
           },
           "itemSchemeCompareReport": {
             "title": "Item Scheme difference"
+          },
+          "xmlPreview": {
+            "title": "XML Preview"
+          },
+          "csvPreview": {
+            "title": "CSV Preview"
           }
         },
         "selectArtefactType": {
@@ -2665,348 +3140,6 @@
         }
       }
     },
-    "referenceMetadata": {
-      "dcat": {
-        "nodesConfigLink": {
-          "label": "Node configuration"
-        },
-        "messages": {
-          "report": {
-            "delete": {
-              "success": "Report deleted successfully"
-            },
-            "update": {
-              "success": "Report updated successfully"
-            },
-            "create": {
-              "success": "Report created successfully"
-            },
-            "stateUpdate": {
-              "success": "Report state updated successfully"
-            }
-          },
-          "dataflow": {
-            "update": {
-              "success": "Dataflow updated successfully"
-            }
-          }
-        },
-        "modals": {
-          "reportList": {
-            "title": "Report List"
-          },
-          "metadataSetDetail": {
-            "title": "Metadata Set Detail"
-          }
-        },
-        "noDcatMsd": {
-          "title": "No selected MSD for DCAT module",
-          "content": "To select one MSD, access the"
-        },
-        "metadataSetList": {
-          "columns": {
-            "mdfId": {
-              "shortLabel": "Metadataflow ID"
-            },
-            "mdfAgency": {
-              "shortLabel": "Metadataflow agency"
-            },
-            "mdfVersion": {
-              "shortLabel": "Metadataflow version"
-            }
-          },
-          "actions": {
-            "showReportList": {
-              "title": "Report List"
-            },
-            "navigateCategoryHtmlPage": {
-              "title": "Open information page"
-            },
-            "copyCategoryHtmlPageUrl": {
-              "title": "Copy information page link",
-              "message": "Information page link copied"
-            },
-            "copyCkanUrl": {
-              "title": "Copy Metadata API request link",
-              "message": "Metadata API request link copied"
-            },
-            "delete": {
-              "title": "Delete Metadata Set"
-            },
-            "create": {
-              "title": "Create Metadata Set"
-            }
-          }
-        }
-      },
-      "metadataSet": {
-        "metadataSetDetail": {
-          "id": {
-            "label": "ID",
-            "alreadyUsed": {
-              "help": "ID already used"
-            }
-          }
-        },
-        "metadataSetTree": {
-          "errors": {
-            "notValidCategory": {
-              "title": "To categorise a MetadataSet you need to drag it into a category"
-            },
-            "canDragOnlyMetadataSet": {
-              "title": "You can drag only MetadataSet"
-            },
-            "permissionDenied": {
-              "title": "You don't have permission to categorize this MetadataSet"
-            }
-          },
-          "actions": {
-            "deleteCategorisation": {
-              "title": "Delete Categorisation"
-            },
-            "addMetadataSet": {
-              "title": "Create Metadata Set"
-            },
-            "clone": {
-              "title": "Clone Metadata Set"
-            },
-            "navigateHtmlPage": {
-              "title": "Open information page"
-            },
-            "delete": {
-              "title": "Delete Metadata Set"
-            }
-          },
-          "modals": {
-            "confirms": {
-              "delete": {
-                "title": "Are you sure to delete this MetadataSet?"
-              }
-            }
-          }
-        },
-        "modals": {
-          "metadataSetClone": {
-            "title": "Clone MetadataSet"
-          }
-        },
-        "messages": {
-          "metadataSet": {
-            "update": {
-              "success": "Metadata Set updated successfully"
-            },
-            "create": {
-              "success": "Metadata Set created successfully"
-            },
-            "delete": {
-              "success": "Metadata Set deleted successfully"
-            },
-            "clone": {
-              "success": "Metadata Set cloned successfully"
-            }
-          },
-          "categorisation": {
-            "update": {
-              "success": "Categorisation updated successfully"
-            },
-            "remove": {
-              "success": "Categorisation deleted successfully"
-            },
-            "create": {
-              "success": "Categorisation created successfully"
-            }
-          },
-          "report": {
-            "delete": {
-              "success": "Report deleted successfully"
-            },
-            "update": {
-              "success": "Report updated successfully"
-            },
-            "create": {
-              "success": "Report created successfully"
-            },
-            "stateUpdate": {
-              "success": "Report state updated successfully"
-            }
-          }
-        }
-      },
-      "commons": {
-        "reportDetails": {
-          "steps": {
-            "first": {
-              "label": "Target selection"
-            },
-            "second": {
-              "label": "Attributes creation"
-            }
-          },
-          "target": {
-            "id": {
-              "label": "Target"
-            }
-          },
-          "selector": {
-            "select": {
-              "title": "Select artefact"
-            },
-            "reset": {
-              "title": "Deselect artefact"
-            },
-            "detail": {
-              "title": "View/Edit artefact"
-            }
-          },
-          "modals": {
-            "codeList": {
-              "title": "Code list"
-            },
-            "dataflowDetail": {
-              "title": "Dataflow Detail"
-            },
-            "artefactList": {
-              "title": "Artefact List"
-            }
-          },
-          "report": {
-            "id": {
-              "label": "ID",
-              "alreadyUsed": {
-                "help": "ID already used"
-              }
-            }
-          },
-          "alerts": {
-            "missingDataflowAttribute": {
-              "label": "Attention: it's not possible to automatically fill some required fields, to do that you have to edit the details of the dataflow associated with the report."
-            },
-            "isReadOnly": {
-              "label": "The report cannot be modified because is exposed via API."
-            }
-          }
-        },
-        "reportList": {
-          "title": "Report list",
-          "modals": {
-            "report": {
-              "title": "Report details"
-            },
-            "confirms": {
-              "delete": {
-                "title": "Are you sure you want to delete this report?"
-              },
-              "publish": {
-                "title": "Are you sure you want to expose this report via API?"
-              },
-              "unpublish": {
-                "title": "Are you sure you want to remove this report from API?"
-              }
-            },
-            "warning": {
-              "emptyAttribute": {
-                "title": "Attributes not compiled",
-                "content": "The following attributes must be filled in or the report otherwise the report will not be available via API",
-                "saveDraft": {
-                  "title": "Save as draft"
-                }
-              }
-            }
-          },
-          "columns": {
-            "structure": {
-              "title": "Structure"
-            },
-            "targetIdentifier": {
-              "title": "Target Identifier"
-            },
-            "id": {
-              "title": "ID"
-            }
-          },
-          "actions": {
-            "copyHtmlUrl": {
-              "title": "Copy information page link",
-              "message": "Information page link copied"
-            },
-            "copyCkanUrl": {
-              "title": "Copy Metadata API request link",
-              "message": "Metadata API request link copied"
-            },
-            "publish": {
-              "title": "Expose via API"
-            },
-            "unpublish": {
-              "title": "Remove from API"
-            },
-            "create": {
-              "title": "Create Report"
-            },
-            "navigateHtmlPage": {
-              "title": "Open information page"
-            }
-          }
-        },
-        "messages": {
-          "attachmentUpload": {
-            "success": "Attachment uploaded successfully"
-          }
-        },
-        "modals": {
-          "htmlPage": {
-            "title": "Information"
-          }
-        },
-        "metadataSetDetail": {
-          "id": {
-            "label": "ID",
-            "alreadyUsed": {
-              "help": "ID already used"
-            }
-          },
-          "name": {
-            "label": "Name"
-          },
-          "metadataflow": {
-            "label": "Metadataflow",
-            "selector": {
-              "select": {
-                "title": "Select Metadataflow"
-              },
-              "reset": {
-                "title": "Deselect Metadataflow"
-              }
-            }
-          },
-          "msd": {
-            "label": "MSD"
-          },
-          "reportingBegin": {
-            "label": "Reporting begin"
-          },
-          "reportingEnd": {
-            "label": "Reporting end"
-          },
-          "validFrom": {
-            "label": "Valid from"
-          },
-          "validTo": {
-            "label": "Valid to"
-          },
-          "publicationYear": {
-            "label": "Publication year"
-          },
-          "publicationPeriod": {
-            "label": "Publication period"
-          },
-          "modals": {
-            "metadataflowsList": {
-              "title": "Metadataflow list"
-            }
-          }
-        }
-      }
-    },
     "metaManager": {
       "commons": {
         "detail": {
@@ -3069,7 +3202,8 @@
         },
         "modals": {
           "download": {
-            "title": "Download artefact"
+            "titleMulti": "Download artefacts",
+            "title": "Download artefact - [{{triplet}}]"
           }
         }
       },
@@ -3084,6 +3218,22 @@
             },
             "viewMode": {
               "title": "View Dataflow - [{{triplet.id}}]"
+            }
+          },
+          "virtualDFDataflowSelector": {
+            "select": {
+              "title": "Select Dataflow"
+            },
+            "reset": {
+              "title": "Remove Dataflow"
+            },
+            "list": {
+              "alert": {
+                "someDataflowsAreDisabledForUnallowedAgency": "Some dataflows are disabled because you don't have the permission for the agency"
+              }
+            },
+            "modal": {
+              "title": "Select a Dataflow"
             }
           }
         },
@@ -3100,6 +3250,11 @@
         },
         "contentConstraintList": {
           "title": "Content Constraints"
+        },
+        "errors": {
+          "cannotCloneVirtualDF": {
+            "title": "Cannot clone a virtual DF"
+          }
         }
       },
       "categorySchemesDataflowsTree": {
@@ -3119,15 +3274,18 @@
           },
           "canDragOnlyDataflow": {
             "title": "You can drag only Dataflow"
+          },
+          "notAllowedAgency": {
+            "title": "In order to do this operation you must have permission on agency {{agencyId}}"
+          },
+          "duplicateCategorisation": {
+            "title": "Dataflow already have this categorisation"
           }
         }
       },
       "categorySchemesAndDataflows": {
         "messages": {
           "categorisation": {
-            "create": {
-              "success": "Categorisation created successfully"
-            },
             "update": {
               "success": "Categorisation updated successfully"
             },
@@ -3144,6 +3302,9 @@
           },
           "update": {
             "success": "Agency Scheme updated successfully"
+          },
+          "addAgencyToConfig": {
+            "success": "Agency added to config successfully"
           }
         },
         "detail": {
@@ -3161,32 +3322,6 @@
           "alerts": {
             "illegalFinal": {
               "title": "Cannot finalize an Agency Scheme"
-            }
-          }
-        }
-      },
-      "metadataflows": {
-        "messages": {
-          "create": {
-            "success": "Metadataflow created successfully"
-          },
-          "update": {
-            "success": "Metadataflow updated successfully"
-          },
-          "ownership": {
-            "success": "Metadataflow owners updated successfully"
-          }
-        },
-        "detail": {
-          "title": {
-            "editMode": {
-              "title": "Edit Metadataflow - [{{triplet.id}}]"
-            },
-            "viewMode": {
-              "title": "View Metadataflow - [{{triplet.id}}]"
-            },
-            "createMode": {
-              "title": "Create Metadataflow"
             }
           }
         }
@@ -3214,19 +3349,19 @@
           }
         }
       },
-      "msds": {
+      "hierarchicalCodelists": {
         "messages": {
           "update": {
-            "success": "MSD updated successfully"
+            "success": "Hierarchical Codelist updated successfully"
           }
         },
         "detail": {
           "title": {
             "editMode": {
-              "title": "Edit MSD - [{{triplet.id}}]"
+              "title": "Edit Hierarchical Codelist - [{{triplet.id}}]"
             },
             "viewMode": {
-              "title": "View MSD - [{{triplet.id}}]"
+              "title": "View Hierarchical Codelist - [{{triplet.id}}]"
             }
           }
         }
@@ -3289,7 +3424,7 @@
         },
         "confirms": {
           "deleteUser": {
-            "title": "Are you sure?"
+            "title": "Are you sure to delete user {{id}}?"
           }
         }
       }
@@ -3299,7 +3434,9 @@
     "title": "An error occurred",
     "statusCodes": {
       "401": "Invalid credentials",
-      "403": "Forbidden operation"
+      "403": "Forbidden operation",
+      "ECONNABORTED": "Server is taking too long to respond and the connection has been aborted. Maybe the server is busy at the moment. Try again later.",
+      "CUSTOM_STATUS_CODE_FILE_SUBMIT": "There is a problem while uploading the file. It may be due to the edit of the file after having selected it or any malfunctions in the file system. Try to select and upload it again."
     },
     "notImplemented": "Not implemented",
     "generic": "Unexpected error",
@@ -3442,7 +3579,7 @@
       "CHECKAUTHDB_UNKNOW_ERROR": "Error while checking AUTHDB correctness.",
       "DATAFLOW_DOWNLOAD_NOTINPRODUCTION": "The dataflow is in production and cannot be downloaded.",
       "DATAFLOW_DOWNLOAD_NOTFOUND": "Dataflow not found.",
-      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow not found. The web service for dataflow download may not exist.",
+      "DATAFLOW_DOWNLOAD_MA_NOTFOUND": "Dataflow not found. It may contain no data or the web service for dataflow download may not exist.",
       "DF_WITH_ASSOCIATED_DDB_DF": "The dataflow cannot be deleted beacause it has an associated dataflow in the DDB.",
       "DDBRESET_ERROR": "Error while resetting DDB.",
       "DEL_CONT_CONSTRAINTS": "Error while deleting content constraints for the dataflow.",
@@ -3489,7 +3626,19 @@
       "DCS_INSERT_DUPLICATECODE": "Category code already present.",
       "DCS_INSERT_PARENTNOTFOUND": "Parent category not found.",
       "DCS_INSERT_ERROR": "Error while inserting the new category.",
-      "DSD_WITH_NON_FINAL_ARTEFACTS": "DSD containing not final referenced artefacts."
+      "DSD_WITH_NON_FINAL_ARTEFACTS": "DSD containing not final referenced artefacts.",
+      "CUBE_ATTDSLEV_TABLE_CREATE": "Error while creating AttDsLev table.",
+      "IMPORT_DS_LEV_ATTRIBUTES": "Dataset level attributes with multiple values or error during their import.",
+      "ATTS_UNRES_CONFLICT": "Import blocked! Unresolvable conflicts on attributes.",
+      "FILE_IMPORT_WRONG_CODED_OBS_VALUE": "Coded observation value with wrong reference.",
+      "IMPORT_DATA_CHECKING_CODED_OBS_VALUE": "Error while checking wrong references to codes of the observation value.",
+      "MASID_NOTPRESENT": "MA WS not present: it is necessary for initialization.",
+      "AGENCY_ALREADY_IN_CONFIG": "Agency already present in configuration.",
+      "ATTR_FILE_WRONG_FORMAT": "Attribute file with unknown columns.",
+      "LOC_CODES_REMOVE": "Error while deleting local codes.",
+      "FILE_IMPORT_WRONG_TIMEPERIOD_ATTACH": "Attributes with attachment level Series or Group linked to TimePeriod not supported.",
+      "URL_MAX_SIZE": "Url max size exceeded. Deselect some filters or enable POST request if supported by the MA WS.",
+      "DATABROWSER_NOT_FOUND": "Data Browser cannot be found."
     },
     "some": "Some errors occurred",
     "notSupportedBySdmxSource": "Not supported by the SdmxSource library: data will be discarded",
@@ -3497,12 +3646,30 @@
   },
   "middlewares": {
     "defaultCategorySchemeSelector": {
-      "title": "Select Default Category Scheme",
       "messages": {
-        "submit": {
-          "start": "Importing Default Category Scheme",
-          "success": "Default Category Scheme imported successfully"
+        "selectSubmit": {
+          "success": "Default Category Scheme selected successfully"
+        },
+        "createSubmit": {
+          "success": "Default Category Scheme created successfully"
         }
+      },
+      "alert": {
+        "title": "Default Category Scheme is empty",
+        "selectButton": {
+          "title": "Select existant"
+        },
+        "createButton": {
+          "title": "Create new"
+        },
+        "backToHome": "Not now"
+      },
+      "selectModal": {
+        "title": "Select Default Category Scheme"
+      },
+      "createModal": {
+        "title": "Create Default Category Scheme",
+        "infoMessage": "Specify the fields for the first category of the new Default Category Scheme"
       }
     },
     "feedback": {
@@ -3518,6 +3685,9 @@
       "buttons": {
         "warningListDownload": "Download report",
         "wrongLinesDownload": "Download rows with errors"
+      },
+      "alerts": {
+        "onlyFirstErrorForRow": "For each row, only the first wrong reference is shown"
       }
     },
     "emptyNodesModal": {
@@ -3631,11 +3801,11 @@
       "create": {
         "title": "Create"
       },
-      "upload": {
-        "title": "Upload"
-      },
       "confirm": {
         "title": "Confirm"
+      },
+      "delete": {
+        "title": "Delete"
       }
     },
     "actions": {
@@ -3657,8 +3827,8 @@
       "customAnnotations": {
         "title": "Annotations"
       },
-      "oecdAnnotations": {
-        "title": "OECD Annotations"
+      "layoutAnnotations": {
+        "title": "Layout annotations"
       },
       "dataflowList": {
         "title": "Dataflow list"
@@ -3697,6 +3867,10 @@
       "fieldTooLong": {
         "title": "Field too long",
         "content": "You must specify {{maxLen}} chars maximum"
+      },
+      "invalidForm": {
+        "title": "Form is not properly filled out",
+        "content": "Check all required fields and mistakes in the form"
       }
     },
     "artefact": {
@@ -3782,21 +3956,6 @@
                 "title": "DSD list"
               }
             }
-          },
-          "msd": {
-            "selector": {
-              "select": {
-                "title": "Select MSD"
-              },
-              "reset": {
-                "title": "Deselect MSD"
-              }
-            },
-            "modals": {
-              "msdList": {
-                "title": "MSD list"
-              }
-            }
           }
         },
         "items": {
@@ -3841,7 +4000,9 @@
     "dsd": "DSD",
     "metadataflow": "Metadataflow",
     "agencyScheme": "Agency Scheme",
-    "contentConstraint": "Content Constraint"
+    "contentConstraint": "Content Constraint",
+    "hierarchicalCodelist": "Hierarchical Codelist",
+    "metadataStructure": "Metadata Structure"
   },
   "sdmxDimensionTypes": {
     "normal": "Normal",
@@ -3862,6 +4023,9 @@
       "endsWithDot": "Must end with a number",
       "exceddsMaxDepth": "Must be like x.y or x.y.z",
       "componentIsInvalid": "Must contain valid numbers (es. 1.0.2)"
+    },
+    "id": {
+      "containsUnallowedChars": "Must contain only alphanumeric chars or - and _ chars"
     }
   },
   "reduxComponents": {
@@ -3994,14 +4158,14 @@
       },
       "component": {
         "deleteConfirmModal": {
-          "title": "Are you sure to delete this component?"
+          "title": "Are you sure to delete component {id}}?"
         },
         "deleteWarningModal": {
-          "title": "Cannot delete this component",
+          "title": "Cannot delete component {{id}}",
           "content": "Used by {{component}}"
         },
         "createWarningModal": {
-          "title": "Cannot create this component",
+          "title": "Cannot create component {id}}",
           "content": "ID in use"
         }
       },
@@ -4022,6 +4186,12 @@
       },
       "groupDetail": {
         "title": "Group detail"
+      },
+      "notDisplayedCodesSelector": {
+        "title": "Select Not Displayed codes"
+      },
+      "defaultCodesSelector": {
+        "title": "Select Default codes"
       }
     },
     "conceptSchemeDetail": {
@@ -4049,10 +4219,46 @@
           "title": "Derived Concept Scheme"
         }
       }
+    },
+    "dsdDetailModal": {
+      "dsdDetail": {
+        "componentForm": {
+          "annotationsCodesSelector": {
+            "detail": {
+              "title": "Edit codes"
+            },
+            "select": {
+              "title": "Add codes"
+            },
+            "reset": {
+              "title": "Remove all codes"
+            }
+          },
+          "timeDimensionModeChangeConfirm": {
+            "title": "Are you sure?",
+            "content": "You will lose all annotations in the current mode"
+          }
+        }
+      }
     }
   },
   "languages": {
     "it": "Italiano",
     "en": "English"
+  },
+  "layoutAnnotations": {
+    "defaultPresentation": {
+      "table": "Table",
+      "graph": "Graph",
+      "map": "Map"
+    },
+    "criteriaSelection": {
+      "allFull": "ALL_FULL",
+      "allPartial": "ALL_PARTIAL",
+      "stepByStepDynamic": "STEP_BY_STEP_DYNAMIC",
+      "stepByStepFull": "STEP_BY_STEP_FULL",
+      "stepByStepPartial": "STEP_BY_STEP_PARTIAL"
+    },
+    "empty": "Not specified"
   }
 }

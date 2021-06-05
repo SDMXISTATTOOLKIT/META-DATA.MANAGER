@@ -12,7 +12,6 @@
   <message:Query>
     <query:ReturnDetails detail="">
       <query:References>
-        <query:None/>
       </query:References>
     </query:ReturnDetails>
     <query:HierarchicalCodelistWhere >

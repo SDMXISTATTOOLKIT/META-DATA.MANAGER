@@ -2,24 +2,61 @@
   "help": "§WS_URL§",
   "success": "true",
   "result": {
-    "license_title": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_NAME§",
-    "id": "§DCAT_AP_IT_DATASET_IDENTIFIER-DCAT_AP_IT_DATASET_CREATOR_AGENT_IDENTIFIER-DCAT_AP_IT_DATASET_VERSIONINFO§",
+    "license_title": "§DCAT_AP_IT_DATASET_DISTRIBUTION_LICENSE_NAME§",
+    "license_version": "§DCAT_AP_IT_DATASET_DISTRIBUTION_LICENSE_VERSION§",
+    "license_url": "§DCAT_AP_IT_DATASET_DISTRIBUTION_LICENSE_TYPE§",
+    "maintainer": "§DCAT_AP_IT_DATASET_RIGHTS_HOLDER_AGENT_NAME§",
+    "maintainer_id": "§DCAT_AP_IT_DATASET_RIGHTS_HOLDER_AGENT_IDENTIFIER§",
+    "id": "§REPORT_ID§",
     "private": "false",
+    "frequency": "§DCAT_AP_IT_DATASET_ACCRUAL_PERIODICITY§",
     "metadata_created": "§DCAT_AP_IT_DATASET_ISSUED§",
     "metadata_modified": "§DCAT_AP_IT_DATASET_MODIFIED§",
     "author": "§DCAT_AP_IT_DATASET_CREATOR_AGENT_NAME§",
+    "publisher_identifier": "§DCAT_AP_IT_DATASET_PUBLISHER_AGENT_IDENTIFIER§",
+    "publisher_name": "§DCAT_AP_IT_DATASET_PUBLISHER_AGENT_NAME§",
+    "temporal_coverage": {
+      "startDate": "§DCAT_AP_IT_PERIOD_OF_TIME_START_DATE§",
+      "endDate": "§DCAT_AP_IT_PERIOD_OF_TIME_END_DATE§"
+    },
     "state": "active",
+    "conforms_to": [
+      {
+        "identifier": "§DCAT_AP_IT_STANDARD_IDENTIFIER[i]§",
+        "title": "§DCAT_AP_IT_STANDARD_TITLE[i]§",
+        "description": "§DCAT_AP_IT_STANDARD_DESCRIPTION[i]§",
+        "referenceDocumentation": "§DCAT_AP_IT_STANDARD_REFERENCE_DOCUMENTATION[i]§"
+      }
+    ],
+    "geographical ": [
+      {
+        "type": "§DCAT_AP_IT_DATASET_SPATIAL_GEOMETRY_TYPE[i]§",
+        "coordinates": "§DCAT_AP_IT_DATASET_SPATIAL_GEOMETRY_COORDINATES[i]§",
+        "crs": "§DCAT_AP_IT_DATASET_SPATIAL_GEOMETRY_CRS[i]§",
+        "name": "§DCAT_AP_IT_DATASET_SPATIAL_GEO_NAME[i]§"
+      }
+    ],
+    "contacts ": [
+      {
+        "email": "§DCAT_AP_IT_CONTACT_POINT_MAIL[i]§",
+        "phone": "§DCAT_AP_IT_CONTACT_POINT_PHONE[i]§",
+        "site": "§DCAT_AP_IT_CONTACT_POINT_SITE[i]§",
+        "name": "§DCAT_AP_IT_CONTACT_POINT_NAME[i]§"
+      }
+    ],
     "resources": [
       {
-        "id": "§DCAT_AP_IT_DISTRIBUTION_TITLE[i]§",
+        "id": "§DCAT_AP_IT_DATASET_DISTRIBUTION_TITLE[i]§",
         "package_id": "§DCAT_AP_IT_DATASET_IDENTIFIER§",
-        "size": "§DCAT_AP_IT_DISTRIBUTION_SIZE[i]§",
-        "last_modified": "§DCAT_AP_IT_DISTRIBUTION_LAST_MODIFIED[i]§",
-        "format": "§DCAT_AP_IT_DISTRIBUTION_FORMAT[i]§",
-        "mimetype": "§DCAT_AP_IT_DISTRIBUTION_FORMAT[i]§",
-        "name": "§DCAT_AP_IT_DISTRIBUTION_TITLE§[i]",
-        "created": "§DCAT_AP_IT_DISTRIBUTION_LAST_MODIFIED[i]§",
-        "url": "§DCAT_AP_IT_DISTRIBUTION_DOWNLOAD_URL[i]§",
+        "size": "§DCAT_AP_IT_DATASET_DISTRIBUTION_SIZE[i]§",
+        "last_modified": "§DCAT_AP_IT_DATASET_DISTRIBUTION_LAST_MODIFIED[i]§",
+        "format": "§DCAT_AP_IT_DATASET_DISTRIBUTION_FORMAT[i]§",
+        "mimetype": "§DCAT_AP_IT_DATASET_DISTRIBUTION_FORMAT[i]§",
+        "name": "§DCAT_AP_IT_DATASET_DISTRIBUTION_TITLE[i]§",
+        "description": "§DCAT_AP_IT_DATASET_DISTRIBUTION_DESCRIPTION[i]§",
+        "created": "§DCAT_AP_IT_DATASET_DISTRIBUTION_LAST_MODIFIED[i]§",
+        "url": "§DCAT_AP_IT_DATASET_DISTRIBUTION_ACCESS_URL[i]§",
+        "download": "§DCAT_AP_IT_DATASET_DISTRIBUTION_DOWNLOAD_URL[i]§",
         "position": "§[i]§"
       }
     ],
@@ -36,6 +73,11 @@
         "id": "§DCAT_AP_IT_DATASET_THEME[i]§",
         "package_count": "§[i]§",
         "isOrganization": "false"
+      },
+      {
+        "id": "§DCAT_AP_IT_DATASET_SUBJECT[i]§",
+        "package_count": "§[i]§",
+        "isOrganization": "false"
       }
     ],
     "organization": {
@@ -47,13 +89,13 @@
     "isopen": "true",
     "url": "§DCAT_AP_IT_DATASET_LANDING_PAGE§",
     "ckan_url": "§DCAT_AP_IT_DATASET_LANDING_PAGE§",
-    "license_url": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_TYPE§",
-    "license": "§DCAT_AP_IT_DISTRIBUTION_LICENSE_NAME§",
     "notes_rendered": "§DCAT_AP_IT_DATASET_DESCRIPTION§",
     "notes": "§DCAT_AP_IT_DATASET_DESCRIPTION§",
     "title": "§DCAT_AP_IT_DATASET_TITLE§",
+    "is_version_of": "§DCAT_AP_IT_DATASET_VERSION_OF§",
     "num_tags": "§NUM_TAGS§",
     "num_resources": "§NUM_RESOURCES§",
+    "alternate_identifier": "§DCAT_AP_IT_DATASET_OTHER_IDENTIFIER§",
     "extras": [
       {
         "value": "§DCAT_AP_IT_DATASET_IDENTIFIER§",
@@ -66,14 +108,6 @@
       {
         "value": "§DCAT_AP_IT_DATASET_MODIFIED§",
         "key": "modified"
-      },
-      {
-        "value": "§DCAT_AP_IT_STANDARD_IDENTIFIER§",
-        "key": "DCAT_AP_IT_STANDARD_IDENTIFIER"
-      },
-      {
-        "value": "§DCAT_AP_IT_DATASET_PUBLISHER_AGENT_NAME§",
-        "key": "DCAT_AP_IT_DATASET_PUBLISHER_AGENT_NAME"
       }
     ],
     "language": "§LANGUAGE§"

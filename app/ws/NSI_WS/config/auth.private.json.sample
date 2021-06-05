@@ -1,10 +1,11 @@
 {
-    "auth": {
-        "enabled": true,
-        "allowAnonymous": false,
-        "authority": "",
-        "clientId": "",
-        "requireHttps": true,
-        "validateIssuer": true
-    }
+  "auth": {
+    "enabled": true,
+    "allowAnonymous": false,
+    "authority": "",
+    "clientId": "",
+    "requireHttps": true,
+    "validateIssuer": true,
+    "showPii": false
+  }
 }

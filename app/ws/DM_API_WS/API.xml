@@ -1,0 +1,1492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DM_API_WS</name>
+    </assembly>
+    <members>
+        <member name="T:DM_API_WS.Controllers.DMApiController">
+            <summary>
+            DM API
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions},Microsoft.Extensions.Configuration.IConfiguration,AuthCore.Model.IUserData,Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.Extensions.Options.IOptionsSnapshot{DMApiWs.DTO.DataProviderNameConfig})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.Ping">
+            <summary>
+            Returns 200 if the server is UP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetAvailableCubes">
+            <summary>
+            Returns the list of cubes in the DDB that are visible for the current user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetAvailableCubesNoFilter">
+            <summary>
+            Returns the list of cubes in the DDB.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetCube(System.Int32)">
+            <summary>
+            Returns the requested cube with Attributes, Dimensions and Measures.
+            </summary>
+            <param name="cubeId">The cube id.</param>
+            <returns>The requested cube or 403 if the current user cannot view the cube.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CreateCube(DDB.Entities.CubeWithDetails)">
+            <summary>
+            Creates a cube in the DDB with Attributes, Dimensions and Measures.
+            </summary>
+            <param name="cube">The cube to be created.</param>
+            <returns>The cube id in case of success, 403 if the cube is categorized in a category the user cannot edit in.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DeleteCube(System.Int32)">
+            <summary>
+            Deletes a cube together with its associated information.
+            </summary>
+            <param name="cubeId">The id of the cube to be deleted.</param>
+            <returns>True in case of success, 403 if the current user cannot view the cube</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ImportDCSFromMSDB(System.String,System.String,System.String)">
+            <summary>
+            Imports the Default Category Scheme from the MSDB.
+            </summary>
+            <param name="catSch">The CategoryScheme in JSON format</param>
+            <param name="agencyId">The CategoryScheme AgencyId</param>
+            <param name="orderAnnType">Annotation type for handling the order of the items</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDCS">
+            <summary>
+            Returns the list of categories in the Default Category Scheme.
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.InsertDCS(DDB.Entities.Category)">
+            <summary>
+            Insert category in the Default Category Scheme.
+            </summary>
+            <param name="category">The Category to be inserted.</param>
+            <returns>The category id in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.UpdateDCS(System.Collections.Generic.List{DDB.Entities.Category})">
+            <summary>
+            Update category in the Default Category Scheme.
+            </summary>
+            <param name="category">The Category to be updated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DeleteDCS(System.String)">
+            <summary>
+            Delete category from the Default Category Scheme.
+            </summary>
+            <param name="catCode">The Category Code to be deleted.</param>
+            <returns>True in case of success, false if try to delete category with children or assign to cube.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBMappings">
+            <summary>
+            Returns the list of mappings the current user can view WITHOUT their components.
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBMapping(System.Int32)">
+            <summary>
+            Returns the requested mapping with its components.
+            </summary>
+            <param name="idMapping">The mapping id.</param>
+            <returns>The requested mapping or 403 if the current user cannot view the mapping.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CreateDDBMapping(DDB.Entities.MappingWithComponents)">
+            <summary>
+            Creates a new mapping with its components.
+            </summary>
+            <param name="mapp">The mapping to be created.</param>
+            <returns>The mapping id or 403 if the current user cannot create the mapping</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DeleteDDBMapping(System.Int32)">
+            <summary>
+            Deletes a mapping together with its components.
+            </summary>
+            <param name="idMapping">The id of the mapping to be deleted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetCSVHeader(System.Char,System.Boolean,System.String,System.Nullable{System.Char})">
+            <summary>
+            Returns the header of a CSV file. If the file is not a CSV file or is empty an exception is thrown. 
+            If the file has no header, an array of string "Col 1, …, Col N" is returned.
+            </summary>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="filePath">Path of the CSV file.</param>
+            <returns>A list with the name of the columns to be shown in Mapping.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ImportCSVData(System.Char,System.Boolean,System.String,DataProvider.ImportTypeEnum,System.Int32,System.Int32,System.String,System.Nullable{System.Char},System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Imports data in a cube (with Series, Data or SeriesAndData Import Type)
+            </summary>
+            <param name="importType">Import Type (Series, Data or SeriesAndData).</param>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="tid">Table Identifier</param>
+            <param name="idMapping">Id of the mapping to whom the table refers. It is 0 if you are trying to import an SDMX file and so mapping does not exist.</param>
+            <param name="idCube">Id of the cube where data are imported.</param>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+            <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
+            <param name="embargo">Whether the data have to be embargoed or not.</param>
+            <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ImportAttributeFile(System.Char,System.Boolean,System.String,System.Int32,System.String,System.Nullable{System.Char},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Imports a file of attributes in a cube
+            </summary>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="tid">Table Identifier</param>
+            <param name="idCube">Id of the cube where data are imported.</param>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+            <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
+            <param name="deleteMode">Whether delete mode is active or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetTableCSVPreview(DataModel.OptionsTable,System.Char,System.Boolean,System.String,System.Nullable{System.Char})">
+            <summary>
+            Returns a paged preview of a table in the DDB.
+            </summary>
+            <param name="optionsTable">Contains option for paging, filter, sort</param>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ImportSDMXMLData(System.String)">
+            <summary>
+            Return the dataflow in xml (if exist)
+            </summary>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ImportSDMXMLData(System.String,DataProvider.ImportTypeEnum,System.Int32,DM_API_WS.DTO.DSDParam,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Imports data in a cube (with Series, Data or SeriesAndData Import Type)
+            </summary>
+            <param name="tid">Temp table from whom the import process must start.</param>
+            <param name="importType">Import Type (Series, Data or SeriesAndData).</param>
+            <param name="idCube">Id of the cube where data are imported.</param>
+            <param name="dsd">dsd to whom the data refer</param>
+            <param name="agencyId">id of the agency</param>
+            <param name="filePath">Path of the file from whom the temp table has been generated.</param>
+            <param name="embargo">Whether the data have to be embargoed or not.</param>
+            <param name="ignoreCuncurrentUpload">Ignore cuncurrency upload protection</param>
+            <param name="checkFiltAttributes">Whether to check the coherence of attributes on FiltS table or not</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.disembargoCube(System.Int32)">
+            <summary>
+            Disembargoes a cube.
+            </summary>
+            <param name="idCube">Id of the cube to be disembargoed.</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.getAllDataflowsFromCube(System.Int32)">
+            <summary>
+            Disembargoes a cube.
+            </summary>
+            <param name="idCube">Id of the cube to be disembargoed.</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.emptyCube(System.Int32)">
+            <summary>
+            Delete all data contained in a cube.
+            </summary>
+            <param name="idCube">Id of the cube to be emptied.</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.UploadFileOnServer(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Uploads a file on the file-system.
+            </summary>
+            <param name="cubeId">The id of the cube to whom the file refers.</param>
+            <param name="file">The file to be uploaded.</param>
+            <returns>The path of the uploaded file in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.uploadReferenceMetadataFileOnServer(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Uploads a file on the file-system.
+            </summary>
+            <param name="file">The file to be uploaded.</param>
+            <returns>The path of the uploaded file in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.ReferenceMetadataFileOnServer(System.String)">
+            <summary>
+            Loads the metadata file in memory.
+            </summary>
+            <param name="filename">The name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetTablePreview(System.String,DataModel.OptionsTable)">
+            <summary>
+            Returns a paged preview of a table in the DDB.
+            </summary>
+            <param name="tableName">The table name.</param>
+            <param name="optionsTable">Contains option for paging, filter, sort</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetTableColumnPreview(System.String,DataModel.OptionsTable)">
+            <summary>
+            Returns a paged preview of a column of a table in the DDB.
+            </summary>
+            <param name="tableName">The table name.</param>
+            <param name="optionsTable">The column name, Page number (used for paging), Page size (used for paging).</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetCSVTablePreview(System.Char,System.Boolean,System.String,System.String,System.Nullable{System.Char},DataModel.OptionsTable,System.Int32)">
+            <summary>
+            Returns a paged preview of a table in the DDB.
+            </summary>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <param name="hasHeader">Whether the CSV file has a header or not.</param>
+            <param name="tid"></param>
+            <param name="filePath">Path of the CSV file.</param>
+            <param name="optionsTable">Contains option for paging, filter, sort</param>
+            <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetConnectionString">
+            <summary>
+            Returns a string with the encrypted connection string for the current DDB.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.createTempTableForUniqueValues(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Insert a list of string in a single-column table
+            </summary>
+            <param name="tableName">The name of the table.</param>
+            <param name="values">The list of values to be inserted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetSDMXMLTablePreview(DM_API_WS.DTO.DSDParam,System.String,System.String)">
+            <summary>
+            Returns a paged preview of a table in the DDB.
+            </summary>
+            <param name="dsd">dataflow data</param>
+            <param name="agencyId">agency id</param>
+            <param name="filePath">filePath</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetCSVTableColumnPreview(DataModel.OptionsTable,System.Char,System.Nullable{System.Char},System.Boolean,System.String,System.Int32)">
+            <summary>
+            Returns a paged preview of a column of a table in the DDB.
+            </summary>
+            <param name="optionsTable">The column name, Page number (used for paging), Page size (used for paging).</param>
+            <param name="CSVSeparator">csv separator</param>
+            <param name="CSVDelimiter">csv separator</param>
+            <param name="hasHeader">true if has header</param>
+            <param name="filePath">filePath</param>
+            <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflows">
+            <summary>
+            Returns the list of dataflows in the DDB that the current user can view.
+            </summary>
+            <returns>The list of dataflows in the DDB.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflowsNoFilter">
+            <summary>
+            Returns the list of dataflows in the DDB.
+            </summary>
+            <returns>The list of dataflows in the DDB.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflow(System.Int32)">
+            <summary>
+            Returns the requested DDB Dataflow filtered if user can't view.
+            </summary>
+            <param name="dfId">The DDB Dataflow id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflowNoFilter(System.Int32)">
+            <summary>
+            Returns the requested DDB Dataflow.
+            </summary>
+            <param name="dfId">The DDB Dataflow id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflowsNoFilter(System.Int32)">
+            <summary>
+            Returns the requested DDB Dataflows.
+            </summary>
+            <param name="cubeId">The DDB Cube id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.SetHasTranscodingFlag(System.Int32,System.Boolean)">
+            <summary>
+            Sets dataflow's transcoding flag to the given value.
+            </summary>
+            <param name="dfId">The DDB Dataflow id.</param>
+            <param name="value">The value to be set for the flag (true or false).</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.SetHasContentConstraintsFlag(System.Int32,System.Boolean)">
+            <summary>
+            Sets dataflow's HasContentConstraints flag to the given value.
+            </summary>
+            <param name="dfId">The DDB Dataflow id.</param>
+            <param name="value">The value to be set for the flag (true or false).</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CreateDDBDataflow(DDB.Entities.DDBDataflowWithCols)">
+            <summary>
+            Creates a new dataflow in the DDB.
+            </summary>
+            <param name="df">The dataflow to be created.</param>
+            <returns>The dataflow id in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DeleteDDBDataflow(System.Int32)">
+            <summary>
+            Deletes the DDB Dataflow with the given id.
+            </summary>
+            <param name="dfId">The id of the dataflow to be deleted.</param>
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDDBDataflowPreview(DDB.Entities.DDBDataflow,System.Boolean)">
+            <summary>
+            Returns a dataflow's data preview according with the given parameters.
+            </summary>
+            <param name="ddbDataflow">The dataflow.</param>
+            <param name="partialIgnoreCheckFilter">Whether to check filter coerence for dataflow columns with a unique value or not.</param>
+            <returns>A DataTable containing the requested data.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DownloadDDBDataflowInCsv(DDB.Entities.DDBDataflow,System.Char,System.Nullable{System.Char},System.Boolean)">
+            <summary>
+            Gets a dataflow in CSV format according with the given parameters.
+            </summary>
+            <param name="ddbDataflow">The dataflow.</param>
+            <param name="partialIgnoreCheckFilter">Whether to check filter coerence for dataflow columns with a unique value or not.</param>
+            <param name="CSVSeparator">CSV separator used in the file.</param>
+            <param name="CSVDelimiter">CSV delimiter used in the file.</param>
+            <returns>Return a MemoryStream with csv file zipped</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDataflowColumnPreview(DDB.Entities.DDBDataflowWithCols,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns a preview of a dataflow's column according with the given parameters.
+            </summary>
+            <param name="df">The dataflow.</param>
+            <param name="colName">The name of the column to be returned.</param>
+            <param name="numPage">Page number (used for paging).</param>
+            <param name="pageSize">Page size (used for paging).</param>
+            <param name="partialIgnoreCheckFilter">Whether to check or not filters.</param>
+            <returns>A DataTable containing the requested data.</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetItemsCodelist(System.Collections.Generic.List{System.String})">
+            <summary>
+            Returns the list of codelist with items for each dsd
+            </summary>
+            <param name="dsdCheck">dsd to be check</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetItemsCodelist(System.Collections.Generic.List{NSI.Entities.ArtefactIdentity})">
+            <summary>
+            Returns the items of each codelist 
+            </summary>
+            <param name="codeListCheck">dsd to be check</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.SyncCodeList(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}})">
+            <summary>
+            Syncs codelist from MSDB to DDB. Insert all Items from MSDB into DDB (only insert operation, do not remove codes not present in MSDB)
+            </summary>
+            <param name="itemsCodeListToSync">Codelist to sync</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DDBReset(System.Int32)">
+            <summary>
+            Resets the DDB to its original state (after initialization).
+            <returns>True in case of success, otherwise an exception is thrown.</returns>
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CompareDSD(NSI.Entities.DsdReport)">
+            <summary>
+            Returns the items of each codelist 
+            </summary>
+            <param name="dsdReport">dsd to be check</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.UpgradeCube(NSI.Entities.DsdReport)">
+            <summary>
+            Upgrade cube from source DSD to target DSD
+            </summary>
+            <param name="dsdReport">DSD report</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDataFlowsFromDSD(System.String,System.String,System.String)">
+            <summary>
+            Gets all dataflow id used by specific DSD
+            </summary>
+            <param name="dsdId">The dsd id.</param>
+            <param name="dsdAgencyId">The dsd agency id.</param>
+            <param name="dsdVersion">The dsd version.</param>
+            <returns>Id of dataflow</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetFieldForCube(System.Int32)">
+            <summary>
+            Gets all columns of cube 
+            </summary>
+            <param name="idCube">The cube id.</param>
+            <returns>Column of Cube</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetSeriesForCube(System.Int32,DDB.Entities.DDBDataflow)">
+            <summary>
+            Gets all columns of cube 
+            </summary>
+            <param name="idCube">The cube id.</param>
+            <param name="optionsTable">The filter</param>
+            <returns>All series of cube</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.DeleteSeries(System.Int32,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Delete series
+            </summary>
+            <param name="idCube">The cube id.</param>
+            <param name="sId">List of series Id</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CheckEndPoint">
+            <summary>
+            Delete series
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetDSDWithDataflow">
+            <summary>
+             Get all dsd with dataflow associated
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.preloadCSV(System.Char,System.Char,System.Boolean,System.String,System.String,Microsoft.Extensions.Caching.Memory.IMemoryCache,System.String,System.Int32)">
+            <summary>
+            Esegue il caricamento in una tabella temporanea di un file CSV già presente sul server SOLO se la tabella temporanea non esiste già.
+            Mantiene in sessione la corrispondenza tra path del file e tabella temporanea creata.
+            </summary>
+            <param name="CSVSeparator">Seaparatore del file CSV</param>
+            <param name="CSVDelimiter">Delimiter del file CSV</param>
+            <param name="hasHeader">Indica se il file CSV ha un'intestazione o meno</param>
+            <param name="filePath">path del file</param>
+            <param name="tid">Eventuale tid definito lato client da aggiungere al file</param>      
+            <param name="memoryCache">Memory Cache</param>      
+            <param name="guidSession">Guid session from NodeAPI</param>      
+            <param name="idMappingSpecialTimePeriod">(Optional) Id of the mapping with time period in .STAT format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.preloadSDMXML(System.String,Org.Sdmxsource.Sdmx.Api.Model.Objects.ISdmxObjects,System.String,System.String)">
+            <summary>
+            Esegue il caricamento in una tabella temporanea di un file SDMXML già presente sul server SOLO se la tabella temporanea non esiste già.
+            Mantiene in sessione la corrispondenza tra path del file e tabella temporanea creata.
+            </summary>
+            <param name="filePath">Path al file SDMX da caricare.</param>
+            <param name="dsd">DSD referenziata dal cubo.</param>
+            <param name="tid">Eventuale tid specificato da interfaccia.</param>
+            <param name="guidSession">Guid session from NodeAPI</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.removeTempTableFromSession(System.String,System.String)">
+            <summary>
+            Rimuovo la tabella temporanea, che è stata cancellata, dalla sessione
+            </summary>
+            <param name="filePath">il path del file a partire da cui è stata costruita la tabella temporanea</param>
+            <param name="guidSession">Session guid from NodeAPI</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.setTempTableInSession(System.String,System.String,System.String,System.String)">
+            <summary>
+            setto la corrispondenza tra filePath e tabella temporanea + tid nella sessione
+            </summary>
+            <param name="filePath">il path del file a partire da cui è stata costruita la tabella temporanea</param>
+            <param name="tempTableName">tabella temporanea in cui è stato caricato il file</param>
+            <param name="tidStr">valore del tid corrispondente alla tabella caricata</param>
+            <param name="guidSession">Session guid from NodeAPI</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.filterCubesByUser(System.Collections.Generic.List{DDB.Entities.Cube},System.Security.Principal.IIdentity)">
+            <summary>
+            Filters a list of cubes returning only those visible to the logged user.
+            </summary>
+            <param name="cubes">List of cubes</param>
+            <param name="identity">The current user</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.SynchronizeAuthDB(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Syncs AUTHDB with all data 
+            <param name="dataSync">
+            agency: List of default agency in case of AuthDb haven't got any agency
+            dataflow: Dataflow to sync on AuthDb
+            </param>
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.AuthDBConfigurated">
+            <summary>
+            Checks if AuthDb have the connection string inizializated (do not check if they are correct)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.InizializeAuthDb(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Inizializes MaSid, ConnectionString of MSDB, DDB and RMDB. This operation is made only if AuthDb has been never initialized before.
+            </summary>
+            <returns>Status of the AuthDb. If the AuthDb has been already configurated with different parameters, it generates an error code</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.CheckAuthDB(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Checks if the XML Config and AuthDB Connection string have the same value
+            </summary>
+            <returns>Returns an object containing the status config and a list of error messages</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.GetMaSid">
+            <summary>
+            Returns the maSid configurated on Authdb
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.IsAgencyAssignToAnyUser(System.String)">
+            <summary>
+            Returns is agency assign to any user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.TempRemoveLocalCodes(System.String,System.Int32)">
+            <summary>
+            TEMP!!! Delete Local Codes: TEMP workaround while fixing problems on method in MA WS
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.DMApiController.RemoveTempTable">
+            <summary>
+            Remove all Tmp Table from SQL DB
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.Controllers.LandingController">
+            <summary>
+            Landing Page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.LandingController.Home">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.LandingController.Index">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.LandingController.Get">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.LandingController.Start">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.Controllers.RMController">
+            <summary>
+            RM API
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.#ctor(AuthCore.Model.IUserData,Microsoft.Extensions.Options.IOptionsSnapshot{AuthCore.Model.AuthAppOptions},Microsoft.Extensions.Options.IOptionsSnapshot{DataModel.CacheConfig})">
+            <summary>
+            The constructor.
+            </summary>
+            <param name="userData">User's data.</param>
+            <param name="authAppConfig">Authentication configuration.</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.SearchMetadataSetIdByDataflowURN(System.String)">
+            <summary>
+            Searches MetadataSet id by Dataflow URN.
+            </summary>
+            <param name="dataflowURN">DataFlow URN</param>
+            <returns>MetadataSet id found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.SearchReportByDataflow(System.String,System.String,System.String)">
+            <summary>
+            Searches all Reports with parameters.
+            </summary>
+            <param name="dataflowURN">MetadataFlow URN</param>
+            <param name="identifierValue">Target Identifier value</param>
+            <param name="targetType">Target Identifier type, values [Metadataflow,Dataflow]</param>
+            <returns>List of Reports found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.SearchReportIds(System.Int32,System.String,System.String)">
+            <summary>
+            Searches all Reports with parameters.
+            </summary>
+            <param name="idMetadataSet">MetadataSet id</param>
+            <param name="identifierValue">Target Identifier value</param>
+            <param name="targetType">Target Identifier type, values [Metadataflow,Dataflow]</param>
+            <returns>List of Reports id found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.SearchReport(System.Int32,System.String,System.String)">
+            <summary>
+            Searches all Reports with parameters.
+            </summary>
+            <param name="idMetadataSet">MetadataSet id</param>
+            <param name="identifierValue">Target Identifier value</param>
+            <param name="targetType">Target Identifier type, values [Metadataflow,Dataflow]</param>
+            <returns>List of Reports found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.SearchReportByParams(System.Int32,System.String,System.String)">
+            <summary>
+            Searches all Reports with parameters.
+            </summary>
+            <param name="idMetadataSet">MetadataSet id</param>
+            <param name="targetType">Target Identifier type, values [Metadataflow,Dataflow]</param>
+            <param name="identifierValue">Target Identifier</param>
+            <returns>List of Reports found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.GetReport(System.Int32)">
+            <summary>
+            Searches a Report by id
+            </summary>
+            <param name="reportId">Report id</param>
+            <returns>Report found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.DeleteReport(System.Int32,System.String)">
+            <summary>
+            Deletes a report and all related data.
+            </summary>
+            <param name="reportId">Report id</param>
+            <param name="msd">urn msd</param>
+            <returns>True if the operation was successful, false otherwise</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.UpdateReport(DM_API_WS.DTO.RMParam,System.Int32,System.String)">
+            <summary>
+            Updates the Report with input data and MSD file specified.
+            </summary>
+            <param name="metadataFlowId">MetadataFlow id</param>
+            <param name="rmParams">Report input data</param>
+            <param name="msd">urn msd</param>
+            <returns>Report updated</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.UpdateReportState(DM_API_WS.DTO.RMParam,System.String,System.String,System.String)">
+            <summary>
+            Updates the Report stated.
+            </summary>
+            <param name="metadataSetId">MetadataSet id</param>
+            <param name="reportId">Report id</param>
+            <param name="rmParams">Input data</param>
+            <param name="msd">msd</param>
+            <returns>True if Report updated, false otherwise</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.CreateReport(DM_API_WS.DTO.RMParam,System.Int32,System.String)">
+            <summary>
+            Creates a new Report with input data and MSD file specified.
+            </summary>
+            <param name="metadataSetId">MetadataSet id</param>
+            <param name="rmParams">Report input data</param>
+            <param name="msd">urn msd</param>
+            <returns>Id of Report created</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.GetReportedAttribute(System.Int32)">
+            <summary>
+            Searches all the ReportedAttributes of a Report.
+            </summary>
+            <param name="reportId">Report id</param>
+            <returns>Return an AttributeSet object with attribuites found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.DeleteMetadataSet(System.String)">
+            <summary>
+            Deletes a MetadataSet and all related data.
+            </summary>
+            <param name="metadataSetId">MetadataSet id</param>
+            <returns>True if the operation was successful, false otherwise</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.CreateMetadataSet(DM_API_WS.DTO.RMParam)">
+            <summary>
+            Creates a new MetadataSet with input data and MSD file specified.
+            </summary>
+            <param name="rmParams">MetadataSet input data</param>
+            <returns>Id of MetadataSet created</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.UpdateMetadataSet(DM_API_WS.DTO.RMParam)">
+            <summary>
+            Updates the MetadataSet with input data and MSD file specified.
+            </summary>
+            <param name="rmParams">MetadataSet input data.</param>
+            <returns>MetadataSet updated</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.GetMetadataSet(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Searches a MetadataSet by id.
+            </summary>
+            <param name="metadataSetId">MetadataSet id</param>
+            <param name="excludeReport">True for not retrieve report data</param>
+            <param name="withAttributes">False for not retrieve attribute data</param>
+            <param name="dbId">True for use Id column, otherwise ReferenceId column</param>
+            <returns>MetadataSet found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.GetMetadataSetList">
+            <summary>
+            Searches all stored MetadataSets.
+            </summary>
+            <returns>List of MetadataSet found</returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.RMController.GetSimpleMetadataSet(System.String)">
+            <summary>
+            Returns a simple Metadataset including no Reports
+            </summary>
+            <param name="metadataSetId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DM_API_WS.Controllers.UserController">
+            <summary>
+            User API
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.#ctor(AuthCore.Model.IUserData,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.LoginUser">
+            <summary>
+            Accepts a request with credential and returns the user info of the user currently logged
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.CreateUser(AuthCore.Model.User)">
+            <summary>
+            Creates a user on AuthDb
+            </summary>
+            <param name="user">user data</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.DeleteUser(AuthCore.Model.User)">
+            <summary>
+            Delete a user on AuthDb
+            </summary>
+            <param name="user">usardate with username to delete</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.UpdateUser(AuthCore.Model.User)">
+            <summary>
+            Edit only user data and password (if not empty) on AuthDB
+            </summary>
+            <param name="user">user data</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsAgency(AuthCore.Model.User)">
+            <summary>
+            Assigns an agency to a user on AuthDb
+            </summary>
+            <param name="user">user</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsCategory(AuthCore.Model.User)">
+            <summary>
+            Assigns a category to a user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsFunctionality(AuthCore.Model.User)">
+            <summary>
+            Assigns a functionality to a user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsDataflow(AuthCore.Model.User)">
+            <summary>
+            Assigns a dataflow to a user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsMetadataset(AuthCore.Model.User)">
+            <summary>
+            Assigns a metadataflow to a user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsCube(AuthCore.Model.User)">
+            <summary>
+            Assigns a cube to an user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignCubeOwnership(System.String,System.String)">
+            <summary>
+            Assigns a cube ownership to an user on AuthDb
+            </summary>
+            <param name="cubeCode">cube code</param>
+            <param name="username">username</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignDataflowFirstOwnership(System.String)">
+            <summary>
+            Assign Dataflow ownership on AuthDB only if there is not already an owner
+            </summary>
+            <param name="dataflow">dataflow code</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignDataflowOwnership(System.String,System.String)">
+            <summary>
+            Assigns a dataflow ownership to an user on AuthDb
+            </summary>
+            <param name="dataflow">dataflow code</param>
+            <param name="username">username</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignMetadataFlowFirstOwnership(System.String)">
+            <summary>
+            Assign MetadataFlow ownership on AuthDB only if there is not already an owner
+            </summary>
+            <param name="metadataFlow">MetadataFlow code</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignMetadataFlowOwnership(System.String,System.String)">
+            <summary>
+            Assigns a metadataFlow ownership to an user on AuthDb
+            </summary>
+            <param name="metadataFlow">MetadataFlow code</param>
+            <param name="username">username</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.AssignsAll(AuthCore.Model.User)">
+            <summary>
+            Assigns all data to an user on AuthDb
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetCategoryHierarchy">
+            <summary>
+            Gets category hierarchy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetCubeHierarchy">
+            <summary>
+            Gets cube hierarchy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetFunctionalityHierarchy">
+            <summary>
+            Gets functionalityHierarchy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetMyCategory">
+            <summary>
+            Gets all categories for the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetCategory(System.String)">
+            <summary>
+            Gets categories for the given user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetMyCube">
+            <summary>
+            Gets cubes for the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetCube(System.String)">
+            <summary>
+            Gets cubes for the given user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetMyFunctionality">
+            <summary>
+            Gets functionalities for the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetFunctionality(System.String)">
+            <summary>
+            Gets functionalities for the given user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetMyAgency">
+            <summary>
+            Gets agencies for the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetAgency(System.String)">
+            <summary>
+            Gets agencies for the given user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetAllAgency">
+            <summary>
+            Gets all agencies
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetAllDataflow">
+            <summary>
+            Gets all dataflow
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetAllMetadataset">
+            <summary>
+            Gets all metadataflow
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetAllRules">
+            <summary>
+            Gets all rule
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.RecoveryPassword(AuthCore.Interface.ISmtpClient,AuthCore.Model.User)">
+            <summary>
+            Checks if username and email are in AuthDB and sends an mail with the new password
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.ChangePassword(AuthCore.Model.User)">
+            <summary>
+            Changes password for specific user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.ChangeMyPassword(AuthCore.Model.User)">
+            <summary>
+            Changes password for the logged user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetMyData">
+            <summary>
+            Gets all user data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetData(System.String)">
+            <summary>
+            Gets all data for a specific user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetOwners(System.String,System.String)">
+            <summary>
+            Gets all data for a specific user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.SetOwners(DataModel.EntityOwners)">
+            <summary>
+            Gets all data for a specific user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.UserController.GetUsers">
+            <summary>
+            Gets all users in the AuthDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DM_API_WS.Controllers.WizardController">
+            <summary>
+            Wizard Page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions},AuthCore.Model.IUserData)">
+            <summary>
+            The constructor.
+            </summary>
+            <param name="config">The configuration.</param>
+            <param name="userData">User's data.</param>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Home">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Index">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Get">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Start">
+            <summary>
+            Start page
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Step01Login(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Performs 1st step of the wizard.
+            </summary>
+            <param name="configData">Configuration data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Step02CheckInizializeAuthDb">
+            <summary>
+            Performs step 2 of the wizard: initializes the AuthDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Step03ExtAuthDb">
+            <summary>
+            Performs step 3 of the wizard: extendss the AuthDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.ExtendAuthDb">
+            <summary>
+            Extends the AuthDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Step04ListMSDB">
+            <summary>
+            Performs step 4 of the wizard: lists all the MSDBs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Step05CheckAll">
+            <summary>
+            Performs step 5 of the wizard: checks DDB, RMDB and MSDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.InizializeAuthDb">
+            <summary>
+            Returns whether the AuthDB is initialized or not.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.InizializeMSDB">
+            <summary>
+            Initializes the MSDB.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.SetMappingStore(System.String)">
+            <summary>
+            Sets the Mapping Store.
+            </summary>
+            <param name="MappingStores"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.InizializeDDB(System.String)">
+            <summary>
+            Initializes the DDB.
+            </summary>
+            <param name="MappingStores"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.InizializeRMDB(System.String)">
+            <summary>
+            Initializes the RMDB.
+            </summary>
+            <param name="MappingStores"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.Utility">
+            <summary>
+            Utility
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.CheckMetaData">
+            <summary>
+            Check MetaData
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.CheckMetaData(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Check MetaData
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.CheckEndPoint">
+            <summary>
+            Check EndPoint
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.CheckEndPoint(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Check EndPoint
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.ChangePassword">
+            <summary>
+            Check MetaData
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Controllers.WizardController.ChangePassword(DM_API_WS.Wizard.Model.ChangePasswordData)">
+            <summary>
+            Check MetaData
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.DTO.DSDParam">
+            <summary>
+            Dataflow parameter input
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.DSDParam.dsd">
+            <summary>
+            Dataflow 
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.DSDParam.separator">
+            <summary>
+            CSV separator 
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.DSDParam.optionsTable">
+            <summary>
+            OptionsTable for filter, select, sort, order data
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.DTO.RMParam">
+            <summary>
+            RM parameter input
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.RMParam.metadata">
+            <summary>
+            Metadata
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.RMParam.msd">
+            <summary>
+            Msd
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.RMParam.reportState">
+            <summary>
+            Report State
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.RMParam.DCAT_IsMultilingual">
+            <summary>
+            DCAT_IsMultilingual annotation value
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.DTO.RMParam.CustomIsPresentational">
+            <summary>
+            CustomIsPresentational annotation value
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.ErrorHandlingMiddleware">
+            <summary>
+            Class for errors management
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.ErrorHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            The constructor.
+            </summary>
+            <param name="next">Request delegate.</param>
+        </member>
+        <member name="M:DM_API_WS.ErrorHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke method.
+            </summary>
+            <param name="context">Http context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DM_API_WS.Wizard.BusinessLogic">
+            <summary>
+            Business logic
+            </summary>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.#ctor(Microsoft.AspNetCore.Http.ISession)">
+            <summary>
+            Business logic.
+            </summary>
+            <param name="session">User session.</param>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.CheckAuthDB(Microsoft.AspNetCore.Http.ISession,Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions},DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Checks if AuthDB is initialized
+            </summary>
+            <param name="session">The current session</param>
+            <param name="authAppConfig">Configuration for authentication component</param>
+            <param name="configData">Configuration data</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.InizializeAuthDb">
+            <summary>
+            Initializes AuthDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.ExtendAuthDB(Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions})">
+            <summary>
+            Extend the AuthDB
+            </summary>
+            <param name="authAppConfig">Configuration for authentication component</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.GetMappingStores(Microsoft.AspNetCore.Http.ISession)">
+            <summary>
+            Returns available mapping stores
+            </summary>
+            <param name="session">The current session</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.SetMappingStore(System.String)">
+            <summary>
+            Sets the mapping store
+            </summary>
+            <param name="mappingStore">mapping store name</param>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.CheckMappingStore">
+            <summary>
+            Checks if the MSDB is correctly configured
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.InizializeMappingStore">
+            <summary>
+            Initilalizes the MSDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.CheckDDB">
+            <summary>
+            Checks if the DDB is correctly initialized
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.InizializeDDB">
+            <summary>
+            Initializes the DDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.CheckRMDB">
+            <summary>
+            Checks if the RMDB is correctly initialized
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.InizializeRMDB">
+            <summary>
+            Initializes the RMDB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.ToSelectList(System.Collections.Generic.List{System.String})">
+            <summary>
+            Returns the list of mapping stores
+            </summary>
+            <param name="mappingStores">The list of mapping stores' names.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.SetUserData(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Sets data for the current user.
+            </summary>
+            <param name="configData">Data to be set.</param>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.GetUserData">
+            <summary>
+            Gets data for the current user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.GetMetadataAPIStatus(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Call a Metadata WS API and return the status result.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.GetEndPointAPIStatus(DM_API_WS.Wizard.Model.ConfigData)">
+            <summary>
+            Call a endpoint API and return the status result.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DM_API_WS.Wizard.BusinessLogic.ChangePassword(DM_API_WS.Wizard.Model.ChangePasswordData,Microsoft.Extensions.Options.IOptionsMonitor{AuthCore.Model.AuthAppOptions},AuthCore.Model.IUserData)">
+            <summary>
+            Changes user's password.
+            </summary>
+            <param name="passwordData">Data for the new password.</param>
+            <param name="authAppConfig">App Configuration.</param>
+            <param name="userData">User's data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DM_API_WS.Wizard.Model.ChangePasswordData">
+            <summary>
+            Class for changing user's password.
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ChangePasswordData.Username">
+            <summary>
+            User's Username
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ChangePasswordData.Password">
+            <summary>
+            User's password
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ChangePasswordData.NewPassword">
+            <summary>
+            New password for the user
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ChangePasswordData.ConfirmPassword">
+            <summary>
+            New password confirmation for the user. of the user
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.Wizard.Model.ChangePasswordResult">
+            <summary>
+            States for Change Passord Operation
+            </summary>
+        </member>
+        <member name="F:DM_API_WS.Wizard.Model.ChangePasswordResult.DbNotInizialied">
+            <summary>
+            Database not initialized
+            </summary>
+        </member>
+        <member name="F:DM_API_WS.Wizard.Model.ChangePasswordResult.InvalidLogin">
+            <summary>
+            Login not valid
+            </summary>
+        </member>
+        <member name="F:DM_API_WS.Wizard.Model.ChangePasswordResult.InvalidPassoword">
+            <summary>
+            Password not valid
+            </summary>
+        </member>
+        <member name="F:DM_API_WS.Wizard.Model.ChangePasswordResult.InvalidConfirmPassword">
+            <summary>
+            Confirmation password not valid
+            </summary>
+        </member>
+        <member name="F:DM_API_WS.Wizard.Model.ChangePasswordResult.Ok">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.Wizard.Model.ConfigData">
+            <summary>
+            Class for data configuration
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.Username">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.MA">
+            <summary>
+            Mapping Assistant
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.AuthDbBaseInitialized">
+            <summary>
+            Whether AuthDb is initilized or not
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.AuthDbExtInitialized">
+            <summary>
+            Whether AuthDb is extended or not
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.MappingStores">
+            <summary>
+            List of mapping stores
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.SelectedMappingStore">
+            <summary>
+            Selected Mapping Store
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.StatusSelectedMappingStore">
+            <summary>
+            Status of the selected Mapping STore
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.ErrorSelectedMappingStore">
+            <summary>
+            Error in Mapping Store Selection
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.StatusDDB">
+            <summary>
+            Status of the DDB
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.ErrorDDB">
+            <summary>
+            DDB Error
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.StatusRMDB">
+            <summary>
+            Status of the RMDB
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.ErrorRMDB">
+            <summary>
+            RMDB Error
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.StepAction">
+            <summary>
+            Action for the step.
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.StepMessage">
+            <summary>
+            Message for the step.
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.AuthDbVersion">
+            <summary>
+            Version of the AuthDB
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.ConfigData.MappingStoreVersion">
+            <summary>
+            Version of the Mapping Store
+            </summary>
+        </member>
+        <member name="T:DM_API_WS.Wizard.Model.EndPointAPIStatusResponse">
+            <summary>
+            Response of the EndPoint API
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.EndPointAPIStatusResponse.StatusCode">
+            <summary>
+            Status Code
+            </summary>
+        </member>
+        <member name="P:DM_API_WS.Wizard.Model.EndPointAPIStatusResponse.StatusMessage">
+            <summary>
+            Status Message
+            </summary>
+        </member>
+    </members>
+</doc>
