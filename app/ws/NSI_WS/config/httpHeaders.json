@@ -1,7 +1,0 @@
-{
-  "httpHeaders": {
-    "varyHeader": {
-      "varyBy": ["Accept", "Accept-Language", "Accept-Encoding"]
-    }
-  }
-}
