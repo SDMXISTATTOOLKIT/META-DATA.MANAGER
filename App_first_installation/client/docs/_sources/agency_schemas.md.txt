@@ -1,0 +1,39 @@
+# Agency Schemes
+
+Selecting **Agency Schemes** from the "Meta Manager" module, the application displays the list of the Node's Agency Schemes similar to the lists of all artefacts present, as explained in [list of artefacts](artefact_lists.md). \
+Selecting an element of the list with the mouse and pressing the View/Edit button, the System shows the Detail mask.
+
+  ![Agency Schemes](_static/img/schema_agenzie.PNG "Agency Schemes")
+ 
+The main section of the Agencies Scheme detail mask contains the following tabs:
++ [**General**](section_general.md)
++ **Items** \
+The Items can be displayed in grid or tree mode. By default the grid view is proposed.
+
+![Items Agencies Schema](_static/img/item2.PNG "Items Agencies Schema")
+
+As an alternative to the insertion of the single items, it is possible to [**import a CSV file**](item_import_file_csv.md) in order to insert them in bulk, otherwise the management functions of the single items are the following: 
+* **Create Item** \
+To create a new Item, the user must use the _Create Item_ button at the top. \
+The System presents the data acquisition mask. \
+The fields to be populated are the following: \
+-- **Identifier Item** (mandatory - alphanumeric) \
+-- **Language** (mandatory - alphanumeric) \
+-- **Item name** (required - alphanumeric) \
+-- **Description** (optional - alphanumeric) \
+-- **Fullname** (optional - alphanumeric) \
+-- **Order** (optional - numeric) \
+-- **Parent** (optional - from a list of items already present) \
+-- [**Annotations**](Annotations.md) (optional - alphanumeric) \
+The new Item is displayed as a record of the grid table and the possible information related to the "Parent Code" is valorized in a column of the grid view.
+* **Add Child** \
+The _Add Child_ button is activated on the "Parent" row and opens a mask with the fields indicated in **Create Item** where obviously the _Parent_ field will be preset with the value of the selected parent. \
+The new Item is inserted with indentation under the Parent code in the "folder" representation. \
+The mask contains the buttons for system acquisition: **Save:** to save and close the mask and **Close:** to close the mask without saving. \
+In the folder view, the order and the parentship of an item can be determined by drag-and-drop operations of the item itself. \
+The user can switch to the folder view by clicking on the "Tree" button.
+
+![Agencies Schema](_static/img/schema_agenzie_albero.PNG "Agencies Schema")
+ 
++ **Categorization** \
+(not yet implemented)

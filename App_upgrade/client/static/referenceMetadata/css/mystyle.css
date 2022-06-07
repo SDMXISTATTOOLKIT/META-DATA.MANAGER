@@ -1,0 +1,344 @@
+body{
+	font-family: 'Fira Sans Condensed', sans-serif !important;
+}
+
+.Cl-Header-Img-Catalog {
+    width:47px;
+    height: 32px;
+}
+
+.Cl-Header-Title-Catalog {
+    font-size:30px;
+}
+
+.Cl-Title-Theme {
+    font-size: 20px;
+}
+
+.Cl-flag-btn-group {
+    float: right;
+}
+
+.Cl-flag-btn{
+	width:80px;
+}
+
+.Cl-Flag{
+	/* width:20px; */
+	/* height:20px; */
+	width: 1.3em;
+    height: 1em;
+	display: inline-block;
+	margin-right:8px;
+	vertical-align: middle;
+}
+
+.Cl-Flag:before{
+	content: "\A0";
+}
+
+.Cl-FlagIT{
+	background-image: url(../media/it.8d15de04.svg);
+}
+
+.Cl-FlagEN{
+	background-image: url(../media/gb.4f1b7af5.svg);
+}
+
+.Cl-dropdown-menu{
+	min-width: 70px;
+	text-align: center;
+}
+
+.pane-title{
+    font-size: 30px;
+    font-weight: bold;	
+}
+
+#introtable {
+	display:none;
+}
+
+.Cl-TitleTable {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #da0d14;/*#ffcc99;*/
+    text-align: center;
+	color:#FFFFFF;
+}
+
+.Cl-TitleSummary {
+    text-align: center;
+    border: solid black 1pt;
+    background-color: #da0d14;/*#ffcc99;*/
+    vertical-align: top;
+	color:#FFFFFF;
+}
+
+.Cl-SubTitleSummary {
+    text-align: center;
+    border: solid black 1pt;
+    border-bottom: none;
+    FONT-SIZE: 11pt;
+    font-weight: normal;
+    /*padding: 1pt 6.45pt 1pt 6.45pt;*/
+    height: 15pt;
+    vertical-align: top;
+}
+
+.Cl-MainTable {
+    border-collapse: collapse;
+    /*border: none;*/
+    width: 100%;
+}
+
+.Cl-SummaryTable {
+    border-collapse: collapse;
+    width: 50%;
+    border-spacing:0px;
+}
+
+.Cl-SummaryTable {
+
+}
+
+.Cl-SummaryItem {
+    border: solid black 1pt;
+    padding: 1pt 6.45pt 1pt 6.45pt;
+    height: 15pt;
+    vertical-align: top;
+    border-top: none;
+    FONT-SIZE: 11pt;
+    font-weight: normal;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  /*text-decoration: none; */
+  color: #333;
+}
+
+.Cl-SummaryItemLink::before {
+	
+}
+
+.Cl-HeaderAttributeTable {
+    width: 100%;
+}
+
+.Cl-AttributeTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.DocCommon, P.DocCommon {
+    FONT-SIZE: 11pt;
+    font-weight: normal;
+    MARGIN: 0;
+    text-align: right;
+	color: #FFFFFF !important;
+}
+
+LI.DocCommon {
+    FONT-SIZE: 11pt;
+    MARGIN: 0;
+}
+
+DIV.DocCommon {
+    FONT-SIZE: 11pt;
+    MARGIN: 0;
+}
+
+.TblBottom {
+    border-collapse: collapse;
+    border: none;
+}
+
+.Cl-Level1 {
+    border: solid black 1pt;
+    background-color: #da0d14;/*#ffcc99;*/
+    color: #000000;
+    padding: 2pt 6.45pt 2pt 6.45pt;
+    vertical-align: top;
+}
+
+.Cl-Level1, .Cl-Level1-NoBorder {
+    FONT-SIZE: 16pt;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+	color:#FFFFFF;
+}
+
+.Cl-Level2 {
+    border: solid black 1pt;
+    padding: 1pt 6.45pt 1pt 6.45pt;
+    background-color: #c7c4c4;/*#ffffcc;*/
+    /*vertical-align: top;*/
+}
+
+.Cl-Level2 {
+    FONT-SIZE: 11pt;
+    font-weight: bold;
+    width: 206px;
+}
+
+.Cl-Content {
+    border: solid black 1pt;
+    padding: 1pt 6.45pt 1pt 6.45pt;
+    height: 15pt;
+    vertical-align: top;
+}
+
+.Cl-Content {
+    FONT-SIZE: 11pt;
+    font-weight: normal;
+}
+
+.Cl-AttributeAttachedFileDownloadButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.Cl-DownloadReportLink {
+    cursor: pointer;
+    font-size: 16px;
+    /*background-color: #ffffcc;
+    border-radius: 5px;*/
+}
+
+a.reportTab {
+  color: black !important;
+  text-decoration: none !important; /* no underline */
+
+}
+
+/*DCAT-APTemplate*/
+.Cl-ColHeaderReports {
+    border: solid black 1pt;
+    background-color: #da0d14;/*#ffcc99;*/
+    color: #000000;
+    padding: 2pt 6.45pt 2pt 6.45pt;
+    vertical-align: top;
+    FONT-SIZE: 16pt;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    column-span: all;
+}
+
+.Cl-ColReports {
+    FONT-SIZE: 16pt;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    column-span: all;
+	color:#FFFFFF;
+}
+
+/*CategoryTemplate e MetadatasetTemplate*/
+.leaf {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .ctools-toggle {
+            padding-left: 40px;
+        }
+
+        .ctools-content {
+            background-color: #e7e6e4;
+        }
+
+        .field-label {
+            font-weight: bold;
+        }
+
+        .vista-generale {
+            margin-top: 20px;
+            margin-bottom: 18px;
+            border-left: 6px solid #e0e0e0;
+            padding: 15px;
+            box-shadow: #ccc 1px 1px;
+        }
+
+        header {
+            color: #5A6772;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        ul li.collapsed, ul li.expanded, ul li.leaf {
+            list-style: none;
+        }
+
+
+/*MetadatasetTemplate*/
+
+.preloader__background {
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        top: 0;
+                                        left: 0;
+                                        background: #545456
+                                    }
+
+                                    .preloader__center {
+                                        position: absolute;
+                                        width: 300px;
+                                        height: 150px;
+                                        left: 50%;
+                                        top: 50%;
+                                        margin: -75px 0 0 -150px;
+                                        text-align: center
+                                    }
+
+                                    .preloader__logo {
+                                        position: absolute;
+                                        width: 100px;
+                                        top: 0;
+                                        left: 50%;
+                                        margin-left: -50px
+                                    }
+
+                                    .preloader__image {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        margin: -15px 0 0 -15px;
+                                        color: #fff
+                                    }
+
+                                    @keyframes loadingCircle {
+                                        100% {
+                                            -webkit-transform: rotate(360deg);
+                                            transform: rotate(360deg)
+                                        }
+                                    }
+
+                                    .preloader__spinner__icon {
+                                        animation: loadingCircle 1s infinite linear
+                                    }
+
+                                    .preloader__message {
+                                        position: absolute;
+                                        width: 300px;
+                                        bottom: 0;
+                                        font-family: sans-serif;
+                                        text-align: center;
+                                        margin: auto;
+                                        color: #fff;
+                                        font-size: 16px
+                                    }
+
+                                    .preloader__error-icon {
+                                        display: none
+                                    }

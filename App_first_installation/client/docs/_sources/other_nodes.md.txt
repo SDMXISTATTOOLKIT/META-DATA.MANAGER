@@ -1,0 +1,108 @@
+# Other Node configurations
+
+To configure/edit a Node the user must access the function Configuration -- > Nodes. The system requires access as SuperUser. \
+Once logged in and selected the node to be modified, it is possible to choose the section on which to take action:
+
+* General
+* Agency
+* Endpoint
+
+These first 3 sections are necessary for the [node creation](new_node.md). \
+Let's look at the next ones:
+
+* **Custom Annotations**
+This section allows the user to define the Annotation table for the Node in terms of Tab Annotation Name, Annotation Name, Annotation Visibility, Explosion or Collapse of multi-line texts. \
+After setting the required fields, the user saves the settings using the save function represented by the Save button. \
+Multiple annotations can be configured using the Add Annotation function. \
+This section allows the configuration of Custom Annotations. To define annotations, the necessary elements are:
+    + Name
+    + List of custom annotations that can be acquired by typing in the annotation name.
+    
+![Custom annotations](_static/img/annotazioni_custom.PNG "Custom annotations")
+
+* **Anotations** 
+This section allows the user to view/edit standard annotations (also called working annotations), e.g. those of the OECD
+
+![Annotations](_static/img/annotazioni_OECD.PNG "Annotations")
+
+    
+   These annotations have been configured in the node to give greater flexibility to the annotation itself. \
+   The TYPE of an annotation, in fact, could theoretically change according to the Data Viewer external to the Suite that will be used (e.g. the type=LAYOUT_ROW could in a certain viewer be called TABLE_LAYOUT_ROW) so, for this reason, in each node, during configuration, the user has the possibility to redefine the TYPE of the Working Annotations as shown in the previous image.
+
+The list of currently used annotations and their use is shown below:
+
+**Order annotations** 
+  * Concepts order - Annotation to manage the ordering of concepts in a concept scheme
+  * Categories order - Annotation to manage the ordering of the categories of a category scheme
+  * Codes order - Annotation for sorting the codes of a codelist
+  * Categorisations order - Annotation to manage the sorting between categorisations at the same hierarchical level
+  
+**Layout annotations** 
+  * Table layout row - Dimensions to be shown in rows in the table layout 
+  * Table layout column - Dimensions to be shown in columns in the table layout
+  * Table layout filter - Dimensions to be shown in filters in the table layout
+  * Table layout row section - Dimensions to be shown in section in the table layout 
+  * Chart layout primary dimension - Dimension to show as primary in the chart layout
+  * Chart layout secondary dimension - Dimension to be shown as secondary in the chart layout
+  * Chart layout filter - Dimensions to be shown in filters in the chart layout
+  * Keywords - List of keywords associated to a dataflow
+  * Criteria selection - Default selection mode for the Data Browser
+  * Attached data files - file formats for which download is possible
+  * Default view - Default view of the dataflow in the Data Browser (table, graph or map)
+  * Decimal separator - Character to be used as decimal separator in the Data Browser 
+  * Number of decimals - Number of decimals for the table representation in the Data Browser 
+  * Metadata URL - Metadata url
+  * Empty cell placeholder - Characters to be used to replace any empty cells in the Data Browser 
+  * Dataflow notes - Notes associated with the dataflow
+  * Geo ID - Id of the geographical dimension
+  * Dataflow source - Source of the dataflow (e.g. Eurostat)
+  * Hidden - Dataflow to be hidden in the Data Browser catalogue
+  * Not displayed - Dimension (or its values) to be hidden
+  * Full name - Full name of an item in an itemscheme
+  * Default - Default values for a dimension (they are used to initialise the Criteria in the Data Browser)
+ 
+
+**Working annotations** 
+  * Virtual Dataflow Node - Indicates that a dataflow type is linked and specify the node to which the dataflow is linked
+  * DDB dataflow - Indicates that a dataflow has its counterpart on the Dissemination Database (and therefore has associated data).
+  * Custom DSD - Indicates that the DSD has been built automatically after a dimensions reduction when building the data using the Dataflow Builder.
+  * Associated cube - Indicates that the DSD has an associated cube
+  * Changed - Indicates that the final codelist was subsequently changed
+  * Metadataset - Metadataset associated with the artefact
+  * Have metadata - Indicates that the dataflow has associated metadata
+  * Restricted for publication - Indicates that there are restrictions for publication
+  * Attached file path - Indicates the path of any attachments
+  * DCAT is multilingual - Indicates that a DCAT attribute is multilingual.
+  * Custom is presentational - Indicates that an attribute is 'Presentational'.
+  * Last update - Indicates the date of last modification of the dataflow data.
+  * Dataflow catalog type - Identify dataflow type (e.g. normal, virtual, linked). 
+  
+**Proxy** \
+The section allows the user to define the Proxy for the Node in terms of Enabled, Address, Port, Username, Password. After having set the fields, the SuperUser saves the settings through the save function represented by the Save button.
+It is left to the System administrator to assess the need for the definition of a network proxy in the organisation.
+
+![Proxy](_static/img/conf_proxy.PNG "Proxy")
+
+**Search** \
+This section allows the user to define the Search mode for the Node excluding Code Lists and Concept Schemes, set with Identifier, by means of the relative buttons __Add Code List__ and __Add Concept Scheme__. \
+This function allows the Super User to insert an additional Code in the exclusion lists. \
+Alternatively a Code in exclusion can be deleted by means of the delete function represented by a trash can icon. \
+The SuperUser, after setting the information he needs, saves the configuration by clicking the Save button.
+
+![Search](_static/img/Conf_ricerca.PNG "Search")
+ 
+**DCAT-AP_IT** \
+The DCAT-AP_IT section allows the user to define the URN parameters for the MSD, the SuperUser can choose, through a drop-down menu, which is the suitable MSD and saves the choice through the Save button.
+
+![DCAT-AP_IT](_static/img/Conf_dcat.PNG "DCAT-AP_IT")
+  
+**Data Browser** \
+The Data Browser section allows the user to define the parameters related to the Data Browser platform to which the user can connect to:
+  * view the dataflows published (by clicking in the section 'Data Manager' - 'Dataflow Builder' ); 
+  * allow the cleaning of the catalogue cache (by clicking in the section 'Data Manager' - 'Update Data Browser Cache' );
+  * allow the cleaning of the dataflow cache at the moment of its publication in the section 'Data Manager' - 'Dataflow builder'.
+
+In this section the user enters the Data Browser url (used to view the data), the ID of the node to manage and, if cache management is wanted, the user checks, 
+the box 'Allow cache refresh' by entering also URL of the Data Browser API, authentication credentials of the node on the Data Browser, any credentials for authentication http or any proxy.
+
+![Data Browser](_static/img/Conf_databrowser.PNG "Data Browser")

@@ -1,0 +1,13 @@
+# Metadata Structure Definitions
+
+Selecting **Metadata Structure Definitions** from the "Meta Manager" module the application displays the list of Metadata Structure Definitions of the Node similar to the lists of all artefacts present, as explained in [list of artefacts](artefact_lists.md). \
+Selecting an item in the list with the mouse and pressing the View/Edit button, the system displays the Detail mask.
+
+ ![ Metadata Structure Definitions](_static/img/MSD.PNG " Metadata Structure Definitions")
+ 
+ This is a particular SDMX artefact and represents a template for reporting and dissemination of reference metadata. \
+ The Suite does not provide the creation of new artefacts of this type, so user can only [import an external MSD](import_artefact.md) through the import button in the top right corner of the MSD List.
+ 
+  ![ Metadata Structure Definitions](_static/img/MSD2.PNG " Metadata Structure Definitions")
+ 
+ 

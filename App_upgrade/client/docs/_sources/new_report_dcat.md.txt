@@ -1,0 +1,87 @@
+# Compilation of a DCAT-AP_IT report
+
+DCAT-AP_IT is a standard for meta information of catalogues, which allows the user to create metadata for the catalogue and for the dataflows categorised in it, so the dedicated DCAT-AP_IT MSD has been modelled by introducing two targets:
+* The CATALOGUE target
+* The DATAFLOW target
+
+so the user can create a report for each of the two targets. \
+All users can create/edit/expose/delete a DCAT-AP_IT report if and only if they own the Dataflow for which they want to create the report, regardless of the permissions on the Metadataflow. \
+The role of ownership of a Dataflow can be transferred to other users directly from the Dataflow display interface.
+On the line relative to the Metadata Set DCAT-AP_IT chosen:
+
+![METADATASET](_static/img/dcat_lista_metadataset2.PNG "METADATASET")
+ 
+the user can insert new reports by clicking on the button "Report List"
+
+![METADATASET](_static/img/dcat_pulsanti.PNG "METADATASET")
+ 
+which will open the list of reports (if any):
+
+![METADATASET](_static/img/nuovo_report_dcat.PNG "METADATASET")
+ 
+from which you can create a report for the catalogue with "Create Report":
+ 
+![METADATASET REPORT](_static/img/dcat_dettagli_report1.PNG "REPORT METADATASET")
+
+which obviously refers to the metadataflow relative to the initial DCAT-AP_IT and, by pressing "Next", requires the user to fill in a series of attributes that will be associated with the catalogue:
+
+* Catalogue title
+* Description
+* Identifier
+* Etc...
+
+![METADATASET](_static/img/dcat_dettagli_report2.PNG "METADATASET")
+
+The report will be actually saved and will become publishable only after the user has filled in all mandatory fields. \
+The intermediate saves, during which the user will have on screen the report of the missing fields, will be only working drafts. \
+Only one report of this type is possible per catalog:
+
+![METADATASET](_static/img/dcat_lista_report.PNG "METADATASET").
+
+Then by pressing again "Create Report" it is possible to create a report for the dataflow:
+
+![REPORT METADATASET](_static/img/dcat_dettagli_report3.PNG "REPORT METADATASET")
+ 
+and also in this case by pressing "Next" the system requires the user to fill in a series of attributes that will be associated with the dataflow:
+
+* Description of the dataset
+* Date of last modification
+* Theme of the dataset
+* Etc.
+ 
+![REPORT METADATASET](_static/img/dcat_dettagli_report4.PNG "REPORT METADATASET")
+
+similarly, the report will actually be saved and will become publishable only after the user has filled in all mandatory fields. \
+The user can create more than one type of report.
+
+![METADATASET](_static/img/dcat_lista_report2.PNG "METADATASET").
+
+Once the report is saved, the user can use a series of tools on the line corresponding to the report of interest:
+   * **Publish Report via API** \.
+   To make the data of a report accessible via API, after checking the necessary permissions, the user can use the button "Expose via API", in this way he can access the report data in SDMX-JSON format also by calling the appropriate REST web service. 
+   
+   ![Report](_static/img/report4.PNG "Report")
+
+   **Open information page** - **Copy info page link** \
+   For each report exposed via API an HTML view is available. \
+   In order to access directly from the interface to this visualisation, it will be sufficient to select with the mouse the button "Open information page" on the row corresponding to the report:
+   
+   ![Report](_static/img/report5.PNG "Report")
+   
+   And a pop-up window like the following will open, which can also be downloaded in HTML:
+   
+   ![Report](_static/img/report6_DCAT.PNG "Report")
+   
+   If the user wants to embed this visualization in different contexts, he can obtain the link by clicking on the "Copy information page link" button.
+
+   * **Copy Metadata API Request Link** \
+   If the user wants to access the report data in SDMX-JSON format also through the call to the proper REST web service, he will be able to get the link through the button "Copy Metadata API Request Link". 
+   
+   ![Report](_static/img/report7_DCAT.PNG "Report")
+   
+   * **Remove from API - Delete** \
+   It is possible to cancel the publication of a report using the "Remove from API" button and to delete it with the "Delete" button, taking care to delete the dataflows first, otherwise the report in the catalogue cannot be deleted.
+
+
+
+

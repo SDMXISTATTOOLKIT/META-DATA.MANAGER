@@ -1,0 +1,2817 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter">
+            <summary>
+            Converts between strings and bytes
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter.ConvertToHex(System.Byte[])">
+            <summary>
+            Converts the specified <paramref name="bytes"/> to hexadecimal representation.
+            </summary>
+            <param name="bytes">The bytes.</param>
+            <returns>a string with hex-decimal numbers</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter.ConvertToBase64(System.Byte[])">
+            <summary>
+            Converts the specified <paramref name="bytes"/> to Base64 representation.
+            </summary>
+            <param name="bytes">The bytes.</param>
+            <returns>a base 64 representation of the <paramref name="bytes"/></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter.ConvertFromHex(System.String)">
+            <summary>
+            Converts from hexadecimal.
+            </summary>
+            <param name="hex">The hexadecimal.</param>
+            <returns>The bytes converted from a string containing hexadecimal</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter.ConvertToBytes(System.String)">
+            <summary>
+            Converts the specified value to bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>An array of bytes</returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder">
+            <summary>
+            Hash builder
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder._bytesConverter">
+            <summary>
+            The bytes converter
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder.#ctor(Estat.Sri.MappingStoreRetrieval.Builder.BytesConverter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder" /> class.
+            </summary>
+            <param name="bytesConverter">The bytes converter.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder.Build(System.String,System.Byte[],System.String)">
+            <summary>
+            Builds the specified hash for <paramref name="plainText"/> + <paramref name="salt"/> using the <paramref name="algorithm"/>.
+            </summary>
+            <param name="plainText">The plain text.</param>
+            <param name="salt">The salt.</param>
+            <param name="algorithm">The algorithm.</param>
+            <returns>
+            The hash
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.HashBuilder.Build(System.Byte[],System.Byte[],System.String)">
+            <summary>
+            Builds the specified hash for <paramref name="plainText"/> + <paramref name="salt"/> using the <paramref name="algorithm"/>.
+            </summary>
+            <param name="plainText">The plain text.</param>
+            <param name="salt">The salt.</param>
+            <param name="algorithm">The algorithm.</param>
+            <returns>The hash</returns>
+            <exception cref="T:System.ArgumentNullException">
+            plainText
+            or
+            salt
+            or
+            algorithm
+            </exception>
+            <exception cref="T:System.ArgumentException">Invalid <paramref name="algorithm"/></exception>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Builder.SaltBuilder">
+            <summary>
+            A (crypto) Salt builder 
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Builder.SaltBuilder.Size">
+            <summary>
+            The size
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Builder.SaltBuilder._cryptoService">
+            <summary>
+            The random crypto service
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Builder.SaltBuilder.Build">
+            <summary>
+            Builds the salt
+            </summary>
+            <returns>The bytes containing bytes</returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager">
+            <summary>
+                Mapping Store related configuration manager
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager.EstatNsiMappingStore">
+            <summary>
+                The .config section that holds the configuration
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager._instance">
+            <summary>
+                The singleton instance
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager._config">
+            <summary>
+                The Mapping Store configuration section
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager.Config">
+            <summary>
+                Gets the Mapping Store configuration section
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.ConfigManager.Instance">
+            <summary>
+                Gets the singleton instance
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever">
+            <summary>
+            The connection string helper.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever._format">
+            <summary>
+            The format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever._formatProvider">
+            <summary>
+            The format provider
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever"/> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever"/> class.
+            </summary>
+            <param name="format">The connection string format.</param>
+            <param name="formatProvider">The format provider.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.ConnectionStringRetriever.GetConnectionStringSettings(System.String)">
+            <summary>
+            Gets the connection string settings.
+            </summary>
+            <param name="connectionName">
+            Name of the connection.
+            </param>
+            <returns>
+            The <see cref="T:System.Configuration.ConnectionStringSettings"/>.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting">
+            <summary>
+                This element allow to configure database related settings per database provider. Such as parameter format
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> class with the specified
+                <paramref name="providerName" />
+            </summary>
+            <param name="providerName">
+                Sets the <see cref="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.Provider" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.CastToString">
+            <summary>
+                Gets or sets the cast to add at WHERE clauses when comparing against DATE fields
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.DateCast">
+            <summary>
+                Gets or sets the cast to add at WHERE clauses when comparing against DATE fields
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.ParameterMarkerFormat">
+            <summary>
+                Gets or sets a value indicating whether the substring command requires the length parameter
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.Provider">
+            <summary>
+                Gets or sets the Mapping Store DDB provider (driver name)
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.SubQueryOrderByAllowed">
+            <summary>
+                Gets or sets a value indicating whether an SQL ORDER BY is allowed in a sub query.
+            </summary>
+            <remarks>Using ORDER BY is not usually a good idea. This flag just indicates if it is allowed.</remarks>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.SubstringCommand">
+            <summary>
+                Gets or sets the substring command
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.SubstringCommandRequiresLength">
+            <summary>
+                Gets or sets a value indicating whether the substring command requires the length parameter
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.CommandTimeout">
+            <summary>
+            Gets or sets the command timeout. Set to -1 to use the provider default.
+            </summary>
+            <value>
+            The command timeout.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.ReservedKeywordToStringFormat">
+            <summary>
+            Gets or sets the reserved keyword ToString format.
+            </summary>
+            <value>
+            The reserved keyword ToString format.
+            </value>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection">
+            <summary>
+                Collection of <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> elements.
+                They are used to store database related configuration, not for connecting but provider and some behavior
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection" /> class and specify the defaults.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.IsReadOnly">
+            <summary>
+                Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.
+            </summary>
+            <returns>
+                true if the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Item(System.Int32)">
+            <summary>
+                Gets or sets the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> at the specified <paramref name="index" />
+            </summary>
+            <param name="index">
+                The index.
+            </param>
+            <returns>The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> at the specified <paramref name="index" /></returns>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Item(System.String)">
+            <summary>
+                Gets or sets the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> at the specified <paramref name="name" />
+            </summary>
+            <param name="name">
+                The name.
+            </param>
+            <returns>The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> at the specified <paramref name="name" /></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Add(Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting)">
+            <summary>
+                Add <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> to this collection
+            </summary>
+            <param name="item">
+                The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Clear">
+            <summary>
+                Clear all <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" />
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Contains(Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting)">
+            <summary>
+                Determines whether the <see cref="T:System.Collections.Generic.ICollection`1" /> contains a specific value.
+            </summary>
+            <returns>
+                true if <paramref name="item" /> is found in the <see cref="T:System.Collections.Generic.ICollection`1" />;
+                otherwise, false.
+            </returns>
+            <param name="item">
+                The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.CopyTo(Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting[],System.Int32)">
+            <summary>
+                Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1" /> to an
+                <see cref="T:System.Array" />, starting at a particular <see cref="T:System.Array" /> index.
+            </summary>
+            <param name="array">
+                The one-dimensional <see cref="T:System.Array" /> that is the destination of the elements copied from
+                <see cref="T:System.Collections.Generic.ICollection`1" />. The <see cref="T:System.Array" /> must have zero-based
+                indexing.
+            </param>
+            <param name="arrayIndex">
+                The zero-based index in <paramref name="array" /> at which copying begins.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="array" /> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="arrayIndex" /> is less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="array" /> is multidimensional.
+                -or-
+                <paramref name="arrayIndex" /> is equal to or greater than the length of <paramref name="array" />.
+                -or-
+                The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1" /> is greater than the
+                available space from <paramref name="arrayIndex" /> to the end of the destination <paramref name="array" />.
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Remove(Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting)">
+            <summary>
+                Remove the specified <paramref name="item" />
+            </summary>
+            <param name="item">
+                The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> to remove
+            </param>
+            <returns>
+                <c>true</c> if the <paramref name="item" /> was removed. Otherwise <c>false</c>
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.Remove(System.String)">
+            <summary>
+                Remove the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> with the specified <paramref name="name" />
+            </summary>
+            <param name="name">
+                The <see cref="P:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting.Provider" /> of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> to remove
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.RemoveAt(System.Int32)">
+            <summary>
+                Remove the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> at the specified <paramref name="index" />
+            </summary>
+            <param name="index">
+                The index of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> to remove
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.System#Collections#Generic#IEnumerable{Estat#Sri#MappingStoreRetrieval#Config#DatabaseSetting}#GetEnumerator">
+            <summary>
+                Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+                A <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.CreateNewElement(System.String)">
+            <summary>
+                Creates a new <see cref="T:System.Configuration.ConfigurationElement" /> when overridden in a derived class.
+            </summary>
+            <returns>
+                A new <see cref="T:System.Configuration.ConfigurationElement" />.
+            </returns>
+            <param name="elementName">
+                The name of the <see cref="T:System.Configuration.ConfigurationElement" /> to create.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.CreateNewElement">
+            <summary>
+                Creates a <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" /> element
+            </summary>
+            <returns>
+                A new <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSetting" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DatabaseSettingCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+                Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <returns>
+                An <see cref="T:System.Object" /> that acts as the key for the specified
+                <see cref="T:System.Configuration.ConfigurationElement" />.
+            </returns>
+            <param name="element">
+                The <see cref="T:System.Configuration.ConfigurationElement" /> to return the key for.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection">
+            <summary>
+                The dataflow configuration section.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection.IgnoreExternalUsage">
+            <summary>
+                Gets or sets a value indicating whether ignore external usage for data.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection.IgnoreProductionForData">
+            <summary>
+                Gets or sets a value indicating whether ignore production for data.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection.IgnoreProductionForStructure">
+            <summary>
+                Gets or sets a value indicating whether ignore production for dataflow retrieval. 
+                Except for data, for that use <see cref="P:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection.IgnoreProductionForData" />
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.DataflowConfigurationSection.IsReadOnly">
+            <summary>
+                Gets a value indicating whether the <see cref="T:System.Configuration.ConfigurationElement" /> object is read-only.
+            </summary>
+            <returns>
+                true if the <see cref="T:System.Configuration.ConfigurationElement" /> object is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection">
+            <summary>
+                Mapping store related configuration
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection.DefaultHashAlgorithm">
+            <summary>
+            Gets or sets the default hash algorithm.
+            </summary>
+            <value>
+            The default hash algorithm.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection.DataflowConfiguration">
+            <summary>
+                Gets the dataflow Settings
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection.DisseminationDatabaseSettings">
+            <summary>
+                Gets Dissemination Database (DDB) Settings
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection.GeneralDatabaseSettings">
+            <summary>
+                Gets Dissemination Database (DDB) Settings
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants">
+            <summary>
+                The default Mapping store DB DB_TYPE to DB provider values
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.MySqlName">
+            <summary>
+                The default name used for MySQL DDB at Mapping Store database
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.MySqlProvider">
+            <summary>
+                The default provider for MySQL
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.OracleName">
+            <summary>
+                The default name used for Oracle DDB at Mapping Store database
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.OracleProvider">
+            <summary>
+                The default provider for Oracle
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.OracleProviderOdp">
+            <summary>
+                The alternative provider for Oracle
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.OracleManagedProviderOdp">
+            <summary>
+            The new oracle managed provider Oracle (install free)
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.PCAxisName">
+            <summary>
+                The default name used for PCAxis DDB at Mapping Store database
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.PCAxisProvider">
+            <summary>
+                The default provider for PCAxis
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.SqlServerName">
+            <summary>
+                The default name used for SQL Server DDB at Mapping Store database
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreDefaultConstants.SqlServerProvider">
+            <summary>
+                The default provider for SQL Server
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting">
+            <summary>
+                This element allow to configure database related settings. Such mapping store vendor name and database provider
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> class with the specified
+                <paramref name="name" />
+            </summary>
+            <param name="name">
+                Sets the <see cref="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.Name" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.Name">
+            <summary>
+                Gets or sets the Mapping Store DDB vendor name
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.Provider">
+            <summary>
+                Gets or sets the Mapping Store DDB provider (driver name)
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.IsReadOnly">
+            <summary>
+                Gets a value indicating whether the <see cref="T:System.Configuration.ConfigurationElement" /> object is read-only.
+            </summary>
+            <returns>
+                true if the <see cref="T:System.Configuration.ConfigurationElement" /> object is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection">
+            <summary>
+                Collection of <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> elements.
+                They are used to store database related configuration, not for connecting but provider and some behavior
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection" /> class and specify the
+                defaults.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.IsReadOnly">
+            <summary>
+                Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only.
+            </summary>
+            <returns>
+                true if the <see cref="T:System.Collections.Generic.ICollection`1" /> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Item(System.Int32)">
+            <summary>
+                Gets or sets the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> at the specified <paramref name="index" />
+            </summary>
+            <param name="index">
+                The index.
+            </param>
+            <returns>The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> at the specified <paramref name="index" /></returns>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Item(System.String)">
+            <summary>
+                Gets or sets the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> at the specified <paramref name="name" />
+            </summary>
+            <param name="name">
+                The name.
+            </param>
+            <returns>The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> at the specified <paramref name="name" /></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Add(Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting)">
+            <summary>
+                Add <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> to this collection
+            </summary>
+            <param name="item">
+                The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Clear">
+            <summary>
+                Clear all <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" />
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Contains(Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting)">
+            <summary>
+                Determines whether the <see cref="T:System.Collections.Generic.ICollection`1" /> contains a specific value.
+            </summary>
+            <returns>
+                true if <paramref name="item" /> is found in the <see cref="T:System.Collections.Generic.ICollection`1" />;
+                otherwise, false.
+            </returns>
+            <param name="item">
+                The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1" />.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.CopyTo(Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting[],System.Int32)">
+            <summary>
+                Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1" /> to an
+                <see cref="T:System.Array" />, starting at a particular <see cref="T:System.Array" /> index.
+            </summary>
+            <param name="array">
+                The one-dimensional <see cref="T:System.Array" /> that is the destination of the elements copied from
+                <see cref="T:System.Collections.Generic.ICollection`1" />. The <see cref="T:System.Array" /> must have zero-based
+                indexing.
+            </param>
+            <param name="arrayIndex">
+                The zero-based index in <paramref name="array" /> at which copying begins.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="array" /> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="arrayIndex" /> is less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="array" /> is multidimensional.
+                -or-
+                <paramref name="arrayIndex" /> is equal to or greater than the length of <paramref name="array" />.
+                -or-
+                The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1" /> is greater than the
+                available space from <paramref name="arrayIndex" /> to the end of the destination <paramref name="array" />.
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Remove(Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting)">
+            <summary>
+                Remove the specified <paramref name="item" />
+            </summary>
+            <param name="item">
+                The <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> to remove
+            </param>
+            <returns>
+                <c>true</c> if the <paramref name="item" /> was removed. Otherwise <c>false</c>
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.Remove(System.String)">
+            <summary>
+                Remove the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> with the specified <paramref name="name" />
+            </summary>
+            <param name="name">
+                The <see cref="P:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting.Name" /> of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> to remove
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.RemoveAt(System.Int32)">
+            <summary>
+                Remove the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> at the specified <paramref name="index" />
+            </summary>
+            <param name="index">
+                The index of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> to remove
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.System#Collections#Generic#IEnumerable{Estat#Sri#MappingStoreRetrieval#Config#MastoreProviderMappingSetting}#GetEnumerator">
+            <summary>
+                Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+                A <see cref="T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.CreateNewElement(System.String)">
+            <summary>
+                Creates a new <see cref="T:System.Configuration.ConfigurationElement" /> when overridden in a derived class.
+            </summary>
+            <returns>
+                A new <see cref="T:System.Configuration.ConfigurationElement" />.
+            </returns>
+            <param name="elementName">
+                The name of the <see cref="T:System.Configuration.ConfigurationElement" /> to create.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.CreateNewElement">
+            <summary>
+                Creates a <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" /> element
+            </summary>
+            <returns>
+                A new <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSetting" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Config.MastoreProviderMappingSettingCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+                Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <returns>
+                An <see cref="T:System.Object" /> that acts as the key for the specified
+                <see cref="T:System.Configuration.ConfigurationElement" />.
+            </returns>
+            <param name="element">
+                The <see cref="T:System.Configuration.ConfigurationElement" /> to return the key for.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants">
+            <summary>
+                MASTORE setting (element tag names and attribute names) constants
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.DefaultHashAlgorithmName">
+            <summary>
+            The default hash algorithm
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.CastToString">
+            <summary>
+                The attribute name for the DB INT to VARCHAR cast string
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.DataflowConfiguration">
+            <summary>
+                The element tag name for the Dataflow section
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.DateCast">
+            <summary>
+                The attribute name for the DB Date cast string
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.DisseminationDatabaseSettings">
+            <summary>
+                The element tag name for the DB Mappings collection
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.GeneralDatabaseSettings">
+            <summary>
+                The element tag name for the DB settings collection
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.IgnoreExternalUsage">
+            <summary>
+                The attribute name of the flag for ignoring the external usage for MappingSetRetriever.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.IgnoreProduction">
+            <summary>
+                The attribute name of the flag for ignoring the production flag for dataflow retrieval (except MappingSetRetriever.
+                <see cref="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.IgnoreProductionForData" />.)
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.IgnoreProductionForData">
+            <summary>
+                The attribute name of the flag for ignoring the production flag for MappingSetRetriever.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.MySqlElementName">
+            <summary>
+                The element tag name for the MYSQL mapping
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.MySqlParameterFormat">
+            <summary>
+                The MySQL Parameter Marker format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.NameAttributeName">
+            <summary>
+                The attribute name for the Mapping Store DB_CONNECTION.DB_TYPE database name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.DllName">
+            <summary>
+              the name of the dll for the provider factory class 
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.FactoryClass">
+            <summary>
+              the name of the provider factory class 
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.OdbcParameterFormat">
+            <summary>
+                The ODBC Parameter Marker format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.OracleMySqlDateCast">
+            <summary>
+                The cast used for date fields in Oracle and MySQL
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.OracleParameterFormat">
+            <summary>
+                The Oracle Parameter Marker format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.ParameterMarkerFormat">
+            <summary>
+                The attribute name for the attribute indicating whether the substring requires length
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.ProviderAttributeName">
+            <summary>
+                The attribute name for the DB provider/driver
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SqlServerParameterFormat">
+            <summary>
+                The SQL Server Parameter Marker format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SqlServerSubString">
+            <summary>
+                The SQL Server SQL SUBSTRING command
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.StandardSubString">
+            <summary>
+                The common SQL SUBSTRING command
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SubQueryOrderBy">
+            <summary>
+                The attribute name of the flag for specifying if an SQL ORDER BY is allowed in a sub query.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SubStringAttributeName">
+            <summary>
+                The attribute name for the DB substring command
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SubStringNeedsLength">
+            <summary>
+                The attribute name for the attribute indicating whether the substring requires length
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.AddInsertNewItems">
+            <summary>
+            The add insert new items
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.ReservedKeywordToStringFormat">
+            <summary>
+            The reserved keyword ToString format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.SqlServerReservedKeywordToStringFormat">
+            <summary>
+            The sql server reserved keyword ToString format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.OracleReservedKeywordToStringFormat">
+            <summary>
+            The oracle reserved keyword ToString format
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Config.SettingConstants.MySqlReservedKeywordToStringFormat">
+            <summary>
+            The MySql reserved keyword ToString format
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension">
+            <summary>
+                This class contains various database extension methods.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.HasFieldName(System.Data.IDataRecord,System.String)">
+            <summary>
+                Determines whether the specified <paramref name="reader" /> has a field with the specified
+                <paramref name="fieldName" />
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="fieldName">Name of the field.</param>
+            <returns>True if there is a field with name <paramref name="fieldName" />; otherwise false</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.ToDbValue(System.Boolean)">
+            <summary>
+                Convert the specified <paramref name="value" /> to a value suitable for Mapping Store.
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.ToDbValue(System.Nullable{System.Boolean})">
+            <summary>
+                Convert the specified <paramref name="value" /> to a value suitable for Mapping Store.
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.ToDbValue(System.Int64)">
+            <summary>
+                Convert the specified <paramref name="value" /> to a value suitable for Mapping Store.
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.ToDbValue``1(System.Nullable{``0})">
+            <summary>
+                Convert the specified <paramref name="value" /> to a value suitable for Mapping Store.
+            </summary>
+            <typeparam name="T">The type of</typeparam>
+            <param name="value">The value.</param>
+            <returns>
+                The normalized for DB object.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.ToDbValue``1(System.Nullable{``0},System.Object)">
+            <summary>
+                Convert the specified <paramref name="value" /> to a value suitable for Mapping Store.
+            </summary>
+            <typeparam name="T">The type of</typeparam>
+            <param name="value">The value.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>
+                The normalized for DB object.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.CreateCommand(System.Data.Common.DbConnection,System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+            Creates the command. This is mostly used for DDB access since PcAxis will fail.
+            </summary>
+            <param name="connection">The connection.</param>
+            <param name="sql">The SQL.</param>
+            <param name="originalParameters">The original parameters.</param>
+            <returns>The DB Command</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.Execute(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,Estat.Sri.Utils.Model.SimpleParameter[])">
+            <summary>
+            Executes the specified SQL statement.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="sqlStatementFormat">The SQL statement format.</param>
+            <param name="simpleParameters">The simple parameters.</param>
+            <returns>The number of records affected.</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.QuerySimple``1(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,Estat.Sri.Utils.Model.SimpleParameter[])">
+            <summary>
+            Queries the specified SQL statement.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="sqlStatementFormat">The SQL statement format.</param>
+            <param name="simpleParameters">The simple parameters.</param>
+            <returns>The number of records affected.</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DatabaseExtension.UsingConnection``1(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.Func{System.Data.Common.DbConnection,``0})">
+            <summary>
+            Execute <paramref name="action"/> using the connection.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension">
+            <summary>
+                Extensions for <see cref="T:System.Data.Common.DbCommand" />
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension._log">
+            <summary>
+                The _log
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.SafeCancel(System.Data.Common.DbCommand)">
+            <summary>
+                An exception free <see cref="M:System.Data.Common.DbCommand.Cancel" /> to workaround issues with drivers, notably MySQL.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetSafeInt64(System.Data.IDataReader,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int64" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int64.MinValue" />
+            </summary>
+            <param name="reader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int64" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetSafeInt32(System.Data.IDataReader,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int32" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int32.MinValue" />
+            </summary>
+            <param name="reader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int32" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetInteger(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets the integer.
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="fieldName">Name of the field.</param>
+            <returns>An integer</returns>
+            <exception cref="T:System.InvalidCastException">Not an integer</exception>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetInteger(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets the integer.
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="ordinal">The ordinal.</param>
+            <returns>
+            An integer
+            </returns>
+            <exception cref="T:System.InvalidCastException">Not an integer</exception>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetSafeString(System.Data.IDataReader,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to string data type
+                In case the retrieved value is null, the returned value is also null
+            </summary>
+            <param name="reader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as string
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Extensions.DbCommandExtension.GetSafeBool(System.Data.IDataReader,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Boolean" /> data type
+                In case the retrieved value is null, the returned <see cref="T:System.Boolean" /> value is false
+            </summary>
+            <param name="reader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Boolean" />
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper">
+            <summary>
+                This class is an wrapper class used to extend the functionality of the
+                <see cref="T:System.Data.IDataReader" /> by providing methods that retrieve
+                values from the reader and checking them for DBNull values.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetBoolean(System.Data.IDataRecord,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Boolean" /> data type
+                In case the retrieved value is null, the returned <see cref="T:System.Boolean" /> value is false
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Boolean" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetBoolean(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Boolean" /> data type
+                In case the retrieved value is null, the returned <see cref="T:System.Boolean" /> value is false
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Boolean" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt16(System.Data.IDataRecord,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int16" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int16.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int16" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt16(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int16" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int16.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int16" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt32(System.Data.IDataRecord,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int32" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int32.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int32" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt32(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int32" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int32.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int32" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt64(System.Data.IDataRecord,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int64" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int64.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int64" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetInt64(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.Int64" /> data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.Int64.MinValue" />
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.Int64" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetString(System.Data.IDataRecord,System.String)">
+            <summary>
+                The method retrieve a value from the reader and cast it to string data type
+                In case the retrieved value is null, the returned value is also null
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="fieldName">
+                The name of the column containing the value
+            </param>
+            <returns>
+                The extracted value as string
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetString(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to string data type
+                In case the retrieved value is null, the returned value is <see cref="F:System.String.Empty"/>
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as string
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetStringWithNull(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to string data type
+                In case the retrieved value is null, the returned value is also null
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="index">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as string
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.GetStringDate(System.Data.IDataRecord,System.Int32)">
+            <summary>
+                The method retrieve a value from the reader and cast it to <see cref="T:System.DateTime" /> data type
+                In case the retrieved value is null, the returned value is also null
+            </summary>
+            <param name="dataReader">
+                The source for reading the data
+            </param>
+            <param name="ordinal">
+                The index of the column containing the value
+            </param>
+            <returns>
+                The extracted value as <see cref="T:System.DateTime" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DataReaderHelper.TryGetFieldOrdinal(System.Data.IDataReader,System.String,System.Int32@)">
+            <summary>
+            Try get the <paramref name="fieldName"/> ordinal
+            </summary>
+            <param name="dataReader">The <see cref="T:System.Data.IDataReader"/></param>
+            <param name="fieldName">The field name</param>
+            <param name="ordinal">The <paramref name="fieldName"/> ordinal if it exists; otherwise <c>-1</c></param>
+            <returns>True if the <paramref name="dataReader"/> has a field named <paramref name="fieldName"/>; otherwise false</returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper">
+            <summary>
+                A collection of helper methods
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.MaxParameters">
+            <summary>
+                The maximum number of parameters
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper._selectQueryMatchRegex">
+            <summary>
+                The _select query match REGEX
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.#cctor">
+            <summary>
+                Initializes static members of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper" /> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.BulkDelete(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String,System.String,System.Collections.Generic.Stack{System.Int64},System.String[])">
+            <summary>
+                Bulk delete from MSDB table with name <paramref name="tableName" />, the records where the field
+                <paramref name="primaryKey" /> value is in <paramref name="toDelete" />
+            </summary>
+            <param name="database">
+                The database.
+            </param>
+            <param name="connection">
+                The connection.
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <param name="tableName">
+                The table name.
+            </param>
+            <param name="primaryKey">
+                The primary key.
+            </param>
+            <param name="toDelete">
+                The to delete.
+            </param>
+            <param name="additionalWhereClauses">
+                The additional Where Clauses.
+            </param>
+            <returns>
+                The number of records deleted.
+            </returns>
+            <remarks>
+                It deletes at most <see cref="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.MaxParameters" /> records at a time.
+            </remarks>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.BulkDeleteTwoKeys``2(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.String,System.String,``0,System.Data.DbType,System.Collections.Generic.Stack{``1},System.Data.DbType,System.String[])">
+            <summary>
+            Bulk delete from MSDB table with name <paramref name="tableName" />, the records where the field
+            <paramref name="primaryKeyFieldName" /> value is in <paramref name="toDelete" />
+            </summary>
+            <typeparam name="T">The type of the primary key</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="database">The database.</param>
+            <param name="tableName">The table name.</param>
+            <param name="primaryKeyFieldName">Name of the primary key field.</param>
+            <param name="primaryKey2FieldName">Name of the primary key2 field.</param>
+            <param name="toDeleteSingle">To delete single.</param>
+            <param name="dbType2">The database type2.</param>
+            <param name="toDelete">The to delete.</param>
+            <param name="dbType">Type of the database.</param>
+            <param name="additionalWhereClauses">The additional Where Clauses.</param>
+            <returns>
+            The number of records deleted.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">toDelete
+            or
+            database</exception>
+            <remarks>
+            It deletes at most <see cref="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.MaxParameters" /> records at a time.
+            </remarks>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.BulkDelete(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.String,System.Collections.Generic.Stack{System.Int64},System.String[])">
+            <summary>
+                Bulk delete from MSDB table with name <paramref name="tableName" />, the records where the field
+                <paramref name="primaryKey" /> value is in <paramref name="toDelete" />
+            </summary>
+            <param name="database">The database.</param>
+            <param name="tableName">The table name.</param>
+            <param name="primaryKey">The primary key.</param>
+            <param name="toDelete">The to delete.</param>
+            <param name="additionalWhereClauses">The additional Where Clauses.</param>
+            <returns>
+                The number of records deleted.
+            </returns>
+            <remarks>
+                It deletes at most <see cref="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.MaxParameters" /> records at a time.
+            </remarks>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.BulkUpdate(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.Collections.Generic.IList{System.Collections.Generic.KeyValuePair{System.String,System.Int64}},System.String,System.Collections.Generic.Stack{System.Int64},System.String[])">
+            <summary>
+            Bulk delete from MSDB table with name <paramref name="tableName" />, the records where the field
+            <paramref name="primaryKey" /> value is in <paramref name="toUpdate" />
+            </summary>
+            <param name="database">The database.</param>
+            <param name="tableName">The table name.</param>
+            <param name="fieldValuePairs">The field value pairs.</param>
+            <param name="primaryKey">The primary key.</param>
+            <param name="toUpdate">The to delete.</param>
+            <param name="additionalWhereClauses">The additional Where Clauses.</param>
+            <returns>
+            The number of records deleted.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            toUpdate
+            or
+            fieldValuePairs
+            or
+            database
+            or
+            database
+            </exception>
+            <remarks>
+            It deletes at most <see cref="F:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.MaxParameters" /> records at a time.
+            </remarks>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.CreateCommand(System.Data.Common.DbConnection,System.String)">
+            <summary>
+                Create a <see cref="T:System.Data.Common.DbCommand" />
+            </summary>
+            <param name="connection">The connection</param>
+            <param name="commandText">The SQL statement</param>
+            <returns>The new <see cref="T:System.Data.Common.DbCommand" /> </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.CreateCommand(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+                Create a <see cref="T:System.Data.Common.DbCommand" /> with the specified <paramref name="transaction"/>
+            </summary>
+            <param name="connection">
+                The connection
+            </param>
+            <param name="commandText">
+                The SQL statement
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <returns>
+                The new <see cref="T:System.Data.Common.DbCommand" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.CreateDatabase(System.Configuration.ConnectionStringSettings)">
+            <summary>
+                Create a <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.Database" /> instance from the specified <paramref name="connectionStringSettings" />
+            </summary>
+            <param name="connectionStringSettings">
+                The connection string settings.
+            </param>
+            <returns>
+                A <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.Database" /> instance from the specified <paramref name="connectionStringSettings" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.CreateParameter(System.Data.Common.DbCommand,System.String,System.Data.DbType)">
+            <summary>
+                Create parameter for the specified <paramref name="command" /> and add it to the command
+            </summary>
+            <param name="command">The command</param>
+            <param name="name">The parameter name</param>
+            <param name="dbType">The type</param>
+            <returns>The new <see cref="T:System.Data.Common.DbParameter" /></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.CreateParameter(System.Data.Common.DbCommand,System.String,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+                Create parameter for the specified <paramref name="command" /> and add it to the command
+            </summary>
+            <param name="command">The command</param>
+            <param name="name">The parameter name</param>
+            <param name="dbType">The type</param>
+            <param name="direction">The direction</param>
+            <returns>The new <see cref="T:System.Data.Common.DbParameter" /></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.FindUnsedFromAlias(System.String,System.String)">
+            <summary>
+                Finds a Table/sub-query alias that does not exist in the <paramref name="subQuery" />.
+            </summary>
+            <param name="subQuery">The sub query.</param>
+            <param name="template">The template for the table/sub-query alias. Must accept one format parameter e.g. <c>{0}</c>.</param>
+            <returns>
+                The table/sub-query alias
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.NormaliseFromValue(System.String)">
+            <summary>
+            Normalizes from value.
+            </summary>
+            <param name="query">The query.</param>
+            <returns>
+            The <see cref="T:System.String" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.ExecuteQuery(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.Collections.Generic.IList{System.Int64},System.String)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="identifiableSysId">The identifiable system identifier.</param>
+            <param name="query">The query format. It must accept one format parameter.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Helper.DbHelper.ApplyAdditionalWhereClauses(System.Collections.Generic.IList{System.String},System.Text.StringBuilder)">
+            <summary>
+            Applies the additional where clauses.
+            </summary>
+            <param name="additionalWhereClauses">The additional where clauses.</param>
+            <param name="queryBuilder">The query builder.</param>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.Database">
+            <summary>
+                The database.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._databaseSettingCollection">
+            <summary>
+                The database setting collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._dboRemover">
+            <summary>
+                The regular expression that removes the <c>dbo.</c> from a string.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._log">
+            <summary>
+                The log.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._parameterMarkersPerProvider">
+            <summary>
+                The parameter markers per provider.
+            </summary>
+            <remarks>
+                <c>System.Data.SqlClient</c> is hardcoded because of a bug in <c>System.Data.SqlClient</c>
+            </remarks>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._connectionStringSettings">
+            <summary>
+                The mapping store connection string settings.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._databaseInternal">
+            <summary>
+                The internal database helper class
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._factory">
+            <summary>
+                The factory to create connections.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._providerName">
+            <summary>
+                The _provider name.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._schemaNormalizer">
+            <summary>
+                The method that normalizes the schema in query.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._parameterMarkerFormat">
+            <summary>
+                The parameter marker format.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.Database._callerInfo">
+            <summary>
+            Holds the caller info
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.#ctor(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.Data.Common.DbTransaction)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.Database" /> class.
+                Initializes a new instance of the <see cref="T:System.Object" /> class.
+            </summary>
+            <param name="database">
+                The database.
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.#ctor(System.Configuration.ConnectionStringSettings)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.Database" /> class.
+            </summary>
+            <param name="connectionStringSettings">
+                The mapping store connection string settings.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="connectionStringSettings" /> is null
+            </exception>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Manager.Database.ProviderName">
+            <summary>
+                Gets the provider name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Manager.Database.Name">
+            <summary>
+            Gets the name of the connection
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Manager.Database.Transaction">
+            <summary>
+            Gets the transaction.
+            </summary>
+            <value>
+            The transaction.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.MappingStoreRetrieval.Manager.Database.ConnectionStringSettings">
+            <summary>
+            Gets the connection string associated with this instance
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteReader(System.Data.Common.DbConnection,System.Data.Common.DbCommand)">
+            <summary>
+                Return an <see cref="T:System.Data.IDataReader" />. It will open the <paramref name="connection" /> if it is closed.
+            </summary>
+            <param name="connection">
+                The connection.
+            </param>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.IDataReader" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.AddInParameter(System.Data.Common.DbCommand,System.String,System.Data.DbType,System.Object)">
+            <summary>
+                Create and add an input <see cref="T:System.Data.Common.DbParameter" /> to the specified <paramref name="command" />
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <param name="name">
+                The parameter name.
+            </param>
+            <param name="dbType">
+                The parameter type.
+            </param>
+            <param name="value">
+                The parameter value.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.BuildParameterName(System.String)">
+            <summary>
+                Build the parameter name using the DB vendor specific format.
+            </summary>
+            <param name="name">
+                The name.
+            </param>
+            <returns>
+                The parameter name using the DB vendor specific format.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.BuildQuery(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Returns the SQL in a string with the <paramref name="parameters" /> names applied to the
+                <paramref name="queryFormat" />.
+            </summary>
+            <param name="queryFormat">
+                The query format.
+            </param>
+            <param name="parameters">
+                The parameters.
+            </param>
+            <returns>
+                The SQL in a string with the <paramref name="parameters" /> names applied to the <paramref name="queryFormat" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CancelSafe(System.Data.Common.DbCommand)">
+            <summary>
+                An exception free <see cref="M:System.Data.Common.DbCommand.Cancel" /> to workaround issues with drivers, notably MySQL.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CreateCommand(System.Data.CommandType,System.String)">
+            <summary>
+                Create command of <paramref name="commandType" /> with the specified <paramref name="commandText" />
+            </summary>
+            <param name="commandType">
+                The command type.
+            </param>
+            <param name="commandText">
+                The command text.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CreateConnection">
+            <summary>
+                Creates connection for the database
+            </summary>
+            <returns>
+                The <see cref="T:System.Data.Common.DbConnection" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CreateInParameter(System.String,System.Data.DbType)">
+            <summary>
+                Create an input <see cref="T:System.Data.Common.DbParameter" /> and return it
+            </summary>
+            <param name="name">
+                The parameter name.
+            </param>
+            <param name="dbType">
+                The parameter type.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbParameter" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CreateInParameter``1(System.String,System.Data.DbType,``0)">
+            <summary>
+            Create a <see cref="T:System.Data.Common.DbParameter" /> and return it
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="name">The name.</param>
+            <param name="dbType">The DB type of the parameter.</param>
+            <param name="value">The value.</param>
+            <returns>
+            The <see cref="T:System.Data.Common.DbParameter" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteNonQuery(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+                Executes the specified <paramref name="sqlStatement" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="sqlStatement">
+                The SQL statement to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="sqlStatement" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteNonQuery(System.String,System.Data.Common.DbTransaction,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+                Executes the specified <paramref name="sqlStatement" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="sqlStatement">
+                The SQL statement to execute
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="sqlStatement" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteNonQueryFormat(System.String,System.Data.Common.DbTransaction,System.Data.Common.DbParameter[])">
+            <summary>
+                Executes the specified <paramref name="sqlStatement" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="sqlStatement">
+                The SQL statement to execute
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="sqlStatement" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteNonQueryFormat(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Executes the specified <paramref name="sqlStatement" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="sqlStatement">
+                The SQL statement to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="sqlStatement" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteNonQueryFormat(System.String,System.Int64[])">
+            <summary>
+                Executes the specified <paramref name="sqlStatement" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="sqlStatement">
+                The SQL statement to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="sqlStatement" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.UsingLogger(Estat.Sri.Utils.Model.CallerInfo)">
+            <summary>
+            Log the next statement (if enabled)
+            </summary>
+            <returns>This instance</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.UsingLogger(System.String,System.String,System.Int32)">
+            <summary>
+            Log the next statement (if enabled)
+            </summary>
+            <param name="memberName"></param>
+            <param name="sourceFilePath"></param>
+            <param name="sourceLineNumber"></param>
+            <returns>This instance</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteReader(System.Data.Common.DbCommand,System.String,System.String,System.Int32)">
+            <summary>
+            Return an <see cref="T:System.Data.IDataReader" />.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="memberName">Name of the member.</param>
+            <param name="sourceFilePath">The source file path.</param>
+            <param name="sourceLineNumber">The source line number.</param>
+            <returns>The <see cref="T:System.Data.IDataReader" />.</returns>
+            <exception cref="T:System.ArgumentNullException">command</exception>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteScalar(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+                Executes the specified <paramref name="query" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="query">
+                The SQL query to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="query" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteScalar(System.String,System.Data.Common.DbTransaction,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+                Executes the specified <paramref name="query" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="query">
+                The SQL query to execute
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="query" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteScalarFormat(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Executes the specified <paramref name="query" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="query">
+                The SQL query to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="query" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteScalarFormat(System.String,System.Int64[])">
+            <summary>
+                Executes the specified <paramref name="query" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="query">
+                The SQL query to execute
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="query" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.CreateInParameters(System.Int64[])">
+            <summary>
+             Generate <see cref="T:System.Data.Common.DbParameter"/> from the <paramref name="parameters" />
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.ExecuteScalarFormat(System.String,System.Data.Common.DbTransaction,System.Data.Common.DbParameter[])">
+            <summary>
+                Executes the specified <paramref name="query" /> with the specified <paramref name="parameters" />
+            </summary>
+            <param name="query">
+                The SQL query to execute
+            </param>
+            <param name="transaction">
+                The transaction.
+            </param>
+            <param name="parameters">
+                The parameters. Can be null.
+            </param>
+            <returns>
+                The return value of <paramref name="query" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetSqlStringCommand(System.String)">
+            <summary>
+                Returns a <see cref="T:System.Data.Common.DbCommand" /> with <see cref="F:System.Data.CommandType.Text" />
+            </summary>
+            <param name="query">
+                The query.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetSqlStringCommand(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+                Returns a <see cref="T:System.Data.Common.DbCommand" /> with <see cref="F:System.Data.CommandType.Text" />
+            </summary>
+            <param name="query">
+                The query.
+            </param>
+            <param name="parameters">
+                The parameters
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetSqlStringCommandFormat(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Returns a <see cref="T:System.Data.Common.DbCommand" /> with <see cref="F:System.Data.CommandType.Text" />
+            </summary>
+            <param name="queryFormat">The query format.</param>
+            <param name="parameter">The parameter.</param>
+            <returns>
+            The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetSqlStringCommandFormat(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Returns a <see cref="T:System.Data.Common.DbCommand" /> with <see cref="F:System.Data.CommandType.Text" />
+            </summary>
+            <param name="queryFormat">
+                The query format.
+            </param>
+            <param name="parameters">
+                The parameters
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetSqlStringCommandParam(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+                Returns a <see cref="T:System.Data.Common.DbCommand" /> with <see cref="F:System.Data.CommandType.Text" />
+            </summary>
+            <param name="query">
+                The query.
+            </param>
+            <param name="parameters">
+                The parameters
+            </param>
+            <returns>
+                The <see cref="T:System.Data.Common.DbCommand" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.NormalizeQuerySchema(System.String)">
+            <summary>
+                Normalizes the schema of the specified <paramref name="query" />.
+                Currently it removes the <c>dbo.</c> from the query string if the database is not a <c>SQL Server.</c>
+            </summary>
+            <param name="query">
+                The query.
+            </param>
+            <returns>
+                The <see cref="T:System.String" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetInternalDatabase">
+            <summary>
+            Conditionally get the logger database once
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.GetQueryNormalizer">
+            <summary>
+                Returns the method for normalizing a SQL query.
+            </summary>
+            <returns>
+                The <see cref="T:System.Func`2" /> method that normalizes a SQL Query .
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.RetrieveMarkerFormat(System.String)">
+            <summary>
+                Retrieves the marker format.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <returns>
+                The parameter marker format.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.Database.SetupProviderSpecific(System.Data.Common.DbCommand)">
+            <summary>
+                Setup provider specific configuration.
+            </summary>
+            <param name="cmd">
+                The <see cref="T:System.Data.Common.DbCommand" /> to setup.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope">
+            <summary>
+                The database transactional.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.#ctor(System.Data.Common.DbConnection)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional" /> class.
+            </summary>
+            <param name="connection">The connection</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+                The execute non query.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Int32" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+                The execute reader.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.IDataReader" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+                The execute scalar.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.GetConnection">
+            <summary>
+                The get connection.
+            </summary>
+            <returns>
+                The <see cref="T:System.Data.Common.DbConnection" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.OpenConnection(System.Data.IDbConnection)">
+            <summary>
+                The open connection.
+            </summary>
+            <param name="connection">
+                The connection.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.SetupCommand(System.Data.IDbCommand)">
+            <summary>
+                Setup the command.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseInTransactionScope.CreateCommand">
+            <inheritdoc />
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional">
+            <summary>
+                The database non transactional.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional._connectionStringSettings">
+            <summary>
+                The mapping store connection string settings.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional._factory">
+            <summary>
+                The factory to create connections.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.#ctor(System.Configuration.ConnectionStringSettings,System.Data.Common.DbProviderFactory)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional" /> class.
+            </summary>
+            <param name="connectionStringSettings">
+                The connection string settings.
+            </param>
+            <param name="factory">
+                The factory.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+                The execute non query.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Int32" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+                The execute reader.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.IDataReader" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+                The execute scalar.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.GetConnection">
+            <summary>
+                The get connection.
+            </summary>
+            <returns>
+                The <see cref="T:System.Data.Common.DbConnection" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.OpenConnection(System.Data.IDbConnection)">
+            <summary>
+                The open connection.
+            </summary>
+            <param name="connection">
+                The connection.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.SetupCommand(System.Data.IDbCommand)">
+            <summary>
+                The setup command.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseNonTransactional.CreateCommand">
+            <inheritdoc />
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional">
+            <summary>
+                The database transactional.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional._transaction">
+            <summary>
+                The _transaction.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.#ctor(System.Data.Common.DbTransaction)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional" /> class.
+            </summary>
+            <param name="transaction">
+                The transaction.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+                The execute non query.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Int32" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+                The execute reader.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Data.IDataReader" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+                The execute scalar.
+            </summary>
+            <param name="command">
+                The command.
+            </param>
+            <returns>
+                The <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.GetConnection">
+            <summary>
+                The get connection.
+            </summary>
+            <returns>
+                The <see cref="T:System.Data.Common.DbConnection" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.OpenConnection(System.Data.IDbConnection)">
+            <summary>
+                The open connection.
+            </summary>
+            <param name="connection">
+                The connection.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.SetupCommand(System.Data.IDbCommand)">
+            <summary>
+                Setup the command.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseTransactional.CreateCommand">
+            <inheritdoc />
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.DatabaseWithLogger">
+            <summary>
+            Decorator that logs Execute* methods
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal">
+            <summary>
+                The DatabaseInternal interface.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+                Executes the non query command
+            </summary>
+            <param name="command">The command.</param>
+            <returns>The number of affected records.</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+                Executes and return the <see cref="T:System.Data.IDataReader" /> from the <paramref name="command" />
+            </summary>
+            <param name="command">The command.</param>
+            <returns>The executed reader.</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+                Executes the scalar command.
+            </summary>
+            <param name="command">The command.</param>
+            <returns>The result of the <see cref="M:System.Data.Common.DbCommand.ExecuteScalar" /></returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.GetConnection">
+            <summary>
+                Gets the connection.
+            </summary>
+            <returns>The connection instance</returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.OpenConnection(System.Data.IDbConnection)">
+            <summary>
+                Opens the connection.
+            </summary>
+            <param name="connection">The connection.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.SetupCommand(System.Data.IDbCommand)">
+            <summary>
+                Setup  the command.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.MappingStoreRetrieval.Manager.IDatabaseInternal.CreateCommand">
+            <summary>
+            Create command
+            </summary>
+            <returns>The <see cref="T:System.Data.Common.DbCommand"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Utils.Helper.DatabaseType">
+            <summary>
+                Provides storage all the DataBase types and their corresponding Provider Names
+                that are recognized by the DataRetriever.
+                Currently Microsoft SQL Server, Oracle, MySQL, , PC-Axis
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Utils.Helper.DatabaseType._instance">
+            <summary>
+                Holds the singleton instance
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Utils.Helper.DatabaseType._config">
+            <summary>
+                The Mapping Store configuration section
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.DatabaseType.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:Estat.Sri.Utils.Helper.DatabaseType" /> class from being created.
+                Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.DatabaseType" /> class
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.DatabaseType.DatabaseSettings">
+            <summary>
+                Gets the general database settings
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.DatabaseType.Instance">
+            <summary>
+                Gets the singleton instance
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.DatabaseType.Mappings">
+            <summary>
+                Gets the Database type provider mappings
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.DatabaseType.GetProviderName(System.String)">
+            <summary>
+                Gets the corresponding providers' name of the required database type.
+                In case the list of dictionary is not populated it populates it before.
+                In case the database type is not present in the dictionary, currently is different then Microsoft SQL Server,
+                Oracle, MySQL, PCAxis an exception is thrown.
+            </summary>
+            <param name="databaseType">
+                The database type. The accepted values are:
+                <list type="bullet">
+                    <item>
+                        SQLServer
+                    </item>
+                    <item>
+                        Oracle
+                    </item>
+                    <item>
+                        MySQL
+                    </item>
+                    <item>
+                        PCAxis
+                    </item>
+                </list>
+            </param>
+            <returns>
+                The name of the Database Provider. The default values are:
+                <list type="bullet">
+                    <item>
+                        <c>System.Data.SqlClient</c>
+                    </item>
+                    <item>
+                        <c>System.Data.OracleClient</c>
+                    </item>
+                    <item>
+                        <c>MySql.Data.MySqlClient</c>
+                    </item>
+                    <item>
+                        <c>org.estat.PcAxis.PcAxisProvider</c>
+                    </item>
+                </list>
+            </returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="databaseType" /> Is null.</exception>
+            <exception cref="T:System.ArgumentException">Unknown Database type specified at <paramref name="databaseType" /></exception>
+        </member>
+        <member name="T:Estat.Sri.Utils.Helper.LoggingDataReader">
+            <summary>
+            Class LoggingDataReader.
+            </summary>
+            <seealso cref="T:System.Data.IDataReader" />
+        </member>
+        <member name="F:Estat.Sri.Utils.Helper.LoggingDataReader._decoratedDataReader">
+            <summary>
+            The decorated data reader
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Utils.Helper.LoggingDataReader._queryLogger">
+            <summary>
+            The query logger
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.#ctor(System.Data.IDataReader,Estat.Sri.Utils.Helper.SqlQueryLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.LoggingDataReader"/> class.
+            </summary>
+            <param name="decoratedDataReader">The decorated data reader.</param>
+            <param name="queryLogger">The query logger.</param>
+            <exception cref="T:System.ArgumentNullException">decoratedDataReader</exception>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Object"/> with the specified i.
+            </summary>
+            <param name="i">The i.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:System.Object"/> with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.Depth">
+            <summary>
+            Gets a value indicating the depth of nesting for the current row.
+            </summary>
+            <value>The depth.</value>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.IsClosed">
+            <summary>
+            Gets a value indicating whether the data reader is closed.
+            </summary>
+            <value><see langword="true" /> if this instance is closed; otherwise, <see langword="false" />.</value>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.RecordsAffected">
+            <summary>
+            Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.
+            </summary>
+            <value>The records affected.</value>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.LoggingDataReader.FieldCount">
+            <summary>
+            Gets the number of columns in the current row.
+            </summary>
+            <value>The field count.</value>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.Close">
+            <summary>
+            Closes the <see cref="T:System.Data.IDataReader" /> Object.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetBoolean(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a Boolean.
+            </summary>
+            <param name="i">The zero-based column ordinal.</param>
+            <returns>The value of the column.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetByte(System.Int32)">
+            <summary>
+            Gets the 8-bit unsigned integer value of the specified column.
+            </summary>
+            <param name="i">The zero-based column ordinal.</param>
+            <returns>The 8-bit unsigned integer value of the specified column.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of bytes from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <param name="i">The zero-based column ordinal.</param>
+            <param name="fieldOffset">The index within the field from which to start the read operation.</param>
+            <param name="buffer">The buffer into which to read the stream of bytes.</param>
+            <param name="bufferoffset">The index for <paramref name="buffer" /> to start the read operation.</param>
+            <param name="length">The number of bytes to read.</param>
+            <returns>The actual number of bytes read.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetChar(System.Int32)">
+            <summary>
+            Gets the character value of the specified column.
+            </summary>
+            <param name="i">The zero-based column ordinal.</param>
+            <returns>The character value of the specified column.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of characters from the specified column offset into the buffer as an array, starting at the given buffer offset.
+            </summary>
+            <param name="i">The zero-based column ordinal.</param>
+            <param name="fieldoffset">The index within the row from which to start the read operation.</param>
+            <param name="buffer">The buffer into which to read the stream of bytes.</param>
+            <param name="bufferoffset">The index for <paramref name="buffer" /> to start the read operation.</param>
+            <param name="length">The number of bytes to read.</param>
+            <returns>The actual number of characters read.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetData(System.Int32)">
+            <summary>
+            Returns an <see cref="T:System.Data.IDataReader" /> for the specified column ordinal.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The <see cref="T:System.Data.IDataReader" /> for the specified column ordinal.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetDataTypeName(System.Int32)">
+            <summary>
+            Gets the data type information for the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The data type information for the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetDateTime(System.Int32)">
+            <summary>
+            Gets the date and time data value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The date and time data value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetDecimal(System.Int32)">
+            <summary>
+            Gets the fixed-position numeric value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The fixed-position numeric value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetDouble(System.Int32)">
+            <summary>
+            Gets the double-precision floating point number of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The double-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetFieldType(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Type" /> information corresponding to the type of <see cref="T:System.Object" /> that would be returned from <see cref="M:System.Data.IDataRecord.GetValue(System.Int32)" />.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The <see cref="T:System.Type" /> information corresponding to the type of <see cref="T:System.Object" /> that would be returned from <see cref="M:System.Data.IDataRecord.GetValue(System.Int32)" />.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetFloat(System.Int32)">
+            <summary>
+            Gets the single-precision floating point number of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The single-precision floating point number of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetGuid(System.Int32)">
+            <summary>
+            Returns the GUID value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The GUID value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetInt16(System.Int32)">
+            <summary>
+            Gets the 16-bit signed integer value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 16-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetInt32(System.Int32)">
+            <summary>
+            Gets the 32-bit signed integer value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 32-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetInt64(System.Int32)">
+            <summary>
+            Gets the 64-bit signed integer value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The 64-bit signed integer value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetName(System.Int32)">
+            <summary>
+            Gets the name for the field to find.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The name of the field or the empty string (""), if there is no value to return.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetOrdinal(System.String)">
+            <summary>
+            Return the index of the named field.
+            </summary>
+            <param name="name">The name of the field to find.</param>
+            <returns>The index of the named field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetSchemaTable">
+            <summary>
+            Returns a <see cref="T:System.Data.DataTable" /> that describes the column metadata of the <see cref="T:System.Data.IDataReader" />.
+            </summary>
+            <returns>A <see cref="T:System.Data.DataTable" /> that describes the column metadata.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetString(System.Int32)">
+            <summary>
+            Gets the string value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetValue(System.Int32)">
+            <summary>
+            Return the value of the specified field.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>The <see cref="T:System.Object" /> which will contain the field value upon return.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.GetValues(System.Object[])">
+            <summary>
+            Populates an array of objects with the column values of the current record.
+            </summary>
+            <param name="values">An array of <see cref="T:System.Object" /> to copy the attribute fields into.</param>
+            <returns>The number of instances of <see cref="T:System.Object" /> in the array.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.IsDBNull(System.Int32)">
+            <summary>
+            Return whether the specified field is set to null.
+            </summary>
+            <param name="i">The index of the field to find.</param>
+            <returns>true if the specified field is set to null; otherwise, false.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.NextResult">
+            <summary>
+            Advances the data reader to the next result, when reading the results of batch SQL statements.
+            </summary>
+            <returns>true if there are more rows; otherwise, false.</returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.LoggingDataReader.Read">
+            <summary>
+            Advances the <see cref="T:System.Data.IDataReader" /> to the next record.
+            </summary>
+            <returns>true if there are more rows; otherwise, false.</returns>
+        </member>
+        <member name="T:Estat.Sri.Utils.Helper.SqlQueryLogger">
+            <summary>
+            <para>An SQL Query logger</para>
+            </summary>
+            <remarks>
+            <para>
+            To disable this feature add the following in the <c>log4net</c> configuration
+            <code>
+            <![CDATA[<logger name="org.estat.sri.sqlquerylogger" additivity="false"> <level value = "OFF" /> </ logger >]]>
+            </code>
+            </para>
+            <para>
+            To enable this feature add the following in the <c>log4net</c> configuration
+            <code>
+            <![CDATA[<logger name="org.estat.sri.sqlquerylogger" additivity="false">  <level value="INFO"/> <appender-ref ref="SQLQueryLoger" /> </ logger >]]>
+            </code>
+            Example pattern with all parameters:
+            <code><![CDATA[<conversionPattern value="%d{ISO8601};%P{elapsed};%m;%P{dbparams};%P{sourceMember};%P{sourceFile};%P{sourceLine};%n"/>]]></code>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.#ctor(System.Data.IDbCommand,Estat.Sri.Utils.Model.CallerInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.SqlQueryLogger"/> class.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Estat.Sri.Utils.Model.CallerInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.SqlQueryLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.#ctor(System.Data.IDbCommand,System.String,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.SqlQueryLogger"/> class.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="memberName">Name of the member.</param>
+            <param name="sourceFilePath">The source file path.</param>
+            <param name="sourceLineNumber">The source line number.</param>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Helper.SqlQueryLogger" /> class.
+            </summary>
+            <param name="sqlQuery">The SQL query.</param>
+            <param name="memberName">Name of the member.</param>
+            <param name="sourceFilePath">The source file path.</param>
+            <param name="sourceLineNumber">The source line number.</param>
+            <exception cref="T:System.ArgumentNullException">sqlQuery</exception>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.SqlQueryLogger.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Utils.Helper.StoreContext">
+            <summary>
+            Workaround for getting store id when HttpContext is not available
+            TODO pass store id or connection string or database as a parameter everywhere
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Helper.StoreContext.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of <see cref="T:Estat.Sri.Utils.Helper.StoreContext"/> with a new store id
+            It will overwrite any other store id in the current context
+            </summary>
+            <param name="storeId"></param>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.StoreContext.IsInContext">
+            <summary>
+            Gets a value indicating whether we are in a context or not
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Utils.Helper.StoreContext.CurrentStoreId">
+            <summary>
+            Gets the current store id
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Utils.Manager.DbProviderFactories">
+            <summary>
+            Class that should simulate the DbProviderFactories from .net framework
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Utils.Manager.DbProviderFactories.GetFactory(System.String)">
+            <summary>
+            Get the provider name factory provided it is either provided in configuration <see cref="T:Estat.Sri.MappingStoreRetrieval.Config.MappingStoreConfigSection"/> or can be guessed
+            </summary>
+            <param name="providerName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Manager.DbProviderFactories.GuessTheDllName(System.String)">
+            <summary>
+            Try Guess the name of the DLL
+            </summary>
+            <param name="providerName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Estat.Sri.Utils.Model.AnsiString">
+            <summary>
+            An extension to <see cref="T:Estat.Sri.Utils.Model.SimpleParameter"/> that uses <see cref="F:System.Data.DbType.AnsiString"/>
+            </summary>
+            <seealso cref="T:Estat.Sri.Utils.Model.SimpleParameter" />
+        </member>
+        <member name="M:Estat.Sri.Utils.Model.SimpleParameter.#ctor(System.Data.DbType,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Utils.Model.SimpleParameter"/> class.
+            </summary>
+            <param name="databaseType">Type of the database.</param>
+            <param name="value">The value.</param>
+            <exception cref="T:System.ArgumentNullException">value</exception>
+        </member>
+        <member name="P:Estat.Sri.Utils.Model.SimpleParameter.DatabaseType">
+            <summary>
+            Gets or sets the type of the database.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="P:Estat.Sri.Utils.Model.SimpleParameter.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:Estat.Sri.Utils.Sql.SqlFileParsingExtension.SplitStatements(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Splits the statements.
+            </summary>
+            <param name="lines">The lines.</param>
+            <returns>
+            The SQL Statement
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Utils.Sql.SqlFileParsingExtension.ReadLines(System.IO.Stream)">
+            <summary>
+            Reads the lines from the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <returns>The lines from the stream</returns>
+        </member>
+        <member name="T:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension">
+            <summary>
+                This class contains extensions for using <see cref="N:Dapper" /> with <see cref="T:Estat.Sri.MappingStoreRetrieval.Manager.Database" />
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension.Query(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.String,System.String,System.Int32)">
+            <summary>
+                Queries the specified database.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="sqlQuery">The SQL query.</param>
+            <returns>
+                The <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension.Query(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Queries the specified database.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="sqlQuery">The SQL query.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension.ExecuteScalar``1(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Queries the specified database.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="sqlQuery">The SQL query.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>
+            The result of type
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension.Query``1(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.String,System.String,System.Int32)">
+            <summary>
+                Queries the specified database.
+            </summary>
+            <typeparam name="T">The type of the result</typeparam>
+            <param name="database">The database.</param>
+            <param name="sqlQuery">The SQL query.</param>
+            <returns>
+                The <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.MappingStore.Store.Extension.DapperDatabaseExtension.Query``2(Estat.Sri.MappingStoreRetrieval.Manager.Database,System.String,System.Func{``0,``1,``0},System.String,System.String,System.String,System.Int32)">
+            <summary>
+                Queries the specified database.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="database">The database.</param>
+            <param name="sqlQuery">The SQL query.</param>
+            <param name="map">The map function.</param>
+            <param name="splitOn">The split on.</param>
+            <returns>
+                The <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,4 @@
+# Import structures
+
+The **Import Structures** function is present in the left-hand side menu starting from the "Tools" item and also in the list of artefacts. 
+For the functionalities see the paragraph: [Import an Artefact](import_artefact.md) described in the Meta Manager.

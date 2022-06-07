@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v3="http://xmlns.ec.eu/BusinessActivityService/StruvalBAS/V3">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <v3:GetWsVersion/>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,1165 @@
+{
+  "fileVersion": "8.11.0",
+  "language": "English",
+  "iso-code": "en",
+  "translations": {
+    "TopMenu": {
+      "homeMenu": {
+        "header": "Home"
+      },
+      "metadataMenu": {
+        "header": "Metadata",
+        "importSubmenu": {
+          "header": "Import",
+          "importFileSubItem": "Import from File",
+          "importRegistrySubItem": "Import from Registry"
+        },
+        "categoryManagement": {
+          "header": "Category Management"
+        },
+        "browseDownload": {
+          "header": "Browse and Download"
+        },
+        "alerts": {
+          "structureError": "Structure could not be imported: "
+        }
+      },
+      "dataMenu": {
+        "header": "Data",
+        "datasetSubmenu": "Dataset",
+        "dataBrowseSubmenu": "Browse and Download Data"
+      },
+      "mappingMenu": "Mapping",
+      "aboutMenu": "About",
+      "notificationCountdown": {
+        "logout": " Log Out",
+        "keepWorking": " Keep Working",
+        "sessionexpire": " Your Session is About to Expire.",
+        "timeoutMsg": " You are going to be logged out in 60 seconds."
+      },
+      "notificationNavigationWarning": {
+        "message": "Are you sure you want to leave this page? Unsaved changed will be lost."
+      },
+      "adminMenu": {
+        "mappingAssistantDbSubItem": " Mapping Assistant DB",
+        "dissemintationDbSubItem": " Dissemination Database Connection",
+        "authDbSubItem": " Authentication Database Connection",
+        "struvalSubItem": " Test STRUVAL Connection",
+        "exportMappingStoreSubItem": " Export Mapping Store",
+        "initAuthDbSubItem": " Initialize Authentication Database",
+        "proxySubItem": " Proxy Settings",
+        "usersSubGroup": " Users",
+        "manageUsersSubItem": " Manage",
+        "monitorUsersSubItem": " Monitor",
+        "statusSubGroup": " Status",
+        "registrySubItem": " Registry",
+        "nsiSubItem": " NsiWS",
+        "statusNotificationSubItem": " Status Notification Message",
+        "loggerSystem": "Logger system"
+      },
+      "chooseMsdb": {
+        "dropdownDefaultMessage": "Choose a default mapping store...",
+        "clickToChooseMsdb": "Click here to choose default MSDB",
+        "windowTitle": "Mapping Assistant Database Selection",
+        "dropDownPlaceholder": "Select or type database"
+      }
+    },
+    "HomePageSidebar": {
+      "wizard": {
+        "header": "Wizards",
+        "message": "New Dataflow Dissemination"
+      },
+      "quickLinks": {
+        "header": "Quick Links",
+        "link1": "Data Loading",
+        "link2": "Data Mapping",
+        "link3": "Category Management"
+      },
+      "contact": {
+        "header": "Contact",
+        "message": "Contact us"
+      },
+      "alerts": {
+        "disseminationWizardInfo": "Dissemination Wizard available soon."
+      },
+      "history": {
+        "header": "History",
+        "linkToActionsLabel": "User Actions"
+      }
+    },
+    "HomePageContent": {
+      "login": {
+        "cancel": "Cancel",
+        "authentication": "Authentication",
+        "initialize": "Initialize",
+        "reset": "Reset",
+        "submit": "Login",
+        "loginTitle": "Login",
+        "username": "Username",
+        "password": "Password",
+        "loginSuccessMessage": "You are logged in.",
+        "welcomeMessage": "Welcome, ",
+        "enterUsername": "Please enter a username.",
+        "authError": "Authentication error: Could not authenticate user ",
+        "nostoreselected": "No Mapping Store is currently selected. Click at the link at the top of the screen to select one of the allowed Mapping Store. If a Mapping Store is missing contact your administrator to add it to your user.",
+        "initAuthDb": "Initialize Authentication Database",
+        "notAccessible": "Authentication store is not accessible. Please contact your system administrator.",
+        "notConfigured": "Authentication not configured or not configured correctly: ",
+        "other": "Trying to figure"
+      },
+      "alerts": {
+        "authdbInitSuccess": "Success, Authentication DB initialized.",
+        "authdbInitialized": "Authentication DB has already been initialized.",
+        "authdbInitError": "Error, Authentication DB could not be initialized."
+      }
+    },
+    "ChooseDefaultMapStore": {
+      "dropdownDefaultMessage": "Click here to choose a default MSDB"
+    },
+    "FileImportManager": {
+      "header": "Import from file",
+      "fileTypeMessage": "Select a file type:",
+      "dropAreaMessageCsv": "Drag & drop or click here to upload .csv files.",
+      "xmlParseError": "Error: Cannot parse XML status file.",
+      "xmlGetError": "Error: Cannot retrieve XML status file.",
+      "dropAreaMessageSelected": "You selected ",
+      "importSuccess": "Structures Imported Successfully",
+      "modalTitle": "Import Result"
+    },
+    "DataSource": {
+      "dataSourceType": {
+        "rest": "REST",
+        "soap": "SOAP",
+        "simple": "Simple"
+      },
+      "dataSourceTypeLabel": "Data Source type:",
+      "restURL": "REST URL:",
+      "wadlURL": "(Optional) WADL URL:",
+      "soapURL": "SOAP URL:",
+      "wsdlURL": "(Optional) WSDL URL:",
+      "fileURL": "File URL",
+      "dataSourceDeletedSuccess": "Data Source deleted successfully.",
+      "dataSourceDeletedError": "Data Source could not be deleted.",
+      "dataSourceSavedSuccess": "Data Source saved successfully.",
+      "dataSourceSavedError": "Data Source could not be saved.",
+      "deleteConfirmation": "Are you sure you wish to delete this data source?"
+    },
+    "StoreMessage": {
+      "title": "Mapping Store not selected",
+      "message-1": "The Mapping Store is not selected yet, please click ",
+      "linkLabel": " here ",
+      "message-2": " to select it."
+    },
+    "RegistryImportManager": {
+      "header": "Import from registry",
+      "registryLabel": "Registry",
+      "structureTypeLabel": "Structure Type",
+      "agencyLabel": "Agency",
+      "artefactId": "Artefact ID",
+      "artefactVersion": "Artefact version",
+      "domainMetadata": "Include Domain metadata",
+      "importResult": "Import Result",
+      "loadStructuresError": "Can't load structures",
+      "importUnSuccess": "Structure not imported",
+      "importStructureEmpty": "Structure is empty",
+      "details": "Details"
+    },
+    "BrowseCategoriesContent": {
+      "dataflowUpgradeSuccess": "Dataflow upgraded successfully.",
+      "dataflowUpgradeError": "Dataflow could not be upgraded.",
+      "cannotReceiveLatestVersion": "Server Error: Cannot receive latest version.",
+      "propertiesTab": "Properties",
+      "componentsTab": "Components",
+      "upgradeWindowOk": "Upgrade",
+      "upgradeWindowCancel": "Cancel",
+      "upgradeWindowTitle": "Upgrade Dataflow",
+      "registrySelectText": "Please select a registry:"
+    },
+    "EditDataflowHeader": {
+      "test": "Test",
+      "transmissionName": "Transmission Name",
+      "agency": "Dataset Agency",
+      "source": "Source",
+      "structureType": "Structure Type",
+      "datasetId": "Dataset ID",
+      "datasetAction": "Dataset Action",
+      "sender": "Sender",
+      "receivers": "Receivers",
+      "deleteReceiver": "Delete Receiver",
+      "newReceiver": "New Receiver",
+      "partyDetailsNewReceiver": "New Receiver",
+      "partyDetailsEditReceiver": "Edit Receiver",
+      "partyDetailsEditSender": "Edit Sender",
+      "partyID": "ID",
+      "partyName": "Name(s)",
+      "partyContacts": "Contacts",
+      "partyContactsForm": "New Contact / Edit (separate multiple values by comma)",
+      "addContactButton": "Add Contact",
+      "editContactButton": "Edit Contact",
+      "contactNameIsEmpty": "Contact name cannot be an empty field.",
+      "cannotEditContactWarning": "The selected contact could not be edited.",
+      "saveHeader": "Save Header",
+      "deleteHeader": "Delete Header",
+      "deleteHeaderSuccess": "Header deleted successfully.",
+      "deleteHeaderError": "Header could not be deleted.",
+      "deleteHeaderNoHeaderPresent": "This dataflow does not have an existing header.",
+      "nameOrIdBlank": "ID field cannot be blank.",
+      "deleteConfirmation": "Are you sure you wish to delete this header?",
+      "deleteReceiversConfirmation": "Are you sure you wish to delete the selected receivers?",
+      "deleteContactsConfirmation": "Are you sure you wish to delete the selected contacts?",
+      "partyTableColumns": {
+        "id": "ID",
+        "name": "Name",
+        "details": "Details / Contacts"
+      },
+      "contactTableColumns": {
+        "department": "Department",
+        "name": "Name",
+        "email": "Email",
+        "fax": "Fax",
+        "role": "Role",
+        "telephone": "Telephone",
+        "uri": "Uri",
+        "x400": "x400"
+      }
+    },
+    "BrowseDatasetManager": {
+      "sidebar": {
+        "ddbConnectionHeader": "DDB Connection",
+        "definedDatasetHeader": "Defined Data Sets",
+        "exportDatasetTitle": "Export Dataset",
+        "exportSelectDataasets": "Select Datasets",
+        "exportToDatabaseOption": "Export to another Database",
+        "exportToFileOption": "Export to File"
+      },
+      "content": {
+        "details": {
+          "header": "Details",
+          "name": "Name",
+          "description": "Description",
+          "related": "Related with Categories/Dataflows"
+        },
+        "editor": {
+          "header": "Editor",
+          "tableSelectionFilterTitle": "Select a type",
+          "tableSelectionTypeTitle": "Type",
+          "tableSelectionNameTitle": "Name",
+          "tableSelectionFilter-1": "Tables",
+          "tableSelectionFilter-2": "Views",
+          "datasetColumnsTableColumnTitle": "Column",
+          "datasetColumnsTableTypeTitle": "Type"
+        },
+        "cancelParametersEdit": "Are you sure you want to close? All unsaved information will be lost.",
+        "removeConfirmation": "Are you sure you wish to remove this dataset?",
+        "enterDatasetName": "Plase enter a dataset name.",
+        "datasetSaved": "Dataset saved successfully.",
+        "datasetNotSaved": "Dataset could not be saved.",
+        "duplicateDatasetNameExists": "A dataset with the same name already exists, please enter a different name."
+      },
+      "alerts": {
+        "retrievingDatasetError": "An error occured while retrieving Dataset Columns. Please try again.",
+        "columnDescriptionSuccess": "Column Description added successfully.",
+        "columnDescriptionSaveError": "An error has occured, Column Description could not be saved.",
+        "removeDatasetSuccess": "Dataset removed successfully..",
+        "removeDatasetError": "An error has occured, Dataset could not be deleted.",
+        "sqlGenerationError": "A server error has occurred, the SQL query could not be generated.",
+        "noDatasetDetailsFound": "Details could be found for the selected dataset because it no longer exists in the database."
+      }
+    },
+    "BrowseMappingSetsManager": {
+      "alert": {
+        "nameIsEmpty": "Please choose and fill a mappingSet name...",
+        "mappingSetCofirmRemove": "Are you sure you would like to remove the selected mapping set?",
+        "copyMapSet": "Copy Mapping Set",
+        "cancel": "Cancel",
+        "copy": "Copy"
+      }
+    },
+    "MappingSetAPI": {
+      "alerts": {
+        "generalValidationError": "Server error: cannot validate mapping set.",
+        "mappingValidationError": "Server error: cannot validate dataset column values for component: ",
+        "retrieveDataError": "Server error: cannot retrieve data.",
+        "removeMappingSetSuccess": "Mapping Set removed successfully.",
+        "deleteMappingSetError": "An error has occured, Mapping Set could not be deleted.",
+        "editTranscodeError": "Transcoding could not be edited.",
+        "editMappingError": "Mapping could not be edited.",
+        "constraintsUpdateSuccess": "Content constraints updated successfully.",
+        "createContentConstraintsError": "Error: Content constraints could not be created.",
+        "generalMappingSaveError": "Mapping could not be saved.",
+        "generalMappingSaveError-1": "Mapping with component ",
+        "generalMappingSaveError-2": " could not be saved.",
+        "noMappingSetWarning": "Please save your mapping set first, before setting a transcoding/constant value.",
+        "noMappingWarning": "No existing mapping to remove.",
+        "mappingImportError": "A server error has occured, the mapping set was not imported.",
+        "mappingImportSuccess": "The mapping set was imported successfully.",
+        "copyMappingSetSuccess": "Mapping Set copied successfully.",
+        "copyMappingSetError": "An error has occured, Mapping Set could not be copied."
+      }
+    },
+    "BrowseMappingSetManager": {
+      "sidebar": {
+        "dataflowHeader": "Data Flows",
+        "mappingSets": "Mapping Sets",
+        "showNames": "Show Names",
+        "showIds": "Show IDs",
+        "enableReorder": "Enable Reorder",
+        "exportSelectMappingSets": "Select Mapping Sets",
+        "exportTitle": "Export Mapping Sets",
+        "exportToDatabaseOption": "Export to another Database",
+        "exportToFileOption": "Export to File"
+      },
+      "content": {
+        "details": {
+          "name": "Name",
+          "header": "Details",
+          "conneciton": "Connection",
+          "dataset": "Dataset",
+          "id": "Id",
+          "agency": "Agency",
+          "version": "Version",
+          "validFrom": "Valid From",
+          "validTo": "Valid To",
+          "validityPeriod": "Both validFrom and validTo fields must have a value or both can be left empty."
+        },
+        "editor": {
+          "header": "Editor"
+        }
+      }
+    },
+    "MappingSetEditor": {
+      "tableColumns": {
+        "code": "Code",
+        "description": "Description",
+        "type": "Type",
+        "id": "Id",
+        "name": "Name",
+        "info": "Info",
+        "datasetColumns": "Dataset Columns",
+        "transcoding": "Transcoding",
+        "defaultValue": "Default Value",
+        "constantValueColumn": "Status"
+      },
+      "placeHolders": {
+        "selectDSColumnPlaceHolder": "Please select dataset column"
+      },
+      "toolTips": {
+        "localCodes": "Local Codes",
+        "addrule": "Add new rule",
+        "componentInfo": "Component Info",
+        "mappingsetValidation": "Check if all mandatory dimensions are mapped.",
+        "datasetValidation": "Check if the mapped dataset columns have SDMX compliant values, transcodings are ignored.",
+        "dataValidation": "Check if the mappings produce SDMX compliant values, transcodings taken into account.",
+        "formatValidation": "Generates a data file and sends it to STRUVAL WS for checking if the the generated is correct and valid, transcodings taken into account.",
+        "struvalNotConfigured": "Please configure STRUVAL in order to use this functionality."
+      },
+      "alerts": {
+        "matchingMappingNotFound": "Matching mapping not found.",
+        "matchingDsdNotFound": "No Data Structure found.",
+        "constantValueExists": "Mapping has a constant value, default value cannot be set.",
+        "transcodingModifiedSuccess": "Transcoding/Constant value modified successfully.",
+        "transcodingModifiedError": "Transcoding/Constant value could not be modified.",
+        "mappingSetComplete": "Mapping set is complete!",
+        "mappingSetNotComplete": "Mapping set is not complete!",
+        "mappingSetSavedSuccess": "Mapping set saved successfully!",
+        "mappingSavedSuccess": "Mapping saved successfully!",
+        "formatValidationError": "Error: could not perform the validation process.",
+        "formatValidationSuccess": "Validation succeeded for this format.",
+        "struvalCommunicationError": "STRUVAL not found.",
+        "struvalCommunicationSuccess": "Success STRUVAL communication.",
+        "struvalBtnLabel": "Press button to test STRUVAL communication:",
+        "testStruval": "Test STRUVAL",
+        "enterConstantValue": "Please enter a constant value."
+      },
+      "noDataFound": "No data found.",
+      "datasetRows": "Dataset rows",
+      "infoSaveMessage": "Mapping Set saved successfully",
+      "autoMapAll": "Auto map all",
+      "validateMapping": "Validate Mapping",
+      "datasetValidation": "Dataset Validation",
+      "lastUpdatedMapping": "Last Updated Mapping",
+      "updateStatus": "Updated Status",
+      "updateContentConstraints": "Update Content Constraints",
+      "selectContentConstraints": "Select Content Constraints",
+      "getContentConstraintsError": "Could not retrieve content contraints.",
+      "noContentConstraintsError": "No content contraints found.",
+      "contentConstraintsModalTitle": "Select Content Constraints",
+      "filter": "Filter",
+      "clearFilters": "Clear Filters",
+      "previewQueryModalHeader": "Preview Query",
+      "editTranscodigModalHeader": "Edit",
+      "localCodesModalHeader": "Local Codes",
+      "defaultValueInputModalHeader": "Default Value Input",
+      "defaultValueLabel": "Set the default value for component",
+      "componentInfoModalHeader": "Component Info",
+      "timeTranscodingModalHeader": "Time Transcoding",
+      "datasetColumnsHeader": "Dataset Columns",
+      "couldNotRetrieveTranscodingId": "Could not retrieve transcoding for mapping with component: ",
+      "dataValidationLabel": "Data Validation",
+      "formatValidationLabel": "Format Validation",
+      "formatMappingLabel": "Format Mapping",
+      "showMappedData": "Show Mapped Data",
+      "hideMappedData": "Hide Mapped Data",
+      "automapSearchMappingsConfirm": "Some components could not be matched. Would you like to search in all mappings for a match? It may take a while.",
+      "lastUpdatedMappingorStatus": {
+        "noMappingOption": "Off (Default)",
+        "constantValue": "Constant Value",
+        "datasetColumn": "Dataset Column",
+        "deleteLastUpdMappingConfirmation": "Are you sure you wish to delete this mapping?",
+        "deleteLastUpdMappingSuccess": "Mapping deleted successfully."
+      }
+    },
+    "ComponentInfo": {
+      "header": "Component Information",
+      "header1": "Component Identification",
+      "header2": "Codelist",
+      "header3": "Attribute Information",
+      "header4": "Text Format",
+      "id": "ID",
+      "type": "Type",
+      "coded": "Coded",
+      "name": "Name",
+      "description": "Description",
+      "conceptSchemeID": "Concept Scheme ID",
+      "conceptSchemeAgencyID": "Concept Scheme Agency ID",
+      "conceptSchemeVersion": "Concept Scheme Version",
+      "assigmentStatus": "Assigment Status",
+      "relationship": "Relationship",
+      "attachmentGroup": "Attachment Group",
+      "primaryMeasureReference": "PrimaryMeasure Reference",
+      "dimensionReferences": "Dimension References",
+      "isTimeFormat": "Is time Format",
+      "textType": "Text Type",
+      "decimals": "Decimals",
+      "maxLength": "Max Lenght",
+      "minLength": "Min Lenght",
+      "interval": "Interval",
+      "isMultiLingual": "Is MultiLingual",
+      "pattern": "Pattern",
+      "isSequence": "Is Sequence",
+      "startValue": "Start Value",
+      "endValue": "End Value",
+      "maxValue": "Max Value",
+      "minValue": "Min Value",
+      "startTimeValue": "Start Time",
+      "endTimeValue": "End Time",
+      "timeInterval": "Time Interval"
+    },
+    "EditTranscoding": {
+      "codesNormalized": "- Codes already normalized",
+      "constantValue": "Constant Value",
+      "transcoding": "Transcoding",
+      "clearTranscodingLabel": "Clear Transcoding",
+      "codeMatchLabel": "Code Match",
+      "descriptionMatchLabel": "Description Match",
+      "updateContentConstraintsLabel": "Update Content Constraints",
+      "synchroniseLabel": "Synchronise",
+      "mappingBetween": "Mapping between:",
+      "transcodingRules": "Transcoding Rules",
+      "hideAssignedCodes": "Hide assigned codes",
+      "exportTranscoding": "Export Transcoding",
+      "importTranscoding": "Import Transcoding",
+      "localColumns": "Local DB Columns",
+      "dsdComponent": "SDMX DSD Components",
+      "emptyText": "No content, please add a new entry.",
+      "clearTranscodingConfirmation": "Warning. All transcoding rules will be lost. Do you want to continue?",
+      "clearTranscodingSuccess": "Transcoding deleted successfully.",
+      "fileParsingError-1": "File ",
+      "fileParsingError-2": " could not be parsed. ",
+      "fileParsingError-3": "Dataset column ",
+      "fileParsingError-4": " does not match with current mapping.",
+      "fileParsingError-5": " The number of dataset olumns does not match with the current mapping."
+    },
+    "TimeTranscoding": {
+      "noTranscoding": "No Transcoding - Codes already normalized",
+      "constantValue": "Constant Value",
+      "transcoding": "Transcoding",
+      "advancedTranscoding": "Advanced Transcoding",
+      "clearTranscodingLabel": "Clear Transcoding",
+      "clearTranscodingSuccess": "Transcoding deleted successfully.",
+      "invalidLocalCodes": "Invalid Local Codes.",
+      "yearly": "A-Yearly",
+      "halfYearly": "S-Half Yearly",
+      "quarterly": "Q-Quarterly",
+      "monthly": "M-Monthly",
+      "localColumn": "Is the local column data type date/time or timestamp",
+      "dateColumn": "Date Column",
+      "yearColumn": "Year Column",
+      "periodColumn": "Period Column",
+      "higlLightYearPart": "Highlight year part:",
+      "higlLightPeriodPart": "Highlight period part:",
+      "addFrequency": "Add Frequency",
+      "sdmxCodeTableTitle": "SDMX period",
+      "localCodeTableTitle": "Local period",
+      "validConstantValues": "Constant Value Accepted Inputs",
+      "cvalueTable": {
+        "name": "Name",
+        "format": "Format",
+        "example": "Example",
+        "annual": "Annual",
+        "reportingYear": "Reporting Year",
+        "monthly": "Monthly (Gregorian)",
+        "gregDate": "Gregorian Date",
+        "reportingMonth": "Reporting Month",
+        "reportingQuarter": "Reporting Quarter",
+        "reportingTrimester": "Reporting Trimester",
+        "reportingSemester": "Reporting Semester",
+        "reportingWeek": "Reporting Week",
+        "reportingDay": "Reporting Day",
+        "isoDateTime": "ISO Date Time",
+        "isoDateDuration": "ISO Date with Duration",
+        "isoDateTimeDuration": "ISO Date Time with Duration"
+      },
+      "sidebar": {
+        "criteriaValue": "Column Criteria & Criteria Value",
+        "timeRange": "Time Range",
+        "standardPeriod": "Standard Period",
+        "configuration": "Final Configuration"
+      },
+      "changeSavedCriteriaColumnWarning": "By saving different criteria column, all saved time transcoding configurations will be lost.",
+      "advancedTranscodingWarning": "To enable, at least two columns need to be mapped. One for selecting the criteria/output format and others containing the actual time period.",
+      "clearAdvancedTranscodingLabel": "Clear advanced transcoding",
+      "selectCriteriaColumn": "Select criteria column: ",
+      "selectCriteriaColumnNote": "Select a column that will be used to determine format and configuration.",
+      "selectCriteriaValueNote-2": "Each value above can have its own output and configuration.",
+      "noCriteriaValue": "Does not have a value.",
+      "outputType": "Output Type",
+      "outputFormat": "Format",
+      "sdmxVersions": "SDMX versions",
+      "selectTimeRangeStoringOption": "Select how the time range is stored in the database.",
+      "selectStartEndPeriodStoringOption": "Select how the start/end period is stored in the database.",
+      "selectDurationStoringOption": "Select how the duration is stored in the database.",
+      "selectStartEndColumn": "Select the start/end column.",
+      "nonCompliantStartPeriod": "Configuration of start period.",
+      "nonCompliantEndPeriod": "Configuration of end period.",
+      "nonCompliantStartPeriodExplanation": "Select the type of local column(s).",
+      "dateStandarsSpecific": "Date type/standard specific column.",
+      "selectColumn": "Select column: ",
+      "durationConstantInput": "Enter ISO 8601 Duration value",
+      "durationConfiguration": "Configuration of start/end period.",
+      "nonCompliantDuration": "Map non compliant duration.",
+      "standardPeriodConfig": "Configure standard period.",
+      "selectDurationColumn": "Select Duration Column: ",
+      "localDurationTableTitle": "Local Duration",
+      "isoTableTitle": "ISO 8601 Duration",
+      "otherTypeMultipleColumns": "Other type/multiple columns.",
+      "configYearTitle": "Configure year.",
+      "otherTypeMultipleColumnsExplanation": "Select how time period is stored in the database.",
+      "selectYearColumn": "Select year column: ",
+      "selectYearPartNote": "Select a sub-text by using your mouse: ",
+      "invalidColumnSelected": "The selected column is not valid.",
+      "clearTranscodingConfirmation": "Warning. All transcoding rules will be lost. Do you want to continue?",
+      "selectYear": "Select Year : ",
+      "selectPeriodColumn": "Select period column: ",
+      "durationTranscodingNotSaved": "Advanced transcoding for time duration could not be saved.",
+      "timeRangeStoringOptions": {
+        "startPeriodDuration": "Start Period and Duration",
+        "endPeriodDuration": "End Period and Duration",
+        "startEndPeriod": "Start and End Period"
+      },
+      "selectStartEndPeriodStoringOptions": {
+        "iso8601": "ISO 8601 start/end range column",
+        "nonCompliant": "Non compliant start/end range column(s)"
+      },
+      "nonCompliantStartEndOptions": {
+        "dateTimeTimestamp": "Date/time or timestamp",
+        "isoOrSdmx": "ISO 8601 or SDMX compatible format",
+        "other": "Other type / multiple columns"
+      },
+      "durationRadioOptions": {
+        "constant": "Duration is a constant",
+        "iso8601": "ISO 8601 duration column",
+        "nonCompliant": "Non-compliant duration column"
+      },
+      "timePeriodOptions": {
+        "annual": "Annual, year only",
+        "monthly": "Monthly, year and month",
+        "quarterly": "Quarterly, year and quarter",
+        "semester": "Semester, year and semester",
+        "trimester": "Trimester, year and trimester",
+        "weekly": "Weekly, year and week"
+      }
+    },
+    "QueryEditor": {
+      "previewDataLabel": "Preview Data",
+      "updateInDbLabel": "Update in DB",
+      "queryLabel": "Query"
+    },
+    "VisualEditor": {
+      "noDataValuesFound": "No data values found.",
+      "selectTablesLabel": "Select Tables",
+      "addViewConstraintsLabel": "Add/View Constraints",
+      "previewDataLabel": "Preview Data",
+      "updateInDbLabel": "Refresh Dissemination DB",
+      "addFixColumnLabel": "Add Fixed Column",
+      "deleteFixedColumnLabel": "Delete Fixed Columns",
+      "enableFixedColumnLabel": "Enable Delete Columns",
+      "deleteFixedInscructionMessage": "Click on any fixed columns you would like to delete and press the button again to finalize.",
+      "mergeColumnsLabel": "Merge Columns",
+      "enableReorderLabel": "Enable Column Re-order",
+      "finalizeReorderLabel": "Finalize Reorder",
+      "reorderInscructionMessage": "Click on up/down arrows to reorder and press the button again to finalize.",
+      "unmergeColumnsLabel": "Unmerge Columns",
+      "unionLabel": "Union",
+      "columnTableLabel": "Column Table",
+      "crossJoinLabel": "Cross Join",
+      "connectTables": "Connect Tables",
+      "mergeInscructionMessage": "Click on any columns you would like to merge and press the button again.",
+      "enableMergeColumnsLabel": "Enable Merge",
+      "allTables": "All Tables",
+      "unionColumnNumberWarning": "Union requires for both tables to have the same number of columns.",
+      "constraintTableColumns": {
+        "column": "Column",
+        "operator": "Operator",
+        "value": "Value"
+      },
+      "infoPanel": {
+        "howToUseVE": "How to use the Visual Editor",
+        "indicatesMappedColumns": "Indicates Mapped Columns.",
+        "indicatesDatasetColumns": "Indicates Dataset Columns.",
+        "indicatesNonDatasetColumns": "Indicates Non-Dataset Columns.",
+        "indicatesMergedColumns": "Indicates Merged Columns.",
+        "indicatesSelectedColumns": "Indicates Selected Columns.",
+        "info1": "Rows can be connected to rows from a different table by clicking & dragging, starting from the right side of",
+        "info2": "Hold Shift & drag to multi-select elements.",
+        "info3": "Press Delete on your keyboard to delete selected elements.",
+        "info4": "Press Shift and use the mouse wheel to zoom in & out.",
+        "info5": "Click & drag on the blank space to drag the whole diagram, drag a table to move it around.",
+        "info6a": "Click on ",
+        "info6b": " of a table to add a fixed column.",
+        "info7": "You can delete and merge columns with Enable Delete and Enable Merge buttons. Note that only fixed columns can be deleted.",
+        "info8": "Click on a column to mark it as a Dataset column.",
+        "info9": "Use Merge Columns to merge selected columns.",
+        "info10": "Click on a table title to mark it as selected for Union / Cross Join. If you have selected 2 or more tables, click on the button Union / Cross Join to connect them.",
+        "dsColumnMultiSelect-1": "Click on the ",
+        "infoPanel.dsColumnMultiSelect-2": " on the upper left corner of a table to mark all columns as Dataset columns or invert selection.",
+        "enableReorderInfo": "Click on Enable Column Re-order to change the columns order."
+      },
+      "selectTablesAndViews": "Select Tables and Views",
+      "addFixedColumnsTo": "Add Fixed Column to ",
+      "fixedColumnName": "Fixed Column Name",
+      "fixedColumnNamePlaceholder": "Give column name",
+      "fixedColumnValue": "Fixed Column Value",
+      "fixedColumnValuePlaceholder": "Give column value",
+      "addViewConstraints": "Add/View Constraints",
+      "filterByTable": "Filter by Table:",
+      "selectColumn": "Select Column:",
+      "selectOperator": "Select Operator:",
+      "selectValue": "Select Value:",
+      "addConstraintBtn": "Add Constraint",
+      "deleteSelectedConstraintsBtn": "Delete Selected Constraints",
+      "clearAllConstraintsBtn": "Clear All Constraints",
+      "radioAllMustBeTrue": "All must be TRUE (AND)",
+      "radioAtLeastOneTrue": "At least one can be TRUE (OR)",
+      "columnNamesAlert": "Column names need to be shorter than 31 characters.",
+      "selectTableAlert": "You need to select exactly one table.",
+      "selectTwoTables": "Please select exactly 2 tables.",
+      "queryAlert": {
+        "header": "SQL Query Error",
+        "message": "Check the SQL Query. Make sure it is valid. "
+      },
+      "descriptionOfColumn": "Description of column "
+    },
+    "DatasetColumns": {
+      "transUsedLabel": "Transcoding used",
+      "retrieveTransLabel": "Retrieve",
+      "syncLastLabel": "Synchronize..Last  ",
+      "datasetColumnsLabel": "Dataset Columns",
+      "deleteLocalCodesLabel": "Delete Local Codes",
+      "associateDescriptionLabel": "Associate Descriptions",
+      "deleteDescriptionLabel": "Delete Description",
+      "tableColumns": {
+        "displayedName": "Displayed Name",
+        "description": "Description",
+        "localCode": "Local Code"
+      },
+      "associateDescription": {
+        "header": "Associate Description - Select description source for codes",
+        "sourceDescLabel": "Select source description for codes in :",
+        "sourceTableLabel": "Select the table containing the description.",
+        "fieldLabel": "Select the field that can be linked with the codes in the dataset column.",
+        "descColumnLabel": " Select description column(s). The selected columns will be concatenated."
+      },
+      "alerts": {
+        "deleteLocalCodesSuccessMessage": "All Local Codes have removed successfully.",
+        "deleteLocalCodesFailureMessage": "Local codes of this dataset column is not allowed to be deleted",
+        "deleteLocalCodesErrorMessage": "An error occured while trying to remove local codes",
+        "deleteDescriptionSuccessMessage": "Description has removed successfully.",
+        "deleteDescriptionFailureMessage": "Description is not allowed to be deleted",
+        "deleteDescriptionErrorMessage": "An error occured while trying to remove description"
+      }
+    },
+    "BrowseCategoriesManager": {
+      "header": "Manage Categories and Structures",
+      "artefactType": "Artefact type",
+      "artefactID": "Artefact ID",
+      "cschemeMandatoryFields": "ID, Agency, Name and Version are mandatory fields.",
+      "categoryMandatoryFields": "ID and Name are mandatory fields.",
+      "selectModeTree": "Change to Tree View",
+      "selectModeCombo": "Change to Dropdown View",
+      "saveArtefactSuccess": "Artefact saved successfully.",
+      "alerts": {
+        "dataflowHeaderError": "Server Error: Dataflow Header could not be retrieved.",
+        "artefactModificationError": "Artefact cannot be modified.",
+        "artefactModificationErrorSub1": "Artefact ",
+        "artefactModificationErrorSub2": " cannot be modified.",
+        "noChangesApplied": "No changes were applied.",
+        "artefactRetrievalError": "Could not retrieve artefact.",
+        "artefactModificationError2": "Artefact cannot be modified because its URN is used by other artefacts.",
+        "editHeaderError": "Header could not be edited.",
+        "artefactDeletedSuccess": " deleted successfully.",
+        "deleteArtefactError": "Error: could not delete artefact ",
+        "deleteArtefactErrorCnt": ". This artefact is being used in other artefacts.",
+        "deleteArtefactErrorCnt2": ". Make sure that you have entered your authorization credentials and that you have the right to delete structures.",
+        "retrieveArtifactError": "Server Error: The selected artefact could not be retrieved, or it was not saved/imported correctly.",
+        "structureTypeError": "The requested Structure Type is not supported yet.",
+        "saveDefaultsSuccess": "Default options saved successfully",
+        "saveDefaultsError": "Default options could not be saved",
+        "getDefaultsError": "Default options could not be retrieved",
+        "confirmDelete": "WARNING: Deleting a Category/Category Scheme will also delete its children Categories (if any). Any children Dataflows will become uncategorized. Are you sure you wish to delete the selected artefacts?",
+        "categoriesReorderError": "The parent Category Scheme for the re-ordered categories could not be found.",
+        "categorisationReorderSuccess": "Dataflow re-ordered successfully: ",
+        "categorisationReorderError": "Dataflow order not updated for: "
+      }
+    },
+    "BrowseStructure": {
+      "header": "",
+      "tableColumns": {
+        "details": "View Details",
+        "download": "Download",
+        "id": "ID",
+        "agency": "Agency",
+        "version": "Version",
+        "isFinal": "Is Final",
+        "validFrom": "Valid From",
+        "validTo": "Valid To",
+        "names": "Names",
+        "descriptions": "Descriptions"
+      },
+      "deleteConfirmation": "Are you sure you wish to delete the selected artefacts?"
+    },
+    "StructureTable": {
+      "header": "",
+      "tableColumns": {
+        "id": "ID",
+        "agency": "Agency",
+        "version": "Version",
+        "isFinal": "Is Final",
+        "validFrom": "Valid From",
+        "validTo": "Valid To",
+        "names": "Names",
+        "descriptions": "Descriptions",
+        "createDF": "Dataflow Creation"
+      }
+    },
+    "CategoryTable": {
+      "header": "",
+      "tabGeneral": "General",
+      "tableColumns": {
+        "id": "ID",
+        "agency": "Agency",
+        "version": "Version",
+        "isFinal": "Is Final",
+        "validFrom": "Valid From",
+        "validTo": "Valid To",
+        "name": "Name",
+        "names": "Names",
+        "description": "Description",
+        "descriptions": "Descriptions"
+      }
+    },
+    "CategorySchemeTable": {
+      "header": "",
+      "tabGeneral": "General",
+      "tableColumns": {
+        "id": "ID",
+        "agency": "Agency",
+        "version": "Version",
+        "isFinal": "Is Final",
+        "validFrom": "Valid From",
+        "validTo": "Valid To",
+        "name": "Name",
+        "names": "Names",
+        "description": "Description",
+        "descriptions": "Descriptions"
+      }
+    },
+    "DataflowTable": {
+      "header": "",
+      "isInProductionInfo": "Dataflow and its data available for dissemination",
+      "isNotInProductionInfo": "Dataflow and its data not available for dissemination",
+      "dataflowMandatoryFields": "ID, Agency, Version, Name and DSD are mandatory fields.",
+      "dataSourceRetrieveError": "Data Source could not be retrieved.",
+      "tableColumns": {
+        "id": "ID",
+        "agency": "Agency",
+        "version": "Version",
+        "isFinal": "Is Final",
+        "validFrom": "Valid From",
+        "validTo": "Valid To",
+        "name": "Name",
+        "description": "Description",
+        "names": "Names",
+        "descriptions": "Descriptions",
+        "inProduction": "Is in Production",
+        "dsd": "DSD"
+      },
+      "tabs": {
+        "general": "General",
+        "attach": "Attach",
+        "header": "Header",
+        "dataSource": "Data Source"
+      },
+      "alerts": {
+        "saveArtefactSuccess": "Artefact saved successfully."
+      }
+    },
+    "Controls": {
+      "Button": {
+        "okLabel": "OK",
+        "updateLabel": "Update",
+        "copyLabel": "Copy",
+        "closeLabel": "Close",
+        "applyLabel": "Apply",
+        "addLabel": "Add",
+        "editLabel": "Edit",
+        "cloneLabel": "Clone",
+        "removeLabel": "Remove",
+        "saveLabel": "Save",
+        "createLabel": "Create",
+        "clearLabel": "Clear",
+        "cancelLabel": "Cancel",
+        "backButton": "Back",
+        "importLabel": "Import",
+        "loginLabel": "Login",
+        "deleteLabel": "Delete",
+        "deleteSelectedLabel": "Delete Selected",
+        "queryRegistryLabel": "Query Registry",
+        "checkForUpgradeLabel": "Check for Upgrade",
+        "noAvailableUpgradeLabel": "No Available Upgrade",
+        "upgradeToVersionLabel": "Upgrade to version ",
+        "importDatasetLabel": "Import Dataset",
+        "exportDatasetLabel": "Export Dataset",
+        "importMappingLabel": "Import Mapping",
+        "exportMappingLabel": "Export Mapping",
+        "importDDBLabel": "Import",
+        "exportDDBLabel": "Export",
+        "reinitializeLabel": "Reinitialize",
+        "categoriesTreeLabel": "Categories Tree",
+        "previewQuery": "Preview Query",
+        "viewResults": "View Results",
+        "checkLabel": "Check",
+        "showPassword": "Show / Hide Password",
+        "upload": "Upload",
+        "startUpload": "Start Upload",
+        "uploading": "Uploading"
+      },
+      "notificationTitles": {
+        "success": "Success",
+        "error": "Error",
+        "warning": "Warning",
+        "info": "Action Information"
+      },
+      "Options": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "tableProperties": {
+        "noContent": "No content.",
+        "filterOK": "OK",
+        "filerReset": "Reset"
+      },
+      "placeHolders": {
+        "queryPreviewTextAreaPlaceholder": "Provide in main screen a query first to be able to preview the results here",
+        "pleaseSelectPlaceholder": "Please Select"
+      }
+    },
+    "Registry": {
+      "tableColumns": {
+        "name": "Name",
+        "desc": "Description",
+        "url": "URL",
+        "wsType": "WS Type",
+        "test": "Test Service"
+      },
+      "newRegistry": "New Registry",
+      "refresh": "Refresh Page",
+      "addSuccess": "Registry Endpoint added successfully. Click OK to return to the Registry List.",
+      "addError": "An error has occured, new Registry Endpoint could not be added, click OK to return to the Registry List.",
+      "editSuccess": "Registry Endpoint edited successfully. Click OK to return to the Registry List.",
+      "editError": "An error has occured, new Registry Endpoint could not be edited, click OK to return to the Registry List.",
+      "registryTitle": "Registry Endpoint",
+      "namePlaceholder": "Name",
+      "descPlaceholder": "Description",
+      "urlPlaceholder": "URL",
+      "public": "Public",
+      "publicText": "Can be used globally by any Mapping Assistant user",
+      "upgrades": "Used for Upgrades",
+      "upgradesText": "This endpoint will be used for Dataflow upgrades",
+      "username": "Username",
+      "password": "Password",
+      "proxy": "Proxy",
+      "proxyText": "A proxy will be used for this endpoint",
+      "userMessageTitle": "Add / Edit Registry Endpoint",
+      "deleteRegistriesConfirm": "Are you sure you wish to delete the selected registries?"
+    },
+    "NsiWs": {
+      "tableColumns": {
+        "name": "Name",
+        "desc": "Description",
+        "url": "URL",
+        "wsType": "WS Type",
+        "test": "Test Service"
+      },
+      "newNsiws": "New NsiWs Endpoint",
+      "refresh": "Refresh Page",
+      "addSuccess": "NsiWs Endpoint added successfully. Click OK to return to the NsiWs List.",
+      "addError": "An error has occured, new NsiWs Endpoint could not be added, click OK to return to the NsiWs List.",
+      "editSuccess": "NsiWs Endpoint edited successfully. Click OK to return to the NsiWs List.",
+      "editError": "An error has occured, new NsiWs Endpoint could not be edited, click OK to return to the NsiWs List.",
+      "nsiwsTitle": "NsiWs Endpoint",
+      "namePlaceholder": "Name",
+      "descPlaceholder": "Description",
+      "urlPlaceholder": "URL",
+      "public": "Public",
+      "publicText": "Can be used globally by any Mapping Assistant user",
+      "upgrades": "Used for Upgrades",
+      "upgradesText": "This endpoint will be used for Dataflow upgrades",
+      "username": "Username",
+      "password": "Password",
+      "proxy": "Proxy",
+      "proxyText": "A proxy will be used for this endpoint",
+      "userMessageTitle": "Add / Edit NsiWs Endpoint",
+      "deleteNsiWsConfirm": "Are you sure you wish to delete the selected NsiWs endpoint?"
+    },
+    "ConnectionCommon": {
+      "cancelParametersEdit": "Are you sure you want to cancel editing? All edited information will be lost.",
+      "enterPassword": "Please enter a valid password to continue.",
+      "selectDbType": "Please select a valid Database type to continue.",
+      "connectionNameAlreadyExists-1": "A connection with name: ",
+      "connectionNameAlreadyExists-2": " already exists. Please enter a unique connection name.",
+      "confirmDelete": "Are you sure you want to delete ",
+      "confirmRenitialize": "Reinitializing a mapping store will delete all of its contents. Are you sure you want to reinitialize ",
+      "connectionsTitle": "Connections",
+      "addConnectionLabel": "Add",
+      "removeConnectionLabel": "Remove",
+      "infoText": " Select a Connection name to view its details and to modify them",
+      "connName": "Connection name",
+      "connType": "Database type",
+      "connParams": "Connection Parameters",
+      "dataSource": "Data Source",
+      "userId": "User ID",
+      "password": "Password",
+      "server": "Server",
+      "database": "Database",
+      "categories": "Categories",
+      "browseCategories": "Browse",
+      "categoryTree": "Category Tree",
+      "port": "Port (optional)",
+      "advancedParameters": "Advanced Parameters",
+      "testConnection": "Test Connection",
+      "save": "Save",
+      "close": "Close",
+      "tableDbName": "DB Name",
+      "tableConnName": "Connection Name",
+      "tableDbType": "DB Type",
+      "enterMsdbName": "Please enter a connection name to continue",
+      "wrongMsdbName": "The mapping store name should contain only letters, numbers or underscores",
+      "relatedCategoriesTitle": "Related Categories and Dataflows",
+      "applyLabel": "Apply",
+      "cancelLabel": "Cancel",
+      "noAdvancedParametersMessage": "Advanced parameters are not available. If this is a new connection, please save your connection first. If it is an existing connection, there might be a server error.",
+      "authDBEditWarning": "Editing the authentication database will prompt you to log in again. According to the database you use, the credentials may be different. Do you wish to proceed?"
+    },
+    "MSDBConnectionForm": {
+      "msdbNameNote": "The mapping store name should contain only letters, numbers or underscores. (A-Z, a-z, 0-9, _ )",
+      "initMsdbSuccess": "Mapping Store has been initialized.",
+      "initMsdbError": "Mapping Store could not be initialized.",
+      "upgradeMsdbSuccess": "Mapping Store has been upgraded.",
+      "upgradeMsdbError": "Mapping Store could not be upgraded.",
+      "msdbVersion": "Mapping Store version",
+      "upgrade": "Upgrade to ",
+      "init": "Initialize",
+      "noInit": "Not Initialized",
+      "msdbNotRetrieved-admin": "The mapping store information could not be retrieved. Please make sure that the database is accessible or select a different mapping store.",
+      "msdbNotRetrieved-user": "The mapping store information could not be retrieved. Please contact your administrator or select a different mapping store.",
+      "msdbNotInitialized-admin": "This mapping store is not initialized. Please initialize it or select a different mapping store.",
+      "msdbNotInitialized-user": "This mapping store is not initialized. Please contact your administrator or select a different mapping store."
+    },
+    "AUTHDBConnectionForm": {
+      "addAuthDBSuccess": "Authentication database connection details saved successfully",
+      "addAuthDBError": "An error has occured, Authentication database connection details could not be saved.",
+      "authDBError": "Authentication database already configured.",
+      "retrieveAuthDBError": "Authentication database connection details could not be retrieved."
+    },
+    "DDBConnectionForm": {
+      "deleteError": "An error has occured, DDB Connection could not be deleted.",
+      "addEditSuccess": "Connection added / edited successfully.",
+      "addEditError": "Connection could not be added / edited."
+    },
+    "LoginMessage": {
+      "title": "Unauthorized",
+      "message-1": "You are not allowed to view this page.",
+      "message-2": "You are not logged in, please click",
+      "message-3": " to log in.",
+      "linkLabel": " here "
+    },
+    "Proxy": {
+      "cancelEditing": "Are you sure you want to cancel editing? All edited information will be lost.",
+      "username": "Username",
+      "usernamePlaceholder": "Type the proxy username",
+      "password": "Password",
+      "passwordPlaceholder": "Type the proxy password",
+      "enableProxy": "Enable Proxy",
+      "enableProxyPlaceholder": "Enable/Disable Proxy",
+      "proxyUrl": "Proxy Url",
+      "proxyUrlPlaceholder": "Type the proxy url",
+      "proxyAuth": "Proxy Authentication",
+      "proxyAuthPlaceholder": "Enable/Disabel Proxy Authentication",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveProxySettingsSuccess": "Proxy settings saved successfully.",
+      "saveProxySettingsError": "An error has occured, proxy settings could not be saved."
+    },
+    "Users": {
+      "tableColumns": {
+        "edit": "Edit",
+        "username": "Username",
+        "role": "Role",
+        "registrationDate": "Registration Date"
+      },
+      "alerts": {
+        "pwdError": "The password is not valid. Please use at least 8 charactes. The password should contain at least one number, one symbol and one capital letter."
+      },
+      "searchByUsername": "Search by Username",
+      "search": "Search",
+      "delete": "Delete",
+      "deleteError1": "An error has occured, user ",
+      "deleteError2": " could not be deleted.",
+      "newUser": "New User",
+      "refresh": "Refresh List",
+      "enterUsername": "Please enter a valid username.",
+      "enterStore": "Please select at least one Store.",
+      "selectStore": "Please select a Default Store.",
+      "enterPassword": "Please enter a password.",
+      "userAddedEdited": "User successfully added / edited, click OK to return to the Users List.",
+      "userNotAddedError": "An error has occured, User could not be added / edited. Click OK to return to the Users List.",
+      "deleteUsersConfirmation": "Are you sure you wish to delete the selected users?"
+    },
+    "DisseminationWizard": {
+      "sidebar": {
+        "ddbTab": " DDB & Dataset Selection",
+        "dataflowTab": " Dataflow",
+        "validateTab": " Validate"
+      },
+      "content": {
+        "dataflows": {
+          "selectDataflow": "Select from available Dataflows:",
+          "selectPlaceholder": "Select dataflow",
+          "addCreateDataflow": "Add/Create Dataflow",
+          "addCreatePlaceholder": "Select method",
+          "browseRegistry": "Browse Registry",
+          "uploadDataflow": "Upload file",
+          "dataflowProperties": "Dataflow Properties"
+        },
+        "validate": {
+          "validateButton": "Create / Validate Mapping Set",
+          "publishButton": "Publish to Production",
+          "mappingSetNotValid": "Mapping set is not valid.",
+          "beginValidation": "Validating mapping set...",
+          "mappingSetNotComplete": "Mapping set is not complete.",
+          "dataValidationMessage": "Data Validated Successfully",
+          "alreadyInProduction": "Dataflow is already set in production.",
+          "publishedToProduction": "Dataflow published to production successfully.",
+          "saveMappingsetMessage": "Saving new mapping set...",
+          "mappingSetNotSavedErrorMessage": "Error: New mapping set could not be saved.",
+          "automappingMessage": "Automapping components...",
+          "mappingsNotSavedErrorMessage": "Error: Mappings could not be saved.",
+          "editMappings": "Edit Mappings",
+          "viewErrors": "View Errors",
+          "editMappingsComplete": "Mappings have been edited.",
+          "errorsModalTitle": "Mapping Set errors for Dataflow ID: ",
+          "modalOKButton": "Close and Revalidate",
+          "modalOKButtonEditor": "Close",
+          "modalCancelButton": "Cancel",
+          "column1": "Dataset Column(s)",
+          "column2": "DSD Components",
+          "column3": "Actions",
+          "showRows": "Show Rows",
+          "hideRows": "Hide Rows",
+          "textFormatErrors-1": "Found ",
+          "textFormatErrors-2": " text format errors in the following values for Component ",
+          "codelistErrors-1": "Found ",
+          "codelistErrors-2": " codelist errors in the following values for Component ",
+          "timePeriodErrors-1": "Found ",
+          "timePeriodErrors-2": " time period errors in the following values for Component ",
+          "duplicateObservationsHeader": "Duplicate Observations",
+          "duplcateObservationsFoundTrue": "Duplicate observations found at the following series :",
+          "duplcateObservationsFoundFalse": "No duplicate observations found.",
+          "missingValuesHeader": "Missing Values",
+          "missingValuesFoundTrue": "Missing values found:",
+          "missingValuesFoundFalse": "No missing values found.",
+          "loadMoreData": "Load More Data",
+          "getDataError": "Could not retrieve any more data."
+        }
+      }
+    },
+    "CommonMessages": {
+      "ArtefactValidation": {
+        "ncnameid": "ID should start with a letter and can contain only alphanumeric characters, underscore (_) and dash (-) ",
+        "agency": "Agency should start with a letter, not end with a dot and may contain only alphanumeric characters, dot (.) , underscore (_) and dash (-)",
+        "version": "Version can contain only numeric characters separated by a dot (.)"
+      }
+    },
+    "LoggerManagement": {
+      "DateColumn": "Date",
+      "LevelColumn": "Level",
+      "MessageColumn": "Message",
+      "DetailColumn": "Details",
+      "ShowDetail": "Show details",
+      "ChangeLogLevel": "Select log level to store in browser",
+      "PushIntoConsole": "Push into console",
+      "LastLoggerMessage": "Last messages",
+      "FilterMessage": "Filters",
+      "Details": "Details",
+      "ClearQueue": "Clear queue",
+      "InfoToSaveLocalstorage": "You can save your parameters into your local store for retreive later."
+    },
+    "LoggerDetailMessage": {
+      "Message": "Message",
+      "Stacktrace": "Stacktrace",
+      "CopyToClipboard": "Copy to clipboard"
+    },
+    "userActions": {
+      "tableColumns": {
+        "type": "Type",
+        "date": "Date",
+        "entityType": "Entity Type",
+        "entityName": "Entity Name",
+        "visitItem": "Visit Item",
+        "user": "User"
+      }
+    },
+    "TestClient": {
+      "header": "Browse and Download Data",
+      "queryOptionsTitle": "Query Options",
+      "queryOptionsLabel": "Select data format",
+      "buildQueryTitle": "Build Query",
+      "noSelection": "No selection detected...",
+      "pleaseSelectDataflow": "Please Select a Dataflow from the sidebar.",
+      "noDsdFoundAlert": "No data structure was found for this Dataflow.",
+      "componentConstraintsLabel": "Component constraints: ",
+      "clearAllConstraints": "Clear all constraints",
+      "showAllConstraints": "Show all",
+      "clearComponentConstraints": "Clear component constraints",
+      "dimensionAtOperationLabel": "Dimension at observation: ",
+      "previewDataLabel": "Preview Data",
+      "downloadDataLabel": "Download Data",
+      "noDataError": "No data was found. Please try a different data format or select a different Dataflow.",
+      "previewDataWindowTitle": "Result as SDMX Data",
+      "copyToClipboard": "Copy to clipboard",
+      "previewText": "Only the first 10 results are being returned to preview, please copy to clipboard or download to view the full data file.",
+      "dataCopiedNotification": "Data has been copied."
+    }
+  }
+}

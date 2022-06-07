@@ -1,0 +1,24 @@
+# User and permission management 
+
+```eval_rst
+* :doc:`Login and User Types <overview_user_type>`
+* :doc:`Creating a new user <new_user>`
+* :doc:`Creating an administrator user <user_administrator>`
+* :doc:`Creating a user dedicated to the Structural Metadata <user_structural_metadata>` 
+* :doc:`Creating a user dedicated to Data Upload <user_loader_data>`
+* :doc:`Creating a user dedicated to Referential Metadata <user_referential_metadata>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    Login and User Types <overview_user_type.md>
+    Creating a new user <new_user.md>
+    Creating an administrator user <user_administrator.md>
+    Creating a user dedicated to the Structural Metadata <user_structural_metadata.md>
+    Creating a user dedicated to Data Upload <user_loader_data.md>
+    Creating a user dedicated to Referential Metadata <user_referential_metadata>
+```
+

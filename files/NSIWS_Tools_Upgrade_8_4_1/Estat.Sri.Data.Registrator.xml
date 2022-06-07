@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Data.Registrator</name>
+    </assembly>
+    <members>
+        <member name="M:Estat.Sri.Data.Registrator.DataRegistrator.SendSubmitRegistrationsRequest(System.Collections.Generic.Dictionary{Org.Sdmxsource.Sdmx.Api.Constants.DatasetActionEnumType,System.Collections.Generic.IList{Org.Sdmxsource.Sdmx.Api.Model.Mutable.Registry.IRegistrationMutableObject}})">
+            <summary>
+            Sends the SDMX submit registration request containign the specified <paramref name="registrations" /> to a SDMX v2.1 compliant Registry and store the response in a local store
+            </summary>
+            <param name="registrations">The registrations.</param>
+            <exception cref="T:System.ArgumentNullException">Null paramater: 'registrations'</exception>
+        </member>
+        <member name="T:Estat.Sri.Data.Registrator.DataRegistratorSettings">
+            <summary>
+            The DataRegistrator settings
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Data.Registrator.DataRegistratorSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Data.Registrator.DataRegistratorSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.IsUseHttpAuthentication">
+            <summary>
+            Gets or sets a value indicating whether this instance is use HTTP authentication.
+            </summary>
+            <value>
+              <c>true</c> if this instance is use HTTP authentication; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.RegistryWSDL">
+            <summary>
+            Gets or sets the registry WSDL.
+            </summary>
+            <value>
+            The registry WSDL.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.RegistryEndpoint">
+            <summary>
+            Gets or sets the registry endpoint.
+            </summary>
+            <value>
+            The registry endpoint.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.IsRest">
+            <summary>
+            Gets or sets the if the requeste is rest.
+            </summary>
+            <value>
+            The request type is rest.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.ProxyHost">
+            <summary>
+            Gets or sets the ProxyHost
+            </summary>
+            <value>
+            The proxy address.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.EnableProxy">
+            <summary>
+            Gets or sets a value indicating whether this instance use Proxy Server.
+            </summary>
+            <value>
+            <c>true</c> if this instance is use Proxy Server; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.UseSystemProxy">
+            <summary>
+            Gets or sets a value indicating whether this instance use System Proxy Server.
+            </summary>
+            <value>
+            <c>true</c> if this instance is use System Proxy Server; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.ProxyPort">
+            <summary>
+            Gets or sets the ProxyPort
+            </summary>
+            <value>
+            The proxy port.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.ProxyUsername">
+            <summary>
+            Gets or sets the ProxyUserName
+            </summary>
+            <value>
+            The proxy username.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Data.Registrator.DataRegistratorSettings.ProxyPassword">
+            <summary>
+            Gets or sets the ProxyPassword
+            </summary>
+            <value>
+            The proxy password.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Data.Registrator.DataRegistratorSettings.TryGetUriOrNull(System.String)">
+            <summary>
+            Tries the get URI or null.
+            </summary>
+            <param name="setting">The setting.</param>
+            <returns>System.Uri.</returns>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException"></exception>
+        </member>
+        <member name="M:Estat.Sri.Data.Registrator.DataRegistratorSettings.TryGetBoolOrFalse(System.String)">
+            <summary>
+            Tries the get bool or false.
+            </summary>
+            <param name="setting">The setting.</param>
+            <returns>System.Boolean.</returns>
+        </member>
+    </members>
+</doc>

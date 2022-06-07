@@ -1,0 +1,19 @@
+# Metadata Management
+
+The Metadata item in the application menu has two sections:
++ **Referential Metadata** \
+Dedicated to the management of Referential Metadata, that is metadata that can be associated to any artefact in a generic way.
+
++ **DCAT-AP_IT** \
+Dedicated to the management of Metadata in compliance with the DCAT-AP_IT standard (defined by Agit, the agency for digital Italy), which defines a set of descriptive metadata (mandatory, recommended or optional) used to document both data and catalogues dedicated to public administrations. 
+
+![Metadata](_static/img/MR.PNG "Metadata") 
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+
+    Referential Metadata <mr.md>
+    The DCAT-AP_IT Standard <dcat_ap.md>
+```
+

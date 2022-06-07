@@ -1,0 +1,59 @@
+# Code Lists
+
+Selecting **Code Lists** from the "Meta Manager" form, the application displays the list of Node Code Lists similar to the lists of all artefacts present, as explained in [artefact list](artefact_lists.md). \
+Selecting an item in the list with the mouse and pressing the View/Edit button, the system displays the Detail mask.
+
+ ![Code List](_static/img/lista_codici.PNG "Code List")
+ 
+The main section of the Code List detail mask contains the following tabs:
++ [**General**](section_general.md)
++ **Items** \
+Items can be displayed in grid or tree mode. The default is the grid view. 
+
+![Items Code List](_static/img/item.PNG "Items Code List")
+
+As an alternative to the insertion of individual items, it is possible to [**import a CSV file**](item_import_file_csv.md) in order to insert them in bulk, otherwise the management functions of the individual items are the following:
+* **Create Item** \
+To create a new Item, the user must use the _Create Item_ button at the top. \
+The System presents the data acquisition mask. \
+The fields to be populated are: \
+-- **Identifier Item** (mandatory - alphanumeric) \
+-- **Language** (mandatory - alphanumeric) \
+-- **Item name** (required - alphanumeric) \
+-- **Description** (optional - alphanumeric) \
+-- **Fullname** (optional - alphanumeric) \
+-- **Order** (optional - numeric) \
+-- **Parent** (optional - from a list of items already present) \
+-- [**Annotations**](Annotations.md) (optional - alphanumeric) \
+The new Item is displayed as a record of the grid table and the possible information related to the "Parent Code" is valorized in a column of the grid view.
+* **Add Child** \
+The _Add Child_ button is activated on the "Parent" row and opens a mask with the fields indicated in **Create Item** where obviously the _Parent_ field will be preset with the value of the selected parent. \
+The new Item is inserted with indentation under the Parent code in the "folder" representation. \
+The mask contains the buttons for system acquisition: **Save:** to save and close the mask and **Close:** to close the mask without saving. \
+In the folder view, the order and the parentship of an item can be determined by drag-and-drop operations of the item itself. \
+The user can switch to the folder view by clicking on the **Tree** button.
+
+![Code List Tree](_static/img/schema_concetti_albero.PNG "Code List Tree")
+
+**Note**: \
+During the Capture or Modification phase of a Code List Item, the System is set with **Automatic Save**. \
+The user can in any case set the saving as manual through an ON/OFF button. \
+If the user disables the automatic saving, he has to save the inserted or modified Items with the Save button otherwise he loses the modifications made.
+
++ **Categorization** \
+(not yet implemented)
+
++ **Derived Codelist** \
+This tab allows the creation of a new Code List from a subset of items of the starting list, hence the adjective "derived". \
+In choosing the elements of interest in table view mode, the user is helped by tools that allow him to take into account or not the hierarchies between parent elements, child elements, etc.
+
+![Derived Code List](_static/img/elenco_derivato_tabella.png "Derived Code List")
+
+If tree mode is used it will be possible to select: \
+-- a specific node \
+-- a specific sub-level \
+-- all children of a specific node \
+in addition, the zoom functionality will display the two artefacts in a full screen popup (left and right of the screen) allowing selection.
+
+![Derived Code List](_static/img/elenco_derivato_albero.png "Derived Code List")
+

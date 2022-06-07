@@ -1,0 +1,65 @@
+# How to put a Dataflow into production
+ 
+Once created, the Dataflow must be published so that it can be available.
+This activity can be done in the [Dataflow Builder](dataflowbuilder.md) section by selecting the Dataflow and clicking on the "Publish" icon.
+
+![Publication](_static/img/produzione_dataflow_1.PNG "Publication") 
+
+The production set-up is done in 4 sequential steps:
+* **Mapping Set** 
+* **Transcoding**
+* **Content Constraint** 
+* **Production**
+
+If the node settings include the configuration to connect to the Data Browser, the option to clear the dataflow cache will also be present in the publication window.
+
+The completion of a step allows the passage to the next step.
+
+The same mask allows the user to remove a Dataflow from production or to delete the settings set in the steps above with the "Delete" or "Remove" buttons.
+
+**Mapping set**
+
+Pressing the "Create" button, the system opens a pop-up window where the user enters the "Default value" to be used for observations with a null value.
+
+![Mapping set](_static/img/produzione_dataflow_2.PNG "Mapping set") 
+
+![Mapping set Default Value](_static/img/produzione_dataflow_3.PNG "Mapping set Default Value") 
+
+By clicking on "Ok" the system performs the mapping between the information present in the data and the elements of the DSD. \
+The mapping is done automatically based on the information provided in the section [File Mapping](filemapping.md) 
+during the construction of the Dataflow, in this step the conformity checks are carried out between the values contained in the dimensions and the corresponding Codelist items. 
+
+**Transcoding**
+
+In this step the correspondence between the codes present in the data and the codes present in the Codelist is created.  \
+For the temporal dimension, for which there is no Codelist, a format Transcoding is applied (e.g. year-month => yyyy-mm). \
+The Transcoding can be done automatically based on the information contained in the definition of the Dataflow or from an 
+already existing Content Constraint linked to the Dataflow.
+
+![Transcoding](_static/img/produzione_dataflow_4.PNG "Transcoding") 
+
+**Content Constraint**
+
+In this step the Content Constraint is created automatically according to the information contained in the Dataflow definition.
+
+**Production**
+
+By clicking the "Publish" button the user puts the data into production; the button is active as soon as the first step "Mapping set" is completed, as publication is possible even without the "Mapping set". 
+The button is active as soon as the first step "Mapping set" is completed, since the publication is possible even without the creation of Transcoding and Content Constraint.
+
+To be in production, the presence of Transcoding and Content Constraint are indicated by the flags highlighted in the figure.
+
+![Production](_static/img/produzione_dataflow_5.PNG "Production")
+
+**Force Update Cache**
+ 
+If the Data Browser section is properly set in configuration, through this button it is possible to invalidate the data cache of the Data Browser for the selected dataflow. 
+In order to regenerate the cache it is sufficient to access the data in the Data Browser, for example by clicking on the button with the world icon (present only if the dataflow is in production) in the main screen of the Dataflow Builder. 
+This operation is performed automatically in the following cases, which also produce the update of the LAST_UPDATE annotation of the related dataflow:
+  * Putting in/removing a dataflow from production
+  * Loading data into a cube (CSV or SDMXML format)
+  * Loading an attribute file
+  * Deleting a series
+  * Empting a cube
+
+

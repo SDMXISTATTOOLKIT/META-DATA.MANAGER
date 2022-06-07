@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DESCRIPTIONS OF MAWEB ROLES</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#descriptions-of-maweb-roles">DESCRIPTIONS OF MAWEB ROLES</a></li>
+    <li class="sidebar-header-2"><a href="#the-following-permissions-are-available-in-maweb">THE FOLLOWING PERMISSIONS ARE AVAILABLE IN MAWEB</a></li>
+    <li class="sidebar-header-2"><a href="#the-following-roles-are-available-in-maweb">THE FOLLOWING ROLES ARE AVAILABLE IN MAWEB</a></li>
+    <li class="sidebar-header-2"><a href="#roles-used-by-other-applications">ROLES USED BY OTHER APPLICATIONS</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="descriptions-of-maweb-roles"><a class="header-link" href="#descriptions-of-maweb-roles"></a>DESCRIPTIONS OF MAWEB ROLES</h1>
+<h2 id="the-following-permissions-are-available-in-maweb"><a class="header-link" href="#the-following-permissions-are-available-in-maweb"></a>THE FOLLOWING PERMISSIONS ARE AVAILABLE IN MAWEB</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CanDeleteData</td>
+<td>The user can delete data from dissemination database. <strong>(not impemented yet)</strong></td>
+</tr>
+<tr>
+<td>CanDeleteStructuralMetadata</td>
+<td>The user can delete structures (Dataflows, Codelists, etc) which are accessible from the Browse &amp; Download screen.</td>
+</tr>
+<tr>
+<td>CanIgnoreProductionFlag</td>
+<td>The user can ignore production flag attribute when requesting Dataflows or Data <strong>(not impemented yet)</strong></td>
+</tr>
+<tr>
+<td>CanImportData</td>
+<td>The user can import the data to dissemination database. <strong>(not impemented yet)</strong></td>
+</tr>
+<tr>
+<td>CanImportStructures</td>
+<td>The user can view and interact with the Import from File &amp; Import from Registry screens (using the available saved registries).</td>
+</tr>
+<tr>
+<td>CanModifyStoreSettings</td>
+<td>The user can view the admin menu and configure the connection details of: authdb, mapping stores, dissemination database connections, manage registries, configure the proxy and add/edit/remove users. Also, he can save the default settings for structures download.</td>
+</tr>
+<tr>
+<td>CanPerformInternalMappingConfig</td>
+<td>The user can view and interact with the the Datasets screen (create and remove datasets, save dataset columns etc.). Furthermore, he can view and interact with the Mapping screen, save mappings and transcodings and finally view mapped data. The user can only view/edit mapping sets which reference Dataflows that he has access to.</td>
+</tr>
+<tr>
+<td>CanReadData</td>
+<td>The user can view mapped data, in other words SDMX data for the Dataflows that he has access to.</td>
+</tr>
+<tr>
+<td>CanReadStructuralMetadata</td>
+<td>The user can view and interact (view details, download) with the Browse &amp; Download screen (list structures, view details, download). This permission is also needed to import structures from Import from File &amp; Import from Registry screens, as well as view the Category Schemes/Categories/Dataflows in the Category Management.</td>
+</tr>
+<tr>
+<td>CanUpdateData</td>
+<td>The user can update data in dissemination database <strong>(not impemented yet)</strong></td>
+</tr>
+<tr>
+<td>CanUpdateStructuralMetadata</td>
+<td>The user can update structural metadata <strong>(used by OECD)</strong></td>
+</tr>
+</tbody></table>
+<h2 id="the-following-roles-are-available-in-maweb"><a class="header-link" href="#the-following-roles-are-available-in-maweb"></a>THE FOLLOWING ROLES ARE AVAILABLE IN MAWEB</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Permissions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AdminRole</td>
+<td>CanUpdateData, CanUpdateStructuralMetadata, DataImporterRole, DomainUserRole, StructureImporterRole, WsUserRole</td>
+<td>Administrator</td>
+</tr>
+<tr>
+<td>DomainUserRole</td>
+<td>CanIgnoreProductionFlag, CanPerformInternalMappingConfig, WsUserRole</td>
+<td>Mapping Assistant user</td>
+</tr>
+<tr>
+<td>WsUserRole</td>
+<td>CanReadData, CanReadStructuralMetadata</td>
+<td>NSI Web Service user</td>
+</tr>
+<tr>
+<td>StructureImporterRole</td>
+<td>CanDeleteStructuralMetadata, CanImportStructures, CanReadStructuralMetadata, CanUpdateStructuralMetadata</td>
+<td>NSIWS User who can submit sturctural metadata</td>
+</tr>
+</tbody></table>
+<h2 id="roles-used-by-other-applications"><a class="header-link" href="#roles-used-by-other-applications"></a>ROLES USED BY OTHER APPLICATIONS</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DataImporterRole</td>
+<td>CanDeleteData, CanImportData, CanReadData, CanReadStructuralMetadata, CanUpdateData</td>
+</tr>
+<tr>
+<td>DataImporterRole_U</td>
+<td>CanImportData, CanReadData, CanReadStructuralMetadata, CanUpdateData</td>
+</tr>
+<tr>
+<td>DataImporterRole_UD</td>
+<td>CanDeleteData, CanImportData, CanReadData, CanReadStructuralMetadata, CanUpdateData</td>
+</tr>
+<tr>
+<td>StructureImporterRole_U</td>
+<td>CanImportStructures, CanReadStructuralMetadata, CanUpdateStructuralMetadata</td>
+</tr>
+<tr>
+<td>StructureImporterRole_UD</td>
+<td>CanDeleteStructuralMetadata, CanImportStructures, CanReadStructuralMetadata, CanUpdateStructuralMetadata</td>
+</tr>
+</tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

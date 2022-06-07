@@ -1,0 +1,17 @@
+# Metaflows
+
+Selecting **Metaflows** from the "Meta Manager" form will show the list of Metaflows of the Node similarly to the lists of all artefacts present, as explained in [list of artefacts](artefact_lists.md). \
+By selecting an item from the list with the mouse and pressing the View/Edit button, the system displays the Detail mask.
+
+ ![Metaflows](_static/img/Metaflows.PNG "Metaflows")
+ 
+The main section of the Metaflows detail mask contains the following tabs:
++ [**General**](section_general.md) 
+
+**NOTE**: \
+in addition to the entries common to all other artefacts, in the General section, we also find the MSD field in which the reference to an existing MSD in the System must be entered. \
+Several Metaflows can be created referring to the same MSD.
+
++ **Categorizations** \
+Not yet implemented.
+

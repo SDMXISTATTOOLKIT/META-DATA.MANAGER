@@ -1,0 +1,49 @@
+# Creating a user dedicated to Data Upload
+
+Once the [Login](overview_user_type.md) has been carried out, the Administrator is able to create a [new user](new_user.md) and then profile it. \
+To profile the new user the Administrator selects the side menu item "Set Permissions". The following screen is displayed:
+
+![Set Permissions](_static/img/ImpostaPermessi.PNG "Set Permissions")
+
+The Administrator must position the mouse on the user's line (e.g. "Mario Rossi") until it intercepts the "View/Edit" icon and press the left mouse button. \
+The System displays the user's details, in the mask there are buttons that allow the explosion or compression of the folder representation for the main applications (Data Manager, Meta Manager, etc.).
+
+![Set Permissions](_static/img/ImpostaPermessiMarioRossi2.PNG "Set Permissions")
+
+The Administrator who wants to profile the user as dedicated to loading data only will select the checkbuttons with the Data Manager functions as shown in the following figure:
+
+![Set Permissions](_static/img/PermessiDM_MarioRossi.PNG "Set Permissions")
+
+The "Rules" tab contains the list of actions that can be done on objects by the user.
+
+Selecting the "Select All" button and unchecking "AdminRole" allows the user Mario Rossi to perform create, update, delete, import, download, view functions for the Meta Manager application without being a System Administrator.
+
+In the "Agencies" tab, the Administrator can select the Agencies that will be managed by the user when processing an Artifact. \
+The selection of some Agencies means that in the General Data management mask of an Artifact, only the Agencies assigned to the user are present.
+
+Finally, in the "Cubes" tab, the Administrator can select the cubes or the categories of cubes on which the user can work. \
+Choosing a category will allow the user to work with all the cubes that are or will be part of that category.
+
+![Set Permissions](_static/img/PermessiCubi_MarioRossi_new.png "Set Permissions")
+
+When displayed in the Builder, any folders required to reconstruct the top hierarchy of an object on which the user has permission or categories within which cubes on which the user has permission are categorised will be shown in grey. \
+By default, cubes that the user cannot work with and categories that the user is not allowed to work with (containing only cubes that the user must not work with) will not be visible. 
+
+![Builder](_static/img/visualizzazione_cubi1.png "Builder")
+
+This is a mode that can be changed in the General section of the node configuration.
+
+![General](_static/img/mostra_nodi.png "General")
+
+By changing the default option then:
+
+![Builder](_static/img/visualizzazione_cubi2.png "Builder")
+
+ **_Note_** 
+
+A user with AdminRole permission will not be able to see the category cubes on which he does not have permission but will always see the complete category hierarchy, with nothing greyed out. \
+This is to allow anyway to manage the Builder's Category Scheme by adding/removing child categories. \
+On categories on which the user with AdminRole has no permissions, the 'Create cube' option will be disabled.
+
+
+

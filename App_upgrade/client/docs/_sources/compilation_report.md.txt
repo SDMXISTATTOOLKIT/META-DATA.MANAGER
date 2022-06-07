@@ -1,0 +1,59 @@
+# Compilation of a report
+
+Once the Metadata Set has been created, it can be viewed and one or more reports can be added using the "Create Report" button that the System will have enabled.
+
+ ![METADATASET](_static/img/nuovo_ms2.PNG "METADATASET")
+ 
+ The compilation of the report is done in two steps:
+ 
+ * **Target selection**: \
+ In the compilation of the report the user must fill in the following fields: \
+ __ID__: (mandatory, alphanumeric) freely typed. \
+ __Target__: (mandatory, alphanumeric) chosen from a drop-down menu from the list provided by the MetadataFlow associated to the MSD. \
+ There can be more than one target and according to the choice made, i.e. the target object type, the System will dynamically compose the following requests. \
+ In the following example the type of target object is the _Dataflow_ so the System asks the user to identify which Dataflow to consider among those present in the node: \
+ __DataFlow__: (mandatory, alphanumeric) chosen from the drop-down menu.
+
+ ![Report](_static/img/report1.PNG "Report")
+ 
+ * **Attribute creation**: \
+ The 2nd step is the compilation of the attributes coming from the MSD:
+ 
+    ![Report](_static/img/report2.PNG "Report")
+   
+   It is possible to save a draft of the report at any time (the system warns the user about the fields that still need to be completed) and the complete report can be saved, using the "Save" button, only after all the mandatory fields have been completed. 
+   
+   ![Report](_static/img/report3.PNG "Report")
+   
+   Once the report is saved, the user can use a series of tools on the line corresponding to the report:
+   * **Publish Report via API** \
+   To make report data accessible via API, after checking the necessary permissions,the user can use the "Publish via API" button, this way he can access the report data in SDMX-JSON format also through a call to the appropriate REST web service. 
+   
+   ![Report](_static/img/report4.PNG "Report")
+
+   * **Open information page** - **Copy information page link** \.
+   For each report exposed via API, an HTML view is available. \
+   In order to access directly from the interface to this visualisation, it will be sufficient to select the button "Open information page" on the row corresponding to the report:
+  
+  ![Report](_static/img/report5.PNG "Report")
+  
+   And a pop-up window like the following will open, which can also be downloaded in HTML:
+   
+   ![Report](_static/img/report6.PNG "Report")
+   
+   If the user wants to embed this visualization in other contexts, he can obtain the link using the "Copy information page link" button. 
+   
+   * **Copy Metadata API request link** \.
+   If the user wants to access to the report data in SDMX-JSON format also through the call to the proper REST web service, he will be able to get the link through the button "Copy Metadata API request link". 
+   
+   ![Report](_static/img/report7.PNG "Report")
+   
+   **Remove from API** - **Delete** \.
+   It is possible to cancel the publication of a report using the "Remove from API" button and delete it with the "Delete" button.
+
+
+
+
+
+
+

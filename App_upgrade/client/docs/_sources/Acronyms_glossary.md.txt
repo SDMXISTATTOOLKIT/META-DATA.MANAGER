@@ -1,0 +1,237 @@
+# Acronyms and glossary
+
+**API** - **_Application programming interface_**
+
+Thanks to this interface, computer programs communicate with each other. It is comparable to the way a programmer sends instructions between programs.
+
+Source: [http://schoolofdata.org/handbook/appendix/glossary](http://schoolofdata.org/handbook/appendix/glossary)
+
+**Artefact**
+
+In order to describe and document data, the SDMX standard refers to entities that are called "artefacts" that are organized in such a way as to represent the data and reference it appropriately.
+The **Id**, **agency** and **version** are the three identifying elements of an SDMX **artefact**.
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**DATABASE**
+
+A database is a set of structured data, i.e. homogeneous in content and format, stored in a computer, representing the digital version of a data archive or filing cabinet.
+
+Source: [https://it.wikipedia.org/wiki/Base_di_dati](https://it.wikipedia.org/wiki/Base_di_dati)
+
+Directive 96/9/EC[2] defines b.d. as: "a collection of works, data or other independent elements systematically or methodically arranged and individually accessible by electronic means or otherwise" (Art. 1. no. 2); and provides for legal protection of "databases which, by reason of the selection or arrangement of the material, constitute the author's own intellectual creation" (Art. 3).
+
+Source: [https://www.altalex.com/documents/news/2013/07/02/banche-dati- \
+la-tutela-giuridica-nella-giurisprudenza-della-corte-di-giustizia](https://www.altalex.com/documents/news/2013/07/02/banche-dati-la-tutela-giuridica-nella-giurisprudenza-della-corte-di-giustizia)
+
+**Category Scheme**
+
+SDMX artefact, is a set of categories, hierarchically organised, that classify DataFlows.
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**CKAN** - **_Comprehensive knowledge archive network_**
+
+A data management system that makes data accessible by providing tools to simplify its publication, sharing, retrieval and use. It is intended for data publishers (national and regional administrations, companies and organisations) who wish to make their data open and accessible.
+
+Source: [http://ckan.org/](http://ckan.org/)
+
+**Code List**
+
+SDMX artefact, is a list of codes associated with components (dimensions and coded attributes) of DSD.
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**Concept Scheme**
+
+SDMX artefact, is a grouping of concepts referencing components (dimensions, attributes, measures) of DSD.
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**CORDIS**
+
+The main public repository and portal of the European Commission, used to disseminate information on all EU-funded research projects and their results.
+
+Source: [http://cordis.europa.eu/home_it.html](http://cordis.europa.eu/home_it.html)
+
+**CSV** - **_Comma separated values_**
+
+The "comma separated values" file format is often used for exchanging data between different applications of the same type. \ The "comma separated values" file format is compatible with KDE spreadsheets.
+It is compatible with KSpread, OpenOffice Calc and Microsoft Excel spreadsheets. Many other applications support the format for importing and exporting data.
+
+Source: [http://edoceo.com/utilitas/csv-file-format](http://edoceo.com/utilitas/csv-file-format)
+
+**DataFlow**
+
+SDMX artefact, is a structure that describes the content of a dataset that the producing organisation provides for different time periods.
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**DDB** - **_Dissemination Data Base_**
+
+Dissemination database of statistical data.
+
+Source: [https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri](https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri)
+
+**DCAT** - **_Data catalogue vocabulary_**
+
+RDF vocabulary allowing interoperability of data catalogues.
+
+See also: W3C - [http://www.w3.org/TR/vocab-dcat](http://www.w3.org/TR/vocab-dcat)
+
+**DCAT-AP** - **_DCAT application profile_**
+
+Common vocabulary, based on DCAT, to describe the hosted datasets of data portals in Europe.
+
+See also: \
+[https://joinup.ec.europa.eu/asset/dcat_application_profile/description](https://joinup.ec.europa.eu/asset/dcat_application_profile/description)
+
+**DSD** - **_Data Structure Definitions_**
+
+SDMX artefact, is the definition of a data structure in terms of its components, i.e. dimensions, attributes and measures.
+
+Dimensions: components that identify and describe the observed phenomenon.
+
+Attributes: components that only describe the observed phenomenon.
+
+Measures: components that represent the observed phenomenon(s).
+
+Source: [https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf](https://www.istat.it/it/files/2013/07/Step_funz_client_SDMXWS1.pdf)
+
+**ENDPOINT SPARQL**
+
+A service that accepts SPARQL queries and provides results in the form of SPARQL result sets.
+Data providers follow the good practice of indicating the URL address of their SPARQL endpoint to allow access to their data programmatically or through a web interface.
+
+Source: W3C - [http://www.w3.org/TR/ld-glossary/#sparql-endpoint](http://www.w3.org/TR/ld-glossary/#sparql-endpoint)
+
+**IIS** - **_Internet Information Services_**
+
+A set of Internet server services for Microsoft Windows operating systems.
+
+Source: [https://it.wikipedia.org/wiki/Internet_Information_Services](https://it.wikipedia.org/wiki/Internet_Information_Services)
+
+**JSON**
+
+"JavaScript object notation" is an open-standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. \
+It is the most common data format used for asynchronous browser/server communication/navigation (AJAJ).
+
+Source: [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
+
+**Mapping Assistant**
+
+Application that facilitates the mapping between structural metadata provided by a DSD and data residing in the dissemination database of a dissemination environment. \
+The Mapping Assistant stores mappings between SDMX and the local data storage schema in the Mapping Store database, or MSDB.
+
+Source: [https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri](https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri)
+
+**METADATA**
+
+Metadata is structured information that describes, explains, positions or enables easier retrieval, use or management of an information resource. \
+They are often referred to as 'data about data'.
+
+Source: [http://www.niso.org/publications/press/UnderstandingMetadata.pdf](http://www.niso.org/publications/press/UnderstandingMetadata.pdf)
+
+**MSD** - **_Metadata Structure Definitions_**
+
+SDMX artefact, is a model for reporting and disseminating reference metadata.
+
+In addition to what is called "structural metadata" which mainly concerns the definition of the data structure, it may be useful to share other information such as, for example, information on methodology, data quality, sources, contact details.\.
+This data in SDMX is called "referential metadata" and finds its framework in the Metadata Structure Definition and appropriate additional concepts.
+
+Source: "Measuring the Data Universe: Data Integration Using Statistical Data and Metadata Exchange" by authors Reinhold Stahl and Patricia Staab.
+
+**MSDB** - **_Mapping Store database_**
+
+Database created by the Mapping Assistant application
+
+Source: [https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri](https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri)
+
+**NSI_WS**
+
+The NSI Web Service on SOAP or REST request collects the data from the DDB and the structural metadata from the MSDB, creates the SDMX-ML data and sends it to the client. \
+The NSI Web Service can be in Java or .NET.
+
+Source: [https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri](https://ec.europa.eu/eurostat/web/sdmx-infospace/sdmx-it-tools/sdmx-ri)
+
+
+**OECD** - **_Organization for Economic Co-operation and Development_**
+
+The Organisation for Economic Co-operation and Development (OECD) is an international organisation for economic studies for its member countries, which are developed countries sharing a market economy.
+
+Source: [https://it.wikipedia.org/wiki/Organizzazione_per_la_cooperazione_e_lo_sviluppo_economico](https://it.wikipedia.org/wiki/Organizzazione_per_la_cooperazione_e_lo_sviluppo_economico)
+
+**ONTOLOGY**
+
+A formal model for representing knowledge in a specific field. An ontology describes the types of existing objects (classes), the relationships between them (properties) and the logical ways of using the classes and properties together (axioms).
+
+Source: [http://www.w3.org/TR/ld-glossary/#ontology](http://www.w3.org/TR/ld-glossary/#ontology)
+
+**PDF**
+
+The 'portable document format' is a file format used to present and exchange documents independently of the available software, hardware or operating systems. \
+This open standard is managed by the International Organisation for Standardisation (ISO).
+
+Source: [https://acrobat.adobe.com/be/en/products/about-adobe-pdf.html](https://acrobat.adobe.com/be/en/products/about-adobe-pdf.html)
+
+
+**RDF** - **_Resource description framework_**
+
+A family of international standards for data exchange on the web. It is based on identifying objects using web identifiers or HTTP URIs and describing resources in terms of simple properties and property values.
+
+Source: [http://www.w3.org/TR/ld-glossary/#rdf](http://www.w3.org/TR/ld-glossary/#rdf)
+
+**RDFa**
+
+"Resource description framework in attributes" is a W3C recommendation that adds a number of extensions in the category of attributes to XML, HTML and several types of XHTML-based documents to integrate rich metadata into web documents.
+
+Source: [https://en.wikipedia.org/wiki/RDFa](https://en.wikipedia.org/wiki/RDFa)
+
+**REPRESENTATION**
+
+The physical representation of a data set. Each resource can be a file of any type, a link to a file on the web or a link to an API. For example, if data is provided in various formats or split between different areas or time periods, each file is a "resource" that should be described separately.
+
+Source: [https://data.europa.eu/euodp/it/glossary](https://data.europa.eu/euodp/it/glossary)
+
+**SDMX** - **_Statistical data and metadata exchange_**
+
+The Statistical Data and Metadata Exchange is an international initiative to standardise and modernise mechanisms and procedures for the exchange of statistical data and metadata between international organisations and Member States.
+
+Source: [https://en.wikipedia.org/wiki/SDMX](https://en.wikipedia.org/wiki/SDMX)
+
+**DATA SET**
+
+A collection of related data sets consisting of distinct elements, but which can be treated as a unit and accessed or downloaded in one or more formats.
+
+Source: [https://data.europa.eu/euodp/it/glossary](https://data.europa.eu/euodp/it/glossary)
+
+**SPARQL**
+
+Query language for data represented using RDF, analogous to SQL (Structured Query Language) for relational databases.
+
+Source: [http://www.w3.org/TR/ld-glossary/#sparql](http://www.w3.org/TR/ld-glossary/#sparql)
+
+
+**URI** - **_Uniform resource identifier_**
+
+A string that uniquely identifies virtually anything, from a building to more abstract concepts such as colours. It may or may not be resolvable on the web.
+
+Source: [http://www.w3.org/TR/ld-glossary/#uniform-resource-identifier](http://www.w3.org/TR/ld-glossary/#uniform-resource-identifier)
+
+**URL** - **_Uniform resource locator_**
+
+A global identifier generally called a 'web address'. A URL is resolvable on the web. All HTTP URLs are URIs; however, not all URIs are URLs.
+
+Source: [http://www.w3.org/TR/ld-glossary/#uniform-resource-locator](http://www.w3.org/TR/ld-glossary/#uniform-resource-locator)
+
+**URN** - **_Uniform resource name_**
+
+Historical definition of a unique resource identifier (URI).
+
+Source: [https://en.wikipedia.org/wiki/Uniform_Resource_Name](https://en.wikipedia.org/wiki/Uniform_Resource_Name)
+
+**XML** - **_Extensible markup language_**
+
+A markup language that defines a set of standards for encoding documents in a machine-readable, human-readable format.
+
+Source: [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)

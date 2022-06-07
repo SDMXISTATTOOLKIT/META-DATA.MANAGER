@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>LOGGER SYSTEM</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#logger-system">LOGGER SYSTEM</a></li>
+    <li class="sidebar-header-2"><a href="#logger-configuration-screen">LOGGER CONFIGURATION SCREEN</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="logger-system"><a class="header-link" href="#logger-system"></a>LOGGER SYSTEM</h1>
+<p>In an attempt to avoid using console.log() to log application messages, a more flexible logging system
+using the standard levels with options on what to display has been developed.</p>
+<h2 id="logger-configuration-screen"><a class="header-link" href="#logger-configuration-screen"></a>LOGGER CONFIGURATION SCREEN</h2>
+<p>In the screenshot below you can view and filter all the different logs that were executed during the run.
+The first dropdown enables you to choose which level to store in the queue. You can also choose what to push
+into the browser console. Even if this selection is empty (meaning that nothing will be logged in the browser
+console except for native js/react/browser logs), you can still view all the logs from this screen, filter them, and
+view the stack trace if any. Note that choosing a level allows logs which have this exact level or lower. For example,
+if you choose to show &quot;error&quot; logs in the console, you will not be able to see &quot;warn&quot;, &quot;info&quot;,...etc levels but only
+&quot;error&quot; and &quot;fatal&quot;. The same goes for selecting what to store.</p>
+<p class="img-container"><img src="figures/LOGGER_SYSTEM.PNG" alt="LOGGER_SYSTEM"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

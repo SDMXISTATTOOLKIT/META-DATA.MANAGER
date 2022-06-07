@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DATASET</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#dataset">DATASET</a></li>
+    <li class="sidebar-header-2"><a href="#add-a-new-dataset-in-a-database">ADD A NEW DATASET IN A DATABASE</a></li>
+    <li class="sidebar-header-2"><a href="#dataset-table/column-connections">DATASET TABLE/COLUMN CONNECTIONS</a></li>
+    <li class="sidebar-header-2"><a href="#defined-datasets">DEFINED DATASETS</a></li>
+    <li class="sidebar-header-2"><a href="#dataset-columns">DATASET COLUMNS</a></li>
+    <li class="sidebar-header-2"><a href="#associate-description">ASSOCIATE DESCRIPTION</a></li>
+    <li class="sidebar-header-2"><a href="#delete-local-codes">DELETE LOCAL CODES</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="dataset"><a class="header-link" href="#dataset"></a>DATASET</h1>
+<p>This screen is used in general to insert/export/edit Datasets. In the top left side of this screen there are two options for importing datasets from a file and exporting datasets to a file (there is also a future plan to export a dataset to another database).
+Furthermore, a drop down menu specifies the database that will be used in order to save or to edit an existing dataset called &quot;DDB Connection&quot;. In the following example, we use &quot;Demography&quot; database.</p>
+<p class="img-container"><img src="figures/DATASETS.png" alt="DATASETS"></p>
+<h2 id="add-a-new-dataset-in-a-database"><a class="header-link" href="#add-a-new-dataset-in-a-database"></a>ADD A NEW DATASET IN A DATABASE</h2>
+<p>The user can add a new dataset in a database by clicking the button <code>+ Add</code>. Afterwards, a new menu gives the option to add a new dataset via SQL query or using Visual Editor. In case SQL query is chosen, the user should define in &quot;Details&quot; tab the name and the description of the dataset. In the &quot;Editor&quot; tab the user can add in query section the query that created the new dataset. The button <code>Preview Data</code> can be used in order to review the query and the button <code>Update in DB</code> updates the table at the bottom of the screen. Finally, when the user has inserted all the needed information a single hit in <code>Save</code> button is needed.</p>
+<p class="img-container"><img src="figures/DATASETS_SQLQUERY.png" alt="DATASETS_SQLQUERY"></p>
+<p>Moreover, if the user wants to add a new dataset via visual editor the first step is to define the name and description of the dataset (like the example with SQL query import in the above example). Then, the user needs to select the tables which will be used in order to choose the columns that he wants to be included in the new dataset. In the below example table &quot;TYPE_B_DEMOGRAPHY&quot; is used and from this table all columns or some of them can be selected (via button <code>Select/Unselect all</code> or by clicking the check box of every column) in green table section at the bottom of the screen.</p>
+<p class="img-container"><img src="figures/DATASETS_VISUAL_EDITOR.png" alt="DATASETS_VISUAL_EDITOR"></p>
+<p>The button <code>Preview Data</code> can be used in order to check the query of the corresponding table. In addition, button <code>Enable Delete Columns</code> authorizes user to delete any fixed columns and then with a second click on the same button the deletion action is finalized. The user can also merge any column by pressing the button <code>Merge Columns</code> in order to enable the action and then with another click to finish this action. The merging action can be reverted by clicking the button <code>Unmerge Columns</code>.
+The merge/unmerge functionality is available only for datasets that contain a single table.
+Also, user can reorder the columns by clicking the button <code>Enable Column Re-order</code> and then use arrows near every column in the green section at the bottom of this screen.
+Moreover, new constraints can be added in every dataset like the below example. As it can be seen in the below image specific table, column, operator and value are set and added.</p>
+<p class="img-container"><img src="figures/DATASETS_CONSTRAINTS.png" alt="DATASETS_CONSTRAINTS"></p>
+<h2 id="dataset-tablecolumn-connections"><a class="header-link" href="#dataset-tablecolumn-connections"></a>DATASET TABLE/COLUMN CONNECTIONS</h2>
+<p>For a dataset that includes more than one table the user can select exactly two and then combine them by clicking <code>Union</code> button. In order for this action to be successful the user should first choose the titles of every table in the green section (headline of every table should then become blue) and then click the described button as it can be seen below. It is a table-to-table connection. The two selected tables need to have the same amount of columns.</p>
+<p class="img-container"><img src="figures/DATASETS_UNION.png" alt="DATASETS_UNION"></p>
+<p>Cross Join functionality can be used to generate a paired combination of each row of the first table with each row of the second table (cartesian product) with the same way that described in the above paragraph and using the button <code>Cross Join</code>. It is a table-to-table connection.</p>
+<p class="img-container"><img src="figures/DATASETS_CROSS_JOIN.PNG" alt="DATASETS_CROSS_JOIN"></p>
+<p><code>Inner Join</code> can also be used between columns of two different tables. There is no button to do that and the user does not need to select any tables, but the user can directly place the mouse cursor on the right side of a column arrow (🡆), hold &amp; drag the left mouse button to produce a line, and place the line on the left side of the other table&#39;s column.</p>
+<p class="img-container"><img src="figures/DATASETS_INNER_JOIN.PNG" alt="DATASETS_INNER_JOIN"></p>
+<h2 id="defined-datasets"><a class="header-link" href="#defined-datasets"></a>DEFINED DATASETS</h2>
+<p>Existing datasets can be modified if the relevant dataset is selected in drop down menu <code>Defined Data Sets</code> . In this case the user can use every functionality described in previous chapter. Furthermore, the user can delete or clone a dataset using buttons in the left sidebar.</p>
+<p class="img-container"><img src="figures/DATASETS_DEFINED.png" alt="DATASETS_DEFINED"></p>
+<h2 id="dataset-columns"><a class="header-link" href="#dataset-columns"></a>DATASET COLUMNS</h2>
+<p>In the bottom side of this screen, all dataset columns of every dataset are displayed. </p>
+<p class="img-container"><img src="figures/DATASET_COLUMNS.PNG" alt="DATASET_COLUMNS"></p>
+<h2 id="associate-description"><a class="header-link" href="#associate-description"></a>ASSOCIATE DESCRIPTION</h2>
+<p>This functionality is used to associate a description with a local code. First of all, the dataset we use this on should have at least 2 tables in the corresponding Dissemination Database. One of the tables contains the local codes, and another table which contains the local code descriptions.
+If a suitable dataset is found, the next step is to select this dataset and go to the editor. There, under &quot;Dataset Columns&quot;, the user needs to click on the dataset column row they wish to apply the descriptions on, inside the table (selection is indicated by blue) like so:</p>
+<p class="img-container"><img src="figures/DATASET_ASSOCIATE_DESCIPTIONS_1.PNG" alt="DATASET_ASSOCIATE_DESCIPTIONS_1"></p>
+<p>Then, click on &quot;Associate Description&quot; button. The following window should appear:</p>
+<p class="img-container"><img src="figures/DATASET_ASSOCIATE_DESCIPTIONS_2.png" alt="DATASET_ASSOCIATE_DESCIPTIONS_2"></p>
+<p>First, the user should select the table which contains the descriptions. The next options change according to the table selected. 
+Then, the second step is to select the field to be linked with the dataset column codes.
+Lastly, the user needs to select the description columns. Multiple values can be selected here, and the end result will be the concatenation of them. An example configuration is shown below:</p>
+<p class="img-container"><img src="figures/DATASET_ASSOCIATE_DESCIPTIONS_3.PNG" alt="DATASET_ASSOCIATE_DESCIPTIONS_3"></p>
+<p>The user should press &quot;Save&quot; to finalize the options. </p>
+<p>Finally, selecting a dataset column row in the table and pressing &quot;Delete Description&quot; will delete any previously saved description options regarding this dataset column.</p>
+<h2 id="delete-local-codes"><a class="header-link" href="#delete-local-codes"></a>DELETE LOCAL CODES</h2>
+<p>The local codes belonging to a dataset column can be deleted by selecting the dataset column in the table and pressing &quot;Delete Local Codes&quot;.</p>
+<p class="img-container"><img src="figures/DATASET_DELETE_LOCAL_CODES.PNG" alt="DATASET_DELETE_LOCAL_CODES"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

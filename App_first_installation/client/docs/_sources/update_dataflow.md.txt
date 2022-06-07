@@ -1,0 +1,26 @@
+# How to update an existing Dataflow
+
+From the list of created Dataflows select the Dataflow to be modified. \
+From the functions displayed in the icons on the right choose "View/Edit" which, in addition to displaying it, allows the user to edit the Dataflow.  \
+The System shows all the elements of the Dataflow:
+- *General Data*
+- *Query*
+- *Categorisation*
+- *Header*
+- *Layout annotations*
+
+in windows identical to those seen in the creation phase of the Dataflow. 
+
+If the Dataflow is not in production and if the user has the necessary permissions he can use the windows to make changes to the Dataflow.
+
+Some information, such as the Dataflow identifier, cannot be modified, a prohibition symbol appears on these and they cannot be edited.
+
+The user can modify the URI, validity, name and description in the General Data mask. \
+In the mask "Query" it is possible to change the selection of dimensions and attributes and to change the set filters. \
+In the mask "Categorisation" the user can change the category to which the Dataflow is associated. \
+In the "Header" mask it is possible to modify the Dataflow header by clicking on the "Dataflow with header" flag. \
+The annotations previously set for the Dataflow can be modified in the "Layout annotations" mask.
+
+For the details of the single operations see the [Dataflow builder](dataflowbuilder.md).
+
+With the "Save" button all changes made to the Dataflow are saved.

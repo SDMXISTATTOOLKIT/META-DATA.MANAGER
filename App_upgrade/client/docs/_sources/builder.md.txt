@@ -1,0 +1,95 @@
+# Builder
+
+The Builder window displays the Category Work Scheme with a tree structure.
+
+The leaves of the tree are the registered cubes. 
+To manage the list of cubes the following functions are provided:
+
+* **Create Cube \ Create Category**
+* **Delete Cube \Delete Category**.
+* **Update Tree**
+* **Collect all**
+* **Expand all**
+* **Search**
+
+![Cube Manager](_static/img/builder_1.PNG "Cube Manager")
+
+Some functions are active or not depending on the selected element (e.g. the "Create Cube" function is active if an element of the Category Diagram is selected,
+"Delete Cube" is active if a Cube is selected).
+
+
+**Create Cube**
+
+By clicking on the icon, a window appears allowing the user to choose whether to create a new cube or to create a new sub-category with reference to the one that has been selected. \
+Clicking on create cube opens the mask for entering the necessary fields:
+- *Cube ID* (alphabetical type, mandatory)
+- *Name of the Cube* (alphabetic type, mandatory)
+- *Language*
+- *DSD identifier* (set by selection function, mandatory)
+- *Flag "Observed value may be alphanumeric "* (optional)
+
+![Create Cube - general data](_static/img/builder_2.PNG "Create Cube - general data")
+
+The non-editable prefix of the ID field is set during configuration. \
+In the "Name" field the user enters the name of the Cube for each language available in the Node. \
+Selecting the "+" next to the DSD field opens a pop-up window that allows the user to view the DSDs present in the System and to choose the one to be 
+used to create the Cube. \
+The "List DSD" button, in the upper right corner, shows the same list of DSD present in the System. \
+Once selected the DSD the mask shows the list of Dimensions and Attributes: by default will be selected and not deselectable 
+the Dimensions and Attributes that in the DSD are defined as mandatory, while the optional attributes by default will not be selected, 
+but can be chosen at this stage.
+
+![Create Cube - detail DSD](_static/img/builder_3.PNG "Create Cube - detail DSD")
+
+Among the selectable attributes there is the TID (table identifier) that is used to uniquely identify the Dataflows built from the same Cube (displayed in the image). 
+from the same Cube (displayed in the tree on the left). \
+In this way it is also possible, for example, to load two attributes at dataset level for two dataflows built from the same cube: 
+to do this it is necessary that the user adds the TID in the cube and when loading a data file (see paragraph [Loader](loader.md)) or an attribute file, 
+he loads different attribute values for different TID values. \
+The user has the possibility to check the structure of the DSD and its components by clicking on the icons present next to the artefacts. \
+During the creation of the Cube the System checks the correctness of the data entered. 
+If the user, for instance, tries to create a Cube with an already existing ID, saving is blocked and the user is notified with an error message.
+
+![Create Cube - error](_static/img/builder_4.PNG "Create Cube - error")
+
+Once the mandatory fields have been filled in, the "Save" button becomes active and the cube can be saved. \
+The window with all the Cube's properties is displayed whenever the Cube is selected.
+
+**Delete Cube**
+
+To delete a Cube, the user must select it with the mouse; in this way the "Delete Cube" button is activated. \
+By clicking on the button, a mask appears asking the user to confirm the operation. If yes, the deletion is carried out.
+
+![Delete Cube](_static/img/builder_5.PNG "Delete Cube")
+
+Following deletion, the System automatically updates the tree of the Category Schemes. \
+If a Dataflow is associated with the Cube, deletion is not allowed.
+
+
+**Create Category**
+
+Clicking on the "+" icon the user can create a new Category, a window is opened where the user has to type the Category ID, the Name and, optionally, the parent of the Category among those already defined.
+Categories can be moved under other categories with drag&drop functionality.
+
+**Delete Category**
+
+To delete a Category, the user must select it with the mouse; the "Delete Category" button will only be active if the Category does not have any associated cubes.
+When the button is clicked, a mask appears asking the user to confirm the operation. If so, the deletion is carried out.
+
+**Update tree**
+
+This function allows the user to update the Category Diagrams tree to show changes following the creation and deletion of cubes and Category Diagrams.
+
+**Collect All**
+
+This function displays the Category Tree in a reduced form.
+
+**Expand all**
+
+This function displays the Category Tree in an exploded view.
+
+**Search**
+
+The search is carried out by means of an editable field in the upper left-hand corner of the screen, as described in [Search in the list of artefacts](search_artefact.md).
+
+

@@ -1,0 +1,20 @@
+# Compare Item Schemes
+
+The **Compare Item Scheme** function can be found in the left-hand side menu starting with the "Tools" item. \
+The function allows a two-by-two comparisons for: **Code Lists**, **Category Schemes** and **Concept Schemes**. 
+
+ ![Compare Item Schemes](_static/img/Confronta_item_scheme.PNG "Compare Item Schemes")
+ 
+ Item schemes can be loaded indifferently from:
+ * MSDB
+ * CSV
+ * SDMX-ML
+ 
+  Once the choice of the two Item Schemes (e.g. two Code Lists) has been made, the System activates the **Compare** and **Generate Report** buttons. \
+  The user, by pressing **Compare**, can perform the comparison obtaining the result with the differences on the screen:
+  
+ ![Compare Item Schemes](_static/img/Confronta_item_scheme2.PNG "Compare Item Schemes")
+ 
+  and, by pressing **Generate Report**, he obtains a comparison report in txt format. 
+  
+ ![Compare Item Schemes](_static/img/Confronta_item_scheme3.PNG "Compare Item Schemes")

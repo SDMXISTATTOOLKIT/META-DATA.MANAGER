@@ -1,0 +1,15 @@
+# New MetadataSet DCAT-AP_IT
+
+By pressing the "Create Metadata Set" button the user can create a new Metadata Set (after filling in the required fields):
+
+ ![METADATASET](_static/img/dcat_metadataset.PNG "METADATASET")
+ 
+ By filling in the mandatory fields the user will have to choose a Metadataflow among those available through a drop-down menu. \
+ The Metadataflow available will only be those dedicated to the MSD of the DCAT-AP_IT (whose configuration, in the next image, is made by the Superuser at Node level) owned by the user.
+ 
+   ![DCAT-AP_IT](_static/img/Conf_dcat2.PNG "DCAT-AP_IT")
+   
+Once the mandatory fields have been filled in, the user can press "Save" and the new DCAP-AP_IT Metadata Set will be inserted into the list:
+
+ ![METADATASET](_static/img/dcat_lista_metadataset2.PNG "METADATASET")
+   

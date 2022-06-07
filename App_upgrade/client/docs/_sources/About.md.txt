@@ -1,0 +1,15 @@
+# About
+
+The 'Data & Meta Manager' tool is a modern open source web-based SDMX application suite, fully integrated with the SDMX-RI released by Eurostat. \
+Based on a Loosely Coupled Architecture, 'SDMX Data & Meta Manager' allows the user to streamline the dissemination and reporting process, the management of metadata and to facilitate the publication of open (statistical) data according to the requirements detailed by the European and Italian Digital Agenda. \
+With a few steps an organization can easily build a dissemination/reporting database driven by SDMX structural metadata, expose the datasets through an SDMX Web Service and disseminate the data catalogue using the W3C Recommendation "DCAT" and the CKAN v3 API.
+
+The purpose of this guide is to provide a tutorial for the most frequent use cases of applications within the "Data & Meta Manager" tool, for the user with any kind of profiling.
+
+To facilitate the description of the applications, images captured during the use of the application itself have been included. \
+These images may have graphic differences depending on the configuration used.
+
+
+* [Licence](Licence.md)
+* [Overview](Overview.md)
+* [Changelog](Changelog.md)

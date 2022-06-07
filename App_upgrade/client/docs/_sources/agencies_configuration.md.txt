@@ -1,0 +1,11 @@
+# Agencies 
+
+In this section the [SuperUser](superadmin.md) can set the Agencies that will be used for the definition of the Artifacts when creating and/or editing.
+
+![Agencies Configuration](_static/img/Conf_Agenzie.PNG "Agencies Configuration")
+
+These are the only ones that the administrator user will be able to assign to users in the 'Set Permissions' section, thus giving them the permissions to manage the relevant SDMX Artifacts: 
+these agencies are independent from those defined in the SDMX artifacts of type Agency Schema. 
+However, it is possible to explicitly add an Agency belonging to an Agency Schema to the current node configuration by clicking on the appropriate action in the row.
+
+![Add Agency](_static/img/Aggiungi_agenzia.JPG "Add Agency")

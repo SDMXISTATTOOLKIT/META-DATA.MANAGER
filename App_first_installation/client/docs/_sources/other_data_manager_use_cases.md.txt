@@ -1,0 +1,116 @@
+# Other use cases
+
+This section explains the other functions available in the menu under "Data Manager".
+* **Cube Lists**
+* **Manage Series**
+* **Synchronise code lists**
+* **Import attribute files**
+* **Update Cache Data Browser**
+* **DDB reset**
+* **Remove temporary tables**
+
+**Cube lists**
+
+The "Cube List" menu item displays the list of cubes in the system. \
+The "Search" function can be activated from the mask to display one or more cubes that contain the entered text. 
+
+![Cub List](_static/img/altri_casi_uso_1.png "Cub List")
+
+The list of Cubes has a tabular representation with the following columns:
+- *ID representing the identifier of the Cube*.
+- *Cube name*
+- *Name of the Reference DSD* 
+- *Last modification of the Cube*
+- *Name of the Cube data view* 
+- *Flag embargo*
+
+Functions are provided for each item in the list:
+- *Show Cube data:* allows the user to view the data contained in the Cube in table format.
+- *Download:* allows the user to save the contents of the Cube to a CSV file, you can select only some dimensions or attributes and submit filters to select the data to export
+- *Remove Embargo:* allows the user to remove the embargo.
+- *Manage owner:* allows the user to manage the rights on the Cube.
+- *Empty Cube:* deletes the data contained in the Cube
+- *Delete:* deletes the Cube.
+
+For cubes that have embargoed data, the "Remove Embargo" function is available, which allows the manual release of the data that was loaded 
+in the [Loader](loader.md) section but not visible. \
+Once the embargo is removed, the data is visible and the flag and icon that indicated the embargo are no longer present.
+
+![Remove Embargo](_static/img/altri_casi_uso_2.png "Remove Embargo")
+
+A user who owns a Cube can assign the rights on the Cube to another user operating on the "Manage owner" function. \
+The System opens a mask allowing the user who owns the Cube to choose the user to whom he wishes to assign rights.
+
+![Manage owners](_static/img/gestione_owners.PNG "Manage owners")
+
+By clicking on the "Save" button, the selected user acquires rights on the Cube.
+
+**Manage Series**
+
+The menu item "Manage series" is used to edit several series at the same time.
+Once the cube has been selected from the category tree it is possible to see all the series (combinations of dimensions).
+It is possible to scroll through the complete list and make a choice of the individual series to be deleted.
+With both simple and advanced filters it is possible to identify exactly the series and eventually delete them.
+
+**Synchronise code lists**.
+
+The menu item "Synchronise Code Lists" opens a window where the "Code Lists" that can be synchronised are displayed, 
+e.g. Code Lists used in a Cube and that have been modified by adding an item.
+
+![Synchronize code lists](_static/img/altri_casi_uso_3.png "Synchronize code lists")
+
+With synchronisation, the structures created during the construction of the Cube are aligned with the changes in the code list, so that the loading of a new data element containing the new items can take place successfully.
+
+**Imports attribute files**
+
+The "Import Attribute File" menu item allows the user to import or overwrite the attributes of a cube using a list of rules defined in a csv file. 
+
+![Import attribute file](_static/img/Importa_file_attributi.PNG "Import attribute file")
+
+The user must define
+- the cube into which import the attributes (mandatory)
+- the file from which import the attributes (mandatory)
+- the separator used within the file (mandatory)
+- the delimiter used within the file (optional)
+
+Once the file has been loaded (it will be possible to see a preview by clicking on the "Show dataset" button), the user will be able to decide whether to actually perform the import by specifying:
+- to regenerate or not content constraint and transcoding for the dataflows derived from the cube on which the attributes are being loaded
+- to check or not the correctness of the attributes defined on the File (i.e. those at Group and Dimension Group level). 
+If the check fails, the attributes will not be loaded and the initial situation will be restored.
+
+The file must have the following format:
+- the header shall contain the identifiers of all the dimensions and attributes present in the cube
+- for each line we specify for a given combination of dimension values (where we can leave empty the positions corresponding to dimensions for which the rule must be applied for all values) the value to be assigned to one and only one of the attributes present
+- the rules are applied sequentially from the first to the last line so that the subsequent ones overwrite the previous ones. Rules for more specific cases than a more general case will therefore have to be contained in subsequent lines. 
+
+Here an example of a csv file:
+
+![example csv](_static/img/esempio_csv.PNG "Example csv")
+
+- Row 1: header with dimensions and attributes
+- Row 2: the UMEAS attribute has the value "km" for any combination of dimensions (attribute with attachment level Dataset)
+- Row 3: the attribute UMULT has the value "mult" for any combination of dimensions (attribute with attachment level Dataset)
+- Row 4: the CONF_STATUS attribute has the value "open" for all data points where the CASE dimension has value IVAFF and the COURT dimension has value APP (attribute with attachment level Dimension Group)
+- Row 5: the attribute OBS_STATUS has the value "valid" for the given values of each dimension (attribute with attachment level Observation).
+
+Obviously it would have been possible to indicate different values of the last two attributes for different combinations of dimension values.
+
+**Update Cache Data Browser**.
+
+Using the "Update Data Browser Cache" menu item it is possible to invalidate the catalogue cache of a Data Browser node appropriately defined in the configuration section of an MDM node. 
+This functionality is performed automatically in the following cases:
+  * Putting in/removing a dataflow from production 
+  * Creating a new dataflow from Data Manager
+  * Deleting a dataflow from the Data Manager
+  * DDB reset
+
+**DDB reset**
+
+The menu item "DDB reset" resets all the operations done in the "Data Manager". \
+A pop-up window is shown to confirm the removal.
+
+**Remove temporary tables**
+
+The "Remove temporary tables" menu item removes the temporary tables created by the system during operations on Cubes or Dataflows 
+(e.g. support tables for loading). \
+A pop-up window will be displayed for confirmation by the user.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NEW DATAFLOW DISSEMINATION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#new-dataflow-dissemination">NEW DATAFLOW DISSEMINATION</a></li>
+    <li class="sidebar-header-2"><a href="#ddb-&amp;-dataset-selection">DDB &amp; DATASET SELECTION</a></li>
+    <li class="sidebar-header-2"><a href="#dataflow">DATAFLOW</a></li>
+    <li class="sidebar-header-2"><a href="#create-validate-mapping-set">CREATE VALIDATE MAPPING SET</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="new-dataflow-dissemination"><a class="header-link" href="#new-dataflow-dissemination"></a>NEW DATAFLOW DISSEMINATION</h1>
+<p>Dissemination wizard gives the opportunity to validate an existing Mapping Set or to create a new one and then to validate it.</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD.png" alt="DISSEMINATION_WIZARD"></p>
+<h2 id="ddb--dataset-selection"><a class="header-link" href="#ddb--dataset-selection"></a>DDB &amp; DATASET SELECTION</h2>
+<p>Initially, the user should select a ddb from the drop down menu (<code>DDB Connection</code>) that belong to the already specified mapping store. If in this database a dataset already exists then it can be selected from the drop down menu <code>Defined Data Sets</code>. Otherwise, if there is no defined datasets button <code>+ Add</code> can help the user to create a new dataset (via SQL query or Visual Editor).</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_ADD_DATASET.png" alt="DISSEMINATION_WIZARD_ADD_DATASET"></p>
+<h2 id="dataflow"><a class="header-link" href="#dataflow"></a>DATAFLOW</h2>
+<p>Afterwards, the user should define an already existing Dataflow from the drop down menu <code>Select from available Dataflows</code> as it can be seen from the below image.</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_DATAFLOW.png" alt="DISSEMINATION_WIZARD_DATAFLOW"></p>
+<p>Moreover, the user can also add a new Dataflow using <code>Add/Create Dataflow</code> menu. It can be added with two ways, either via querying a selected registry (from those already defined from admin user) or by uploading a file (in .xml or .json format).</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_ADD_DATAFLOW.png" alt="DISSEMINATION_WIZARD_ADD_DATAFLOW"></p>
+<h2 id="create-validate-mapping-set"><a class="header-link" href="#create-validate-mapping-set"></a>CREATE VALIDATE MAPPING SET</h2>
+<p>The final step is to validate the mapping set for the selected Dataflow by clicking <code>Create/Validate Mapping Set</code>. In case no mapping set exists for the specified Dataflow (prior to starting the Wizard), he Wizard will attempt to create one and save it in the selected mapping store.</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_VALIDATE.png" alt="DISSEMINATION_WIZARD_VALIDATE"></p>
+<p><code>Create / Validate Mapping Set</code> attempts to automatically create a mapping set using the selected Dataflow and Dataset from previous steps. During this process, the wizard tries to automatically match dataset columns (from the Selected Dataset) and create mappings. After a mapping set is created and the mappings have been saved, the wizard performs two kinds of validations:</p>
+<p>1)Checking if the new mapping set is complete: The validation is successful only if each and every dimension of the Dataflow has been mapped to a dataset column or constant value.</p>
+<p>2)Checking the validity of the dataset column values.</p>
+<p>Two outcomes can arise from the validation process:</p>
+<p>1)The mapping set is not complete, either because the wizard could not match all dimensions, or because the existing mapping set is missing some mappings. In this case, the user will be presented with the appropriate message and the <code>Edit Mappings</code> button will open the Mapping Set Editor, so that the user can manually add mappings (<a href="./MAPPING_SETS.html#MAPPING-SET-EDITOR-BUTTONS">MAPPING_SETS_EDITOR</a>).</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_MAPPING_SET_NOT_COMPLETE.png" alt="DISSEMINATION_WIZARD_MAPPING_SET_NOT_COMPLETE"></p>
+<p>2)The mapping set is complete, but not valid. This means that the data values are not suitable, and they need to be fixed or transcoded.
+The button <code>View Errors</code> will appear, and a new window will inform the user of the affected dimensions (in this case the TIME_PERIOD).</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID.png" alt="DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID"></p>
+<p>Upon collapsing each section, the user will have the option to <code>Show Rows</code> which loads the data for the particular mapping set and shows the wrong data values by using a red color.</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR.png" alt="DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR"></p>
+<p>Then the user can <code>Hide Rows</code> or <code>Edit</code>. Editing will prompt the user to add transcoding (<a href="./MAPPING_SETS.html#TRANSCODING">TRANSCODING_MANUAL</a>).</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR_DETAILS.png" alt="DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR_DETAILS"></p>
+<p>The following image demonstrates the screen for adding a new transocding:</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR_TRANSCODING.png" alt="DISSEMINATION_WIZARD_MAPPING_SET_NOT_VALID_ERROR_TRANSCODING"></p>
+<p>After a transcoding is applied, the user can close the windows and attempt to <code>Create/Validate Mapping Set</code> again. If the problem values have been resolved, the Dataflow will be able to be published to production.</p>
+<p class="img-container"><img src="figures/DISSEMINATION_WIZARD_PUBLISH.png" alt="DISSEMINATION_WIZARD_PUBLISH"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

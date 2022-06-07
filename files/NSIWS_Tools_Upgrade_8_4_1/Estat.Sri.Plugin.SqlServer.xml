@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Plugin.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder">
+            <summary>
+            The SQL server connection builder.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.ServerKeyword">
+            <summary>
+            The server keyword
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.PortKeyword">
+            <summary>
+            The port keyword
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.UserIdName">
+            <summary>
+            The user identifier name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.DatabaseName">
+            <summary>
+            The database name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.PasswordName">
+            <summary>
+            The password name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder._integratedSecurityTrueValues">
+            <summary>
+            The integrated security true values
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateConnectionEntity">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <returns>
+            The connection entity
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateConnectionEntity(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates the connection entity from the specified <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>
+            The <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:System.Configuration.ConnectionStringSettings"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateDdbConnectionEntity(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the DDB connection entity.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.DdbConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.CreateConnectionEntity(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <param name="ddbConnection">The DDB connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.GetConnectionStringBuilder(System.String)">
+            <summary>
+            Gets the connection string builder.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnectionStringBuilder"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.SetServer(System.String,Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Sets the server.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="connectionEntity">The connection entity.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Builder.SqlServerConnectionBuilder.BuildConnectionEntity(System.Data.Common.DbConnectionStringBuilder,System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Builds the connection entity.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="settings">The settings.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine">
+            <summary>
+            The SQL server database provider engine.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine._name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.ProviderName">
+            <summary>
+            Gets the name of the provider.
+            </summary>
+            <value>
+            The name of the provider.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.ParametersAreReadOnly">
+            <summary>
+            Gets a value indicating whether the parameters are read only.
+            </summary>
+            <value>
+            <c>true</c> if parameters are read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.ShowDescriptionAssociation">
+            <summary>
+            Gets a value indicating whether to show the description association.
+            </summary>
+            <value>
+            <c>true</c> if it should show the description association; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.Browser">
+            <summary>
+            Gets the browser.
+            </summary>
+            <value>
+            The browser.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.SqlServer.Engine.SqlServerDatabaseProviderEngine.SettingsBuilder">
+            <summary>
+            Gets the settings builder.
+            </summary>
+            <value>
+            The settings builder.
+            </value>
+        </member>
+        <member name="T:Estat.Sri.Plugin.SqlServer.Engine.SqlServerSchemaBrowser">
+            <summary>
+            The SQL server schema browser.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Engine.SqlServerSchemaBrowser.GetDatabaseObjects(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Gets the database objects. E.g. Tables or Views
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.DatabaseObject" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">settings is null</exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Engine.SqlServerSchemaBrowser.GetSchema(System.Configuration.ConnectionStringSettings,Estat.Sri.Mapping.Api.Model.IDatabaseObject)">
+            <summary>
+            Gets the fields of a database object.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="databaseObject">The database object.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.IFieldInfo" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            settings
+            or
+            databaseObject
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Engine.SqlServerSchemaBrowser.CreateConnection(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates a new connection.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnection"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Engine.SqlServerSchemaBrowser.BuildDatabaseObject(System.Data.IDataReader)">
+            <summary>
+            Builds the database object.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IDatabaseObject"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.SqlServer.Factory.SqlServerDatabaseProviderFactory">
+            <summary>
+            The SQL server database provider factory.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Factory.SqlServerDatabaseProviderFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.SqlServer.Factory.SqlServerDatabaseProviderFactory"/> class.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.SqlServer.Factory.SqlServerLocalRetrievalFactory">
+            <summary>
+            The SQL Server plug-in for DDB access
+            </summary>
+            <seealso cref="T:Estat.Sri.Mapping.Api.Factory.ILocalCodeRetrievalFactory" />
+        </member>
+        <member name="F:Estat.Sri.Plugin.SqlServer.Factory.SqlServerLocalRetrievalFactory._ddbSqlBuilderFactory">
+            <summary>
+            The DDB SQL builder factory
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Factory.SqlServerLocalRetrievalFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.SqlServer.Factory.SqlServerLocalRetrievalFactory" /> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.SqlServer.Factory.SqlServerLocalRetrievalFactory.GetEngine(System.String)">
+            <summary>
+            Gets the <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> for the specified <paramref name="databaseType" />
+            </summary>
+            <param name="databaseType">Type of the database.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> engine for the specified <paramref name="databaseType" />
+            </returns>
+        </member>
+    </members>
+</doc>

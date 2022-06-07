@@ -1,0 +1,103 @@
+# File Mapping 
+
+The File Mapping window displays all mappings in tree format.
+It is possible to:
+* **Create a new mapping**
+* **View or delete an existing mapping**.
+
+![List Mapping](_static/img/lista_mapping.png "List Mapping")
+
+
+**Create a new mapping**
+
+The selection of the "New" button, in the upper right corner, opens a pop-up window for the setting of the information necessary for the creation of the Mapping. \
+The system provides for successive steps displayed in the top bar: it is possible to move to the next step with the "Next" button or selecting the step directly from the bar. \
+The user can go back to the previous steps to make any changes or to check the settings.
+
+![New File Mapping](_static/img/filemapping_2.PNG "New File Mapping")
+
+***Cube Selection*** \
+The first step is the identification of the Cube to be mapped among those present in the tree of Category Schemes. \
+Once the Cube has been selected the "Next" button becomes active to pass to the next step. 
+
+***Upload File (CSV)*** \
+The system displays a form for uploading the CSV file with which to perform the mapping with the selected Cube.
+
+![Upload](_static/img/filemapping_3.PNG "Upload")
+
+The form allows searching the CSV file from filesystem; once the CSV file has been selected, its name will be shown in the "File" field. \
+The user must check that the "Separator" and "Header" settings, which are set by default, correspond to what is present in the chosen CSV file 
+and change them if necessary. \
+The form allows the user to set a "Delimiter" (optional field) and the ".STAT Format" flag (activate the flag if the CSV file has the .STAT format). \
+The frame allows the user to delete the file upload, to allow the selection of a different file. \
+Once the compulsory information has been filled in, the button "Upload File" will become active, with the click, the System will upload the file and activate the "Next" button. \
+After uploading the user can view the content of the file with the "Preview" button.
+
+![Preview](_static/img/filemapping_4.PNG "Preview")
+
+***Upload File (Excel)*** \
+The system allows a new mapping to be created and a new dataset to be loaded from a pair consisting of a file in Excel format and a mapping file in XML format generated with the "ExcelToCsv" tool. 
+
+![Upload](_static/img/filemapping_3_BIS.PNG "Upload")
+
+The module allows the user to search the XLSX file from the filesystem; once the XLSX file has been selected, its name will be shown in the "File" field. \
+The module allows the user to search the XML file from the filesystem; once the XML file has been selected, its name will be shown in the "Mapping XML" field. \
+From these two files, the system automatically creates a CSV file that allows the mapping with the fields of the cube (as we have seen in the previous section). \
+The box allows the user to delete the loaded files, in order to allow the selection of different files. \
+Once the mandatory information has been filled in, the button "Upload File" will become active, with the click, the System will upload the file and activate the button "Next". \
+After uploading the user can view the content of the file with the "Preview" button.
+
+***Upload File (PC-Axis)*** \
+The system allows a new mapping to be created and a new dataset to be loaded from a PC_Axis file.
+
+![Upload](_static/img/filemapping_3_2BIS.PNG "Upload")
+
+The module allows the PX file to be searched from the filesystem; once the PX file has been selected, its name will be shown in the "File" field. \
+Once the compulsory information has been filled in, the "Upload File" button will become active, with the click, the System will upload the file and activate the "Next" button. \
+After uploading the user can view the content of the file with the "Preview" button.
+
+
+***Component mapping*** \
+This step allows the mapping between the components of the Cube and those of the upload file. \
+The functions available are: \
+"+" to add a mapping after the selection of a Cube Component and the Header \
+"++" to add in the mapping all the correspondences between the Cube Component and the Header in automatic mode \
+"-" to remove a match from the mapping \
+The "Show Dataset" button at the bottom activates a pop-up window displaying the file in table format. \
+The user can visualize the values contained in the components by clicking on the icon placed next to each element.  \
+On the left side the elements and the values present in the loaded file are shown, on the right side the Codelists and the items related to the DSD of the selected Cube are also shown. 
+The mapping is used to check the correspondence between the contents of the csv header and the components of the Cube.
+
+![Component Mapping](_static/img/filemapping_5.PNG "Component Mapping")
+
+Optional components are greyed out and can be selected in this step. \
+In order to continue with the creation, it is necessary to map all the mandatory components of the Cube, otherwise, the System allows the user to continue but prevents from saving with an error message.
+
+![Mapping Error](_static/img/filemapping_6.PNG "Mapping Error")
+
+***Name*** \
+The save mask contains the fields: 
+- *Mapping Name* (mandatory, automatically created but editable)
+- *Mapping Description* (optional)
+
+Once the values in the fields have been set, the user selects the "Save" button. \
+The system notifies the user that the mapping has been created by closing the creation pop-up window and displaying the updated mapping list with the new item.
+
+
+**Viewing or deleting an existing mapping** \
+The "Show Details" button is selectable from the tree-element of the Mapping list.
+
+![Show Details](_static/img/filemapping_7.PNG "Show Details")
+
+The System displays a pop-up window showing the following information of the Mapping in read-only mode:
+- *Mapping Name*
+- *Mapping Description*
+- *Cube Identifier*
+- *Cube Name* 
+- *Component List*
+
+![Mapping Details](_static/img/filemapping_8.PNG "Mapping Details")
+
+Deleting a mapping is possible from the "Delete Mapping" icon, which can be selected from the tree branch in the Mapping list or from the "Delete selected Mapping" button at the top of the screen. 
+
+![Delete Mapping](_static/img/filemapping_9.PNG "Delete Mapping")

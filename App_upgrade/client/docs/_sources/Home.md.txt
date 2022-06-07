@@ -1,0 +1,19 @@
+## Home
+
+To start the 'Data & Meta Manager' tool, the url must be retrieved through the internet browser. \
+The url is provided by the system administrator. \
+The first screen to be displayed is the **Welcome Mask**. \
+The Suite presents on the left the Application Menu that varies according to the user profile logged in or not. \
+The Welcome Screen shows the Suite header and the version of the application package; at the bottom there is the footer with the Istat logo. \
+This information is always fixed in the application graphics. \
+Through drop-down menus located in the upper right corner of the mask welcome mask, it is possible to set:
+
++ Node 
++ Language
++ Login
+
+Starting from this mask the System is accessible by a profiled user or alternatively by an anonymous non-profiled user. \
+The System automatically sets the predefined language and defaults that allow an Anonymous User to access the connection. \
+The Application Menu is always present and it can be displayed in full or in compressed form (with icons only).
+
+![Welcome Mask](_static/img/Benvenuto.PNG "Welcome Mask")

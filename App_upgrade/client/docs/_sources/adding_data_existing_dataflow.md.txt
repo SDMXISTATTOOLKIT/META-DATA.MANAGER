@@ -1,0 +1,21 @@
+# How to add data to an existing Dataflow
+
+The ability to add data to an existing Dataflow results in loading the data into the Cube from which the Dataflow is derived.
+
+In the section: [How to load a new Dataflow](load_new_dataflow.md) we have listed the actions necessary to create a Dataflow 
+having only the DSD available:
+
+* **Builder**: creation of a Cube associated with a DSD 
+* **File Mapping**: creation of a mapping between Cube and data 
+* **Loader**: data loading
+* **Dataflow Builder**: Dataflow creation and publication
+
+To add data to an existing Dataflow only the third step is needed: [Loader](loader.md) which allows the loading of data from CSV or SDMX-ML files. \
+The loading of a new file in the Cube will affect all Dataflow derived from it.
+
+In the case of published Dataflows in which "Transcoding" or "Content Constraint" are present, the update is not immediately visible as these functions
+ lock the dimensions values to the codes present at the time of publication. \
+In order to acknowledge the presence of new values deriving from the data update, the "Regenerate CC+Transcoding" option must be selected, 
+which allows the loading of data by recreating also the Transcoding and the Content Constraint. \
+For each operation's details see section: [Loader](loader.md).
+

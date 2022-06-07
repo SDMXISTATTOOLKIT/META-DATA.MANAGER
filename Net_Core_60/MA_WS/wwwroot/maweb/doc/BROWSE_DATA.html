@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BROWSE AND DOWNLOAD DATA</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#browse-and-download-data">BROWSE AND DOWNLOAD DATA</a></li>
+    <li class="sidebar-header-2"><a href="#data-preview">DATA PREVIEW</a></li>
+    <li class="sidebar-header-2"><a href="#criteria">CRITERIA</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="browse-and-download-data"><a class="header-link" href="#browse-and-download-data"></a>BROWSE AND DOWNLOAD DATA</h1>
+<p>In this screen, the user can browse and preview or download data by selecting a Dataflow from the left hand side. On the right hand side we have some options that affect the content of the data file that will be retrieved from the server. First of all, the user can choose the data format. The available options are the following:</p>
+<ul class="list">
+<li>SDMX-ML 2.0 Compact</li>
+<li>SDMX-ML 2.0 Cross Sectional</li>
+<li>SDMX-ML 2.0 Generic</li>
+<li>GESMESTS</li>
+<li>SDMX-ML 2.1 Generic</li>
+<li>SDMX-ML 2.1 Structure Specific</li>
+<li>CSV</li>
+</ul>
+<p class="img-container"><img src="figures/BROWSE_DATA_1.png" alt="BROWSE_DATA_1"></p>
+<p>By clicking &quot;Download Data&quot;, an .xml file should be downloaded after the loading screen. The name of the file should contain the ID, AGENCY, VERSION of the Dataflow. </p>
+<h2 id="data-preview"><a class="header-link" href="#data-preview"></a>DATA PREVIEW</h2>
+<p>By clicking &quot;Preview Data&quot;, a new window should open. It will contain the first 10 results of the requested data inside a text area. This is only for preview purposes, and with &quot;Copy to clipboard&quot; the server should return all of the data which is automatically copied to clipboard. Then, the user can paste the data somewhere else.</p>
+<p class="img-container"><img src="figures/BROWSE_DATA_2.png" alt="BROWSE_DATA_2"></p>
+<h2 id="criteria"><a class="header-link" href="#criteria"></a>CRITERIA</h2>
+<p>MAWEB offers additional options to filter the data by choosing which values to include per dimension, as well as the dimension at observation parameter. By default, this is set to TIME_PERIOD. The user can preview/download data as normal. An example of these options is shown below:</p>
+<p class="img-container"><img src="figures/BROWSE_DATA_3.png" alt="BROWSE_DATA_3"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

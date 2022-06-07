@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Data.Monitor</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.Data.Monitor.DataMonitor">
+            <summary>
+            The Mapping Store based implementation of DataMonitor
+            </summary>
+            <seealso cref="T:Estat.Sdmxsource.Extension.Manager.IDataMonitor" />
+        </member>
+        <member name="F:Estat.Sri.Data.Monitor.DataMonitor._log">
+            <summary>
+            The log
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Data.Monitor.DataMonitor._dataMonitorSettings">
+            <summary>
+            The data monitor settings
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Data.Monitor.DataMonitor._database">
+            <summary>
+            The database
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Data.Monitor.DataMonitor._dataRegistrator">
+            <summary>
+            The data registrator
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitor.#ctor(Estat.Sri.MappingStoreRetrieval.Manager.Database,Estat.Sdmxsource.Extension.Manager.IDataRegistrator,Estat.Sri.Data.Monitor.DataMonitorSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Data.Monitor.DataMonitor"/> class.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="dataRegistrator">The data registrator.</param>
+            <exception cref="T:System.ArgumentNullException">
+            dataRegistrator
+            or
+            database
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitor.Monitor">
+            <summary>
+            Check if an update occurred
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitor.CheckForDataRegistrations">
+            <summary>
+            Checks for data registrations.
+            </summary>
+            <returns>List&lt;IRegistrationMutableObject&gt;.</returns>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitor.CreateDataSource(Org.Sdmxsource.Sdmx.Api.Model.Objects.Reference.IStructureReference,System.DateTime)">
+            <summary>
+            Creates the data source.
+            </summary>
+            <param name="dataflowRef">The dataflow reference.</param>
+            <param name="dataLastUpdate">The data last update.</param>
+            <returns>The DataSourceMutableCore.</returns>
+            <exception cref="T:Estat.Sdmxsource.Extension.Exception.ConfigurationMissingException">Error while creating the dataUrl. The baseResourceUrl is not configured.</exception>
+        </member>
+        <member name="T:Estat.Sri.Data.Monitor.DataMonitorSettings">
+            <summary>
+            Data Monitor settings
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitorSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Data.Monitor.DataMonitorSettings" /> class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Data.Monitor.DataMonitorSettings.WADLUrl">
+            <summary>
+            Gets the WADL URL.
+            </summary>
+            <value>The WADL URL.</value>
+        </member>
+        <member name="P:Estat.Sri.Data.Monitor.DataMonitorSettings.WSDLUrl">
+            <summary>
+            Gets the WSDL URL.
+            </summary>
+            <value>The WSDL URL.</value>
+        </member>
+        <member name="M:Estat.Sri.Data.Monitor.DataMonitorSettings.TryGetUriOrNull(System.String)">
+            <summary>
+            Tries the get URI or null.
+            </summary>
+            <param name="setting">The setting.</param>
+            <returns>System.Uri.</returns>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException"></exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,50 @@
+# Artefacts in detail
+
+Each artefact has its own peculiarities according to its type, let's see which ones.
+
+```eval_rst
+* :doc:`Concepts Schema <concept_schemas>`
+* :doc:`Code List <code_lists>`
+* :doc:`Data Structure Definitions <dsd>`
+* :doc:`Dataflows <DataFlows>`
+* :doc:`Category Schema <category_schemas>`
+* :doc:`Categorizations <categorisations>`
+* :doc:`Hierarchical Code Lists <HierarchicalCodeLists>`
+* :doc:`Agency Schema <agency_schemas>` 
+* :doc:`Data Provier Schemes <DataProviderSchemas>`
+* :doc:`Data Consumer Schemes <DataConsumerSchemes>`
+* :doc:`Organization Unit Schemes <OrganizationUnitSchemes>`
+* :doc:`Content Constraints <content_constraints>`
+* :doc:`Structure Sets <structure_sets>`
+* :doc:`Provision Agreements <prev_agreements>`
+* :doc:`Registrations <registrations>`
+* :doc:`Category Sets and Dataflows <schemes_cat_dat>` 
+* :doc:`Metadata Structure Definitions <Metadata_Structure_Definitions>`
+* :doc:`Metadataflows <Metaflows>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    Concepts Schema <concept_schemas.md>
+    Code List <code_lists.md>
+    Data Structure Definitions <dsd.md>
+    Dataflows <DataFlows.md>
+    Category Schemes <category_schemas.md>
+    Categorisations <categorisations.md>
+    Hierarchical Code Lists <HierarchicalCodeLists.md>
+    Agency Schemes <agency_schemas.md>
+    Data Provier Schemes <DataProviderSchemas.md>
+    Data Consumer Schemes <DataConsumerSchemes.md>
+    Organization Unit Schemes <OrganizationUnitSchemes.md>
+    Content Constraints <content_constraints.md>
+    Structure Sets <structure_sets.md>
+    Provision Agreements <prev_agreements.md>
+    Registrations <registrations.md>
+    Category and Dataflows Schemes <schemes_cat_dat.md>
+    Metadata Structure Definitions <Metadata_Structure_Definitions.md>
+    Metadataflows <Metaflows.md>
+```
+

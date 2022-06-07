@@ -1,0 +1,20 @@
+﻿.swagger-ui .topbar {
+    padding: 0 0 0 0;
+    background: #3399CC
+}
+
+.swagger-ui .topbar a{
+    flex: none;
+    max-width: none;
+}
+
+.topbar-wrapper img {
+    content: url(../../images/logo.png);
+    float: left;
+    width: 358px;
+    height: 87px;
+}
+
+.swagger-ui {
+    font-size: small;
+}

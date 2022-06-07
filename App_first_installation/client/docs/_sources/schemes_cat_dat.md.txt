@@ -1,0 +1,19 @@
+# Category and Dataflow Schemes
+
+The Category and Dataflow Schemes management function is present in the left side menu starting from the "Meta Manager" item.
+
+  ![Category and Dataflow Schemes](_static/img/schemi_cat_df.PNG "Category and Dataflow Schemes")
+ 
+The screen shows Categorisations and Dataflows in a tree view. \
+The user can expand a Category Schema by clicking on the arrow next to its name.
+
+In the upper right part of the screen there is an **Update category tree** button. \
+This function allows the user to update the tree by reloading the list that may contain new Categories and/or Dataflow components created by other users within the same System and Node connection. \
+Further functions available to the user are those related to the exploded view of Categories Schemes tree or the reduced view. \
+By selecting a Dataflow and right clicking the mouse button it is possible to activate the **Delete Categorization** button,
+
+ 
+  ![Category and Dataflow Schemes](_static/img/schemi_cat_df2.PNG "Schemas of Categories and Dataflow")
+ 
+ and the Dataflow removed from the categorization is moved to the **Uncategorized** folder. \
+ It is possible to change Dataflow categorisation with the drag&drop tool or during the "Categorisation" phase of the Dataflow Builder.

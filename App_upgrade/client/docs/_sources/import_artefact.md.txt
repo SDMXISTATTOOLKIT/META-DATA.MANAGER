@@ -1,0 +1,21 @@
+# Import an Artefact
+
+The **Import Structures** function is present in the left-hand side menu under "Tools" and also in the list of artefacts. 
+
+  ![Import artefact](_static/img/Importa_artefatto.PNG "Import artefact")
+  
+  This function allows the user to import structures of SDMX-ML type into the system. 
+  
+   ![Import Structures](_static/img/Importa_strutture.PNG "Import Structures")
+   
+   The user selects a file with data to load from _filesystem_ . \
+   During the upload function, activated by the selection of the **Load XML** button, the System checks the correct format of the file and the consistency of the information. \
+   In case of anomaly a blocking message is displayed to the user that will not allow the file to be uploaded. \
+   Otherwise the list of artefacts to be uploaded is shown on screen. Those already present in the system cannot be selected. 
+   
+   ![Import structures](_static/img/Importa_strutture2.PNG "Import structures")
+   
+   The user can choose which artefacts to import by selecting the line. \
+   By pressing the import button, import ooperation is done and the list of imported artefacts is shown. 
+   
+   ![Import Structures](_static/img/Artefatti_importati.PNG "Import Structures")

@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Plugin.Mysql</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.Plugin.MySql.Builder.KeysConnectionStringBuilder">
+            <summary>
+            The keys connection string builder. 
+            This class is a workaround since <c>MySql Connector/.NET</c> <see cref="P:System.Data.Common.DbConnectionStringBuilder.Keys"/> doesn't return any values at least when <seealso cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString"/> is not set.
+            So it will try to get connection string keys either from driver from an internal field 
+            or via the a hard-coded list from <c>MySql </c> Documentation
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.KeysConnectionStringBuilder._hardCodedKeys">
+            <summary>
+            The hard coded keys from <c>MySql</c> Connector/.NET documentation. Not all values were taken
+            </summary>
+            <seealso href="https://dev.mysql.com/doc/connector-net/en/connector-net-connection-options.html"/>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.KeysConnectionStringBuilder.Build(System.Data.Common.DbConnectionStringBuilder)">
+            <summary>
+            Builds the specified connection string builder.
+            </summary>
+            <param name="connectionStringBuilder">The connection string builder.</param>
+            <returns>The list of keys supported by the MySQL <see cref="T:System.Data.Common.DbConnectionStringBuilder"/></returns>
+            <exception cref="T:System.ArgumentNullException">connectionStringBuilder is null</exception>
+        </member>
+        <member name="T:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder">
+            <summary>
+            The MariaDB/MySQL connection settings builder.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.UserIdName">
+            <summary>
+            The user identifier name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.DatabasePropertyName">
+            <summary>
+            The database property name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.PasswordName">
+            <summary>
+            The password name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.ServerName">
+            <summary>
+            The server name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.PortName">
+            <summary>
+            The port name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder._failOverkeys">
+            <summary>
+            The fail-over keys
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder._buildBuilder">
+            <summary>
+            The build builder
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder._providerName">
+            <summary>
+            The provider name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder._keysConnectionStringBuilder">
+            <summary>
+            The keys connection string builder
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder._failOverKeyCollection">
+            <summary>
+            The fail over key collection
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.#ctor(System.String,System.Func{System.String,System.Data.Common.DbConnectionStringBuilder})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="buildBuilder">The build builder.</param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateConnectionEntity">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <returns>
+            The connection entity
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateConnectionEntity(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates the connection entity from the specified <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>
+            The <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:System.Configuration.ConnectionStringSettings"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateDdbConnectionEntity(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the DDB connection entity.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.DdbConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.CreateConnectionEntity(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <param name="ddbConnection">The DDB connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.GetConnectionStringBuilder(System.String)">
+            <summary>
+            Gets the connection string builder.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnectionStringBuilder"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Builder.MySqlConnectionSettingsBuilder.BuildConnectionEntity(System.Data.Common.DbConnectionStringBuilder,System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Builds the connection entity.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="settings">The settings.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine">
+            <summary>
+            The SQL server database provider engine.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine._name">
+            <summary>
+            My SQL name
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.ProviderName">
+            <summary>
+            Gets the name of the provider.
+            </summary>
+            <value>
+            The name of the provider.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.ParametersAreReadOnly">
+            <summary>
+            Gets a value indicating whether the parameters are read only.
+            </summary>
+            <value>
+            <c>true</c> if parameters are read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.ShowDescriptionAssociation">
+            <summary>
+            Gets a value indicating whether to show the description association.
+            </summary>
+            <value>
+            <c>true</c> if it should show the description association; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.Browser">
+            <summary>
+            Gets the browser.
+            </summary>
+            <value>
+            The browser.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.SettingsBuilder">
+            <summary>
+            Gets the settings builder.
+            </summary>
+            <value>
+            The settings builder.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlDatabaseProviderEngine.GetConnectionStringBuilder(System.String)">
+            <summary>
+            Gets the connection string builder.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnectionStringBuilder"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser">
+            <summary>
+            The MySQL/MariaDB schema browser.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser._tablesKeywords">
+            <summary>
+            The base tables keywords
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser._viewsKeywords">
+            <summary>
+            The views keywords
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.#ctor(System.Func{System.String,System.Data.Common.DbConnectionStringBuilder})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser"/> class.
+            </summary>
+            <param name="getConnectionStringBuilder">The get connection string builder.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.GetDatabaseObjects(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Gets the database objects. E.g. Tables or Views
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.DatabaseObject" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">settings is null</exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.GetSchema(System.Configuration.ConnectionStringSettings,Estat.Sri.Mapping.Api.Model.IDatabaseObject)">
+            <summary>
+            Gets the fields of a database object.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="databaseObject">The database object.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.IFieldInfo" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            settings
+            or
+            databaseObject
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.CreateConnection(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates a new connection.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnection"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.BuildDatabaseObject(System.Data.IDataReader)">
+            <summary>
+            Builds the database object.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IDatabaseObject"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.GetConnectionStringBuilder(System.String)">
+            <summary>
+            Gets the connection string builder.
+            </summary>
+            <param name="providerName">Name of the provider.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnectionStringBuilder"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Engine.MySqlSchemaBrowser.GetDatabaseName(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Gets the name of the database.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>The database name</returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.MySql.Factory.MysqlDatabaseProviderFactory">
+            <summary>
+            The MYSQL database provider factory.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Factory.MysqlDatabaseProviderFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.MySql.Factory.MysqlDatabaseProviderFactory"/> class.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.MySql.Factory.MySqlLocalRetrievalFactory">
+            <summary>
+            The SQL Server plug-in for DDB access
+            </summary>
+            <seealso cref="T:Estat.Sri.Mapping.Api.Factory.ILocalCodeRetrievalFactory" />
+        </member>
+        <member name="F:Estat.Sri.Plugin.MySql.Factory.MySqlLocalRetrievalFactory._ddbSqlBuilderFactory">
+            <summary>
+            The DDB SQL builder factory
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Factory.MySqlLocalRetrievalFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.MySql.Factory.MySqlLocalRetrievalFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.MySql.Factory.MySqlLocalRetrievalFactory.GetEngine(System.String)">
+            <summary>
+            Gets the <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> for the specified <paramref name="databaseType" />
+            </summary>
+            <param name="databaseType">Type of the database.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> engine for the specified <paramref name="databaseType" />
+            </returns>
+        </member>
+    </members>
+</doc>

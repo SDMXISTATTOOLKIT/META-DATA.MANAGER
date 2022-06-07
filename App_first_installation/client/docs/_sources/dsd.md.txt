@@ -1,0 +1,80 @@
+# Data Structure Definitions
+
+Selecting Data Structures Definitions from the "Meta Manager" module the application will show the list of DSDs present in the system similarly to the lists of all artefacts present, as explained in [artefact list](artefact_lists.md).
+
+The View/Edit function allows the user to view the detail of the DSD and update it if the user has write privileges.
+
+ ![DSD](_static/img/dsd.PNG "DSD")
+ 
+ The main section of the DSD detail mask contains the following tabs :
++ [**General**](section_general.md) \
+In the "General" window user can configure annotations, among them it is possible to edit annotations for the "Table layout", the "Chart layout" and the "Map layout". 
+Other annotations at dimension level (e.g. not displayed) can be edited directly in the dimension definition window.
+For the meaning of these annotations please refer to [Other node configurations](other_nodes.md).
+
++ **Primary measure** \
+ The fields for both editing and insertion are: \
+ -- _ID_ (mandatory alphanumeric): OBS_VALUE (not modifiable) \
+ -- _Concept_ (mandatory alphanumeric) \
+ The System allows the selection of a Concept Scheme by means of an interface that allows selection among the concepts present. \
+ -- _Code List_ (alphanumeric not mandatory). \
+ The System allows the selection of a List of Codes by means of an interface that allows selection from the list of codes present. \
+ -- [_Annotations_](Annotations.md)
+ 
+ ![DSD measure](_static/img/dsd_misura.PNG "DSD measure")
+ 
+**Note**: \
+the definition of a unique measure complies with the SDMX standard, if it is necessary to display indicators, the measure will remain unique, what needs to be done is to define a dimension that expresses the name of the indicators. \
+Filtering on this dimension, the value of the chosen indicator will be obtained in obs_value.
+
++ **Dimensions** \
+The fields in insertion and modification are:  \
+-- _Type Size_: The System allows the choice between the following Size types: Normal, Frequency, Time, Measure \
+-- _ID_ : (alphanumeric mandatory) \
+-- _Order_: (numeric optional) \
+-- _Concept_:(alphanumeric mandatory) \
+The System allows the selection of a Concept Scheme by means of an interface that allows selection among the concepts present. \
+-- _Code List_ (alphanumeric not mandatory). \
+The System allows the selection of a List of Codes by means of an interface that allows selection from the list of codes present. \
+-- [_Annotations_](Annotations.md) 
+
+ ![DSD dimensions](_static/img/dsd_dimensioni.PNG "DSD dimensions")
+ 
+**Note**:  \
+What are "Normal" dimensions? They are all non-special classifications such as: gender, age, economic sector etc...  \
+A "Measure" dimension is a special dimension that contains the names of several indicators so it will certainly be necessary to filter this dimension to show the values correctly. \
+A "Frequency" dimension is a special dimension that in some way is linked, for example, to update time of data and therefore contains items such as: annual, semi-annual etc.. \
+A "Time" dimension is a special dimension that expresses the historical series so if the frequency is, for example, annual it will contain years.
+
++ **Groups** \
+The fields in insertion and modification are: \
+-- _Group ID_: (alphanumeric mandatory) \
+-- _Dimensions_: The list of dimensions defining the group is built on the basis of the user's choice of one or more DSD Dimensions. \
+At least one dimension must be selected for the definition of a group. \
+-- [_Annotations_](Annotations.md):  (alphanumeric not mandatory) \
+**Note**: \
+Groups are nothing more than groupings of dimensions to which an ID is associated in order to refer to those dimensions in a simpler way.
+
++ **Attributes** \
+The fields in insertion and modification are: \
+-- _ID_: (mandatory alphanumeric) \
+-- _Order_: (numeric optional) \
+-- _Concept_: (alphanumeric mandatory) \
+The System allows the selection of a Concept Scheme by means of an interface that allows selection among the concepts present. \
+-- _Code List_: (alphanumeric not mandatory) \
+The System allows the selection of a List of Codes by means of an interface that allows selection from the list of codes present. \
+-- _Assignment Status_: (alphanumeric mandatory) \
+Possible values are: Mandatory, Optional \
+-- _Attachement Level_: (alphanumeric mandatory) \
+Possible values are: Observation, Dataset, Size Group, Group \
+-- [_Annotations_](Annotations.md): (alphanumeric not mandatory) 
+
+ ![DSD attributes](_static/img/dsd_attributi.PNG "DSD attributes")
+ 
+ **Note**:  \
+Attributes are additional information that, although not modelled as dimensions, are equally fundamental to understand and use data that will later be associated with the DSD. \
+It is easy to understand, for example, that if the measure expresses payments, it is necessary to know: the currency, the number of decimal places or whether it is expressed in thousands or millions etc.. \
+For all this information it is necessary to define an attribute and where it must be applied, if to the whole dataset, if to groups of dimensions or to single observations.
+
++ **Categorisations** \
+Not yet implemented.

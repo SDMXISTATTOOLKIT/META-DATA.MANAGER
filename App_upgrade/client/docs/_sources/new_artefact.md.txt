@@ -1,0 +1,21 @@
+# Creating a new Artefact
+
+Once the [list of artefacts](artefact_lists.md) desired has been chosen, to create a new Artefact, the user must select the **New** button in the top right corner. \
+Regardless of the chosen Artifact type, the management mask of the [**General Data**](section_general.md) of the Artifact will be opened.
+
+   ![New Artifact](_static/img/Nuovo_artefatto.PNG "New Artifact")
+   
+Once the user has filled in the fields of the mask, the System verifies the presence of the compulsory data and the correctness of the data entered while setting them. \
+Only after completion of the minimum and mandatory information, the System activates the save function using the **Save** button. 
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    General Section <section_general.md>
+```
+
+
+
+

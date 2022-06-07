@@ -1,0 +1,33 @@
+# Overview
+
+The 'Data & Meta Manager' tool consists of 4 main sections which are comprehensively set out on the various pages.
+
+The main sections can be summarised as follows:
+* [Meta Manager](MetaManager.md) \
+Complete management of SDMX structural metadata (Codelist, Concept Schemes, Category Scheme, Data Streams, DSD, etc.), i.e. SDMX artefacts can, \
+depending on user profiling, SDMX artefacts can be created, updated, archived, cloned and deleted.
+* [Data Manager](DataManager.md) \
+Data publication available in just 4 steps:
+    - Builder: creation of a DDB schema (data cubes) from DSD and related artifacts
+    - Mapping: creation of mappings between imported files and cubes
+    - Loader: data loading from CSV/SDMX-ML files
+    - Dataflow Builder: creation and publication of dataflows
+
+* [Utility](Utility.md) \
+This section provides a series of tools that allow the quickest management and manipulation of the artefacts, for example the function Compare Item Scheme allows to compare two by two: Code Lists, Category Schemes and Concept Schemes.
+
+* [Metadata Management](management_metadata.md)
+    + Full management of referential metadata: production and display
+        - Compilation of metadata reports
+        - Machine readable metadata in SDMX-JSON via REST API
+        - Human readable metadata in HTML via widgets, shareable or embeddable in another website
+
+    + Dedicated interface for the completion of standard DCAT-AP metadata.
+
+In addition to these sections, two more are includable:
+
+```eval_rst
+* :doc:`User and Permission Management <Managing_users_permissions>`
+* :doc:`Application Management <configure_application>`
+```
+

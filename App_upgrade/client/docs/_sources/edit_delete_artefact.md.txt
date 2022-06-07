@@ -1,0 +1,41 @@
+# Edit, duplicate and delete an existing Artefact
+
+
+Once the [list of artefacts](artefact_lists.md) has been chosen and the desired [search artefact](search_artefact.md) has been performed, the user has a series of functions at line level, according to his profiling. 
+
+  ![Edit artefact](_static/img/Strumenti_riga.PNG "Edit artefact")
+  
+ If the user does not have permissions to perform a certain action, the icon is not displayed.
+ 
+ **View/Edit** \
+ This button allows the user to view the Artifact Detail and update it if the user has write privileges. \
+ Regardless of the type of artifact chosen, the data management mask [**General**](section_general.md) of the artifact will be opened. \
+ In addition to the **General** tab, which is the same for all Artifacts, each Artifact will show other sections that must be filled in/edited according to the peculiarity of the Artifact.
+ 
+   ![Edit Artifact](_static/img/Modifica_artefatto.PNG "Edit Artifact")
+  
+ In the **General** tab, the identification information of the Artifact that should not be modified will be displayed in read-only format. 
+ 
+ **Duplicate** \
+ This button activates the function of duplication of an Artifact (it is present both at row level and in the various Artifact management masks). \
+ The system opens a pop-up with the data of the source Artifact and of the destination Artifact:
+
+* _Type_ (mandatory, by default equal to the source type, not modifiable)
+* _Id_ (mandatory, the one of the Origin Artifact is proposed but can be modified)
+* _Agency_ (mandatory, the one of the Artifact of origin is proposed but can be modified)
+* _Version_ (mandatory, the version of the Artifact of origin is proposed increased but can be modified)
+
+If the user considers the data correct, he can duplicate them using the Duplicate button 
+
+  ![Duplicate artefact](_static/img/Duplica_artefatto.PNG "Duplicate artefact")
+  
+  Duplicating a finalized Artifact generates an unfinalized Artifact.
+  
+  **Delete** \
+  This button activates a pop-up message for user confirmation.
+  
+  If the user wants to continue with item deletion he will select the confirmation button, otherwise he will select the cancel button.
+ 
+   ![Delete artefact](_static/img/Elimina_artefatto.PNG "Delete artefact")
+   
+  Following confirmation the System will display the list of Artifacts updated and sorted alphabetically according to the default sorting or to the sorting carried out by the user.

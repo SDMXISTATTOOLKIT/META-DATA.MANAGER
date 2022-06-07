@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>MAPPING SETS</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#mapping-sets">MAPPING SETS</a></li>
+    <li class="sidebar-header-2"><a href="#mapping-sets-screen">MAPPING SETS SCREEN</a></li>
+    <li class="sidebar-header-3"><a href="#add-mapping-set">ADD MAPPING SET</a></li>
+    <li class="sidebar-header-3"><a href="#mapping-set-editor-buttons">MAPPING SET EDITOR BUTTONS</a></li>
+    <li class="sidebar-header-4"><a href="#dataset-rows">DATASET ROWS</a></li>
+    <li class="sidebar-header-4"><a href="#view-mapped-data">VIEW MAPPED DATA</a></li>
+    <li class="sidebar-header-4"><a href="#transcoding">TRANSCODING</a></li>
+    <li class="sidebar-header-5"><a href="#add/edit-transcoding">ADD/EDIT TRANSCODING</a></li>
+    <li class="sidebar-header-5"><a href="#time-transcoding">TIME TRANSCODING</a></li>
+    <li class="sidebar-header-5"><a href="#advanced-time-transcoding">ADVANCED TIME TRANSCODING</a></li>
+    <li class="sidebar-header-5"><a href="#import-/-export">IMPORT / EXPORT</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="mapping-sets"><a class="header-link" href="#mapping-sets"></a>MAPPING SETS</h1>
+<h2 id="mapping-sets-screen"><a class="header-link" href="#mapping-sets-screen"></a>MAPPING SETS SCREEN</h2>
+<p>A mapping set belongs to a dataflow. There can be one dataflow per mapping set. The mapping set also uses one Dataset. A mapping set contains one or more mappings between DSD components (dimension, attributes, measures etc.) and Data Columns.
+The screen below supports import mapping set or export mapping set to json format. Additionally, a mapping set can also be removed
+using remove button.</p>
+<p class="img-container"><img src="figures/MAPPING_SETS.PNG" alt="MAPPING_SETS"></p>
+<p>Various mappings can be seen by pressing on Editor tab.</p>
+<p class="img-container"><img src="figures/MAPPING_SET_EDITOR.PNG" alt="MAPPING_SET_EDITOR"></p>
+<h3 id="add-mapping-set"><a class="header-link" href="#add-mapping-set"></a>ADD MAPPING SET</h3>
+<p>To add a mapping set, use Add button. The options you need to fill are:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>The Mapping set name.</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>The Dissemination Database.</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>The Dataset.</td>
+</tr>
+</tbody></table>
+<p>Id, Agency and Version fields are prefilled from the selected Dataflow. Please see below:</p>
+<p class="img-container"><img src="figures/ADD_MAPPING_SET.PNG" alt="ADD_MAPPING_SET"></p>
+<p>Next, the user should navigate to Editor tab, scroll down and press save button to save the mappings. <code>Auto map all</code> button can optionally be used, before save. After a successful save, a notification of success will appear and the new mapping set will be set on <em>Mapping sets</em> dropdown on the left sidebar (see below).</p>
+<p class="img-container"><img src="figures/SUCCESS_SAVE_MAPPING_SET.PNG" alt="SUCCESS_MAPPING_SET"></p>
+<h3 id="mapping-set-editor-buttons"><a class="header-link" href="#mapping-set-editor-buttons"></a>MAPPING SET EDITOR BUTTONS</h3>
+<p>Below there is a description of the functionality for each button that appears on Mapping Set Editor.</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dataset Rows</td>
+<td>Shows the values from the corresponding dataset columns when the user created the Dataset. You can read more details in <a href="#dataset-rows">Dataset Rows</a> subsection.</td>
+</tr>
+<tr>
+<td>Auto map all</td>
+<td>Automatically maps each component id to a possible value of Dataset column.</td>
+</tr>
+<tr>
+<td>Validate Mapping</td>
+<td>Checks if all mandatory dimensions are mapped.</td>
+</tr>
+<tr>
+<td>Dataset Validation</td>
+<td>Check if the mapped dataset columns have SDMX compliant values, transcodings are ignored.</td>
+</tr>
+<tr>
+<td>Last Updated Mapping</td>
+<td>Is an optional special mapping that a mapping set can have.</td>
+</tr>
+<tr>
+<td>Updated Status</td>
+<td>Is an optional special mapping that a mapping set can have.</td>
+</tr>
+<tr>
+<td>Update Content Constraints</td>
+<td>Creates content constraints based on mapping set&#39;s saved transcodings.</td>
+</tr>
+<tr>
+<td>Select Content Constraints</td>
+<td>If any constraints are created, they can be selected using the &quot;Select Content Constraints&quot;.</td>
+</tr>
+<tr>
+<td>View Mapped Data</td>
+<td>Opens a modal with a variety of options, e.g., Format Validation, Data Validation etc. You can read more details in <a href="#view-mapped-data">View Mapped Data</a> subsection.</td>
+</tr>
+</tbody></table>
+<h4 id="dataset-rows"><a class="header-link" href="#dataset-rows"></a>DATASET ROWS</h4>
+<p>When pressing <em>Dataset Rows</em> button, a modal appears showing a sql query. By pressing <em>View Results</em> button, one can see the values of the corresponding dataset columns in a Table form as below:</p>
+<p class="img-container"><img src="figures/DATASET_ROWS_VIEW_RESULTS.PNG" alt="DATASET_ROWS_RESULT"></p>
+<h4 id="view-mapped-data"><a class="header-link" href="#view-mapped-data"></a>VIEW MAPPED DATA</h4>
+<p>View Mapped Data modal is depicted below.</p>
+<p class="img-container"><img src="figures/VIEW_MAPPED_DATA.PNG" alt="VIEW_MAPPED_DATA_MODAL"></p>
+<p>Here is an explanation for each button appeared in the screen.</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clear constraints</td>
+<td>Clears SDMX Component Constraints dropdown selected value.</td>
+</tr>
+<tr>
+<td>Clear code values</td>
+<td>Clears the selected values of the combobox with label Values.</td>
+</tr>
+<tr>
+<td>Format Validation</td>
+<td>Generates a data file and sends it to STRUVAL WS for checking if the the generated is correct and valid, transcodings taken into account. If STRUVAL WS is not configured, this button is disabled. How to configure STRUVAL WS is described in detail on Installation guide of MAWS.JAVA &amp; MAWS.NET respectively.</td>
+</tr>
+<tr>
+<td>Data Validation</td>
+<td>Checks if the mappings produce SDMX compliant values, transcodings taken into account.</td>
+</tr>
+<tr>
+<td>Show Mapped Data</td>
+<td>Displays a Table which depicts the mapped data in SDMX format.</td>
+</tr>
+<tr>
+<td>Hide Mapped Data</td>
+<td>Hides table shown by pressing the <em>Show Mapped Data</em> button.</td>
+</tr>
+</tbody></table>
+<p><code>Format Mapping</code> dropdown, represents the format that the generated data file (produced by <code>Format Validation</code> button) will have before send it to STRUVAL WS.</p>
+<p><code>Clear constraints</code> and <code>Clear code values</code> buttons are used for filtering of the Table derived by pressing <code>Show Mapped Data</code> button.</p>
+<p>An example with the resulting Table from pressing <code>Show Mapped Data</code> and apply filtering follows (note the dataflow that is used for this example is different with the one used for Mapping Sets Screen to add a mapping set) :</p>
+<p class="img-container"><img src="figures/VIEW_MAPPED_DATA_EXAMPLE.PNG" alt="MAPPED_DATA_EXAMPLE"></p>
+<h4 id="transcoding"><a class="header-link" href="#transcoding"></a>TRANSCODING</h4>
+<p>Through Mapping Set editor the user can <em>add/edit</em> a transcoding for a mapping by using Add/Edit button of column Transcoding.</p>
+<p class="img-container"><img src="figures/EDITOR_TRANSCODING.PNG" alt="MAPPING_SET_EDITOR_TRANSCODING"></p>
+<p><code>Status</code> column, as shown in the previous screenshot, can have the following values:</p>
+<ol class="list">
+<li>Transcoding Used.</li>
+<li>No Transcoding.</li>
+<li>Transcoding needed, if there are <strong>more than one</strong> dataset columns selected.</li>
+<li>Constant value, if there are not any selected Dataset columns.</li>
+<li>No Mapping.</li>
+</ol>
+<p>Below there is another example for <code>Status</code> column:</p>
+<p class="img-container"><img src="figures/TRANSCODING_STATUSES.PNG" alt="TRANSCODING_STATUS"></p>
+<h5 id="addedit-transcoding"><a class="header-link" href="#addedit-transcoding"></a>ADD/EDIT TRANSCODING</h5>
+<p>When user presses the add or edit button a modal (see below) appears:</p>
+<p class="img-container"><img src="figures/ADD_NEW_TRANSCODING.PNG" alt="ADD_TRANSCODING"></p>
+<p>User can select No Transcoding or a Constant value or Transcoding.
+No transcoding means that no transcoding will be applied.
+A dimension can be mapped to a constant value only when it is not already mapped to a dataset column. In that case, the constant value
+can be entered in the form of either <em>text</em> or <em>a selection from a dropdown</em> of pre-defined values.
+The free text form appears in the following cases:</p>
+<ol class="list">
+<li>the component is the TIME_PERIOD dimension,</li>
+<li>for non-coded components.</li>
+</ol>
+<p>By selecting radio button <em>Transcoding</em> one can apply a transcoding for this mapping and save it. The items below describe the available functionalities.</p>
+<ul class="list">
+<li><em>Check</em> button is used for data validation for the selected mapping.</li>
+<li><em>Clear Transcoding</em> erases the current transcoding (in case there is one).</li>
+<li><em>Code Match</em> button maps local codes to SDMX codes (table Transcoding Rules). See the selected values on the following screenshot:</li>
+</ul>
+<p class="img-container"><img src="figures/CODE_MATCH_TRANSCODING.PNG" alt="CODE_MATCH_BUTTON"></p>
+<ul class="list">
+<li><p><em>Update Content Constraints</em> button creates content constraints based on mapping set&#39;s saved transcodings.</p>
+</li>
+<li><p><em>Export Transcoding</em> button downloads all the transcoding rules in .csv format.</p>
+</li>
+</ul>
+<h5 id="time-transcoding"><a class="header-link" href="#time-transcoding"></a>TIME TRANSCODING</h5>
+<p>We present an example for adding Time Transcoding. Note the frequency values (FREQ component id in our example) should be matched to the values of time transcoding of TIME_PERIOD component. For instance, if FREQ value is only A (i.e. Annual), the time transcoding on TIME_PERIOD should use A option (i.e. Yearly).
+This happens only on Time Transcoding and <em>not</em> on Advanced Time Transcoding. To apply time transcoding, we press Add button for TIME_PERIOD (highlighted)</p>
+<p class="img-container"><img src="figures/TIME_PERIOD_COMPONENT.PNG" alt="TIME_PERIOD"></p>
+<p>and the following modal appears:</p>
+<p class="img-container"><img src="figures/TIME_TRANSCODING_INITIAL_SCREEN.PNG" alt="INITIAL_SCREEN_TIME_TRANSCODING"></p>
+<p>We choose Transcoding radio button and the modal shows the following details:</p>
+<p class="img-container"><img src="figures/TIME_TRANSCODING_FREQUENCY_SELECTION.PNG" alt="TIME_TRANSCODING_FREQUENCY_SELECTION"></p>
+<p>From Frequency checkbox, we select value <em>Q-Quarterly</em> (the selection is based on the values of FREQ component id).
+If the checkbox <code>is the local colum data type date/time or timestamp</code> is checked, then, the sliders, the table with the codes, the Year Column dropdown
+and the Period Column dropdown are disappeared and only Date Column dropdown is enabled for selection. If we choose another value for Frequency, the screen will adjust accordingly.</p>
+<p>To fill in the details we follow a few steps:</p>
+<ol class="list">
+<li>We select a value from Year Column dropdown, which enables Highlight year part slider.</li>
+<li>We adjust Highlight year part slider.</li>
+<li>We select a value from Period Column dropdown, which enables Highlight period part slider.</li>
+<li>We adjust Highlight period part.</li>
+</ol>
+<p class="img-container"><img src="figures/TIME_TRANSCODING.PNG" alt="TIME_TRANSCODING"></p>
+<p>Based on <em>Highlight period part selection</em>, local codes for period validation are created under the hood. Practically,
+the local codes for period validation will be a substring (period part selection) of the local codes of the dataset.
+All values of <strong>Local period (red column of he table)</strong>
+will be validated. As soon a value is correct, the background color of the cell will become <strong>white</strong>. Observe the screenshot below:</p>
+<p class="img-container"><img src="figures/TIME_TRANSCODING_VALIDATION.PNG" alt="TIME_TRANSCODING_VALIDATION"></p>
+<p>After all details are filled, user can save the transcoding. To delete an existing transcoding <em>Clear Transcoding</em> button should be used.</p>
+<h5 id="advanced-time-transcoding"><a class="header-link" href="#advanced-time-transcoding"></a>ADVANCED TIME TRANSCODING</h5>
+<p>Advanced time transcoding to be enabled, needs at least two columns to be mapped.
+One for selecting the criteria/output format and others containing the actual time period.</p>
+<p>To add Advanced Time Transcoding, Advanced Trascoding radio button should be selected. If there is am existing advanced time transcoding, then this radio button
+will be automatically selected.</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING.PNG" alt="ADVANCED_TIME_TRANSCODING"></p>
+<p>We will demonstrate below the most complex case to add Advanced time transcoding. Web app is quite intuitive for the rest cases. User should follow the steps below:</p>
+<ol class="list">
+<li><p>Select <em>criteria column</em> dropdown and a <em>Select criteria value</em> dropdown will appear.</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP1.PNG" alt="STEP_1"></p>
+</li>
+<li><p>Choose a criteria value from the dropdown. The blue colored values means that these criteria values have already performed advanced time transcoding. Hence,
+if the user selects a blue colored option, the saved Advanced time transcoding values will be loaded and the appropriate radio buttons will be selected.</p>
+<p class="img-container"><img src="figures/CRITERIA_VALUE_HAS_TRANSCODING.PNG" alt="SAVED_ADV_TIME_TRANSCODING"></p>
+<p>When selected a criteria value, a Table with the Output types appears. Depending on the choice of the radio button, the user will see
+the approriate options. Note each criteria value can have its own advanced time transcoding. Moreover, if there is an existing advanced time
+transcoding for a specific criteria column and the user changes the criteria column to another value, and do the procedure to save an advanced
+time transcoding, then the other one (with the different criteria column selection) will be deleted.</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP2.PNG" alt="STEP_2"></p>
+</li>
+<li><p>Choose <code>ISO 8601 Time Range</code> option and a new tab on the left with name <em>Time Range</em> will appear.
+Additionally, a new selection of how the time range is stored in the database is appeared.</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP3.PNG" alt="STEP_3"></p>
+</li>
+<li><p>Select the 3rd radio option <em>Start and End Period</em> and a new selection opens.</p>
+<p> <img src="figures/ADVANCED_TIME_TRANSCODING_STEP4.PNG" alt="STEP_4"></p>
+</li>
+<li><p>Select the 2nd option <em>Non compliant start/end range column(s)</em> and now <strong>two selections</strong> for start and end period are shown. Note the steps above
+are the only case that could lead to <strong>two in parallel</strong> (and independent between each other) selections. User can think of it as two separate columns.</p>
+<p> <img src="figures/ADVANCED_TIME_TRANSCODING_STEP5.PNG" alt="STEP_5"></p>
+</li>
+<li><p>Choose the appropriate radio buttons for start and end period. We select the radio buttons shown below (user is free to select any radio buttons):</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP6.PNG" alt="STEP_6"></p>
+<p>For taking the previous screenshot we backtracked by pressing Time Range tab on the left sidebar, since
+when user selects radio buttons for both columns, he/she will automatically navigate to tab named <em>Final Configuration</em> and the following screen will appear:</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP7.PNG" alt="STEP_7"></p>
+<p>The left selection is the result of the previous (left column) choice, i.e. <code>Other type/ multiple columns</code>. Similarly for the right selection.
+User can select any radio button from the left column and a value from the right dropdown. Note that save button will be enabled when both columns have selected values.
+See the following two screenshots:</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP8.PNG" alt="STEP_8"></p>
+<p>We select both columns and save button is now enabled:</p>
+<p class="img-container"><img src="figures/ADVANCED_TIME_TRANSCODING_STEP9.png" alt="STEP_9"></p>
+<p>At this point the user is ready to save the advanced time transcoding by pressing save button.</p>
+</li>
+</ol>
+<h5 id="import--export"><a class="header-link" href="#import--export"></a>IMPORT / EXPORT</h5>
+<p>The left hand side of the screen contains the &quot;Import Mapping&quot; and &quot;Export Mapping&quot; buttons. </p>
+<p><code>Export Mapping</code> opens a window in which the user can select which mapping set they wish to export. Then they can choose to export it as a file (JSON) or export to a database. Currently export to a database is not supported, so only the file option is available.
+By clicking on &quot;Apply&quot; the file is downloaded. It contains details about the mapping set, its mappings and transcodings (if any). This file can later be imported to different or the same mapping store. </p>
+<p class="img-container"><img src="figures/EXPORT_MAPPING.PNG" alt="EXPORT_MAPPING"></p>
+<p class="img-container"><img src="figures/EXPORT_MAPPING_DOWNLOADED.PNG" alt="EXPORT_MAPPING_DOWNLOADED"></p>
+<p><code>Import Mapping</code> can be used to upload an already exported JSON file. The window will prompt the user to browse and find the JSON file. Then, by clicking on &quot;Upload&quot; the webapp begins uploading the file to the server.
+Warning: You cannot import a mapping set if the name of the mapping set already exists in your mapping store because names are unique. You need to use a different mapping store or manually edit the JSON file before importing to have a different name.</p>
+<p>Click on &quot;Apply&quot; to finish the process.</p>
+<p class="img-container"><img src="figures/IMPORT_MAPPING.PNG" alt="IMPORT_MAPPING"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

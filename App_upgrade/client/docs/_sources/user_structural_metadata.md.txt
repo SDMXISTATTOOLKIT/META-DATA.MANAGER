@@ -1,0 +1,27 @@
+# Creating a user dedicated to the Structural Metadata
+
+Once the [Login](overview_user_type.md) is done, the Administrator is able to create a [new user](new_user.md) and then profile it. \
+To profile the new user the Administrator selects the side menu item "Set Permissions". \
+The following screen is displayed:
+
+![Set Permissions](_static/img/ImpostaPermessi.PNG "Set Permissions")
+
+The Administrator has to position the mouse on the user's line (e.g. "Mario Rossi") until he intercepts the "View/Edit" icon and press the left mouse button. \
+The System displays the user's details, in the mask there are buttons that allow the explosion or compression of the folder representation for the main applications (Data Manager, Meta Manager, etc.).
+
+![Set Permissions](_static/img/PermessiMarioRossi1.PNG "Set Permissions")
+
+The Administrator who wants to profile the user as dedicated to Structural Metadata only will select the checks with the Meta Manager functionalities as shown in the following figure:
+
+![Set Permissions](_static/img/PermessiMM_MarioRossi.PNG "Set Permissions")
+
+and then wiil enables the user to use the tools for managing the artefacts:
+
+![Set Permissions](_static/img/PermessiStrumenti_MarioRossi2.PNG "Set Permissions")
+
+The "Rules" tab contains the list of actions that can be done on objects by the user.
+
+Selecting the "Select All" button and unchecking "AdminRole" allows the user Mario Rossi to perform create, update, delete, import, download, view functions for the Meta Manager application without being a System Administrator.
+
+In the "Agencies" tab, the Administrator can select the Agencies to set those that will be managed by the user when processing an Artifact. \
+The selection of some Agencies means that in the General Data management mask of an Artifact, only the Agencies assigned to the user are present.

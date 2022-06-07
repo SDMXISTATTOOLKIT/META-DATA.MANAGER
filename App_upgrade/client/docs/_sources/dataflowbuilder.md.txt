@@ -1,0 +1,98 @@
+# Dataflow Builder
+
+The Dataflow Builder window displays all the Dataflows in table format.
+Clicking the "Show Categories" button a pop-up window with a tree view of the Dataflows is opend.
+
+![Dataflow Tree](_static/img/dataflowbuilder_1.PNG "Dataflow Tree")
+
+For each Dataflow the following fields are present:
+- *ID of the Dataflow*
+- *Agency ID*
+- *Name of the Dataflow*
+- *Version of the Dataflow*
+- *Transcoding check*
+- *Content Constraint Check* 
+- *Check that indicates if the Dataflow is or is not in Production* 
+
+It is possible to:
+* **Create a new Dataflow**
+* **Perform operations (display, delete, etc.) on an existing Dataflow.**
+
+for the operations on the Dataflow please refer to the section [Dataflow management](dataflow_management.md)
+
+**Create a new Dataflow**
+
+The selection of the "New" button, in the upper right corner, opens a pop-up window for the setting of the necessary information for the creation of the Dataflow. \
+The system displays the steps to follow in the bar at the top: it is possible to move to the next step with the "Next" button 
+or by selecting the step directly from the bar. \
+The user can go back to the previous steps to perform changes or to check what has been set.
+
+![Create Dataflow](_static/img/dataflowbuilder_2.PNG "Create Dataflow")
+
+***Dataflow*** \
+The first step opens the Dataflow's general data acquisition mask. As soon as the mandatory fields are filled in:  
+- *ID*
+- *Version* 
+- *Agency*
+- *Name*
+
+the "Next" button becomes active to proceed to the next step. 
+
+***Query*** \
+In this mask the user chooses the Dataflow source cube from the tree of Category Schemes and composes the query that identifies the Dataflow.
+
+![Query](_static/img/dataflowbuilder_3.PNG "Query")
+
+In the left window the user chooses the dimensions and attributes and with the "Filters" button composes the "where condition" that is the filter to be applied on the data.  \
+The filter can be created in simple mode ("Simple Mode" button) or in advanced mode ("Adanced Mode" button). \
+In simple mode the user can write the query in a guided way by choosing a dimension or attribute, operator and values and combining constructs with "and" or "or" operators.
+
+![Simple Filters](_static/img/dataflowbuilder_4.PNG "Simple Filters")
+
+In the Advanced mode the dimensions or attributes are presented in sequential tabs where the user selects the values for the creation of the Dataflow. \
+This way the System proposes for each element only the values actually present in the Cube, based on the choices made previously, 
+so that the query does not return an empty set.
+
+![Advanced Filters](_static/img/dataflowbuilder_5.PNG "Advanced Filters")
+
+In both cases, the system displays the instruction corresponding to the query.
+
+![Instruction Filters](_static/img/dataflowbuilder_6.PNG "Instruction Filters")
+
+***Categorisation*** \
+In this mask, the user associates the Dataflow to a category by selecting it from the Category Patterns tree.
+
+![Categorization](_static/img/dataflowbuilder_7.PNG "Categorization")
+
+***Header*** \
+In this section the user decides whether to insert a header to the Dataflow by acting on the "Dataflow with header" flag. \
+If the flag is selected the window shows the list boxes where to insert the information about "sender" and "receiver" prefixes.
+
+![Header](_static/img/dataflowbuilder_8.PNG "Header")
+
+
+At the end of the 4 steps, pressing the "Save" button, the Dataflow is saved and inserted in the list.
+
+![Dataflow information](_static/img/dataflowbuilder_9.PNG "Dataflow information")
+
+As soon as the Dataflow is created, the fields that identify it (ID, Agency, Name, Version) are valorized,
+ while the fields: Transcoding, Content Constraint , Production are not valorized, for these it is necessary the publication. \
+Moreover, on the right side the following functionalities are available, as explained in the section [Dataflow management](dataflow_management.md):
+- *Display Annotation* 
+- *Publication*
+- *Preview on the Data Browser*
+- *Preview*
+- *Additional Information*
+- *View/Edit*
+- *Download*
+- *Delete*
+
+***Layout Annotations*** \
+In this section the user decides whether to insert annotations at the level of dimensions to be hidden or to insert annotations that set the graphic structure of the table, chart or map. \
+In addition, other annotations can be set (such as decimal separator, value for empty table cells, etc.). \
+For their meaning please refer to the paragraph [Other node configurations](other_nodes.md).
+
+![layout annotations](_static/img/dataflowbuilder_anno_layout.PNG "Header")
+
+
+

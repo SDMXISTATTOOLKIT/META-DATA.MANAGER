@@ -1,0 +1,17 @@
+# Data Manager
+
+This section of the guide explains the steps needed to create a Dataflow and all the functions available to manage it.
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+
+    How to load a new Dataflow <load_new_dataflow.md>
+    Dataflow management <dataflow_management.md>
+    How to update an existing Dataflow <update_dataflow.md>
+    How to add data to an existing Dataflow <adding_data_existing_dataflow.md>
+    How to create different Dataflows from the same cube <create_different_dataflows_from_same_cube.md>
+    How to put a Dataflow into production <put_dataflow_into_production.md>
+    How to update a DSD <update_dsd.md>
+    Other use cases <other_data_manager_use_cases.md>
+```

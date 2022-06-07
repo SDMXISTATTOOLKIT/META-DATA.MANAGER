@@ -1,0 +1,5 @@
+INSERT INTO MS_STORE_USER
+  SELECT 'MappingStoreServer', u.ID
+  FROM SRI_USER u
+  LEFT JOIN MS_STORE_USER su on su.ID = u.ID
+  WHERE su.ID is NULL

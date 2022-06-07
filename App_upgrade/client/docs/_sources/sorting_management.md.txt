@@ -1,0 +1,8 @@
+# Sorting management
+
+The ORDER annotation (which can be properly configured) is used for managing the sorting of Code Lists, Concept Schemes and Category Schemes, and is multilingual. However, to optimise performance, the software behaves as follows:
+- the annotation is not added for non-final artefacts, where the order in which the items are returned by the ws (i.e. the order in which they are stored in the database) will be used. For this reason, the order for non-final artefacts will coincide with the order of the language in which it was last modified and it will not be possible to differentiate it for different languages.
+- for final artefacts, the ORDER annotation will only be added when the current sort is changed
+- the order annotation in a given language will only be added when the order in that language is changed.
+- when the ORDER annotation is added for a language it will be added for all items in the related itemscheme.
+

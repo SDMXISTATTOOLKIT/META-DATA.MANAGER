@@ -1,0 +1,3 @@
+# Installation
+
+Check the **MetaDataManager - Installation manual** provided with this user manual.

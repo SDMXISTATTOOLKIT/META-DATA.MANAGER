@@ -1,0 +1,17 @@
+# Node management
+
+
+```eval_rst
+* :doc:`Configuring a new node <new_node>`
+* :doc:`Other Node configurations <other_nodes>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    Configuring a new node <new_node.md>
+    Other Node configurations <other_nodes.md>
+```
+

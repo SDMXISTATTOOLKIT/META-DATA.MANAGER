@@ -1,0 +1,15 @@
+# How to create different Dataflows from the same Cube 
+
+The creation of different Dataflows from the same cube must be seen as the definition of different views from the same data.
+
+In the section: [How to load a new Dataflow](load_new_dataflow.md) we have listed the actions necessary to create a Dataflow 
+having only the DSD available:
+
+* **Builder**: creation of a Cube associated with a DSD 
+* **File Mapping**: creation of a mapping between Cube and data 
+* **Loader**: data loading
+* **Dataflow Builder**: Dataflow creation and publication 
+
+To create a new Dataflow from the same Cube only the last step is needed: [Dataflow Builder](dataflowbuilder.md) which allows the 
+the creation of a Dataflow from a Cube present in the tree of the Category Schemes. \
+For the details of each operation see the Dataflow construction in the section: [Dataflow Builder](dataflowbuilder.md).

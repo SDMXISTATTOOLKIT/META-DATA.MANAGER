@@ -1,0 +1,52 @@
+# Download or export an Artefact
+
+   ![Download or Export an artefact ](_static/img/scarica_esporta_artefatto.PNG "Download or Export an artefact")
+
+**DOWNLOAD**\
+The Download function is provided for all artefact types. \
+It is a centralised function that allows the user to download an artefact to file in a specific output format. \
+The function is activated through a button in the artefact List mask on each single row or from the single artefacts details.
+
+ ![Download an artefact ](_static/img/Scarica_artefatto.PNG "Download an artefact")
+ 
+The system opens a pop-up window where necessary data for downloading the selected artefact is set. \
+The user chooses the **export format** from a list. \
+The possible output formats are:
+
+* SDMX-ML 2.1
+* SDMX-ML 2.0
+* CSV
+* JSON
+* RDF
+* RTF
+
+but depending on the type of artefact selected they may not all be available.
+
+The user can download one or more artefacts in compressed format by selecting the **Compressed file** flag (the flag is preset not selected) and depending on the type of artefact it is possible to choose to include also the referenced artefacts by using the **Include referenced artefacts** flag (the flag is preset not selected). \
+If the user chooses the **CSV** export format, the System opens a form to request further information. \
+The fields required by the form are:
++ Language (mandatory)
++ Separator (mandatory, default is ';')
++ Delimiter (optional)
+
+The system checks that at least the mandatory information has been entered and activates the Download button.
+
+**EXPORT TO ANOTHER WS** \
+The function is activated through the button present in the mask of artefacts list on each single line or from the detail of the single artefacts. \
+The system opens a pop-up window with the data of the source and destination artefacts: 
+
++ Node (mandatory)
++ Username (required)
++ Password (mandatory)
++ Type (mandatory, by default the same as the source type, not modifiable)
++ Id (mandatory, the one of the source Artefact is proposed but can be modified)
++ Agency (mandatory, the one of the source artefact is proposed but can be modified)
++ Version (mandatory, the version of the source artefact is proposed increased but can be modified)
+
+ ![Export an Artefact ](_static/img/Esporta_artefatto.PNG "Export an Artefact")
+ 
+ If the user considers that the data is correct, he can export it with the Export button. 
+
+
+
+

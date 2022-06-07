@@ -1,0 +1,2997 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Mapping Assistant API",
+    "description": "Mapping Assistant REST API",
+    "version": "1.6.0",
+    "license": {
+      "name": "EUPL 1.2",
+      "url": "https://joinup.ec.europa.eu/community/eupl/og_page/eupl-text-11-12"
+    },
+    "contact": {
+      "name": "API Support",
+      "url": "https://webgate.ec.europa.eu/CITnet/stash/projects/SDMXRI/repos/mappingassistant-webapi/browse",
+      "email": "ESTAT-SDMX-TOOLS-DEVELOPMENT@ec.europa.eu"
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/v1",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/plugins": {
+      "get": {
+        "summary": "Get all available plugins",
+        "parameters": [
+          {
+            "$ref": "#/parameters/pluginTypeParam"
+          }
+        ],
+        "tags": [
+          "Plugins"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of all plugins, optionally filtered by type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Plugin"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/plugins/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "get the plugin information with the specified id",
+        "tags": [
+          "Plugins"
+        ],
+        "responses": {
+          "200": {
+            "description": "The plugin information with the specified id",
+            "schema": {
+              "$ref": "#/definitions/Plugin"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/plugins/{id}/template/connection": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "get the connection template for a connection plugin with the specificed ID",
+        "tags": [
+          "Plugins"
+        ],
+        "responses": {
+          "200": {
+            "description": "The empty connection settings",
+            "schema": {
+              "$ref": "#/definitions/ConnectionSettings"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/entity/{sid}/{entity}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/entity"
+        }
+      ],
+      "get": {
+        "summary": "Retrieve the entities",
+        "description": "Provides generic methods to retrieve entity IDs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/parents"
+          },
+          {
+            "$ref": "#/parameters/parentType"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "Entity"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the entities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EntityInformation"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new Entity",
+        "description": "Add a new Entity",
+        "tags": [
+          "Entity"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/mappingAssistantParam"
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-payload-201"
+         },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/entity/{sid}/{entity}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/entity"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "patch": {
+        "summary": "Patch an entity",
+        "description": "Patch an entity, in other words update it using the JSON PATCH (RFC 6902)",
+        "tags": [
+          "Entity"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/jsonPatchParam"
+          }
+        ],
+        "consumes": [
+          "application/json-patch+json"
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/responses/patch-ok"
+          },
+          "400": {
+            "$ref": "#/responses/patch-400"
+          },
+          "404": {
+            "$ref": "#/responses/patch-404"
+          },
+          "409": {
+            "$ref": "#/responses/patch-409"
+          },
+          "415": {
+            "$ref": "#/responses/patch-415"
+          },
+          "422": {
+            "$ref": "#/responses/patch-422"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an entity",
+        "tags": [
+          "Entity"
+        ],
+        "responses": {
+          "204": {
+            "description": "entity deleted"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve the entities",
+        "description": "Provides generic methods to retrieve entities optionally with their references",
+        "parameters": [
+          {
+            "$ref": "#/parameters/referenceParam"
+          },
+          {
+            "$ref": "#/parameters/detailParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "Entity"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the entities and optionally their references",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Copy Entity",
+        "description": "Copy Entity",
+        "parameters": [
+          {
+            "$ref": "#/parameters/copyParents"
+          }
+        ],
+        "tags": [
+          "Entity"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-201"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/entity/{sid}/{entity}/{id}/{targetSid}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/entity"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/targetSid"
+        }
+      ],
+      "post": {
+        "summary": "Copy Entity from source store to target store",
+        "description": "Copy Entity",
+        "tags": [
+          "Entity"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-201"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/status/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Test the Dissemination database connection",
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The test results from testing the dissemination database connection",
+            "schema": {
+              "$ref": "#/definitions/ActionResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/data/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/limitParam"
+        },
+        {
+          "$ref": "#/parameters/pageParam"
+        }
+      ],
+      "post": {
+        "summary": "Execute a SQL Query against the Dissemination database",
+        "description": "Note this POST will return the result. Alternative we would have to store the query somewhere at server side.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/query"
+          }
+        ],
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The test results from testing the dissemination database connection",
+            "schema": {
+              "$ref": "#/definitions/QueryResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/column/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "post": {
+        "summary": "Execute the query and get the dataset columns given a storeId, the entityId of a DDB Connection Setting and a SQL Query ",
+        "description": "Note this POST will return the result.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/query"
+          }
+        ],
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The test results from testing the dissemination database connection",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DataSetColumn"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/table/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Get the tables and views from the Dissemination database",
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of tables",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EntityInformation"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/table/{sid}/{id}/{tableId}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/tableIdParam"
+        }
+      ],
+      "get": {
+        "summary": "Get specific the table and/or view definition from the Dissemination database",
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The table or view",
+            "schema": {
+              "$ref": "#/definitions/Table"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/data/{sid}/{id}/table/{tableId}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/tableIdParam"
+        },
+        {
+          "$ref": "#/parameters/columns"
+        }
+      ],
+      "get": {
+        "summary": "Get specific the table and/or view data from the Dissemination database",
+        "parameters": [
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The table or view",
+            "schema": {
+              "$ref": "#/definitions/QueryResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/ddb/data/{sid}/{id}/table/{tableId}/{field}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/tableIdParam"
+        },
+        {
+          "$ref": "#/parameters/field"
+        }
+      ],
+      "get": {
+        "summary": "Get specific the table and/or view data from the Dissemination database",
+        "parameters": [
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "DDB"
+        ],
+        "responses": {
+          "200": {
+            "description": "The table or view",
+            "schema": {
+              "$ref": "#/definitions/QueryResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/dataset/data/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Query dataset",
+        "parameters": [
+          {
+            "$ref": "#/parameters/columns"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "Dataset"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of datasets",
+            "schema": {
+              "$ref": "#/definitions/DataSetQueryResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/dataset/plugin/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "post": {
+        "summary": "Extract the SQL Query from the dataset extra data",
+        "description": "Note this POST will return the result.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/datasetBody"
+          }
+        ],
+        "tags": [
+          "Dataset"
+        ],
+        "responses": {
+          "200": {
+            "description": "The dataset with the SQL Query generated",
+            "schema": {
+              "$ref": "#/definitions/DataSet"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/dataset/sql_column/{sid}/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Generate dataset columns from an existing dataset. It wont save the dataset columns just retrieve them",
+        "tags": [
+          "Dataset"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of DataSetColumn",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DataSetColumn"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/mappingset/status/{sid}/{agencyId}/{id}/{version}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/agencyId"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/versionParam"
+        }
+      ],
+      "get": {
+        "summary": "Check if a Mapping Set is complete",
+        "parameters": [],
+        "tags": [
+          "MappingSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "The query result",
+            "schema": {
+              "$ref": "#/definitions/QueryResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/languages": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get the all languages used by SDMX artefacts inside a mapping store",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array with all language codes available.",
+            "schema": {
+              "$ref": "#/definitions/Languages"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store": {
+      "get": {
+        "summary": "Get all available mapping stores",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array with all Mapping Assistant store ids",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MappingAssistantStore"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new setting for a mapping assistant store",
+        "tags": [
+          "Store"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/connectionSettings"
+          }
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-201"
+          },
+          "409": {
+            "description": "A connection setting with the same id already exists",
+            "headers": {
+              "Content-Location": {
+                "description": "The URI of the existing resource",
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get Mapping Assistant store settting with the specified ID",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "Connection settings for the store",
+            "schema": {
+              "$ref": "#/definitions/MappingAssistantStore"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "put": {
+        "summary": "Replace an existing setting for a mapping assistant store",
+        "parameters": [
+          {
+            "$ref": "#/parameters/connectionSettings"
+          }
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "204": {
+            "description": "Store replaced",
+            "headers": {
+              "Content-Location": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "404": {
+            "description": "A connection setting with this ID doesn't exist"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/status": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get Mapping Assistant store status",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "Connection settings for the store",
+            "schema": {
+              "$ref": "#/definitions/ActionResult"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Initialize the Mapping Store",
+        "tags": [
+          "Store"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/initialize"
+          }
+        ],
+        "responses": {
+          "202": {
+            "$ref": "#/responses/post-202"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/version": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get Mapping Assistant Store version",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "The Mapping Store version",
+            "schema": {
+              "$ref": "#/definitions/Version"
+            }
+          },
+          "404": {
+              "$ref": "#/responses/error-404"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Upgrade version",
+        "parameters": [
+          {
+            "$ref": "#/parameters/version"
+          }
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "202": {
+            "$ref": "#/responses/post-202"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/entity/all": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get an XML file containing all Mapping Assistant entities",
+        "produces": [
+          "application/xml"
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "An XML file containing all the entities",
+            "schema": {
+              "type": "file"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "POST a xml file containing entities",
+        "consumes": [
+          "application/zip"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/afile"
+          }
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "202": {
+            "$ref": "#/responses/post-202"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/all": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Get a zip file containing all SDMX artefacts and Mapping Assistant entities",
+        "produces": [
+          "application/zip"
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "200": {
+            "description": "A zip file containing all the entities and SDMX artefacts",
+            "schema": {
+              "type": "file"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "POST a zip file containing the SDMX and entities",
+        "consumes": [
+          "application/zip"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/afile"
+          }
+        ],
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "202": {
+            "$ref": "#/responses/post-202"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/store/{sid}/all/{targetSid}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/targetSid"
+        }
+      ],
+      "post": {
+        "summary": "COPY the whole Mapping Assistant DB including the SDMX and entities to the target sid",
+        "tags": [
+          "Store"
+        ],
+        "responses": {
+          "202": {
+            "$ref": "#/responses/post-202"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/task/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Get the result of an asynchronous queue",
+        "responses": {
+          "200": {
+            "description": "The request is still in progress"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/queue/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Get the status of the current asynchronous event",
+        "responses": {
+          "200": {
+            "description": "The request is still in progress",
+            "schema":{
+              "$ref":"#/definitions/Queue"
+            }
+          },
+          "303": {
+            "$ref": "#/responses/end-303"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/log/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/idParam"
+        }
+      ],
+      "get": {
+        "summary": "Get the log of a current process",
+        "responses": {
+          "200": {
+            "description": "The log of the current process",
+            "schema": {
+              "$ref": "#/definitions/Log"
+            }
+          },
+          "303": {
+            "$ref": "#/responses/end-303"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/registry/{sid}/{registryId}/{structureType}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/registryId"
+        },
+        {
+          "$ref": "#/parameters/structureType"
+        }
+      ],
+      "get": {
+        "summary": "Retrieve the artefacts as stubs",
+        "description": "Provides a method of getting a structure type as stubs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/referenceParam"
+          },
+          {
+            "$ref": "#/parameters/detailParam"
+          },
+          {
+            "$ref": "#/parameters/limitParam"
+          },
+          {
+            "$ref": "#/parameters/pageParam"
+          }
+        ],
+        "tags": [
+          "Registry"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the stubs",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      },
+      "post": {
+        "summary": "Import artefacts",
+        "description": "Import selected artefacts",
+        "parameters": [
+          {
+            "$ref": "#/parameters/registryQuery"
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "Registry"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-201"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/dataflow/version/{sid}/{agencyId}/{id}/{sourceVersion}/{targetVersion}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/agencyId"
+        },
+        {
+          "$ref": "#/parameters/idParam"
+        },
+        {
+          "$ref": "#/parameters/sourceVersion"
+        },
+        {
+          "$ref": "#/parameters/targetVersion"
+        },
+        {
+          "$ref": "#/parameters/registryIdQuery"
+        }
+      ],
+      "post": {
+        "summary": "Upgrade dataflow using the provided SDMX structural metadata",
+        "description": "Import selected artefacts",
+        "tags": [
+          "Dataflow Upgrade"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/structure"
+          }
+        ],
+        "consumes": [
+          "application/xml"
+        ],
+        "responses": {
+          "201": {
+            "$ref": "#/responses/post-201"
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/action/{sid}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        }
+      ],
+      "get": {
+        "summary": "Retrieve the actions for all users",
+        "description": "Provides a method getting the user actions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/entityId"
+          },
+          {
+            "$ref": "#/parameters/entityType"
+          },
+          {
+            "$ref": "#/parameters/startDate"
+          },
+          {
+            "$ref": "#/parameters/endDate"
+          }
+        ],
+        "tags": [
+          "User Action"
+        ],
+        "responses": {
+          "200": {
+            "description": "The user actions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EntityInformation"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/action/{sid}/{userName}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/sid"
+        },
+        {
+          "$ref": "#/parameters/userName"
+        },
+        {
+          "$ref": "#/parameters/entityId"
+        },
+        {
+          "$ref": "#/parameters/entityType"
+        },
+        {
+          "$ref": "#/parameters/startDate"
+        },
+        {
+          "$ref": "#/parameters/endDate"
+        }
+      ],
+      "get": {
+        "summary": "Retrieve the actions for all users",
+        "description": "Provides a method getting the user actions",
+        "tags": [
+          "User Action"
+        ],
+        "responses": {
+          "200": {
+            "description": "The user actions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EntityInformation"
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/app/metadata": {
+      "get": {
+        "summary": "Get application metadata",
+        "tags": [
+          "Application metadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the application metadata",
+            "schema": {
+              "$ref": "#/definitions/Metadata"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/app/languages": {
+      "get": {
+        "summary": "Get application UI languages",
+        "tags": [
+          "Application metadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the application UI languages",
+            "schema": {
+              "$ref": "#/definitions/Languages"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    },
+    "/app/locale/{languageId}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/languageId"
+          }
+        ],
+        "summary": "Get translations available for a given language",
+        "tags": [
+          "Application metadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "the message containing the translations available for a given language",
+            "schema": {
+              "$ref": "#/definitions/Translation"
+            }
+          },
+          "default": {
+            "$ref": "#/responses/defaultResponse"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "sid": {
+      "name": "sid",
+      "in": "path",
+      "description": "The Mapping Assistant Store identifier",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "languageId": {
+      "name": "languageId",
+      "in": "path",
+      "description": "The language unique identifier",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "targetSid": {
+      "name": "targetSid",
+      "in": "path",
+      "description": "The Target Mapping Assistant Store identifier",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "userName": {
+      "name": "userName",
+      "in": "path",
+      "description": "The user name",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "registryId": {
+      "name": "registryId",
+      "in": "path",
+      "description": "The id of the registry as it is in the DB",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "registryIdQuery": {
+      "name": "registryId",
+      "in": "query",
+      "description": "The id of the registry as it is in the DB",
+      "type": "string",
+      "format": "id",
+      "required": false
+    },
+    "copyParents": {
+      "name": "copyParents",
+      "in": "query",
+      "description": "Whether to create a copy of the parents as well",
+      "type": "boolean",
+      "required": false
+    },
+    "structureType": {
+      "name": "structureType",
+      "in": "path",
+      "description": "The type of the structure requested",
+      "type": "string",
+      "required": true
+    },
+    "entity": {
+      "name": "entity",
+      "in": "path",
+      "description": "The entity type",
+      "type": "string",
+      "enum": [
+        "mappingset",
+        "dataset",
+        "column",
+        "localCode",
+        "ddb",
+        "column_description",
+        "mapping",
+        "transcoding",
+        "transcodingRule",
+        "header_template",
+        "registry",
+        "otf",
+        "user"
+      ],
+      "required": true
+    },
+    "idParam": {
+      "name": "id",
+      "in": "path",
+      "description": "The resource unique identifier",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "agencyId": {
+      "name": "agencyId",
+      "in": "path",
+      "description": "The SDMX resource maintainable agency ID",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "field": {
+      "name": "field",
+      "in": "path",
+      "description": "The field name",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "tableIdParam": {
+      "name": "tableId",
+      "in": "path",
+      "description": "The resource unique identifier",
+      "type": "string",
+      "format": "id",
+      "required": true
+    },
+    "versionParam": {
+      "name": "version",
+      "in": "path",
+      "description": "version string",
+      "required": true,
+      "type": "string"
+    },
+    "sourceVersion": {
+      "name": "sourceVersion",
+      "in": "path",
+      "description": "Source version version string",
+      "required": true,
+      "type": "string"
+    },
+    "targetVersion": {
+      "name": "targetVersion",
+      "in": "path",
+      "description": "target version version string",
+      "required": true,
+      "type": "string"
+    },
+    "pageParam": {
+      "name": "page",
+      "in": "query",
+      "description": "the page to retrieve",
+      "type": "integer",
+      "format": "int32",
+      "required": false
+    },
+    "limitParam": {
+      "name": "limit",
+      "in": "query",
+      "description": "max records to return",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+    },
+    "parentType": {
+      "name": "parentType",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "description": "The type of the SDMX structure resource"
+    },
+    "entityType": {
+      "name": "entity",
+      "in": "query",
+      "description": "The entity type",
+      "type": "string",
+      "required": false
+    },
+    "entityId": {
+      "name": "entityId",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "description": "The entity Id"
+    },
+    "startDate": {
+      "name": "startDate",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "description": "The start time"
+    },
+    "endDate": {
+      "name": "endDate",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "description": "The end time"
+    },
+    "columns": {
+      "name": "columns",
+      "in": "query",
+      "description": "The columns/components separated by comma",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "collectionFormat": "csv"
+    },
+    "parents": {
+      "name": "parents",
+      "in": "query",
+      "description": "The parent or parents of a resource, separated by comma",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "collectionFormat": "csv"
+    },
+    "referenceParam": {
+      "name": "references",
+      "in": "query",
+      "description": "whether to retrieve references",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "child",
+        "parents",
+        "all"
+      ]
+    },
+    "detailParam": {
+      "name": "detail",
+      "in": "query",
+      "description": "whether to return full detais",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "allstubs",
+        "referencestubs",
+        "full"
+      ]
+    },
+    "pluginTypeParam": {
+      "name": "type",
+      "in": "query",
+      "description": "filter by plugin type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "dataset",
+        "db_vendor"
+      ]
+    },
+    "connectionSettings": {
+      "name": "message",
+      "in": "body",
+      "description": "Mapping Asssistant connection settings message to create or replace",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/MappingAssistantStore"
+      }
+    },
+    "datasetBody": {
+      "name": "dataset",
+      "in": "body",
+      "description": "A dataset object",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/DataSet"
+      }
+    },
+    "jsonPatchParam": {
+      "name": "patch",
+      "in": "body",
+      "description": "A JSON Patch message. See RFC 6902",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/PatchRequest"
+      }
+    },
+    "afile": {
+      "name": "afile",
+      "in": "body",
+      "description": "Represents a file. Any kind of file. The consumes identifies the type",
+      "required": true,
+      "schema": {
+        "type": "object"
+      }
+    },
+    "structure": {
+      "name": "Structure",
+      "in": "body",
+      "description": "A JSON representing the query request",
+      "required": true,
+      "schema": {
+        "type": "object"
+      }
+    },
+    "registryQuery": {
+      "name": "registryQuery",
+      "in": "body",
+      "description": "A JSON representing the query request",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/RegistryQuery"
+      }
+    },
+    "version": {
+      "name": "version",
+      "in": "body",
+      "description": "A version string",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/Version"
+      }
+    },
+    "query": {
+      "name": "query",
+      "in": "body",
+      "description": "Search/Query request",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/Query"
+      }
+    },
+    "mappingAssistantParam": {
+      "name": "mappingAssistantJson",
+      "in": "body",
+      "description": "A Mapping Assistant specific Message",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/Message"
+      }
+    },
+    "initialize": {
+      "name": "Initialize",
+      "in": "body",
+      "description": "Command to initialize the mapping store DB",
+      "required": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "initialize": {
+            "description": "initialize the mapping store",
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "defaultResponse": {
+      "description": "Unexpected error",
+      "schema": {
+        "$ref": "#/definitions/Error"
+      }
+    },
+    "error-404": {
+      "description": "Resource not found",
+      "schema": {
+        "$ref": "#/definitions/Error"
+      }
+    },
+    "patch-ok": {
+      "description": "Changes applied successfully",
+      "headers": {
+        "Content-Location": {
+          "type": "string"
+        }
+      }
+    },
+    "patch-400": {
+      "description": "Malformed patch document."
+    },
+    "patch-415": {
+      "description": "Unsupported patch document",
+      "headers": {
+        "Accept-Patch": {
+          "type": "string",
+          "default": "application/json-patch+json"
+        }
+      }
+    },
+    "patch-422": {
+      "description": "Unprocessable request"
+    },
+    "patch-404": {
+      "description": "resource not found"
+    },
+    "patch-409": {
+      "description": "Conflicting state or modification"
+    },
+    "post-201": {
+      "description": "Resource created",
+      "headers": {
+        "Location": {
+          "description": "The absolute URI of the newly created resource.",
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "post-payload-201": {
+      "description": "Resource created",
+      "schema": {
+        "$ref": "#/definitions/Message"
+      }
+    },
+    "post-202": {
+      "description": "Requested accepted and is being processed",
+      "headers": {
+        "Location": {
+          "description": "The absolute URI of the status",
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "end-303": {
+      "description": "Requested completed",
+      "headers": {
+        "Location": {
+          "description": "The absolute URI of the result",
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Link": {
+      "type": "object",
+      "description": "A HATEOAS link implementation based on SDMX-JSON implementation",
+      "properties": {
+        "rel": {
+          "type": "string",
+          "description": "relationship",
+          "enum": [
+            "self",
+            "parent",
+            "dataset",
+            "ddb",
+            "dataflow",
+            "datastructure",
+            "localdata",
+            "data",
+            "categoryscheme",
+            "sdmx_code",
+            "codelist",
+            "local_code",
+            "transcoding",
+            "transcoding_rule",
+            "next",
+            "previous",
+            "time_transcoding",
+            "header"
+          ]
+        },
+        "href": {
+          "type": "string",
+          "format": "url",
+          "description": "A complete URL that uniquely defines the resource"
+        },
+        "type": {
+          "type": "string",
+          "description": "A hint about the type of representation returned by the link"
+        },
+        "title": {
+          "type": "string",
+          "description": "A human-friendly description of the target link."
+        },
+        "info": {
+          "$ref": "#/definitions/SimpleEntityInformation"
+        }
+      }
+    },
+    "Metadata": {
+      "description": "Represents a Mapping Set with its mappings. The parent points to the dataflow",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The title of the Web application",
+          "type": "string"
+        },
+        "themeHint": {
+          "description": "An identifier which could be used as a hint by the Web Application to choose a theme",
+          "type": "string"
+        },
+        "logo": {
+          "$ref": "#/definitions/MetadataValue"
+        },
+        "contact": {
+          "$ref": "#/definitions/MetadataValue"
+        },
+        "sdmxLanguages": {
+          "$ref": "#/definitions/MetadataValue"
+        },
+        "uiLanguages": {
+          "$ref": "#/definitions/MetadataValue"
+        },
+        "locale": {
+          "$ref": "#/definitions/MetadataValue"
+        }
+      }
+    },
+    "MetadataValue": {
+      "description": "A property used for application metadata, it has a name, a URL and a default value",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "A human readable name for the property that will be displayed in the Web Application",
+          "type": "string"
+        },
+        "url": {
+          "description": "A URL fragment to the resource. The URL may be a template",
+          "type": "string"
+        },
+        "default": {
+          "description": "The default value of the metadata value, it could be the default value for the URL template parameter",
+          "type": "string"
+        }
+      }
+    },
+    "Translation": {
+      "description": "A map between a keyword and a translation",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "MappingSet": {
+      "description": "Represents a Mapping Set with its mappings. The parent points to the dataflow",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dataset": {
+              "$ref": "#/definitions/EntityInformation"
+            }
+          }
+        }
+      ]
+    },
+    "Component": {
+      "description": "A SDMX Component -or- a fixed concept outside a DSD. Note this is Nameable because it may carry as a component the concepts name.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/identifiable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "component type",
+              "type": "string",
+              "enum": [
+                "Dimension",
+                "MeasureDimension",
+                "TimeDimension",
+                "DataAttribute",
+                "PrimaryMeasure",
+                "CrossSectionalMeasure",
+                "NotComponent"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Mapping": {
+      "description": "Represents a mapping between a component and a dataset column",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "component": {
+              "$ref": "#/definitions/Component"
+            },
+            "dataset_column": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DataSetColumn"
+              },
+              "description": "The Dissemination Database column"
+            },
+            "constant_value": {
+              "type": "string",
+              "description": "The constant value"
+            },
+            "type": {
+              "type": "string",
+              "description": "The type of mapping."
+            },
+            "defaultValue": {
+              "type": "string",
+              "description": "The default value to use when there is no transcoding or the the DDB returns a null/empty value. In other words this is mapped to empty/null values."
+            }
+          }
+        }
+      ]
+    },
+    "Transcoding": {
+      "description": "Represents a Coded/Time Transcoding",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "expression": {
+              "type": "string"
+            },
+            "script": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TranscodingScript"
+              }
+            },
+            "time_transcoding": {
+              "type": "object",
+              "description": "A Map/Dictionary with key the frequency code and value the Time Transcoding",
+              "additionalProperties": {
+                "$ref": "#/definitions/TimeTranscoding"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "TimeTranscoding": {
+      "description": "Represents the Time Transcoding for a specific Frequency",
+      "type": "object",
+      "properties": {
+        "frequency": {
+          "description": "The frequency Code",
+          "type": "string",
+          "enum": [
+            "A",
+            "M",
+            "Q",
+            "S",
+            "W"
+          ]
+        },
+        "date_column": {
+          "$ref": "#/definitions/DataSetColumn"
+        },
+        "year": {
+          "$ref": "#/definitions/TimeTranscodingEntry"
+        },
+        "period": {
+          "$ref": "#/definitions/PeriodTimeTranscodingEntry"
+        },
+        "is_date_time": {
+          "type": "boolean",
+          "description": "A value indicating whether this time transcoding date_column points to a column of date time/timestamp field"
+        }
+      }
+    },
+    "PeriodTimeTranscodingEntry": {
+      "description": "This holds the start position, the length and column of a period and the rules",
+      "allOf": [
+        {
+          "$ref": "#/definitions/TimeTranscodingEntry"
+        },
+        {
+          "type": "object",
+          "description": "The Period rules",
+          "properties": {
+            "rules": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TranscodingRule"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "TimeTranscodingEntry": {
+      "type": "object",
+      "description": "This holds the start position, the length and column of a year and/or period",
+      "properties": {
+        "column": {
+          "$ref": "#/definitions/DataSetColumn"
+        },
+        "start": {
+          "type": "integer",
+          "description": "The start position of the year or period"
+        },
+        "length": {
+          "type": "integer",
+          "description": "The length of the year or period"
+        }
+      }
+    },
+    "TranscodingScript": {
+      "description": "Represents a Transcoding script",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The script name that it appears in the GUI"
+        },
+        "content": {
+          "type": "string",
+          "description": "The script content"
+        }
+      }
+    },
+    "TranscodingRule": {
+      "description": "Represents a Coded Transcoding",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "required": [
+            "local_codes"
+          ],
+          "properties": {
+            "code": {
+              "$ref": "#/definitions/identifiable"
+            },
+            "local_codes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/identifiable"
+              }
+            },
+            "uncodedValue": {
+              "type": "string",
+              "description": "The value used only when mapping uncoded components"
+            }
+          }
+        }
+      ]
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Provides a code number for the error message. Code numbers are defined in the SDMX 2.1 Web Services Guidelines.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "description": "Provides the error message. Error messages are fully customizable by the service providers and should provide enough detail to ease understanding the reasons of the error.",
+          "type": "string"
+        },
+        "subcode": {
+          "description": "Extra sub code that might provide extra information"
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "description": "The Mapping Assistant JSON Message. It can contain all objects of a Mapping Store",
+      "properties": {
+        "entities": {
+          "$ref": "#/definitions/Entities"
+        }
+      }
+    },
+    "PatchRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PatchDocument"
+      }
+    },
+    "RegistryQuery": {
+      "type": "object",
+      "properties": {
+        "agencyId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "PatchDocument": {
+      "description": "A JSONPatch document as defined by RFC 6902",
+      "required": [
+        "op",
+        "path"
+      ],
+      "properties": {
+        "op": {
+          "type": "string",
+          "description": "The operation to be performed",
+          "enum": [
+            "add",
+            "remove",
+            "replace",
+            "move",
+            "copy",
+            "test"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "description": "A JSON-Pointer"
+        },
+        "value": {
+          "type": "object",
+          "description": "The value to be used within the operations."
+        },
+        "from": {
+          "type": "string",
+          "description": "A string containing a JSON Pointer value."
+        }
+      }
+    },
+    "TextType": {
+      "description": "Represents a localised text with its language code which acts as key to this map",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "identifiable": {
+      "description": "An SDMX identifiable object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "id",
+              "description": "The ID that should be visible to the user.This is the SDMX identifier"
+            }
+          }
+        }
+      ]
+    },
+    "MappingSetMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/MappingSet"
+      }
+    },
+    "DataSetMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/DataSet"
+      }
+    },
+    "DDBConnectionMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/DDBConnection"
+      }
+    },
+    "TranscodingMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Transcoding"
+      }
+    },
+    "MappingMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Mapping"
+      }
+    },
+    "HeaderTemplateMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/HeaderTemplate"
+      }
+    },
+    "RegistryMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Registry"
+      }
+    },
+    "DataSetColumnMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/DataSetColumn"
+      }
+    },
+    "OTFMap": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/OTF"
+      }
+    },
+    "Entities": {
+      "description": "A collection of entities",
+      "type": "object",
+      "properties": {
+        "mappingsets": {
+          "$ref": "#/definitions/MappingSetMap"
+        },
+        "datasets": {
+          "$ref": "#/definitions/DataSetMap"
+        },
+        "ddbconnections": {
+          "$ref": "#/definitions/DDBConnectionMap"
+        },
+        "transcodings": {
+          "$ref": "#/definitions/TranscodingMap"
+        },
+        "genericmappings": {
+          "$ref": "#/definitions/MappingMap"
+        },
+        "headerTemplates": {
+          "$ref": "#/definitions/HeaderTemplateMap"
+        },
+        "registry": {
+          "$ref": "#/definitions/RegistryMap"
+        },
+        "dataset_column": {
+          "$ref": "#/definitions/DataSetColumnMap"
+        },
+        "transcodingRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TranscodingRule"
+          }
+        },
+        "local_codes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/identifiable"
+          }
+        },
+        "description_source": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DescriptionSource"
+          }
+        },
+        "user": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "otf": {
+          "$ref": "#/definitions/OTFMap"
+        }
+      }
+    },
+    "Registry": {
+      "description": "Contains the details of a Registry connection",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "password": {
+              "type": "string"
+            },
+            "technology": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "OTF": {
+      "description": "Contains the definition of a On The Fly DSD",
+      "type": "object"
+    },
+    "User": {
+      "description": "Contains the details about a user",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "password": {
+              "type": "string"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "permissions": {
+              "$ref": "#/definitions/Permissions"
+            }
+          }
+        }
+      ]
+    },
+    "HeaderTemplate": {
+      "description": "A SDMX Header template used for data transmission",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "The transmission name",
+              "type": "string"
+            },
+            "dataSetAgencyId": {
+              "description": "The DataSet Agency ID",
+              "type": "string",
+              "format": "agency"
+            },
+            "source": {
+              "type": "string"
+            },
+            "test": {
+              "type": "boolean",
+              "description": "Indicates whether the message is for test purposes or not. False for normal messages"
+            },
+            "sender": {
+              "$ref": "#/definitions/Party"
+            },
+            "receiver": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Party"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Party": {
+      "description": "Information about a party receiving or transmiting a message",
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/TextType"
+        },
+        "id": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "timezone": {
+          "type":"string"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+          "$ref": "#/definitions/TextType"
+        },
+        "departments": {
+          "$ref": "#/definitions/TextType"
+        },
+        "role": {
+          "$ref": "#/definitions/TextType"
+        },
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "telephone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uri": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "X400": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fax": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ConnectionParameterObject": {
+      "description": "A parameter object for Connections",
+      "properties": {
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "enum",
+            "number",
+            "boolean",
+            "string",
+            "password"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "allowedValues": {
+          "description": "Hint of the allowed values or the enumeration",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "defaultValue": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "advanced": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ConnectionParameters": {
+      "description": "The set of advance parameters provided by the driver of a database vendor",
+      "additionalProperties": {
+        "$ref": "#/definitions/ConnectionParameterObject"
+      }
+    },
+    "ConnectionSettings": {
+      "description": "Represents the connection configuration to a Database/Store",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "The database vendor code"
+            },
+            "subtype": {
+              "type": "string",
+              "format": "id"
+            },
+            "properties": {
+              "$ref": "#/definitions/ConnectionParameters"
+            }
+          }
+        }
+      ]
+    },
+    "MappingAssistantStore": {
+      "description": "Settings for Mapping Assistant Store",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ConnectionSettings"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "The connection name",
+              "type": "string"
+            },
+            "storeType": {
+              "description": "The store type. It refers to the schema used. In SDMX RI this is msdb",
+              "type": "string"
+            },
+            "db_name": {
+              "description": "The database name",
+              "type": "string"
+            },
+            "status": {
+              "description": "The current status of the store.",
+              "type": "string",
+              "enum": [
+                "OK",
+                "NeedsUpgrade",
+                "ErrorsFound",
+                "NotInitialized"
+              ]
+            },
+            "version": {
+              "description": "The version of the store",
+              "type": "string",
+              "format": "version"
+            }
+          }
+        }
+      ]
+    },
+    "DDBConnection": {
+      "description": "Represents the connection configuration to a Dissemination Database",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ConnectionSettings"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "decription": {
+              "type": "string"
+            },
+            "permissions": {
+              "$ref": "#/definitions/Permissions"
+            }
+          }
+        }
+      ]
+    },
+    "ActionResult": {
+      "type": "object",
+      "description": "The result of action",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "success",
+            "error"
+          ]
+        },
+        "errorMessage": {
+          "$ref": "#/definitions/TextType"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "Plugin": {
+      "description": "Plugin metadata information",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "dataset",
+                "db_vendor"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "DataSetColumn": {
+      "description": "A DataSet column",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "last_updated": {
+              "type": "string",
+              "format": "datetime"
+            },
+            "isMapped": {
+              "type": "string",
+              "enum": [
+                "no",
+                "yes",
+                "yes_and_transcoded"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "DescriptionSource": {
+      "description": "The description source of the values of a DataSet Column",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "table": {
+              "type": "string",
+              "description": "The name of the table containing the descriptions"
+            },
+            "relation_field": {
+              "type": "string",
+              "description": "The name of the field which can joined with the dataset column in the SQL Query"
+            },
+            "description_field": {
+              "type": "string",
+              "description": "The name of the field that contains the description text"
+            }
+          }
+        }
+      ]
+    },
+    "DataSet": {
+      "description": "Represents a Mapping Assistant DataSet object. Such objects store the query to a Dissemination database",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "connection": {
+              "$ref": "#/definitions/EntityInformation"
+            },
+            "query": {
+              "description": "The SQL Query",
+              "type": "string"
+            },
+            "extra_data": {
+              "description": "Query editor plugin specific extra information, e.g. DATASET.XML_QUERY in Mapping Store. This might need to be encoded",
+              "type": "string"
+            },
+            "editorType": {
+              "description": "The editor type",
+              "type": "string"
+            },
+            "permissions": {
+              "$ref": "#/definitions/Permissions"
+            }
+          }
+        }
+      ]
+    },
+    "Permissions": {
+      "description": "Dataflow / Category permissions. URN is the key",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "read",
+          "read_write"
+        ]
+      }
+    },
+    "Field": {
+      "description": "A table field",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "Table": {
+      "description": "A table from the DDB",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "table",
+                "view"
+              ]
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Field"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Query": {
+      "description": "Represents either a table or a SQL query which is send by the client",
+      "type": "object",
+      "properties": {
+        "sqlQuery": {
+          "type": "string"
+        }
+      }
+    },
+    "Row": {
+      "description": "represents a single data row",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "QueryResult": {
+      "description": "Represents a (partial) tabular result of a query.",
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_rows": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Row"
+          }
+        }
+      }
+    },
+    "RowNameable": {
+      "description": "Represents a row of codes with name/description",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/identifiable"
+      }
+    },
+    "DataSetQueryResult": {
+      "description": "Represents a (partial) tabular result of a query. Local codes may have description",
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_rows": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EntityInformation"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RowNameable"
+          }
+        }
+      }
+    },
+    "SimpleEntityInformation": {
+      "description": "Basic entity information",
+      "type": "object",
+      "properties": {
+        "entityId": {
+          "type": "string",
+          "description": "The entity ID"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "EntityInformation": {
+      "description": "Entity information",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SimpleEntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parentId": {
+              "type": "string"
+            },
+            "Links": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Link"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Languages": {
+      "description": "The list of available languages (SDMX wise)",
+      "type": "object",
+      "properties": {
+        "codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Version": {
+      "description": "Represents a version",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "format": "version"
+        }
+      }
+    },
+    "LogEntry": {
+      "description": "Represents a single log entry",
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "debug",
+            "warning",
+            "error"
+          ]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Queue": {
+      "description": "A status message",
+      "type": "object",
+      "properties":{
+        "queue": {
+          "type": "object",
+          "properties":{
+            "status":{
+              "type":"string",
+              "enum":[
+                "in_progress",
+                "failure"
+              ]
+            }
+          }
+
+        }
+      }
+    },
+    "Log": {
+      "description": "Log of a process",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EntityInformation"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "entries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LogEntry"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

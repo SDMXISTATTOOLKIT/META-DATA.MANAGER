@@ -1,0 +1,30 @@
+# MetadataSet Management
+
+The Referential Metadata module allows the management of Metadata Sets, that is a set of Metadata organised in Category Schemes; each Metadata Set is created from a Metadataflow, with which it shares the categorisation. \
+The Metadata Sets present will be displayed by browsing the category tree. \
+Clicking on a single Metadata Set the application will display its details, including the list of associated reports:
+
+ ![METADATASET](_static/img/metadataset.PNG "METADATASET")
+ 
+A user has read/write permissions on a Metadata Set and related reports if and only if the user owns the associated Metadataflow. \
+Therefore, if a user has permissions on the Metadataflow associated with the Metadata Set, he will be able to edit both the Metadata Set's details and create/edit/delete/expose the reports associated with it. 
+
+By clicking on a single Metadata Set the following buttons will also be activated by the System:
+
+ ![METADATASET](_static/img/metadataset2.PNG "METADATASET")
+ 
+Pressing **Open Information Page** a popup window like the following will be opened:
+
+   ![Report](_static/img/report0.PNG "Report")
+
+Pressing **Clone Metadata Set** the user will have to enter a new id to identify the clone:
+
+ ![METADATASET](_static/img/metadataset3.PNG "METADATASET")
+ 
+ and the system will create an identical copy of the original Metadata Set with the new identifier:
+ 
+  ![METADATASET](_static/img/metadataset4.PNG "METADATASET")
+
+Pressing **Remove categorization** the system will remove the Metadata Set from a category while the recategorization of a Metadata Set can be done simply by drag&drop operations. 
+
+Pressing **Delete** the chosen Metadata Set will be deleted but only if there are no reports linked.

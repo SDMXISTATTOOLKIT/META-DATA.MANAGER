@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CATEGORY MANAGEMENT</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#category-management">CATEGORY MANAGEMENT</a></li>
+    <li class="sidebar-header-2"><a href="#edit-of-an-item">EDIT OF AN ITEM</a></li>
+    <li class="sidebar-header-2"><a href="#insertion-of-an-item">INSERTION OF AN ITEM</a></li>
+    <li class="sidebar-header-2"><a href="#deletion-of-an-item">DELETION OF AN ITEM</a></li>
+    <li class="sidebar-header-2"><a href="#dataflows:-upgrade">DATAFLOWS: Upgrade</a></li>
+    <li class="sidebar-header-2"><a href="#dataflows:-attach">DATAFLOWS: Attach</a></li>
+    <li class="sidebar-header-2"><a href="#dataflows:-header">DATAFLOWS: Header</a></li>
+    <li class="sidebar-header-2"><a href="#dataflows:-data-source">DATAFLOWS: Data Source</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="category-management"><a class="header-link" href="#category-management"></a>CATEGORY MANAGEMENT</h1>
+<p>This screen is used in order to manage Category Schemes and its child items. A tree diagram appears in the left section of this page as it can be seen in the below image that demonstrates all the Category Schemes and their children that exist in the database.</p>
+<p class="img-container"><img src="figures/CATEGORY_MANAGEMENT.png" alt="CATEGORY_MANAGEMENT"></p>
+<h2 id="edit-of-an-item"><a class="header-link" href="#edit-of-an-item"></a>EDIT OF AN ITEM</h2>
+<p>The user can edit specific attributes of an artefact by selecting this relevant item. For example, in the below screenshot category scheme &quot;ESTAT_DATAFLOWS_SCREEN&quot; has been selected and only specific fields (Name, description etc.) can be updated.</p>
+<p class="img-container"><img src="figures/CATEGORY_MANAGEMENT_EDIT.png" alt="CATEGORY_MANAGEMENT_EDIT"></p>
+<h2 id="insertion-of-an-item"><a class="header-link" href="#insertion-of-an-item"></a>INSERTION OF AN ITEM</h2>
+<p>In the top left side of the screen a button <code>+ Add</code> is used in case the user wants to insert in the database a child item of the selected artefact. In case the root item is selected (in our example &quot;sqlserv&quot;) then by clicking this button a category scheme can be inserted. If an artefact is selected, then only a child item can be inserted (for category schemes there is only the possibility to add a category, in contrast for categories the user can add another category or a dataflow).</p>
+<p class="img-container"><img src="figures/CATEGORY_MANAGEMENT_ADD.png" alt="CATEGORY_MANAGEMENT_ADD"></p>
+<p>As it can be seen in the example below, when the user selects to add a new child item (for example a Dataflow), then in this screen all relevant information of this item should be inserted in General tab. In contrast, when a user wants to edit an existing Dataflow all tabs are editable.</p>
+<p class="img-container"><img src="figures/CATEGORY_MANAGEMENT_DATAFLOW.png" alt="CATEGORY_MANAGEMENT_DATAFLOW"></p>
+<h2 id="deletion-of-an-item"><a class="header-link" href="#deletion-of-an-item"></a>DELETION OF AN ITEM</h2>
+<p>Currently, only Category Schemes and Categories can be deleted using this page. To delete Dataflows, the user should navigate to Metadata -&gt; Browse &amp; Download (see <a href="./BROWSE_AND_DOWNLOAD.html">BROWSE_AND_DOWNLOAD</a>).
+The user can select items using the checkboxes on the left side of the item names, and then Press the <code>Delete</code> button. A window will warn of potential changes, and if the user proceeds, the selected items will be deleted.</p>
+<p class="img-container"><img src="figures/CATEGORY_MANAGEMENT_DELETE.PNG" alt="CATEGORY_MANAGEMENT_DELETE"></p>
+<h2 id="dataflows-upgrade"><a class="header-link" href="#dataflows-upgrade"></a>DATAFLOWS: Upgrade</h2>
+<p>A Dataflow can be upgraded provided that there is different Dataflow saved in the mapping store which has the same agency and id but a higher version. The user can check for available upgrades by clicking the &quot;Check for Upgrade&quot; button.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_UPGRADE.PNG" alt="DATAFLOWS_UPGRADE"></p>
+<p>If there is an available upgrade, the button label will change to &quot;Upgrade to version XYZ&quot; where XYZ is the highest available version. </p>
+<p class="img-container"><img src="figures/DATAFLOWS_UPGRADE_2.PNG" alt="DATAFLOWS_UPGRADE_2"></p>
+<p>The user can click on the button again to choose a registry to upgrade from. Finally clicking on &quot;Apply&quot; will start the upgrade process.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_UPGRADE_3.PNG" alt="DATAFLOWS_UPGRADE_3"></p>
+<p>Note that in order for an available to be successful the source dataflow (the lower version) needs to have a mapping set, while the target version (the high version) dataflow must not.</p>
+<h2 id="dataflows-attach"><a class="header-link" href="#dataflows-attach"></a>DATAFLOWS: Attach</h2>
+<p>By selecting a Dataflow from the left hand side, the user has the option to attach it to additional categories. By selecting the &quot;Attach&quot; tab, the category tree appears and the Categories this particular Dataflow belongs to are marked. 
+From here, more categories can be checked or unchecked (to remove this Dataflow from the unchecked categories) and these actions can be finalized by pressing &quot;Save&quot;.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_ATTACH.PNG" alt="DATAFLOWS_ATTACH"></p>
+<h2 id="dataflows-header"><a class="header-link" href="#dataflows-header"></a>DATAFLOWS: Header</h2>
+<p>By using the &quot;Header&quot; tab the user can add extra information about the selected Dataflow such as name, sender, receiver and contacts for each sender/receiver. As it is shown in the following image, initially when a Dataflow does not have a header,
+the sender and receivers contain some default pre-defined values to guide the user. The user can fill in the name, agency &amp; source values as well as check the &quot;Test&quot; option if they wish. </p>
+<p class="img-container"><img src="figures/DATAFLOWS_HEADER_1.PNG" alt="DATAFLOWS_HEADER_1"></p>
+<p>Then, the sender details can be added by clicking on the pencil icon of the sender item, navigating to the following screen:</p>
+<p class="img-container"><img src="figures/DATAFLOWS_HEADER_2.PNG" alt="DATAFLOWS_HEADER_2"></p>
+<p>In this window the user can edit the sender ID and name(s), as well as add one or multiple contacts for this sender if they wish. Initially the contacts table is empty,
+and new contacts can be added by filling the form below the table. Some of the fields can accept multiple values separated by commas and the field border turns red when the value inside it is not valid.
+After the form is filled, the user can click on &quot;Add Contact&quot; to add the contact to the table. Any contact can be edited using the form when the user clicks on the table row to select it.
+Contacts can also be deleted from the table by selecting them using the checkbox and pressing &quot;Delete&quot;.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_HEADER_3.PNG" alt="DATAFLOWS_HEADER_3"></p>
+<p>Finally &quot;Save&quot; will save the current settings for the sender and navigate to the previous screen.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_HEADER_4.PNG" alt="DATAFLOWS_HEADER_4"></p>
+<p>While we can only have one sender, we can add multiple receivers. The &quot;New Receiver&quot; button opens a screen to add a new receiver in the same was that we add a sender.
+Receivers can also be deleted from the table by selecting them using the checkbox and pressing &quot;Delete&quot;.
+The &quot;Save Header&quot; button saves all of the header options while &quot;Delete Header&quot; deletes all saved information on this header.</p>
+<h2 id="dataflows-data-source"><a class="header-link" href="#dataflows-data-source"></a>DATAFLOWS: Data Source</h2>
+<p>A Data Source can be associated with a particular Dataflow by using the corresponding tab. There are 3 options to choose from (REST, SOAP, Simple) with slightly different configurations for each option.
+The &quot;Save&quot; button saves any changes made in this form while &quot;Delete&quot; completely erases any Data Source details for this Dataflow.</p>
+<p class="img-container"><img src="figures/DATAFLOWS_DATASOURCE.PNG" alt="DATAFLOWS_DATASOURCE"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

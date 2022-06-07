@@ -1,0 +1,29 @@
+# How to load a new Dataflow  	
+
+The loading of a new Dataflow is done in 4 sequential steps:
+* **Builder**: creation of a Cube associated with a DSD 
+* **File Mapping**: creation of a mapping between Cube and data 
+* **Loader**: loading data
+* **Dataflow Builder**: Dataflow creation and publication.
+
+can be activated from the menu on the left or from the list in the upper right of the masks used. 
+
+![Loading Dataflow](_static/img/caricare_nuovo_dataflow_1.PNG "Loading Dataflow")
+
+```eval_rst
+* :doc:`Builder <builder>`
+* :doc:`File Mapping <filemapping>`
+* :doc:`Loader <loader>`
+* :doc:`Dataflow Builder <dataflowbuilder>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    Builder <builder.md>
+    File Mapping <filemapping.md>
+    Loader <loader.md>
+    Dataflow Builder <dataflowbuilder.md>
+```

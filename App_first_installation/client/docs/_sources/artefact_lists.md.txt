@@ -1,0 +1,14 @@
+# Artefact Lists
+
+From the MetaManager menu, you can select the lists of available artefacts:
+
+![Artefact Lists](_static/img/ListaArtefatti.PNG "Artefact Lists")
+
+The list accessed by selecting an artefact always has the same characteristics. \
+The lists of artefacts (one for each type of artefact) have a tabular (grid) representation that allows the sorting of elements, the single or multiple selection and the ability to activate elementary functions.
+
+![Artefact List](_static/img/ListaArtefatti2.PNG "Artefact List")
+
+The rows of the list, in "grid" representation, show the list of artefacts while the columns show fields values identifiable through labels inserted in the header of the table. \
+For each record there are the columns identifying the artefact (ID, Agency, Version and Name) as well as the indication of the finalisation status of the artefact itself. \
+The system sets a default alphabetical sorting starting from the artefact ID with the possibility to reorder the table according to the sorting buttons provided at column level, the arrows placed next to the column name, in fact, they allow the user to change the sorting from ascending to descending and vice versa.

@@ -1,0 +1,14 @@
+{
+  "authorization": {
+    "enabled":  true,
+    "method": "dotstat",
+    "PrincipalFrom":  "context"
+  },
+  "DotStatSuiteCoreCommonDbConnectionString": "Data Source=SERVER;Initial Catalog=DATABASE_WITH_AUTHORIZATION_RULES_OF_DOTSTAT;User ID=USER;Password=PASSWORD",
+  "mappingStore": {
+    "Id": {
+      "Default": "DATASPACE_ID (THERE MUST BE A CONNECTION STRING WITH THE SAME NAME)",
+      "FromQueryParameter": "Never"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Tools
+
+* [Import structures](import_structure.md)
+* [Compare DSDs](Compare_DSD.md)
+* [Compare Item Schemes](Compare_Item_Schemes.md)
+* [Merge Item Schemes](merge_item_schemes.md)
+* [Browser Artefacts](browser_artefacts.md)

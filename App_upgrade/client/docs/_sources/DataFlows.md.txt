@@ -1,0 +1,59 @@
+# Dataflows
+
+Selecting **Dataflows** from the "Meta Manager" form the application will show the list of the Node's Dataflows similar to the lists of all artefacts present, as explained in [list of artefacts](artefact_lists.md). 
+
+ * **Creation of a Dataflow** \
+From MetaManager it is possible to create 3 types of Dataflow:
+
+ * Normal: Standard Dataflow
+ 
+![Dataflows](_static/img/DF_NORMAL.PNG "Dataflows")
+
+ * Linked: Linked Dataflow, i.e. Dataflow that are present in other nodes on which only read access is granted and that are "referenced" by the work node. 
+ A linked Dataflow is not physically present in the work node (ID, Agency and Version cannot be edited), moreover there is a specific annotation for them.
+
+![Dataflows](_static/img/DF_LINKED.PNG "Dataflows")
+
+ * Virtual: Dataflow for which there are only one (or more) files that can be directly downloaded
+  
+![Dataflows](_static/img/DF_VIRTUAL.PNG "Dataflows")
+
+and can be inserted from the Layout section:
+
+![Dataflows](_static/img/DF_VIRTUAL2.PNG "Dataflows")
+
+In the Dataflow creation window it is possible to edit the annotations; there is a section to insert the *Layout Annotations* among which there are annotations to not display dimensions (or dimension items) or annotations that set the graphic structure of the table, the chart or the map. \
+Other annotations can also be set (such as decimal separator, value for empty table cells, etc.). \
+For their meaning please refer to the paragraph [Other node configurations](other_nodes.md). 
+
+Compared to the other artefacts on each Dataflows element, there are extra functions:
+
+ ![Dataflows](_static/img/CC_owners.PNG "Dataflows")
+ 
+ * **Show Content Constraints** \
+ By selecting a Dataflow from the list with the mouse and pressing the _Show Content Constraints_ button, the System shows the list of Content Constraints related to the selected Dataflow. 
+ 
+ ![Content Constraint](_static/img/lista_CC.PNG "Content Constraint")
+
+* **Manage owners** \
+A user owning a Dataflow can assign the rights on this Dataflow to another user using the _Manage owners_ button. \
+The user owner of the Dataflow chooses from the list of users present in the node
+
+ ![Manage owners](_static/img/gestione_owners.PNG "Manage owners")
+ 
+and clicking on the Save button gives the selected user rights on the Dataflow. 
+
+By selecting an item from the list with the mouse and pressing the View/Edit button, the system displays the Detail mask. 
+
+  ![Dataflows](_static/img/Dataflows.PNG "Dataflows")
+ 
+The main section of the Dataflows detail mask contains the following tabs:
+
++ [**General**](section_general.md) 
+
+**NOTE**:  \
+in addition to the entries present in common with all the other artefacts, in the General section, we also find the DSD field in which the reference to an existing DSD in the System must be inserted. \
+Many Dataflows can be created referring to the same DSD, for example reflecting different time intervals or geographical areas.
+
++ **Categorisations** \
+Not yet implemented.

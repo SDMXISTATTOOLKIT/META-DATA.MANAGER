@@ -1,0 +1,19 @@
+# Data & Meta Manager - User Manual
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :includehidden:
+
+    Home <Home.md>
+    Acronyms and Glossary <Acronyms_glossary.md>
+    About <About.md>
+    Basic information about SDMX <basic_information_about_sdmx.md>
+    Installation <Installation.md>
+    Administration <Administration.md>
+    Meta Manager <MetaManager.md>
+    Data Manager <DataManager.md>
+    Tools <Utility.md>
+    Metadata Management <management_metadata.md>
+```
+

@@ -1,0 +1,29 @@
+# Section "General"
+
+Independently from the chosen artefact type, the "General" section of the artefact contains the following fields:
+
+* **ID**: Mandatory alphanumeric field that follows the nomenclature constraints for some artefacts according to SDMX standard.
+
+* **Agency**: Mandatory field which will contain the user's choice from the list containing all the Agencies. 
+
+* **Version**: Mandatory numeric field with a standard 9.9.9 format.
+
+* **Finalized**: Represented by a checkbox that allows the user to set the artefact as finalized. \
+Finalised artefacts are recognisable by the check mark in the 'Final' field. \
+The behaviour of such artefacts depends on the version of the NsiWebService.
+If the System is connected to the NSI WS endpoint with a version prior to 6.12. modification is not allowed. \
+In case of connection to web services with version higher than 6.12, it is possible also for the finalised artefacts to modify the general and detailed textual information (e.g. Name and description of the artefact, name and description of the single Items, Annotations at artefact and/or Item level, etc.) and the other general information as provided for by the SDMX ver. 2.1 standard (e.g. Valid from, Valid at, etc.). \
+Moreover, in case of connection to NsiWebService with version 6.14 or higher, it is possible to add new Items to finalised artefacts but it is not possible to delete them.
+
+* **URI**: Optional alphabetical editable field. 
+* **URN**: Non-editable field. Automatically set by the System, it is presented in read-only format.
+* **Start validity date**: Represented with editing field and calendar for date selection (day, month, year).
+* **Final Validity Date**: Represented with editing field and calendar for date selection (day, month, year).
+* **Language**: Mandatory field, allows the user to select the language for the insertion of the Name and the Description of the artefact. \
+It is possible to enter a different Name and Description for each selected language. \
+At least for one language the name must be entered.
+
+* **Name**: Mandatory multilingual field, identifies the name of the artefact. 
+* **Description**: Multilingual field for the description of the artefact in multi-line format.
+* [**Annotations**](Annotations.md): Both general and custom, available for all artefacts and Items. \
+This construct allows information to be added to the metadata.

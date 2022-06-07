@@ -1,0 +1,53 @@
+# Concept Schemes
+
+Selecting **Concept Schemes** from the "Meta Manager" module, the application displays the list of Concept Schemes of the Node similarly to the lists of all artefacts present, as explained in [artefact list](artefact_lists.md). \
+Selecting an item in the list with the mouse and pressing the View/Edit button, the system displays the Detail mask.
+
+ ![Schema Concepts](_static/img/schema_concetti.PNG "Schema Concepts")
+ 
+The main section of "Concept Schemes" detail mask contains the following tabs:
++ [**General**](section_general.md)
++ **Items:**
+Items can be displayed in grid or tree mode. By default the grid view is proposed. 
+
+![Items Concept Template](_static/img/item.PNG "Items Concept Template")
+
+As an alternative to the insertion of the single items, it is possible to [**import a CSV file**](item_import_file_csv.md) in order to insert them in bulk, otherwise the management functions of the single items are the following:
+* **Create Item**  \
+To create a new Item, the user must use the _Create Item_ button at the top. \
+The System presents the data acquisition mask. \
+The fields to be populated are the following: \
+-- **Identifier Item** (mandatory - alphanumeric) \
+-- **Language** (mandatory - alphanumeric) \
+-- **Item name** (required - alphanumeric) \
+-- **Description** (optional - alphanumeric) \
+-- **Fullname** (optional - alphanumeric) \
+-- **Order** (optional - numeric) \
+-- **Parent** (optional - from a list of items already present) \
+-- [**Annotations**](Annotations.md) (optional - alphanumeric) \
+The new Item is displayed as a record of the grid table and the possible information related to the "Parent Code" is valorized in a column of the grid view.
+* **Add Child**  \
+The _Add Child_ button is activated on the "Parent" row and opens a mask with the fields indicated in **Create Item** where obviously the _Parent_ field will be preset with the value of the selected parent. \
+The new Item is inserted with indentation under the parent code in the "folder" representation. \
+The mask contains the buttons for system acquisition: **Save:** to save and close the mask and **Close:** to close the mask without saving. \
+In the folder view, the order and the parentship of an item can be determined by drag-and-drop operations of the item itself. \
+The user can switch to the folder view by clicking on the "Tree" button.
+![Concepts Diagram](_static/img/schema_concetti_albero.PNG "Concepts Diagram")
+ 
++ **Categorization** \
+(not yet implemented)
+
++ **Derived Concept Scheme** \
+This tab allows the creation of a new Concept Scheme from a subset of items of the starting scheme, hence the adjective "derived". \
+In choosing the elements of interest in table view mode, the user is helped by tools that allow him to take into account or not the hierarchies between parent elements, child elements, etc.
+
+![Derived Concept Scheme](_static/img/schema_concetti_derivato_tabella.png "Derived Concept Scheme")
+
+If tree mode is used it will be possible to select: \
+-- a specific node \
+-- a specific sub-level \
+-- all children of a specific node \
+in addition, the zoom functionality will display the two artefacts in a full screen popup (left and right of the screen) allowing selection.
+
+![Derived Concept Scheme](_static/img/schema_concetti_derivato_albero.png "Derived Concept Scheme")
+

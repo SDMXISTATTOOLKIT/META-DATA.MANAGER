@@ -1,0 +1,33 @@
+# How to configure the application
+
+To manage the Configuration, the System provides an application interface which can be used by a profiled user with **SuperUser** permissions, also referred to in the guide as [**superadmin**](superadmin.md). \
+The reference function can be found in the left-hand side menu under **Configuration**.  \
+The item of interest is **_Application_**. \
+After entering the credentials of [**superadmin**](superadmin.md), the System opens the management mask of the application configuration by positioning itself in the section "**User Interface**". \
+The following configurations can be made for the Data and Meta Manager applications:
+
+```eval_rst
+* :doc:`User Interface <configuration_user_interface>`
+* :doc:`Agencies <agencies_configuration>`
+* :doc:`Data Management <data_management>`
+* :doc:`Structures default header submit <header_submit>`
+* :doc:`Superuser credentials <superadmin>`
+* :doc:`Endpoint Settings <endpoint_settings>`
+```
+
+All application configurations are described in the dedicated sections.
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    User Interface <configuration_user_interface.md>
+    Agencies <agencies_configuration.md>
+    Data management <data_management.md>
+    Structures default header submit <header_submit.md>
+    Superuser credentials <superadmin.md>
+    Endpoint settings <endpoint_settings.md>
+```
+
+

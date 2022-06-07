@@ -1,0 +1,12 @@
+# MetaManager
+
+Complete management module for SDMX structural metadata (Codelist, Concept Schemes, Category Scheme, Data Streams, DSD, etc.), i.e. how SDMX artefacts, depending on user's profiling, can be created, updated, archived, cloned and deleted.
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+
+    Artefact management <artefact_management.md>
+    Artefacts in detail <artefacts_detail.md>
+```
+

@@ -1,0 +1,39 @@
+# User Interface
+
+In this section the [SuperUser](superadmin.md) has the possibility to set the parameters related to the standard of views:
+
++ **Maximum tree nodes for allowing tree visualization** \
+This parameter represents the maximum display in tree representation of the elements (e.g. Item of a Code List). \
+The system manages vertical scrolling for the display of items and this also allows high values of the parameter.
+
++ **Maximum showable tree nodes using 'Show more' in tree** \
+The parameter is linked to the value set in the previous point. \
+The system allows the loading of further elements for displaying them through the function Show Others. \
+The number of elements that are displayed is determined by this pagination parameter in the tree representation.
+
++ **Minimum nodes number to enable tree pagination** \
+Indicates the minimum number of elements displayed in the tree view. \
+The minimum number is indicative and relative to the actual number of elements present in the system.
+
++ **Maximum tree nodes for allowing tree total expansion** \
+Indicates the maximum number of elements that can be displayed with the tree fully expanded. 
+
++ **Tree page size** \
+Indicates the maximum number of siblings that are displayed by default. 
+
++ **Default sidebar collapsed** \
+The on/off checkbox allows the user to set as default the display of the left sidebar menu in extended (header) or compressed (icons only) mode.
+
++ **Languages** \
+The Languages section allows the user to define the languages for the Suite. \
+The Add Language function opens an editing window where the user can set the language in character format. \
+By saving the configuration the user obtains at application level the language management for the graphic interface (labels, titles, etc.) \
+The languages are always represented by a pop-up list (combo).
+
++ **Default language** \
+The System Administrator can define the default language, which is automatically set in all application sessions.
+
++ **Anonymous pages** \
+In this session the Administrator can set the functionalities visible to an anonymous user who logs in without credentials. \
+The mask shows all the functions present in the Suite divided between the two main applications Data and Meta Manager. \
+By selecting the checkbox associated with the function, the anonymous user is authorised to have read access to the function itself.

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<r:rules xmlns:r="http://ec.europa.eu/eurostat/sri/authorisation/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ec.europa.eu/eurostat/sri/authorisation/1.0 rules.xsd">
+	<!-- REST & SOAP rules -->
+	<!-- Order is signifigant -->
+	<!-- REST get data -->
+	<r:rest path="/sdmx/rest/data/[^/]+(/.*)?" method="GET" allowAnonymous="false">
+		<r:and>
+			<r:permission id="CanReadData"/>
+		</r:and>
+	</r:rest>
+  <!-- available constraints aka actual constraints aka cube-->
+  <r:rest path="/sdmx/rest/availableconstraint/[^/]+(/.*)?" method="GET" allowAnonymous="false">
+    <r:and>
+      <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <!-- REST get structural metadata -->
+	<!-- Path uses regular expression, a subset common to both Java and .NET. Uri Templates -->
+	<r:rest path="/sdmx/rest/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure)(/.*)?" method="GET" allowAnonymous="true">
+		<r:and>
+			<r:permission id="CanReadStructuralMetadata" />
+		</r:and>
+	</r:rest>
+	<r:rest path="/sdmx/rest/data(/.*)?" method="POST" allowAnonymous="false">
+		<r:and>
+			<r:permission id="CanImportData"/>
+		</r:and>
+	</r:rest>
+  <r:rest path="/sdmx/rest/structure/?" method="POST" allowAnonymous="false">
+    <r:and>
+      <r:permission id="CanReadStructuralMetadata" />
+      <r:permission id="CanImportStructures"/>
+      <!--        <r:permission id="CanUpdateStructuralMetadata"/> -->
+    </r:and>
+  </r:rest>
+  <r:rest path="/sdmx/rest/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure)(/.*)?" method="PUT" allowAnonymous="false">
+    <r:and>
+      <r:permission id="CanReadStructuralMetadata" />
+      <r:permission id="CanImportStructures"/>
+      <!--        <r:permission id="CanUpdateStructuralMetadata"/> -->
+    </r:and>
+  </r:rest>
+	<r:rest path="/sdmx/rest/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure)(/.*)?" method="DELETE" allowAnonymous="false">
+		<r:and>
+			<r:permission id="CanReadStructuralMetadata" />
+			<r:permission id="CanImportStructures"/>
+			<r:permission id="CanDeleteStructuralMetadata"/>
+		</r:and>
+	</r:rest>
+	<r:rest path="rest/login/token" method="POST" allowAnonymous="false">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and>
+	</r:rest>
+	<!-- Frontpage and API-->
+	<r:rest allowAnonymous="true" method="GET" path="^/\w+\.html$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/$">
+    <r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+ <r:rest allowAnonymous="true" method="GET" path="^/maweb(/.*)?">
+    <r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="true" method="GET" path="^/script/\w+\.js$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+
+	<r:rest allowAnonymous="true" method="GET" path="^/style/\w+\.css$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="true" method="GET" path="^/image/\w+\.\w+$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="true" method="GET" path="^/sdmx(_estat|_org|v21)/(schemas/)?\w+\.(wsdl|xsd)$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<!-- last slash needed for .NET-->
+	<r:rest allowAnonymous="true" method="GET" path="^/rest/application.wadl/?$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<!-- MA WS-->
+	<!-- Entities -->
+	<r:rest allowAnonymous="false" method="GET" path="^/rest/entity/\w+/(ddb|mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|header_template|registry|user|userAction|templateMapping|datasource)$">
+		<r:and>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="POST" path="^/rest/entity/\w+/(ddb|registry|user|userAction)$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="DELETE" path="^/rest/entity/\w+/(ddb|registry|user|userAction)/\w+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="PATCH" path="^/rest/entity/\w+/(ddb|registry|user|userAction)/\w+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="POST" path="^/rest/entity/\w+/(mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|templateMapping|datasource)/?$">
+		<r:and>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="GET" path="^/rest/entity/\w+/(mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|header_template|templateMapping|datasource)/\w+$">
+		<r:and>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+  <r:rest allowAnonymous="false" method="DELETE" path="^/rest/entity/\w+/(mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|header_template|templateMapping)/\w+/(localCode|column_description|transcoding)/?$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and> 
+  </r:rest>	<r:rest allowAnonymous="false" method="DELETE" path="^/rest/entity/\w+/(mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|header_template|templateMapping|datasource)/\w+$">
+		<r:and>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="PATCH" path="^/rest/entity/\w+/(mappingset|dataset|column|localCode|column_description|mapping|transcoding|transcoding[Rr]ule|header_template|templateMapping|datasource)/\w+$">
+		<r:and>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="POST" path="^/rest/entity/\w+/header_template$">
+		<r:and>
+			<r:permission id="CanImportStructures"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="DELETE" path="^/rest/entity/\w+/header_template/\w+$">
+		<r:and>
+			<r:permission id="CanImportStructures"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="PATCH" path="^/rest/entity/\w+/header_template/\w+$">
+		<r:and>
+			<r:permission id="CanImportStructures"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="GET" path="^/rest/entity/\w+/(ddb|registry|user|userAction)/\w+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+ <!-- Dataflow -->
+	<r:rest allowAnonymous="false" method="POST" path="^/rest/dataflow/version/(\w|\.|/)+.*$">
+		<r:and>
+			<r:permission id="CanImportStructures"/>
+			<r:permission id="CanPerformInternalMappingConfig"/>
+		</r:and> 
+	</r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/dataflow/mappingset/(\w|\.|/)+.*$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+	<!-- auth related to first run. allow anonymous -->
+	<r:rest allowAnonymous="true" method="GET" path="^/rest/auth/version/current$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="true" method="GET" path="^/rest/auth/version/available$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+
+	<r:rest allowAnonymous="true" method="PUT" path="^/rest/auth/version/current$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<!-- About me -->
+	<r:rest allowAnonymous="false" method="GET" path="^/rest/auth/about/me$">
+		<r:and>
+			<r:permission id="Any"/>
+		</r:and> 
+	</r:rest>
+	<!-- Rest of Auth -->
+	<r:rest allowAnonymous="false" method="GET" path="^/rest/auth/(\w|/)+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="DELETE" path="^/rest/auth/(\w|/)+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+	<r:rest allowAnonymous="false" method="PUT" path="^/rest/auth/(\w|/)+$">
+		<r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+		</r:and> 
+	</r:rest>
+  <r:rest allowAnonymous="true" method="POST" path="^/rest/auth/connection/new">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="PUT" path="^/rest/auth/connection">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="true" method="POST" path="^/rest/auth/connection/new/test">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/auth/connection/test">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/auth/connection">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  
+  <!-- Action -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/action/\w+/\w+$">
+    <r:and>
+			<r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+	</r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/action/\w+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+	</r:rest>
+ <!-- Application MEtadata -->
+  <r:rest allowAnonymous="true" method="GET" path="^/rest/app/\w+(/\w+)?$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- Store -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/all/\w+$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/status$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/version$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store/\w+/status$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store/\w+/version$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store/\w+$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="PUT" path="^/rest/store/\w+$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="DELETE" path="^/rest/store/\w+$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/entity/all$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/proxy">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="PUT" path="^/rest/store/\w+/proxy">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="DELETE" path="^/rest/store/\w+/proxy">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/all$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store/\w+/all$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/store/\w+/entity$">
+    <r:and>
+      <r:permission id="CanModifyStoreSettings"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/store/\w+/languages$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/queue/[({]?[a-fA-F0-9]{8}[-]?([a-fA-F0-9]{4}[-]?){3}[a-fA-F0-9]{12}[})]?">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/queue/result/[({]?[a-fA-F0-9]{8}[-]?([a-fA-F0-9]{4}[-]?){3}[a-fA-F0-9]{12}[})]?">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  
+  <!--Validation-->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/validation/(data|format)(/\w.+)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- DataSet -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/dataset/(data|sql_column|validation)(/\w.+)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/dataset/(data|plugin)(/\w+)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- DDB -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/ddb/status/\w+/\w+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- table/field/view names can have unicode letters, numbers and characters such as # and @ -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/ddb/(table|data)/\w+/\w+(/[\p{L}\p{N}_][\p{L}\p{N}#@$_]*)*$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/ddb/(data|column|test)/\w+/\w+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- DSD OTF -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/dsdonthefly/\w+/(\w|\.)+/\w+/(\w|\.)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+
+  <r:rest allowAnonymous="false" method="DELETE" path="^/rest/dsdonthefly/\w+/(\w|\.)+/\w+/(\w|\.)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="PUT" path="^/rest/dsdonthefly/\w+/(\w|\.)+/\w+/(\w|\.)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/dsdonthefly/\w+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- Mapping Set -->
+   <r:rest allowAnonymous="false" method="GET" path="^/rest/mappingset/status/\w+/(\w|\.)+/(\w|-)+/(\w+|\.)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/mappingset/rule/\w+/(\w|\.)+/contentconstraint/(\w|-)+/(\w+|\.)+/(\w+|\.)+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/mappingset/contentconstraint/\w+/\w+(/\w+)?$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- Plugins -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/plugins(/(\w|\.)+)?$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/rest/plugins/\w+/\w+/\w+$">
+    <r:and>
+      <r:permission id="CanPerformInternalMappingConfig"/>
+    </r:and>
+  </r:rest>
+  <!-- Registry -->
+  <r:rest allowAnonymous="false" method="GET" path="^/rest/registry/\w+/\w+/\w+$">
+    <r:and>
+      <r:permission id="CanImportStructures"/>
+    </r:and>
+  </r:rest>
+  <r:rest allowAnonymous="false" method="POST" path="^/rest/registry/\w+/\w+/\w+$">
+    <r:and>
+      <r:permission id="CanImportStructures"/>
+    </r:and>
+  </r:rest>
+  <!-- TODO migrate from WebAPI annotations to this  -->
+</r:rules>

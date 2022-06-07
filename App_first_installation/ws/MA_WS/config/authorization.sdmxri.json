@@ -1,0 +1,12 @@
+{
+  "authorization": {
+    "enabled":  true,
+    "method": "sdmxri"
+  },
+  "mappingStore": {
+    "Id": {
+      "Default": "MappingStoreServer",
+      "FromQueryParameter": "Never"
+    }
+  }
+}

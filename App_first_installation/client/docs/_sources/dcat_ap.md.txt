@@ -1,0 +1,21 @@
+# The DCAT-AP_IT Standard
+
+Selecting the DCAT-AP_IT item from the Menu leads to the section dedicated to the compilation/publication of Metadata according to the DCAT-AP_IT standard.
+
+ ![METADATASET](_static/img/dcat_lista_metadataset.PNG "METADATASET")
+ 
+The standard requires the compilation of Metadata inherent to the Catalogue and Metadata inherent to the single published Dataflow.
+
+```eval_rst
+* :doc:`New MetadataSet DCAT-AP_IT <new_ms_dcat>`
+* :doc:`Compilation of a DCAT-AP_IT report <new_report_dcat>`
+```
+ 
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    New MetadataSet DCAT-AP_IT <new_ms_dcat.md>
+    Compilation of a DCAT-AP_IT report <new_report_dcat.md>
+```

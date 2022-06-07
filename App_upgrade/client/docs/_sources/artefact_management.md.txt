@@ -1,0 +1,38 @@
+# Artefact Management
+
+The Meta Manager application is aimed at browsing and managing Structural Metadata according to the SDMX standard. \
+The main functions are related to the creation and modification, search, navigation, display, import, download of Structural Metadata, called **Artefacts**, through connection to a specific Node. \
+The **Id**, **agency** and **version** are the three elements identifying an SDMX **Artefact**, independently from the type of artefact we are dealing with. \
+The **Id** is the identification code of the Artefact. \
+**Agency** is the name of the organization that is the creator and/or owner of the Artefact. \
+**Version** gives the version of the Artefact. 
+
+As they are defined and to favour the usability of the Suite, it has been chosen to standardise some functionalities common to several artefacts:
+
+```eval_rst
+* :doc:`Artefact Lists <artefact_lists>`
+* :doc:`Search an existing Artefact <search_artefact>`
+* :doc:`Creating a new Artefact <new_artefact>`
+* :doc:`Edit, duplicate and delete an existing Artefact <edit_delete_artefact>`
+* :doc:`Import an Artefact <import_artefact>`
+* :doc:`Item Management - Upload CSV file <item_import_file_csv>`
+* :doc:`Download or export an Artefact <download_export_artefact>`
+* :doc:`Annotations <Annotations>`
+* :doc:`Sorting Management <sorting_management>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 4
+    :hidden:
+
+    Artefact Lists <artefact_lists.md>
+    Search an existing Artefact <search_artefact.md>
+    Creating a new Artefact <new_artefact.md>
+    Edit, duplicate and delete an existing Artefact <edit_delete_artefact.md>
+    Import an Artefact <import_artefact.md>
+    Item Management - Upload CSV file <item_import_file_csv.md>
+    Download or export an artefact <download_export_artefact.md>
+    Annotations <Annotations.md>
+    Sorting Management <sorting_management.md>
+```

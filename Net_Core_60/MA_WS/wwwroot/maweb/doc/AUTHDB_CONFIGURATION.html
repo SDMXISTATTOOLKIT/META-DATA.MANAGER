@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AUTHDB CONFIGURATION</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#authdb-configuration">AUTHDB CONFIGURATION</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="authdb-configuration"><a class="header-link" href="#authdb-configuration"></a>AUTHDB CONFIGURATION</h1>
+<p>AUTHDB is a database to store and manage users, permissions and roles. It can be any database the user prefers.
+Only one connection to an authdb can be configured. Below is the screen that opens when Admin accesses MAWEB for the
+first time after the web app has been deployed.</p>
+<p class="img-container"><img src="figures/CONFIGURE_AUTHDB.PNG" alt="CONFIGURE_AUTHDB"></p>
+<p>The <em>AuthDB Connection settings</em> are the following:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>database-type</td>
+<td>The database type. Options: [Oracle, MySQL, SqlServer].</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>The Server domain.</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>The Database name.</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The user name for obtaining connections.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The password for obtaining connections.</td>
+</tr>
+</tbody></table>
+<p>After connection details are successfully saved, the following modal will appear for initializing AuthDB:</p>
+<p class="img-container"><img src="figures/INITIALIZE_AUTHDB.PNG" alt="INITIALIZE_AUTHDB"></p>
+<p>If the initialization of AuthDB is successful, then the following login modal will be displayed:</p>
+<p class="img-container"><img src="figures/SUCCESS_AUTHDB.PNG" alt="SUCCESS_SAVE_AUTHDB"></p>
+<p>Admin can login with <em>Admin</em> as username. Password is left empty. For security reasons, after successful login, Admin should go and change the default credentials using <a href="./MANAGE_USERS.html">MANAGE_USERS</a> page.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

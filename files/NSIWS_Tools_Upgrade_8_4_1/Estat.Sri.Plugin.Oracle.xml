@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Plugin.Oracle</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder">
+            <summary>
+            The Oracle DB connection settings builder.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.UserIdName">
+            <summary>
+            The user identifier name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.PasswordName">
+            <summary>
+            The password name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.DataSourceName">
+            <summary>
+            The data source name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.DatabaseName">
+            <summary>
+            The database name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.ServerName">
+            <summary>
+            The server name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.PortName">
+            <summary>
+            The port name
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder._dataSourceParser">
+            <summary>
+            The data source parser
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateConnectionEntity">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <returns>
+            The connection entity
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateConnectionEntity(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates the connection entity from the specified <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>
+            The <see cref="T:System.Configuration.ConnectionStringSettings" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateConnectionString(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection string.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:System.Configuration.ConnectionStringSettings"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateDdbConnectionEntity(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Creates the DDB connection entity.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.DdbConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.CreateConnectionEntity(Estat.Sri.Mapping.Api.Model.DdbConnectionEntity)">
+            <summary>
+            Creates the connection entity.
+            </summary>
+            <param name="ddbConnection">The DDB connection.</param>
+            <returns>The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity"/></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Builder.OracleSettingsBuilder.BuildConnectionEntity(System.Data.Common.DbConnectionStringBuilder,System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Builds the connection entity.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="settings">The settings.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Model.IConnectionEntity" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">builder is null</exception>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType">
+            <summary>
+            Enumeration of the various Oracle Connection Types
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType.EasyConnect">
+            <summary>
+            The easy connect
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType.TnsAlias">
+            <summary>
+            The TNS alias
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType.ConnectionDescription">
+            <summary>
+            The connection description
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Engine.DataSourceParser">
+            <summary>
+                Class DataSource.
+            </summary>
+            <seealso href="http://docs.oracle.com/cd/E51173_01/win.122/e17732/featConnecting.htm#ODPNT166" />
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Engine.DataSourceParser._easyConnectionRegex">
+            <summary>
+                The regular expression for matching Oracle's Easy Connection format.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Engine.DataSourceParser.GetConnectionType(System.String)">
+            <summary>
+                Gets the type of the connection.
+            </summary>
+            <param name="dataSource">The data source.</param>
+            <returns>The <see cref="T:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType" />.</returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine">
+            <summary>
+            The SQL server database provider engine.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine._oracleName">
+            <summary>
+            The oracle name
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.ProviderName">
+            <summary>
+            Gets the name of the provider.
+            </summary>
+            <value>
+            The name of the provider.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.ParametersAreReadOnly">
+            <summary>
+            Gets a value indicating whether the parameters are read only.
+            </summary>
+            <value>
+            <c>true</c> if parameters are read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.ShowDescriptionAssociation">
+            <summary>
+            Gets a value indicating whether to show the description association.
+            </summary>
+            <value>
+            <c>true</c> if it should show the description association; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.Browser">
+            <summary>
+            Gets the browser.
+            </summary>
+            <value>
+            The browser.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Engine.OracleDatabaseProviderEngine.SettingsBuilder">
+            <summary>
+            Gets the settings builder.
+            </summary>
+            <value>
+            The settings builder.
+            </value>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Engine.OracleSchemaBrowser">
+            <summary>
+            Oracle Schema browser
+            </summary>
+            <seealso cref="T:Estat.Sri.Mapping.Api.Engine.IDatabaseSchemaBrowser" />
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Engine.OracleSchemaBrowser.GetDatabaseObjects(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Gets the database objects. E.g. Tables or Views
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.DatabaseObject" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">settings is null</exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Engine.OracleSchemaBrowser.GetSchema(System.Configuration.ConnectionStringSettings,Estat.Sri.Mapping.Api.Model.IDatabaseObject)">
+            <summary>
+            Gets the fields of a database object.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="databaseObject">The database object.</param>
+            <returns>
+            The list of <see cref="T:Estat.Sri.Mapping.Api.Model.IFieldInfo" />
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            settings
+            or
+            databaseObject
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Engine.OracleSchemaBrowser.CreateConnection(System.Configuration.ConnectionStringSettings)">
+            <summary>
+            Creates a new connection.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>The <see cref="T:System.Data.Common.DbConnection"/></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionEntityExtension">
+            <summary>
+            Class OracleConnectionEntityExtension.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionEntityExtension._log">
+            <summary>
+            The _log
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionEntityExtension.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionEntityExtension" /> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionEntityExtension.GetDataSource(Estat.Sri.Mapping.Api.Model.IConnectionEntity)">
+            <summary>
+            Gets the data source.
+            </summary>
+            <param name="connectionEntity">The connection entity.</param>
+            <returns>The <see cref="T:System.String" />.</returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionTypeExtension">
+            <summary>
+            Class OracleConnectionType Extensions.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Extension.OracleConnectionTypeExtension.GetName(Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType)">
+            <summary>
+                Gets the user friendly name of a <seealso cref="T:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType" />.
+            </summary>
+            <param name="connectionType">Type of the connection.</param>
+            <returns>The user friendly name of a <seealso cref="T:Estat.Sri.Plugin.Oracle.Constant.OracleConnectionType" />.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">connectionType;Not supported</exception>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Factory.OracleDatabaseProviderFactory">
+            <summary>
+            The oracle database provider factory.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Factory.OracleDatabaseProviderFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Oracle.Factory.OracleDatabaseProviderFactory"/> class.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Factory.OracleLocalRetrievalFactory">
+            <summary>
+            The SQL Server plug-in for DDB access
+            </summary>
+            <seealso cref="T:Estat.Sri.Mapping.Api.Factory.ILocalCodeRetrievalFactory" />
+        </member>
+        <member name="F:Estat.Sri.Plugin.Oracle.Factory.OracleLocalRetrievalFactory._ddbSqlBuilderFactory">
+            <summary>
+            The DDB SQL builder factory
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Factory.OracleLocalRetrievalFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Oracle.Factory.OracleLocalRetrievalFactory" /> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Oracle.Factory.OracleLocalRetrievalFactory.GetEngine(System.String)">
+            <summary>
+            Gets the <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> for the specified <paramref name="databaseType" />
+            </summary>
+            <param name="databaseType">Type of the database.</param>
+            <returns>
+            The <see cref="T:Estat.Sri.Mapping.Api.Engine.ILocalCodeRetrieval" /> engine for the specified <paramref name="databaseType" />
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Oracle.Model.DataSourceModel">
+            <summary>
+            The data source model.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Model.DataSourceModel.ConnectionType">
+            <summary>
+            Gets or sets the type of the connection.
+            </summary>
+            <value>
+            The type of the connection.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Model.DataSourceModel.DataSource">
+            <summary>
+            Gets or sets the data source.
+            </summary>
+            <value>
+            The data source.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Model.DataSourceModel.DatabaseName">
+            <summary>
+            Gets or sets the name of the database.
+            </summary>
+            <value>
+            The name of the database.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Model.DataSourceModel.DatabaseServer">
+            <summary>
+            Gets or sets the database server.
+            </summary>
+            <value>
+            The database server.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Oracle.Model.DataSourceModel.Port">
+            <summary>
+            Gets or sets the port.
+            </summary>
+            <value>
+            The port.
+            </value>
+        </member>
+    </members>
+</doc>

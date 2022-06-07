@@ -1,0 +1,28 @@
+# Merge Item Schemes
+
+The **Merge Item Schemes** function can be found in the left-hand side menu starting from the "Tools" item. \
+The function allows a two-by-two merge for: **Code Lists**, **Category Schemes** and **Concept Schemes**.
+
+ ![Merge Item Schemes](_static/img/unione_item_scheme.PNG "Merge Item Schemes")
+ 
+ Item schemes can be loaded indifferently from:
+ * MSDB
+ * CSV
+ * SDMX-ML
+ 
+  Once the choice of the two Item Schemes (e.g. two Code Lists) has been made, the System activates the **Merge Item Schemes** button. \
+  By pressing **Merge Item Schemes** the Merge preview will be shown:
+
+ ![Merge Item Schemes](_static/img/unione_item_scheme2.PNG "Merge Item Schemes").
+ 
+  By Pressing **Next** the user can create a new Item Scheme filling the mandatory fields:
+  * ID
+  * Agency
+  * Version
+  * Name
+ 
+ ![Union Item Schemes](_static/img/unione_item_scheme3.PNG "Union Item Schemes")
+
+Finally by pressing **Create** the new Item Scheme will be created and the user will be able to locate it in the Meta Manager.
+
+![Union Item Schemes](_static/img/unione_item_scheme4.PNG "Union Item Schemes")

@@ -1,0 +1,692 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NsiWebServiceCore</name>
+    </assembly>
+    <members>
+        <member name="T:NSIWebServiceCore.Controllers.AvailabilityController">
+            <summary>
+            The available controller for SDMX REST 2.0
+            </summary>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.AvailabilityController.#ctor(Estat.Sri.Ws.Rest.IAvailableResource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NSIWebServiceCore.Controllers.AvailabilityController"/>.
+            </summary>
+            <param name="availableResource">taken from DIC</param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.AvailabilityController.GetData(System.String,System.String,System.String,System.String,System.String,System.String)">
+             <summary>
+                 Data availability queries
+             </summary>
+             <remarks>
+                 See which data would match a query, without actually retrieving these data.
+            
+                 This can be used, for example, to build a data query form that enables users of the UI to create a data query by selecting dimension values. 
+                 For example the user is able to click 'Reporting Country' and then select the codes 'United Kingdom', 'Greece', and 'Switzerland'.
+            
+                 The query returns a <code>Constraint</code>, i.e. structural metadata, and is therefore similar to the other structural metadata queries but 
+                 the query itself is more akin to a data query.
+             </remarks>
+             <param name="context"></param>
+             <param name="agencyId">
+                 <p>The maintainer(s) of the artefacts.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+             </param>
+             <param name="resourceId">
+                 <p>The artefact ID(s).</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+             </param>
+             <param name="version">
+                 <p>The version(s) of the artefact.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                 <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                 <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+             </param>
+             <param name="key">
+                 <p>The combination of dimension values identifying series or slices of the cube (for example <code>D.USD.EUR.SP00.A</code>).</p>
+                 <p>Multiple values are possible. Wildcards are supported using <code>*</code> (<code>D.*.EUR.SP00.A</code>).</p>
+             </param>
+             <param name="componentId">
+                 <p>The ID of the dimension for which to obtain availability information.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available dimensions.</p>
+             </param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.AvailabilityController.PostAvailableConstraintData(System.String,System.String,System.String,System.String,System.String,System.String)">
+             <summary>
+                 Data availability queries
+             </summary>
+             <remarks>
+                 Same applicability as the GET method.
+                 The POST method is used to include the 'key' argument in the body of query in order to workaround URL size limitations.
+            
+                 Use and set the Content-Type HTTP header to <code>application/x-www-form-urlencoded</code>
+             </remarks>
+             <param name="context"></param>
+             <param name="agencyId">
+                 <p>The maintainer(s) of the artefacts.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+             </param>
+             <param name="resourceId">
+                 <p>The artefact ID(s).</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+             </param>
+             <param name="version">
+                 <p>The version(s) of the artefact.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                 <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                 <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+             </param>
+             <param name="key">
+                 <p>The combination of dimension values identifying series or slices of the cube (for example <code>D.USD.EUR.SP00.A</code>).</p>
+                 <p>Multiple values are possible. Wildcards are supported using <code>*</code> (<code>D.*.EUR.SP00.A</code>).</p>
+             </param>
+             <param name="componentId">
+                 <p>The ID of the dimension for which to obtain availability information.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available dimensions.</p>
+             </param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.AvailableController.GetData(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get information about data availability
+            </summary>
+            <param name="flowRef">The <strong>statistical domain</strong> (aka dataflow) of the data to be returned.</param>
+            <param name="key">The (possibly partial) <strong>key identifying the data to be returned</strong>.</param>
+            <param name="providerRef">The <strong>provider of the data</strong> to be retrieved.</param>
+            <param name="componentIds">The id of the Dimension for which to obtain availability information about. Use all to indicate that data availability should be provided for all dimensions.</param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.AvailableController.PostAvailableConstraintData(System.String,System.String,System.String,System.String)">
+             <summary>
+             Get information about data availability
+             </summary>
+             <remarks>
+             Same applicability as the GET method.
+             The POST method is used to include the 'key' argument in the body of query in order to workaround URL size limitations.
+            
+             Use and set the Content-Type HTTP header to <code>application/x-www-form-urlencoded</code>
+             </remarks>
+             <param name="flowRef">The <strong>statistical domain</strong> (aka dataflow) of the data to be returned.</param>
+             <param name="key">The (possibly partial) <strong>key identifying the data to be returned</strong>.</param>
+             <param name="providerRef">The <strong>provider of the data</strong> to be retrieved.</param>
+             <param name="componentIds">The id of the Dimension for which to obtain availability information about. Use all to indicate that data availability should be provided for all dimensions.</param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.DataController.GetGenericData(System.String,System.String,System.String)">
+            <summary>
+            Get data
+            </summary>
+            <param name="flowRef">The <strong>statistical domain</strong> (aka dataflow) of the data to be returned.</param>
+            <param name="key">The (possibly partial) <strong>key identifying the data to be returned</strong>.</param>
+            <param name="providerRef">The <strong>provider of the data</strong> to be retrieved.</param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.DataController.PostGenericData(System.String,System.String,System.String)">
+             <summary>
+             Get data
+             </summary>
+             <remarks>
+             Same applicability as the GET method.
+             The POST method is used to include the 'key' argument in the body of query in order to workaround URL size limitations.
+            
+             Use and set the Content-Type HTTP header to <code>application/x-www-form-urlencoded</code>
+             </remarks>
+             <param name="flowRef">The <strong>statistical domain</strong> (aka dataflow) of the data to be returned.</param>
+             <param name="key">The (possibly partial) <strong>key identifying the data to be returned</strong>.</param>
+             <param name="providerRef">The <strong>provider of the data</strong> to be retrieved.</param>
+        </member>
+        <member name="T:NSIWebServiceCore.Controllers.DataV2Controller">
+            <summary>
+            The endpoints for the data queries fro the SDMX REST 2.0.
+            </summary>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.DataV2Controller.#ctor(Estat.Sri.Ws.Rest.IDataResource)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NSIWebServiceCore.Controllers.DataV2Controller"/>.
+            </summary>
+            <param name="dataResource">taken from DIC</param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.DataV2Controller.GetGenericData(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Data queries
+            </summary>
+            <remarks>
+                <p>Data queries allow <strong>retrieving statistical data</strong>.</p> 
+                <p>Entire datasets can be retrieved or individual observations, or anything in between, using filters on dimensions (including time), attributes and/or measures.</p> 
+                <p>All data matching a query can be retrieved or only the data that has changed since the last time the same query was performed.</p> 
+                <p>Using the <em>includeHistory</em> parameter, it is also possible to retrieve previous versions of the data.</p>
+                <p>Last but not least, the data retrieved can be packaged in different ways (as time series, cross-sections or as a table), in a variety of formats (JSON, XML, CSV, etc.).</p>
+            </remarks>
+            <param name="context"></param>
+            <param name="agencyId">
+                <p>The maintainer(s) of the artefacts.</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+            </param>
+            <param name="resourceId">
+                <p>The artefact ID(s).</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+            </param>
+            <param name="version">
+                <p>The version(s) of the artefact.</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+            </param>
+            <param name="key">
+                <p>The combination of dimension values identifying series or slices of the cube (for example <code>D.USD.EUR.SP00.A</code>).</p>
+                <p>Multiple values are possible. Wildcards are supported using <code>*</code> (<code>D.*.EUR.SP00.A</code>).</p>
+            </param>
+        </member>
+        <member name="M:NSIWebServiceCore.Controllers.DataV2Controller.PostGenericData(System.String,System.String,System.String,System.String,System.String)">
+             <summary>
+                 Data queries
+             </summary>
+             <remarks>
+                 Same applicability as the GET method.
+                 The POST method is used to include the 'key' argument in the body of query in order to workaround URL size limitations.
+            
+                 Use and set the Content-Type HTTP header to <code>application/x-www-form-urlencoded</code>
+             </remarks>
+             <param name="context"></param>
+             <param name="agencyId">
+                 <p>The maintainer(s) of the artefacts.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+             </param>
+             <param name="resourceId">
+                 <p>The artefact ID(s).</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+             </param>
+             <param name="version">
+                 <p>The version(s) of the artefact.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                 <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                 <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+             </param>
+             <param name="key">
+                 <p>The combination of dimension values identifying series or slices of the cube (for example <code>D.USD.EUR.SP00.A</code>).</p>
+                 <p>Multiple values are possible. Wildcards are supported using <code>*</code> (<code>D.*.EUR.SP00.A</code>).</p>
+             </param>
+        </member>
+        <member name="T:Estat.Sri.Ws.NSIWebServiceCore.Controllers.RegistryController">
+            <inheritdoc />
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.GetStructureWithFilter(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Item Scheme queries
+            </summary>
+            <remarks>
+                Item queries extend structure queries by allowing to retrieve items in item schemes such as particular codes in a codelist.
+            </remarks>
+            <param name="structure">
+                <p>The type of item scheme (e.g. codelist, agencyscheme, etc.)</p>
+            </param>
+            <param name="agencyId">
+                <p>The agency maintaining the artefact to be returned.</p>
+                <p>It is possible to set more than one agency, using <code>+</code> as separator (e.g. BIS+ECB).</p>
+                <p>The keyword <code>all</code> can be used to indicate that artefacts maintained by any maintenance agency should be returned.</p>
+            </param>
+            <param name="resourceId">
+                <p>The id of the artefact to be returned.</p>
+                <p>It is possible to set more than one id, using <code>+</code> as separator (e.g. CL_FREQ+CL_CONF_STATUS).</p>
+                <p>The keyword <code>all</code> can be used to indicate that any artefact of the specified resource type, {agencyID} and {version} should be returned.</p>
+            </param>
+            <param name="version">
+                <p>The version of the artefact to be returned.</p>
+                <p>It is possible to set more than one version, using <code>+</code> as separator (e.g. 1.0+2.1).</p>
+                <p>The keyword <code>all</code> can be used to return all versions of the matching resource.</p>
+                <p>The keyword <code>latest</code> can be used to return the latest production version of the matching resource.</p>
+            </param>
+            <param name="itemId">
+                <p>The id of the item to be returned.</p>
+                <p>It is possible to set more than one id, using <code>+</code> as separator (e.g. A+Q+M).</p>
+                <p>The keyword <code>all</code> can be used to return all items of the matching resource.</p>
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.GetStructure(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get data structures
+            </summary>
+            <param name="structure">
+                <p>The type of the structure (e.g. dataflow, datastructure, etc.)</p>
+            </param>
+            <param name="agencyId">
+                <p>The agency maintaining the artefact to be returned.</p>
+                <p>It is possible to set more than one agency, using <code>+</code> as separator (e.g. BIS+ECB).</p>
+                <p>The keyword <code>all</code> can be used to indicate that artefacts maintained by any maintenance agency should be returned.</p>
+            </param>
+            <param name="resourceId">
+                <p>The id of the artefact to be returned.</p>
+                <p>It is possible to set more than one id, using <code>+</code> as separator (e.g. CL_FREQ+CL_CONF_STATUS).</p>
+                <p>The keyword <code>all</code> can be used to indicate that any artefact of the specified resource type, {agencyID} and {version} should be returned.</p>
+            </param>
+            <param name="version">
+                <p>The version of the artefact to be returned.</p>
+                <p>It is possible to set more than one version, using <code>+</code> as separator (e.g. 1.0+2.1).</p>
+                <p>The keyword <code>all</code> can be used to return all versions of the matching resource.</p>
+                <p>The keyword <code>latest</code> can be used to return the latest production version of the matching resource.</p>
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.Store">
+            <summary>
+            Append the specified structure stream.
+            </summary>
+            <returns>The <see cref="T:Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging.Message" />.</returns>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.Replace(System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces the specified structure stream.
+            </summary>
+            <param name="structure">The structure.</param>
+            <param name="agencyId">The agency identifier.</param>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="version">The version.</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.Patch(System.String,System.String,System.String,System.String)">
+            <summary>
+            Patches the specified structure stream.
+            </summary>
+            <param name="structure">The structure.</param>
+            <param name="agencyId">The agency identifier.</param>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="version">The version.</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureController.Delete(System.String,System.String,System.String,System.String)">
+            <summary>
+            Deletes the specified structure.
+            </summary>
+            <param name="structure">The structure.</param>
+            <param name="agencyId">The agency identifier.</param>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="version">The version.</param>
+        </member>
+        <member name="T:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller">
+            <summary>
+            The endpoints for the structure queries fro the SDMX REST 2.0.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.#ctor(Estat.Sri.Ws.Rest.IStructureResource,Estat.Sri.Sdmx.MappingStore.Retrieve.Helper.IStructureServiceUriHelper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller"/>
+            </summary>
+            <param name="structureResource">taken from DIC</param>
+            <param name="structureServiceUriHelper">taken from DIC</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.GetStructureWithFilter(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Item Scheme queries
+            </summary>
+            <remarks>
+                Item queries extend structure queries by allowing to retrieve items in item schemes such as particular codes in a codelist.
+            </remarks>
+            <param name="structure"></param>
+            <param name="agencyId">
+                <p>The maintainer(s) of the artefacts.</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+            </param>
+            <param name="resourceId">
+                <p>The artefact ID(s).</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+            </param>
+            <param name="version">
+                <p>The version(s) of the artefact.</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+            </param>
+            <param name="itemId">
+                <p>The id of the item to be returned.</p>
+                <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all items.</p>
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.GetStructure(System.String,System.String,System.String,System.String)">
+             <summary>
+                 Structure queries
+             </summary>
+             <remarks>
+                 Structure queries allow <strong>retrieving structural metadata</strong>.
+            
+                 Structure queries in SDMX allow you to retrieve structural metadata at various levels of granularity,
+                 from all structural metadata available in the source to a single code from a particular version of a particular codelist maintained by a particular agency.
+             </remarks>
+             <param name="structure"></param>
+             <param name="agencyId">
+                 <p>The maintainer(s) of the artefacts.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available maintainers.</p>
+             </param>
+             <param name="resourceId">
+                 <p>The artefact ID(s).</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+             </param>
+             <param name="version">
+                 <p>The version(s) of the artefact.</p>
+                 <p>Multiple values are possible (separated by commas) and <code>*</code> can be used as shortcut to select all available artefacts.</p>
+                 <p><code>+</code> can be used to retrieve the latest stable version.</p>
+                 <p><code>~</code> can be used to retrieve the latest version, regardless of its status (stable, draft, etc.).</p>
+             </param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.Store">
+            <summary>
+            Append the specified structure stream.
+            </summary>
+            <returns>The <see cref="T:Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging.Message" />.</returns>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.Replace(System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces the specified structure stream.
+            </summary>
+            <param name="structure">The structure.</param>
+            <param name="agencyId">The agency identifier.</param>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="version">The version.</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.Controllers.StructureV2Controller.Delete(System.String,System.String,System.String,System.String)">
+            <summary>
+            Deletes the specified structure.
+            </summary>
+            <param name="structure">The structure.</param>
+            <param name="agencyId">The agency identifier.</param>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="version">The version.</param>
+        </member>
+        <member name="T:Estat.Sri.Ws.NSIWebServiceCore.HealthCheck.DisseminationDbHealthCheck">
+            <summary>
+            DisseminationDb health check.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.HealthCheck.DisseminationDbHealthCheck.#ctor(Estat.Sri.Ws.Configuration.SettingsFromConfigurationManager)">
+            <summary>
+            DisseminationDb health check.
+            </summary>
+            <param name="settingsFromConfigurationManager">Settings from configurationManager.</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.HealthCheck.DisseminationDbHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
+            <summary>
+            Check health.
+            </summary>
+            <param name="context">Context.</param>
+            <param name="cancellationToken">CancellationToken.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.HealthCheck.NsiHealthCheckOptions.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Ws.NSIWebServiceCore.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.app_copyright">
+            <summary>
+              Looks up a localized string similar to Copyright (c) 2009 by the European Commission, represented by Eurostat..
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.app_description">
+            <summary>
+              Looks up a localized string similar to NSI Web Service provider.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.app_version">
+            <summary>
+              Looks up a localized string similar to v{0}.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.help_external">
+            <summary>
+              Looks up a localized string similar to This page appears to be have been requested using an external (internet) host name or IP address. External should be able to access the endpoints configured for NSI Web Service using one of the above URLs..
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.help_localhost">
+            <summary>
+              Looks up a localized string similar to &lt;b&gt;Warning.&lt;/b&gt; This page appears to have been requested using a local or internal host name or IP. The above endpoints are not accessible from external users. Please contact your network administrator to retrieve the external hostname or IP for this web service..
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.help_not_external">
+            <summary>
+              Looks up a localized string similar to &lt;b&gt;Warning.&lt;/b&gt; This page appears to have been requested using a local or internal host name or IP. The above endpoint URL might not be accessible from external users. Please contact your network administrator to retrieve the external hostname or IP for this web service..
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.index_page_title">
+            <summary>
+              Looks up a localized string similar to NSI Web Service - Index page.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoint_name">
+            <summary>
+              Looks up a localized string similar to Service Name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoint_namespace">
+            <summary>
+              Looks up a localized string similar to Namespace.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoint_path">
+            <summary>
+              Looks up a localized string similar to Endpoint path.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoint_wsdl">
+            <summary>
+              Looks up a localized string similar to WSDL link.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoint_xsd">
+            <summary>
+              Looks up a localized string similar to XML Schema path.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_endpoints_info">
+            <summary>
+              Looks up a localized string similar to Endpoints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_estatv20">
+            <summary>
+              Looks up a localized string similar to SDMX v2.0 with Eurostat extensions.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_estatv20_wcf">
+            <summary>
+              Looks up a localized string similar to Standard SDMX v2.0 with Eurostat extensions (No extra element).
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_remarks">
+            <summary>
+              Looks up a localized string similar to Remarks.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_host">
+            <summary>
+              Looks up a localized string similar to Requested Host/IP.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_info">
+            <summary>
+              Looks up a localized string similar to Request information.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_is_external">
+            <summary>
+              Looks up a localized string similar to Is usable from external users.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_port">
+            <summary>
+              Looks up a localized string similar to Port.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_property">
+            <summary>
+              Looks up a localized string similar to Property.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_root_url">
+            <summary>
+              Looks up a localized string similar to Root URL.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_request_value">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_rrv21">
+            <summary>
+              Looks up a localized string similar to SDMX v2.1 Registry.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_stdv20">
+            <summary>
+              Looks up a localized string similar to Standard SDMX v2.0.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_stdv20_wcf">
+            <summary>
+              Looks up a localized string similar to Standard SDMX v2.0 (No extra element).
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.label_stdv21">
+            <summary>
+              Looks up a localized string similar to Standard SDMX v2.1.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.lable_endpoint_link_wsdl">
+            <summary>
+              Looks up a localized string similar to WSDL.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Ws.NSIWebServiceCore.Messages.lable_endpoint_link_xsd">
+            <summary>
+              Looks up a localized string similar to SDMXMessage.xsd.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.SoapHelper.BigRequestHandler``1(``0,Microsoft.AspNetCore.Http.HttpContext,Org.Sdmxsource.Sdmx.Api.Util.IReadableDataLocation,Estat.Sri.Ws.Controllers.Constants.SoapOperation)">
+            <summary>
+            Use a temporary file to store the SDMX part of the request, this is for SubmitStructure or Registry Interface requests
+            </summary>
+            <typeparam name="TSoapService">The SDMX SOAP Service type</typeparam>
+            <param name="soapService">The SOAP service</param>
+            <param name="outputStream">The output stream</param>
+            <param name="soapRequestLocation">The SOAP request location</param>
+            <param name="operation">The SOAP operation</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.SoapHelper.SmallRequestHandler``1(``0,Microsoft.AspNetCore.Http.HttpContext,Org.Sdmxsource.Sdmx.Api.Util.IReadableDataLocation,Estat.Sri.Ws.Controllers.Constants.SoapOperation)">
+            <summary>
+            Use a memory buffer to store the SDMX part of the request, this is for normal structure or data queries
+            </summary>
+            <typeparam name="TSoapService">The SDMX SOAP Service type</typeparam>
+            <param name="soapService">The SOAP service</param>
+            <param name="outputStream">The output stream</param>
+            <param name="soapRequestLocation">The SOAP request location</param>
+            <param name="operation">The SOAP operation</param>
+        </member>
+        <member name="M:Estat.Sri.Ws.NSIWebServiceCore.SoapHelper.GetSoapOperation(System.String,Org.Sdmxsource.Sdmx.Api.Util.IReadableDataLocation)">
+            <summary>
+            Get the SOAP operation
+            </summary>
+            <param name="soapServiceNamespace">The SOAP service namespace</param>
+            <param name="soapRequestLocation">The SOAP request location</param>
+            <returns></returns>
+        </member>
+        <member name="T:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata">
+            <summary>
+            The WebServiceInfo interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Description">
+            <summary>
+                Gets the description
+            </summary>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Enabled">
+            <summary>
+            Gets a value indicating whether this <see cref="!:NsiStdV20WebServiceMetadata"/> is enabled.
+            </summary>
+            <value>
+              <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Name">
+            <summary>
+                Gets the Name
+            </summary>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Namespace">
+            <summary>
+                Gets the Namespace
+            </summary>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Order">
+            <summary>
+            Gets the order.
+            </summary>
+            <value>
+            The order.
+            </value>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.RoutePrefix">
+            <summary>
+            Gets the route prefix.
+            </summary>
+            <value>
+            The route prefix.
+            </value>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.SchemaPath">
+            <summary>
+                Gets the SDMXMessage.XSD path
+            </summary>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.ServiceType">
+            <summary>
+            Gets the type of the service.
+            </summary>
+            <value>
+            The type of the service.
+            </value>
+        </member>
+        <member name="P:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.WsdlPath">
+            <summary>
+            Gets the WSDL path.
+            </summary>
+            <value>
+            The WSDL path.
+            </value>
+        </member>
+        <member name="M:Estat.Nsi.DataDisseminationWS.WebServices.IWebServiceMetadata.Register">
+            <summary>
+            Registers this instance.
+            </summary>
+        </member>
+        <member name="T:Estat.Nsi.DataDisseminationWS.WebServices.WebServiceType">
+            <summary>
+            The web service type.
+            </summary>
+        </member>
+        <member name="F:Estat.Nsi.DataDisseminationWS.WebServices.WebServiceType.Rest">
+            <summary>
+            The rest
+            </summary>
+        </member>
+        <member name="F:Estat.Nsi.DataDisseminationWS.WebServices.WebServiceType.Soap">
+            <summary>
+            The SOAP
+            </summary>
+        </member>
+        <member name="F:Estat.Nsi.DataDisseminationWS.WebServices.WebServiceType.AsmxSoap">
+            <summary>
+            The ASMX SOAP
+            </summary>
+        </member>
+    </members>
+</doc>

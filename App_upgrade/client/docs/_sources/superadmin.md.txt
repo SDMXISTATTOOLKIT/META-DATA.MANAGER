@@ -1,0 +1,31 @@
+# Superadmin credentials
+
+The SuperUser is configured from the configuration file with the value "**Superadmin**". \
+This allows the SuperUser to access the System with predefined credentials and configure the Suite. \
+The SuperUser can modify his profile in terms of username and password or delete the default profile and generate a new one. 
+
+**Login with the SuperUser profile**.
+
+Once the user enters the [**Welcome Mask**](Home.md) of the Suite, he can access the **_Application_** item of interest in the left menu starting from the Configuration item.
+
+![Application](_static/img/Configurazione.PNG "Application")
+
+Selecting the function Application, the system asks for authentication of the SuperUser who has the credentials which make him able to configure the application management. 
+
+![SuperUser](_static/img/Superutente.PNG "SuperUser")
+
+The user sets the SuperUser credentials and presses the **Login** button which is activated once the User and Password have been set in the appropriate edit fields.
+
+**Edit SuperUser profile**.
+
+After entering the credentials, the system will open the management mask of the application configuration by clicking on the section "**User interface**". \
+By selecting the section "**SuperUser credentials**" it is possible to change the password and, if necessary, create an additional SuperUser, using the appropriate button. \
+The need to add more than one SuperUser is subject to the organization within the institution or entity that uses the Suite.
+
+![Edit SuperUser](_static/img/ModificaSuperutente.PNG " Edit SuperUser")
+
+
+
+
+
+

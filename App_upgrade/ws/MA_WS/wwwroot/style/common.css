@@ -1,0 +1,35 @@
+#main {
+	overflow-x: auto;
+	overflow-y: scroll;
+	height: 600px;
+}
+
+.disable {
+	pointer-events: none;
+	opacity: 0.4;
+	color: gray;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+	color: darkred;
+	font-style: oblique;
+}
+
+.success {
+	color: darkgreen;
+	font-style: oblique;
+}
+
+option {
+	color: black;
+}
+
+option[disabled] {
+	color: black;
+}
+
+.step3input {}

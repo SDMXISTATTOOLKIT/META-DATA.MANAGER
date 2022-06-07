@@ -1,0 +1,23 @@
+# Content Constraints
+
+Selecting **Content Constraints** from the "Meta Manager" module, the application displays the list of Content Constraints of the Node similarly to the lists of all artefacts present, as explained in [list of artefacts](artefact_lists.md). \
+Selecting an item in the list with the mouse and pressing the View/Edit button, the system displays the Detail mask. 
+
+ ![Content Constraints](_static/img/content_constraints.PNG "Content Constraints")
+ 
+The main section of the Content Constraints detail mask contains the following tabs:
++ [**General**](section_general.md)
++ **Constraint Elements** \
+In this tab it is possible to insert/edit the type of artefact to which the CC is associated (DSD or Dataflow) and to choose the desired artefact from a dynamic list that will show all those available for use in the System. 
+ 
+ ![Elements Content Constraints](_static/img/elementi_concost.PNG "Elements Content Constraints")
+ 
+Once the artefact to be associated with the CC has been determined, the System will display a series of tabs below (one for each dimension or attribute present in the selected artefact). \
+In each tab from left to right the user will find the possible values of the dimension or attribute linked to that tab and will be able to add filters according to his needs. \
+Keep in mind that the choices made in one tab affect the items shown in the following tabs, so for example it may happen that, according to the choices made in the previous tabs, only one item can be chosen for the Sex dimension (e.g. Male). \
+This implementation choice has been made to avoid the creation of inconsistent filter combinations. 
+
++ **Release Calendar**
+
+![Release Calendar](_static/img/calendario_rilascio.PNG "Release Calendar")
+

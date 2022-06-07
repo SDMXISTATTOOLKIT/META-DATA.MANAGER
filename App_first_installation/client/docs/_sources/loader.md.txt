@@ -1,0 +1,69 @@
+# Loader
+
+The system displays the mask for choosing the mapping and for acquiring data from CSV or SDMX-ML files.
+The required fields for loading from CSV file are:
+- *Mapping* (mandatory, to be chosen from a list) 
+- *Import type* (mandatory, to be chosen from a list)
+- *File* (mandatory)
+- *Separator* (mandatory, it is pre-set with ";")
+- *Delimiter* (optional)
+- *Flag "Has header "* (optional, the default is ON)
+- *Flag "Format .Stat "* (optional, the default is OFF)
+
+![Loading](_static/img/loader_1.PNG "Loading")
+
+The user can select the mapping by opening the list of mappings by clicking on the "+" in the list box, which will be populated with the chosen mapping.  \
+In the field "Import type" the user sets the type of loading between the values:
+- Series and Data
+- data
+- Series
+
+Generally, the loading includes both the series and the data, but the user may choose to load the series first (e.g. for control) and then the data.
+
+If only the data is loaded, the series must already be present, which is useful when updating the data.
+
+The other fields for loading the csv are similar to those provided in the "File Mapping". \
+Once all mandatory fields have been filled in the "Load CSV" button will be activated. \
+After loading the csv it is possible to view the data ("Show Dataset" button) , moreover the "Import Data" button is activated to complete the loading. 
+
+The "Embargo" function is available to deny the display of the loaded data.
+
+![Embargo](_static/img/loader_2.PNG "Embargo")
+
+The embargo can be removed manually with the "Remove Embargo" button from the "Cubes List" item. \
+Otherwise it can be removed automatically by selecting the "Automatic data release" and a release date (functionality not active at the moment). \
+The "Regenerate CC+Transcoding" flag allows the loading of a data item recreating also the Transcoding and the Content Constraint if they are already present. \
+The system, during the importation process, checks for errors in consistency, formatting and correctness of the CSV file. 
+If not, an error message is displayed.
+
+![Loading Error](_static/img/loader_3.PNG "Loading Error")
+
+Moreover the import is blocked when there are two duplicate rows in the csv file but with different OBS_VALUE. 
+
+![Error loading duplicate observations](_static/img/loader_4.PNG "Error loading duplicate observations")
+
+User can also download the report with the details of the error. \
+Finally, there are cases (e.g. reference to a code that does not exist in a codelist) in which, despite the presence of errors, the process still ends successfully, 
+with a certain number of rows being discarded. The report details the discarded lines and, for each of them, the first error encountered. 
+In this case, in addition to the report, it is also possible to download a csv file containing all the rows with errors that have been discarded.
+
+![Upload discarded rows](_static/img/Caricamento_righe_scartate.PNG "Upload discarded rows")
+
+Even in the case of a successful import, the system displays a pop-up window with the details of the import and the possibility of downloading the report.
+
+![Upload Info](_static/img/loader_5.PNG "Upload Info")
+
+The user has the possibility to upload a file in "SDMX-ML" format. In this case, the following mask is available for data entry:
+
+![Loading SDMX-ML](_static/img/loader_6.PNG "Loading SDMX-ML")
+
+In this case the loading is done by choosing a Cube and an SDMX file containing the data. \
+Pressing "+" in the list box "Cube" the System shows the Category Scheme tree for selecting the Cube, 
+while pressing "+" in the list box "File" allows the user to search for the SDMX file in the filesystem. \
+The third mandatory field is the "Import Type" analogous to loading CSV files. \
+Once the mandatory fields are populated the "Load XML" button is activated, if the loading is successful the "Import data" button is activated 
+and the user can carry out the import. \
+Also for the loading from SDMX it is possible not to visualize the loaded data by selecting "Embargo" and to recreate Transcoding and Content Constraint
+ by activating the flag the "Regenerate CC+Transcoding" flag.
+
+

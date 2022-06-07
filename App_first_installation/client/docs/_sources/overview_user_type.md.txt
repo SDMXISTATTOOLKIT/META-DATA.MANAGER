@@ -1,0 +1,24 @@
+# Login and User Types
+
+_**Login**_ \
+In order to access the application functions in read and write mode, the profiled user (administrator and/or user of the node) must choose the node for which he is profiled, the desired language and log in. \
+Selecting the **Login** button, located in the top right-hand corner of the [Welcome Mask](Home.md), the System asks the user to enter his username and password in order to login.
+
+![Login](_static/img/login.PNG "Login")
+
+To access the application functions there are different **types of user**:
++ SUPERUSER \
+User dedicated to the System initialisation, to Application Configuration management(e.g. connections to nodes) and to the definition of other super-users. 
++ ADMINISTRATOR
+User dedicated to the complete management of the Suite at node level. \
+If the administrator user has been set as user manager, he can also define new users (also administrators) and manage the users at single node level.
++ USER
+Accesses the System through login (user and password). \
+Has read and write permissions to manage Artifacts relative to the Agency for which he has been profiled by the System Administrator at node level.
++ ANONYMOUS USER
+Accesses the System without logging in and therefore no credentials are provided for this user. \
+It has only read permissions on the SDMX Artifacts for the various nodes with the possibility of downloading Artifacts in the Meta Manager. \
+It can perform read-only access (search and display) to DCAT modules. \
+Does not have access by default to the Data Manager application.
+
+

@@ -1,0 +1,11 @@
+# Data management
+
+This section allows the user to define:
++ **The standard prefix of the Cube's identifier (ID)** \
+This prefix will be set in the creation mask of the Cube and cannot be modified.
++ **Data Languages** \
+Language of the data processed in the management phase of Names, Descriptions and Annotations.
++ **Maximum length of multi-line fields** \
+Maximum number of editable characters of multi-line fields such as Descriptions and Annotations. 
+
+![Data Management](_static/img/Conf_dati.PNG "Data Management")

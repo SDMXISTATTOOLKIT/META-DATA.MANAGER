@@ -1,0 +1,43 @@
+## Basic information about SDMX
+
+**What is SDMX?**
+
+SDMX (Statisical Data and Metadata eXchange) is a collaboration of some of the most important international organisations with the aim of encouraging and improving the exchange and sharing of statistical data and metadata. \
+SDMX is: 
+* A Logical Model used to describe statistical data and also providing guidelines on how to structure the content.
+* An Architecture which enables efficient automated machine-to-machine exchange and sharing of data and metadata.
+* A technology that supports standardised information and methodological tools that can be used by all those involved in data exchange and processing.
+
+**Which benefits does it bring?**
+
+By accepting the use of a common description of the data, it is then used as a parameter guiding the exchange and processing of the data. \
+Data descriptions are made available to all, so that those interested in a certain topic can understand and use the data for different purposes. \
+SDMX is the leap from diverse and complex exchange systems to a common, harmonised and standardised exchange system.
+
+**The Standard**
+
+SDMX provides a way to model statistical data, structural metadata and the data exchange process and also defines a model for further explanatory metadata, the so-called reference metadata, which are generally in textual format. \
+In order to describe and document data, the standard refers to entities (in SDMX "**artefacts**") that are organised in such a way as to represent and refer to the data appropriately: \
+The **Id**, **agency** and **version** are the three identifying elements of an SDMX artefact. \
+The **Id** is the identification code of the artefact. \
+**Agency** is the name of the organisation that is the creator and/or owner of the artefact. \
+**Version** gives the version of the artefact. In particular, if the artefact is finalised, it is not possible to modify it unless a new version of the artefact is created.
+
+The main artefacts used to describe data and statistical metadata are:
+ 
+>**Dataflow**: structure describing the content of a dataset that the producing organisation provides for different reference time periods.
+
+> The characterising element of Dataflow, is the **Data Structure Definition (DSD)** as it defines the constitutive structure in terms of components (dimensions, attributes, measures).
+
+**NOTE**: \
+Remember that the **_Dimensions_** are qualitative characteristics of the statistical units (e.g. reference period, reporting country, frequency, gender, ...). \
+**_Attributes_** represent a qualitative characteristic of the observed data (confidentiality, status, version, decimals, unit of measure, table title, ...), while **_Measures_** are the values of the observations.
+
+>**Concept Scheme**: is a grouping of concepts that refer to the components (dimensions, attributes, measures) of the DSD.
+
+>**Code List**: is a list of codes associated to components (dimensions and coded attributes) of the DSD.
+
+>**Category Scheme**: is a set of categories, hierarchically organised, that classify Dataflows.
+
+These and other artefacts will be the focus of the **'Data & Meta Manager'** tool.
+

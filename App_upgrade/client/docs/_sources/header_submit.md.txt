@@ -1,0 +1,5 @@
+# Structures default header submit
+
+This section allows the user to parameterize the information related to a submit operation with reference to the sender and receiver prefixes, submit id, data submit of a Dataflow Builder header.
+
+![Structures Default header submit](_static/img/Conf_header_submit.PNG "Structures Default header submit")

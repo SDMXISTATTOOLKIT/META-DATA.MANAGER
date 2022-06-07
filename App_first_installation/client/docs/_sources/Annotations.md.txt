@@ -1,0 +1,42 @@
+# Annotations
+
+Annotations are available for all artefacts and items within artefacts. \
+This construct allows information to be added to metadata. \
+Individual organisations are free to use them in any way and with any combination as desired, using the field Type as "key" to the type of Annotation. \
+They can be divided into three major groups:
+* **General**: \
+They are not configured, their presence is not displayed in the List of artefacts and/or List of Items, but to see them and/or insert them the user must access the detail of the artefact or item. 
+During insertion the user must fill in the following items to comply with the sdmx standard:
+   + id (mandatory)
+   + title (not mandatory)
+   + type (mandatory)
+   + text (not mandatory)
+   
+![Annotations](_static/img/annotazioni_generale.PNG "Annotations")
+
+   The insertion of these annotations presupposes the existence, outside the Suite, of an application (Data Viewer) capable of interpreting these annotations, with their specific TYPE, according to the needs of the user who inserted them. 
+
+* **Custom**: \
+These Annotations are configured at Node level and allow the operator to acquire a collection of different Annotations in a more complex form. \
+This type of Annotation, for example, can be used to group together annotations already defined for some specific purpose in order to guide the user in their compilation. 
+
+![Annotations](_static/img/annotazioni_custom2.PNG "Annotations")
+
+* **Working**: \
+This type of annotations are used internally by the system, such as those that define the order of items (e.g. in a codelist). \
+Others, e.g. some of those defined by OECD, are used to give indications on the presentation layout of the tabular display of data in an external viewer. 
+
+![Annotations](_static/img/annotazioni_layout.PNG "Annotations")
+ 
+As shown in the above example figure we are not explicitly giving annotation types, it is the System that interprets the (layout) choices made by the operator and adds them to the artefact involved:
+
+![Annotations](_static/img/annotazioni_oecd2.PNG "Annotations")
+
+the correct annotations among those predefined by the SuperUser at the level of this Node during configuration. 
+
+![Annotations](_static/img/annotazioni_OECD.PNG "Annotations")
+
+**NOTE** \
+Unlike **General** annotations which are not visible in the artefact lists, **Custom** and **Work** annotations defined for an artefact are shown in the artefact list management mask at row level, with white symbol for Custom Annotation and orange symbol for OECD type annotation:
+
+![Annotations](_static/img/annotazioni_visualizza.PNG "Annotations").

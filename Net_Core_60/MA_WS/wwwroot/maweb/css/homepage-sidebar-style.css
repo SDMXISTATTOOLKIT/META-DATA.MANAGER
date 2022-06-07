@@ -1,0 +1,51 @@
+
+ .sidebar-container{
+    position: relative;
+  }
+
+  .sidebar-container i{
+    padding: 5px;
+  }
+
+ .home-page-sidebar{
+    width: 300px;
+    transform: translateY(10%);  
+  }
+
+  .home-page-sidebar h1{
+    color: #114292;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  .home-page-sidebar hr { 
+
+  }
+
+  .sidebar-links{
+    color: #114292;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .sidebar-links .link{
+    color: #114292;
+  }
+
+ .ant-modal-close {
+     cursor: pointer;
+     border: 0;
+     background: transparent;
+     position: absolute;
+     right: -40px!important;
+     top: 0;
+     z-index: 10;
+     font-weight: 700;
+     line-height: 1;
+     text-decoration: none;
+     transition: color .3s ease;
+     color: rgba(0, 0, 0, 0.43);
+     outline: 0;
+ }
+

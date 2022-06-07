@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:this="http://ec.europa.eu/eurostat/sri/authorisation/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://ec.europa.eu/eurostat/sri/authorisation/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:complexType name="ruleType">
+        <xsd:annotation>
+            <xsd:documentation>Rule</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="id" type="xsd:NCName" />
+    </xsd:complexType>
+    <xsd:complexType name="permissionsType">
+        <xsd:sequence>
+            <xsd:element name="permission" type="this:ruleType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="baseEndpointType" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>Base type for REST and SOAP</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:element name="and" type="this:permissionsType" maxOccurs="unbounded" />
+            <xsd:element name="or" type="this:permissionsType" maxOccurs="unbounded" />
+        </xsd:choice>
+        <xsd:attribute name="path" type="xsd:string" />
+        <xsd:attribute name="allowAnonymous" type="xsd:boolean" default="false" />
+    </xsd:complexType>
+    <xsd:complexType name="prefixNamespace">
+        <xsd:attribute name="prefix" type="xsd:NCName" />
+        <xsd:attribute name="namespace" type="xsd:anyURI" />
+    </xsd:complexType>
+    <xsd:complexType name="xpathType">
+        <xsd:annotation>
+            <xsd:documentation>XPath used against incoming SOAP requests</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="declare" type="this:prefixNamespace" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="script" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="restResourceType">
+        <xsd:annotation>
+            <xsd:documentation>Permission for REST resources. The path can contain templates/wildcards. The method should have the
+                HTTP Method
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="this:baseEndpointType">
+                <xsd:attribute name="method" type="xsd:NMTOKEN" default="GET" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="soapEndpointType">
+        <xsd:annotation>
+            <xsd:documentation>Permissions for SOAP endpoint</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="this:baseEndpointType">
+                <xsd:sequence>
+                    <xsd:element name="xpath" minOccurs="0" type="this:xpathType" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="rules">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="rest" type="this:restResourceType" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="soap" type="this:soapEndpointType" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

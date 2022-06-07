@@ -1,0 +1,19 @@
+# Search an existing Artefact
+
+The search function is necessary for the management of Artefact lists with a high number of elements.
+
+Once the desired [list of artefacts](artefact_lists.md) has been chosen, the search for an artefact in the list can be done in two ways:
+
+![Search Artefacts](_static/img/ListaArtefatti_cerca.PNG "Search Artefacts")
+
+* using the centralised mode within the mask: the function is present in the masks of the Artefacts list management and is represented
+ by an editable field that applies, already in the typing phase, in dynamic mode, the result of the search on the Artefacts list.
+
+* at column level, activating the provided search filters. \
+For the columns Agency, Version and Final, the filter shows the list of possible values. \
+For the ID and Name columns the filter allows the user sto edit a subset of characters to apply the selection to the Artifacts. \
+Once the filter value(s) has been chosen, where applicable, select the Apply function to make the selection valid. \
+The coloured filter symbol indicates that a filter is active. \
+To remove it, select the filter and then select Reset.
+
+   ![Find Artefacts](_static/img/ListaArtefatti_cerca2.PNG "Find Artefacts")

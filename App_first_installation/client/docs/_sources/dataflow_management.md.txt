@@ -1,0 +1,91 @@
+# Dataflow Management
+
+In this section we describe the functionalities available for Dataflow management:
+* **View Annotation**
+* **Publication** 
+* **Preview on the Data Browser**
+* **Preview**
+* **Additional Information**
+* **View/Edit**
+* **Download**
+* **Delete**
+
+some of these will be discussed in more detail in the following sections. 
+
+![Dataflow Management](_static/img/gestione_dataflow_1.PNG "Dataflow Management") 
+
+**Display Annotation**
+
+The presence of an annotation is indicated by the symbol "i". The click allows the user to visualize the annotation details.
+
+**Publication**
+
+It allows the user to set the Dataflow in production, see section: [How to put a Dataflow into production](put_dataflow_into_production.md)
+
+**Preview on the Data Browser**
+
+The icon is visible only if the Dataflow has been published and allows the visualization of the Dataflow with the Data Browser tool associated to the application, if present.
+
+**Preview**
+
+The information contained in the Dataflow is shown in table format with the possibility of sorting and filtering the columns or searching for items.
+
+**Additional information**
+
+The "Additional information" button allows the user to display information about the Cube and the corresponding view of the Dataflow.
+
+![Information](_static/img/gestione_dataflow_2.PNG "Information") 
+
+**View/Edit**
+
+The "View/Edit" function allows the user to view or edit a Dataflow, for this last part see section: [How to update an existing Dataflow](update_dataflow.md)
+
+The system displays all the Dataflow elements:
+- *General Data*
+- *Queries*
+- *Categorisation*
+- *Header*
+- *Layout annotations*
+
+in windows identical to those seen in the creation phase of the Dataflow. 
+
+In the mask "General data" the general information of the Dataflow are shown.
+
+![General data Dataflow](_static/img/gestione_dataflow_3.PNG "Dati generali Dataflow") 
+
+The "Query" mask displays the selected cube elements and the defined filter.
+
+![Query Dataflow](_static/img/gestione_dataflow_4.PNG "Query Dataflow") 
+
+The "Categorisation" mask displays the category to which the Dataflow is associated.
+
+![Dataflow Categorization](_static/img/gestione_dataflow_5.PNG "Dataflow Categorization") 
+
+The "Header" mask displays information about the header if it has been selected.
+
+![Header Dataflow](_static/img/gestione_dataflow_6.PNG "Header Dataflow") 
+
+**Download**
+
+The "Download" button allows the user to download the Dataflow in different formats. It is possible to download in compressed format.
+
+![Download Dataflow](_static/img/gestione_dataflow_7.PNG "Download Dataflow") 
+
+"SDMX Structure Specific v 2.1" and "SDMX-JSON" are special data download formats in which the user can select the size to be used as the observation level 
+
+![Observation level dimension](_static/img/Ob_level_dim.PNG "Observation level dimension]") 
+
+
+and get the downloaded data in the chosen form with the dimension at observation level:
+
+
+![Observation level dimension](_static/img/Ob_level_dim3.PNG "Observation level dimension]")
+ 
+Once the user has completed the mandatory fields the "Download" button is activated and he can download the dataflow.
+
+**Delete**
+
+The "Delete" button allows the user to delete a Dataflow. The System shows a pop-up mask where the user can confirm or not the operation.
+
+
+

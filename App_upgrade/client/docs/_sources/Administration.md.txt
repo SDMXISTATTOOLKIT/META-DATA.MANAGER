@@ -1,0 +1,11 @@
+# Administration
+This section of the guide will highlight the steps needed to properly configure the tool to the user's needs and the actions required to create and manage nodes containing SDMX resources and the profiling of users on these nodes.
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+
+    How to configure the application <configure_application.md>
+    Node management <nodes_management.md>
+    User and permission management <Managing_users_permissions.md>
+```

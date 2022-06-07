@@ -1,0 +1,26 @@
+# Item Management - Upload CSV file
+
+For artefacts **Concept Schemes**, **Code Lists** and **Category Schemes** it is possible to import new Items from CSV files. \
+The following example concerns the loading of Items from a Code List. \
+The technique can also be extended to Concept Schemes and Category Schemes. \
+From the Item tab the user has to select the Load csv file button.
+
+ ![Upload CSV](_static/img/item_importa_csv.PNG "Upload CSV")
+ 
+ The system opens a pop-up dialogue window in which the user sets the data required to load the CSV file from the filesystem. \
+ The upload mask contains checks to ensure that the file is imported correctly.
+ 
+  ![Load CSV](_static/img/item_importa_csv2.PNG "Load CSV")
+ 
+ The user selects the csv file and completes the insertion of the required data, setting all the information that corresponds to the content of the file itself in order to avoid errors during import phase. \
+ When the required data has been entered, the **Upload CSV** button becomes active.
+ 
+  ![Load CSV](_static/img/item_importa_csv3.PNG "Load CSV")
+  
+  Selecting the **Load CSV** button, the System checks the settings and if it does not find a match, it raises an application exception with an error message; otherwise, if it does find a match, the contents of the Code List is previewed in a synthetic table format with a subset of elements. \
+  User can choose to preview the complete contents of the file by selecting the **Full Preview** button or he can select the **Import Items** button to perform the Items import. \
+  At the end of the operation, the system notifies the successful import, closes the pop-up dialogue window and updates the list of Items in the Items section of the artefact.
+  
+ 
+
+  

@@ -1,0 +1,8 @@
+﻿{
+  "datastructure": {
+    "allowSdmx21CrossSectional": "true"
+  },
+  "categorisation": {
+    "createStubCategory": "true"
+  }
+}

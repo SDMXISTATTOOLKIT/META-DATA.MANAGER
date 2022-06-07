@@ -1,0 +1,35 @@
+# Creating a new user
+
+For user management there is a function that can be activated from the menu on the left-hand side by the administrator user (admin) of the node once the login has been carried out.
+
+![User Management](_static/img/Gestione_utenti.PNG "User Management")
+
+Selecting the item User Management the list of users present in the system, if they exist, will be shown.
+
+![User Management](_static/img/Gestione_utenti2.PNG "User Management")
+
+The list of Users defined in the system provides a tabular representation and special features for each list item. \
+The table shows the columns:
+1.	**Username** with the user key
+2.	**E-mail** with the e-mail address associated with the user.
+For each element of the list there are management functions that can be displayed by positioning the mouse on the element itself. \
+The functions available to the Administrator are:
+    + _View/Edit_ to access the detail screen
+    + _Delete_ to delete a user
+
+The list of users, if no users have been defined in the system, may be empty. \
+In this case the SuperUser must create an Administrator user. 
+
+Selecting the **Create User** button the form for the acquisition will be opened: 
+
+![Create User](_static/img/crea_utente.PNG "Create User")
+
+Mandatory fields are those provided for editing:
++ _Username_ for setting the user name (e.g.: Mario Rossi)
++ _Password_ for setting the password (e.g. pa$$word)
++ _Password_ to confirm the user password (e.g. pa$$word)
++ _E-mail_ to set the user's e-mail address (e.g. mariorossi@gmail.com).
+
+At the end of the compilation, to confirm the creation of the new user, the Administrator must click on the Save button; alternatively click on the Cancel button to cancel the operation and not create the user. \
+The Save function closes the new user insertion mask and returns to the list of users updated with the new element created.
+

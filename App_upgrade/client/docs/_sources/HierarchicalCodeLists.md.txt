@@ -1,0 +1,4 @@
+# Hierarchical Code Lists
+
+Hierarchical code lists are used to model non-exclusive hierarchies (where a child can have more than one parent). \
+At the moment Hierarchical code lists cannot be duplicated or created, but only the import from external structures import is admitted.

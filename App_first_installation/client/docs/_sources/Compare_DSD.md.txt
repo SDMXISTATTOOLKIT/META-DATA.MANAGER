@@ -1,0 +1,24 @@
+# Compare DSDs
+
+The **"Compare DSD "** function can be found in the left sidebar menu starting from the "Tools" item. \
+The function allows the user to compare two DSDs highlighting the differences between them. 
+
+ ![Compare DSD](_static/img/confronta_DSD.PNG "Compare DSD")
+ 
+The user can choose, for both DSDs, whether to take the DSD from the Structure DataBase Metadata or to load it from an external file. Obviously, when comparing two DSDs, it is also possible to choose one from the MSDB and the other from an external file to see if there are differences. \
+If loading is made from the MSDB then the user will be able to choose the DSD from a list of those available in the System:
+
+ ![First DSD](_static/img/PrimaDSD.PNG "First DSD")
+ 
+ while choosing the XML option, the user selects the file from _filesystem_:
+
+ ![Second DSD](_static/img/SecondoDSD.PNG "Second DSD")
+  
+  Once the choice of the two DSDs has been made, the System activates the **Compare** and **Generate Report** buttons. \
+  Then the user, by pressing **Compare**, can perform the comparison and obtain the result with the differences on the screen:
+
+ ![Compare DSD](_static/img/confronta_DSD2.PNG "Compare DSD")
+ 
+ and, by pressing **Generate Report**, he obtains a comparison report in txt format. 
+
+ ![DSD Report](_static/img/reportDSD.PNG "DSD Report")

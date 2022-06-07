@@ -1,0 +1,40 @@
+# Creating an administrator user
+
+Once the [Login](overview_user_type.md) has been carried out, the Administrator is able to create a [new user](new_user.md) and then profile it. \
+To profile the new user the Administrator selects the side menu item "Set Permissions". \
+The following screen is displayed:
+
+![Set Permissions](_static/img/ImpostaPermessi.PNG "Set Permissions")
+
+The Administrator has to position the mouse on the user's line (e.g. "Mario Rossi") until he intercepts the "View/Edit" icon and press the left mouse button. \
+The System displays the user's details, in the mask there are buttons that allow the explosion or compression of the folder representation for the main applications (Data Manager, Meta Manager, etc.).
+
+![Set Permissions](_static/img/PermessiMarioRossi1.PNG "Set Permissions")
+
+The Administrator who wants to profile the user as an administrator will select the checks with the Meta Manager functionalities as shown in the following figure:
+
+![Set Permissions](_static/img/PermessiMM_MarioRossi.PNG "Set Permissions")
+
+then similarly will select the functionalities of the Data Manager as shown in the following figure:
+
+![Set Permissions](_static/img/PermessiDM_MarioRossi.PNG "Set Permissions")
+
+and moreover will select the Metadata functionalities as shown in the following figure:
+
+![Set Permissions](_static/img/PermessiMR_MarioRossi2.PNG "Set Permissions")
+
+and then will enable the user to use the tools useful for artifact management:
+
+![Set Permissions](_static/img/PermessiStrumenti_MarioRossi.PNG "Set Permissions")
+
+It is also possible to give permissions on user management, although it is advisable to have a single administrator user with user management functions for each node.
+
+The "Rules" tab contains the list of actions that can be done on objects by the user. 
+
+Selecting the "Select All" button allows User Mario Rossi to perform all the functions of creation, update, deletion, import, download, display for the whole Suite as Node Administrator.
+
+In the "Agencies" tab, the Administrator can select the Agencies that will be visible to the user when processing an Artifact. \
+To profile a new administrator user it will be necessary to select them all.
+
+Finally, in the "Cubes" tab, the Administrator can select the cubes or the categories of cubes on which the user can work. \
+To profile a new administrator user it will be necessary to select all the categories.

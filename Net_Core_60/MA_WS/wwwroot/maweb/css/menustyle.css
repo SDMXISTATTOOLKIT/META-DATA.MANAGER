@@ -1,0 +1,113 @@
+
+
+.menuItemStyle{
+    color: #ffffff;
+    padding: 10px; 
+}
+
+.subMenuItemStyle {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.subMenuItemStyle span{
+    font-size: 20px;
+}
+
+.subMenuItemStyle i{
+    font-size: 14px !important;
+}
+
+.menuItemStyle span{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.topMenuItemStyle{
+    color: #000000;
+    font-size: 20px;
+    margin-bottom: 15px;
+}  
+
+.topMenuItemStyle .username-top{
+    color: #000000;
+    font-size: 12px;  
+}
+
+.activeMenuItem{
+    color: 	#FFED00 !important;
+    border-bottom: 3px solid #FFED00 !important;
+}
+
+.activeMenuItem span, .activeMenuItem i{
+    color: 	#FFED00;
+}
+
+.inactiveMenuItem{
+    color: 	#ffffff; !important;
+    border-bottom: none;
+}
+
+.inactiveMenuItem span, .inactiveMenuItem i{
+    color: 	#ffffff;
+}
+
+.ant-menu-sub span, .ant-menu-sub i{
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.MetadataDropdownMenu {
+    font-size: 55px;
+}
+
+.menu-wrapper .ant-menu-item .anticon,
+.menu-wrapper .ant-menu-submenu-title .anticon{
+    margin-right: 0;
+}
+
+.subMenuSettingItemStyle {
+    padding-top: 8px; 
+    padding-bottom: 8px; 
+    font-size: 24px;
+    color: #ffffff;
+    width: 100%;    
+}
+.subMenuSettingItemStyle span{
+    font-size: 15px;
+}
+
+.subMenuSettingItemStyle li{
+    border-bottom: 1px solid black;
+}
+
+.menu-wrapper-inner .ant-menu-submenu-horizontal > .ant-menu {
+    left: auto;
+    right: 0px;
+}
+
+.ant-layout-content {
+    position: relative!important;
+}
+.ant-spin-spinning{
+    opacity: 1;
+    position: absolute!important;
+    display: inline-block;
+    margin-left: 50%!important;
+    top: 12rem!important;
+    z-index: 10000!important;
+}
+
+.ant-spin-dot{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ant-spin-text {
+    font-weight: bold;
+}
+
+.menu-wrapper li {
+    font-size: 20px !important;
+}

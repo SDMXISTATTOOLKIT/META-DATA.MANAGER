@@ -1,0 +1,6 @@
+{
+  "authorization": {
+    "enabled":  true,
+    "method": "sdmxri"
+  }
+}

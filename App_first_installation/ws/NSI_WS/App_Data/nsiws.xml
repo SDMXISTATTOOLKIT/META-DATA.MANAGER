@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<r:rules xmlns:r="http://ec.europa.eu/eurostat/sri/authorisation/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ec.europa.eu/eurostat/sri/authorisation/1.0 rules.xsd">
+  <!-- REST & SOAP rules -->
+  <!-- Order is signifigant -->
+  <!-- REST get data -->
+  <r:rest path="/rest(/[V,v]\d+)?/data/[^/]+(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <!--swagger-->
+  <r:rest path="/swagger/[^/]+(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <!-- Experimental feature, POST key in body. key=..... -->
+  <r:rest path="/rest(/[V,v]\d+)?/data/[^/]+/body/?(/.*)?" method="POST" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/availableconstraint/[^/]+/body/?(/.*)?" method="POST" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/availability/[^/]+/body/?(/.*)?" method="POST" allowAnonymous="true">
+    <r:and>
+      <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <!-- available constraints aka actual constraints aka cube-->
+  <r:rest path="/rest(/[V,v]\d+)?/availableconstraint/[^/]+(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+      <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/availability/[^/]+(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+      <r:permission id="CanReadData"/>
+    </r:and>
+  </r:rest>
+  <!-- REST get structural metadata -->
+  <!-- Path uses regular expression, a subset common to both Java and .NET. Uri Templates -->
+  <r:rest path="/rest(/[V,v]\d+)?/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure|actualconstraint|allowedconstraint)(/.*)?" method="GET" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata" />
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/data(/.*)?" method="POST" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanImportData"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/structure/?" method="POST" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata" />
+        <r:permission id="CanImportStructures"/>
+<!--        <r:permission id="CanUpdateStructuralMetadata"/> -->
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure|actualconstraint|allowedconstraint)(/.*)?" method="PUT" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata" />
+        <r:permission id="CanImportStructures"/>
+<!--        <r:permission id="CanUpdateStructuralMetadata"/> -->
+    </r:and>
+  </r:rest>
+  <r:rest path="/rest(/[V,v]\d+)?/(datastructure|metadatastructure|categoryscheme|conceptscheme|codelist|hierarchicalcodelist|organisationscheme|agencyscheme|dataproviderscheme|dataconsumerscheme|organisationunitscheme|dataflow|metadataflow|reportingtaxonomy|provisionagreement|structureset|process|categorisation|contentconstraint|attachmentconstraint|structure|actualconstraint|allowedconstraint)(/.*)?" method="DELETE" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata" />
+        <r:permission id="CanImportStructures"/>
+        <r:permission id="CanDeleteStructuralMetadata"/>
+    </r:and>
+  </r:rest>
+  <r:rest path="/login/token" method="POST" allowAnonymous="false">
+    <r:and>
+        <r:permission id="Any"/>
+    </r:and>
+  </r:rest>
+  <!-- Frontpage and API-->
+  <r:rest allowAnonymous="true" method="GET" path="^/css/\w+\.css$">
+    <r:and>
+      <r:permission id="Any"/>
+    </r:and> 
+  </r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/images/\w+\.\w+$">
+    <r:and>
+      <r:permission id="Any"/>
+    </r:and> 
+  </r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/favicon.ico$">
+  <r:and>
+    <r:permission id="Any"/>
+  </r:and> 
+  </r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/(index\.\w*html)?$">
+    <r:and>
+      <r:permission id="Any"/>
+    </r:and> 
+  </r:rest>
+  <r:rest allowAnonymous="true" method="GET" path="^/sdmx(_estat|_org|v21)/(schemas/)?\w+\.(wsdl|xsd)$">
+    <r:and>
+      <r:permission id="Any"/>
+    </r:and> 
+  </r:rest>
+  <!-- last slash needed for .NET-->
+  <r:rest allowAnonymous="true" method="GET" path="^/rest/application.wadl/?$">
+    <r:and>
+      <r:permission id="Any"/>
+    </r:and> 
+  </r:rest>
+  <!-- SDMX v2.1 SOAP GET data -->
+  <r:soap path="/SdmxService" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetStructureSpecificData 
+                | /soap:Envelope/soap:Body/web:GetGenericData
+                | /soap:Envelope/soap:Body/web:GetStructureSpecificTimeSeriesData 
+                | /soap:Envelope/soap:Body/web:GetGenericTimeSeriesData
+                )
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+   <!-- SDMX v2.1 SOAP GET structural metadata -->
+  <r:soap path="/SdmxService" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(/soap:Envelope/soap:Body/*[starts-with(local-name(),'Get') and namespace-uri()="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"])
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+ <!-- SDMX v2.1 RR SOAP GET data -->
+  <r:soap path="/SdmxRegistryService" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetStructureSpecificData 
+                | /soap:Envelope/soap:Body/web:GetGenericData
+                | /soap:Envelope/soap:Body/web:GetStructureSpecificTimeSeriesData 
+                | /soap:Envelope/soap:Body/web:GetGenericTimeSeriesData
+                )
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+   <!-- SDMX v2.1 SOAP RR GET structural metadata -->
+  <r:soap path="/SdmxRegistryService" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(/soap:Envelope/soap:Body/*[starts-with(local-name(),'Get') and namespace-uri()="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"])
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+   <!-- SDMX v2.1 SOAP RR Append structural metadata -->
+   <!-- NOTE RR messages may contain multiple actions. This is not supported currently in NSI WS-->
+  <r:soap path="/SdmxRegistryService" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+        <r:permission id="CanImportStructures"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="m" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>
+        <r:script><![CDATA[
+          boolean(
+          /soap:Envelope/soap:Body/web:RegistryInterfaceRequest/m:RegistryInterface/m:SubmitStructureRequest[@action="Append"]
+          | /soap:Envelope/soap:Body/web:SubmitStructure/m:SubmitStructureRequest/m:SubmitStructureRequest[@action="Append"]
+          )
+            ]]>
+        </r:script>
+    </r:xpath>
+  </r:soap>
+   <!-- SDMX v2.1 SOAP RR Update structural metadata -->
+   <!-- NOTE RR messages may contain multiple actions. This is not supported currently in NSI WS-->
+  <r:soap path="/SdmxRegistryService" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+        <r:permission id="CanImportStructures"/>
+        <!--<r:permission id="CanUpdateStructuralMetadata"/>-->
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="m" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>
+        <r:script><![CDATA[
+          boolean(
+          /soap:Envelope/soap:Body/web:RegistryInterfaceRequest/m:RegistryInterface/m:SubmitStructureRequest[@action="Replace"]
+          | /soap:Envelope/soap:Body/web:SubmitStructure/m:SubmitStructureRequest/m:SubmitStructureRequest[@action="Replace"]
+          )
+            ]]>
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.1 SOAP RR Delete structural metadata -->
+  <!-- NOTE RR messages may contain multiple actions. This is not supported currently in NSI WS-->
+  <r:soap path="/SdmxRegistryService" allowAnonymous="false">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+        <r:permission id="CanImportStructures"/>
+        <r:permission id="CanDeleteStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/webservices"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="m" namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"/>
+        <r:script><![CDATA[
+          boolean(
+          /soap:Envelope/soap:Body/web:RegistryInterfaceRequest/m:RegistryInterface/m:SubmitStructureRequest[@action="Delete"]
+          | /soap:Envelope/soap:Body/web:SubmitStructure/m:SubmitStructureRequest/m:SubmitStructureRequest[@action="Delete"]
+          )
+            ]]>
+        </r:script>
+    </r:xpath>
+  </r:soap>
+
+  <!-- SDMX v2.0 Legacy extended data  -->
+  <r:soap path="/NSIEstatV20Service.asmx" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="soap12" namespace="http://www.w3.org/2003/05/soap-envelope"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetCompactData 
+                | /soap:Envelope/soap:Body/web:GetGenericData 
+                | /soap:Envelope/soap:Body/web:GetCrossSectionalData
+                | /soap12:Envelope/soap12:Body/web:GetCompactData 
+                | /soap12:Envelope/soap12:Body/web:GetGenericData 
+                | /soap12:Envelope/soap12:Body/web:GetCrossSectionalData)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 Legacy extended structure  -->
+  <r:soap path="/NSIEstatV20Service.asmx" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="soap12" namespace="http://www.w3.org/2003/05/soap-envelope"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:QueryStructure
+                | /soap12:Envelope/soap12:Body/web:QueryStructure)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 legacy standard data -->
+   <r:soap path="/NSIStdV20Service.asmx" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="soap12" namespace="http://www.w3.org/2003/05/soap-envelope"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetCompactData 
+                | /soap:Envelope/soap:Body/web:GetGenericData 
+                | /soap:Envelope/soap:Body/web:GetCrossSectionalData
+                | /soap12:Envelope/soap12:Body/web:GetCompactData 
+                | /soap12:Envelope/soap12:Body/web:GetGenericData 
+                | /soap12:Envelope/soap12:Body/web:GetCrossSectionalData)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 legacy standard structure -->
+  <r:soap path="/NSIStdV20Service.asmx" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:declare prefix="soap12" namespace="http://www.w3.org/2003/05/soap-envelope"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:QueryStructure
+                | /soap12:Envelope/soap12:Body/web:QueryStructure)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+<!-- SDMX v2.0 extended data  -->
+  <r:soap path="/NSIEstatV20Service" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetCompactData 
+                | /soap:Envelope/soap:Body/web:GetGenericData 
+                | /soap:Envelope/soap:Body/web:GetCrossSectionalData)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 extended structure  -->
+  <r:soap path="/NSIEstatV20Service" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/extended"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(/soap:Envelope/soap:Body/web:QueryStructure)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 standard data -->
+   <r:soap path="/NSIStdV20Service" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadData"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:GetCompactData 
+                | /soap:Envelope/soap:Body/web:GetGenericData 
+                | /soap:Envelope/soap:Body/web:GetCrossSectionalData)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+  <!-- SDMX v2.0 standard structure -->
+  <r:soap path="/NSIStdV20Service" allowAnonymous="true">
+    <r:and>
+        <r:permission id="CanReadStructuralMetadata"/>
+    </r:and>
+    <r:xpath>
+        <r:declare prefix="web" namespace="http://ec.europa.eu/eurostat/sri/service/2.0/"/>
+        <r:declare prefix="soap" namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <r:script><![CDATA[
+            boolean(
+                /soap:Envelope/soap:Body/web:QueryStructure)
+            ]]>      
+        </r:script>
+    </r:xpath>
+  </r:soap>
+</r:rules>

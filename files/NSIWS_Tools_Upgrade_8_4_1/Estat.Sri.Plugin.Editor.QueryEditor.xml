@@ -1,0 +1,3241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Estat.Sri.Plugin.Editor.QueryEditor</name>
+    </assembly>
+    <members>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues">
+            <summary>
+                The allowed values.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues._logicalOperator">
+            <summary>
+                The _logical operator.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues._values">
+            <summary>
+                The _ values.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" /> class.
+            </summary>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.ColumnInstance">
+            <summary>
+                Gets or sets the column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.LogicalOperator">
+            <summary>
+            Gets or sets the logical operator used between the conditions stored in values
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues.Values">
+            <summary>
+                Gets or sets the values.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance">
+            <summary>
+                The column instance.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance._tableInstance">
+            <summary>
+                The _ table instance.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance._fixedValue">
+            <summary>
+                The _ fixed value.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" /> class.
+            </summary>
+            <param name="ti">The table instance.</param>
+            <exception cref="T:System.Exception">TableInstance does not belong to a QueryMetadata</exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" /> class.
+            </summary>
+            <param name="ti">The table instance</param>
+            <param name="mergeType">The merge type.</param>
+            <exception cref="T:System.Exception">TableInstance does not belong to a QueryMetadata</exception>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.FixedValue">
+            <summary>
+                Gets or sets the fixed value.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.ID">
+            <summary>
+                Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.Index">
+            <summary>
+                Gets or sets the index.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.IsFixedValue">
+            <summary>
+                Gets or sets a value indicating whether is fixed value.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.IsPrimaryKey">
+            <summary>
+                Gets or sets a value indicating whether is primary key.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.IsReturned">
+            <summary>
+                Gets or sets a value indicating whether is returned.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.TableInstance">
+            <summary>
+                Gets the table instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.Type">
+            <summary>
+                Gets or sets the type.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance.IsMerged">
+            <summary>
+                The is merged.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection">
+            <summary>
+                The column instances collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection._tableInstance">
+            <summary>
+                The _ table instance.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection" /> class.
+            </summary>
+            <param name="ti">The table instance.</param>
+            <exception cref="T:System.Exception">TableInstance does not belong to a QueryMetadata</exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.TableInstance">
+            <summary>
+                Gets the table instance.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.Sort">
+            <summary>
+                The sort.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="c">
+                The c.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping">
+            <summary>
+                The column mapping.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping._relation">
+            <summary>
+                The _ relation.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping" /> class.
+            </summary>
+            <param name="relation">The relation.</param>
+            <exception cref="T:System.Exception">Relation does not belong to a QueryMetadata</exception>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping.ColumnInstanceFrom">
+            <summary>
+                Gets or sets the column instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping.ColumnInstanceTo">
+            <summary>
+                Gets or sets the column instance to.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping.Relation">
+            <summary>
+                Gets the relation.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection">
+            <summary>
+                The column mappings collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection._relation">
+            <summary>
+                The _ relation.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection" /> class.
+            </summary>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection.Relation">
+            <summary>
+                Gets the relation.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMappingsCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="c">
+                The c.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection">
+            <summary>
+                The columns merging collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection.GeneratedDimensionColumnInstance">
+            <summary>
+                Gets or sets the generated dimension column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection.GeneratedMeasureColumnInstance">
+            <summary>
+                Gets or sets the generated measure column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference">
+            <summary>
+                The column table reference.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference.ColumnInstance">
+            <summary>
+                Gets or sets the column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference.TableInstance">
+            <summary>
+                Gets or sets the table instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference.TableInstanceFrom">
+            <summary>
+                Gets or sets the table instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference.TableInstanceTo">
+            <summary>
+                Gets or sets the table instance to.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection">
+            <summary>
+                The column table references collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection.ContainsColumnInstance(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                The contains column instance.
+            </summary>
+            <param name="ci">
+                The ci.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection.ContainsTableInstance(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                The contains table instance.
+            </summary>
+            <param name="ti">
+                The ti.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReferencesCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="c">
+                The c.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection">
+            <summary>
+                The constraints collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection._tableInstance">
+            <summary>
+                The _ table instance.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection" /> class.
+            </summary>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection.TableInstance">
+            <summary>
+                Gets the table instance.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelation">
+            <summary>
+                The cross join relation.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelation.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelation" /> class.
+            </summary>
+            <param name="sourceTable">
+                The source table.
+            </param>
+            <param name="destinationTable">
+                The destination table.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection">
+            <summary>
+                The cross-join relations collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection.ExistsRelation(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Checks if a relation exists between <paramref name="source" /> and <paramref name="destination" />
+            </summary>
+            <param name="source">
+                The source.
+            </param>
+            <param name="destination">
+                The destination.
+            </param>
+            <returns>
+                True  if a relation exists between <paramref name="source" /> and <paramref name="destination" />; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelationsCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.ICrossJoinRelation)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="ur">
+                The ur.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Engine.QueryEditorEngine.DeserializeExtraData(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Engine.QueryEditorEngine.Migrate(Estat.Sri.Mapping.Api.Model.DatasetEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Engine.QueryEditorEngine.GetSupportedDdbPlugins">
+            <inheritdoc />
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.FixedQueryPart">
+            <summary>
+            FixedQueryPart
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.FixedQueryPart.Build(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection)">
+            <summary>
+            Does the specified query metadata.
+            </summary>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="tableInstance">The ugly table.</param>
+            <param name="columnsMergedTable">The columns merged table.</param>
+            <param name="columnsCollection">The ugly columns collection.</param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues">
+            <summary>
+                The AllowedValues interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues.ColumnInstance">
+            <summary>
+                Gets or sets the column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues.LogicalOperator">
+            <summary>
+                Gets or sets the logical operator used between the conditions stored in values
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues.Values">
+            <summary>
+                Gets or sets the values.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance">
+            <summary>
+                The ColumnInstance interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.FixedValue">
+            <summary>
+                Gets or sets the fixed value.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.ID">
+            <summary>
+                Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.Index">
+            <summary>
+                Gets or sets the index.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.IsFixedValue">
+            <summary>
+                Gets or sets a value indicating whether is fixed value.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.IsPrimaryKey">
+            <summary>
+                Gets or sets a value indicating whether is primary key.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.IsReturned">
+            <summary>
+                Gets or sets a value indicating whether is returned.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.TableInstance">
+            <summary>
+                Gets the table instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.Type">
+            <summary>
+                Gets or sets the type.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance.IsMerged">
+            <summary>
+                The is merged.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping">
+            <summary>
+            IColumnMapping interface
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping.ColumnInstanceFrom">
+            <summary>
+                Gets or sets the column instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping.ColumnInstanceTo">
+            <summary>
+                Gets or sets the column instance to.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping.Relation">
+            <summary>
+                Gets the relation.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference">
+            <summary>
+                The ColumnTableReference interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference.ColumnInstance">
+            <summary>
+                Gets or sets the column instance.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference.TableInstance">
+            <summary>
+                Gets or sets the table instance.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ICrossJoinRelation">
+            <summary>
+                The CrossJoinRelation interface.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata">
+            <summary>
+                The QueryMetadata interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.ColumnInstances">
+            <summary>
+                Gets the column instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.ColumnsMerging">
+            <summary>
+                Gets the columns merging.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.ColumnTableReferences">
+            <summary>
+                Gets the column table references.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.Constraints">
+            <summary>
+                Gets the constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.CrossJoinRelations">
+            <summary>
+                Gets the cross-join relations.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.Relations">
+            <summary>
+                Gets the relations.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.TableConstraints">
+            <summary>
+                Gets the table constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.TableInstances">
+            <summary>
+                Gets the table instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.UnionRelations">
+            <summary>
+                Gets the union relations.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.AddColumnTableReference">
+            <summary>
+                Adds the column table reference.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.AddConstraints">
+            <summary>
+                Adds the constraints.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.AddRelation">
+            <summary>
+                Adds the relation.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Relation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.AddTableInstance">
+            <summary>
+                Adds the table instance.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.Clone">
+            <summary>
+                The clone.
+            </summary>
+            <returns>
+                The <see cref="!:Estat.Ma.Model.QueryEditor.QueryMetadata" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.HasUnconnectedTables">
+            <summary>
+                The has unconnected tables.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata.RemoveMergedColumn(Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection)">
+            <summary>
+                The remove merged column.
+            </summary>
+            <param name="col">
+                The col.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadataReaderWriter">
+            <summary>
+                The QueryMetadataReaderWriter interface.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadataReaderWriter.Read(System.String)">
+            <summary>
+                Reads the specified XML string.
+            </summary>
+            <param name="value">The XML string.</param>
+            <returns>The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata" /></returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadataReaderWriter.Write(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Writes the specified query metadata.
+            </summary>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>The XML as a string.</returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IRelation">
+            <summary>
+                The Relation interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IRelation.ColumnMappings">
+            <summary>
+                Gets the column mappings.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.IRelation.AddColumnMapping">
+            <summary>
+                Add a new column mapping.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping" />
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IRelationBase">
+            <summary>
+                The RelationBase interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IRelationBase.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IRelationBase.TableInstanceFrom">
+            <summary>
+                Gets or sets the table instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.IRelationBase.TableInstanceTo">
+            <summary>
+                Gets or sets the table instance to.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance">
+            <summary>
+                The TableInstance interface.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.ColumnInstances">
+            <summary>
+                Gets the column instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.Constraints">
+            <summary>
+                Gets the constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.ID">
+            <summary>
+                Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.XCoordinate">
+            <summary>
+                Gets or sets the x coordinate.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.YCoordinate">
+            <summary>
+                Gets or sets the y coordinate.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddColumnInstance">
+            <summary>
+                Add a new column instance.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddColumnInstance(Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType)">
+            <summary>
+                Add a new column instance.
+            </summary>
+            <param name="mergedColumnType">
+                Type of the merged column.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddConstraint">
+            <summary>
+                Add a new constraint.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddCrossJoinRelation(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Add a new cross join relation.
+            </summary>
+            <param name="destinationTableInstance">
+                The destination table instance.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddFixedColumnInstance(System.String,System.String)">
+            <summary>
+                Add a new fixed column instance.
+            </summary>
+            <param name="name">
+                The name.
+            </param>
+            <param name="fixedValue">
+                The fixed value.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.AddUnionRelation(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Add a new union relation.
+            </summary>
+            <param name="destinationTableInstance">
+                The destination table instance.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.GetNextUnionTable">
+            <summary>
+                Returns the next table in the Union Relation that the table participates in (if it participates in a union
+                relation)
+            </summary>
+            <returns>
+                The <see cref="!:Estat.Ma.Model.QueryEditor.ITableInstance" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasColumnTableRelation">
+            <summary>
+                Returns true if the table participates in an Inner Join  Relation
+            </summary>
+            <returns>
+                true if the table participates in a Inner-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasCrossJoinRelation">
+            <summary>
+                Returns true if the table participates in a Cross-Join Relation
+            </summary>
+            <returns>
+                true if the table participates in a Cross-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasInnerJoinRelation">
+            <summary>
+                Returns true if the table participates in an Inner Join  Relation
+            </summary>
+            <returns>
+                true if the table participates in a Inner-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasOnlyUnionRelationFrom">
+            <summary>
+                Returns true only if the table participates in a Union Relation and NO OTHER Relations (i.e. ColumnTableReference,
+                Join Relation)
+                AND is the FIRST table in this Union Relation that it participates in
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasOnlyUnionRelationTo">
+            <summary>
+                Returns true only if the table participates in a Union Relation and NO OTHER Relations (i.e. ColumnTableReference,
+                Join Relation)
+                AND is the LAST table in this Union Relation that it participates in
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasRelationOfAnyType">
+            <summary>
+                The has relation of any type.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.HasUnionRelation">
+            <summary>
+                Returns true if the table participates in a Union Relation
+            </summary>
+            <returns>
+                true if the table participates in a Union; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.RemoveAllReferences">
+            <summary>
+                The remove all references.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance.SelectedColumnsMatchColumnsOf(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                The selected columns match columns of.
+            </summary>
+            <param name="to">
+                The to.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.IUnionRelation">
+            <summary>
+                The UnionRelation interface.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.CreateRelation(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IDictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Creates the relation.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="relationNodeEl">
+                The relation node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IRelation" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: Relation with TableInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: Relation with TableInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadAllowedValues(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML:  AllowedValues with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadColumnInstance(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                Reads the column instance.
+            </summary>
+            <param name="columnInstanceEl">
+                The column instance element.
+            </param>
+            <param name="tableInstanceColumnIdDict">
+                The table instance column id dictionary.
+            </param>
+            <param name="columnInstanceSortIndexDict">
+                The column instance sort index dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid Query Metadata XML: ColumnInstance id not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadColumnMapping(Estat.Sri.Plugin.Editor.QueryEditor.IRelation,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the column mapping.
+            </summary>
+            <param name="relation">The relation.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="columnMappingNodeEl">The column mapping node element.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadColumnMerging(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Reads the column merging.
+            </summary>
+            <param name="columnsMergingNodeEl">The columns merging node element.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadColumnTableReference(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the column table reference.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="columnTableReferenceNodeEl">
+                The column table reference node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with TableInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadCrossJoin(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the cross join.
+            </summary>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <param name="crossJoinEl">
+                The cross join element.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadTableInstance(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the table instance.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="tableInstanceEl">
+                The table instance element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadUnion(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the union.
+            </summary>
+            <param name="union">
+                The union.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.ReadValue(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the value.
+            </summary>
+            <param name="valueEl">
+                The value element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.GetTableConstraints(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+            Gets the table constraints.
+            </summary>
+            <param name="tableConstraintsNodes">The table constraints nodes.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.GetWhereDetailsWhenCountIsOne(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance})">
+            <summary>
+            Gets the where details when count is one.
+            </summary>
+            <param name="whereDetailsNodes">The where details nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.JsonFormatExtractor.HandleSingleTableInstanceNode(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            Handles the single table instance node.
+            </summary>
+            <param name="tableInstances">The table instances nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="tableInstanceColumnIdDict">The table instance column identifier dictionary.</param>
+            <param name="columnInstanceSortIndexDict">The column instance sort index dictionary.</param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.LogicalOperators">
+            <summary>
+                This enumeration contains the logical operators to be used between conditions
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.LogicalOperators.AND">
+            <summary>
+                The and.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.LogicalOperators.OR">
+            <summary>
+                The or.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType">
+            <summary>
+                The merged column type.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType.IsMergedDimension">
+            <summary>
+                The is merged dimension.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType.IsMergedMeasure">
+            <summary>
+                The is merged measure.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.Operators">
+            <summary>
+                This static class provides the list of supported comparison SQL operators for use
+                in WHERE statements
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators._items">
+            <summary>
+                This array contains all the supported comparison operators.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex">
+            <summary>
+                The index of the operator
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.Equals">
+            <summary>
+                The equals.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.GreaterThan">
+            <summary>
+                The greater than.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.LessThan">
+            <summary>
+                The less than.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.GreaterThanOrEqualsTo">
+            <summary>
+                The greater than or equals to.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.LessThanOrEqualsTo">
+            <summary>
+                The less than or equals to.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.NotEquals">
+            <summary>
+                The not equals.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.Like">
+            <summary>
+                The like.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.In">
+            <summary>
+                The in.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.NotLike">
+            <summary>
+                The not like.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex.NotIn">
+            <summary>
+                The not in.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Operators.Items">
+            <summary>
+                Gets the items.
+            </summary>
+            <value>
+                The items.
+            </value>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Operators.Get(Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex)">
+            <summary>
+                Getter for getting the operator with the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Operators.OperatorIndex" />
+            </summary>
+            <param name="index">
+                The index of the operator
+            </param>
+            <returns>
+                A string with the comparison operator
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryGenerator">
+            <summary>
+                The default query generator.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase">
+            <summary>
+                The base class for Query Generator.
+            </summary>
+            <remarks>Not thread safe.</remarks>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.from">
+            <summary>
+                The from.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.fromStarted">
+            <summary>
+                The from started.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.overallSelectStarted">
+            <summary>
+                The overall select started.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.queryMetadata">
+            <summary>
+                The query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.select">
+            <summary>
+                The select.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.visitedTables">
+            <summary>
+                The visited tables.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.where">
+            <summary>
+                The where.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.whereStarted">
+            <summary>
+                The where started.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.GenerateQuery(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Data.Common.DbConnection)">
+            <summary>
+                This is the top-level method for the generation of an SQL query that is equivalent of the query metadata.
+                It first calls the appropriate methods for the elimination of special storage scheme cases, like the ISTAT scheme
+                and then recursively creates the query.
+            </summary>
+            <param name="queryMetadata">
+                the query metadata for which the query will be created.
+            </param>
+            <param name="dissConn">
+                The dissemination Connection
+            </param>
+            <returns>
+                The System.String.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.GetEscapedString(System.String)">
+            <summary>
+                Gets the escaped string.
+            </summary>
+            <param name="strToEscape">
+                The string to escape.
+            </param>
+            <returns>
+                The escaped string.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.BuildConstraintForTable(Estat.Sri.Plugin.Editor.QueryEditor.Value,System.Text.StringBuilder,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Build and populate <paramref name="sb" /> from the specified <paramref name="value" /> and
+                <paramref name="constraint" />
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+            <param name="sb">
+                The string buffer
+            </param>
+            <param name="constraint">
+                The constraint.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.WriteFrom(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Writes the FROM clauses.
+            </summary>
+            <param name="currentTable">
+                The current table.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.WriteSelect(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Write the SELECT clauses.
+            </summary>
+            <param name="currentTable">
+                The current table.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.WriteWhere(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Write WHERE clauses.
+            </summary>
+            <param name="previousTable">
+                The previous table.
+            </param>
+            <param name="currentTable">
+                The current table.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.HandleRelations(Estat.Sri.Plugin.Editor.QueryEditor.IRelation,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Collections.Generic.List{Estat.Sri.Plugin.Editor.QueryEditor.IRelation},Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance)">
+            <summary>
+            Handles the relations.
+            </summary>
+            <param name="rel">The relative.</param>
+            <param name="masterTable">The master table.</param>
+            <param name="slaveSampleTable">The slave sample table.</param>
+            <param name="relToBeDeleted">The relative to be deleted.</param>
+            <param name="compositeTable">The composite table.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.IterateOverColumnMappings(Estat.Sri.Plugin.Editor.QueryEditor.IRelation,Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance)">
+            <summary>
+            Iterates the over column mappings.
+            </summary>
+            <param name="rel">The relative.</param>
+            <param name="compositeTable">The composite table.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.BuildConstraint(Estat.Sri.Plugin.Editor.QueryEditor.Value,System.Text.StringBuilder,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Build and populate <paramref name="sb" /> from the specified <paramref name="value" /> and
+                <paramref name="constraint" />
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+            <param name="sb">
+                The string buffer
+            </param>
+            <param name="constraint">
+                The constraint.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.FetchMasterSlaveColumnMappings(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                The fetch master slave column mappings.
+            </summary>
+            <param name="masterTable">
+                The master table.
+            </param>
+            <param name="slaveSampleTable">
+                The slave sample table.
+            </param>
+            <returns>
+                The column mappings
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.GenerateColMergingEquivalent(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                This method handles the query metadata containing
+            </summary>
+            <param name="queryMetadata">
+            The query data
+            </param>
+            <returns>
+                The table instance.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.GenerateMasterSlaveEquivalent(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference,System.Data.Common.DbConnection)">
+            <summary>
+            This method generates the equivalent table of a master-table scheme in a new Query Metadata
+            </summary>
+            <param name="queryMetadata">the current query metadata</param>
+            <param name="colTablRef">the column-table reference that represents the master-table scheme</param>
+            <param name="cn">The database connection.</param>
+            <returns>
+            a new composite table containing the equivalent query, that has a column instance for every master and slave column
+            instance (except the joined ones, where only one is returned with the same name as the slave one).
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.GetSqlFrom(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Boolean)">
+            <summary>
+                The get SQL from.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="firstTableToProcess">
+                The first table to process.
+            </param>
+            <param name="doProcessConstraints">
+                The do process constraints.
+            </param>
+            <returns>
+                The System.String.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.ProcessColMergingTables(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+            The process col merging tables.
+            </summary>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+            The query data.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.ProcessConstraints(Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection)">
+            <summary>
+                The process constraints.
+            </summary>
+            <param name="constraintsCollection">
+                The constraints collection.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.ProcessMasterTables(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Data.Common.DbConnection)">
+            <summary>
+                This method eliminates master tables and their slave tables with a composite table
+            </summary>
+            <param name="queryMetadata">
+            The query metadata
+            </param>
+            <param name="cn">
+                The database connection.
+            </param>
+            <returns>
+                The query data.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.ProcessTable(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                This method processes a table. It appends everything necessary in the select, from and where part of the query.
+            </summary>
+            <param name="previousTable">
+                The previous Table.
+            </param>
+            <param name="currentTable">
+                the table to be processed
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.ProcessTableCrossJoin(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                This method processes a table. It appends everything necessary in the select, from and where part of the query.
+            </summary>
+            <param name="previousTable">
+                The previous Table.
+            </param>
+            <param name="currentTable">
+                the table to be processed
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.WriteUnionQuery(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Write union query.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <returns>
+                The <see cref="T:System.Text.StringBuilder" />.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance">
+            <summary>
+                This is the equivalent of a table, but it does not refer to a real table, but rather a query.
+                This class is used to replace in the model cases of master-slave scheme, or columns merging scheme.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance" /> class.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryGeneratorBase.CompositeTableInstance.Query">
+            <summary>
+                Gets or sets the query.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata">
+            <summary>
+                The query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._columnInstances">
+            <summary>
+                The _ column instances.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._columnsMerging">
+            <summary>
+                The _ columns merging.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._columnTableReferences">
+            <summary>
+                The _ column table references.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._constraints">
+            <summary>
+                The _ constraints.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._crossJoinRelations">
+            <summary>
+                Gets the cross-join relations.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._relations">
+            <summary>
+                The _ relations.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._tableConstraints">
+            <summary>
+                The _ table constraints.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._tableInstances">
+            <summary>
+                The _ table instances.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata._unionRelations">
+            <summary>
+                The _ union relations.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata" /> class.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.ColumnInstances">
+            <summary>
+                Gets the column instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.ColumnsMerging">
+            <summary>
+                Gets the columns merging.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.ColumnTableReferences">
+            <summary>
+                Gets the column table references.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.Constraints">
+            <summary>
+                Gets the constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.CrossJoinRelations">
+            <summary>
+                Gets the cross-join relations.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.Relations">
+            <summary>
+                Gets the relations.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.TableConstraints">
+            <summary>
+                Gets the table constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.TableInstances">
+            <summary>
+                Gets the table instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.UnionRelations">
+            <summary>
+                Gets the union relations.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.AddColumnTableReference">
+            <summary>
+                Adds the column table reference.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnTableReference" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.AddConstraints">
+            <summary>
+                Adds the constraints.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.AddRelation">
+            <summary>
+                Adds the relation.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Relation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.AddTableInstance">
+            <summary>
+                Adds the table instance.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.Clone">
+            <summary>
+                The clone.
+            </summary>
+            <returns>
+                The <see cref="!:Estat.Ma.Model.QueryEditor.QueryMetadata" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.HasUnconnectedTables">
+            <summary>
+                The has unconnected tables.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.RemoveMergedColumn(Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstancesCollection)">
+            <summary>
+                The remove merged column.
+            </summary>
+            <param name="col">
+                The col.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.PushNextRelation``1(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Collections.Generic.Stack{Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+                Pushes the next relation.
+            </summary>
+            <typeparam name="T">
+                The relation type
+            </typeparam>
+            <param name="currentTable">
+                The current table.
+            </param>
+            <param name="stack">
+                The stack.
+            </param>
+            <param name="relations">
+                The relations.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata.AreAllUnionTablesConnected">
+            <summary>
+                The are all union tables connected.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriter">
+            <summary>
+                The query metadata reader writer.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase">
+            <summary>
+                The abstract class for <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata" /> readers and writers.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.Read(System.String)">
+            <inheritdoc />
+            <summary>
+                Reads the specified XML string.
+            </summary>
+            <param name="value">
+                The XML string.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadata" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid Query Metadata XML: ColumnInstance id ' + id + ' not found
+                or
+                Invalid QueryMetadata XML: Relation with TableInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: Relation with TableInstanceRefTo not found
+                or
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefTo not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with TableInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML:  AllowedValues with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML:  AllowedValues with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.Write(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <inheritdoc />
+            <summary>
+            Writes the specified query metadata.
+            </summary>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+            The XML as a string.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.CreateQueryMetadata">
+            <summary>
+            Creates the query metadata.
+            </summary>
+            <returns>
+            The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.CreateRelation(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IDictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Creates the relation.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="relationNodeEl">
+                The relation node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IRelation" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: Relation with TableInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: Relation with TableInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadAllowedValues(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML:  AllowedValues with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadColumnInstance(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                Reads the column instance.
+            </summary>
+            <param name="columnInstanceEl">
+                The column instance element.
+            </param>
+            <param name="tableInstanceColumnIdDict">
+                The table instance column id dictionary.
+            </param>
+            <param name="columnInstanceSortIndexDict">
+                The column instance sort index dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid Query Metadata XML: ColumnInstance id not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadColumnMapping(Estat.Sri.Plugin.Editor.QueryEditor.IRelation,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the column mapping.
+            </summary>
+            <param name="relation">The relation.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="columnMappingNodeEl">The column mapping node element.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadColumnMerging(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Reads the column merging.
+            </summary>
+            <param name="columnsMergingNodeEl">The columns merging node element.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadColumnTableReference(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the column table reference.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="columnTableReferenceNodeEl">
+                The column table reference node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with TableInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadCrossJoin(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the cross join.
+            </summary>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <param name="crossJoinEl">
+                The cross join element.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadTableInstance(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,Newtonsoft.Json.Linq.JToken)">
+            <summary>
+                Reads the table instance.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="tableInstanceEl">
+                The table instance element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadUnion(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the union.
+            </summary>
+            <param name="union">
+                The union.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.ReadValue(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the value.
+            </summary>
+            <param name="valueEl">
+                The value element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteAllowedValues(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Writes the allowed values.
+            </summary>
+            <param name="allowedValuesNode">
+                The allowed values node.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.CreateColumnInstance(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                Writes the column instance.
+            </summary>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteColumnInstanceRef(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                Writes the column instance ref.
+            </summary>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+            <param name="columnInstanceNode">
+                The column instance node.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteColumnInstanceRef(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance,System.Int32)">
+            <summary>
+                Writes the column instance ref.
+            </summary>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+            <param name="i">
+                The i.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.GetColumnMapping(Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping)">
+            <summary>
+                Writes the column mapping.
+            </summary>
+            <param name="columnMapping">
+                The column mapping.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteColumnsMerging(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Writes the columns merging.
+            </summary>
+            <param name="columnMergingJson"></param>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteColumnTableReferences(Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference)">
+            <summary>
+                Writes the column table references.
+            </summary>
+            <param name="columnTableReference">
+                The column table reference.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteCrossJoin(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.ICrossJoinRelation)">
+            <summary>
+                Writes the cross join.
+            </summary>
+            <param name="crossJoinJson"></param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteRelation(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+                Writes the relation.
+            </summary>
+            <param name="relationNode">
+                The relation node.
+            </param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteTableAttributeValues(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Writes the table attribute values.
+            </summary>
+            <param name="allowedValuesJson">
+                The allowed values node.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteTableInstance(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Writes the table instance.
+            </summary>
+            <param name="tableInstanceNode">
+                The table instance node.
+            </param>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteUnion(Newtonsoft.Json.Linq.JObject,Estat.Sri.Plugin.Editor.QueryEditor.IUnionRelation)">
+            <summary>
+                Writes the union.
+            </summary>
+            <param name="unionJson">
+                The union relation node.
+            </param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteValue(Estat.Sri.Plugin.Editor.QueryEditor.Value)">
+            <summary>
+                Writes the value.
+            </summary>
+            <param name="value">
+                The value.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.GetTableConstraints(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+            Gets the table constraints.
+            </summary>
+            <param name="tableConstraintsNodes">The table constraints nodes.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.GetWhereDetailsWhenCountIsOne(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance})">
+            <summary>
+            Gets the where details when count is one.
+            </summary>
+            <param name="whereDetailsNodes">The where details nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.HandleSingleTableInstanceNode(Newtonsoft.Json.Linq.JToken,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            Handles the single table instance node.
+            </summary>
+            <param name="tableInstances">The table instances nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="tableInstanceColumnIdDict">The table instance column identifier dictionary.</param>
+            <param name="columnInstanceSortIndexDict">The column instance sort index dictionary.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.GetTableConstraints(Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection)">
+            <summary>
+            Handles the table constraints.
+            </summary>
+            <param name="constraints">The constraints.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteRelations(Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+            Writes the relations.
+            </summary>
+            <param name="relation">The relation.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.QueryMetadataReaderWriterBase.WriteTableInstances(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+            Writes the table instances.
+            </summary>
+            <param name="tableInstance">The table instance.</param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.Relation">
+            <summary>
+                The relation.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Relation._columnMappings">
+            <summary>
+                The _ column mappings.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Relation.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Relation" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Relation.ColumnMappings">
+            <summary>
+                Gets the column mappings.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Relation.TableInstanceFrom">
+            <summary>
+                Gets or sets the table instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Relation.TableInstanceTo">
+            <summary>
+                Gets or sets the table instance to.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Relation.AddColumnMapping">
+            <summary>
+                Add a new column mapping.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnMapping" />
+            </returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase">
+            <summary>
+                The relation base.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase" /> class.
+            </summary>
+            <param name="tableInstance">
+                The table Instance.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase.TableInstanceFrom">
+            <summary>
+                Gets or sets the table instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.RelationBase.TableInstanceTo">
+            <summary>
+                Gets or sets the table instance to.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection">
+            <summary>
+                The relations collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.ContainsColumnInstance(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                The contains column instance.
+            </summary>
+            <param name="ci">
+                The ci.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.ContainsColumnInstanceFrom(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                The contains column instance from.
+            </summary>
+            <param name="ci">
+                The ci.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.ContainsColumnInstanceTo(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                The contains column instance to.
+            </summary>
+            <param name="ci">
+                The ci.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.RelationsCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="c">
+                The c.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance">
+            <summary>
+                The table instance.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance._columnInstances">
+            <summary>
+                The _ column instances.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance._constraints">
+            <summary>
+                The _ constraints.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance._xcoordinate">
+            <summary>
+                The _ x coordinate.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance._ycoordinate">
+            <summary>
+                The _ y coordinate.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance" /> class.
+            </summary>
+            <param name="querymetadata">
+                The <see cref="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.QueryMetadata" /> that this instance will belong to.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.ColumnInstances">
+            <summary>
+                Gets the column instances.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.Constraints">
+            <summary>
+                Gets the constraints.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.ID">
+            <summary>
+                Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.XCoordinate">
+            <summary>
+                Gets or sets the x coordinate.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.YCoordinate">
+            <summary>
+                Gets or sets the y coordinate.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddColumnInstance">
+            <summary>
+                Add a new column instance.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddColumnInstance(Estat.Sri.Plugin.Editor.QueryEditor.MergedColumnType)">
+            <summary>
+                Add a new column instance.
+            </summary>
+            <param name="mergedColumnType">
+                Type of the merged column.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddConstraint">
+            <summary>
+                Add a new constraint.
+            </summary>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.AllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddCrossJoinRelation(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Add a new cross join relation.
+            </summary>
+            <param name="destinationTableInstance">
+                The destination table instance.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.CrossJoinRelation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddFixedColumnInstance(System.String,System.String)">
+            <summary>
+                Add a new fixed column instance.
+            </summary>
+            <param name="name">
+                The name.
+            </param>
+            <param name="fixedValue">
+                The fixed value.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.AddUnionRelation(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Add a new union relation.
+            </summary>
+            <param name="destinationTableInstance">
+                The destination table instance.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelation" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.GetNextUnionTable">
+            <summary>
+                Returns the next table in the Union Relation that the table participates in (if it participates in a union
+                relation)
+            </summary>
+            <returns>
+                The <see cref="!:Estat.Ma.Model.QueryEditor.ITableInstance" />.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasColumnTableRelation">
+            <summary>
+                Returns true if the table participates in an Inner Join  Relation
+            </summary>
+            <returns>
+                true if the table participates in a Inner-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasCrossJoinRelation">
+            <summary>
+                Returns true if the table participates in a Cross-Join Relation
+            </summary>
+            <returns>
+                true if the table participates in a Cross-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasInnerJoinRelation">
+            <summary>
+                Returns true if the table participates in an Inner Join  Relation
+            </summary>
+            <returns>
+                true if the table participates in a Inner-Join Relation; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasOnlyUnionRelationFrom">
+            <summary>
+                Returns true only if the table participates in a Union Relation and NO OTHER Relations (i.e. ColumnTableReference,
+                Join Relation)
+                AND is the FIRST table in this Union Relation that it participates in
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasOnlyUnionRelationTo">
+            <summary>
+                Returns true only if the table participates in a Union Relation and NO OTHER Relations (i.e. ColumnTableReference,
+                Join Relation)
+                AND is the LAST table in this Union Relation that it participates in
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasRelationOfAnyType">
+            <summary>
+                The has relation of any type.
+            </summary>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HasUnionRelation">
+            <summary>
+                Returns true if the table participates in a Union Relation
+            </summary>
+            <returns>
+                true if the table participates in a Union; otherwise false
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.RemoveAllReferences">
+            <summary>
+                The remove all references.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.SelectedColumnsMatchColumnsOf(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                The selected columns match columns of.
+            </summary>
+            <param name="to">
+                The to.
+            </param>
+            <returns>
+                The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstance.HandleColumnInstances(Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance,System.Collections.Generic.List{Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference},System.Collections.Generic.List{Estat.Sri.Plugin.Editor.QueryEditor.IRelation},System.Collections.Generic.List{Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues})">
+            <summary>
+            Handles the column instances.
+            </summary>
+            <param name="ci">The ci.</param>
+            <param name="ctrToRemove">The CTR to remove.</param>
+            <param name="relToRemove">The relative to remove.</param>
+            <param name="constraintsToRemove">The constraints to remove.</param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection">
+            <summary>
+                The table instances collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableInstancesCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="c">
+                The c.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase">
+            <summary>
+                The table relation base.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase._tableInstanceFrom">
+            <summary>
+                The _ table instance from.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase._tableInstanceTo">
+            <summary>
+                The _ table instance to.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase" /> class.
+            </summary>
+            <param name="sourceTable">
+                The source Table.
+            </param>
+            <param name="destinationTable">
+                The destination Table.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="destinationTable" /> is null
+                -or-
+                <paramref name="sourceTable" /> is null
+            </exception>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase.TableInstanceFrom">
+            <summary>
+                Gets or sets the table instance from.
+            </summary>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.TableRelationBase.TableInstanceTo">
+            <summary>
+                Gets or sets the table instance to.
+            </summary>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelation">
+            <summary>
+                The union relation.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelation.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelation" /> class.
+            </summary>
+            <param name="from">
+                The from.
+            </param>
+            <param name="to">
+                The to.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection">
+            <summary>
+                The union relations collection.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection._queryMetadata">
+            <summary>
+                The _ query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection.#ctor(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection" /> class.
+            </summary>
+            <param name="querymetadata">
+                The query metadata.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection.QueryMetadata">
+            <summary>
+                Gets the query metadata.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection.GetFirstTableOfUnion">
+            <summary>
+                Returns the first table of union.
+            </summary>
+            <returns>
+                The <see cref="!:Estat.Ma.Model.QueryEditor.TableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.UnionRelationsCollection.DoAdd(Estat.Sri.Plugin.Editor.QueryEditor.IUnionRelation)">
+            <summary>
+                The do add.
+            </summary>
+            <param name="ur">
+                The ur.
+            </param>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.Utils">
+            <summary>
+            Mapping Assistant utils
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Utils.GetEscapedString(System.String)">
+            <summary>
+            Gets the escaped string.
+            </summary>
+            <param name="strToEscape">The string to escape.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Estat.Sri.Plugin.Editor.QueryEditor.Value">
+            <summary>
+                The value.
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Value._operator">
+            <summary>
+                The comparison operator used to compare against this value
+            </summary>
+        </member>
+        <member name="F:Estat.Sri.Plugin.Editor.QueryEditor.Value._val">
+            <summary>
+                The _ val.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Value.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Value" /> class.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.Value.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.Value" /> class.
+            </summary>
+            <param name="val">
+                The val.
+            </param>
+            <param name="op">
+                The op.
+            </param>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Value.Operator">
+            <summary>
+            Gets or sets the operator.
+            </summary>
+            <value>
+            The operator.
+            </value>
+        </member>
+        <member name="P:Estat.Sri.Plugin.Editor.QueryEditor.Value.Val">
+            <summary>
+                Gets or sets the val.
+            </summary>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.Write(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+            Writes the specified query metadata.
+            </summary>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+            The XML as a string.
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.CreateQueryMetadata">
+            <summary>
+            Creates the query metadata.
+            </summary>
+            <returns>
+            The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.CreateRelation(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Xml.XmlElement,System.Collections.Generic.IDictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Creates the relation.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="relationNodeEl">
+                The relation node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IRelation" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: Relation with TableInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: Relation with TableInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},System.Xml.XmlElement)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadAllowedValues(Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},System.Xml.XmlElement)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadAllowedValues(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the allowed values.
+            </summary>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="allowedValuesNodeEl">
+                The allowed values node element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML:  AllowedValues with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadColumnInstance(System.Xml.XmlElement,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                Reads the column instance.
+            </summary>
+            <param name="columnInstanceEl">
+                The column instance element.
+            </param>
+            <param name="tableInstanceColumnIdDict">
+                The table instance column id dictionary.
+            </param>
+            <param name="columnInstanceSortIndexDict">
+                The column instance sort index dictionary.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid Query Metadata XML: ColumnInstance id not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadColumnMapping(Estat.Sri.Plugin.Editor.QueryEditor.IRelation,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},System.Xml.XmlElement)">
+            <summary>
+                Reads the column mapping.
+            </summary>
+            <param name="relation">The relation.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="columnMappingNodeEl">The column mapping node element.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefFrom not found
+                or
+                Invalid QueryMetadata XML: ColumnMapping with ColumnInstanceRefTo not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadColumnMerging(System.Xml.XmlElement,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+                Reads the column merging.
+            </summary>
+            <param name="columnsMergingNodeEl">The columns merging node element.</param>
+            <param name="columnInstanceIdDict">The column instance id dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ColumnsMergingCollection" />
+            </returns>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadColumnTableReference(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},System.Xml.XmlElement,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the column table reference.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnInstanceIdDict">
+                The column instance id dictionary.
+            </param>
+            <param name="columnTableReferenceNodeEl">
+                The column table reference node element.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <exception cref="T:System.Exception">
+                Invalid QueryMetadata XML: ColumnTableReference with ColumnInstanceRef not found
+                or
+                Invalid QueryMetadata XML: ColumnTableReference with TableInstanceRef not found
+            </exception>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadCrossJoin(System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Xml.XmlElement)">
+            <summary>
+                Reads the cross join.
+            </summary>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+            <param name="crossJoinEl">
+                The cross join element.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadTableInstance(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Xml.XmlElement)">
+            <summary>
+                Reads the table instance.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="tableInstanceEl">
+                The table instance element.
+            </param>
+            <returns>
+                The <see cref="T:Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance" />
+            </returns>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadUnion(System.Xml.XmlNode,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance})">
+            <summary>
+                Reads the union.
+            </summary>
+            <param name="union">
+                The union.
+            </param>
+            <param name="tableInstanceIdDict">
+                The table instance id dictionary.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.ReadValue(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Reads the value.
+            </summary>
+            <param name="valueEl">
+                The value element.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteAllowedValues(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Writes the allowed values.
+            </summary>
+            <param name="allowedValuesNode">
+                The allowed values node.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnInstance(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                Writes the column instance.
+            </summary>
+            <param name="columnInstanceNode">
+                The column instance node.
+            </param>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnInstanceRef(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance)">
+            <summary>
+                Writes the column instance ref.
+            </summary>
+            <param name="columnInstanceNode">
+                The column instance node.
+            </param>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnInstanceRef(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance,System.Int32)">
+            <summary>
+                Writes the column instance ref.
+            </summary>
+            <param name="columnInstanceRefNode">
+                The column instance ref node.
+            </param>
+            <param name="columnInstance">
+                The column instance.
+            </param>
+            <param name="i">
+                The i.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnMapping(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IColumnMapping)">
+            <summary>
+                Writes the column mapping.
+            </summary>
+            <param name="columnMappingNode">
+                The column mapping node.
+            </param>
+            <param name="columnMapping">
+                The column mapping.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnsMerging(Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Xml.XmlElement)">
+            <summary>
+                Writes the columns merging.
+            </summary>
+            <param name="queryMetadata">
+                The query metadata.
+            </param>
+            <param name="columnsMergingNode">
+                The columns merging node.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteColumnTableReferences(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IColumnTableReference)">
+            <summary>
+                Writes the column table references.
+            </summary>
+            <param name="columnTableReferenceNode">
+                The column table reference node.
+            </param>
+            <param name="columnTableReference">
+                The column table reference.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteCrossJoin(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.ICrossJoinRelation)">
+            <summary>
+                Writes the cross join.
+            </summary>
+            <param name="element">
+                The element.
+            </param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteRelation(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+                Writes the relation.
+            </summary>
+            <param name="relationNode">
+                The relation node.
+            </param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteTableAttributeValues(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IAllowedValues)">
+            <summary>
+                Writes the table attribute values.
+            </summary>
+            <param name="allowedValuesNode">
+                The allowed values node.
+            </param>
+            <param name="allowedValues">
+                The allowed values.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteTableInstance(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+                Writes the table instance.
+            </summary>
+            <param name="tableInstanceNode">
+                The table instance node.
+            </param>
+            <param name="tableInstance">
+                The table instance.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteUnion(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IUnionRelation)">
+            <summary>
+                Writes the union.
+            </summary>
+            <param name="unionRelationNode">
+                The union relation node.
+            </param>
+            <param name="relation">
+                The relation.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteValue(System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.Value)">
+            <summary>
+                Writes the value.
+            </summary>
+            <param name="valueNode">
+                The value node.
+            </param>
+            <param name="value">
+                The value.
+            </param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.GetTableConstraints(System.Xml.XmlNodeList,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance},Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata)">
+            <summary>
+            Gets the table constraints.
+            </summary>
+            <param name="tableConstraintsNodes">The table constraints nodes.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+            <param name="queryMetadata">The query metadata.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.GetWhereDetailsWhenCountIsOne(System.Xml.XmlNodeList,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.IColumnInstance})">
+            <summary>
+            Gets the where details when count is one.
+            </summary>
+            <param name="whereDetailsNodes">The where details nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="columnInstanceIdDict">The column instance identifier dictionary.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.HandleSingleTableInstanceNode(System.Xml.XmlNodeList,Estat.Sri.Plugin.Editor.QueryEditor.IQueryMetadata,System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            Handles the single table instance node.
+            </summary>
+            <param name="tableInstancesNodes">The table instances nodes.</param>
+            <param name="queryMetadata">The query metadata.</param>
+            <param name="tableInstanceIdDict">The table instance identifier dictionary.</param>
+            <param name="tableInstanceColumnIdDict">The table instance column identifier dictionary.</param>
+            <param name="columnInstanceSortIndexDict">The column instance sort index dictionary.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.HandleTableConstraints(System.Xml.XmlDocument,Estat.Sri.Plugin.Editor.QueryEditor.ConstraintsCollection,System.Xml.XmlElement)">
+            <summary>
+            Handles the table constraints.
+            </summary>
+            <param name="xmlDoc">The XML document.</param>
+            <param name="constraints">The constraints.</param>
+            <param name="tableConstraintsNode">The table constraints node.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteRelations(System.Xml.XmlDocument,System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.IRelation)">
+            <summary>
+            Writes the relations.
+            </summary>
+            <param name="xmlDoc">The XML document.</param>
+            <param name="relationsNode">The relations node.</param>
+            <param name="relation">The relation.</param>
+        </member>
+        <member name="M:Estat.Sri.Plugin.Editor.QueryEditor.XmlFormatExtractor.WriteTableInstances(System.Xml.XmlDocument,System.Xml.XmlElement,Estat.Sri.Plugin.Editor.QueryEditor.ITableInstance)">
+            <summary>
+            Writes the table instances.
+            </summary>
+            <param name="xmlDoc">The XML document.</param>
+            <param name="tableInstancesNode">The table instances node.</param>
+            <param name="tableInstance">The table instance.</param>
+        </member>
+    </members>
+</doc>

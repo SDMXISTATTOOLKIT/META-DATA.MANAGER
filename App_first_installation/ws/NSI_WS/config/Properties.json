@@ -1,0 +1,15 @@
+﻿{
+  "datastructure": {
+    "allowSdmx21CrossSectional": "true"
+  },
+  "categorisation": {
+    "createStubCategory": "true"
+  },
+  "enableReleaseManagement": "false",
+  "applyContentConstraintsOnDataQueries": "false",
+  "autoDeleteMappingSets": "false",
+  "disseminationDbConnection": {
+    "dbType": "SqlServer",
+    "connectionString": ""
+  }
+}

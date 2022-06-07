@@ -1,0 +1,20 @@
+# Referential Metadata
+
+Referential Metadata is linked to Structural Metadata (managed in the MetaManager) and the link is the [Metadata Structure Definition](Metadata_Structure_Definitions.md) (MSD) which is a model that specifies the types of constructs to which metadata can be related and the structure of this metadata at the time of dissemination. \
+In particular from an MSD it is possible to create [MetadataFlows](Metaflows.md) which represent a metadata flow with the characteristics defined by the MSD and are the starting point in the management of Referential Metadata.
+
+```eval_rst
+* :doc:`MetadataSet Management <metadataset_management>`
+* :doc:`Creating a new MetadataSet <creating_metadataset>`
+* :doc:`Compilation of a report <compilation_report>`
+```
+
+```eval_rst
+ .. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    MetadataSet Management <metadataset_management.md>
+    Creating a new MetadataSet <creating_metadataset.md>
+    Compilation of a report <compilation_report.md>
+```

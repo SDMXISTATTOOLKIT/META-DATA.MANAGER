@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>MAPPING ASSISTANT DB</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#mapping-assistant-db">MAPPING ASSISTANT DB</a></li>
+    <li class="sidebar-header-2"><a href="#add/edit/delete-mapping-store">ADD/EDIT/DELETE MAPPING STORE</a></li>
+    <li class="sidebar-header-2"><a href="#import/export-mapping-store">IMPORT/EXPORT MAPPING STORE</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="mapping-assistant-db"><a class="header-link" href="#mapping-assistant-db"></a>MAPPING ASSISTANT DB</h1>
+<p>This screen supports adding/editing/deleting mapping stores. On the left side of the screen there is a table with all existing mapping stores.
+On the right side there are the connection details of the selected mapping store. User can initialize a mapping store or reinitialize it in case mapping store is already initialized. Additionally, he/she can edit the advanced properties of the database connection by pressing <em>Advanced Parameters</em> tab.</p>
+<h2 id="addeditdelete-mapping-store"><a class="header-link" href="#addeditdelete-mapping-store"></a>ADD/EDIT/DELETE MAPPING STORE</h2>
+<p>A user can use the buttons Add and Remove to add and delete a mapping store. Remove button is enabled when user selects (through the radio button) the mapping store that wants to delete. To edit a mapping store, user can select it from the left sidebar, make the appropriate changes and press save button.</p>
+<p class="img-container"><img src="figures/SELECTED_MAPPING_STORE.PNG" alt="SELECTED_MAPPING_STORE"></p>
+<p>The <em>mapping store connection settings</em> are the following:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>database-type</td>
+<td>The database type. Options: [Oracle, MySQL, SqlServer].</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>The Server domain.</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>The Database name. e.g. <code>mastore</code></td>
+</tr>
+<tr>
+<td>username</td>
+<td>The user name with which connections have to be obtained.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The password with which connections have to be obtained.</td>
+</tr>
+</tbody></table>
+<h2 id="importexport-mapping-store"><a class="header-link" href="#importexport-mapping-store"></a>IMPORT/EXPORT MAPPING STORE</h2>
+<p>A user can import a mapping store into another existing mapping store to update the latter by pressing the button Import on the left side of the screen. Export button exports mapping store details in a .zip file.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

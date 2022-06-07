@@ -1,0 +1,61 @@
+# Configuring a new node
+
+To configure a Node, the user must access the function Configuration --> Nodes. \
+The system will request access as [SuperUser](superadmin.md) and then select the "Add Node" button to launch the mask
+
+![New Node](_static/img/Nuovo_nodo.PNG "New Node")
+
+In the "**General**" section set the following fields (the values are indicative for example purposes):
+
++ **ID** : Node1
++ **Name** : Node1
++ **Default items view mode**: Table as default
++ **Show unallowed nodes in Builder**: Allows visualization (in grey) of nodes in the Builder tree on which the user has no permissions.
++ **Hidden**: do not select the check as default otherwise the node will be hidden to users.
+
+After setting the general data it can be seen that the "Save" button is not activated as the information is not sufficient to define the Node itself. 
+
+Go to the "**Agencies**" section. \
+This section contains the [Default Agencies](agencies_configuration.md) which are set during the initialisation of the database at the first application installation. \
+The agencies linked to the Node can be modified with respect to the application default and therefore additional agencies can be added or removed. \
+In this example the agencies are not modified.
+
+Go to the "**Endpoints**" section to set the endpoints that will allow the true profiling of the Node.
+
+![Configure Endpoint](_static/img/Conf_endpoint.PNG "Configure Endpoint")
+
+As can be seen in the figure above, some fields are set by default, others are not set and the System provides an example of configuration with regard to the url needed to reach the WS internal/external to the System itself and thus allow at application level the connection to the databases managed by them. \
+Some WS allow read and write access to the database, others read only, regardless of User profiling. \
+The System requires mandatory configuration of the SDMX WS Endpoint.  To configure it the user must set in the provided field:
+
++ https://localhost/NSI_WS/SdmxRegistryService
+
+where localhost identifies the host where the WS is present. \
+This can also be reached through a remote virtual machine and in this case the hostname or IP address or the address defined at IIS level during the system-application configuration phase must be set (e.g.: www.org.it - See [Installation Manual](Installation.md)). \
+After typing the field with the reference to the endpoint, press the "Ping" button to the right of the field itself. \
+After verification, the system will display the green button to indicate that the endpoint has been correctly defined and can be reached. \
+If the Ping function does not have a positive result, this may be due to several reasons that can be found in the application logs. \
+We list the most common errors:
++ Incorrect url typed
++ Non-reachability of the database due to incorrect definition of the connection string in the configuration files (see [Installation Manual](Installation.md)).
+
+With this minimum configuration it is possible at application level to read the MSDB, Eurostat database, with access to the Meta Manager functions but it does not allow access to the System and writing. \
+To do this, and access the functions in read and write mode, the Endpoint fields must be set:
++ Endpoint MA: https://localhost/MA_WS
++ Endpoint DM: https://localhost/DM_API_WS/api/DMApi
+
+and selecting the "Save" button, the Node is created. 
+
+
+**_Note_**
+By pressing the "Save" button the System requests the Administrator user name, if the Administrator user name (admin) is set and "OK" is pressed, the Node is saved.
+
+**Node Configuration Scenarios**
+
+The System allows the configuration of Nodes with different architectural scenarios in order to access WS and related databases. \
+There are mainly two scenarios:
+
+_The first scenario_ foresees access to INTERNAL Nodes (read/write ) each configured to access WSs and related databases residing on different servers through NodeApi plugging. Each Node will have a different URL that identifies the connection to the WS. \
+_The second scenario_ involves access to several EXTERNAL Nodes (read-only) with only access to the NSI_WS and the MSDB database.
+
+

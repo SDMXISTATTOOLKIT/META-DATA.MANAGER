@@ -1,0 +1,13 @@
+# Creating a new MetadataSet
+
+Selecting the category with the mouse, the "Create Metadata Set" button will be enabled, and the user can create a new Metadata Set (after filling in the required fields). 
+
+ ![METADATASET](_static/img/nuovo_ms.PNG "METADATASET")
+ 
+ One of the mandatory fields for the creation of a Metadata Set is the linked Metadataflow; the Metadataflow will be selectable from a specific component, in which will be present only the Metadataflow owned by the user. \
+ Other fields are not mandatory such as the validity period of the report and the Annotations that can be inserted with additional structured information even if this element is not an artefact. \
+ When the user has filled in the mandatory fields then the System will enable the "Save" button and the Metadata Set can be saved. 
+ 
+
+
+

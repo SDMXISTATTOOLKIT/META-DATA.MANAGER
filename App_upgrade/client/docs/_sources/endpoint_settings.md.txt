@@ -1,0 +1,12 @@
+# Endpoint Settings
+
+This section allows you to define the timeout of the relevant WebServices in the node in seconds:
++ **NSI WS timeout**
++ **DM timeout**
++ **MA timeout**
+
+By default they are all set to 360 sec. in total.
+
+![Endpoint Settings](_static/img/impostazioni_endpoint.PNG "Endpoint Settings")
+
+
